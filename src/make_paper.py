@@ -78,12 +78,22 @@ def main():
         put("NEligibleConf", len(conf))
         put("NEligibleDev", fr["n_eligible"] - len(conf))
 
+    fc = load("frames_conf_stats.json")
+    if fc:
+        put("ShiftMeanConf", f"{fc['shift_mean_conf']:+.2f}")
+        put("ShiftDirectionCountConf", f"{fc['n_positive_conf']}/{fc['n_total_conf']}")
+
     pw = load("power.json")
     if pw:
         put("SFam", f"{pw['s_fam']:.1f}")
         put("SSeed", f"{pw['s_seed']:.1f}")
         put("NSeedsESHIFT", pw["chosen"]["n_seeds"])
         put("SESOI", f"{pw['operative_sesoi']:.1f}")
+
+    ces = load("coding_stats_eshift.json")
+    if ces:
+        put("NEShiftCases", f"{ces['n_cases']:,}")
+        put("KappaEShift", f"{ces['cohens_kappa']:.3f}")
 
     cs = load("coding_stats_confirm.json") or load("coding_stats_dev.json")
     if cs:
@@ -115,9 +125,10 @@ def main():
         direction = "higher retention when the same value is expected" if p["mean"] > 0 else \
                     "no higher retention when the same value is expected"
         put("ShiftDirectionSentence",
-            f"that making the very same value expected rather than surprising changes whether it "
-            f"survives {p['n_families']} compactions, by {p['mean']:+.1f} percentage points "
-            f"(95\\% CI [{p['ci95'][0]:+.1f}, {p['ci95'][1]:+.1f}])")
+            f"that making the very same value expected rather than surprising does not help it "
+            f"survive: the mean paired difference over {p['n_families']} families is "
+            f"{p['mean']:+.1f} percentage points (95\\% CI [{p['ci95'][0]:+.1f}, "
+            f"{p['ci95'][1]:+.1f}]), with effects of {p['sesoi']:.0f}~pp or more excluded")
 
     cf = load("confirm_result_confirm.json")
     if cf:
@@ -204,6 +215,61 @@ def main():
                 put(f"Ret{nm}Oone", f"{r['by_op']['O1@T1.0']['retention']:.1f}")
             if r and "O4@T1.0" in r["by_op"]:
                 put(f"Ret{nm}Ofour", f"{r['by_op']['O4@T1.0']['retention']:.1f}")
+
+    sv = load("sensitivity.json")
+    if sv:
+        c = sv["C1_variants"]
+        # read the upper bound from the primary E-SHIFT result so the abstract and the body
+        # cannot quote two different bootstrap runs
+        _es = load("eshift_result_confirmatory.json")
+        _hi = (_es or {}).get("eligible_only", {}).get("ci95", [None, c['primary']['ci95'][1]])[1]
+        put("ConeUpper", f"{_hi:+.1f}")
+        put("ConeJudgeOne", f"{c['judge1_only']['mean']:+.1f}")
+        put("ConeJudgeTwo", f"{c['judge2_only']['mean']:+.1f}")
+        put("ConeWorstAgainst", f"{c['unresolved_worst_against_H']['mean']:+.1f}")
+        put("ConeWorstFor", f"{c['unresolved_worst_for_H']['mean']:+.1f}")
+        put("EShiftUnresRate", f"{100*c['unresolved_rate']:.1f}\\%")
+        put("EShiftUnresN", c["n_unresolved"])
+        put("EShiftUnresPlus", f"{100*c['unresolved_by_arm']['F+']:.0f}\\%")
+        put("EShiftUnresMinus", f"{100*c['unresolved_by_arm']['F-']:.0f}\\%")
+        dz = sv["dose_over_iqr"]
+        put("DoseIQR", f"{dz['O1_pp_over_iqr']['point']:+.1f}")
+        put("DoseIQRlo", f"{dz['O1_pp_over_iqr']['ci95'][0]:+.1f}")
+        put("DoseIQRhi", f"{dz['O1_pp_over_iqr']['ci95'][1]:+.1f}")
+        pr2 = sv["preferences"]
+        put("PrefAdj", f"{pr2['baseline_adjusted_pp']:+.1f}")
+        put("PrefAdjLo", f"{pr2['baseline_adjusted_ci95'][0]:+.1f}")
+        put("PrefAdjHi", f"{pr2['baseline_adjusted_ci95'][1]:+.1f}")
+        put("PrefGapZero", f"{pr2['gap_k0_pp']:+.1f}")
+        put("PrefNFamilies", pr2["n_preference_families"])
+        pa = sv["contrasts"]["paired"]
+        for key, tag in (("O6_minus_O6-random", "SixVsRandom"), ("O4_minus_O5", "FourVsFive"),
+                         ("O3W_minus_O1", "ThreeWVsOne")):
+            if key in pa:
+                put(f"Pair{tag}", f"{pa[key]['point']:+.1f}")
+                put(f"Pair{tag}Lo", f"{pa[key]['ci95'][0]:+.1f}")
+                put(f"Pair{tag}Hi", f"{pa[key]['ci95'][1]:+.1f}")
+        lv = sv["contrasts"]["levels"]
+        if "O3W" in lv:
+            put("RetOthreeW", f"{lv['O3W']['retention']:.1f}")
+        pb = sv["protocol_by_operator"]
+        for op, tag in (("O1", "Oone"), ("O5", "Ofive"), ("O4", "Ofour"), ("O3", "Othree")):
+            if op in pb:
+                put(f"Trims{tag}", f"{pb[op]['hard_trims_per_traj']:.1f}")
+                put(f"Retries{tag}", f"{pb[op]['budget_retries_per_traj']:.1f}")
+                put(f"Words{tag}", f"{pb[op]['mean_stored_words']:.0f}")
+        opj = sv.get("operator_per_judge", {})
+        if opj:
+            put("OfourJudgeOne", f"{opj['judge1_only']['O4_minus_O1']['point']:+.1f}")
+            put("OfourJudgeTwo", f"{opj['judge2_only']['O4_minus_O1']['point']:+.1f}")
+
+    fp = load("frame_parity.json")
+    if fp:
+        for k, tag in (("importance", "Imp"), ("authority", "Auth"), ("relevance", "Rel")):
+            if k in fp:
+                put(f"Parity{tag}", f"{fp[k]['mean_diff_Fplus_minus_Fminus']:+.2f}")
+                put(f"Parity{tag}Lo", f"{fp[k]['ci95'][0]:+.2f}")
+                put(f"Parity{tag}Hi", f"{fp[k]['ci95'][1]:+.2f}")
 
     # protocol-compliance numbers
     tr = load("trim_stats.json")

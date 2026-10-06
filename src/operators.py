@@ -215,6 +215,29 @@ def op_copy_rand(state, new_sentences, cfg, rng):
     return out
 
 
+def op_copy_rand_w(state, new_sentences, cfg, rng):
+    """O3W: prior-blind random selection packed to the SAME WORD BUDGET as O1.
+
+    O3 fixes the slot count and therefore stores more text than O1; it is a prior-blind deletion
+    control, not a capacity-matched one. O3W is the capacity-matched version: sentences are drawn
+    uniformly at random and packed until the budget is full. It favours short sentences by
+    construction, which is why it is reported alongside O3 rather than replacing it.
+    """
+    pool = (state["sentences"] or []) + new_sentences
+    order = list(range(len(pool)))
+    rng.shuffle(order)
+    kept, used = [], 0
+    for i in order:
+        w = wc(pool[i]["text"])
+        if used + w > cfg["B"]:
+            continue
+        kept.append(pool[i]); used += w
+    text = "\n".join(x["text"] for x in kept)
+    out = _result(text, kept, 0, False, 0.0)
+    out["pool_size"] = len(pool)
+    return out
+
+
 def op_full(state, new_sentences, cfg):
     """O7: append-only, unbounded. With oracle retrieval this is an access ceiling, not a retriever."""
     kept = (state["sentences"] or []) + new_sentences

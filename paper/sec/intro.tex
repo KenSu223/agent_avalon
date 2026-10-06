@@ -40,34 +40,42 @@ manipulation before running any chain, by eliciting the compactor's own prior un
 
 We also need to know that any effect comes from the model rewriting text rather than from content
 simply not fitting. We therefore build an operator lattice in which each arm removes exactly one
-mechanism, and in particular a prior-blind control, \textsc{Copy-Rand}, which applies the same
-capacity pressure through a uniformly random choice of which source sentences to keep. It uses the
-same stimuli, the same coder and the same probes, but its selection cannot depend on any prior.
+mechanism, including two \emph{prior-blind} controls whose selection cannot depend on any prior:
+one matched to the rewriting arm's \emph{retention} (and therefore carrying more text), and one
+matched to its \emph{word budget}. Both use the same stimuli, coder and probes.
 
 What we find is that the prediction is wrong, and that something else is right.
 
 \begin{itemize}\itemsep1pt
-\item \textbf{The causal test is null.} \textsc{E-Shift} shows \ShiftDirectionSentence{}
-(\S\ref{sec:c1}). The graded dose--response across \NFamiliesConf{} minimal-pair families is flat
-too, and both results replicate on a second strong model family, on a small local model, and at both
-decoding temperatures the API permits (\S\ref{sec:c2}, \S\ref{sec:robust}).
+\item \textbf{No support for the predicted effect.} \textsc{E-Shift} moves survival by
+\EShiftMean{}~pp (95\% CI [\EShiftCIlo{}, \EShiftCIhi{}]), ruling out benefits above about
+\ConeUpper{}~pp for this manipulation (\S\ref{sec:c1}); we do \emph{not} claim equivalence at the
+smaller margin we originally preregistered, and we report a blind check showing our own frames move
+judged importance as well as expectation (\S\ref{sec:parity}). The graded dose--response across
+\NFamiliesConf{} families is consistent with zero (\S\ref{sec:c2}), and every slope interval in our
+portability diagnostics contains zero (\S\ref{sec:robust}).
 \item \textbf{Memory is deleted, not corrupted.} Of \NCodedCases{} coded item-checkpoints,
 \ChangedCount{} are changes to a different value (\S\ref{sec:c6}). The failure the folk theory
 describes --- a constraint quietly rewritten into a plausible default --- essentially does not occur
 in a strong compactor.
-\item \textbf{Iteration is the mechanism.} Holding model, budget, sessions and stimuli fixed,
-rewriting memory from the raw sessions retains \RetOfour{}\% of items after ten compactions while
-rewriting from the model's own previous memory retains \RetOone{}\% (\S\ref{sec:operators}). The
-bottleneck is not what destroys the content; re-reading your own compressed output is.
+\item \textbf{What separates operators dwarfs anything surprise explains.} Reconstructing memory
+from the retained raw sessions keeps \RetOfour{}\% of items after ten compactions, against
+\RetOone{}\% for recursive self-rewriting at the same budget (\S\ref{sec:operators}). Recursive
+summaries accumulate omissions that reconstruction from sources does not; this is an operator
+comparison, not an isolation of iteration as such, and we say exactly what else differs.
 \item \textbf{The deployed fix works and the theory-derived one does not.} Adding the anti-drift
 rules from a production memory-consolidation prompt recovers \ContrastOfive{}~pp at no extra budget,
 while pinning high-surprise items is net harmful under a binding budget and is indistinguishable from
 token-matched random pinning (\S\ref{sec:c7}).
-\item \textbf{Preferences do not homogenise either.} Preferences that differ from the model's own
-defaults survive \PrefGapK{}~pp better, so a stored profile becomes more distinctive over time, not
-less (\S\ref{sec:prefs}).
+\item \textbf{No preference homogenisation in this set.} Preferences that differ from the model's
+own defaults survive \PrefAdj{}~pp better after baseline adjustment (95\% CI [\PrefAdjLo{},
+\PrefAdjHi{}], clustered over \PrefNFamilies{} preference families), so a stored profile becomes
+more distinctive over time, not less (\S\ref{sec:prefs}).
 \end{itemize}
 
 Every operating-point choice was made on a held-out development split and frozen, with the
 confirmatory analysis, decision rule and effect-size thresholds fixed in advance
-(\texttt{FROZEN\_PROTOCOL.md}).
+(\texttt{FROZEN\_PROTOCOL.md}). Only \textsc{E-Shift} and the surprise\,$\times$\,operator
+contrast were preregistered as confirmatory; the operator comparisons in \S\ref{sec:operators} and
+\S\ref{sec:c7} are \textbf{exploratory}, are not multiplicity-corrected, and are labelled as such
+throughout.

@@ -2,15 +2,14 @@
 \label{sec:instrument}
 
 \subsection{Stimuli}
-The materials are \NFamiliesTotal{} minimal-pair families set in a fictional workplace. A family is
-one template with a single slot and \NLevelsTypical{} graded values, for example ``\{\textsc{company}\}'s
-internal billing API times out after \{30 seconds $\mid$ 2 minutes $\mid$ 5 seconds $\mid$ 20 minutes
-$\mid$ 6 hours\}''. Within a family the template, the probe question, the number of exposures and the
-source are identical; only the value changes. Every value is \emph{true} in its world, stated once,
-by the user, without justification --- so the contrast is prior-fit, not truth, provenance or
-repetition. Fictional entities cut the link to pretrained knowledge about specific organisations and
-leave only general commonsense priors \citep{sivaprasad2025fictional}. Entity names are rotated
-across trajectories so that no value is systematically paired with a name.
+The materials are \NFamiliesTotal{} minimal-pair families in a fictional workplace: one template with
+a single slot and \NLevelsTypical{} graded values, e.g.\ ``\{\textsc{company}\}'s internal billing
+API times out after \{30 seconds $\mid$ 2 minutes $\mid$ 5 seconds $\mid$ 20 minutes $\mid$ 6
+hours\}''. Within a family the template, probe question, exposure count and source are identical; only
+the value changes. Every value is \emph{true} in its world, stated once, by the user, without
+justification, so the contrast is prior-fit rather than truth, provenance or repetition. Fictional
+entities leave only general commonsense priors \citep{sivaprasad2025fictional}, and entity names are
+rotated across trajectories so no value is systematically paired with a name.
 
 Families are split into a \textbf{development} set (\NFamiliesDev{}) and a \textbf{confirmatory} set
 (\NFamiliesConf{}). Every operating-point decision --- budget, temperature, prompt wording, control
@@ -25,11 +24,10 @@ keep the one minimising the largest between-chain difference in mean surprise, w
 
 \subsection{Measuring the dose on the compactor}
 Surprise must be the compactor's, not a convenient proxy. Our primary measure (\textsc{P1}) presents
-the compactor with every pair of values from a family, in both orders, under several entity names
-and repeated samples, asking which is more likely of a company like this, in the same framing the
-chain uses. A Bradley--Terry model \citep{bradley1952rank} converts the comparisons into a per-family
-log-odds scale; surprise is the negative log of the induced within-family probability, centred within
-family. Split-half reliability over an independent half of the elicitation is Spearman
+the compactor with every pair of values from a family, in both orders, under several entity names and
+repeated samples, in the same framing the chain uses; a Bradley--Terry model \citep{bradley1952rank}
+converts the comparisons into a per-family log-odds scale, and surprise is the negative log of the
+induced within-family probability, centred within family. Split-half reliability is Spearman
 \SplitHalfRho{}.
 
 Two secondary measures check this (Appendix~\ref{app:priors}). Free generation at temperature one is
@@ -43,22 +41,22 @@ analyses use measured surprise as a continuous variable.
 \subsection{The operator lattice}
 Each operator removes exactly one mechanism relative to the rolling rewrite.
 
-\begin{itemize}\itemsep1pt
-\item \textbf{O1 \textsc{Roll}} (primary): rewrite $M_{t-1}$ plus the session under a deliberately
+\begin{itemize}\itemsep0pt\parskip0pt
+\item \textbf{\textsc{Roll}} (primary): rewrite $M_{t-1}$ plus the session under a deliberately
 neutral prompt that never asks for generalisation or synonyms.
-\item \textbf{O2 \textsc{Copy-LLM}}: the model selects which source sentences to keep; they are
-stored \emph{verbatim}. Selection without rewriting.
-\item \textbf{O3 \textsc{Copy-Rand}}: a uniformly random, fixed-size choice of source sentence slots,
-stored verbatim. Same capacity pressure, same coder, same probes, but selection
-\emph{cannot depend on the prior}. This is the decisive null control.
-\item \textbf{O4 \textsc{Src}}: rewrite from all raw sessions each step, never from the model's own
-previous memory. Rewriting without iteration.
-\item \textbf{O5 \textsc{Anchor}}: O1 plus the anti-drift rules Codex ships in its memory
-consolidation prompt. The mitigation industry already deploys.
-\item \textbf{O6 \textsc{Pin}}: O1 plus verbatim pinning of high-surprise items, with token-matched
-random and low-surprise pinning as controls.
-\item \textbf{O7 \textsc{Full}}: append-only and unbounded, with oracle retrieval. An access
-ceiling, not a retriever.
+\item \textbf{\textsc{Copy-LLM}}: the model selects which source sentences to keep, stored
+\emph{verbatim}. Selection without rewriting.
+\item \textbf{\textsc{Copy-Rand}} and \textbf{\textsc{Copy-Rand-W}}: a uniformly random choice of
+source sentences, stored verbatim --- a fixed slot count (matched to \textsc{Roll}'s retention) and a
+fixed word budget (matched to its capacity). Selection \emph{cannot depend on the prior}.
+\item \textbf{\textsc{Src}}: rebuild from all raw sessions each step, never from the model's own
+previous memory. Rewriting without recursion.
+\item \textbf{\textsc{Anchor}}: \textsc{Roll} plus the anti-drift rules Codex ships in its memory
+consolidation prompt --- the mitigation industry already deploys.
+\item \textbf{\textsc{Pin}}: \textsc{Roll} plus verbatim pinning of high-surprise items, with
+token-matched random and low-surprise pinning as controls.
+\item \textbf{\textsc{Full}}: append-only and unbounded, with oracle retrieval. An access ceiling,
+not a retriever.
 \end{itemize}
 
 Output that exceeds the budget is treated as a protocol failure and regenerated with explicit
@@ -69,24 +67,18 @@ occurs \TrimRate{} times per \Ksteps{}-step trajectory.
 
 \subsection{Coding memory state}
 \label{sec:coding}
-For each item and checkpoint we label the memory as \textsc{retained}, \textsc{changed} (to another
-candidate value, to a value outside the set, or to something vague) or \textsc{dropped}. A tightened
-attribute regex locates the segments that mention the item's attribute; level patterns classify them
-\emph{per segment}, never on a concatenation, so an incidental number in one sentence cannot be
-paired with the attribute mention in another. Segments carrying negation, a historical value or an
-explicit contrast are never fast-pathed.
-
-Everything ambiguous --- \JudgedFrac{} of cases --- goes to \emph{two} judges from different model
-families. The judges are blind: they see only the original sentence, the question it answers and the
-notes, never the candidate values, their order, the measured surprise or the hypothesis. The judge's
-semantic label is authoritative, and our patterns are used only to \emph{name} the destination of a
-change. This ordering matters: letting pattern coverage veto a judge's \textsc{retained} would make
-measured retention depend on how richly each value's formats happen to be covered, and since common
-values have richer coverage that alone could produce the predicted gradient. Verdicts the two judges
-do not share are recorded as \textsc{unresolved} (\UnresolvedRate{} of cases) rather than coerced.
-
-A metamorphic test generates, for every value, meaning-preserving format variants and decoys
-(negation, historical value, incidental number). Strict pattern recognition is between \CoderMin{}
-and \CoderMax{} across levels, a spread of \CoderSpread{}, and every unrecognised variant is routed
-to the judges rather than mis-coded (Appendix~\ref{app:coder}), so the coder cannot itself generate a
-retention-vs-surprise gradient.
+For each item and checkpoint we label the memory \textsc{retained}, \textsc{changed} or
+\textsc{dropped}. A tightened attribute regex locates the segments mentioning the item's attribute;
+level patterns classify them \emph{per segment}, so an incidental number in one sentence cannot be
+paired with the attribute mention in another, and segments carrying negation, a historical value or an
+explicit contrast are never fast-pathed. Everything ambiguous --- \JudgedFrac{} of cases --- goes to
+\emph{two} judges from different model families, blind to the candidate values, their order, the
+measured surprise and the hypothesis. The judge's semantic label is authoritative and our patterns only
+\emph{name} the destination of a change: letting pattern coverage veto a judge's \textsc{retained}
+would make retention depend on how richly each value's formats are covered, and common values have
+richer coverage, which alone could produce the predicted gradient. Disagreements are recorded as
+\textsc{unresolved} (\UnresolvedRate{} overall, \EShiftUnresRate{} on the harder \textsc{e-shift}
+targets) rather than coerced, and every headline result is recomputed under each judge separately. A
+metamorphic test over format variants and decoys gives strict pattern recognition between \CoderMin{}
+and \CoderMax{} across levels (spread \CoderSpread{}), with every unrecognised variant routed to the
+judges (Appendix~\ref{app:coder}).

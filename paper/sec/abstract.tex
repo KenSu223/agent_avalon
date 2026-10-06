@@ -6,16 +6,21 @@ content it exists for --- a claim repeated informally across the literature and 
 documentation, but never tested with prior-fit as a manipulated variable. We test it. Using
 minimal-pair memory items whose prior-fit is graded and measured on the compactor itself by paired
 comparison, and a same-item manipulation that holds the target sentence \emph{and its value} fixed
-while changing only a value-free description of the surrounding work, we find \ShiftDirectionSentence{}.
-The graded dose--response is flat as well (\SlopeOOne{}~pp per log-odds, 95\% CI [\SlopeOOneCIlo{},
-\SlopeOOneCIhi{}]), and the null replicates on a second strong model family, on a small local model,
-and at both decoding temperatures the API permits. Nor is memory corrupted: across \NCodedCases{}
-coded item-checkpoints only \ChangedCount{} are changes to a different value. What does drive loss is
-iteration itself. Holding model, budget and sessions fixed, rewriting memory from the raw sessions
-retains \RetOfour{}\% of items after ten compactions while rewriting from the model's own previous
-memory retains \RetOone{}\% (\ContrastOfour{}~pp, 95\% CI [\ContrastOfourLo{}, \ContrastOfourHi{}]).
-The anti-drift prompt already shipping in a production memory system recovers almost all of that
-(\ContrastOfive{}~pp), whereas pinning high-surprise items --- the fix our own theory predicted ---
-is net harmful under a binding budget. Preferences behave the same way: those that differ from the
-model's defaults survive \PrefGapK{}~pp \emph{better}, so stored profiles become more distinctive,
-not homogenised. We release the instrument, the stimuli and all result files.
+while changing only a value-free description of the surrounding work, we find \textbf{no support for
+the predicted effect}: making the very same value expected rather than surprising moves survival by
+\EShiftMean{}~pp (95\% CI [\EShiftCIlo{}, \EShiftCIhi{}]), ruling out benefits larger than about
+\ConeUpper{}~pp for this manipulation. The graded dose--response is likewise consistent with zero
+(\DoseIQR{}~pp across the interquartile surprise contrast, 95\% CI [\DoseIQRlo{}, \DoseIQRhi{}]), and
+every slope interval in our portability diagnostics --- a second strong model family, a small local
+model, and temperature $0$ --- contains zero. Nor is memory corrupted: across \NCodedCases{} coded
+item-checkpoints only \ChangedCount{} are changes to a different value; under a binding budget the
+compactor simply deletes. What separates operators is much larger than anything surprise explains.
+Rewriting memory by reconstruction from the retained raw sessions keeps \RetOfour{}\% of items after
+ten compactions, and adding the anti-drift rules a production memory system already ships keeps
+\RetOfive{}\%, against \RetOone{}\% for recursive self-rewriting at the same budget
+(\ContrastOfour{} and \ContrastOfive{}~pp). Pinning high-surprise items --- the fix our own theory
+predicted --- shows no detected benefit and is indistinguishable from token-matched random pinning.
+Preferences show no homogenisation either: those that differ from the model's defaults survive
+\PrefAdj{}~pp better after baseline adjustment (95\% CI [\PrefAdjLo{}, \PrefAdjHi{}]), so stored
+profiles become more distinctive. We release the instrument, the stimuli and all result files, and we
+report the ways our own causal manipulation is imperfect.

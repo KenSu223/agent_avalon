@@ -17,11 +17,13 @@ plt.rcParams.update({"font.size": 7.5, "axes.spines.top": False, "axes.spines.ri
                      "figure.dpi": 220, "savefig.bbox": "tight", "axes.grid": True,
                      "grid.alpha": 0.22, "grid.linewidth": 0.4, "legend.frameon": False,
                      "axes.labelsize": 7.5, "xtick.labelsize": 7, "ytick.labelsize": 7})
-C = {"O1": "#C2410C", "O2": "#0369A1", "O3": "#6B7280", "O4": "#7E22CE",
+C = {"O1": "#C2410C", "O2": "#0369A1", "O3": "#6B7280", "O3W": "#9CA3AF", "O4": "#7E22CE",
      "O5": "#047857", "O6": "#B45309", "O6-random": "#D4A574", "O6-low": "#A8A29E",
      "O7": "#111827"}
 NAME = {"O1": "ROLL: rewrite own memory", "O2": "COPY-LLM: select verbatim",
-        "O3": "COPY-RAND: prior-blind", "O4": "SRC: rewrite from sources",
+        "O3": "COPY-RAND: prior-blind\n(retention-matched)",
+        "O3W": "COPY-RAND-W: prior-blind\n(budget-matched)",
+        "O4": "SRC: rebuild from sources",
         "O5": "ANCHOR: +Codex rules", "O6": "PIN: high-surprise",
         "O6-random": "PIN: random", "O6-low": "PIN: low-surprise", "O7": "FULL: ceiling"}
 
@@ -115,8 +117,13 @@ def fig2():
 
 # ---------------------------------------------------------------- Figure 3: operator contrasts
 def fig3():
-    d = json.loads((RES / "operator_contrasts.json").read_text())
-    order = ["O7", "O5", "O4", "O3", "O6-random", "O6", "O6-low", "O2"]
+    sv = json.loads((RES / "sensitivity.json").read_text())
+    d = {"contrasts": {k: v for k, v in sv["contrasts"]["paired"].items()}}
+    # reuse the precomputed vs-O1 contrasts, adding the budget-matched control
+    oc = json.loads((RES / "operator_contrasts.json").read_text())
+    for k, v in oc["contrasts"].items():
+        d["contrasts"].setdefault(k, v)
+    order = ["O7", "O5", "O4", "O3", "O6-random", "O6", "O6-low", "O2", "O3W"]
     order = [o for o in order if f"{o}_minus_O1" in d["contrasts"]]
     fig, ax = plt.subplots(figsize=(3.5, 2.5))
     for i, op in enumerate(order):

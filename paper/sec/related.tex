@@ -1,32 +1,24 @@
 \section{Related work}
 
-\paragraph{Degradation in agent memory.} \citet{zhang2026faulty} measure that continual
-consolidation makes memory worse over time and separate rewriting from deletion, finding in-place
-rewriting the most harmful operator; their synthetic world uses arbitrary nonce mappings, which
-removes prior-fit by construction, and they explain the loss as over-generalisation. The Compaction
-Cliff \citep{compactioncliff2026} measures constraint recall collapsing over five compactions but has
-no prior-fit dimension. \citet{zahn2026facts} claim constraints drift toward plausible defaults after
-three self-summarisations without per-item data or recorded replacement values. We supply the
-manipulated variable, the replacement values, and the controls that separate rewriting from capacity.
+\paragraph{Degradation in agent memory.} \citet{zhang2026faulty} measure that continual consolidation
+makes memory worse over time and find in-place rewriting the most harmful operator, but their
+synthetic world uses arbitrary nonce mappings, which removes prior-fit by construction. The Compaction
+Cliff \citep{compactioncliff2026} measures constraint recall collapsing over five compactions with no
+prior-fit dimension, and \citet{zahn2026facts} claim constraints drift toward plausible defaults
+without per-item data or recorded replacement values. We supply the manipulated variable, the
+replacement values, and the controls that separate rewriting from capacity.
 
-\paragraph{Iterated learning and transmission chains.} Our framing follows
-\citet{griffiths2007language} and \citet{kirby2007innateness}, with \citet{zhu2025eliciting} showing
-that iterated in-context learning elicits an LLM's priors and \citet{ren2024iterated} and
-\citet{cui2025sharper} questioning how closely in-context inference matches posterior sampling.
-\citet{perez2025cultural} and \citet{acerbi2023large} study attractors and content biases in LLM
-transmission chains of narrative text. We study memory items with an independently measured,
-graded prior, and we take the absorbing-deletion correction seriously rather than claiming
-convergence to the prior.
-
-\paragraph{Knowledge conflict.} ClashEval \citep{clasheval2024}, \citet{xie2024adaptive} and related
-work grade how far context deviates from a model's parametric belief and measure whether the model
-adopts it --- in a single step, for real entities. \citet{kochelka2026weak} find the single-step
-effect weak, which is precisely the argument for studying accumulation across a chain.
-
-\paragraph{Marker-level drift.} \citet{belem2026may} document certainty inflation across iterated
-rewriting, and related work finds hedges and quantifiers eroded in summarisation. Those are
-properties of how something is said; we measure whether the specific value survives at all, and what
-replaces it.
+\paragraph{Iterated learning, transmission chains and knowledge conflict.} Our framing follows
+\citet{griffiths2007language} and \citet{kirby2007innateness}, with \citet{zhu2025eliciting}
+eliciting LLM priors by iterated in-context learning and \citet{ren2024iterated} and
+\citet{cui2025sharper} questioning how closely in-context inference matches posterior sampling;
+\citet{perez2025cultural} and \citet{acerbi2023large} study attractors in transmission chains of
+narrative text. ClashEval \citep{clasheval2024} and \citet{xie2024adaptive} grade how far context
+deviates from a model's parametric belief, but for a single step on real entities, and
+\citet{kochelka2026weak} find that single-step effect weak. \citet{belem2026may} document certainty
+inflation across iterated rewriting --- a property of how something is said, where we measure whether
+the value survives at all. We study memory items with an independently measured, graded prior, and we
+take the absorbing-deletion correction seriously rather than claiming convergence to the prior.
 
 \paragraph{Homogenisation.} Knowledge collapse \citep{peterson2024knowledge} and generative
 monoculture \citep{wu2024monoculture} describe homogenisation arising from training on model output.

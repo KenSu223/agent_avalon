@@ -18,8 +18,22 @@ development stage and are recorded there with their rationale: A1 (power and the
 effect of interest), A3 (prospective calibration of the prior-blind control) and A4 (the E-SHIFT
 endpoint). No amendment was made after a confirmatory family was run.
 
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.92\linewidth]{figures/fig3_contrasts.pdf}
+\caption{\textbf{Each arm removes one mechanism.} Retention at $k{=}10$ relative to the rolling
+rewrite, with two-way crossed cluster bootstrap intervals.}
+\label{fig:contrasts}
+\end{figure}
+
 \section{Robustness across models and temperature}
 \label{app:robust}
+The diagnostics below re-run the graded dose--response, not \textsc{E-Shift}, on smaller grids
+(11 chains $\times$ 2 seeds) and score each model against the primary compactor's measured prior.
+Because local 8B log-probabilities rank values only at Spearman \PThreeRho{} against that dose, a
+flat slope for a different model is evidence about the portability of the stimulus set, not proof
+that each model ignores its own prior.
+
 \input{sec/robust_table}
 
 \section{Coder validation}

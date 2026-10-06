@@ -1,0 +1,13 @@
+{
+ "run_id": "run_20261006_f9e0c30f",
+ "round": 1,
+ "threadId": null,
+ "reviewer_backend": "codex",
+ "requires_external_acquittal": false,
+ "status": "in_progress",
+ "difficulty": "medium",
+ "last_score": null,
+ "last_verdict": null,
+ "pending_experiments": [],
+ "timestamp": "2026-10-06T11:52:32.631199"
+}

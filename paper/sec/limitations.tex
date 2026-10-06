@@ -1,31 +1,55 @@
 \section*{Limitations}
 
 \paragraph{No human validation this cycle.} Coding reliability rests on two LLM judges from
-different model families, whose agreement we report in full (Table~\ref{tab:judges}) along with every
-headline conclusion recomputed under each judge separately. Human adjudication would be the stronger
-check; we have archived a stratified 150-item sample for it, and it is not used in any inference
-reported here.
+different model families. Agreement is $\kappa=\Kappa{}$ on the main chains but only
+$\KappaEShift{}$ on the \textsc{e-shift} target items, which are the hardest cases by construction,
+and \EShiftUnresRate{} of those are unresolved. We therefore report every headline conclusion under
+each judge separately and bound the unresolved cases in both directions (\S\ref{sec:c1}). Human
+adjudication would be the stronger check; we have archived a stratified 150-item sample for it, and it
+is not used in any inference reported here.
 
-\paragraph{\textsc{E-Shift} identifies a context-conditioned prior.} The manipulation changes what
-the compactor expects \emph{given the described work}, not what it knows parametrically. That is the
-right construct for memory --- a deployed compactor always reads a context --- but it is not a claim
-about pretrained knowledge in isolation. The graded dose--response (\S\ref{sec:c2}) connects the
-causal result to naturally occurring priors, and is itself ecological rather than causal evidence.
+\paragraph{Our causal manipulation is not clean.} The frames move the compactor's elicited prior
+strongly and in the predicted direction for every family, but a blind check (\S\ref{sec:parity})
+shows they also move judged importance and authority, in the direction that would depress retention of
+the expected-value arm. \textsc{E-Shift} therefore estimates the effect of an expectation-shifting
+\emph{context} manipulation, not of prior-fit in isolation. We report the one-sided exclusion it
+supports and lean on the frame-free dose--response for the rest; a manipulation that moves expectation
+without moving perceived importance is the obvious next instrument, and we do not have one.
+
+\paragraph{The effect size we could test is larger than the one we wanted.} Between-family
+heterogeneity in the frame effect is large and is not reducible by adding seeds, so the operative
+smallest effect of interest had to be raised from the \(8\)~pp we preregistered to
+\(\SESOI{}\)~pp. We do not claim equivalence at \(8\)~pp, and reaching \(0.80\) power there would
+need roughly \(60\) eligible families.
+
+\paragraph{The operator comparisons are exploratory.} Only \textsc{E-Shift} and the
+surprise\,$\times$\,operator contrast were preregistered as confirmatory. The operator contrasts in
+\S\ref{sec:operators} and \S\ref{sec:c7} were not, and are reported without multiplicity
+correction. \textsc{Src} also differs from \textsc{Roll} in more than iteration --- repeated
+exposure, input length and composition, and recoverability --- so it identifies
+reconstruction-versus-recursion, not iteration as such. \textsc{Anchor} additionally reaches its
+result through a different generation process (\RetriesOfive{} budget regenerations and
+\TrimsOfive{} trims per trajectory, against \RetriesOone{} and \TrimsOone{} for the neutral
+prompt), so its exact magnitude should not be read as precise.
 
 \paragraph{Semantic prior and representational compressibility are not fully separable.} Values a
 model finds expected may also be easier to phrase compactly. \textsc{E-Shift} holds the surface form
-exactly fixed, and \textsc{Copy-Rand} removes model-driven selection, which constrains this
+exactly fixed, and the prior-blind controls remove model-driven selection, which constrains this
 substantially; but both may be channels through which model expectations act, and we do not claim to
-have separated them.
+have separated them. Relatedly, our prior-blind controls trade off against each other: the one matched
+on retention carries more text than the rewriting arm, and the one matched on the word budget retains
+almost nothing. Neither alone is a perfect counterfactual, which is why both are reported.
 
 \paragraph{The operative prior may move with $k$.} We measure priors at seeding and re-elicit them in
 masked contexts at $k{=}1$ and $k{=}10$ on a diagnostic subset, reporting rank stability. A fully
 time-varying dose is out of scope.
 
 \paragraph{Generalisation.} The confirmatory result is for one strong compactor at one compression
-regime, with a second strong family and a small local model run as diagnostics on the core contrast.
-Any null is reported as scoped to the tested model, prompt, item domain and compression regime
-\citep{lakens2017equivalence}, never as a general statement about compactors.
+regime. The second strong family and the small local model are \emph{portability diagnostics} on the
+graded dose--response, not repetitions of \textsc{E-Shift}, and they score each model against the
+primary compactor's measured prior rather than its own. Any null is reported as scoped to the tested
+model, prompt, item domain and compression regime \citep{lakens2017equivalence}, never as a general
+statement about compactors.
 
 \paragraph{Simulated users.} The eight preference profiles are controlled test cases, not a sample of
 people; generalisation there is over preference families, not over users, and that result is reported

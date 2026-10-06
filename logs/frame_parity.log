@@ -1,0 +1,60 @@
+72 calls, est $0.004
+[parity] 3/72 in 1s
+[parity] 6/72 in 1s
+[parity] 9/72 in 2s
+[parity] 12/72 in 2s
+[parity] 15/72 in 2s
+[parity] 18/72 in 3s
+[parity] 21/72 in 3s
+[parity] 24/72 in 4s
+[parity] 27/72 in 4s
+[parity] 30/72 in 5s
+[parity] 33/72 in 6s
+[parity] 36/72 in 6s
+[parity] 39/72 in 6s
+[parity] 42/72 in 6s
+[parity] 45/72 in 7s
+[parity] 48/72 in 7s
+[parity] 51/72 in 7s
+[parity] 54/72 in 8s
+[parity] 57/72 in 8s
+[parity] 60/72 in 8s
+[parity] 63/72 in 9s
+[parity] 66/72 in 9s
+[parity] 69/72 in 9s
+[parity] 72/72 in 9s
+{
+ "importance": {
+  "mean_diff_Fplus_minus_Fminus": -0.6944444444444444,
+  "sd": 1.436282874900354,
+  "se": 0.3385351201813834,
+  "ci95": [
+   -1.357973279999956,
+   -0.030915608888932966
+  ],
+  "n_families": 18,
+  "scale": "1-5"
+ },
+ "authority": {
+  "mean_diff_Fplus_minus_Fminus": -0.5,
+  "sd": 0.7276068751089989,
+  "se": 0.17149858514250885,
+  "ci95": [
+   -0.8361372268793174,
+   -0.16386277312068265
+  ],
+  "n_families": 18,
+  "scale": "1-5"
+ },
+ "relevance": {
+  "mean_diff_Fplus_minus_Fminus": -0.3611111111111111,
+  "sd": 1.6698499012816863,
+  "se": 0.3935873962533225,
+  "ci95": [
+   -1.1325424077676232,
+   0.410320185545401
+  ],
+  "n_families": 18,
+  "scale": "1-5"
+ }
+}

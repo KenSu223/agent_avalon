@@ -69,6 +69,8 @@ def run_trajectory(chain, families, distractors, cfg, surprise_local=None, frame
             out = OPS.op_copy_llm(state, new_sents, c)
         elif op == "O3":
             out = OPS.op_copy_rand(state, new_sents, c, rng)
+        elif op == "O3W":
+            out = OPS.op_copy_rand_w(state, new_sents, c, rng)
         elif op == "O4":
             out = OPS.op_src(state, transcripts, c)
         elif op == "O5":
