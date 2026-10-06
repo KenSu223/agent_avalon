@@ -1,0 +1,932 @@
+[
+ {
+  "chain_id": "C01",
+  "items": [
+   {
+    "family_id": "F01",
+    "level": 1
+   },
+   {
+    "family_id": "F02",
+    "level": 2
+   },
+   {
+    "family_id": "F03",
+    "level": 3
+   },
+   {
+    "family_id": "F04",
+    "level": 4
+   },
+   {
+    "family_id": "F05",
+    "level": 5
+   },
+   {
+    "family_id": "F06",
+    "level": 1
+   },
+   {
+    "family_id": "F07",
+    "level": 2
+   },
+   {
+    "family_id": "F08",
+    "level": 3
+   },
+   {
+    "family_id": "F09",
+    "level": 4
+   },
+   {
+    "family_id": "F10",
+    "level": 5
+   },
+   {
+    "family_id": "F11",
+    "level": 1
+   },
+   {
+    "family_id": "F12",
+    "level": 2
+   },
+   {
+    "family_id": "F13",
+    "level": 3
+   },
+   {
+    "family_id": "F14",
+    "level": 4
+   },
+   {
+    "family_id": "F15",
+    "level": 5
+   },
+   {
+    "family_id": "F16",
+    "level": 1
+   },
+   {
+    "family_id": "F17",
+    "level": 2
+   },
+   {
+    "family_id": "F18",
+    "level": 3
+   },
+   {
+    "family_id": "F19",
+    "level": 4
+   },
+   {
+    "family_id": "F20",
+    "level": 5
+   },
+   {
+    "family_id": "V01",
+    "level": 1
+   },
+   {
+    "family_id": "V06",
+    "level": 2
+   }
+  ]
+ },
+ {
+  "chain_id": "C02",
+  "items": [
+   {
+    "family_id": "F01",
+    "level": 2
+   },
+   {
+    "family_id": "F02",
+    "level": 3
+   },
+   {
+    "family_id": "F03",
+    "level": 4
+   },
+   {
+    "family_id": "F04",
+    "level": 5
+   },
+   {
+    "family_id": "F05",
+    "level": 1
+   },
+   {
+    "family_id": "F06",
+    "level": 2
+   },
+   {
+    "family_id": "F07",
+    "level": 3
+   },
+   {
+    "family_id": "F08",
+    "level": 4
+   },
+   {
+    "family_id": "F09",
+    "level": 5
+   },
+   {
+    "family_id": "F10",
+    "level": 1
+   },
+   {
+    "family_id": "F11",
+    "level": 2
+   },
+   {
+    "family_id": "F12",
+    "level": 3
+   },
+   {
+    "family_id": "F13",
+    "level": 4
+   },
+   {
+    "family_id": "F14",
+    "level": 5
+   },
+   {
+    "family_id": "F15",
+    "level": 1
+   },
+   {
+    "family_id": "F16",
+    "level": 2
+   },
+   {
+    "family_id": "F17",
+    "level": 3
+   },
+   {
+    "family_id": "F18",
+    "level": 4
+   },
+   {
+    "family_id": "F19",
+    "level": 5
+   },
+   {
+    "family_id": "F20",
+    "level": 1
+   },
+   {
+    "family_id": "V02",
+    "level": 1
+   },
+   {
+    "family_id": "V07",
+    "level": 2
+   }
+  ]
+ },
+ {
+  "chain_id": "C03",
+  "items": [
+   {
+    "family_id": "F01",
+    "level": 3
+   },
+   {
+    "family_id": "F02",
+    "level": 4
+   },
+   {
+    "family_id": "F03",
+    "level": 5
+   },
+   {
+    "family_id": "F04",
+    "level": 1
+   },
+   {
+    "family_id": "F05",
+    "level": 2
+   },
+   {
+    "family_id": "F06",
+    "level": 3
+   },
+   {
+    "family_id": "F07",
+    "level": 4
+   },
+   {
+    "family_id": "F08",
+    "level": 5
+   },
+   {
+    "family_id": "F09",
+    "level": 1
+   },
+   {
+    "family_id": "F10",
+    "level": 2
+   },
+   {
+    "family_id": "F11",
+    "level": 3
+   },
+   {
+    "family_id": "F12",
+    "level": 4
+   },
+   {
+    "family_id": "F13",
+    "level": 5
+   },
+   {
+    "family_id": "F14",
+    "level": 1
+   },
+   {
+    "family_id": "F15",
+    "level": 2
+   },
+   {
+    "family_id": "F16",
+    "level": 3
+   },
+   {
+    "family_id": "F17",
+    "level": 4
+   },
+   {
+    "family_id": "F18",
+    "level": 5
+   },
+   {
+    "family_id": "F19",
+    "level": 1
+   },
+   {
+    "family_id": "F20",
+    "level": 2
+   },
+   {
+    "family_id": "V03",
+    "level": 1
+   },
+   {
+    "family_id": "V08",
+    "level": 2
+   }
+  ]
+ },
+ {
+  "chain_id": "C04",
+  "items": [
+   {
+    "family_id": "F01",
+    "level": 4
+   },
+   {
+    "family_id": "F02",
+    "level": 5
+   },
+   {
+    "family_id": "F03",
+    "level": 1
+   },
+   {
+    "family_id": "F04",
+    "level": 2
+   },
+   {
+    "family_id": "F05",
+    "level": 3
+   },
+   {
+    "family_id": "F06",
+    "level": 4
+   },
+   {
+    "family_id": "F07",
+    "level": 5
+   },
+   {
+    "family_id": "F08",
+    "level": 1
+   },
+   {
+    "family_id": "F09",
+    "level": 2
+   },
+   {
+    "family_id": "F10",
+    "level": 3
+   },
+   {
+    "family_id": "F11",
+    "level": 4
+   },
+   {
+    "family_id": "F12",
+    "level": 5
+   },
+   {
+    "family_id": "F13",
+    "level": 1
+   },
+   {
+    "family_id": "F14",
+    "level": 2
+   },
+   {
+    "family_id": "F15",
+    "level": 3
+   },
+   {
+    "family_id": "F16",
+    "level": 4
+   },
+   {
+    "family_id": "F17",
+    "level": 5
+   },
+   {
+    "family_id": "F18",
+    "level": 1
+   },
+   {
+    "family_id": "F19",
+    "level": 2
+   },
+   {
+    "family_id": "F20",
+    "level": 3
+   },
+   {
+    "family_id": "V04",
+    "level": 1
+   },
+   {
+    "family_id": "V09",
+    "level": 2
+   }
+  ]
+ },
+ {
+  "chain_id": "C05",
+  "items": [
+   {
+    "family_id": "F01",
+    "level": 5
+   },
+   {
+    "family_id": "F02",
+    "level": 1
+   },
+   {
+    "family_id": "F03",
+    "level": 2
+   },
+   {
+    "family_id": "F04",
+    "level": 3
+   },
+   {
+    "family_id": "F05",
+    "level": 4
+   },
+   {
+    "family_id": "F06",
+    "level": 5
+   },
+   {
+    "family_id": "F07",
+    "level": 1
+   },
+   {
+    "family_id": "F08",
+    "level": 2
+   },
+   {
+    "family_id": "F09",
+    "level": 3
+   },
+   {
+    "family_id": "F10",
+    "level": 4
+   },
+   {
+    "family_id": "F11",
+    "level": 5
+   },
+   {
+    "family_id": "F12",
+    "level": 1
+   },
+   {
+    "family_id": "F13",
+    "level": 2
+   },
+   {
+    "family_id": "F14",
+    "level": 3
+   },
+   {
+    "family_id": "F15",
+    "level": 4
+   },
+   {
+    "family_id": "F16",
+    "level": 5
+   },
+   {
+    "family_id": "F17",
+    "level": 1
+   },
+   {
+    "family_id": "F18",
+    "level": 2
+   },
+   {
+    "family_id": "F19",
+    "level": 3
+   },
+   {
+    "family_id": "F20",
+    "level": 4
+   },
+   {
+    "family_id": "V05",
+    "level": 1
+   },
+   {
+    "family_id": "V10",
+    "level": 2
+   }
+  ]
+ },
+ {
+  "chain_id": "C06",
+  "items": [
+   {
+    "family_id": "F21",
+    "level": 1
+   },
+   {
+    "family_id": "F22",
+    "level": 2
+   },
+   {
+    "family_id": "F23",
+    "level": 3
+   },
+   {
+    "family_id": "F24",
+    "level": 4
+   },
+   {
+    "family_id": "F25",
+    "level": 5
+   },
+   {
+    "family_id": "F26",
+    "level": 1
+   },
+   {
+    "family_id": "F27",
+    "level": 2
+   },
+   {
+    "family_id": "F28",
+    "level": 3
+   },
+   {
+    "family_id": "F29",
+    "level": 4
+   },
+   {
+    "family_id": "F30",
+    "level": 1
+   },
+   {
+    "family_id": "F31",
+    "level": 1
+   },
+   {
+    "family_id": "F32",
+    "level": 3
+   },
+   {
+    "family_id": "F33",
+    "level": 1
+   },
+   {
+    "family_id": "F34",
+    "level": 2
+   },
+   {
+    "family_id": "F35",
+    "level": 5
+   },
+   {
+    "family_id": "F36",
+    "level": 1
+   },
+   {
+    "family_id": "F37",
+    "level": 2
+   },
+   {
+    "family_id": "F38",
+    "level": 3
+   },
+   {
+    "family_id": "F39",
+    "level": 4
+   },
+   {
+    "family_id": "F40",
+    "level": 5
+   },
+   {
+    "family_id": "V06",
+    "level": 1
+   },
+   {
+    "family_id": "V01",
+    "level": 2
+   }
+  ]
+ },
+ {
+  "chain_id": "C07",
+  "items": [
+   {
+    "family_id": "F21",
+    "level": 2
+   },
+   {
+    "family_id": "F22",
+    "level": 3
+   },
+   {
+    "family_id": "F23",
+    "level": 4
+   },
+   {
+    "family_id": "F24",
+    "level": 5
+   },
+   {
+    "family_id": "F25",
+    "level": 1
+   },
+   {
+    "family_id": "F26",
+    "level": 2
+   },
+   {
+    "family_id": "F27",
+    "level": 3
+   },
+   {
+    "family_id": "F28",
+    "level": 4
+   },
+   {
+    "family_id": "F29",
+    "level": 5
+   },
+   {
+    "family_id": "F30",
+    "level": 2
+   },
+   {
+    "family_id": "F31",
+    "level": 2
+   },
+   {
+    "family_id": "F32",
+    "level": 1
+   },
+   {
+    "family_id": "F33",
+    "level": 2
+   },
+   {
+    "family_id": "F34",
+    "level": 3
+   },
+   {
+    "family_id": "F35",
+    "level": 1
+   },
+   {
+    "family_id": "F36",
+    "level": 2
+   },
+   {
+    "family_id": "F37",
+    "level": 3
+   },
+   {
+    "family_id": "F38",
+    "level": 4
+   },
+   {
+    "family_id": "F39",
+    "level": 5
+   },
+   {
+    "family_id": "F40",
+    "level": 1
+   },
+   {
+    "family_id": "V07",
+    "level": 1
+   },
+   {
+    "family_id": "V02",
+    "level": 2
+   }
+  ]
+ },
+ {
+  "chain_id": "C08",
+  "items": [
+   {
+    "family_id": "F21",
+    "level": 3
+   },
+   {
+    "family_id": "F22",
+    "level": 4
+   },
+   {
+    "family_id": "F23",
+    "level": 5
+   },
+   {
+    "family_id": "F24",
+    "level": 1
+   },
+   {
+    "family_id": "F25",
+    "level": 2
+   },
+   {
+    "family_id": "F26",
+    "level": 3
+   },
+   {
+    "family_id": "F27",
+    "level": 4
+   },
+   {
+    "family_id": "F28",
+    "level": 5
+   },
+   {
+    "family_id": "F29",
+    "level": 1
+   },
+   {
+    "family_id": "F30",
+    "level": 3
+   },
+   {
+    "family_id": "F31",
+    "level": 3
+   },
+   {
+    "family_id": "F32",
+    "level": 2
+   },
+   {
+    "family_id": "F33",
+    "level": 3
+   },
+   {
+    "family_id": "F34",
+    "level": 1
+   },
+   {
+    "family_id": "F35",
+    "level": 2
+   },
+   {
+    "family_id": "F36",
+    "level": 3
+   },
+   {
+    "family_id": "F37",
+    "level": 4
+   },
+   {
+    "family_id": "F38",
+    "level": 5
+   },
+   {
+    "family_id": "F39",
+    "level": 1
+   },
+   {
+    "family_id": "F40",
+    "level": 2
+   },
+   {
+    "family_id": "V08",
+    "level": 1
+   },
+   {
+    "family_id": "V03",
+    "level": 2
+   }
+  ]
+ },
+ {
+  "chain_id": "C09",
+  "items": [
+   {
+    "family_id": "F21",
+    "level": 4
+   },
+   {
+    "family_id": "F22",
+    "level": 5
+   },
+   {
+    "family_id": "F23",
+    "level": 1
+   },
+   {
+    "family_id": "F24",
+    "level": 2
+   },
+   {
+    "family_id": "F25",
+    "level": 3
+   },
+   {
+    "family_id": "F26",
+    "level": 4
+   },
+   {
+    "family_id": "F27",
+    "level": 5
+   },
+   {
+    "family_id": "F28",
+    "level": 1
+   },
+   {
+    "family_id": "F29",
+    "level": 2
+   },
+   {
+    "family_id": "F30",
+    "level": 1
+   },
+   {
+    "family_id": "F31",
+    "level": 4
+   },
+   {
+    "family_id": "F32",
+    "level": 3
+   },
+   {
+    "family_id": "F33",
+    "level": 1
+   },
+   {
+    "family_id": "F34",
+    "level": 2
+   },
+   {
+    "family_id": "F35",
+    "level": 3
+   },
+   {
+    "family_id": "F36",
+    "level": 4
+   },
+   {
+    "family_id": "F37",
+    "level": 5
+   },
+   {
+    "family_id": "F38",
+    "level": 1
+   },
+   {
+    "family_id": "F39",
+    "level": 2
+   },
+   {
+    "family_id": "F40",
+    "level": 3
+   },
+   {
+    "family_id": "V09",
+    "level": 1
+   },
+   {
+    "family_id": "V04",
+    "level": 2
+   }
+  ]
+ },
+ {
+  "chain_id": "C10",
+  "items": [
+   {
+    "family_id": "F21",
+    "level": 5
+   },
+   {
+    "family_id": "F22",
+    "level": 1
+   },
+   {
+    "family_id": "F23",
+    "level": 2
+   },
+   {
+    "family_id": "F24",
+    "level": 3
+   },
+   {
+    "family_id": "F25",
+    "level": 4
+   },
+   {
+    "family_id": "F26",
+    "level": 5
+   },
+   {
+    "family_id": "F27",
+    "level": 1
+   },
+   {
+    "family_id": "F28",
+    "level": 2
+   },
+   {
+    "family_id": "F29",
+    "level": 3
+   },
+   {
+    "family_id": "F30",
+    "level": 2
+   },
+   {
+    "family_id": "F31",
+    "level": 5
+   },
+   {
+    "family_id": "F32",
+    "level": 1
+   },
+   {
+    "family_id": "F33",
+    "level": 2
+   },
+   {
+    "family_id": "F34",
+    "level": 3
+   },
+   {
+    "family_id": "F35",
+    "level": 4
+   },
+   {
+    "family_id": "F36",
+    "level": 5
+   },
+   {
+    "family_id": "F37",
+    "level": 1
+   },
+   {
+    "family_id": "F38",
+    "level": 2
+   },
+   {
+    "family_id": "F39",
+    "level": 3
+   },
+   {
+    "family_id": "F40",
+    "level": 4
+   },
+   {
+    "family_id": "V10",
+    "level": 1
+   },
+   {
+    "family_id": "V05",
+    "level": 2
+   }
+  ]
+ }
+]

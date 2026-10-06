@@ -1,0 +1,524 @@
+# Multi-agent frameworks and multi-agent memory research: memory write / update / forget / retrieve, and sharing
+
+Survey date: 2026-10-06. Scope: memory and continual learning only. Security, poisoning, and access-control aspects are left out on purpose, even where a paper is framed around them.
+Repos were shallow-cloned under `scratchpad/survey/repos/`. Paths below are relative to each repo root unless they are full URLs.
+"Iterated rewrite chain" means that an LLM reads its own earlier memory or summary text and writes a new version that replaces it, so the content can drift over many passes.
+
+---
+
+### AutoGen v0.4+ (autogen-core / autogen-agentchat / autogen-ext), excluding Magentic-One (see next block)
+- Type: multi-agent framework
+- Checked: 2026-10-06, microsoft/autogen commit 027ecf0 (2026-04-06). License: code MIT (`LICENSE-CODE`), docs CC-BY-4.0 (`LICENSE`). The README now says AutoGen is in **maintenance mode** ("will not receive new features"). New users are pointed to Microsoft Agent Framework (separate block below).
+- Sources:
+  - `python/packages/autogen-core/src/autogen_core/memory/_base_memory.py:60-131`: `Memory` protocol with `update_context`, `query`, `add`, `clear`, `close`. There is no update or delete op.
+  - `.../memory/_list_memory.py:104-161`: `ListMemory`.
+  - `.../model_context/_buffered_chat_completion_context.py:34-40`, `_head_and_tail_chat_completion_context.py:41-58`, `_token_limited_chat_completion_context.py:57-76`, `_unbounded_...`.
+  - `python/packages/autogen-ext/src/autogen_ext/experimental/task_centric_memory/{memory_controller.py,_prompter.py,_memory_bank.py,utils/teachability.py}`.
+  - `autogen_ext/memory/canvas/{_text_canvas.py,_text_canvas_memory.py,_canvas_writer.py}`.
+  - `autogen_ext/memory/{chromadb,redis,mem0}`.
+  - `autogen_agentchat/messages.py:421-430` (HandoffMessage) and `agents/_assistant_agent.py:1364-1405`.
+  - `teams/_group_chat/_chat_agent_container.py:53,165` and `_base_group_chat_manager.py:77,298-303`.
+  - AutoGen 0.2 (legacy branch `0.2`): `autogen/agentchat/conversable_agent.py:65` and `autogen/agentchat/chat.py:196-205`.
+- WRITE:
+  - `ListMemory.add` appends raw `MemoryContent` (`_list_memory.py:150-157`). Nothing writes automatically; the developer calls `add`.
+  - Teachability / task-centric memory is LLM-extracted:
+    - `extract_advice` prompt: "Does the following text contain any information or advice that might be useful later? - If so, please copy the information or advice, adding no extra commentary" (`_prompter.py:273+`).
+    - `learn_from_failure` turns a failed trajectory into an "insight". It is a three-turn teacher dialogue that ends with "express your key insights in the form of short, general advice ... Just one or two sentences" (`_prompter.py:100-154`).
+    - Each memo is indexed by LLM-extracted topics (`find_index_topics`) built from an LLM-"generalized" task (`generalize_task`, with optional revise).
+  - `TextCanvasMemory`: the agent writes whole files (`update_file`) or unified-diff patches (`apply_patch`) through tools.
+- UPDATE:
+  - ListMemory and the task-centric `MemoryBank` are append-only. No memo is rewritten after storage (`_memory_bank.py`: add / reset only).
+  - Within one training task, `_iterate_on_task` (`memory_controller.py:350-413`) feeds old insights plus `last_insight` back into `learn_from_failure`. So insight N is written while conditioned on insight N-1, for up to `max_train_trials` trials. Only the final successful insight is kept.
+  - TextCanvas files are rewritten in place by an LLM, with full revision history kept (`_text_canvas.py:12-36`, `get_revision_diffs`).
+- FORGET / EXPIRE:
+  - None in ListMemory or MemoryBank (only `clear` / `reset`).
+  - Chat-context classes truncate deterministically: last-N (`Buffered`), head+tail, or a token limit. AutoGen core has no summarizing context.
+- RETRIEVE:
+  - ListMemory: all memories, in chronological order, injected as a SystemMessage ("Relevant memory content (in chronological order)", `_list_memory.py:126`).
+  - Task-centric memory: Chroma similarity on topic strings with `distance_threshold`, then an LLM `validate_insight` filter that replies "1"/"0".
+  - Canvas: the whole canvas is injected every turn.
+  - The ext adapters (ChromaDB, Redis, Mem0) use embeddings. The Mem0 adapter inherits mem0's LLM ADD/UPDATE/DELETE behavior (covered elsewhere).
+- COMPACTION TRIGGER:
+  - No LLM compaction in AutoGen v0.4 core.
+  - `reflect_on_tool_use` / `ToolCallSummaryMessage` only formats tool results (`_assistant_agent.py:141-158`).
+  - AutoGen 0.2 (legacy) had `summary_method="reflection_with_llm"`, prompt "Summarize the takeaway from the conversation. Do not add any introductory phrases." (`conversable_agent.py:65`). In `initiate_chats`, each finished chat's summary is appended to the next chat's `carryover` list (`chat.py:203-205`), so chat k's summary is generated with all earlier summaries in context.
+- ITERATED REWRITE CHAIN?: PARTIAL.
+  - Teachability memos are written once.
+  - The within-task insight refinement loop is a short chain (insight conditioned on the previous insight).
+  - TextCanvasMemory is an LLM-rewritten shared document and becomes a chain if several agents keep editing it.
+  - The AutoGen 0.2 sequential-chat carryover is a summary-of-summaries chain.
+- WHICH CHANNEL:
+  - Transformation: advice/insight extraction and generalization, canvas rewrites.
+  - Selection: LLM `validate_insight` at read time, deterministic truncation of context.
+- DEFAULT PROMPTS:
+  - `autogen_ext/experimental/task_centric_memory/_prompter.py`. These are hard-coded methods; you replace them by subclassing or editing.
+  - Canvas tool descriptions are in `_canvas_writer.py`.
+- RUNNABLE FOR EXPERIMENTS: Yes. MIT license. `OpenAIChatCompletionClient` accepts `base_url` for OpenAI-compatible local servers. Task-centric memory needs chromadb. It is experimental, and the project is in maintenance mode.
+- MULTI-AGENT:
+  - Memory is private per agent by default: each `AssistantAgent` has its own `model_context` and `memory` list.
+  - A team shares a **broadcast message thread**. The group-chat manager keeps the full `_message_thread`, and every participant container buffers all published messages and passes the delta to its agent on its turn (`_chat_agent_container.py:53,165`). These are raw messages; nothing is summarized.
+  - Swarm handoff: `HandoffMessage.context` carries only the handing-off agent's tool calls and results, or its "thought" (`_assistant_agent.py:1364-1395`). The receiving agent otherwise relies on the shared broadcast thread. The handoff text defaults to "Transferred to X, adopting the role of X immediately." (`autogen_agentchat/base/_handoff.py:46`).
+  - Shared memory can be built explicitly by passing the same `Memory` instance to several agents. The docstring example "Using TextCanvasMemory with multiple agents" (`_text_canvas_memory.py`) shows several agents co-editing one canvas.
+- UNCERTAIN: Whether any AutoGen v0.4 sample or Studio template ships an LLM-summarizing `ChatCompletionContext` is UNVERIFIED. I found none in core, agentchat, or ext src.
+
+### Magentic-One orchestrator (inside AutoGen AgentChat)
+- Type: multi-agent framework component (orchestrator team)
+- Checked: 2026-10-06, microsoft/autogen 027ecf0, MIT.
+- Sources:
+  - `python/packages/autogen-agentchat/src/autogen_agentchat/teams/_group_chat/_magentic_one/_prompts.py:121-136`
+  - `_magentic_one_orchestrator.py:96-97,166-190,262-281,395-405,451-476`
+  - `_magentic_one_group_chat.py:117-119`
+- WRITE: At task start, an LLM writes a "fact sheet" (`_facts`) and a "plan" (`_plan`) task ledger.
+- UPDATE: In-place LLM rewrite. When stalls reach `max_stalls` (default 3), `_update_task_ledger` asks the LLM, with the whole current thread in context:
+  - "Please rewrite the following fact sheet, updating it to include anything new we have learned ... This is an especially good time to update educated guesses, so please at least add or update one educated guess or hunch ... Here is the old fact sheet: {facts}" (`_prompts.py:125-129`).
+  - The plan is then regenerated: "explain what went wrong ... come up with a new plan".
+- FORGET / EXPIRE: `_reenter_outer_loop` **clears the orchestrator's message thread and sends `GroupChatReset` to every agent** (`:262-272`). Only the rewritten ledger (task + team + facts + plan) is re-published as the first message of the new outer loop. Anything not copied into the fact sheet is lost.
+- RETRIEVE: Full context. The ledger is the first message every agent sees after each reset.
+- COMPACTION TRIGGER: Stall counter reaches `max_stalls` (default 3; `max_turns` default 20).
+- ITERATED REWRITE CHAIN?: **YES**. The fact sheet is rewritten from the old fact sheet on every re-plan, and it is the only carrier of state across outer loops. The prompt also requires adding or updating at least one "educated guess or hunch" each pass, which pushes content toward model-generated conjecture.
+- WHICH CHANNEL: Transformation (full rewrite of facts and plan) plus implicit selection (whatever is not carried over is discarded by the reset).
+- DEFAULT PROMPTS: `_magentic_one/_prompts.py`. They are module constants, so replacing them means subclassing or patching.
+- RUNNABLE FOR EXPERIMENTS: Yes, with any `ChatCompletionClient`, including OpenAI-compatible local servers.
+- MULTI-AGENT: The ledger is shared state written only by the orchestrator. Worker agents are reset, so their private context does not survive an outer loop. This is the clearest case among the frameworks of an iterated **handoff-by-rewrite** across team "generations".
+- UNCERTAIN: I did not check how often re-planning fires in practice on benchmarks such as GAIA.
+
+### Microsoft Agent Framework (AutoGen successor), brief
+- Type: multi-agent framework
+- Checked: 2026-10-06, microsoft/agent-framework b9d24c8 (python sparse checkout). MIT.
+- Sources: `python/packages/core/agent_framework/_compaction.py:1185-1935` (Truncation, SlidingWindow, ToolResultCompaction, SummarizationStrategy, TokenBudgetComposedStrategy), `:1703-1720` (prompt), `_harness/_file_memory.py`.
+- WRITE / UPDATE:
+  - `SummarizationStrategy` replaces the oldest message groups with an LLM summary once included messages exceed `target_count + threshold` (defaults 4 + 2).
+  - It writes summary-to-original id links in both directions (`_summary_of_message_ids`).
+  - Default prompt: "Generate a clear and complete summary of the entire conversation in no more than five sentences ... Incorporate any previously provided summary ... must never ... Omit any details included in an earlier summary".
+  - `FileMemoryProvider` gives agents file tools (write, replace, replace_lines, delete) plus an auto-maintained `memories.md` index. It is session-scoped by default; a shared store is available through `FileAccessProvider`.
+- ITERATED REWRITE CHAIN?: **YES** for SummarizationStrategy, which is an explicit rolling summary that folds the previous summary into a summary capped at five sentences. Agent-edited memory files are PARTIAL: the LLM edits its own files.
+- WHICH CHANNEL: Transformation (summary) and selection (truncation and sliding-window strategies).
+- DEFAULT PROMPTS: The `DEFAULT_SUMMARIZATION_PROMPT` constant can be replaced through `prompt=`.
+- RUNNABLE FOR EXPERIMENTS: Yes, MIT, multi-provider.
+- MULTI-AGENT: Compaction is per agent session. Sharing across agents goes through explicit stores or providers. Multi-agent handoff context handling was not inspected (UNVERIFIED).
+- UNCERTAIN: I did not inspect workflow-level (multi-agent) context passing in MAF.
+
+---
+
+### CrewAI
+- Type: multi-agent framework
+- Checked: 2026-10-06, crewAIInc/crewAI commit 1133f16, version 1.15.23. MIT.
+- Sources:
+  - Docs: `docs/v1.15.23/en/concepts/memory.mdx`. It states that the unified `Memory` "replaces separate short-term, long-term, entity, and external memory types". The old `ShortTermMemory`, `LongTermMemory`, and `EntityMemory` classes no longer exist in `lib/crewai/src` (grep finds nothing).
+  - `lib/crewai/src/crewai/memory/{unified_memory.py,encoding_flow.py,analyze.py,recall_flow.py,types.py}`
+  - `lib/crewai/src/crewai/translations/en.json` (`"memory"` and `"slices"` sections)
+  - `agents/agent_builder/base_agent_executor.py:31-69`
+  - `agent/core.py:765-792`
+  - `crew.py:655-690,1879-1887`
+  - `utilities/formatter.py:16-26`
+  - `utilities/agent_utils.py:793-830,870-935`
+- WRITE:
+  - After every task, the executor builds the string "Task: ... Agent: <role> ... Expected result ... Result: <output>". The LLM `extract_memories` then splits it into atomic statements (`base_agent_executor.py:45-65`). The prompt says: "Each memory must: Be one clear sentence ... NOT be a vague summary ... Preserve exact names and numbers — never generalize".
+  - On save, the LLM `save` analysis infers scope, categories, importance (0-1), and metadata.
+  - Delegations skip the save (`"Delegate work to coworker"` check).
+  - Saves are non-blocking (background thread).
+- UPDATE:
+  - Consolidation uses merge-with-ops. For each new item, the top `consolidation_limit`=5 existing records within `consolidation_threshold`=0.85 similarity go to an LLM, which chooses per record `keep` / `update` (it supplies the merged `new_content`) / `delete`, plus an `insert_new` flag (`en.json` `consolidation_system`; `encoding_flow.py:386-475`).
+  - The prompt includes: "Be conservative: prefer 'keep' when unsure. Only 'update' or 'delete' when there is a clear contradiction, supersession, or redundancy."
+  - Intra-batch dedup with no LLM call: cosine ≥ 0.98 drops the later item.
+- FORGET / EXPIRE:
+  - LLM DELETE op during consolidation.
+  - Explicit `forget(scope, categories, older_than, metadata_filter, record_ids)` (`unified_memory.py:823+`).
+  - Soft forgetting through recency decay in ranking: `0.5^(age_days/half_life)`, half-life 30 days.
+- RETRIEVE:
+  - Composite score = 0.5·semantic + 0.3·recency + 0.2·importance (defaults, `unified_memory.py:100-112`).
+  - "Deep" recall adds LLM query analysis (sub-queries, scope suggestion, time filter).
+  - Before each task the agent recalls 5 matches for the task description and appends them to the task prompt (`agent/core.py:784-792`).
+- COMPACTION TRIGGER:
+  - Memory consolidation runs on every save that has similar records.
+  - Context compaction runs only on a context-length-exceeded error when `respect_context_window=True`. `SummarizeMessages` replaces all non-system messages with one structured summary (sections: Task Overview, Current State, Important Discoveries, Next Steps, Context to Preserve; `en.json` `slices.summarize_instruction`).
+- ITERATED REWRITE CHAIN?: **PARTIAL**.
+  - (a) A frequently re-touched record can be LLM-`update`d many times, mem0-style. Each new version is written from the old version plus new content.
+  - (b) If the context overflows again, the earlier summary (now a user message) is summarized again with the new messages.
+  - (c) In a sequential crew, each task's raw output becomes context for later tasks (`aggregate_raw_outputs_from_task_outputs`, all prior outputs joined), so outputs form an LLM-to-LLM transformation chain. Earlier raw outputs stay visible, so this is not a pure overwrite.
+- WHICH CHANNEL: Both. Transformation (extraction, `update` merged content, context summary) and selection (keep/delete/insert_new, importance score, recency decay).
+- DEFAULT PROMPTS: `lib/crewai/src/crewai/translations/en.json` (`memory.*`, `slices.summarizer_system_message`, `slices.summarize_instruction`, `tools.delegate_work`). These are replaceable through custom i18n `prompt_file`. Exact override mechanics for memory prompts are UNVERIFIED.
+- RUNNABLE FOR EXPERIMENTS:
+  - Yes, MIT.
+  - The memory LLM defaults to `"gpt-5.4-mini"` (`unified_memory.py:88-90`) and the embedder defaults to OpenAI `text-embedding-3-large`. Both are configurable, so local models can be used via LiteLLM or an OpenAI-compatible base_url.
+  - Storage is LanceDB by default; Qdrant-edge is also available.
+- MULTI-AGENT:
+  - Memory is shared by default: "All agents in the crew share the crew's memory unless an agent has its own".
+  - With `memory=True`, the crew gets `root_scope=/crew/<crew_name>` (`crew.py:665-683`). Each agent's extracted facts are written under `/crew/<name>/agent/<role>` (`base_agent_executor.py:53-63`). Consolidation search is bounded by that prefix, so update/delete rewrites stay inside one agent's subtree. Recall uses the crew root, so every agent **reads** every other agent's facts.
+  - If the user passes a `Memory()` instance without `root_scope`, scopes are LLM-inferred and consolidation search spans the whole store. One agent's new fact can then trigger an LLM `update` or `delete` of a record written by another agent (`encoding_flow.py:170-185`).
+  - Agents can also get private scopes (`memory.scope("/agent/researcher")`) or read-only slices.
+  - Handoff and delegation: task outputs pass verbatim as context. Hierarchical/delegation tools make the delegating LLM write the brief itself: "share absolutely everything you know, don't reference things but instead explain them" (`en.json tools.delegate_work`). This is an LLM-authored handoff summary.
+- UNCERTAIN: Whether `update` keeps any version history (it appears to overwrite: `self._storage.update(updated)`). How often `update` fires in practice is unmeasured.
+
+---
+
+### MetaGPT
+- Type: multi-agent framework (SOP-based software company)
+- Checked: 2026-10-06, FoundationAgents/MetaGPT commit 11cdf46 (2026-01-21), setup version 1.0.0. MIT.
+- Sources:
+  - Paper arXiv 2308.00352 (ICLR 2024) §3.2 "Publish-Subscribe Mechanism" and Appendix A.1 (self-improvement).
+  - `metagpt/environment/base_env.py:133-195`
+  - `metagpt/roles/role.py:100-118,399-427,448-452,494`
+  - `metagpt/memory/{memory.py,longterm_memory.py,memory_storage.py,brain_memory.py,role_zero_memory.py}`
+  - `metagpt/roles/assistant.py:98-127`
+  - `metagpt/environment/mgx/mgx_env.py:24-54`
+  - `metagpt/roles/di/team_leader.py:75-86`
+  - `metagpt/prompts/di/team_leader.py:12`
+  - `metagpt/exp_pool/manager.py`
+  - `metagpt/configs/exp_pool_config.py:18-19`
+- WRITE:
+  - Every published `Message` (structured artifacts such as PRD and design, `cause_by` action) goes into `env.history`. Every role whose subscription matches (`is_send_to`) gets it through `put_message` into `msg_buffer`.
+  - In `_observe`, a role keeps the news whose `cause_by` is in its `watch` set or is addressed to it, and appends it to its own `rc.memory` (`role.py:399-418`). The role's own outputs are also added (`role.py:494`).
+  - All of this is raw text; no LLM extraction.
+- UPDATE:
+  - `Memory` is append-only (index by `cause_by`; `delete` and `delete_newest` exist but are used for control flow).
+  - `BrainMemory` (used by the `Assistant` role) keeps a **rolling summary**. `_openai_summarize` concatenates `[historical_summary] + history`, summarizes it with system prompt "You are a tool for summarizing and abstracting text. Return the summarized text to less than {max_words} words.", then stores the result as the new `historical_summary` and clears `history` (`brain_memory.py:91-101,137-150,306-317`; called with `max_words=800` in `assistant.py:124`).
+  - Long texts are window-split, each window summarized, then merged and re-summarized in a loop (`_summarize`).
+- FORGET / EXPIRE:
+  - `RoleZeroLongTermMemory`: when short-term exceeds `memory_k`=200 messages, the oldest message moves to a Chroma-backed long-term store (`role_zero_memory.py:71-125`). This is capacity-based transfer, not deletion. Off by default (`enable_longterm_memory: false`).
+  - `LongTermMemory.find_news` filters out new messages similar to already-seen ones (`longterm_memory.py`).
+- RETRIEVE:
+  - Full role memory, or the last k (`memory_k`) messages.
+  - RoleZero long-term: Chroma similarity (top-5), optional LLM ranker.
+  - Experience pool: BM25 or Chroma over stored request/response pairs. Off by default (`enable_read/enable_write=False`).
+- COMPACTION TRIGGER: BrainMemory summarizes when asked to summarize or talk (`assistant.py:124`). There is no automatic compaction of the multi-agent message pool.
+- ITERATED REWRITE CHAIN?:
+  - Message pool: **NO**. Messages are immutable and passed verbatim.
+  - BrainMemory: **YES** (summary of previous summary plus new turns), but it is in the single-agent `Assistant` role.
+  - Paper Appendix A.1 describes a cross-project self-improvement loop. A "handover feedback action ... critically summariz[es] the information received during the development of previous projects and integrat[es] this information in an updated constraint prompt ... stored in long-term memory such that it can be inherited by future constraint prompt updates". That would be an iterated rewrite of role prompts, but I could not find it in the current code (grep for handover, constraint prompt, and self-improv found nothing). UNVERIFIED in code.
+- WHICH CHANNEL: Pool: selection only (subscription filter by `watch`). BrainMemory: transformation.
+- DEFAULT PROMPTS: inline in `metagpt/memory/brain_memory.py` (`_get_summary`, `_openai_rewrite`) and `metagpt/prompts/di/*`.
+- RUNNABLE FOR EXPERIMENTS: Yes, MIT. `config2.yaml` supports an OpenAI-compatible `base_url` and ollama. BrainMemory persistence needs Redis.
+- MULTI-AGENT:
+  - **Shared message pool** (paper: "agents not only publish their structured messages in the pool but also access messages from other entities transparently"). Agents read through a role-specific subscription filter ("agents utilize role-specific interests to extract relevant information").
+  - Each role keeps a private copy (`rc.memory`) of the subscribed messages.
+  - Downstream roles consume upstream **artifacts**, not summaries: PRD, then design, then code. That pipeline is itself an LLM transformation chain of documents.
+  - In the newer MGX environment (`mgx_env.py`), the TeamLeader LLM routes messages and writes the brief with `publish_team_message`. Its docstring says "You may copy the full original content or add additional information from upstream ... DONT omit any necessary info ... because you are their sole info source" (`team_leader.py:75-79`). That makes it an LLM-authored handoff.
+- UNCERTAIN: Whether the self-improvement mechanism exists in some branch; MGX behavior beyond routing.
+
+---
+
+### LangGraph multi-agent (langgraph core + langgraph-supervisor + langgraph-swarm + LangChain v1 middleware + langmem)
+- Type: multi-agent framework / library
+- Checked: 2026-10-06.
+  - langchain-ai/langgraph 2d94208 (langgraph 1.2.13)
+  - langgraph-supervisor-py 88859b3
+  - langgraph-swarm-py 5442a15
+  - langchain 67ba389 (sparse)
+  - All MIT.
+- Sources:
+  - `libs/langgraph/langgraph/graph/message.py:38,61-209` (`add_messages` reducer, `REMOVE_ALL_MESSAGES`)
+  - `libs/checkpoint/langgraph/store/base/__init__.py` (BaseStore: namespaced put/get/search/delete, `index` for semantic search, `ttl` / `refresh_ttl` at :194, :526, :563)
+  - `libs/prebuilt/langgraph/prebuilt/chat_agent_executor.py:296,396` (`pre_model_hook`)
+  - `langgraph-supervisor-py/langgraph_supervisor/supervisor.py:37-41,225,323-336` and `handoff.py:102-125,155-172`
+  - `langgraph-swarm-py/langgraph_swarm/handoff.py:86-91`
+  - `langchain/libs/langchain_v1/langchain/agents/middleware/summarization.py:40-99,755-758`
+  - langmem `src/langmem/short_term/summarization.py:23-48`
+  - Docs: https://docs.langchain.com/oss/python/langgraph/add-memory and https://docs.langchain.com/oss/python/langchain/multi-agent/handoffs
+- WRITE:
+  - Short-term: graph state, usually `messages` with the `add_messages` reducer (append, or replace by id). It is checkpointed per `thread_id` after every super-step.
+  - Long-term: `BaseStore.put(namespace, key, value)`, which the developer calls explicitly or through langmem tools.
+- UPDATE:
+  - State is updated by reducers (append, overwrite, or a custom function).
+  - The store overwrites by key.
+  - Summarization replaces messages:
+    - LangGraph's documented custom-node recipe uses "This is a summary of the conversation to date: {summary}\n\nExtend the summary by taking into account the new messages above:".
+    - langmem `SummarizationNode` uses "This is summary of the conversation so far: {existing_summary}\n\nExtend this summary by taking into account the new messages above:" (`summarization.py:31-37`).
+    - LangChain v1 `SummarizationMiddleware`: `RemoveMessage(REMOVE_ALL_MESSAGES)`, then a HumanMessage "Here is a summary of the conversation to date:\n\n{summary}" plus the kept tail. Defaults: keep 20 messages, trim 4000 tokens to summarize. Prompt: "This context will then overwrite the conversation history ... ## SESSION INTENT ## SUMMARY ## ARTIFACTS ## NEXT STEPS".
+- FORGET / EXPIRE:
+  - Trimming (`trim_messages`) and `RemoveMessage` deletion.
+  - Store TTL (`ttl`, `refresh_ttl`, `default_ttl`).
+  - Checkpoints persist until deleted.
+  - No LLM-judged forgetting in core.
+- RETRIEVE: Full state for the thread. Store `search` by namespace prefix plus optional embedding index or filter.
+- COMPACTION TRIGGER: Developer-defined.
+  - `pre_model_hook` node in `create_react_agent`.
+  - Middleware `trigger` thresholds by tokens, messages, or fraction of context.
+  - langmem `max_tokens_before_summary`.
+- ITERATED REWRITE CHAIN?: **YES** with any of the summarization recipes. The prior summary is explicitly given back to the LLM with "Extend the summary", or in the middleware case the previous summary HumanMessage lands in the next batch to be summarized. The core graph and handoffs are NO: they pass raw messages.
+- WHICH CHANNEL: Transformation (summaries) and selection (trim/delete/TTL, `output_mode="last_message"`).
+- DEFAULT PROMPTS:
+  - langchain `agents/middleware/summarization.py:40` (`DEFAULT_SUMMARY_PROMPT`, replaceable via `summary_prompt=`).
+  - langmem `short_term/summarization.py:23-48` (replaceable `initial_summary_prompt` / `existing_summary_prompt`).
+- RUNNABLE FOR EXPERIMENTS: Yes. MIT. Any LangChain chat model works, including OpenAI-compatible local models (ChatOpenAI with base_url, ChatOllama).
+- MULTI-AGENT:
+  - Agents in one graph share **graph state**, typically one shared `messages` list. Subgraphs can keep private state keys.
+  - Supervisor (`create_supervisor`) has `output_mode` set to `"full_history"` or `"last_message"`, **default `"last_message"`** (`supervisor.py:225`). So by default only each worker's final message returns to the shared history, which drops worker internals without an LLM summary.
+  - Handoff tools forward the full current `messages` (`handoff.py:102-125`; swarm `handoff.py:86-91`, which also sets `active_agent`).
+  - Notably, langgraph-supervisor ships `create_forward_message_tool`: "This helps avoid information loss any time the supervisor rewrites a worker query to the user ... Forwards the latest message from the specified agent to the user without any changes. Use this to preserve information fidelity, avoid misinterpretation" (`handoff.py:155-172`; README: "avoids potential misrepresentation of the worker's response through paraphrasing"). This is a designer-acknowledged paraphrase-drift problem with a verbatim bypass.
+  - Current LangChain docs advise passing only the last AI message plus the handoff ToolMessage rather than full subagent history ("While you could include the full subagent conversation in the handoff, this often creates problems").
+  - The cross-agent long-term store is shared when agents use the same namespace.
+- UNCERTAIN: Default behavior of LangGraph Platform-managed memory (LangMem background extraction) is covered in the langmem record, not here.
+
+### OpenAI Agents SDK (handoffs, sessions, compaction, sandbox memory)
+- Type: multi-agent framework / SDK
+- Checked: 2026-10-06, openai/openai-agents-python d7e52c3, version 0.23.1. MIT.
+- Sources:
+  - `docs/handoffs.md:110-130`
+  - `src/agents/handoffs/history.py:29-108,321-327,386-408`
+  - `src/agents/run_config.py:370-399`
+  - `src/agents/extensions/handoff_filters.py:33-38`
+  - `src/agents/memory/{session.py,sqlite_session.py,openai_responses_compaction_session.py:36,67-69,92-172}`
+  - `docs/sessions/index.md:191,227-252`
+  - `src/agents/sandbox/memory/{manager.py,phase_one.py,phase_two.py,prompts/memory_consolidation_prompt.md,prompts/rollout_extraction_prompt.md}`
+  - `src/agents/sandbox/config.py:27-60`
+  - `docs/sandbox/memory.md:55-58,94,136-181`
+  - `docs/multi_agent.md:26-31`
+- WRITE:
+  - Sessions append every input and output item raw (SQLite, Redis, SQLAlchemy, and others).
+  - Sandbox memory (opt-in `Memory` capability) runs two phases when the sandbox session closes:
+    1. Phase 1, per-conversation extraction: an LLM writes a conversation summary plus "raw memories".
+    2. Phase 2, consolidation: a consolidation agent reads raw memories and integrates them into `MEMORY.md` and `memory_summary.md`.
+- UPDATE:
+  - Sessions are append-only (`pop_item` exists).
+  - `OpenAIResponsesCompactionSession` calls the server-side `responses.compact` (model default "gpt-4.1") once ≥10 candidate items exist (`DEFAULT_COMPACTION_THRESHOLD = 10`). The compacted item is opaque.
+  - Sandbox Phase 2 is an **incremental LLM rewrite** of `MEMORY.md` / `memory_summary.md` ("INCREMENTAL UPDATE: integrate new memory into existing artifacts"; "read the existing summary so updates stay consistent").
+- FORGET / EXPIRE:
+  - Sandbox: if raw memories exceed `max_raw_memories_for_consolidation` (default 256), only the newest conversations are kept. Phase 2 then removes from `MEMORY.md` only the content supported by removed rollout ids ("remove only the memory supported by that rollout ... preserve shared or still-supported content", `memory_consolidation_prompt.md:153-168`).
+  - Handoff filters (`remove_all_tools`) drop items deterministically.
+- RETRIEVE:
+  - Sessions return the full history (or a limit).
+  - Sandbox memory injects `memory_summary.md` and the agent greps `MEMORY.md` with shell tools.
+- COMPACTION TRIGGER:
+  - Compaction session: after each turn, if `should_trigger_compaction` returns true.
+  - Sandbox: at sandbox session close.
+  - Handoff nesting: at each handoff, if enabled.
+- ITERATED REWRITE CHAIN?:
+  - Handoffs: **NO**.
+    - Default: "the new agent takes over the conversation, and gets to see the entire previous conversation history" (`docs/handoffs.md:112`).
+    - Opt-in `nest_handoff_history` (beta, default False, `run_config.py:378`) builds the "summary" **deterministically, with no LLM**: it is a numbered transcript wrapped in `<CONVERSATION HISTORY>` with preamble "For context, here is the conversation so far between the user and the previous agent:" (`history.py:29-33,386-408`). Later handoffs "flatten earlier generated segments", so they are not re-summarized.
+  - Responses compaction: probably YES (each compaction includes the previous compacted item), but the content is server-side and opaque. UNVERIFIED.
+  - Sandbox memory: **YES**. `MEMORY.md` and `memory_summary.md` are rewritten from their previous versions at every session close. The prompt contains explicit anti-drift rules:
+    - "Do not rewrite concrete wording into more abstract synonyms when the original wording fits."
+    - "If several sources say nearly the same thing, merge by keeping one of the original phrasings ... rather than inventing a new umbrella sentence."
+    - "Keep original wording by default."
+    - "In incremental updates, preserve stable ordering for unchanged older blocks" (`memory_consolidation_prompt.md:331,348-357`).
+- WHICH CHANNEL: Sandbox memory: transformation plus selection (rollout-id-based removal, recency cap). Handoffs: selection only (input filters).
+- DEFAULT PROMPTS: `src/agents/sandbox/memory/prompts/*.md` (packaged). Handoff wrappers can be changed via `set_conversation_history_wrappers`, or the whole payload via `handoff_history_mapper` / `input_filter`.
+- RUNNABLE FOR EXPERIMENTS: Core SDK yes (MIT; LiteLLM and OpenAI-compatible models are supported). `OpenAIResponsesCompactionSession` requires OpenAI Responses `compact`, so no local models. Sandbox memory needs a sandbox backend; the memory-generation model is configurable (other model providers UNVERIFIED).
+- MULTI-AGENT:
+  - Handoffs move one shared transcript to the next agent, which is full raw history by default.
+  - "Agents as tools" (`Agent.as_tool`): the manager LLM writes the sub-agent's input, and only the sub-agent's final output, or a `custom_output_extractor` result, returns. That is an implicit summary handoff.
+  - Sandbox memory sharing is set by `MemoryLayoutConfig`: "Agents with the same layout and the same memory conversation ID share one memory conversation and one consolidated memory. Agents with different layouts keep separate ... MEMORY.md ..." (`docs/sandbox/memory.md:136-140`). A shared layout therefore gives several agents one LLM-consolidated memory file.
+- UNCERTAIN: Internals of `responses.compact`. Phase-2 behavior with non-OpenAI models.
+
+---
+
+### CAMEL (camel-ai)
+- Type: multi-agent framework (RolePlaying, Workforce)
+- Checked: 2026-10-06, camel-ai/camel commit 24fde60, version 0.2.91a7. Apache-2.0.
+- Sources:
+  - `camel/memories/agent_memories.py:26-321` (ChatHistoryMemory, VectorDBMemory, LongtermAgentMemory)
+  - `camel/memories/context_creators/score_based.py:112-140`
+  - `camel/agents/chat_agent.py:398-402,478,510-601,664,1032-1215,1793-2010`
+  - `camel/agents/_utils.py:28-63`
+  - `camel/societies/workforce/workforce.py:225-232,1223-1460`
+  - `camel/societies/workforce/workflow_memory_manager.py:559-1050,1699-1737`
+  - `camel/utils/context_utils.py:32,116`
+  - `camel/societies/workforce/worker.py:85-91`
+  - `camel/societies/workforce/prompts.py:87-125`
+- WRITE:
+  - `ChatHistoryMemory` appends every message record.
+  - `VectorDBMemory` embeds each record.
+  - `LongtermAgentMemory` writes to both: a chat-history block plus a vector block (`agent_memories.py:293-307`).
+  - All of these are raw records.
+- UPDATE:
+  - The memory blocks are append-only.
+  - `ChatAgent` context summarization (`summarize_threshold` default 50% of token limit) works in two tiers (`chat_agent.py:1032-1065`):
+    - **Progressive**: summarize the non-summary messages, keep the old `[CONTEXT_SUMMARY]` messages verbatim, append the new summary.
+    - **Full compression**: when total summary tokens exceed `summary_window_ratio` (0.6) of the limit, `summarize(include_summaries=True)` re-summarizes everything, old summaries included, into one.
+    - Memory is then cleared and rebuilt as summaries plus the last user message prefixed "Based on the previous CONTEXT_SUMMARY, continue with my current message:" (`:1150-1215`).
+  - Workforce workflow memory (`save_workflow_memories`): a summarizer agent writes a structured `WorkflowSummary` markdown. If workflows were loaded, the prompt offers "OPERATION MODE SELECTION ... If this task is a continuation, improvement, or refinement of a loaded workflow → set operation_mode='update' ... The updated workflow should incorporate learnings from this session" (`workflow_memory_manager.py:1712-1729`). The file is **overwritten in place** with `workflow_version` incremented (`:961-1045`).
+- FORGET / EXPIRE:
+  - `window_size` (last N records) on ChatHistoryMemory.
+  - `pop_records` / `remove_records_by_indices`.
+  - Summarization-driven clearing.
+  - No time-based or LLM-judged forgetting of records.
+- RETRIEVE:
+  - ChatHistory: recent window, timestamp-sorted (ScoreBasedContextCreator).
+  - VectorDB: top `retrieve_limit`=3 by embedding, queried with the current topic (last user message).
+  - Longterm: both.
+  - Workflows: LLM selects relevant workflow files (`_select_relevant_workflows`).
+- COMPACTION TRIGGER: Token threshold. First trigger at 50% of the limit; later triggers are adaptive (`(limit - summary_tokens)*pct + summary_tokens`). Full compression fires when summaries exceed 60% of the limit. Workflow memory is saved by explicit call at end of task or session.
+- ITERATED REWRITE CHAIN?: **YES**, two places:
+  - (a) Full compression re-summarizes earlier summaries. Progressive mode deliberately avoids this until the summary budget overflows.
+  - (b) Workflow memory files are LLM-updated across sessions (`operation_mode='update'`), so the same procedural memory file can be rewritten repeatedly as new sessions refine it.
+- WHICH CHANNEL: Transformation (summaries, workflow rewrites) and selection (window, LLM workflow selection).
+- DEFAULT PROMPTS: `camel/agents/_utils.py:28-63`, which is a structured outline: "1. **Primary Request and Intent** ... 7. **Optional Next Step** ... Do not invent details that are not supported by the conversation". It can be replaced via `summary_prompt`. Workflow prompts: `WorkflowSummary.get_instruction_prompt()` in `camel/utils/context_utils.py`, plus `_prepare_workflow_prompt`.
+- RUNNABLE FOR EXPERIMENTS: Yes. Apache-2.0, many backends including OpenAI-compatible, vLLM, and Ollama.
+- MULTI-AGENT:
+  - Memory is private per `ChatAgent` by default.
+  - RolePlaying passes messages between two agents, each storing its own copy.
+  - Workforce `share_memory=True` (default False): "all SingleAgentWorker instances, coordinator agent, and task planning agent will share their complete conversation history and function-calling trajectory" (`workforce.py:225-232`). It collects raw `MemoryRecord`s from all agents and writes them into every agent (`_collect_shared_memory` / `_share_memory_with_agents`). This is a raw copy, with no LLM merge.
+  - Task handoff in Workforce passes dependency results verbatim ("id: ..., content: ..., result: ...", `worker.py:85-91`) along with the coordinator-written subtask text.
+  - Workflow memory files can be shared across workers by role (`load_workflows_by_role`).
+- UNCERTAIN: Whether `share_memory` triggers the summarizer on the merged history (likely yes once the token threshold is exceeded; not tested). `memanto.py` is a third-party REST memory client, not inspected further.
+
+---
+
+### G-Memory (Zhang et al., 2025; arXiv 2506.07398)
+- Type: research system (MAS memory plug-in for AutoGen, DyLAN, and MacNet-style MAS)
+- Checked: 2026-10-06. Paper HTML v1/latest. Code bingreeky/GMemory commit 7b581c5 (2026-04-09). **No license file; GitHub API reports `license: null`**, so all rights reserved by default.
+- Sources:
+  - Paper §3 (insight / query / interaction graphs), §4.3 "Hierarchy Memory Update" (Eq. 9-11), Appendix C prompts.
+  - Code `mas/memory/mas_memory/GMemory.py:44-46,76-111,189-243,292-350,468-587,647-880` and `mas/memory/mas_memory/prompt.py:296-310,394-420,447-467`.
+  - `tasks/mas_workflow/macnet/graph_mas.py:115,354-372`.
+- WRITE:
+  - After each task, an LLM "sparsifies" the trajectory (extracts key steps; `_extract_mas_message`). The interaction graph and task node (task, success/fail label) are stored in a Chroma task store, and the query graph gets edges to related queries.
+  - Insights are created by an LLM summarization function J from the trajectory and outcome.
+- UPDATE:
+  - The paper describes it as append a new insight node plus update the supporting-query sets of used insights (Eq. 10-11).
+  - **The code does more.** Every `rounds_per_insights`=5 tasks (after `start_insights_threshold`=5), `finetune_insights` samples `insights_point_num`=5 tasks. For each, an LLM compares 3 successful and 1 failed related trajectories against existing rules and emits ExpeL-style ops: **AGREE (+1 score), REMOVE (−1, or −3 when the list is full), EDIT (LLM rewrites the rule text in place, +1), ADD (new, score 2)** (`GMemory.py:808-880`).
+  - The prompt says: "Focus on REMOVE or EDIT or AGREE rules first, and stop ADD rule unless the new rule is VERY insightful" (`prompt.py:300`).
+  - Every 20 tasks, `merge_insights` clusters tasks. Per cluster, an LLM "consolidate[s] and rewrite[s] them into no more than {limited_number} refined insights". **The entire insight set is then cleared and replaced** by the merged rules, with scores reset to 2 (`GMemory.py:508-549`; `prompt.py:394-420`: "You are not allowed to make up or infer any new information").
+- FORGET / EXPIRE:
+  - Score-based: insights with score ≤ 0 are dropped (`clear_insights`, `:584-587`).
+  - Task reward feeds back: −2 on failure and +1 on success for insights used (`backward`, `:292-299`, `:575-582`).
+  - Who decides: the LLM (REMOVE op) plus a rule (score threshold).
+- RETRIEVE:
+  - Embedding similarity over tasks (threshold 0.3), then 1-hop query-graph expansion.
+  - Insights are ranked by overlap of their supporting tasks with the retrieved tasks.
+  - An LLM importance score reranks successful trajectories (`:219-230`).
+  - **At read time, an LLM "projects" the shared insights into role-specific insights for each agent** ("adapt these general insights into personalized insights tailored to the given role", `prompt.py:447-467`; used in `graph_mas.py:372`). The projection is transient and not written back.
+- COMPACTION TRIGGER: Task counter: finetune every 5 tasks, merge every 20.
+- ITERATED REWRITE CHAIN?: **YES (strong)**.
+  - The shared insight list is repeatedly EDITed in place by an LLM that reads the current rules.
+  - Every 20 tasks it is fully re-written by merge-and-replace.
+  - Insight text after k merges is a k-th order LLM rewrite of the original lessons, and the per-role projection adds one more rewrite on read.
+- WHICH CHANNEL: Both. Transformation (EDIT, merge rewrite, role projection, trajectory sparsification) and selection (REMOVE/AGREE scores, reward-based score, score ≤ 0 pruning).
+- DEFAULT PROMPTS: `mas/memory/mas_memory/prompt.py` (`GMemoryPrompts`). Plain Python constants, easy to replace.
+- RUNNABLE FOR EXPERIMENTS: Partly. Code is available (no license). It uses an `OPENAI_API_BASE` env var, so OpenAI-compatible local servers should work. It needs ALFWorld / PDDL / FEVER data. The repo also includes MAS baselines for ChatDev, MetaGPT, Voyager, Generative Agents, and MemoryBank memories.
+- MULTI-AGENT:
+  - One **shared** hierarchical memory for the whole MAS: insights, queries, and trajectories.
+  - Agent-specific views come from LLM role projection at read time, not from private stores.
+  - The paper frames this as "agent-specific customization" of cross-trial memory.
+- UNCERTAIN: The paper's Eq. 10-11 does not mention EDIT/REMOVE or the periodic merge-and-replace. Which variant produced the reported numbers is not stated, though the released code uses the ops. The publication venue was not verified (the README names none).
+
+### Collaborative Memory (Rezazadeh et al., 2025; arXiv 2505.18279)
+- Type: research system (multi-user, multi-agent memory sharing)
+- Checked: 2026-10-06, arXiv HTML (latest). **No code release found** in the paper (UNVERIFIED whether code exists). License: arXiv paper only.
+- Sources: §3.2 "Memory Tiers and Provenance", §3.3 Read, §3.4 Write, §4 Implementation ("Memory Encoder", "Policy Instantiation"), Appendix B Table 1 (write prompts).
+- WRITE: After each agent completes a subtask, "the conversational trace are mapped into candidate LLM-generated key-value fragments". Each fragment carries **immutable provenance** (time, user, contributing agents, resources). Write policies (private vs shared) are LLM transformations. The shared-memory prompt is "Extract generally applicable knowledge from interactions that would benefit any user ... Remove any user-specific details or personalized examples. Format each memory as a clear key-value pair" (Table 1).
+- UPDATE: Append-only fragments. The paper defines write policies abstractly as maps (y, M) → M', but the implementation stores newly transformed fragments; there is no merge or rewrite of existing fragments.
+- FORGET / EXPIRE: None described (beyond policy-based filtering at read time).
+- RETRIEVE: Cosine similarity of the subquery to fragment keys. Top `k_user`=10 from the user tier plus top `k_cross`=10 from the shared tier, filtered by current permissions. The read policy in the experiments is "simple" (verbatim).
+- COMPACTION TRIGGER: none (per-subtask write).
+- ITERATED REWRITE CHAIN?: **NO**. There is a single LLM transformation at write time (and optionally at read time); existing fragments are never re-read and rewritten. An aggregator LLM synthesizes agent outputs per query, but that synthesis is not stored back as a rewrite of memory. UNVERIFIED whether responses later enter memory as new fragments.
+- WHICH CHANNEL: Transformation at write (generalize / strip user specifics: a push toward "universal" content), selection at read (permission filter, top-k).
+- DEFAULT PROMPTS: Paper Appendix B Table 1.
+- RUNNABLE FOR EXPERIMENTS: Not directly (no code found). All components used gpt-4o and text-embedding-3-large.
+- MULTI-AGENT: Two tiers, **private** (per user) and **shared** (cross-user, cross-agent). Sharing is governed by a time-varying bipartite graph of users, agents, and resources. A coordinator LLM routes subqueries to specialist agents.
+- UNCERTAIN: Code availability; whether fragments are ever deduplicated.
+
+### CoMem (Yu et al., 2026; arXiv 2609.15009, "Collective-Individual Memory Synergy for Evolutionary Multi-Agent Systems")
+- Type: research system
+- Checked: 2026-10-06, arXiv HTML v1 (2026-09-14). **No code link found** in the paper (UNVERIFIED). Evaluated on ALFWorld and PDDL (same benchmarks as G-Memory).
+- Sources: §3.1 Overview (memory pollution formalization), §3.2 Private Experience Sedimentation, §3.3 Collective Wisdom Curation, §3.4 Parallel Dual-Stream Retrieval.
+- WRITE: At the end of every episode, each agent's "dedicated LLM-based distiller, operating from the agent's unique perspective, transforms the episodic trace into a small set of succinct, actionable textual insights". These are stored in that agent's **private** collection with metadata (utility S, n_use, n_succ, promotion flag).
+- UPDATE:
+  - No content rewriting is described. Only metadata changes.
+  - Promotion: an entry with N_use ≥ N_min and mean reward when used ≥ a moving environment baseline is **replicated verbatim** to the collective pool and removed from the private store.
+  - Collective entries get an EMA utility: S_{t+1} = (1−α)S_t + α·S_max·U_t, where U mixes normalized reward with LLM-judged quality scores from the agents.
+- FORGET / EXPIRE:
+  - Private: rolling pruning by a consecutive-miss counter. An entry not retrieved for more than K_max episodes is deleted.
+  - Collective: entries whose EMA score persistently falls below an adaptive threshold are purged.
+  - Who decides: rule plus reward plus LLM-judged score.
+- RETRIEVE: Parallel retrieval. The private stream is embedding top-k. The collective stream is embedding retrieval plus online hierarchical clustering, taking one representative per cluster for diversity.
+- COMPACTION TRIGGER: End of every episode (distillation, pruning, promotion, EMA update).
+- ITERATED REWRITE CHAIN?: **NO**. Insights are written once by the distiller and promoted verbatim. Consolidation of the shared pool is by **selection** (promotion and purge), not by LLM rewriting. The paper's stated motivation is "Specialization Homogenization: cross-agent overwriting forces role-specific cognitive trajectories to conform to a noisy average". That is a homogenization concern very close to the prior-drift hypothesis, but framed as cross-agent averaging.
+- WHICH CHANNEL: Selection only (plus one-shot transformation at distillation).
+- DEFAULT PROMPTS: Not located in the HTML I parsed (UNVERIFIED whether an appendix lists the distiller prompt).
+- RUNNABLE FOR EXPERIMENTS: Unknown (no code found).
+- MULTI-AGENT: Explicit **private + collective** two-tier design, with a strict per-agent identity filter on private stores. Sharing happens only through empirically validated promotion.
+- UNCERTAIN: Hyperparameters (K_max, N_min, α, w), the distiller prompt, and code.
+
+### ShareMem (Hu et al., 2026; arXiv 2609.32511, "Learning from Others, Acting for You: Cross-User Memory Sharing for LLM Agents")
+- Type: research system (cross-user / cross-agent experience sharing)
+- Checked: 2026-10-06, arXiv HTML v1 (2026-09-26). No code link found (UNVERIFIED).
+- Sources: §3 "Two-stage experience consolidation" (Eq. 1-2), Appendix (local and shared update procedures), ablations "Two-stage consolidation" and "Editable consolidation".
+- WRITE: Each agent or user keeps local experiences. An LLM local manager takes new evidence (a session or demonstration) plus up to k_w=5 retrieved local neighbors and edits the local collection. It "is instructed to abstract source-specific values into semantic slots and preference-retrieval guidance".
+- UPDATE: Merge with ops, in two stages.
+  1. Local stage: the LLM `U_local` emits additions, replacements, removals, or no-op.
+  2. Shared stage: the accepted local edits Δ become evidence for a **shared manager**, which "retrieves nearby entries ... and independently decides how to update the shared collection" (add, replace existing content, remove, unchanged).
+  - Preferences are kept separately per user, some via a Mem0-based manager.
+- FORGET / EXPIRE: LLM remove op (local and shared).
+- RETRIEVE: Scope-first retrieval. Up to K_c=25 candidates per collection go into a joint budget of K=5 entries, with lower-priority scopes used only when there is capacity. A separate user-bound preference channel uses initial k_p=10 retrieval plus agent-initiated queries.
+- COMPACTION TRIGGER: per session or accepted subtask.
+- ITERATED REWRITE CHAIN?: **YES**. Shared entries can be replaced by an LLM that sees the existing shared neighbors plus new edits from many users and agents over time. Local entries are also rewritten.
+  - Their ablation favors editable over append-only consolidation: append-only gives lower task scores and a larger pool, with "accumulation of lexically overlapping experiences".
+  - Two-stage writing yields a smaller shared pool and cuts shared-stage tokens 5.72×.
+  - This is a useful counterpoint: rewriting helped task scores here. The paper does not measure drift of entry content.
+- WHICH CHANNEL: Both (replace = transformation; remove / no-op = selection). Abstraction to "semantic slots" is a deliberate push toward generic content.
+- DEFAULT PROMPTS: Not extracted (UNVERIFIED).
+- RUNNABLE FOR EXPERIMENTS: Unknown. Evaluated with four backbones, including Qwen.
+- MULTI-AGENT: Local (per user or agent) plus a shared pool. Personal preferences are deliberately **not** shared; only "how to act / which preferences to consult" guidance is.
+- UNCERTAIN: Prompts, code, number of consolidation passes per entry.
+
+### Intrinsic Memory Agents (Yuen et al., 2025; arXiv 2508.08997)
+- Type: research system (multi-agent conversation with per-agent structured memory)
+- Checked: 2026-10-06, arXiv HTML v2. No code link found (UNVERIFIED).
+- Sources: §3.1-3.2 (Eq. 1-3), Appendix A Algorithm 1 (context construction), Appendix D Figure 8 (update prompt).
+- WRITE / UPDATE: **After every turn of agent n, M_{n,m} = f_memory_update(M_{n,m-1}, O_{n,m})**, implemented as a prompted LLM call. Figure 8 prompt: "You are maintaining the memory of an agent working as [ROLE] ... Use the old memory and the newest output by the agent to populate and update the current memory json ... Update the memory content to incorporate new information while preserving key historical context. The updated content should be concise". The memory is a JSON template (generic or LLM-generated).
+- FORGET / EXPIRE: Implicit, through the LLM rewrite ("concise"). Conversation history is truncated by the context builder, which prioritizes task description, then agent memory, then recent turns.
+- RETRIEVE: Full context: the agent's memory plus as much recent shared conversation as fits.
+- COMPACTION TRIGGER: Every turn.
+- ITERATED REWRITE CHAIN?: **YES (pure form)**. Each agent's memory is rewritten from its previous version on every turn. Over a conversation of m turns, the memory is an m-fold LLM rewrite.
+- WHICH CHANNEL: Transformation.
+- DEFAULT PROMPTS: Paper Figure 8.
+- RUNNABLE FOR EXPERIMENTS: Not directly (no code found), but it is trivial to reimplement. Benchmarks are PDDL, FEVER, and ALFWorld, the same as G-Memory.
+- MULTI-AGENT: **Private per-agent memory** plus a **shared conversation space**. The paper notes "as the conversation continues the agents increasingly diverge in their interpretation of that context". The divergence is framed as intended role specialization.
+- UNCERTAIN: Code; number of turns per episode.
+
+### SEDM: Scalable Self-Evolving Distributed Memory (Xu et al., 2025; arXiv 2509.09498)
+- Type: research system (MAS memory controller)
+- Checked: 2026-10-06, arXiv HTML v3. "The code will be released upon acceptance", so not available.
+- Sources: §3.2 SCEC-based write admission, §3.3 "Consolidation and Progressive Evolution" (Eq. 8), §3.4 "Cross-Domain Knowledge Diffusion" (Eq. 9).
+- WRITE: Verifiable admission. A candidate memory is admitted only if replay in a self-contained execution context (SCEC) shows utility. It then gets an admission-derived weight.
+- UPDATE: Weights are updated from outcomes. Near-duplicates from different SCECs are merged, m_merged = Merge(m_i, m_j), "preserves essential content while aggregating evidence", and the originals are archived or soft-deleted. Each admitted item also spawns a general form, m_general = Abstract(m_specific), linked to its specific form.
+- FORGET / EXPIRE: Harmful or negative-utility items are pruned or isolated (rule plus empirical utility).
+- RETRIEVE: Similarity × admission weight; no reranker.
+- COMPACTION TRIGGER: Continuous / background (exact schedule UNVERIFIED).
+- ITERATED REWRITE CHAIN?: **PARTIAL / UNVERIFIED**. Merged items could be merged again, but whether Merge and Abstract are LLM rewrites or extractive is not specified in the sections read.
+- WHICH CHANNEL: Mainly selection (admission, weights, pruning), plus merge and abstract transformations.
+- DEFAULT PROMPTS: not found.
+- RUNNABLE FOR EXPERIMENTS: No (code unreleased).
+- MULTI-AGENT: A distributed shared repository for "open-ended multi-agent collaboration". Agent-level privacy is not discussed in what I read.
+- UNCERTAIN: Implementation of Merge and Abstract.
+
+### Governed Shared Memory / MemClaw (Margalit et al., 2026; arXiv 2606.24535)
+- Type: research system plus production service (multi-tenant fleet memory)
+- Checked: 2026-10-06, arXiv HTML v1 (paper CC BY 4.0). The evaluation harness ArgusFleet is open source (https://github.com/caura-ai/argusfleet). The MemClaw service itself is a production service; whether its code is released is UNVERIFIED.
+- Sources: §4 failure modes ("stale propagation", "contradiction persistence", "provenance collapse"), §5 architecture (supersession links, contradiction markers), evaluation "Deduplication Starves Contradiction Detection".
+- WRITE / UPDATE: Writes are state transitions: "a later write may supersede, invalidate, restrict, or contradict prior memory". An asynchronous, post-commit contradiction detector checks RDF-triple compatibility and sets a `supersedes_id`. The older row is flipped to non-active status. Content is **not rewritten**. Server-side "enrichment" exists (details UNVERIFIED).
+- FORGET / EXPIRE: Temporal supersession (invalidate with timestamps). A synchronous near-duplicate gate can reject writes. The authors found this gate can pre-empt contradiction detection, so a contradicting update is dropped as a "duplicate".
+- RETRIEVE: Scoped retrieval with provenance.
+- ITERATED REWRITE CHAIN?: **NO** (invalidate, don't rewrite).
+- WHICH CHANNEL: Selection (dedup gate, supersession).
+- MULTI-AGENT: Fleet-wide shared memory with scope and provenance. This entry is included for its design contrast (supersede-by-pointer vs LLM merge). Its access-control aspects are out of scope here.
+- UNCERTAIN: Whether enrichment includes LLM paraphrase of stored content.
+
+### MIRIX (Wang & Chen, 2025; arXiv 2507.07957), brief
+- Type: research system / product. "Multi-agent" here means internal memory-manager agents serving one user's assistant.
+- Checked: 2026-10-06, paper HTML. Code Mirix-AI/MIRIX, **Apache-2.0** (GitHub API).
+- Design: Six memory types (Core, Episodic, Semantic, Procedural, Resource, Knowledge Vault), each with a dedicated Memory Manager agent, coordinated by a Meta Memory Manager.
+- ITERATED REWRITE CHAIN?: **YES for Core memory**. "When the memory size exceeds 90% of capacity, the system triggers a controlled rewrite process to maintain compactness" (paper §3, Core Memory). Other types are mostly insert/update entries (UNVERIFIED in code).
+- MULTI-AGENT: The manager agents write into shared typed stores; this is not inter-task-agent sharing.
+
+### LEGOMem (Han et al., 2025; arXiv 2510.04851), brief
+- Type: research system (procedural memory for orchestrator plus task agents)
+- Design: **Offline** construction. Successful trajectories are LLM-distilled once into full-task memories (for the orchestrator) and subtask memories (for task agents). Memories are allocated to agents at inference and are not updated online.
+- ITERATED REWRITE CHAIN?: **NO**.
+- MULTI-AGENT: Studies placement of memory. "Orchestrator memory is critical for effective task decomposition and delegation, while fine-grained agent memory improves execution accuracy". No license or code checked (UNVERIFIED).
+
+---
+
+### Related evidence on handoff and relay chains (not systems; directly relevant to the hypothesis)
+- **LLM as a Broken Telephone** (Mohamed et al., arXiv 2502.20258, ACL 2025): distortion accumulates over iterative generation, varying with language and chain complexity, and can be mitigated by prompting.
+- **Faithful, Not Corrective** (Zeng, arXiv 2607.09678, 2026):
+  - Setup: six-hop agent relays of twelve programmatic atomic facts.
+  - A strong relay is nearly lossless in every format (hop-6 QA recall ≥ 0.973), and residual loss concentrates at the **first encoding** step.
+  - With a weak 1.5B relay, format dispersion grows 8.7×.
+  - Injected errors propagate faithfully (83-100%).
+  - Takeaway: for atomic facts with strong models, the chain is mostly a copy channel. Drift may need softer content (preferences, hedges, rare details) to show up.
+- **Facts Without Rules** (Wang et al., arXiv 2608.29028, 2026). Only the compression finding is noted here; the leakage framing is out of scope. With a 25-word handoff budget, the survival of qualifying "boundary" phrases drops from about 0.80 to about 0.57, while operational-fact survival stays near ceiling. Compression selectively removes qualifiers and limits, not core facts.
+- **Toward Measuring Structural Drift in LLM Communication Loops** (Hafez et al., arXiv 2604.13061): label-free metrics for prompt→response→next-prompt drift in stateful pipelines.
