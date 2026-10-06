@@ -1,4 +1,4 @@
-\begin{thebibliography}{21}
+\begin{thebibliography}{23}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -11,36 +11,42 @@ Alberto Acerbi and Joseph~M. Stubbersfield.
   chain experiments.
 \newblock \emph{Proceedings of the National Academy of Sciences}, 120\penalty0
   (44), 2023.
+\newblock \doi{10.1073/pnas.2313790120}.
 
-\bibitem[Anonymous(2026{\natexlab{a}})]{compactioncliff2026}
-Anonymous.
-\newblock The compaction cliff: Constraint recall collapse in long-horizon
-  agents.
-\newblock In \emph{CIKM}, 2026{\natexlab{a}}.
-\newblock arXiv:2608.22752.
-
-\bibitem[Anonymous(2026{\natexlab{b}})]{faithful2026}
-Anonymous.
-\newblock Faithful, not corrective: Atomic fact preservation in multi-hop model
-  relays.
-\newblock \emph{arXiv preprint arXiv:2607.09678}, 2026{\natexlab{b}}.
-
-\bibitem[Belem et~al.(2026)]{belem2026may}
-C.~Belem et~al.
-\newblock From ``may'' to ``is'': Certainty inflation in iterated {LLM}
-  rewriting.
+\bibitem[Belem et~al.(2026)Belem, Wu, Yao, Steyvers, Singh, and
+  Smyth]{belem2026may}
+Catarina~G Belem, Shang Wu, Hongyu Yao, Mark Steyvers, Sameer Singh, and
+  Padhraic Smyth.
+\newblock From `may' to `is': Certainty distortion in language model rewriting.
 \newblock \emph{arXiv preprint arXiv:2606.07951}, 2026.
 
 \bibitem[Bradley and Terry(1952)]{bradley1952rank}
 Ralph~Allan Bradley and Milton~E. Terry.
-\newblock Rank analysis of incomplete block designs: I. the method of paired
+\newblock Rank analysis of incomplete block designs: {I}. the method of paired
   comparisons.
 \newblock \emph{Biometrika}, 39\penalty0 (3/4):\penalty0 324--345, 1952.
 
+\bibitem[Cameron et~al.(2011)Cameron, Gelbach, and Miller]{cameron2011robust}
+A.~Colin Cameron, Jonah~B. Gelbach, and Douglas~L. Miller.
+\newblock Robust inference with multiway clustering.
+\newblock \emph{Journal of Business \& Economic Statistics}, 29\penalty0
+  (2):\penalty0 238--249, 2011.
+
 \bibitem[Cui and Yu(2025)]{cui2025sharper}
-Y.~Cui and S.~Yu.
-\newblock Are {LLM}s bayesian? sharper-than-bayesian in-context inference.
+Andrea~Yaoyun Cui and Pengfei Yu.
+\newblock Do language models have {B}ayesian brains? distinguishing stochastic
+  and deterministic decision patterns within large language models.
 \newblock \emph{arXiv preprint arXiv:2506.10268}, 2025.
+
+\bibitem[Glockner et~al.(2025)Glockner, Jiang, Ribeiro, Gurevych, and
+  Dreyer]{glockner2025neoqa}
+Max Glockner, Xiang Jiang, Leonardo F.~R. Ribeiro, Iryna Gurevych, and Markus
+  Dreyer.
+\newblock {NeoQA}: Evidence-based question answering with generated news
+  events.
+\newblock In \emph{Findings of the Association for Computational Linguistics:
+  ACL 2025}, 2025.
+\newblock arXiv:2505.05949.
 
 \bibitem[Griffiths and Kalish(2007)]{griffiths2007language}
 Thomas~L. Griffiths and Michael~L. Kalish.
@@ -53,28 +59,36 @@ Simon Kirby, Mike Dowman, and Thomas~L. Griffiths.
 \newblock \emph{Proceedings of the National Academy of Sciences}, 104\penalty0
   (12):\penalty0 5241--5245, 2007.
 
-\bibitem[Kochelka et~al.(2026)]{kochelka2026weak}
-M.~Kochelka et~al.
-\newblock Weak effects of knowledge conflict in single-step data-to-text
-  generation.
+\bibitem[Kochelka et~al.(2026)Kochelka, Pap{\'a}{\v{c}}ek, Dvo{\v{r}}{\'a}k,
+  and Du{\v{s}}ek]{kochelka2026weak}
+Peter Kochelka, Ale{\v{s}}~Manuel Pap{\'a}{\v{c}}ek, Vojt{\v{e}}ch
+  Dvo{\v{r}}{\'a}k, and Ond{\v{r}}ej Du{\v{s}}ek.
+\newblock Do {LLM}s make more mistakes if they do not believe the input data?
 \newblock \emph{arXiv preprint arXiv:2609.09363}, 2026.
 
 \bibitem[Lakens(2017)]{lakens2017equivalence}
 Dani{\"e}l Lakens.
-\newblock Equivalence tests: A practical primer for t tests, correlations, and
-  meta-analyses.
+\newblock Equivalence tests: A practical primer for $t$ tests, correlations,
+  and meta-analyses.
 \newblock \emph{Social Psychological and Personality Science}, 8\penalty0
   (4):\penalty0 355--362, 2017.
 
-\bibitem[Packer et~al.(2023)]{packer2024memgpt}
-Charles Packer et~al.
+\bibitem[Packer et~al.(2023)Packer, Wooders, Lin, Fang, Patil, Stoica, and
+  Gonzalez]{packer2024memgpt}
+Charles Packer, Sarah Wooders, Kevin Lin, Vivian Fang, Shishir~G. Patil, Ion
+  Stoica, and Joseph~E. Gonzalez.
 \newblock {MemGPT}: Towards {LLM}s as operating systems.
-\newblock 2023.
+\newblock \emph{arXiv preprint arXiv:2310.08560}, 2023.
 
-\bibitem[Perez et~al.(2025)]{perez2025cultural}
-Jeremy Perez et~al.
-\newblock When machines imitate us: Attractors in iterated {LLM} transmission.
-\newblock In \emph{ICLR}, 2025.
+\bibitem[Perez et~al.(2025)Perez, Kova{\v{c}}, L{\'e}ger, Colas, Molinaro,
+  Derex, Oudeyer, and Moulin-Frier]{perez2025cultural}
+J{\'e}r{\'e}my Perez, Grgur Kova{\v{c}}, Corentin L{\'e}ger, C{\'e}dric Colas,
+  Gaia Molinaro, Maxime Derex, Pierre-Yves Oudeyer, and Cl{\'e}ment
+  Moulin-Frier.
+\newblock When {LLM}s play the telephone game: Cultural attractors as
+  conceptual tools to evaluate {LLM}s in multi-turn settings.
+\newblock In \emph{International Conference on Learning Representations
+  (ICLR)}, 2025.
 \newblock arXiv:2407.04503.
 
 \bibitem[Peterson(2024)]{peterson2024knowledge}
@@ -82,54 +96,65 @@ Andrew~J. Peterson.
 \newblock {AI} and the problem of knowledge collapse.
 \newblock \emph{arXiv preprint arXiv:2404.03502}, 2024.
 
-\bibitem[Ren et~al.(2024)]{ren2024iterated}
-Yifei Ren et~al.
-\newblock Towards understanding how transformers learn in-context through a
-  representation learning lens.
-\newblock In \emph{NeurIPS}, 2024.
-\newblock arXiv:2404.04286.
+\bibitem[Ren et~al.(2024)Ren, Guo, Qiu, Wang, and Sutherland]{ren2024iterated}
+Yi~Ren, Shangmin Guo, Linlu Qiu, Bailin Wang, and Danica~J. Sutherland.
+\newblock Bias amplification in language model evolution: An iterated learning
+  perspective.
+\newblock \emph{arXiv preprint arXiv:2404.04286}, 2024.
 
-\bibitem[Sivaprasad et~al.(2025)]{sivaprasad2025fictional}
-S.~Sivaprasad et~al.
-\newblock Fictional worlds isolate commonsense priors from entity memorization.
-\newblock In \emph{ACL}, 2025.
+\bibitem[Wang et~al.(2026)Wang, Zhang, Lee, and Yang]{compint2026}
+Zhiqi Wang, Yichi Zhang, Dongwon Lee, and Yuchen Yang.
+\newblock Lost in compaction: Evaluating side-constraint loss under context
+  compaction.
+\newblock \emph{arXiv preprint arXiv:2608.11242}, 2026.
 
-\bibitem[Wu et~al.(2024{\natexlab{a}})]{wu2024monoculture}
-Fan Wu et~al.
+\bibitem[Wu et~al.(2024{\natexlab{a}})Wu, Black, and
+  Chandrasekaran]{wu2024monoculture}
+Fan Wu, Emily Black, and Varun Chandrasekaran.
 \newblock Generative monoculture in large language models.
 \newblock \emph{arXiv preprint arXiv:2407.02209}, 2024{\natexlab{a}}.
 
-\bibitem[Wu et~al.(2024{\natexlab{b}})]{clasheval2024}
-Kevin Wu et~al.
+\bibitem[Wu et~al.(2024{\natexlab{b}})Wu, Wu, and Zou]{clasheval2024}
+Kevin Wu, Eric Wu, and James Zou.
 \newblock {ClashEval}: Quantifying the tug-of-war between an {LLM}'s internal
   prior and external evidence.
-\newblock In \emph{NeurIPS}, 2024{\natexlab{b}}.
-\newblock arXiv:2404.10198.
+\newblock \emph{arXiv preprint arXiv:2404.10198}, 2024{\natexlab{b}}.
 
-\bibitem[Xie et~al.(2024)]{xie2024adaptive}
-Jian Xie et~al.
+\bibitem[Xie et~al.(2023)Xie, Zhang, Chen, Lou, and Su]{xie2024adaptive}
+Jian Xie, Kai Zhang, Jiangjie Chen, Renze Lou, and Yu~Su.
 \newblock Adaptive chameleon or stubborn sloth: Revealing the behavior of large
   language models in knowledge conflicts.
-\newblock In \emph{ICLR}, 2024.
-\newblock arXiv:2305.13300.
+\newblock \emph{arXiv preprint arXiv:2305.13300}, 2023.
 
 \bibitem[Zahn and Chana(2026)]{zahn2026facts}
-J.~Zahn and R.~Chana.
-\newblock Facts as first-class objects: Knowledge objects for persistent {LLM}
+Oliver Zahn and Simran Chana.
+\newblock Facts as first class objects: Knowledge objects for persistent {LLM}
   memory.
 \newblock \emph{arXiv preprint arXiv:2603.17781}, 2026.
 
-\bibitem[Zhang et~al.(2026)]{zhang2026faulty}
-D.~Zhang et~al.
-\newblock Faulty memory: Continual consolidation degrades agent memory utility.
+\bibitem[Zeng(2026)]{faithful2026}
+Sicheng Zeng.
+\newblock Faithful, not corrective: Model capability governs message-format
+  effects in multi-hop agent relays.
+\newblock \emph{arXiv preprint arXiv:2607.09678}, 2026.
+
+\bibitem[Zerhoudi et~al.(2026)Zerhoudi, Mitrovic, and
+  Granitzer]{compactioncliff2026}
+Saber Zerhoudi, Jelena Mitrovic, and Michael Granitzer.
+\newblock The compaction cliff in long-running {AI} agent memory.
+\newblock \emph{arXiv preprint arXiv:2608.22752}, 2026.
+
+\bibitem[Zhang et~al.(2026)Zhang, Lin, Wu, Sun, Li, Li, and
+  Peng]{zhang2026faulty}
+Dylan Zhang, Yanshan Lin, Zhengkun Wu, Yihang Sun, Bingxuan Li, Dianqi Li, and
+  Hao Peng.
+\newblock Useful memories become faulty when continuously updated by {LLM}s.
 \newblock \emph{arXiv preprint arXiv:2605.12978}, 2026.
 
-\bibitem[Zhu and Griffiths(2025)]{zhu2025eliciting}
+\bibitem[Zhu and Griffiths(2024)]{zhu2025eliciting}
 Jian-Qiao Zhu and Thomas~L. Griffiths.
 \newblock Eliciting the priors of large language models using iterated
   in-context learning.
-\newblock In \emph{Proceedings of the Annual Meeting of the Cognitive Science
-  Society}, 2025.
-\newblock arXiv:2406.01860.
+\newblock \emph{arXiv preprint arXiv:2406.01860}, 2024.
 
 \end{thebibliography}

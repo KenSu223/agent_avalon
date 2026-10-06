@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.9.1)  6 OCT 2026 12:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.9.1)  6 OCT 2026 12:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -617,51 +617,66 @@ Underfull \hbox (badness 3088) in paragraph at lines 117--131
  []
 
 
-Underfull \vbox (badness 5771) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-<figures/fig2_operators.pdf, id=203, 410.79587pt x 195.64714pt>
+<figures/fig2_operators.pdf, id=206, 410.79587pt x 195.64714pt>
 File: figures/fig2_operators.pdf Graphic file (type pdf)
 <use figures/fig2_operators.pdf>
 Package pdftex.def Info: figures/fig2_operators.pdf  used on input line 138.
 (pdftex.def)             Requested size: 282.24911pt x 134.42647pt.
  [6 <./figures/fig1_eshift.pdf>]
-<figures/fig5_mitigation.pdf, id=277, 304.37828pt x 183.41718pt>
+<figures/fig5_mitigation.pdf, id=280, 304.37828pt x 183.41718pt>
 File: figures/fig5_mitigation.pdf Graphic file (type pdf)
 <use figures/fig5_mitigation.pdf>
 Package pdftex.def Info: figures/fig5_mitigation.pdf  used on input line 187.
 (pdftex.def)             Requested size: 162.12494pt x 97.69481pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [7 <./figures/fig2_operators.pdf> <./figures/fig5_mitigation.pdf>]) (./sec/rel
 ated.tex
 Underfull \hbox (badness 1742) in paragraph at lines 11--22
  []\T1/ptm/b/n/10.95 (+20) Iterated learn-ing, trans-mis-sion chains and
  []
 
-) (./sec/discussion.tex) (./sec/conclusion.tex) (./sec/limitations.tex [8]
+) (./sec/discussion.tex) (./sec/conclusion.tex) (./sec/limitations.tex
+Underfull \vbox (badness 4378) has occurred while \output is active []
+
+ [8]
 Underfull \hbox (badness 1584) in paragraph at lines 28--39
  []\T1/ptm/b/n/10.95 (+20) The op-er-a-tor com-par-isons are ex-ploratory.[]
  []
 
 ) [9] (./main.bbl
-Underfull \hbox (badness 1803) in paragraph at lines 41--44
-\T1/ptm/m/n/10.95 (+20) than-bayesian in-context in-fer-ence.  \T1/ptm/m/it/10.
-95 (+20) arXiv
+Underfull \hbox (badness 1077) in paragraph at lines 18--22
+[]\T1/ptm/m/n/10.95 (+20) Catarina G Belem, Shang Wu, Hongyu Yao,
  []
 
 
-Underfull \hbox (badness 2073) in paragraph at lines 46--49
+Underfull \hbox (badness 1337) in paragraph at lines 43--50
+[]\T1/ptm/m/n/10.95 (+20) Max Glock-ner, Xi-ang Jiang, Leonardo F. R.
+ []
+
+
+Underfull \hbox (badness 2073) in paragraph at lines 52--55
 []\T1/ptm/m/n/10.95 (+20) Thomas L. Grif-fiths and Michael L. Kalish.
  []
 
-) (./sec/appendix.tex [10]
-<figures/fig3_contrasts.pdf, id=494, 301.90605pt x 191.41826pt>
+[10]
+Underfull \hbox (badness 4886) in paragraph at lines 136--140
+\T1/ptm/m/n/10.95 (+20) multi-hop agent re-lays.  \T1/ptm/m/it/10.95 (+20) arXi
+v preprint
+ []
+
+
+Underfull \hbox (badness 1735) in paragraph at lines 143--146
+\T1/ptm/m/n/10.95 (+20) Gran-itzer.  The com-paction cliff in long-
+ []
+
+) (./sec/appendix.tex
+<figures/fig3_contrasts.pdf, id=501, 301.90605pt x 191.41826pt>
 File: figures/fig3_contrasts.pdf Graphic file (type pdf)
 <use figures/fig3_contrasts.pdf>
 Package pdftex.def Info: figures/fig3_contrasts.pdf  used on input line 23.
 (pdftex.def)             Requested size: 201.55884pt x 127.79976pt.
-<figures/fig4_preferences.pdf, id=495, 412.70497pt x 180.28868pt>
+<figures/fig4_preferences.pdf, id=502, 412.70497pt x 180.28868pt>
 File: figures/fig4_preferences.pdf Graphic file (type pdf)
 <use figures/fig4_preferences.pdf>
 Package pdftex.def Info: figures/fig4_preferences.pdf  used on input line 31.
@@ -671,17 +686,13 @@ Overfull \hbox (62.76266pt too wide) in paragraph at lines 3--20
  [][] 
  []
 
-)) (./sec/coder_table.tex) (./sec/judge_table.tex
+) [11 <./figures/fig3_contrasts.pdf> <./figures/fig4_preferences.pdf>])
+(./sec/coder_table.tex) (./sec/judge_table.tex
 Overfull \hbox (48.10281pt too wide) in paragraph at lines 3--12
  [][] 
  []
 
-)
-Underfull \vbox (badness 2478) has occurred while \output is active []
-
- [11 <./figures/fig3_contrasts.pdf> <./figures/fig4_preferences.pdf>] [12
-
-] (./main.aux)
+) [12] (./main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -690,13 +701,13 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 9AB229445B274EE9466DA42314C275F6;5274.
  ) 
 Here is how much of TeX's memory you used:
- 15802 strings out of 469514
- 246057 string characters out of 5470073
- 699683 words of memory out of 5000000
- 43690 multiletter control sequences out of 15000+600000
- 712970 words of font info for 388 fonts, out of 8000000 for 9000
+ 15824 strings out of 469514
+ 246366 string characters out of 5470073
+ 697433 words of memory out of 5000000
+ 43700 multiletter control sequences out of 15000+600000
+ 716392 words of font info for 395 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 90i,10n,93p,1001b,509s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,10n,93p,1001b,606s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texliv
@@ -706,10 +717,10 @@ onts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times
 /utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (12 pages, 281317 bytes).
+Output written on main.pdf (12 pages, 285219 bytes).
 PDF statistics:
- 701 PDF objects out of 1000 (max. 8388607)
- 396 compressed objects within 4 object streams
- 88 named destinations out of 1000 (max. 500000)
- 63722 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 709 PDF objects out of 1000 (max. 8388607)
+ 403 compressed objects within 5 object streams
+ 90 named destinations out of 1000 (max. 500000)
+ 67818 words of extra memory for PDF output out of 74296 (max. 10000000)
 

@@ -22,3 +22,10 @@ Hard cap $140 (PI absolute limit $150). Budget plan: pilot <= $25, full experime
 **Total: see `curl 127.0.0.1:8787/v1/budget`. Well inside the $140 cap; the pilot+full envelope
 ($25 + $90) was not approached because the operating point that makes compression bite is a tight
 budget, which makes every call cheap.**
+| 2026-10-06 | review round 1 fixes: capacity-matched control (free), blind frame-parity check | gpt-oss-120b + gemma-3-27b | ~700 | $0.10 | - | the parity check found a real confound in our own manipulation |
+| 2026-10-06 | coding of the capacity-matched control arm | gpt-oss-120b + gemma-3-27b | ~2400 | $0.30 | - | |
+
+**Final total: see the row above / `curl 127.0.0.1:8787/v1/budget`. The $140 cap was never
+approached: the operating point at which compaction actually bites is a 150-word budget, which makes
+every compaction call cheap, and the two prior-blind controls plus the local-model diagnostic need no
+hosted calls at all.**

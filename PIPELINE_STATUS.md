@@ -17,7 +17,9 @@ Settings: effort balanced, assurance conference-ready, AUTO_PROCEED true, human 
 | /experiment-bridge M4 main chains | **done** | dose-response flat (+0.48 pp/log-odds, CI [-2.8,+3.9]); O4-O1 = +20.6 pp |
 | /experiment-bridge M5 diagnostics + prefs | **done** | null replicates on llama3.3-70b, local 8B, T=0; preferences anti-homogenise |
 | figures + paper draft | **done** | 5 figures, 3 tables, 8-page ACL body compiles |
-| /auto-review-loop | in progress | |
+| /auto-review-loop | **done** | 3 rounds, GPT-5.6-Sol xhigh. 4/10 -> 6/10 -> **8/10 ready** |
+| /paper-writing — venue ACL | **done** | `paper/main.pdf`, 8-page body + limitations + references + appendices |
+| citation audit | **done** | all 23 references verified against arXiv / ACL Anthology / publisher records on 2026-10-06 |
 | go/no-go | pending | |
 | /experiment-bridge (full) | pending | |
 | /auto-review-loop | pending | |
@@ -137,5 +139,30 @@ $2.49 of $140 (see COST_LOG.md). Projected total ~$40.
 | **A1** preferences | **anti-homogenisation**: non-default preferences survive 74.3% vs 53.4% for default-matching ones at k=20 (+20.8 pp). Stored profiles get *more* distinctive. |
 | robustness | every surprise slope CI contains zero on llama3.3-70b, local qwen3-8b and at T=0. |
 
-## Next step
-/auto-review-loop, then final compile and PIPELINE_DONE.
+## Review outcome
+
+| Round | Score | Verdict | What changed |
+|---|---|---|---|
+| 1 | 4/10 | not ready | Nine findings. Two new runs (capacity-matched prior-blind control; blind frame-parity check) and a full sensitivity suite. |
+| 2 | 6/10 | almost | Seven findings. Title de-dichotomised, bounds restated one-sided, ANCHOR rescoped, within-family preference contrast. |
+| 3 | **8/10** | **ready** | Three minor corrections. "I see no remaining scientific blocker." |
+
+**The single most consequential review outcome** was the frame-parity check in round 1. It showed
+that our own E-SHIFT frames move the target's judged importance (-0.69, CI [-1.36,-0.03]) and
+authority (-0.50, CI [-0.84,-0.16]) as well as expectation, in the direction that would depress
+retention in the expected-value arm. The paper therefore reports C1 as bounding a *compound context
+manipulation*, not as isolating prior-fit, and calls it an informative failed test rather than a
+refutation of the mechanism. That is a weaker claim than the one we set out to make, and it is the
+honest one.
+
+**Two errors the review caught in my own work**, both corrected: I had asserted that ANCHOR's extra
+trimming "works against it" without checking (more trimming is in fact associated with *higher*
+retention), and I had quoted a bootstrap mean where a confidence-interval upper bound belongs.
+
+## Final artifacts
+- Paper: `paper/main.pdf` (8-page ACL body + Limitations + References + 6 appendices)
+- Frozen protocol: `FROZEN_PROTOCOL.md` / `results/FROZEN_PROTOCOL.json`
+- Review log: `review-stage/AUTO_REVIEW.md`
+- Every number in the paper is generated into `paper/numbers.tex` by `src/make_paper.py` from files
+  in `results/`; no result number is typed by hand anywhere in the prose.
+- Human-validation sample archived unused in `human_validation/` per PI directive 4.

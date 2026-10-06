@@ -36,13 +36,15 @@ def robust():
         lines.append(f"{nm} & {T} & \\textsc{{{op.lower()}}} & {ret:.1f} & {sl:+.2f} & "
                      f"[{ci[0]:+.1f}, {ci[1]:+.1f}] \\\\")
     lines += [r"\bottomrule", r"\end{tabular}",
-              r"\caption{\textbf{The null replicates.} Retention at $k{=}10$ and the slope of "
+              r"\caption{\textbf{Portability diagnostics.} Retention at $k{=}10$ and the slope of "
               r"retention on measured surprise (percentage points per log-odds), with two-way "
-              r"crossed cluster bootstrap intervals. Every slope interval contains zero. "
-              r"\textsc{o1} rewrites its own memory, \textsc{o4} rewrites from the raw sessions, "
-              r"\textsc{o5} adds the Codex anti-drift rules, \textsc{o3} is the prior-blind control "
-              r"(which makes no model calls and is therefore reported once). The hosted proxy caps "
-              r"temperature at $1.0$, so $T>1$ could not be tested.}",
+              r"crossed cluster bootstrap intervals. Every slope interval contains zero. These "
+              r"re-run the graded dose--response, not \textsc{e-shift}, on 11 chains $\times$ 2 "
+              r"seeds, and score each model against the \emph{primary} compactor's measured prior "
+              r"rather than its own. \textsc{o1} rewrites its own memory, \textsc{o4} rebuilds from "
+              r"the raw sessions, \textsc{o5} adds the Codex anti-drift rules, and \textsc{o3} is "
+              r"the prior-blind control (which makes no model calls and is therefore reported once). "
+              r"The hosted proxy caps temperature at $1.0$, so $T>1$ could not be tested.}",
               r"\label{tab:robust}", r"\end{table}"]
     (SEC / "robust_table.tex").write_text("\n".join(lines) + "\n")
     return len(rows)

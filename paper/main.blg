@@ -3,46 +3,44 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: plainnat.bst
 Database file #1: refs.bib
-Warning--empty booktitle in packer2024memgpt
-You've used 21 entries,
+You've used 23 entries,
             2773 wiz_defined-function locations,
-            697 strings with 7852 characters,
-and the built_in function-call counts, 8019 in all, are:
-= -- 702
-> -- 396
-< -- 20
-+ -- 140
-- -- 117
-* -- 511
-:= -- 1255
-add.period$ -- 69
-call.type$ -- 21
-change.case$ -- 92
-chr.to.int$ -- 19
-cite$ -- 43
-duplicate$ -- 435
-empty$ -- 753
-format.name$ -- 160
-if$ -- 1704
-int.to.chr$ -- 3
+            708 strings with 9314 characters,
+and the built_in function-call counts, 10675 in all, are:
+= -- 888
+> -- 792
+< -- 9
++ -- 267
+- -- 243
+* -- 889
+:= -- 1719
+add.period$ -- 72
+call.type$ -- 23
+change.case$ -- 150
+chr.to.int$ -- 22
+cite$ -- 46
+duplicate$ -- 464
+empty$ -- 778
+format.name$ -- 278
+if$ -- 2168
+int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 21
-newline$ -- 119
-num.names$ -- 84
-pop$ -- 215
+missing$ -- 23
+newline$ -- 126
+num.names$ -- 92
+pop$ -- 296
 preamble$ -- 1
-purify$ -- 71
+purify$ -- 127
 quote$ -- 0
-skip$ -- 309
+skip$ -- 368
 stack$ -- 0
-substring$ -- 148
-swap$ -- 32
+substring$ -- 177
+swap$ -- 27
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 231
-warning$ -- 1
-while$ -- 71
+type$ -- 253
+warning$ -- 0
+while$ -- 79
 width$ -- 0
-write$ -- 275
-(There was 1 warning)
+write$ -- 295
