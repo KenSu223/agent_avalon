@@ -323,10 +323,95 @@ class LlamaIndexFacts(Base):
         return "\n".join(f"- {f}" for f in self.block.facts)
 
 
+class RawRAG(Base):
+    """Append-only store of raw turns; context = top-k turns by embedding similarity (local bge-small). Never rewrites."""
+    name = "raw_rag"
+    K = 20
+
+    def __init__(self, *a, **k):
+        super().__init__(*a, **k)
+        self.turns, self.vecs = [], []
+
+    def _embed(self, texts):
+        import urllib.request
+        out = []
+        for i in range(0, len(texts), 64):
+            req = urllib.request.Request(EMBED + "/embeddings", data=json.dumps({"model": "bge", "input": texts[i:i + 64]}).encode(),
+                                         headers={"Content-Type": "application/json"})
+            out += [d["embedding"] for d in json.loads(urllib.request.urlopen(req, timeout=300).read())["data"]]
+        return out
+
+    def ingest(self, msgs):
+        new = [m["content"] for m in msgs if m["content"].strip()]
+        self.turns += new
+        self.vecs += self._embed(new)
+
+    def dump(self):
+        return "\n".join(self.turns)
+
+    def context(self, question):
+        if not self.turns:
+            return ""
+        q = self._embed([question])[0]
+        sims = sorted(range(len(self.turns)), key=lambda i: -sum(a * b for a, b in zip(q, self.vecs[i])))[:self.K]
+        return "\n".join(self.turns[i] for i in sorted(sims))
+
+
+class LlamaIndexFactsDefault(LlamaIndexFacts):
+    """FactExtractionMemoryBlock with the library default max_facts (50), used for benchmark re-scoring."""
+    name = "llamaindex_facts_default"
+
+    def __init__(self, *a, **k):
+        super().__init__(*a, max_facts=50, **k)
+
+
+class Nemori(Base):
+    """nemori (github nemori-ai/nemori @d2a6dff, MIT) with its default config: episodic segmentation + semantic memory
+    with Predict-Calibrate (enable_prediction_correction=True), i.e. a PRIOR-AWARE write policy that stores only what the
+    model failed to predict. Postgres (docker, :5433) + Qdrant (docker, :6333); embeddings from the local bge server."""
+    name = "nemori"
+
+    def __init__(self, *a, **k):
+        super().__init__(*a, **k)
+        import asyncio
+        os.environ.setdefault("DATABASE_URL", "postgresql://nemori:nemori@127.0.0.1:5433/nemori")
+        os.environ["LLM_BASE_URL"] = PROXY
+        os.environ["EMBEDDING_BASE_URL"] = EMBED
+        os.environ.setdefault("LLM_API_KEY", "proxy")
+        os.environ.setdefault("EMBEDDING_API_KEY", "local")
+        from nemori import NemoriMemory, MemoryConfig
+        self.loop = asyncio.new_event_loop()
+        self.uid = "u" + uuid.uuid4().hex[:12]
+        cfg = MemoryConfig(llm_model=self.model, embedding_model="bge-small", embedding_dimension=384,
+                           qdrant_url="127.0.0.1", qdrant_port=6333, qdrant_collection_prefix="nem" + uuid.uuid4().hex[:8],
+                           db_pool_min=1, db_pool_max=4, llm_timeout=300.0)
+        self.mem = NemoriMemory(config=cfg)
+        self.loop.run_until_complete(self.mem.__aenter__())
+
+    def ingest(self, msgs):
+        self.loop.run_until_complete(self.mem.add_messages(self.uid, [{"role": m["role"], "content": m["content"]} for m in msgs]))
+        self.loop.run_until_complete(self.mem.flush(self.uid))
+
+    def dump(self):
+        sysm = self.mem._ensure_system()
+        eps = self.loop.run_until_complete(sysm._episode_store.list_by_user(self.uid, sysm._agent_id, limit=100000))
+        sem = self.loop.run_until_complete(sysm._semantic_store.list_by_user(self.uid, sysm._agent_id))
+        return "\n".join([f"- [episode] {e.title}: {e.content}" for e in eps] + [f"- [semantic] {x.content}" for x in sem])
+
+    def context(self, question):
+        r = self.loop.run_until_complete(self.mem.search(self.uid, question))
+        parts = []
+        for e in r.get("episodes", []) or r.get("episodic", []) or []:
+            parts.append(f"- [episode] {e.get('title', '')}: {e.get('content', '')}")
+        for x in r.get("semantic", []) or r.get("semantic_memories", []) or []:
+            parts.append(f"- [semantic] {x.get('content', '')}")
+        return "\n".join(parts) if parts else json.dumps(r)[:4000]
+
+
 class Mem0V1(Mem0):
     """Same adapter, run under mem0ai==1.0.11 (the last release with LLM-driven UPDATE/DELETE of existing memories)."""
     name = "mem0_v1"
 
 
-ADAPTERS = {c.name: c for c in [Mem0V1, Codex, OpenHands, Aider, GeminiCLI, AnthropicAPI, LangChainSummary, NeutralRoll, RawHistory,
+ADAPTERS = {c.name: c for c in [Nemori, RawRAG, LlamaIndexFactsDefault, Mem0V1, Codex, OpenHands, Aider, GeminiCLI, AnthropicAPI, LangChainSummary, NeutralRoll, RawHistory,
                                   Mem0, LangMem, LlamaIndexFacts]}

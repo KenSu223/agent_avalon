@@ -12,8 +12,9 @@ import json, glob, collections, random, sys
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 RES = ROOT / "framework_study/results"
-ORDER = ["raw_history", "mem0", "mem0_v1", "langmem", "llamaindex_facts", "langchain_summary", "codex", "openhands", "aider",
+_BASE = ["raw_history", "mem0", "mem0_v1", "nemori", "langmem", "llamaindex_facts", "langchain_summary", "codex", "openhands", "aider",
          "gemini_cli", "anthropic_api", "neutral_roll"]
+ORDER = _BASE + [b + "@8b" for b in _BASE]
 
 
 def load():
@@ -21,7 +22,11 @@ def load():
     for f in glob.glob(str(RES / "probed_*.jsonl")):
         if "smoke" in f:
             continue
-        rows += [json.loads(l) for l in open(f)]
+        for l in open(f):
+            r = json.loads(l)
+            if str(r.get("model", "")).startswith("local:"):
+                r["framework"] = r["framework"] + "@8b"
+            rows.append(r)
     return rows
 
 
