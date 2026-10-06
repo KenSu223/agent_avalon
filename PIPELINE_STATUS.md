@@ -13,8 +13,11 @@ Settings: effort balanced, assurance conference-ready, AUTO_PROCEED true, human 
 | /experiment-bridge M1 priors | **done** | compactor-side Bradley-Terry, split-half rho 0.948 |
 | /experiment-bridge M2 dev pilot | **done** | operating point B=150 T=1.0 frozen; O3 calibrated to 60 slots; coding kappa 0.854 |
 | claim-selection (was go/no-go) | **done** | adequacy met at B=150 only; see D10 |
-| /experiment-bridge M3 E-SHIFT | running | 18 families x 2 arms x 8 seeds |
-| /experiment-bridge M4 main chains | running | 11 chains x 3 seeds x 9 operators |
+| /experiment-bridge M3 E-SHIFT | **done** | BOUNDARY EVIDENCE: -4.0 pp, 95% CI [-12.2,+4.3], effects >=15.9 pp excluded |
+| /experiment-bridge M4 main chains | **done** | dose-response flat (+0.48 pp/log-odds, CI [-2.8,+3.9]); O4-O1 = +20.6 pp |
+| /experiment-bridge M5 diagnostics + prefs | **done** | null replicates on llama3.3-70b, local 8B, T=0; preferences anti-homogenise |
+| figures + paper draft | **done** | 5 figures, 3 tables, 8-page ACL body compiles |
+| /auto-review-loop | in progress | |
 | go/no-go | pending | |
 | /experiment-bridge (full) | pending | |
 | /auto-review-loop | pending | |
@@ -120,5 +123,19 @@ $2.49 of $140 (see COST_LOG.md). Projected total ~$40.
   only to the rewriting operators, so leaving it high would have risked manufacturing both the
   gradient and the operator interaction.
 
+## Headline results (all traceable to results/*.json)
+
+| claim | outcome |
+|---|---|
+| **C1** prior-fit *causes* loss (E-SHIFT) | **BOUNDARY EVIDENCE**. -4.0 pp, 95% CI [-12.2, +4.3]; effects >=15.9 pp excluded. Frame control +1.5 pp, equivalent to 0. |
+| **C2** graded dose-response | **flat**. +0.48 pp per log-odds, CI [-2.78, +3.93], over an IQR of 3.35 log-odds. Terciles 70.5 / 73.4 / 72.0. |
+| **C3** operator specificity | interaction -1.44, CI [-7.01, +3.90]; the O3 equivalence test does not clear its margin, so reported as inconclusive. |
+| **positive finding** | **iteration, not compression, is the mechanism**: O4 (rewrite from raw sessions) 92.6% vs O1 (rewrite own memory) 72.0% at k=10, +20.6 pp CI [+5.4, +35.6]; at k=20, 88.9% vs 48.0%. |
+| **C5** replacement direction | only 26 CHANGED of 32,076 coded cases (0.08%); 4 usable events. Reported as a scoped null: loss is **deletion, not corruption**. |
+| **C6** kernel | TVD 0.177 at k=10 vs 0.201 constant-hazard baseline; gain +0.024. Deletion near-absorbing (3.2% regeneration). |
+| **C7** mitigation | the **deployed** Codex anti-drift prompt gives +22.2 pp CI [+9.5, +35.5]; **surprise-pinning is net harmful** (-14.0 pp) and indistinguishable from token-matched random pinning. |
+| **A1** preferences | **anti-homogenisation**: non-default preferences survive 74.3% vs 53.4% for default-matching ones at k=20 (+20.8 pp). Stored profiles get *more* distinctive. |
+| robustness | every surprise slope CI contains zero on llama3.3-70b, local qwen3-8b and at T=0. |
+
 ## Next step
-Confirmatory runs -> coding -> analysis -> figures -> /auto-review-loop -> /paper-writing.
+/auto-review-loop, then final compile and PIPELINE_DONE.

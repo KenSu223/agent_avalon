@@ -44,19 +44,28 @@ mechanism, and in particular a prior-blind control, \textsc{Copy-Rand}, which ap
 capacity pressure through a uniformly random choice of which source sentences to keep. It uses the
 same stimuli, the same coder and the same probes, but its selection cannot depend on any prior.
 
-Our contributions are:
+What we find is that the prediction is wrong, and that something else is right.
 
 \begin{itemize}\itemsep1pt
-\item \textbf{A causal test.} \textsc{E-Shift} shows \ShiftDirectionSentence{} (\S\ref{sec:c1}).
-\item \textbf{A graded, controlled dose--response} across \NFamiliesConf{} minimal-pair families
-whose prior-fit is measured on the compactor itself with Bradley--Terry paired comparisons, and an
-operator lattice that localises the effect (\S\ref{sec:c2}).
-\item \textbf{A value-level account} of the dynamics: a copy/drop/replace kernel over measured
-prior-rank states, estimated from a single compaction step, and read as a quasi-stationary
-distribution conditional on survival, because deletion is close to absorbing (\S\ref{sec:c6}).
-\item \textbf{A memory-design consequence.} Pinning high-surprise items verbatim, using a write-time
-signal a deployed system can compute for free, is compared against the anti-drift prompt industry
-already ships and against token-matched random and low-surprise pinning (\S\ref{sec:c7}).
+\item \textbf{The causal test is null.} \textsc{E-Shift} shows \ShiftDirectionSentence{}
+(\S\ref{sec:c1}). The graded dose--response across \NFamiliesConf{} minimal-pair families is flat
+too, and both results replicate on a second strong model family, on a small local model, and at both
+decoding temperatures the API permits (\S\ref{sec:c2}, \S\ref{sec:robust}).
+\item \textbf{Memory is deleted, not corrupted.} Of \NCodedCases{} coded item-checkpoints,
+\ChangedCount{} are changes to a different value (\S\ref{sec:c6}). The failure the folk theory
+describes --- a constraint quietly rewritten into a plausible default --- essentially does not occur
+in a strong compactor.
+\item \textbf{Iteration is the mechanism.} Holding model, budget, sessions and stimuli fixed,
+rewriting memory from the raw sessions retains \RetOfour{}\% of items after ten compactions while
+rewriting from the model's own previous memory retains \RetOone{}\% (\S\ref{sec:operators}). The
+bottleneck is not what destroys the content; re-reading your own compressed output is.
+\item \textbf{The deployed fix works and the theory-derived one does not.} Adding the anti-drift
+rules from a production memory-consolidation prompt recovers \ContrastOfive{}~pp at no extra budget,
+while pinning high-surprise items is net harmful under a binding budget and is indistinguishable from
+token-matched random pinning (\S\ref{sec:c7}).
+\item \textbf{Preferences do not homogenise either.} Preferences that differ from the model's own
+defaults survive \PrefGapK{}~pp better, so a stored profile becomes more distinctive over time, not
+less (\S\ref{sec:prefs}).
 \end{itemize}
 
 Every operating-point choice was made on a held-out development split and frozen, with the

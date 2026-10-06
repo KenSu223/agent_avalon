@@ -1,0 +1,49 @@
+{
+ "n_rows": 32076,
+ "n_k10": 3515,
+ "n_mundane_k10": 3515,
+ "iqr_surprise": 3.3541029898392667,
+ "C2_slope_O1_pp_per_logodds": {
+  "point": 0.48078833995074305,
+  "ci95": [
+   -2.78273698420495,
+   3.9293015937949676
+  ],
+  "pp_over_iqr": 1.612613608508645
+ },
+ "C3_slope_O3_pp_per_logodds": {
+  "point": -0.9634445941379226,
+  "ci95": [
+   -5.2664692620935964,
+   3.3154856287013903
+  ]
+ },
+ "C3_interaction": {
+  "key": "interaction_O3_vs_O1",
+  "point": -1.4442329340886657,
+  "ci95": [
+   -7.011791872159224,
+   3.8964587662178074
+  ]
+ },
+ "C3_O3_equivalence": {
+  "ci90": [
+   -15.457378294283645,
+   8.598280516379218
+  ],
+  "margin": 5.0,
+  "equivalent": false,
+  "units": "pp of retention across the interquartile surprise contrast"
+ }
+}
+
+retention by operator and surprise tercile (k=10):
+  O1         low   70.5  mid   73.4  high   72.0   gap   -1.5 pp   n=382
+  O2         low    0.8  mid    0.0  high    0.0   gap   +0.8 pp   n=393
+  O3         low   59.7  mid   66.4  high   56.1   gap   +3.6 pp   n=380
+  O4         low   94.8  mid   89.2  high   93.8   gap   +1.0 pp   n=392
+  O5         low   94.8  mid   95.4  high   92.2   gap   +2.6 pp   n=395
+  O6         low   50.4  mid   54.2  high   69.5   gap  -19.1 pp   n=390
+  O6-low     low   59.0  mid   59.5  high   44.5   gap  +14.4 pp   n=393
+  O6-random  low   64.2  mid   63.4  high   67.4   gap   -3.3 pp   n=394
+  O7         low  100.0  mid  100.0  high  100.0   gap   +0.0 pp   n=396

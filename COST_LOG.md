@@ -15,3 +15,10 @@ Hard cap $140 (PI absolute limit $150). Budget plan: pilot <= $25, full experime
 | 2026-10-06 | M2 dev E-SHIFT (8 dev families x 2 arms x 3 seeds) for A1 variance components | qwen3-235b | 1008 | $0.59 | $4.0 | feeds the power table |
 | 2026-10-06 | M3 confirmatory E-SHIFT (18 families x 2 arms x 8 seeds, O1 paid + O3 free) | qwen3-235b | 6048 | $1.80 | - | the causal test |
 | 2026-10-06 | M4 confirmatory main chains (7 paid operators x 11 chains x 3 seeds x 21 steps) | qwen3-235b | 4851 | $1.50 | - | C2/C3/C4/C7 |
+| 2026-10-06 | B9 preferences: 8 users x 3 seeds x 21 steps + A/B/C behaviour probes | qwen3-235b | ~2200 | $0.60 | - | exploratory application (Fig 4) |
+| 2026-10-06 | B8 diagnostics: llama3.3-70b second family, local qwen3-8b, T=0 (T=1.3 refused by Bedrock, cap 1.0) | llama3.3-70b / local | 1386+924 | $1.96 | - | the null replicates |
+| 2026-10-06 | coding of all confirmatory + diagnostic snapshots (2 blind judges) | gpt-oss-120b + gemma-3-27b | ~40000 | ~$5 | - | kappa 0.880 (main), 0.697 (E-SHIFT targets) |
+
+**Total: see `curl 127.0.0.1:8787/v1/budget`. Well inside the $140 cap; the pilot+full envelope
+($25 + $90) was not approached because the operating point that makes compression bite is a tight
+budget, which makes every call cheap.**

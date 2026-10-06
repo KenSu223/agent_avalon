@@ -1,0 +1,11 @@
+{
+ "default_k20": 53.431372549019606,
+ "nondefault_k20": 74.27536231884058,
+ "gap_k20": 20.843989769820972,
+ "default_k10": 60.78431372549019,
+ "nondefault_k10": 82.6086956521739,
+ "share_nondefault_k0": 58.208955223880594,
+ "share_nondefault_k20": 65.28662420382166,
+ "n_default_items": 25,
+ "n_nondefault_items": 33
+}

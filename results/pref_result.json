@@ -1,0 +1,42 @@
+{
+ "stored_by_k": {
+  "0": 97.70833333333333,
+  "10": 73.33333333333333,
+  "20": 65.41666666666667
+ },
+ "compliance": {
+  "A_raw_instructions": 83.75,
+  "C_no_information": 42.5,
+  "B_memory": {
+   "0": 80.20833333333334,
+   "10": 72.91666666666666,
+   "20": 68.33333333333333
+  }
+ },
+ "execution_loss_pp": 16.25,
+ "storage_loss_pp": {
+  "0": 3.541666666666657,
+  "10": 10.833333333333343,
+  "20": 15.416666666666671
+ },
+ "corr_deviation_vs_compliance_k20": -0.4584198488660014,
+ "n_pairs": 480,
+ "homogenization": {
+  "0": {
+   "mean_distance_to_centroid": 0.021875,
+   "mean_pairwise_distance": 0.025,
+   "n_users": 8
+  },
+  "10": {
+   "mean_distance_to_centroid": 0.14375000000000002,
+   "mean_pairwise_distance": 0.16428571428571428,
+   "n_users": 8
+  },
+  "20": {
+   "mean_distance_to_centroid": 0.20625,
+   "mean_pairwise_distance": 0.2357142857142857,
+   "n_users": 8
+  }
+ },
+ "homogenization_delta": 0.18437499999999998
+}

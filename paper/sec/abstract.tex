@@ -1,0 +1,21 @@
+Long-horizon and continual-learning agents keep what they learn in memory that a language model
+repeatedly rewrites: after each session the model reads its previous memory and writes a condensed
+replacement, and the original text is gone. Treating this as an iterated-learning chain predicts
+that survival should track the compactor's prior, so memory would be worst at keeping exactly the
+content it exists for --- a claim repeated informally across the literature and in production
+documentation, but never tested with prior-fit as a manipulated variable. We test it. Using
+minimal-pair memory items whose prior-fit is graded and measured on the compactor itself by paired
+comparison, and a same-item manipulation that holds the target sentence \emph{and its value} fixed
+while changing only a value-free description of the surrounding work, we find \ShiftDirectionSentence{}.
+The graded dose--response is flat as well (\SlopeOOne{}~pp per log-odds, 95\% CI [\SlopeOOneCIlo{},
+\SlopeOOneCIhi{}]), and the null replicates on a second strong model family, on a small local model,
+and at both decoding temperatures the API permits. Nor is memory corrupted: across \NCodedCases{}
+coded item-checkpoints only \ChangedCount{} are changes to a different value. What does drive loss is
+iteration itself. Holding model, budget and sessions fixed, rewriting memory from the raw sessions
+retains \RetOfour{}\% of items after ten compactions while rewriting from the model's own previous
+memory retains \RetOone{}\% (\ContrastOfour{}~pp, 95\% CI [\ContrastOfourLo{}, \ContrastOfourHi{}]).
+The anti-drift prompt already shipping in a production memory system recovers almost all of that
+(\ContrastOfive{}~pp), whereas pinning high-surprise items --- the fix our own theory predicted ---
+is net harmful under a binding budget. Preferences behave the same way: those that differ from the
+model's defaults survive \PrefGapK{}~pp \emph{better}, so stored profiles become more distinctive,
+not homogenised. We release the instrument, the stimuli and all result files.

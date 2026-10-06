@@ -1,0 +1,22 @@
+\begin{table}[t]
+\centering\small
+\begin{tabular}{llcrrc}
+\toprule
+model & $T$ & op. & ret.\% & slope & 95\% CI \\
+\midrule
+Qwen3-235B (primary) & 1.0 & \textsc{o1} & 72.0 & +0.55 & [-3.0, +4.2] \\
+ & 1.0 & \textsc{o4} & 92.6 & +0.23 & [-1.8, +2.5] \\
+ & 1.0 & \textsc{o5} & 94.2 & -0.12 & [-2.1, +1.7] \\
+ & 1.0 & \textsc{o3} & 60.8 & -0.83 & [-5.2, +3.2] \\
+Qwen3-235B & 0.0 & \textsc{o1} & 71.9 & -2.11 & [-5.4, +2.0] \\
+Llama-3.3-70B & 1.0 & \textsc{o1} & 11.9 & +0.19 & [-2.7, +3.3] \\
+ & 1.0 & \textsc{o4} & 61.8 & -1.44 & [-6.6, +3.5] \\
+ & 1.0 & \textsc{o5} & 17.4 & +0.40 & [-3.3, +5.3] \\
+Qwen3-8B (local) & 1.0 & \textsc{o1} & 6.9 & -0.59 & [-2.9, +1.6] \\
+ & 1.0 & \textsc{o4} & 78.2 & +1.94 & [-3.0, +7.1] \\
+ & 1.0 & \textsc{o5} & 2.3 & -0.50 & [-2.6, +0.6] \\
+\bottomrule
+\end{tabular}
+\caption{\textbf{The null replicates.} Retention at $k{=}10$ and the slope of retention on measured surprise (percentage points per log-odds), with two-way crossed cluster bootstrap intervals. Every slope interval contains zero. \textsc{o1} rewrites its own memory, \textsc{o4} rewrites from the raw sessions, \textsc{o5} adds the Codex anti-drift rules, \textsc{o3} is the prior-blind control (which makes no model calls and is therefore reported once). The hosted proxy caps temperature at $1.0$, so $T>1$ could not be tested.}
+\label{tab:robust}
+\end{table}

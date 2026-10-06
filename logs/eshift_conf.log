@@ -1,3 +1,14 @@
 E-SHIFT [confirmatory]: 18 eligible families x 2 arms x 8 seeds x 2 operators = 576 trajectories (B=150, T=1.0, slots=60)
 paid compactor calls: 6048  est $3.57
 [eshift] 576 trajectories to run (0 already done)
+  [eshift] 57/576  203s  $0.170
+  [eshift] 114/576  428s  $0.474
+  [eshift] 171/576  595s  $0.712
+  [eshift] 228/576  838s  $0.949
+  [eshift] 285/576  1114s  $1.249
+  [eshift] 342/576  1408s  $1.516
+  [eshift] 399/576  1628s  $1.804
+  [eshift] 456/576  1943s  $2.120
+  [eshift] 513/576  2129s  $2.380
+  [eshift] 570/576  2564s  $2.725
+[eshift] done: 576 trajectories, $2.832, 2710s

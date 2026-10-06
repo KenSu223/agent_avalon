@@ -1,0 +1,14 @@
+llama: 88 trajectories, 66 paid, 1386 calls, est $1.42
+[llama] 88 trajectories to run (0 already done)
+  [llama] 8/88  23s  $0.029
+  [llama] 16/88  28s  $0.128
+  [llama] 24/88  47s  $0.309
+  [llama] 32/88  53s  $0.450
+  [llama] 40/88  72s  $0.591
+  [llama] 48/88  83s  $0.772
+  [llama] 56/88  97s  $0.872
+  [llama] 64/88  110s  $1.012
+  [llama] 72/88  121s  $1.155
+  [llama] 80/88  145s  $1.344
+  [llama] 88/88  162s  $1.549
+[llama] done: 88 trajectories, $1.549, 162s

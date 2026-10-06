@@ -32,15 +32,13 @@ log-odds scale; surprise is the negative log of the induced within-family probab
 family. Split-half reliability over an independent half of the elicitation is Spearman
 \SplitHalfRho{}.
 
-Two secondary measures check this. Free generation at temperature one (\textsc{P2}) is strongly
-peaked --- on average \PTwoFloor{} of five levels sit at the smoothing floor --- so it can report a
-mode but not an ordering; it agrees with \textsc{P1} on the modal level in \PTwoModeAgree{} of
-families against a chance rate of about $0.21$. Token log-probabilities from a local 8B model
-(\textsc{P3}) correlate with the compactor's prior at only Spearman \PThreeRho{}, which is why the
-dose is measured on the compactor and the small model is used only as a robustness check and as the
-\emph{write-time} signal for our mitigation. The designed level ordering is itself unreliable: the
-intended most-typical value is the measured modal value in only \DesignOrderAgree{} of five-level
-families, so all analyses use measured surprise as a continuous variable.
+Two secondary measures check this (Appendix~\ref{app:priors}). Free generation at temperature one is
+strongly peaked, so it reports a mode but not an ordering; local 8B token log-probabilities correlate
+with the compactor's prior at only Spearman \PThreeRho{}, which is why the dose is measured on the
+compactor and the small model serves only as a robustness check and as the \emph{write-time} signal
+for our mitigation. The designed level ordering is itself unreliable --- the intended most-typical
+value is the measured modal value in only \DesignOrderAgree{} of five-level families --- so all
+analyses use measured surprise as a continuous variable.
 
 \subsection{The operator lattice}
 Each operator removes exactly one mechanism relative to the rolling rewrite.
@@ -87,8 +85,8 @@ measured retention depend on how richly each value's formats happen to be covere
 values have richer coverage that alone could produce the predicted gradient. Verdicts the two judges
 do not share are recorded as \textsc{unresolved} (\UnresolvedRate{} of cases) rather than coerced.
 
-We validate the coder with a metamorphic test: for every value we generate meaning-preserving format
-variants (digit/word, unit abbreviations, hyphenation, hedged forms) and decoys (negation, historical
-value, incidental number). Strict pattern recognition is between \CoderMin{} and \CoderMax{} across
-levels --- a spread of \CoderSpread{} --- and every unrecognised variant is routed to the judges
-rather than mis-coded, so the coder cannot itself generate a retention-vs-surprise gradient.
+A metamorphic test generates, for every value, meaning-preserving format variants and decoys
+(negation, historical value, incidental number). Strict pattern recognition is between \CoderMin{}
+and \CoderMax{} across levels, a spread of \CoderSpread{}, and every unrecognised variant is routed
+to the judges rather than mis-coded (Appendix~\ref{app:coder}), so the coder cannot itself generate a
+retention-vs-surprise gradient.

@@ -1,2 +1,13 @@
 confirmatory: 297 trajectories, 231 paid, 4851 compactor calls, est $2.86
 [confirm] 297 trajectories to run (0 already done)
+  [confirm] 29/297  276s  $0.223
+  [confirm] 58/297  538s  $0.555
+  [confirm] 87/297  877s  $0.933
+  [confirm] 116/297  1136s  $1.232
+  [confirm] 145/297  1424s  $1.540
+  [confirm] 174/297  1739s  $1.859
+  [confirm] 203/297  2003s  $2.172
+  [confirm] 232/297  2296s  $2.473
+  [confirm] 261/297  2699s  $2.780
+  [confirm] 290/297  3029s  $3.109
+[confirm] done: 297 trajectories, $3.254, 3291s

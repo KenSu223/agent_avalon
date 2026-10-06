@@ -1,0 +1,52 @@
+\section{Reproducibility and cost}
+\label{app:cost}
+
+All model calls go through a budgeted proxy and are cached on disk by a hash of the full request, so
+every number in this paper is reproducible from the released result files without re-running a model.
+The compactor is \texttt{qwen3-235b-a22b-2507}; judges are \texttt{gpt-oss-120b} and
+\texttt{gemma-3-27b}; a local \texttt{Qwen3-8B} supplies token log-probabilities and the write-time
+pinning signal. Total inference cost for every experiment reported here, including the development
+pilot and all discarded calibration runs, is given in \texttt{COST\_LOG.md}. No model was trained.
+
+\section{Frozen protocol}
+\label{app:protocol}
+
+\texttt{FROZEN\_PROTOCOL.md} records the operating point, the control calibration, the eligibility
+screen, the estimators, the clustering scheme, the decision rule and the effect-size thresholds,
+together with the git commit at which they were frozen. Three amendments were made during the
+development stage and are recorded there with their rationale: A1 (power and the operative smallest
+effect of interest), A3 (prospective calibration of the prior-blind control) and A4 (the E-SHIFT
+endpoint). No amendment was made after a confirmatory family was run.
+
+\section{Robustness across models and temperature}
+\label{app:robust}
+\input{sec/robust_table}
+
+\section{Coder validation}
+\label{app:coder}
+
+Table~\ref{tab:coder} reports strict per-level recognition for meaning-preserving format variants and
+rejection rates for decoys. Recognition is between \CoderMin{} and \CoderMax{} across levels, a
+spread of \CoderSpread{}, and every unrecognised variant is routed to the blind judges rather than
+mis-coded.
+
+\section{Value-level kernel}
+\label{app:kernel}
+States are the measured prior rank within family ($R_1\ldots R_5$), plus \textsc{other},
+\textsc{vague} and \textsc{absent}; design level names are never used, because $L_2\rightarrow L_3$
+has no consistent meaning across families. The kernel is estimated from $k{=}0\rightarrow1$ on half
+the trajectories with Dirichlet smoothing and applied to the held-out half, which receives the same
+$p_0$ as both baselines. Deletion is close to absorbing: the regeneration rate out of \textsc{absent}
+is \RegenRate{}. Held-out total-variation distances at $k{=}10$ are \KernelTVD{} for the kernel,
+\KernelConstTVD{} for constant per-step survival and \KernelAbsorbTVD{} for pure absorption.
+
+\section{Prior measurement}
+\label{app:priors}
+
+Split-half reliability of the Bradley--Terry dose is Spearman \SplitHalfRho{}
+(\SplitHalfFrac{} of families at or above $0.7$). Free generation at temperature one is strongly
+peaked: on average \PTwoFloor{} of five levels sit at the add-one smoothing floor, so it can report a
+mode but not an ordering; it agrees with the pairwise measure on the modal level in
+\PTwoModeAgree{} families. Local 8B log-probabilities correlate with the compactor's prior at only
+Spearman \PThreeRho{}. The designed level ordering is the measured ordering in just
+\DesignOrderAgree{} of five-level families.

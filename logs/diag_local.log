@@ -1,0 +1,14 @@
+local: 88 trajectories, 0 paid, 0 calls, est $0.00
+[local] 88 trajectories to run (0 already done)
+  [local] 8/88  172s  $0.000
+  [local] 16/88  265s  $0.000
+  [local] 24/88  414s  $0.000
+  [local] 32/88  485s  $0.000
+  [local] 40/88  609s  $0.000
+  [local] 48/88  734s  $0.000
+  [local] 56/88  888s  $0.000
+  [local] 64/88  1000s  $0.000
+  [local] 72/88  1111s  $0.000
+  [local] 80/88  1257s  $0.000
+  [local] 88/88  1393s  $0.000
+[local] done: 88 trajectories, $0.000, 1393s

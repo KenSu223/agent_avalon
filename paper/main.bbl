@@ -1,0 +1,135 @@
+\begin{thebibliography}{21}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Acerbi and Stubbersfield(2023)]{acerbi2023large}
+Alberto Acerbi and Joseph~M. Stubbersfield.
+\newblock Large language models show human-like content biases in transmission
+  chain experiments.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 120\penalty0
+  (44), 2023.
+
+\bibitem[Anonymous(2026{\natexlab{a}})]{compactioncliff2026}
+Anonymous.
+\newblock The compaction cliff: Constraint recall collapse in long-horizon
+  agents.
+\newblock In \emph{CIKM}, 2026{\natexlab{a}}.
+\newblock arXiv:2608.22752.
+
+\bibitem[Anonymous(2026{\natexlab{b}})]{faithful2026}
+Anonymous.
+\newblock Faithful, not corrective: Atomic fact preservation in multi-hop model
+  relays.
+\newblock \emph{arXiv preprint arXiv:2607.09678}, 2026{\natexlab{b}}.
+
+\bibitem[Belem et~al.(2026)]{belem2026may}
+C.~Belem et~al.
+\newblock From ``may'' to ``is'': Certainty inflation in iterated {LLM}
+  rewriting.
+\newblock \emph{arXiv preprint arXiv:2606.07951}, 2026.
+
+\bibitem[Bradley and Terry(1952)]{bradley1952rank}
+Ralph~Allan Bradley and Milton~E. Terry.
+\newblock Rank analysis of incomplete block designs: I. the method of paired
+  comparisons.
+\newblock \emph{Biometrika}, 39\penalty0 (3/4):\penalty0 324--345, 1952.
+
+\bibitem[Cui and Yu(2025)]{cui2025sharper}
+Y.~Cui and S.~Yu.
+\newblock Are {LLM}s bayesian? sharper-than-bayesian in-context inference.
+\newblock \emph{arXiv preprint arXiv:2506.10268}, 2025.
+
+\bibitem[Griffiths and Kalish(2007)]{griffiths2007language}
+Thomas~L. Griffiths and Michael~L. Kalish.
+\newblock Language evolution by iterated learning with {B}ayesian agents.
+\newblock \emph{Cognitive Science}, 31\penalty0 (3):\penalty0 441--480, 2007.
+
+\bibitem[Kirby et~al.(2007)Kirby, Dowman, and Griffiths]{kirby2007innateness}
+Simon Kirby, Mike Dowman, and Thomas~L. Griffiths.
+\newblock Innateness and culture in the evolution of language.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 104\penalty0
+  (12):\penalty0 5241--5245, 2007.
+
+\bibitem[Kochelka et~al.(2026)]{kochelka2026weak}
+M.~Kochelka et~al.
+\newblock Weak effects of knowledge conflict in single-step data-to-text
+  generation.
+\newblock \emph{arXiv preprint arXiv:2609.09363}, 2026.
+
+\bibitem[Lakens(2017)]{lakens2017equivalence}
+Dani{\"e}l Lakens.
+\newblock Equivalence tests: A practical primer for t tests, correlations, and
+  meta-analyses.
+\newblock \emph{Social Psychological and Personality Science}, 8\penalty0
+  (4):\penalty0 355--362, 2017.
+
+\bibitem[Packer et~al.(2023)]{packer2024memgpt}
+Charles Packer et~al.
+\newblock {MemGPT}: Towards {LLM}s as operating systems.
+\newblock 2023.
+
+\bibitem[Perez et~al.(2025)]{perez2025cultural}
+Jeremy Perez et~al.
+\newblock When machines imitate us: Attractors in iterated {LLM} transmission.
+\newblock In \emph{ICLR}, 2025.
+\newblock arXiv:2407.04503.
+
+\bibitem[Peterson(2024)]{peterson2024knowledge}
+Andrew~J. Peterson.
+\newblock {AI} and the problem of knowledge collapse.
+\newblock \emph{arXiv preprint arXiv:2404.03502}, 2024.
+
+\bibitem[Ren et~al.(2024)]{ren2024iterated}
+Yifei Ren et~al.
+\newblock Towards understanding how transformers learn in-context through a
+  representation learning lens.
+\newblock In \emph{NeurIPS}, 2024.
+\newblock arXiv:2404.04286.
+
+\bibitem[Sivaprasad et~al.(2025)]{sivaprasad2025fictional}
+S.~Sivaprasad et~al.
+\newblock Fictional worlds isolate commonsense priors from entity memorization.
+\newblock In \emph{ACL}, 2025.
+
+\bibitem[Wu et~al.(2024{\natexlab{a}})]{wu2024monoculture}
+Fan Wu et~al.
+\newblock Generative monoculture in large language models.
+\newblock \emph{arXiv preprint arXiv:2407.02209}, 2024{\natexlab{a}}.
+
+\bibitem[Wu et~al.(2024{\natexlab{b}})]{clasheval2024}
+Kevin Wu et~al.
+\newblock {ClashEval}: Quantifying the tug-of-war between an {LLM}'s internal
+  prior and external evidence.
+\newblock In \emph{NeurIPS}, 2024{\natexlab{b}}.
+\newblock arXiv:2404.10198.
+
+\bibitem[Xie et~al.(2024)]{xie2024adaptive}
+Jian Xie et~al.
+\newblock Adaptive chameleon or stubborn sloth: Revealing the behavior of large
+  language models in knowledge conflicts.
+\newblock In \emph{ICLR}, 2024.
+\newblock arXiv:2305.13300.
+
+\bibitem[Zahn and Chana(2026)]{zahn2026facts}
+J.~Zahn and R.~Chana.
+\newblock Facts as first-class objects: Knowledge objects for persistent {LLM}
+  memory.
+\newblock \emph{arXiv preprint arXiv:2603.17781}, 2026.
+
+\bibitem[Zhang et~al.(2026)]{zhang2026faulty}
+D.~Zhang et~al.
+\newblock Faulty memory: Continual consolidation degrades agent memory utility.
+\newblock \emph{arXiv preprint arXiv:2605.12978}, 2026.
+
+\bibitem[Zhu and Griffiths(2025)]{zhu2025eliciting}
+Jian-Qiao Zhu and Thomas~L. Griffiths.
+\newblock Eliciting the priors of large language models using iterated
+  in-context learning.
+\newblock In \emph{Proceedings of the Annual Meeting of the Cognitive Science
+  Society}, 2025.
+\newblock arXiv:2406.01860.
+
+\end{thebibliography}

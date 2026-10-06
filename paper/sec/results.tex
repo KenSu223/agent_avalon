@@ -1,0 +1,164 @@
+\section{Results}
+\label{sec:results}
+
+\subsection{The budget has to bite before anything happens}
+\label{sec:adequacy}
+On the development split the compactor loses essentially nothing at the budgets it would normally
+run under: retention at $k{=}10$ is \RetentionBThreeHundred{} with a 300-word budget and
+\RetentionBSixHundred{} with 600. The prespecified adequacy condition --- retention at least 10
+percentage points (pp) below the append-only access ceiling and inside $[0.10,0.90]$ --- is met only
+at \BudgetB{} words, where retention is \RetentionOOne{} against a ceiling of \RetentionOSeven{}.
+That budget was frozen, together with every other operating choice, before any confirmatory family
+was touched. This is already a useful answer to the counter-evidence that strong models relay atomic
+facts losslessly \citep{faithful2026}: they do, until the budget forces a choice.
+
+\subsection{C1: making the same value expected does not help it survive}
+\label{sec:c1}
+\textsc{E-Shift} holds the target sentence and its value fixed and changes only a value-free
+description of the work the user does. On \EShiftNFam{} eligible families (\EShiftNBlocks{}
+arm-paired seed blocks), the frame shifts the compactor's elicited prior by \ShiftMean{} log-odds on
+the independent estimation half, in the predicted direction for \ShiftDirectionCount{} families.
+Survival does not follow. The mean paired difference is \EShiftMean{}~pp
+(95\% CI [\EShiftCIlo{}, \EShiftCIhi{}]), and the 90\% equivalence interval lies inside the
+prespecified $\pm$\SESOI{}~pp margin, so the frozen rule returns \textbf{\EShiftDecision{}}
+(Figure~\ref{fig:eshift}). The intention-to-treat analysis over all prespecified families agrees
+(\EShiftITTMean{}~pp), and the secondary endpoint --- the originally preregistered binary retention
+at $k{=}10$ --- gives the same picture. The \textsc{Copy-Rand} frame control, which cannot condition
+on the frame at all, differs by \FrameControlMean{}~pp and is equivalent to zero within $\pm5$~pp, so
+the null is not masking residual interference from the frame text itself.
+
+If anything the point estimate runs the wrong way: the value survives slightly \emph{less} often when
+the context makes it expected.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.86\textwidth]{figures/fig1_eshift.pdf}
+\caption{\textbf{The causal test is null.} Each bar is one family, with the target sentence and its
+value identical across arms. Right: the mean paired difference and the prespecified smallest effect
+of interest, with the prior-blind frame control.}
+\label{fig:eshift}
+\end{figure*}
+
+\subsection{C2--C3: no graded gradient either, under any operator}
+\label{sec:c2}
+The ecological version of the question gives the same answer. Regressing retention at $k{=}10$ on
+within-family-centred measured surprise, with family fixed effects and a two-way crossed cluster
+bootstrap over families and chain\,$\times$\,seed blocks, the slope under the rolling rewrite is
+\SlopeOOne{}~pp per log-odds (95\% CI [\SlopeOOneCIlo{}, \SlopeOOneCIhi{}]), which is
+\SlopeOOneIQR{}~pp across the interquartile surprise contrast of \IQRSurprise{} log-odds.
+Retention by surprise tercile under the rolling rewrite is \LowOone{}\%, mid, and \HighOone{}\%
+(Figure~\ref{fig:operators}a) --- flat, over a dose whose within-family range averages \BTRange{}
+log-odds. The surprise\,$\times$\,operator interaction against the prior-blind control is
+\InteractionPoint{}~pp (95\% CI [\InteractionCIlo{}, \InteractionCIhi{}]). The equivalence test on the
+control slope does not clear its $\pm5$~pp margin, so we report that contrast as inconclusive rather
+than as positive evidence of no difference; the point estimates in both arms are near zero.
+
+Under the gatekeeping order frozen in advance, C1 did not pass, so C2 and C3 are reported as
+evidence rather than as confirmed claims. They point the same way.
+
+\subsection{What does drive loss: reading your own summary}
+\label{sec:operators}
+The operator lattice separates the mechanisms, and one of them matters a great deal
+(Figure~\ref{fig:operators}b, Figure~\ref{fig:contrasts}). Holding the model, the budget, the
+sessions and the stimuli fixed, rewriting the memory from the \emph{raw sessions} retains
+\RetOfour{}\% at $k{=}10$, while rewriting from the model's \emph{own previous memory} retains
+\RetOone{}\% --- a difference of \ContrastOfour{}~pp (95\% CI [\ContrastOfourLo{},
+\ContrastOfourHi{}]). By $k{=}20$ the gap is wider still: \CurveOfourK{}\% against \CurveOoneK{}\%.
+The compression bottleneck is not what destroys the content; iterating on your own compressed output
+is.
+
+Two further arms locate the rest of the behaviour. The prior-blind random control retains
+\RetOthree{}\%, statistically indistinguishable from the rolling rewrite, which is what rules out the
+coder and raw capacity pressure as explanations for anything we see. Verbatim \emph{selection} by the
+model collapses to \RetOtwo{}\% by $k{=}10$: given a pool of source lines it keeps recent
+conversational turns and lets the seeded facts go, a recency bias so strong that this arm carries no
+information about surprise and we do not interpret its slope.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.86\textwidth]{figures/fig2_operators.pdf}
+\caption{\textbf{Retention is flat in surprise but far apart across operators.} Left: retention at
+$k{=}10$ by measured surprise tercile. Right: survival over the chain.}
+\label{fig:operators}
+\end{figure*}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.92\linewidth]{figures/fig3_contrasts.pdf}
+\caption{\textbf{Each arm removes one mechanism.} Retention at $k{=}10$ relative to the rolling
+rewrite, with two-way crossed cluster bootstrap intervals.}
+\label{fig:contrasts}
+\end{figure}
+
+\subsection{C5--C6: memory is deleted, not corrupted}
+\label{sec:c6}
+Across \NCodedCases{} coded item-checkpoints, only \ChangedCount{} (\ChangedRate{}) are changes to a
+different value. The replacement-direction test has \NChangedEvents{} usable events in the
+confirmatory set, far too few to estimate a direction, and we report that as a scoped null rather
+than a result. The failure mode is simply deletion: an item is there, and then it is not. Deletion is
+close to absorbing --- the regeneration rate out of the absent state is \RegenRate{} --- which is why
+the formal account is stated as survival and replacement rather than as convergence to a stationary
+distribution.
+
+A value-level kernel estimated from the single step $k{=}0\rightarrow1$ predicts the held-out state
+distribution at $k{=}10$ with total-variation distance \KernelTVD{}, against \KernelConstTVD{} for a
+constant per-step survival baseline (Appendix~\ref{app:kernel}). One compaction step does tell a
+practitioner roughly what a long chain will do, but mostly because the hazard is close to constant,
+not because the value-level structure carries extra information.
+
+\subsection{C7: what to do about it}
+\label{sec:c7}
+The mitigation that works is the one already shipping. Adding the anti-drift rules from Codex's
+memory-consolidation prompt to an otherwise identical rolling rewrite raises retention at $k{=}10$
+from \RetOone{}\% to \RetOfive{}\%, a gain of \ContrastOfive{}~pp (95\% CI [\ContrastOfiveLo{},
+\ContrastOfiveHi{}]) at no extra budget --- recovering almost the whole iteration penalty
+(Figure~\ref{fig:mitigation}).
+
+Surprise-pinning, the mitigation our theory predicted, does not work. Pinning the highest-surprise
+items verbatim costs \ContrastOsix{}~pp relative to no mitigation, because under a binding budget the
+pinned text crowds out everything else, and it is not distinguishable from token-matched \emph{random}
+pinning. It does do what it says --- pinned high-surprise items are retained, which is why the
+per-operator surprise slope for that arm is positive by construction --- but the net effect on the
+memory as a whole is negative. A theory-derived fix that assumes the wrong theory is worse than the
+blunt instrument.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.92\linewidth]{figures/fig5_mitigation.pdf}
+\caption{\textbf{The deployed anchoring prompt beats the theory-derived fix.} Retention at $k{=}10$
+by surprise tercile. Pinning raises retention for the items it pins and lowers it overall.}
+\label{fig:mitigation}
+\end{figure}
+
+\subsection{Robustness}
+\label{sec:robust}
+The null is not specific to one model or one decoding setting (Table~\ref{tab:robust}). On a second
+strong family (Llama-3.3-70B), on a small local model (Qwen3-8B), and at temperature $0$ as well as
+$1$, every slope of retention on measured surprise has a bootstrap interval containing zero. The
+weaker models lose far more content overall --- the rolling rewrite retains \RetLlamaOone{}\% and
+\RetLocalOone{}\% at $k{=}10$ against \RetOone{}\% for the primary compactor --- and the
+source-rewriting advantage reappears in both, but neither shows a surprise gradient. The hosted proxy
+caps temperature at $1.0$, so $T>1$ could not be tested.
+
+\subsection{A1: preferences, and the homogenisation that does not happen}
+\label{sec:prefs}
+User preferences are the case where drift-to-defaults is most often asserted, and they behave like
+the facts. In stored memory, preferences that \emph{match} the model's own default behaviour survive
+\PrefDefaultK{}\% of the time at $k{=}20$, while preferences that \emph{differ} from it survive
+\PrefNonDefaultK{}\% --- a gap of \PrefGapK{}~pp in favour of the non-default content
+(Figure~\ref{fig:prefs}a). The surviving profile therefore becomes more distinctive, not less: the
+share of stored preferences that depart from the model's defaults rises from \PrefShareZero{}\% at
+$k{=}0$ to \PrefShareK{}\% at $k{=}20$.
+
+Separating storage from execution (Figure~\ref{fig:prefs}b), the model follows a stated preference
+\PrefCondA{}\% of the time given the raw instructions and \PrefCondC{}\% given nothing, so there is
+an execution ceiling of \PrefExecLoss{}~pp unrelated to memory; memory costs a further
+\PrefStorageLoss{}~pp by $k{=}20$. Both losses are real; neither is prior-shaped.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.86\textwidth]{figures/fig4_preferences.pdf}
+\caption{\textbf{Preferences do not homogenise.} Left: stored-memory survival split by whether the
+preference matches the model's own default. Right: storage loss against the execution ceiling.}
+\label{fig:prefs}
+\end{figure*}

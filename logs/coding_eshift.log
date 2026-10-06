@@ -1,0 +1,36 @@
+5184 item-checkpoint cases, 1425 need judging (27.5%)
+judge openai.gpt-oss-120b-1:0: 1425 calls, est $0.17
+[judge:openai] 71/1425 in 0s
+[judge:openai] 142/1425 in 0s
+[judge:openai] 213/1425 in 0s
+[judge:openai] 284/1425 in 0s
+[judge:openai] 355/1425 in 2s
+[ju[judge:openai] 426/1425 in [jud[judge:openai] 497/1425 in[judg[judge:openai] 568/1425 in[judge:openai] 639/1425 in 13s
+[judg[judge:openai] 710/1425 in[judge:openai] 781/1425 in 20s
+[judg[judge:openai] 852/1425 in[judge:openai] 923/1425 in 26s
+[judg[judge:openai] 994/1425 in[judg[judge:openai] 1065/1425 in[judge:openai] 1136/1425 in 37s
+[judge:openai] 1207/1425 in 40s
+[judge:openai] 1278/1425 in 44s
+[judge:openai] 1349/1425 in 46s
+[judge:openai] 1420/1425 in 49s
+judge google.gemma-3-27b-it: 1425 calls, est $0.21
+[judge:google] 71/1425 in 3s
+[judge:google] 142/1425 in 5s
+[judg[judge:google] 213/1425 i[judge:google] 284/1425 in 9s
+[judge:google] 355/1425 in 12s
+[judge:google] 426/1425 in 14s
+[judge:google] 497/1425 in 17s
+[judge:google] 568/1425 in 19s
+[judge:google] 639/1425 in 22s
+[judge:google] 710/1425 in 24s
+[judge:google] 781/1425 in 26s
+[judge:google] 852/1425 in 28s
+[judge:google] 923/1425 in 30s
+[judge[judge:google] 994/1425 i[judge:google] 1065/1425 in 34s
+[judge:google] 1136/1425 in 36s
+[judge:google] 1207/1425 in 39s
+[judge:google] 1278/1425 in 41s
+[judge:google] 1349/1425 in 43s
+[judge:google] 1420/1425 in 45s
+labels: {'RETAINED': 3996, 'UNRESOLVED': 167, 'DROPPED': 1013, 'CHANGED': 8}  kappa=0.6968258922599672
+21472

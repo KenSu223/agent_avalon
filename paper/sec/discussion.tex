@@ -1,0 +1,32 @@
+\section{What this means for memory design}
+\label{sec:discussion}
+
+\paragraph{The bottleneck is where the risk lives.} The clearest practical finding is negative in a
+useful way: at the word budgets a strong compactor normally operates under, it loses essentially
+nothing. Retention at $k{=}10$ is \RetentionBThreeHundred{} at a 300-word budget and
+\RetentionBSixHundred{} at 600. Degradation only appears once the budget is genuinely binding. A
+system that reports a comfortable compression ratio is not thereby safe; what matters is whether the
+budget forces a choice, and only then does \emph{which} content is chosen become a question about
+the model's expectations.
+
+\paragraph{Loss is deletion, not corruption.} Across \NCodedCases{} coded item-checkpoints, only
+\ChangedCount{} (\ChangedRate{}) are changes to a different value. The failure mode practitioners
+worry about --- a constraint quietly rewritten into a plausible default --- is not what we observe
+in a strong compactor. What we observe is that the item is simply gone. This matters for mitigation:
+checks that compare a stored value against an expected range will not fire, because there is nothing
+left to compare. Detecting this failure requires knowing what \emph{used to be} in memory, which is
+exactly what rolling rewrite destroys.
+
+\paragraph{Keep the original, or keep a pointer to it.} The operator lattice makes the design
+implication concrete. Append-only with oracle retrieval is a ceiling by construction; verbatim
+selection (\textsc{Copy-LLM}) removes the rewriting channel at the cost of compression; and pinning
+specific lines works as a mechanism, because our implementation \emph{constructs} the stored state
+from the pinned text rather than asking the model to preserve it. Asking is not enough: the
+anti-drift wording shipped in production memory-consolidation prompts is a request, and a request is
+satisfied or not at the model's discretion.
+
+\paragraph{Personalisation.} If what survives compaction is what the model already expected, then
+the parts of a user profile that carry information --- the unusual date format, the unusual unit, the
+unusual constraint --- are the parts most at risk, and the surviving profile drifts toward the
+profile of an average user. We report this as an application rather than a claim about people: the
+eight profiles are controlled test cases, and generalisation is over preference families.

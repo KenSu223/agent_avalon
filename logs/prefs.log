@@ -1,0 +1,27 @@
+preference chains: 24 trajectories x 21 steps
+  6/24
+  12/24
+  18/24
+  24/24
+behaviour probes: 1760 calls, est $0.30
+[prefprobe] 88/1760 in 8s
+[prefprobe] 176/1760 in 26s
+[prefprobe] 264/1760 in 47s
+[prefprobe] 352/1760 in 55s
+[prefprobe] 440/1760 in 67s
+[prefprobe] 528/1760 in 79s
+[prefprobe] 616/1760 in 92s
+[prefprobe] 704/1760 in 102s
+[prefprobe] 792/1760 in 111s
+[prefprobe] 880/1760 in 127s
+[prefprobe] 968/1760 in 135s
+[prefprobe] 1056/1760 in 142s
+[prefprobe] 1144/1760 in 155s
+[prefprobe] 1232/1760 in 167s
+[prefprobe] 1320/1760 in 173s
+[prefprobe] 1408/1760 in 180s
+[prefprobe] 1496/1760 in 190s
+[prefprobe] 1584/1760 in 197s
+[prefprobe] 1672/1760 in 203s
+[prefprobe] 1760/1760 in 234s
+wrote 1760 behaviour rows and 1440 memory rows

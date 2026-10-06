@@ -1,0 +1,26 @@
+{
+ "n_cases": 9504,
+ "n_judged": 4677,
+ "cohens_kappa": 0.7116488058319126,
+ "label_distribution": {
+  "RETAINED": 4972,
+  "DROPPED": 4381,
+  "UNRESOLVED": 133,
+  "CHANGED": 18
+ },
+ "judge_confusion": {
+  "DROPPED|DROPPED": 4381,
+  "DROPPED|CHANGED": 57,
+  "DROPPED|UNRESOLVED": 13,
+  "DROPPED|RETAINED": 38,
+  "RETAINED|RETAINED": 145,
+  "CHANGED|RETAINED": 20,
+  "RETAINED|CHANGED": 1,
+  "CHANGED|DROPPED": 4,
+  "CHANGED|CHANGED": 18
+ },
+ "judges": [
+  "openai.gpt-oss-120b-1:0",
+  "google.gemma-3-27b-it"
+ ]
+}

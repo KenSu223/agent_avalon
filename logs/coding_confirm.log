@@ -1,0 +1,44 @@
+32076 item-checkpoint cases, 8750 need judging (27.3%)
+judge openai.gpt-oss-120b-1:0: 8750 calls, est $1.05
+[judge:openai] 437/8750 in 23s
+[judge:openai] 874/8750 in 46s
+[judge:openai] 1311/8750 in 68s
+[judge:openai] 1748/8750 in 90s
+[judge:openai] 2185/8750 in 112s
+[judge:openai] 2622/8750 in 135s
+[judge:openai] 3059/8750 in 157s
+[judge:openai] 3496/8750 in 178s
+[judge:openai] 3933/8750 in 199s
+[judge:openai] 4370/8750 in 219s
+[judge:openai] 4807/8750 in 239s
+[judge:openai] 5244/8750 in 259s
+[judge:openai] 5681/8750 in 279s
+[judge:openai] 6118/8750 in 299s
+[judge:openai] 6555/8750 in 318s
+[judge:openai] 6992/8750 in 337s
+[judge:openai] 7429/8750 in 356s
+[judge:openai] 7866/8750 in 376s
+[judge:openai] 8303/8750 in 396s
+[judge:openai] 8740/8750 in 417s
+judge google.gemma-3-27b-it: 8750 calls, est $1.28
+[judge:google] 437/8750 in 14s
+[judge:google] 874/8750 in 27s
+[judge:google] 1311/8750 in 40s
+[judge:google] 1748/8750 in 53s
+[judge:google] 2185/8750 in 66s
+[judge:google] 2622/8750 in 79s
+[judge:google] 3059/8750 in 93s
+[judge:google] 3496/8750 in 105s
+[judge:google] 3933/8750 in 118s
+[judge:google] 4370/8750 in 131s
+[judge:google] 4807/8750 in 148s
+[judge:google] 5244/8750 in 162s
+[judge:google] 5681/8750 in 180s
+[judge:google] 6118/8750 in 193s
+[judge:google] 6555/8750 in 206s
+[judge:google] 6992/8750 in 218s
+[judge:google] 7429/8750 in 231s
+[judge:google] 7866/8750 in 244s
+[judge:google] 8303/8750 in 257s
+[judge:google] 8740/8750 in 270s
+labels: {'RETAINED': 24728, 'DROPPED': 6990, 'UNRESOLVED': 332, 'CHANGED': 26}  kappa=0.8795091142538662
