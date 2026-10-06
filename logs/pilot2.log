@@ -1,0 +1,14 @@
+150 trajectories (60 use the compactor), K=20
+est compactor calls: 1260  est cost $0.74
+[dev] 150 trajectories to run (0 already done)
+  [dev] 15/150  246s  $0.164
+  [dev] 30/150  519s  $0.383
+  [dev] 45/150  917s  $0.638
+  [dev] 60/150  1025s  $0.828
+  [dev] 75/150  1025s  $0.828
+  [dev] 90/150  1025s  $0.828
+  [dev] 105/150  1025s  $0.828
+  [dev] 120/150  1025s  $0.828
+  [dev] 135/150  1025s  $0.828
+  [dev] 150/150  1236s  $0.994
+[dev] done: 150 trajectories, $0.994, 1236s

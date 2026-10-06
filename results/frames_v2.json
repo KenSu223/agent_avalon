@@ -1,0 +1,2291 @@
+{
+ "frames": {
+  "F02": {
+   "family_id": "F02",
+   "target_level": 5,
+   "F+": "I monitor automated data flows that activate once external validations align, so we begin when signals stabilize.",
+   "F-": "I greet visitors arriving from different regions, adjusting my start to match their long-haul travel patterns.",
+   "len_plus": 17,
+   "len_minus": 16,
+   "draft": 5,
+   "cand": 0,
+   "shift_A": -2.141928050294602,
+   "n_clean_drafts": 1,
+   "all_shift_A": [
+    -2.142
+   ],
+   "shift_B": -2.1341653244320353,
+   "eligible": false
+  },
+  "F04": {
+   "family_id": "F04",
+   "target_level": 5,
+   "F+": "I reset my access key as part of our routine security rhythm between shifts.",
+   "F-": "I retype my login secret each time the system locks me out overnight.",
+   "len_plus": 14,
+   "len_minus": 13,
+   "draft": 5,
+   "cand": 2,
+   "shift_A": 0.790360947994815,
+   "n_clean_drafts": 3,
+   "all_shift_A": [
+    0.79,
+    0.692,
+    -0.678
+   ],
+   "shift_B": 0.16711670317542016,
+   "eligible": true
+  },
+  "F05": {
+   "family_id": "F05",
+   "target_level": 5,
+   "F+": "I handle routine updates on machines that cycle through fresh hardware without delay.",
+   "F-": "I troubleshoot critical systems where stability depends on long-term device reliability.",
+   "len_plus": 13,
+   "len_minus": 11,
+   "draft": 3,
+   "cand": 2,
+   "shift_A": 4.533141350289787,
+   "n_clean_drafts": 3,
+   "all_shift_A": [
+    4.533,
+    -0.326,
+    -1.031
+   ],
+   "shift_B": 4.533141350289787,
+   "eligible": true
+  },
+  "F07": {
+   "family_id": "F07",
+   "target_level": 5,
+   "F+": "I help coordinate changes where many experts must agree before anything moves forward.",
+   "F-": "I make small fixes quickly while users wait on live systems needing instant updates.",
+   "len_plus": 13,
+   "len_minus": 14,
+   "draft": 4,
+   "cand": 1,
+   "shift_A": 2.8482408168404265,
+   "n_clean_drafts": 3,
+   "all_shift_A": [
+    2.848,
+    -1.26,
+    -3.996
+   ],
+   "shift_B": 2.067327920401057,
+   "eligible": true
+  },
+  "F08": {
+   "family_id": "F08",
+   "target_level": 5,
+   "F+": "I adjust workflows nightly based on automated triggers that respond to minor shifts in data patterns.",
+   "F-": "I coordinate safety validations across departments where every change demands exhaustive review and sign-off approvals.",
+   "len_plus": 16,
+   "len_minus": 15,
+   "draft": 3,
+   "cand": 0,
+   "shift_A": 2.775693162961007,
+   "n_clean_drafts": 2,
+   "all_shift_A": [
+    2.776,
+    1.449
+   ],
+   "shift_B": 2.334546570533205,
+   "eligible": true
+  },
+  "F09": {
+   "family_id": "F09",
+   "target_level": 5,
+   "F+": "I coordinate with colleagues across time zones, so our check-in fits when most are still online.",
+   "F-": "I monitor live patient data streams where delays could risk health outcomes.",
+   "len_plus": 16,
+   "len_minus": 12,
+   "draft": 2,
+   "cand": 0,
+   "shift_A": 1.846778784743136,
+   "n_clean_drafts": 1,
+   "all_shift_A": [
+    1.847
+   ],
+   "shift_B": 1.9402530827374982,
+   "eligible": true
+  },
+  "F12": {
+   "family_id": "F12",
+   "target_level": 5,
+   "F+": "I monitor live system alerts and hand off to the next person when my shift ends.",
+   "F-": "I oversee critical infrastructure checks and rarely pass responsibility to someone else.",
+   "len_plus": 16,
+   "len_minus": 12,
+   "draft": 4,
+   "cand": 3,
+   "shift_A": 2.1222169356146434,
+   "n_clean_drafts": 4,
+   "all_shift_A": [
+    2.122,
+    0.815,
+    0.06,
+    0.01
+   ],
+   "shift_B": 2.112311759664788,
+   "eligible": true
+  },
+  "F14": {
+   "family_id": "F14",
+   "target_level": 5,
+   "F+": "I monitor automated data flows that run without interruption beneath the main campus.",
+   "F-": "I handle live client requests that require immediate access to secure infrastructure.",
+   "len_plus": 13,
+   "len_minus": 12,
+   "draft": 3,
+   "cand": 0,
+   "shift_A": 0.32631759203425115,
+   "n_clean_drafts": 1,
+   "all_shift_A": [
+    0.326
+   ],
+   "shift_B": 0.6527027531508776,
+   "eligible": false
+  },
+  "F15": {
+   "family_id": "F15",
+   "target_level": 5,
+   "F+": "I monitor the lab\u2019s sterilization cycle where each phase demands immediate recalibration after use.",
+   "F-": "I manage the historical archive where every adjustment unfolds over quiet, uninterrupted spans.",
+   "len_plus": 14,
+   "len_minus": 13,
+   "draft": 1,
+   "cand": 0,
+   "shift_A": 1.6222003990604743,
+   "n_clean_drafts": 2,
+   "all_shift_A": [
+    1.622,
+    -2.321
+   ],
+   "shift_B": 1.8437086259800253,
+   "eligible": true
+  },
+  "F18": {
+   "family_id": "F18",
+   "target_level": 5,
+   "F+": "I handle automated data flows between remote sensors and central reporting systems during overnight runs.",
+   "F-": "I negotiate international travel logistics for field engineers working in high-cost urban centers.",
+   "len_plus": 15,
+   "len_minus": 13,
+   "draft": 3,
+   "cand": 0,
+   "shift_A": 0.0,
+   "n_clean_drafts": 1,
+   "all_shift_A": [
+    0.0
+   ],
+   "shift_B": 0.0,
+   "eligible": false
+  },
+  "F19": {
+   "family_id": "F19",
+   "target_level": 5,
+   "F+": "I monitor overnight data flows where automation handles everything without human input.",
+   "F-": "I coordinate live transaction validations requiring constant collaboration across multiple departments.",
+   "len_plus": 12,
+   "len_minus": 11,
+   "draft": 1,
+   "cand": 0,
+   "shift_A": 0.0,
+   "n_clean_drafts": 1,
+   "all_shift_A": [
+    0.0
+   ],
+   "shift_B": 0.0,
+   "eligible": false
+  },
+  "F20": {
+   "family_id": "F20",
+   "target_level": 5,
+   "F+": "I help maintain the nightly validation suite for our satellite telemetry systems before dawn.",
+   "F-": "I trigger the deployment check each time someone saves a frontend form.",
+   "len_plus": 14,
+   "len_minus": 12,
+   "draft": 1,
+   "cand": 1,
+   "shift_A": 4.533141350289787,
+   "n_clean_drafts": 4,
+   "all_shift_A": [
+    4.533,
+    4.207,
+    2.977,
+    2.672
+   ],
+   "shift_B": 4.533141350289787,
+   "eligible": true
+  },
+  "F21": {
+   "family_id": "F21",
+   "target_level": 5,
+   "F+": "I monitor nightly data sweeps where traces fade soon after validation completes.",
+   "F-": "I support live diagnostics for critical systems handling continuous patient streams.",
+   "len_plus": 12,
+   "len_minus": 11,
+   "draft": 2,
+   "cand": 0,
+   "shift_A": 4.533141350289787,
+   "n_clean_drafts": 2,
+   "all_shift_A": [
+    4.533,
+    0.537
+   ],
+   "shift_B": 4.206823757752265,
+   "eligible": true
+  },
+  "F23": {
+   "family_id": "F23",
+   "target_level": 5,
+   "F+": "I monitor the overnight data sync that runs quietly while the building stays dark and empty.",
+   "F-": "I manage the live dashboard that tracks customer activity across our busiest service channels.",
+   "len_plus": 16,
+   "len_minus": 14,
+   "draft": 5,
+   "cand": 3,
+   "shift_A": 1.0203946486544466,
+   "n_clean_drafts": 4,
+   "all_shift_A": [
+    1.02,
+    0.951,
+    0.58,
+    0.326
+   ],
+   "shift_B": 0.3342730923032189,
+   "eligible": true
+  },
+  "F24": {
+   "family_id": "F24",
+   "target_level": 5,
+   "F+": "I monitor the automated inventory updates that align with local community events.",
+   "F-": "I personally greet each vendor and inspect their goods as they arrive.",
+   "len_plus": 12,
+   "len_minus": 12,
+   "draft": 2,
+   "cand": 0,
+   "shift_A": 0.0,
+   "n_clean_drafts": 1,
+   "all_shift_A": [
+    0.0
+   ],
+   "shift_B": 0.0,
+   "eligible": false
+  },
+  "F25": {
+   "family_id": "F25",
+   "target_level": 5,
+   "F+": "I monitor automated fitness data transfers each morning before the servers sync with member portals.",
+   "F-": "I hand-deliver custom workout plans to clients in their homes across the county every afternoon.",
+   "len_plus": 15,
+   "len_minus": 15,
+   "draft": 5,
+   "cand": 0,
+   "shift_A": 0.0,
+   "n_clean_drafts": 1,
+   "all_shift_A": [
+    0.0
+   ],
+   "shift_B": -0.3263175925375217,
+   "eligible": false
+  },
+  "F26": {
+   "family_id": "F26",
+   "target_level": 5,
+   "F+": "I monitor automated data transfers that finalize after most local services have finished handling physical items.",
+   "F-": "I personally hand-deliver urgent documents and rely on immediate postal acceptance for compliance.",
+   "len_plus": 16,
+   "len_minus": 13,
+   "draft": 0,
+   "cand": 0,
+   "shift_A": 0.21089060074849542,
+   "n_clean_drafts": 1,
+   "all_shift_A": [
+    0.211
+   ],
+   "shift_B": 0.0,
+   "eligible": false
+  },
+  "F27": {
+   "family_id": "F27",
+   "target_level": 5,
+   "F+": "I coordinate brief huddles for quick updates where space is tight but everyone fits just fine.",
+   "F-": "I manage live incident responses requiring multiple specialists to gather urgently when alerts fire.",
+   "len_plus": 16,
+   "len_minus": 14,
+   "draft": 5,
+   "cand": 1,
+   "shift_A": 3.2728481240881053,
+   "n_clean_drafts": 2,
+   "all_shift_A": [
+    3.273,
+    1.473
+   ],
+   "shift_B": 3.2795440824493793,
+   "eligible": true
+  },
+  "F28": {
+   "family_id": "F28",
+   "target_level": 5,
+   "F+": "I handle small personal requests that rarely need more than a quick print.",
+   "F-": "I manage critical system reports where every copy must be perfect and traceable.",
+   "len_plus": 13,
+   "len_minus": 13,
+   "draft": 5,
+   "cand": 3,
+   "shift_A": 2.0509078869667787,
+   "n_clean_drafts": 4,
+   "all_shift_A": [
+    2.051,
+    1.138,
+    0.326,
+    0.0
+   ],
+   "shift_B": 2.7102017436716754,
+   "eligible": true
+  },
+  "F29": {
+   "family_id": "F29",
+   "target_level": 5,
+   "F+": "I monitor automated updates in our secure data center where access controls refresh continuously.",
+   "F-": "I host community workshops where visitors connect once and expect consistent network access.",
+   "len_plus": 14,
+   "len_minus": 13,
+   "draft": 3,
+   "cand": 1,
+   "shift_A": 4.533141350289787,
+   "n_clean_drafts": 3,
+   "all_shift_A": [
+    4.533,
+    3.953,
+    0.082
+   ],
+   "shift_B": 4.533141350289787,
+   "eligible": true
+  },
+  "F30": {
+   "family_id": "F30",
+   "target_level": 3,
+   "F+": "I monitor nightly transfers where the system prioritizes larger batches automatically.",
+   "F-": "I assist clients live, helping them share quick snapshots of their work.",
+   "len_plus": 11,
+   "len_minus": 12,
+   "draft": 3,
+   "cand": 1,
+   "shift_A": 3.777617791969756,
+   "n_clean_drafts": 3,
+   "all_shift_A": [
+    3.778,
+    1.777,
+    0.0
+   ],
+   "shift_B": 3.777617791969756,
+   "eligible": true
+  },
+  "F31": {
+   "family_id": "F31",
+   "target_level": 5,
+   "F+": "I trigger the refresh after testing changes, so everything stays stable until we're ready.",
+   "F-": "I watch the live feed constantly, expecting the latest entries to appear the moment they're logged.",
+   "len_plus": 14,
+   "len_minus": 16,
+   "draft": 1,
+   "cand": 1,
+   "shift_A": 2.58065569559318,
+   "n_clean_drafts": 2,
+   "all_shift_A": [
+    2.581,
+    -0.568
+   ],
+   "shift_B": 1.7836796888417488,
+   "eligible": true
+  },
+  "F33": {
+   "family_id": "F33",
+   "target_level": 3,
+   "F+": "I trigger the nightly consolidation after the main systems settle, relying on the usual background sequence.",
+   "F-": "I wait for a live response during customer onboarding, needing immediate confirmation before proceeding further.",
+   "len_plus": 16,
+   "len_minus": 15,
+   "draft": 4,
+   "cand": 0,
+   "shift_A": 0.0,
+   "n_clean_drafts": 2,
+   "all_shift_A": [
+    0.0,
+    0.0
+   ],
+   "shift_B": 0.0,
+   "eligible": false
+  },
+  "F34": {
+   "family_id": "F34",
+   "target_level": 3,
+   "F+": "I flip the master switch after dawn when the building wakes and machines hum back to life.",
+   "F-": "I trigger silent rollbacks remotely while monitoring encrypted streams from my cabin in the woods.",
+   "len_plus": 17,
+   "len_minus": 15,
+   "draft": 4,
+   "cand": 0,
+   "shift_A": 0.0,
+   "n_clean_drafts": 1,
+   "all_shift_A": [
+    0.0
+   ],
+   "shift_B": 0.0,
+   "eligible": false
+  },
+  "F35": {
+   "family_id": "F35",
+   "target_level": 4,
+   "F+": "I handle routine requests while the system automatically flags exceptions for final review.",
+   "F-": "I assist clients directly, so every decision I make reflects our highest service standards.",
+   "len_plus": 13,
+   "len_minus": 14,
+   "draft": 5,
+   "cand": 2,
+   "shift_A": -0.5804113732521314,
+   "n_clean_drafts": 3,
+   "all_shift_A": [
+    -0.58,
+    -1.786,
+    -4.533
+   ],
+   "shift_B": -0.8904462633924275,
+   "eligible": false
+  },
+  "F36": {
+   "family_id": "F36",
+   "target_level": 5,
+   "F+": "I adjust budgets and forecasts to align with when our financial commitments reset each cycle.",
+   "F-": "I plan public infrastructure upgrades timed to match seasonal weather patterns in my region.",
+   "len_plus": 15,
+   "len_minus": 14,
+   "draft": 2,
+   "cand": 1,
+   "shift_A": 0.7522979337460134,
+   "n_clean_drafts": 4,
+   "all_shift_A": [
+    0.752,
+    -1.824,
+    -2.186,
+    -2.806
+   ],
+   "shift_B": 0.6247045243710521,
+   "eligible": true
+  },
+  "F37": {
+   "family_id": "F37",
+   "target_level": 5,
+   "F+": "I monitor sensitive hardware that performs best in cool, stable environments to ensure accuracy and reliability.",
+   "F-": "I support clinicians who comfort patients needing warm, welcoming spaces during delicate health assessments and consultations.",
+   "len_plus": 16,
+   "len_minus": 16,
+   "draft": 2,
+   "cand": 1,
+   "shift_A": 3.412972453917264,
+   "n_clean_drafts": 2,
+   "all_shift_A": [
+    3.413,
+    2.588
+   ],
+   "shift_B": 3.412972453917264,
+   "eligible": true
+  },
+  "F38": {
+   "family_id": "F38",
+   "target_level": 4,
+   "F+": "I handle automated system upkeep where tasks run without intervention so flexibility in scheduling is standard.",
+   "F-": "I coordinate critical client interactions where every moment is prebooked and coverage gaps can't be tolerated.",
+   "len_plus": 16,
+   "len_minus": 16,
+   "draft": 3,
+   "cand": 0,
+   "shift_A": 1.6151886237159665,
+   "n_clean_drafts": 1,
+   "all_shift_A": [
+    1.615
+   ],
+   "shift_B": 0.9339756347275276,
+   "eligible": true
+  },
+  "F39": {
+   "family_id": "F39",
+   "target_level": 4,
+   "F+": "I maintain background tasks that quietly update user data without anyone noticing.",
+   "F-": "I help customers troubleshoot crashes while they wait on the call with me.",
+   "len_plus": 12,
+   "len_minus": 13,
+   "draft": 0,
+   "cand": 0,
+   "shift_A": -0.10976761465505125,
+   "n_clean_drafts": 1,
+   "all_shift_A": [
+    -0.11
+   ],
+   "shift_B": -0.10371490958577345,
+   "eligible": false
+  },
+  "F40": {
+   "family_id": "F40",
+   "target_level": 5,
+   "F+": "I monitor live customer chats and respond instantly, so unresolved issues rarely linger beyond immediate attention.",
+   "F-": "I handle sensitive compliance reviews that require layered approvals, where responses often take several follow-up cycles.",
+   "len_plus": 16,
+   "len_minus": 16,
+   "draft": 5,
+   "cand": 2,
+   "shift_A": 2.177003107338374,
+   "n_clean_drafts": 3,
+   "all_shift_A": [
+    2.177,
+    1.655,
+    -0.254
+   ],
+   "shift_B": 2.3600449732939737,
+   "eligible": true
+  }
+ },
+ "rejected_drafts": [
+  {
+   "family_id": "F01",
+   "draft": 0,
+   "plus_violations": [
+    "candidate value (south|migrat|warmer)"
+   ],
+   "minus_violations": [],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F01",
+   "draft": 1,
+   "plus_violations": [
+    "candidate value (script)"
+   ],
+   "minus_violations": [],
+   "len_diff": 3
+  },
+  {
+   "family_id": "F01",
+   "draft": 2,
+   "plus_violations": [
+    "candidate value (restart)"
+   ],
+   "minus_violations": [],
+   "len_diff": 2
+  },
+  {
+   "family_id": "F01",
+   "draft": 3,
+   "plus_violations": [
+    "candidate value (south|migrat|warmer)"
+   ],
+   "minus_violations": [
+    "candidate value ((?:every|each) edit|real[- ])"
+   ],
+   "len_diff": 3
+  },
+  {
+   "family_id": "F01",
+   "draft": 4,
+   "plus_violations": [],
+   "minus_violations": [
+    "candidate value (freez|frozen|\\bice\\b)"
+   ],
+   "len_diff": 3
+  },
+  {
+   "family_id": "F01",
+   "draft": 5,
+   "plus_violations": [
+    "candidate value (restart)",
+    "attribute term (\\bbilling(?:s|es|ing|ed)?\\b)"
+   ],
+   "minus_violations": [
+    "attribute term (\\bbilling(?:s|es|ing|ed)?\\b)"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F02",
+   "draft": 0,
+   "plus_violations": [
+    "candidate value ((?:every|each) edit|real[- ])"
+   ],
+   "minus_violations": [
+    "attribute term (\\blogs?\\b)"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F02",
+   "draft": 1,
+   "plus_violations": [],
+   "minus_violations": [
+    "candidate value (opera|singer)"
+   ],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F02",
+   "draft": 2,
+   "plus_violations": [
+    "candidate value (script)"
+   ],
+   "minus_violations": [],
+   "len_diff": 2
+  },
+  {
+   "family_id": "F02",
+   "draft": 3,
+   "plus_violations": [],
+   "minus_violations": [
+    "attribute term (\\blogs?\\b)"
+   ],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F02",
+   "draft": 4,
+   "plus_violations": [],
+   "minus_violations": [
+    "candidate value (opera|singer)"
+   ],
+   "len_diff": 3
+  },
+  {
+   "family_id": "F03",
+   "draft": 0,
+   "plus_violations": [],
+   "minus_violations": [
+    "number/unit word"
+   ],
+   "len_diff": 2
+  },
+  {
+   "family_id": "F03",
+   "draft": 1,
+   "plus_violations": [
+    "candidate value (slow)",
+    "attribute term (\\bbackup(?:s|es|ing|ed)?\\b)"
+   ],
+   "minus_violations": [],
+   "len_diff": 2
+  },
+  {
+   "family_id": "F03",
+   "draft": 2,
+   "plus_violations": [
+    "candidate value (script)"
+   ],
+   "minus_violations": [
+    "number/unit word"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F03",
+   "draft": 3,
+   "plus_violations": [
+    "attribute term (\\bbackup(?:s|es|ing|ed)?\\b)"
+   ],
+   "minus_violations": [
+    "number/unit word",
+    "candidate value (\\bdaily\\b)"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F03",
+   "draft": 4,
+   "plus_violations": [
+    "candidate value (script)"
+   ],
+   "minus_violations": [],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F03",
+   "draft": 5,
+   "plus_violations": [
+    "number/unit word",
+    "candidate value (\\bdaily\\b)"
+   ],
+   "minus_violations": [],
+   "len_diff": 2
+  },
+  {
+   "family_id": "F04",
+   "draft": 0,
+   "plus_violations": [
+    "candidate value (\\bmine\\b|shaft|flooded)"
+   ],
+   "minus_violations": [
+    "candidate value (\\bmine\\b|shaft|flooded)"
+   ],
+   "len_diff": 3
+  },
+  {
+   "family_id": "F04",
+   "draft": 2,
+   "plus_violations": [
+    "attribute term (\\bCI\\b|pipeline)"
+   ],
+   "minus_violations": [
+    "attribute term (\\blogs?\\b)"
+   ],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F04",
+   "draft": 4,
+   "plus_violations": [],
+   "minus_violations": [
+    "attribute term (\\blogs?\\b)"
+   ],
+   "len_diff": 2
+  },
+  {
+   "family_id": "F05",
+   "draft": 2,
+   "plus_violations": [],
+   "minus_violations": [
+    "number/unit word"
+   ],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F05",
+   "draft": 4,
+   "plus_violations": [],
+   "minus_violations": [
+    "number/unit word"
+   ],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F05",
+   "draft": 5,
+   "plus_violations": [],
+   "minus_violations": [
+    "number/unit word"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F06",
+   "draft": 0,
+   "plus_violations": [],
+   "minus_violations": [
+    "attribute term (\\bwiki(?:s|es|ing|ed)?\\b|\\bu)"
+   ],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F06",
+   "draft": 1,
+   "plus_violations": [
+    "candidate value (script)",
+    "attribute term (\\bbackup(?:s|es|ing|ed)?\\b)"
+   ],
+   "minus_violations": [
+    "number/unit word",
+    "candidate value (\\bweekly\\b)"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F06",
+   "draft": 2,
+   "plus_violations": [
+    "attribute term (\\bbackup(?:s|es|ing|ed)?\\b)"
+   ],
+   "minus_violations": [
+    "attribute term (\\bwiki(?:s|es|ing|ed)?\\b|\\bu)"
+   ],
+   "len_diff": 3
+  },
+  {
+   "family_id": "F06",
+   "draft": 3,
+   "plus_violations": [
+    "number/unit word",
+    "attribute term (\\bwiki(?:s|es|ing|ed)?\\b|\\bu)"
+   ],
+   "minus_violations": [],
+   "len_diff": 3
+  },
+  {
+   "family_id": "F06",
+   "draft": 4,
+   "plus_violations": [
+    "attribute term (\\bbackup(?:s|es|ing|ed)?\\b)"
+   ],
+   "minus_violations": [
+    "number/unit word",
+    "attribute term (\\bwiki(?:s|es|ing|ed)?\\b|\\bu)"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F06",
+   "draft": 5,
+   "plus_violations": [
+    "attribute term (\\bwiki(?:s|es|ing|ed)?\\b|\\bu)"
+   ],
+   "minus_violations": [],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F07",
+   "draft": 0,
+   "plus_violations": [
+    "attribute term (\\bCI\\b|pipeline)"
+   ],
+   "minus_violations": [
+    "attribute term (pull request|\\bPRs?\\b|merg)"
+   ],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F07",
+   "draft": 1,
+   "plus_violations": [],
+   "minus_violations": [
+    "candidate value (slow)"
+   ],
+   "len_diff": 2
+  },
+  {
+   "family_id": "F07",
+   "draft": 3,
+   "plus_violations": [
+    "number/unit word",
+    "candidate value (\\bdaily\\b)"
+   ],
+   "minus_violations": [],
+   "len_diff": 2
+  },
+  {
+   "family_id": "F08",
+   "draft": 0,
+   "plus_violations": [
+    "candidate value (script)"
+   ],
+   "minus_violations": [],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F08",
+   "draft": 1,
+   "plus_violations": [
+    "attribute term (\\bdeploy(?:s|es|ing|ed)?\\b)"
+   ],
+   "minus_violations": [],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F08",
+   "draft": 2,
+   "plus_violations": [],
+   "minus_violations": [
+    "attribute term (\\blegacy(?:s|es|ing|ed)?\\b|\\)"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F08",
+   "draft": 5,
+   "plus_violations": [
+    "candidate value (script)",
+    "attribute term (\\bdeploy(?:s|es|ing|ed)?\\b)"
+   ],
+   "minus_violations": [
+    "number/unit word"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F09",
+   "draft": 0,
+   "plus_violations": [],
+   "minus_violations": [
+    "number/unit word",
+    "candidate value ((?:every|each) edit|real[- ])",
+    "attribute term (\\bfloor(?:s|es|ing|ed)?\\b|\\b)"
+   ],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F09",
+   "draft": 1,
+   "plus_violations": [
+    "number/unit word"
+   ],
+   "minus_violations": [
+    "attribute term (\\blogs?\\b)"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F09",
+   "draft": 3,
+   "plus_violations": [],
+   "minus_violations": [
+    "number/unit word",
+    "candidate value ((?:every|each) edit|real[- ])"
+   ],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F09",
+   "draft": 4,
+   "plus_violations": [
+    "number/unit word"
+   ],
+   "minus_violations": [
+    "candidate value ((?:every|each) edit|real[- ])",
+    "attribute term (\\bfarmers'? ?market\\b|\\bmark)"
+   ],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F09",
+   "draft": 5,
+   "plus_violations": [],
+   "minus_violations": [
+    "number/unit word",
+    "candidate value ((?:every|each) edit|real[- ])",
+    "attribute term (\\bfloor(?:s|es|ing|ed)?\\b|\\b)"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F10",
+   "draft": 0,
+   "plus_violations": [],
+   "minus_violations": [
+    "number/unit word"
+   ],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F10",
+   "draft": 1,
+   "plus_violations": [
+    "attribute term (\\blogs?\\b)"
+   ],
+   "minus_violations": [
+    "attribute term (pull request|\\bPRs?\\b|merg)"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F10",
+   "draft": 2,
+   "plus_violations": [],
+   "minus_violations": [
+    "candidate value (hospital|morgue)"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F10",
+   "draft": 3,
+   "plus_violations": [],
+   "minus_violations": [
+    "number/unit word"
+   ],
+   "len_diff": 2
+  },
+  {
+   "family_id": "F10",
+   "draft": 4,
+   "plus_violations": [],
+   "minus_violations": [
+    "attribute term (pull request|\\bPRs?\\b|merg)"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F10",
+   "draft": 5,
+   "plus_violations": [],
+   "minus_violations": [
+    "attribute term (pull request|\\bPRs?\\b|merg)"
+   ],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F11",
+   "draft": 0,
+   "plus_violations": [
+    "number/unit word",
+    "candidate value (script)"
+   ],
+   "minus_violations": [],
+   "len_diff": 4
+  },
+  {
+   "family_id": "F11",
+   "draft": 1,
+   "plus_violations": [],
+   "minus_violations": [
+    "number/unit word",
+    "candidate value ((?:every|each) edit|real[- ])"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F11",
+   "draft": 3,
+   "plus_violations": [],
+   "minus_violations": [
+    "candidate value ((?:every|each) edit|real[- ])"
+   ],
+   "len_diff": 2
+  },
+  {
+   "family_id": "F11",
+   "draft": 4,
+   "plus_violations": [
+    "candidate value (behind)"
+   ],
+   "minus_violations": [
+    "candidate value ((?:every|each) edit|real[- ])"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F11",
+   "draft": 5,
+   "plus_violations": [
+    "candidate value (restart)"
+   ],
+   "minus_violations": [],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F12",
+   "draft": 2,
+   "plus_violations": [],
+   "minus_violations": [
+    "attribute term (\\bvacation(?:s|es|ing|ed)?\\b)"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F12",
+   "draft": 5,
+   "plus_violations": [],
+   "minus_violations": [
+    "candidate value (hospital|morgue)"
+   ],
+   "len_diff": 3
+  },
+  {
+   "family_id": "F13",
+   "draft": 0,
+   "plus_violations": [
+    "candidate value ((?:every|each) edit|real[- ])"
+   ],
+   "minus_violations": [],
+   "len_diff": 2
+  },
+  {
+   "family_id": "F13",
+   "draft": 1,
+   "plus_violations": [],
+   "minus_violations": [
+    "number/unit word",
+    "candidate value (\\bdaily\\b)"
+   ],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F13",
+   "draft": 2,
+   "plus_violations": [
+    "candidate value ((?:every|each) edit|real[- ])"
+   ],
+   "minus_violations": [],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F13",
+   "draft": 3,
+   "plus_violations": [
+    "number/unit word",
+    "candidate value (\\bdaily\\b)"
+   ],
+   "minus_violations": [],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F13",
+   "draft": 4,
+   "plus_violations": [],
+   "minus_violations": [
+    "attribute term (stand-?up|capped|limit)"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F13",
+   "draft": 5,
+   "plus_violations": [
+    "candidate value ((?:every|each) edit|real[- ])"
+   ],
+   "minus_violations": [],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F14",
+   "draft": 0,
+   "plus_violations": [
+    "candidate value (same (?:time|speed)|no (?:di)"
+   ],
+   "minus_violations": [],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F14",
+   "draft": 1,
+   "plus_violations": [
+    "candidate value (script)"
+   ],
+   "minus_violations": [],
+   "len_diff": 2
+  },
+  {
+   "family_id": "F14",
+   "draft": 2,
+   "plus_violations": [
+    "number/unit word",
+    "candidate value (\\bdaily\\b)"
+   ],
+   "minus_violations": [
+    "candidate value (opera|singer)"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F14",
+   "draft": 4,
+   "plus_violations": [],
+   "minus_violations": [
+    "number/unit word"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F14",
+   "draft": 5,
+   "plus_violations": [
+    "candidate value (script)"
+   ],
+   "minus_violations": [
+    "number/unit word"
+   ],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F15",
+   "draft": 0,
+   "plus_violations": [
+    "candidate value ((?:every|each) edit|real[- ])"
+   ],
+   "minus_violations": [],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F15",
+   "draft": 2,
+   "plus_violations": [],
+   "minus_violations": [
+    "attribute term (\\bbackup(?:s|es|ing|ed)?\\b)"
+   ],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F15",
+   "draft": 3,
+   "plus_violations": [],
+   "minus_violations": [
+    "candidate value (restart)"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F15",
+   "draft": 5,
+   "plus_violations": [
+    "attribute term (\\bCI\\b|pipeline)"
+   ],
+   "minus_violations": [
+    "attribute term (\\bcoffee(?:s|es|ing|ed)?\\b|\\)"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F16",
+   "draft": 0,
+   "plus_violations": [
+    "candidate value (restart)"
+   ],
+   "minus_violations": [],
+   "len_diff": 4
+  },
+  {
+   "family_id": "F16",
+   "draft": 1,
+   "plus_violations": [
+    "candidate value (restart)",
+    "attribute term (\\blogs?\\b)"
+   ],
+   "minus_violations": [],
+   "len_diff": 3
+  },
+  {
+   "family_id": "F16",
+   "draft": 2,
+   "plus_violations": [
+    "candidate value (restart)"
+   ],
+   "minus_violations": [],
+   "len_diff": 3
+  },
+  {
+   "family_id": "F16",
+   "draft": 3,
+   "plus_violations": [
+    "candidate value (restart)"
+   ],
+   "minus_violations": [
+    "number/unit word"
+   ],
+   "len_diff": 2
+  },
+  {
+   "family_id": "F16",
+   "draft": 4,
+   "plus_violations": [
+    "candidate value (restart)",
+    "attribute term (\\blogs?\\b)"
+   ],
+   "minus_violations": [
+    "attribute term (\\bCI\\b|pipeline)"
+   ],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F16",
+   "draft": 5,
+   "plus_violations": [
+    "candidate value (restart)"
+   ],
+   "minus_violations": [
+    "attribute term (\\blogs?\\b)"
+   ],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F17",
+   "draft": 0,
+   "plus_violations": [
+    "candidate value ((?:every|each) edit|real[- ])",
+    "attribute term (\\blogs?\\b)"
+   ],
+   "minus_violations": [
+    "number/unit word",
+    "candidate value (ticket|\\bIT\\b)"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F17",
+   "draft": 1,
+   "plus_violations": [
+    "candidate value (ticket|\\bIT\\b)",
+    "attribute term (\\blogs?\\b)"
+   ],
+   "minus_violations": [],
+   "len_diff": 5
+  },
+  {
+   "family_id": "F17",
+   "draft": 2,
+   "plus_violations": [
+    "candidate value (ticket|\\bIT\\b)",
+    "attribute term (\\blogs?\\b)"
+   ],
+   "minus_violations": [],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F17",
+   "draft": 3,
+   "plus_violations": [
+    "attribute term (\\blogs?\\b)"
+   ],
+   "minus_violations": [
+    "candidate value (ticket|\\bIT\\b)"
+   ],
+   "len_diff": 3
+  },
+  {
+   "family_id": "F17",
+   "draft": 4,
+   "plus_violations": [
+    "attribute term (\\blogs?\\b)"
+   ],
+   "minus_violations": [
+    "number/unit word",
+    "candidate value (\\bweekly\\b)"
+   ],
+   "len_diff": 3
+  },
+  {
+   "family_id": "F17",
+   "draft": 5,
+   "plus_violations": [
+    "candidate value (ticket|\\bIT\\b)",
+    "attribute term (\\blogs?\\b)"
+   ],
+   "minus_violations": [],
+   "len_diff": 2
+  },
+  {
+   "family_id": "F18",
+   "draft": 0,
+   "plus_violations": [],
+   "minus_violations": [
+    "attribute term (pull request|\\bPRs?\\b|merg)"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F18",
+   "draft": 1,
+   "plus_violations": [
+    "attribute term (\\bvacation(?:s|es|ing|ed)?\\b)"
+   ],
+   "minus_violations": [
+    "number/unit word",
+    "candidate value (\\bweekly\\b)"
+   ],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F18",
+   "draft": 2,
+   "plus_violations": [
+    "candidate value (script)",
+    "attribute term (\\bdeploy(?:s|es|ing|ed)?\\b)"
+   ],
+   "minus_violations": [
+    "candidate value (facilities)",
+    "attribute term (\\bmeal(?:s|es|ing|ed)?\\b|\\ba)"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F18",
+   "draft": 4,
+   "plus_violations": [
+    "number/unit word",
+    "candidate value (\\bdaily\\b)"
+   ],
+   "minus_violations": [],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F18",
+   "draft": 5,
+   "plus_violations": [
+    "candidate value (opera|singer)"
+   ],
+   "minus_violations": [
+    "candidate value ((?:every|each) edit|real[- ])"
+   ],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F19",
+   "draft": 0,
+   "plus_violations": [],
+   "minus_violations": [
+    "number/unit word",
+    "candidate value ((?:every|each) edit|real[- ])"
+   ],
+   "len_diff": 3
+  },
+  {
+   "family_id": "F19",
+   "draft": 2,
+   "plus_violations": [],
+   "minus_violations": [
+    "candidate value ((?:every|each) edit|real[- ])"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F19",
+   "draft": 3,
+   "plus_violations": [],
+   "minus_violations": [
+    "candidate value ((?:every|each) edit|real[- ])"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F19",
+   "draft": 4,
+   "plus_violations": [],
+   "minus_violations": [
+    "number/unit word",
+    "candidate value ((?:every|each) edit|real[- ])"
+   ],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F19",
+   "draft": 5,
+   "plus_violations": [
+    "candidate value (script)"
+   ],
+   "minus_violations": [],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F20",
+   "draft": 2,
+   "plus_violations": [
+    "candidate value (restart)",
+    "attribute term (\\bcoffee(?:s|es|ing|ed)?\\b|\\)"
+   ],
+   "minus_violations": [],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F20",
+   "draft": 5,
+   "plus_violations": [
+    "attribute term (\\bdeploy(?:s|es|ing|ed)?\\b)"
+   ],
+   "minus_violations": [],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F21",
+   "draft": 0,
+   "plus_violations": [
+    "attribute term (\\bvacation(?:s|es|ing|ed)?\\b)"
+   ],
+   "minus_violations": [],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F21",
+   "draft": 1,
+   "plus_violations": [
+    "candidate value (script)"
+   ],
+   "minus_violations": [],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F21",
+   "draft": 5,
+   "plus_violations": [
+    "attribute term (\\blogs?\\b)"
+   ],
+   "minus_violations": [
+    "number/unit word",
+    "candidate value (\\bdaily\\b)",
+    "attribute term (\\blogs?\\b)"
+   ],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F22",
+   "draft": 0,
+   "plus_violations": [
+    "attribute term (\\bbackup(?:s|es|ing|ed)?\\b)"
+   ],
+   "minus_violations": [
+    "number/unit word"
+   ],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F22",
+   "draft": 1,
+   "plus_violations": [
+    "number/unit word"
+   ],
+   "minus_violations": [],
+   "len_diff": 2
+  },
+  {
+   "family_id": "F22",
+   "draft": 2,
+   "plus_violations": [
+    "number/unit word"
+   ],
+   "minus_violations": [],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F22",
+   "draft": 3,
+   "plus_violations": [
+    "attribute term (\\bbackup(?:s|es|ing|ed)?\\b)"
+   ],
+   "minus_violations": [
+    "number/unit word"
+   ],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F22",
+   "draft": 4,
+   "plus_violations": [
+    "number/unit word",
+    "candidate value (south|migrat|warmer)"
+   ],
+   "minus_violations": [],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F22",
+   "draft": 5,
+   "plus_violations": [
+    "number/unit word"
+   ],
+   "minus_violations": [],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F23",
+   "draft": 1,
+   "plus_violations": [
+    "attribute term (\\blogs?\\b)"
+   ],
+   "minus_violations": [
+    "candidate value ((?:every|each) edit|real[- ])"
+   ],
+   "len_diff": 2
+  },
+  {
+   "family_id": "F23",
+   "draft": 2,
+   "plus_violations": [
+    "attribute term (\\bbackup(?:s|es|ing|ed)?\\b)"
+   ],
+   "minus_violations": [
+    "candidate value (south|migrat|warmer)"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F24",
+   "draft": 0,
+   "plus_violations": [
+    "candidate value ((?:every|each) edit|real[- ])"
+   ],
+   "minus_violations": [],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F24",
+   "draft": 1,
+   "plus_violations": [
+    "candidate value (harvest)"
+   ],
+   "minus_violations": [],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F24",
+   "draft": 3,
+   "plus_violations": [
+    "candidate value (harvest)"
+   ],
+   "minus_violations": [
+    "number/unit word"
+   ],
+   "len_diff": 3
+  },
+  {
+   "family_id": "F24",
+   "draft": 4,
+   "plus_violations": [],
+   "minus_violations": [
+    "candidate value (glow)"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F24",
+   "draft": 5,
+   "plus_violations": [
+    "candidate value (harvest)"
+   ],
+   "minus_violations": [],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F25",
+   "draft": 0,
+   "plus_violations": [
+    "candidate value (script)"
+   ],
+   "minus_violations": [
+    "attribute term (\\bgym\\b)"
+   ],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F25",
+   "draft": 1,
+   "plus_violations": [
+    "candidate value ((?:every|each) edit|real[- ])"
+   ],
+   "minus_violations": [
+    "candidate value (\\bbank)",
+    "attribute term (\\bgym\\b)"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F25",
+   "draft": 2,
+   "plus_violations": [
+    "attribute term (\\bbilling(?:s|es|ing|ed)?\\b)"
+   ],
+   "minus_violations": [],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F25",
+   "draft": 3,
+   "plus_violations": [],
+   "minus_violations": [
+    "number/unit word",
+    "candidate value (\\bdaily\\b)",
+    "attribute term (\\bbackup(?:s|es|ing|ed)?\\b)"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F25",
+   "draft": 4,
+   "plus_violations": [
+    "number/unit word"
+   ],
+   "minus_violations": [],
+   "len_diff": 2
+  },
+  {
+   "family_id": "F26",
+   "draft": 1,
+   "plus_violations": [
+    "attribute term (\\bwiki(?:s|es|ing|ed)?\\b|\\bu)"
+   ],
+   "minus_violations": [],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F26",
+   "draft": 2,
+   "plus_violations": [
+    "number/unit word"
+   ],
+   "minus_violations": [
+    "attribute term (pull request|\\bPRs?\\b|merg)"
+   ],
+   "len_diff": 2
+  },
+  {
+   "family_id": "F26",
+   "draft": 3,
+   "plus_violations": [
+    "candidate value (script)"
+   ],
+   "minus_violations": [],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F26",
+   "draft": 4,
+   "plus_violations": [],
+   "minus_violations": [
+    "candidate value (ticket|\\bIT\\b)"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F26",
+   "draft": 5,
+   "plus_violations": [
+    "candidate value (ticket|\\bIT\\b)"
+   ],
+   "minus_violations": [],
+   "len_diff": 2
+  },
+  {
+   "family_id": "F27",
+   "draft": 0,
+   "plus_violations": [],
+   "minus_violations": [
+    "candidate value ((?:every|each) edit|real[- ])"
+   ],
+   "len_diff": 3
+  },
+  {
+   "family_id": "F27",
+   "draft": 1,
+   "plus_violations": [],
+   "minus_violations": [
+    "attribute term (\\blogs?\\b)"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F27",
+   "draft": 2,
+   "plus_violations": [
+    "attribute term (stand-?up)"
+   ],
+   "minus_violations": [],
+   "len_diff": 2
+  },
+  {
+   "family_id": "F27",
+   "draft": 4,
+   "plus_violations": [
+    "number/unit word"
+   ],
+   "minus_violations": [],
+   "len_diff": 2
+  },
+  {
+   "family_id": "F28",
+   "draft": 0,
+   "plus_violations": [],
+   "minus_violations": [
+    "number/unit word",
+    "candidate value (\\bdaily\\b)"
+   ],
+   "len_diff": 5
+  },
+  {
+   "family_id": "F28",
+   "draft": 4,
+   "plus_violations": [
+    "candidate value (ticket|\\bIT\\b)"
+   ],
+   "minus_violations": [
+    "number/unit word",
+    "candidate value (ticket|\\bIT\\b)"
+   ],
+   "len_diff": 3
+  },
+  {
+   "family_id": "F29",
+   "draft": 0,
+   "plus_violations": [
+    "attribute term (\\bfloor(?:s|es|ing|ed)?\\b|\\b)"
+   ],
+   "minus_violations": [],
+   "len_diff": 4
+  },
+  {
+   "family_id": "F29",
+   "draft": 2,
+   "plus_violations": [
+    "number/unit word"
+   ],
+   "minus_violations": [
+    "candidate value ((?:every|each) edit|real[- ])"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F29",
+   "draft": 4,
+   "plus_violations": [
+    "candidate value (restart)"
+   ],
+   "minus_violations": [],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F30",
+   "draft": 0,
+   "plus_violations": [
+    "attribute term (\\bbackup(?:s|es|ing|ed)?\\b)"
+   ],
+   "minus_violations": [
+    "attribute term (\\bwiki(?:s|es|ing|ed)?\\b|\\bu)"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F30",
+   "draft": 1,
+   "plus_violations": [],
+   "minus_violations": [
+    "attribute term (\\bwiki(?:s|es|ing|ed)?\\b|\\bu)"
+   ],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F30",
+   "draft": 4,
+   "plus_violations": [],
+   "minus_violations": [
+    "attribute term (\\bwiki(?:s|es|ing|ed)?\\b|\\bu)"
+   ],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F31",
+   "draft": 2,
+   "plus_violations": [
+    "attribute term (\\bdeploy(?:s|es|ing|ed)?\\b)"
+   ],
+   "minus_violations": [],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F31",
+   "draft": 3,
+   "plus_violations": [],
+   "minus_violations": [
+    "number/unit word"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F31",
+   "draft": 4,
+   "plus_violations": [],
+   "minus_violations": [
+    "attribute term (\\bsearch\\ index(?:s|es|ing|e)"
+   ],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F31",
+   "draft": 5,
+   "plus_violations": [
+    "candidate value (script)"
+   ],
+   "minus_violations": [
+    "number/unit word"
+   ],
+   "len_diff": 3
+  },
+  {
+   "family_id": "F32",
+   "draft": 0,
+   "plus_violations": [
+    "candidate value (restart)"
+   ],
+   "minus_violations": [
+    "candidate value (restart)"
+   ],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F32",
+   "draft": 1,
+   "plus_violations": [
+    "number/unit word",
+    "candidate value (restart)"
+   ],
+   "minus_violations": [
+    "candidate value ((?:every|each) edit|real[- ])"
+   ],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F32",
+   "draft": 2,
+   "plus_violations": [
+    "candidate value (restart)"
+   ],
+   "minus_violations": [],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F32",
+   "draft": 3,
+   "plus_violations": [
+    "candidate value (restart)"
+   ],
+   "minus_violations": [],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F32",
+   "draft": 4,
+   "plus_violations": [
+    "candidate value (restart)"
+   ],
+   "minus_violations": [
+    "number/unit word"
+   ],
+   "len_diff": 3
+  },
+  {
+   "family_id": "F32",
+   "draft": 5,
+   "plus_violations": [
+    "candidate value (restart)",
+    "attribute term (\\bbuild cache\\b|\\bcaches?\\b)"
+   ],
+   "minus_violations": [],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F33",
+   "draft": 0,
+   "plus_violations": [
+    "attribute term (\\blogs?\\b)"
+   ],
+   "minus_violations": [
+    "candidate value ((?:every|each) edit|real[- ])"
+   ],
+   "len_diff": 2
+  },
+  {
+   "family_id": "F33",
+   "draft": 1,
+   "plus_violations": [],
+   "minus_violations": [
+    "candidate value (ticket|\\bIT\\b)"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F33",
+   "draft": 2,
+   "plus_violations": [
+    "number/unit word"
+   ],
+   "minus_violations": [],
+   "len_diff": 3
+  },
+  {
+   "family_id": "F33",
+   "draft": 3,
+   "plus_violations": [
+    "candidate value (script)"
+   ],
+   "minus_violations": [],
+   "len_diff": 2
+  },
+  {
+   "family_id": "F34",
+   "draft": 0,
+   "plus_violations": [
+    "candidate value (restart)"
+   ],
+   "minus_violations": [],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F34",
+   "draft": 1,
+   "plus_violations": [],
+   "minus_violations": [
+    "attribute term (\\bfloor(?:s|es|ing|ed)?\\b|\\b)"
+   ],
+   "len_diff": 2
+  },
+  {
+   "family_id": "F34",
+   "draft": 2,
+   "plus_violations": [
+    "candidate value (basement)"
+   ],
+   "minus_violations": [],
+   "len_diff": 2
+  },
+  {
+   "family_id": "F34",
+   "draft": 3,
+   "plus_violations": [
+    "candidate value (script)"
+   ],
+   "minus_violations": [],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F34",
+   "draft": 5,
+   "plus_violations": [
+    "candidate value (restart)"
+   ],
+   "minus_violations": [],
+   "len_diff": 2
+  },
+  {
+   "family_id": "F35",
+   "draft": 0,
+   "plus_violations": [
+    "attribute term (\\brefund(?:s|es|ing|ed)?\\b)"
+   ],
+   "minus_violations": [
+    "attribute term (\\brefund(?:s|es|ing|ed)?\\b)"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F35",
+   "draft": 1,
+   "plus_violations": [
+    "number/unit word",
+    "attribute term (\\brefund(?:s|es|ing|ed)?\\b)"
+   ],
+   "minus_violations": [],
+   "len_diff": 4
+  },
+  {
+   "family_id": "F35",
+   "draft": 2,
+   "plus_violations": [
+    "attribute term (\\bCI\\b|pipeline)"
+   ],
+   "minus_violations": [],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F36",
+   "draft": 1,
+   "plus_violations": [],
+   "minus_violations": [
+    "attribute term (\\blogs?\\b)"
+   ],
+   "len_diff": 3
+  },
+  {
+   "family_id": "F36",
+   "draft": 5,
+   "plus_violations": [],
+   "minus_violations": [
+    "candidate value (opera|singer)"
+   ],
+   "len_diff": 3
+  },
+  {
+   "family_id": "F37",
+   "draft": 0,
+   "plus_violations": [
+    "candidate value (opera|singer)",
+    "attribute term (\\bserver\\ room(?:s|es|ing|ed)"
+   ],
+   "minus_violations": [],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F37",
+   "draft": 3,
+   "plus_violations": [
+    "attribute term (\\bthermostat(?:s|es|ing|ed)?)"
+   ],
+   "minus_violations": [],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F37",
+   "draft": 4,
+   "plus_violations": [
+    "candidate value ((?:every|each) edit|real[- ])"
+   ],
+   "minus_violations": [],
+   "len_diff": 2
+  },
+  {
+   "family_id": "F37",
+   "draft": 5,
+   "plus_violations": [],
+   "minus_violations": [
+    "number/unit word"
+   ],
+   "len_diff": 3
+  },
+  {
+   "family_id": "F38",
+   "draft": 0,
+   "plus_violations": [],
+   "minus_violations": [
+    "candidate value ((?:every|each) edit|real[- ])"
+   ],
+   "len_diff": 2
+  },
+  {
+   "family_id": "F38",
+   "draft": 1,
+   "plus_violations": [],
+   "minus_violations": [
+    "number/unit word",
+    "candidate value ((?:every|each) edit|real[- ])"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F38",
+   "draft": 2,
+   "plus_violations": [
+    "number/unit word"
+   ],
+   "minus_violations": [
+    "candidate value ((?:every|each) edit|real[- ])"
+   ],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F38",
+   "draft": 4,
+   "plus_violations": [],
+   "minus_violations": [
+    "candidate value ((?:every|each) edit|real[- ])"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F38",
+   "draft": 5,
+   "plus_violations": [],
+   "minus_violations": [
+    "candidate value ((?:every|each) edit|real[- ])",
+    "attribute term (\\bbackup(?:s|es|ing|ed)?\\b)"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F39",
+   "draft": 1,
+   "plus_violations": [
+    "candidate value (fast)"
+   ],
+   "minus_violations": [
+    "number/unit word",
+    "candidate value ((?:every|each) edit|real[- ])"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F39",
+   "draft": 2,
+   "plus_violations": [
+    "candidate value (script)"
+   ],
+   "minus_violations": [
+    "candidate value ((?:every|each) edit|real[- ])"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F39",
+   "draft": 3,
+   "plus_violations": [
+    "candidate value (underground|garage)",
+    "attribute term (\\blegacy(?:s|es|ing|ed)?\\b|\\)"
+   ],
+   "minus_violations": [
+    "attribute term (mobile app|phones?)"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F39",
+   "draft": 4,
+   "plus_violations": [
+    "candidate value (slow)",
+    "attribute term (\\blegacy(?:s|es|ing|ed)?\\b|\\)"
+   ],
+   "minus_violations": [],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F39",
+   "draft": 5,
+   "plus_violations": [
+    "candidate value (script)"
+   ],
+   "minus_violations": [
+    "candidate value ((?:every|each) edit|real[- ])"
+   ],
+   "len_diff": 0
+  },
+  {
+   "family_id": "F40",
+   "draft": 1,
+   "plus_violations": [
+    "candidate value (script)"
+   ],
+   "minus_violations": [
+    "number/unit word",
+    "attribute term (pull request|\\bPRs?\\b|merg)"
+   ],
+   "len_diff": 2
+  },
+  {
+   "family_id": "F40",
+   "draft": 3,
+   "plus_violations": [],
+   "minus_violations": [
+    "candidate value ((?:every|each) edit|real[- ])"
+   ],
+   "len_diff": 1
+  },
+  {
+   "family_id": "F40",
+   "draft": 4,
+   "plus_violations": [
+    "candidate value ((?:every|each) edit|real[- ])"
+   ],
+   "minus_violations": [],
+   "len_diff": 1
+  }
+ ],
+ "min_shift": 0.5,
+ "n_drafts_per_family": 6,
+ "half_A_worlds": [
+  0,
+  1
+ ],
+ "half_B_worlds": [
+  2,
+  3
+ ],
+ "n_eligible": 19,
+ "eligible_fraction_r": 0.6333333333333333,
+ "eligible": [
+  "F04",
+  "F05",
+  "F07",
+  "F08",
+  "F09",
+  "F12",
+  "F15",
+  "F20",
+  "F21",
+  "F23",
+  "F27",
+  "F28",
+  "F29",
+  "F30",
+  "F31",
+  "F36",
+  "F37",
+  "F38",
+  "F40"
+ ]
+}

@@ -48,8 +48,9 @@ def build_cases(records, fams):
 def judge_all(pending, workers=16):
     out = {}
     for jm in JUDGES:
+        extra = {"reasoning_effort": "low"} if jm.startswith("openai.gpt-oss") else {}
         reqs = [dict(model=jm, messages=coder.judge_messages(item), temperature=0.0,
-                     max_tokens=220) for _, item, _ in pending]
+                     max_tokens=220, **extra) for _, item, _ in pending]
         est = estimate_cost(jm, len(reqs), 520, 70)
         print(f"judge {jm}: {len(reqs)} calls, est ${est:.2f}", flush=True)
         res = batch_chat(reqs, workers=workers, desc=f"judge:{jm.split('.')[0]}")

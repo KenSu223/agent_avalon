@@ -1,0 +1,5 @@
+16200 item-checkpoint cases, 6386 need judging (39.4%)
+judge openai.gpt-oss-120b-1:0: 6386 calls, est $0.77
+[judge:openai] 319/6386 in 39s
+[judge:openai] 638/6386 in 78s
+[judge:openai] 957/6386 in 116s

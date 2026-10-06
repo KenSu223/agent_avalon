@@ -1,0 +1,67 @@
+[frames] 28/560 in 1s
+[frames] 56/560 in 2s
+[frames] 84/560 in 3s
+[frames] 112/560 in 4s
+[frames] 140/560 in 5s
+[frames] 168/560 in 7s
+[frames] 196/560 in 8s
+[frames] 224/560 in 9s
+[frames] 252/560 in 11s
+[frames] 280/560 in 12s
+[frames] 308/560 in 14s
+[frames] 336/560 in 15s
+[frames] 364/560 in 16s
+[frames] 392/560 in 18s
+[frames] 420/560 in 20s
+[frames] 448/560 in 21s
+[frames] 476/560 in 23s
+[frames] 504/560 in 25s
+[frames] 532/560 in 26s
+[frames] 560/560 in 31s
+35/40 families with >=1 clean draft; 173 clean drafts total (385 rejected)
+Half-A selection: 10624 calls, est $0.425
+[shiftA] 531/10624 in 6s
+[shiftA] 1062/10624 in 17s
+[shiftA] 1593/10624 in 29s
+[shiftA] 2124/10624 in 41s
+[shiftA] 2655/10624 in 63s
+[shiftA] 3186/10624 in 86s
+[shiftA] 3717/10624 in 105s
+[shiftA] 4248/10624 in 115s
+[shiftA] 4779/10624 in 128s
+[shiftA] 5310/10624 in 141s
+[shiftA] 5841/10624 in 151s
+[shiftA] 6372/10624 in 167s
+[shiftA] 6903/10624 in 173s
+[shiftA] 7434/10624 in 187s
+[shiftA] 7965/10624 in 202s
+[shiftA] 8496/10624 in 229s
+[shiftA] 9027/10624 in 244s
+[shiftA] 9558/10624 in 257s
+[shiftA] 10089/10624 in 270s
+[shiftA] 10620/10624 in 292s
+Half-B estimation: 2144 calls, est $0.086
+[shiftB] 107/2144 in 4s
+[shiftB] 214/2144 in 11s
+[shiftB] 321/2144 in 11s
+[shiftB] 428/2144 in 20s
+[shiftB] 535/2144 in 26s
+[shiftB] 642/2144 in 29s
+[shiftB] 749/2144 in 33s
+[shiftB] 856/2144 in 33s
+[shiftB] 963/2144 in 33s
+[shiftB] 1070/2144 in 33s
+[shiftB] 1177/2144 in 36s
+[shiftB] 1284/2144 in 39s
+[shiftB] 1391/2144 in 43s
+[shiftB] 1498/2144 in 44s
+[shiftB] 1605/2144 in 45s
+[shiftB] 1712/2144 in 45s
+[shiftB] 1819/2144 in 48s
+[shiftB] 1926/2144 in 51s
+[shiftB] 2033/2144 in 54s
+[shiftB] 2140/2144 in 55s
+
+eligible (Half-A shift >= 0.5): 26/35  r = 0.74
+achieved shift on the INDEPENDENT Half B (eligible only): mean +2.63  median +2.26 log-odds; 26/26 in the predicted direction
+ITT (all families, Half B): mean +1.85 log-odds

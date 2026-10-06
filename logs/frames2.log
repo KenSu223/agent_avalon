@@ -26,3 +26,42 @@ Half-A selection: 4032 calls, est $0.161
 [shiftA] 804/4032 in 54s
 [shiftA] 1005/4032 in 68s
 [shiftA] 1206/4032 in 80s
+[shiftA] 1407/4032 in 87s
+[shiftA] 1608/4032 in 94s
+[shiftA] 1809/4032 in 103s
+[shiftA] 2010/4032 in 110s
+[shiftA] 2211/4032 in 116s
+[shiftA] 2412/4032 in 122s
+[shiftA] 2613/4032 in 133s
+[shiftA] 2814/4032 in 142s
+[shiftA] 3015/4032 in 149s
+[shiftA] 3216/4032 in 156s
+[shiftA] 3417/4032 in 162s
+[shiftA] 3618/4032 in 168s
+[shiftA] 3819/4032 in 173s
+[shiftA] 4020/4032 in 180s
+Half-B estimation: 1824 calls, est $0.073
+[shiftB] 91/1824 in 2s
+[shiftB] 182/1824 in 4s
+[shiftB] 273/1824 in 7s
+[shiftB] 364/1824 in 9s
+[shiftB] 455/1824 in 11s
+[shiftB] 546/1824 in 14s
+[shiftB] 637/1824 in 16s
+[shiftB] 728/1824 in 19s
+[shiftB] 819/1824 in 22s
+[shiftB] 910/1824 in 25s
+[shiftB] 1001/1824 in 28s
+[shiftB] 1092/1824 in 31s
+[shiftB] 1183/1824 in 34s
+[shiftB] 1274/1824 in 36s
+[shiftB] 1365/1824 in 38s
+[shiftB] 1456/1824 in 41s
+[shiftB] 1547/1824 in 43s
+[shiftB] 1638/1824 in 45s
+[shiftB] 1729/1824 in 48s
+[shiftB] 1820/1824 in 50s
+
+eligible (Half-A shift >= 0.5): 19/30  r = 0.63
+achieved shift on the INDEPENDENT Half B (eligible only): mean +2.50  median +2.33 log-odds; 19/19 in the predicted direction
+ITT (all families, Half B): mean +1.49 log-odds

@@ -23,7 +23,15 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from infra.llm import chat
 
-MAX_BUDGET_RETRIES = 2
+MAX_BUDGET_RETRIES = 3
+
+# The compactor overshoots a hard word cap often enough that trimming would become the dominant
+# mechanism (dev pilot protocol v1: 10.4 of 21 steps trimmed at B=150, 7.1 at B=300/T=0). Trimming
+# drops trailing lines, which censors by position and applies only to the rewriting operators, so
+# it could by itself manufacture both the retention gradient and the operator interaction. We
+# therefore ASK for a target below the cap and ENFORCE the cap, so natural overshoot still lands
+# inside the real capacity constraint. Chosen on dev families only, before any confirmatory run.
+TARGET_FRACTION = 0.80
 
 SYSTEM = ("You are the memory manager for Atlas, an AI assistant that works with the same user "
           "across many sessions. After each session you rewrite Atlas's long-term memory notes. "
@@ -96,7 +104,7 @@ def trim_to_lines(t, B):
 def _generate_within_budget(model, base_user, B, T, sample_idx, max_tokens):
     """Ask for <= B words; retry with explicit feedback; trim at a line boundary only as a
     last resort. Returns (text, n_retries, hard_trimmed, cost)."""
-    user, cost = base_user, 0.0
+    user, cost, text = base_user, 0.0, ""
     for attempt in range(MAX_BUDGET_RETRIES + 1):
         r = chat(model, [{"role": "system", "content": SYSTEM}, {"role": "user", "content": user}],
                  temperature=T, max_tokens=max_tokens, sample_idx=sample_idx * 10 + attempt)
@@ -106,6 +114,11 @@ def _generate_within_budget(model, base_user, B, T, sample_idx, max_tokens):
             return text, attempt, False, cost
         user = base_user + OVER_BUDGET.format(got=wc(text), B=B)
     return trim_to_lines(text, B), MAX_BUDGET_RETRIES, True, cost
+
+
+def _target(B):
+    """The word count we ASK for; the hard cap stays at B."""
+    return max(40, int(round(B * TARGET_FRACTION)))
 
 
 def _result(text, sentences, retries, hard, cost):
@@ -119,15 +132,14 @@ def op_roll(state, transcript, cfg, anchor=False, pinned=None):
     pin_text = "\n".join(pinned) if pinned else ""
     pin_words = wc(pin_text)
     rest = cfg["B"] - pin_words
-    user = NEUTRAL.format(memory=state["text"] or "(empty)", transcript=transcript,
-                          B=rest if pinned else cfg["B"])
+    cap = rest if pinned else cfg["B"]
+    user = NEUTRAL.format(memory=state["text"] or "(empty)", transcript=transcript, B=_target(cap))
     if anchor:
         user += CODEX_ANCHOR
     if pinned:
         user += PIN_PREAMBLE.format(rest=rest, pinned=pin_text)
     text, retries, hard, cost = _generate_within_budget(
-        cfg["model"], user, rest if pinned else cfg["B"], cfg["T"], cfg["sample_idx"],
-        int(cfg["B"] * 2.2) + 120)
+        cfg["model"], user, cap, cfg["T"], cfg["sample_idx"], int(cfg["B"] * 2.2) + 120)
     if pinned:
         # strip any echo of a pinned line, then prepend the pins verbatim: pinning is enforced here,
         # not merely requested of the model.
@@ -142,7 +154,7 @@ def op_roll(state, transcript, cfg, anchor=False, pinned=None):
 
 def op_src(state, all_transcripts, cfg):
     """O4: rewrite from the raw sessions, never from M_{t-1}."""
-    user = SRC.format(transcript="\n\n---\n\n".join(all_transcripts), B=cfg["B"])
+    user = SRC.format(transcript="\n\n---\n\n".join(all_transcripts), B=_target(cfg["B"]))
     text, retries, hard, cost = _generate_within_budget(
         cfg["model"], user, cfg["B"], cfg["T"], cfg["sample_idx"], int(cfg["B"] * 2.2) + 120)
     return _result(text, None, retries, hard, cost)
@@ -158,7 +170,7 @@ def op_copy_llm(state, new_sentences, cfg):
     base = SELECT.format(
         memory="\n".join(f"{i+1}. {s['text']}" for i, s in enumerate(mem)) or "(empty)",
         new="\n".join(f"{len(mem)+i+1}. {s['text']}" for i, s in enumerate(new_sentences)),
-        B=cfg["B"])
+        B=_target(cfg["B"]))
     user, cost, retries, picks = base, 0.0, 0, None
     for attempt in range(MAX_BUDGET_RETRIES + 1):
         r = chat(cfg["model"], [{"role": "system", "content": SYSTEM}, {"role": "user", "content": user}],

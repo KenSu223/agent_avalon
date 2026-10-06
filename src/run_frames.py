@@ -13,7 +13,7 @@ import frames as F
 import priors as P
 
 RES = ROOT / "results"
-N_DRAFT = 6
+N_DRAFT = 14
 HALF_A = list(range(P.N_WORLDS // 2))
 HALF_B = list(range(P.N_WORLDS // 2, P.N_WORLDS))
 

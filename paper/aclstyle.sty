@@ -1,0 +1,30 @@
+% ACL-style layout reproduced locally: the official acl.sty is not available offline in this
+% environment, so the geometry, fonts and section styling of the ACL/ARR template are replicated
+% here. Swap in the official acl.sty before submission.
+\ProvidesPackage{aclstyle}
+\RequirePackage[a4paper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
+\RequirePackage{times}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{microtype}
+\RequirePackage{natbib}
+\RequirePackage{graphicx}
+\RequirePackage{booktabs}
+\RequirePackage{amsmath,amssymb}
+\RequirePackage{url}
+\RequirePackage{xcolor}
+\RequirePackage[hidelinks]{hyperref}
+\RequirePackage{multirow}
+\RequirePackage{caption}
+\setlength{\columnsep}{0.6cm}
+\captionsetup{font=small,labelfont=bf,skip=4pt}
+\setlength{\parindent}{1em}
+\setlength{\abovedisplayskip}{4pt}
+\setlength{\belowdisplayskip}{4pt}
+\bibliographystyle{plainnat}
+\renewcommand{\section}{\@startsection{section}{1}{\z@}{-2.0ex plus -0.4ex minus -.2ex}%
+  {0.8ex plus .2ex}{\normalfont\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{\z@}{-1.6ex plus -0.3ex minus -.2ex}%
+  {0.6ex plus .2ex}{\normalfont\normalsize\bfseries}}
+\renewcommand{\paragraph}{\@startsection{paragraph}{4}{\z@}{1.2ex plus .2ex}{-0.7em}%
+  {\normalfont\normalsize\bfseries}}
