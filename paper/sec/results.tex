@@ -172,12 +172,13 @@ budget the pinned text crowds out everything else and the memory as a whole is n
 \paragraph{A caveat on \textsc{Anchor}.} The anchoring rules make the model far more likely to
 overshoot the word budget: \RetriesOfive{} regeneration attempts per trajectory against
 \RetriesOone{} for the neutral prompt, and \TrimsOfive{} line-boundary trims against \TrimsOone{}.
-The storage cap is the same, but the \emph{generation} cost is roughly five times higher, and we were
+The storage cap is the same, but \textsc{Anchor} needs more than twice the generation attempts, and we were
 wrong to assume the extra trimming is a handicap: across trajectories, more trimming goes with
 \emph{higher} retention (\TrimSlopeOone{}~pp per trim under the neutral prompt;
 \TrimLowOfive{}\% against \TrimHighOfive{}\% for \textsc{Anchor} trajectories below and above the
 median trim count), and surviving targets sit near the top of the stored notes (mean relative position
-\TargetPosOfive{}), where line-boundary trimming of the tail does not reach them. \textsc{Anchor} is
+\TargetPosOfive{}) --- a statistic conditional on survival, so it describes where the survivors are
+rather than proving that trimming removed nothing. \textsc{Anchor} is
 therefore an \emph{exploratory pipeline-level} result: the comparison holds the storage cap fixed but
 not the generation process, and the gain cannot be attributed to the anti-drift wording alone.
 

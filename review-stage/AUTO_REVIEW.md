@@ -79,3 +79,38 @@ identify the effect of prior-fit."
 
 The paper body was also brought back inside the ACL 8-page limit (Conclusion and Limitations both
 begin on page 8; references and appendices follow).
+
+## Round 3 (2026-10-06) — Score 8/10, verdict: **ready**
+
+Reviewer: "This is now at the bar for an ARR submission with an honest failed causal test and clearly
+labeled exploratory operator findings. I see no remaining scientific blocker."
+
+Three minor corrections, all applied:
+1. Title stated the null too categorically -> "An Expectation-Shifting Manipulation **Yields No
+   Detected Retention Benefit**".
+2. +4.3 vs +4.1 came from two bootstrap runs with different replicate counts -> every C1 interval,
+   headline and sensitivity variant alike, now comes from one 10,000-replicate bootstrap; primary is
+   -4.02, 95% CI [-12.17, +4.27].
+3. "Several times the generation cost" was unsupported (64.4 vs 29.7 attempts ~= 2.2x) ->
+   "more than twice the generation attempts".
+Plus a wording caution taken: the target-position statistic is conditional on survival, so it now
+reads as a description of where survivors sit, not as evidence that trimming removed nothing.
+
+## Score progression
+| Round | Score | Verdict |
+|---|---|---|
+| 1 | 4/10 | not ready |
+| 2 | 6/10 | almost |
+| 3 | **8/10** | **ready** |
+
+## Method description (for downstream figure generation)
+*MemPrior* is a controlled testbed for what repeated LLM memory compaction destroys. Minimal-pair
+memory items (one template, five graded values, all true, stated once) are seeded into a fictional
+workplace session and then carried through 20 compaction steps driven by distractor sessions. Prior-fit
+is measured on the compactor itself by randomized-order pairwise choice fitted with Bradley-Terry. The
+decisive experiment, E-SHIFT, holds the target sentence and its value fixed and varies only a
+value-free description of the user's work, validated to shift the compactor's elicited prior. An
+operator lattice (rolling rewrite, verbatim LLM selection, two prior-blind random controls, rebuild
+from sources, Codex anti-drift rules, surprise pinning with token-matched controls, append-only
+ceiling) removes one mechanism at a time. Memory states are coded RETAINED / CHANGED / DROPPED by a
+per-segment regex pass with two blind cross-family judges adjudicating everything ambiguous.

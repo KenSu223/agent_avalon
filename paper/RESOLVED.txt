@@ -270,7 +270,7 @@ absent, and a benefit above +4.3~pp is excluded under primary coding. The conclu
 depend on which judge is believed (-4.5 and -3.7~pp under each alone), nor on
 the 3.2\% of \textsc{e-shift} cases left unresolved, though the unresolved rate is
 slightly higher in the expected-value arm (4\% against 2\%): resolving
-them all in the least favourable direction gives -5.9~pp and in the most favourable
+them all in the least favourable direction gives -5.8~pp and in the most favourable
 -2.1~pp, so the conservative upper bound is +5.9~pp rather than +4.3~pp, and we
 quote both.
 
@@ -405,12 +405,13 @@ budget the pinned text crowds out everything else and the memory as a whole is n
 \paragraph{A caveat on \textsc{Anchor}.} The anchoring rules make the model far more likely to
 overshoot the word budget: 43.4 regeneration attempts per trajectory against
 8.7 for the neutral prompt, and 12.9 line-boundary trims against 1.1.
-The storage cap is the same, but the \emph{generation} cost is roughly five times higher, and we were
+The storage cap is the same, but \textsc{Anchor} needs more than twice the generation attempts, and we were
 wrong to assume the extra trimming is a handicap: across trajectories, more trimming goes with
 \emph{higher} retention (+8.6~pp per trim under the neutral prompt;
 92.1\% against 96.7\% for \textsc{Anchor} trajectories below and above the
 median trim count), and surviving targets sit near the top of the stored notes (mean relative position
-0.08), where line-boundary trimming of the tail does not reach them. \textsc{Anchor} is
+0.08) --- a statistic conditional on survival, so it describes where the survivors are
+rather than proving that trimming removed nothing. \textsc{Anchor} is
 therefore an \emph{exploratory pipeline-level} result: the comparison holds the storage cap fixed but
 not the generation process, and the gain cannot be attributed to the anti-drift wording alone.
 
@@ -502,7 +503,8 @@ rebuilding memory from retained sessions and editing the previous summary in pla
 omission either way; recursion makes it permanent, so a system that keeps its sessions and periodically
 rebuilds avoids the accumulation, at the cost of a longer input.
 Where keeping the sources is impossible, the anchoring rules already shipping in production prompts
-recover a comparable amount at the same storage cap --- though at several times the generation cost,
+recover a comparable amount at the same storage cap --- though at more than twice the generation
+attempts,
 and a prompt rule is a request the model may decline. Choosing \emph{what} to
 preserve by surprise buys nothing over choosing at random.
 
@@ -555,7 +557,8 @@ input length and composition, and recoverability --- so it identifies reconstruc
 \textsc{Anchor} is a \emph{pipeline-level} comparison: it holds the storage cap fixed but not the
 generation process (43.4 budget regenerations and 12.9 trims per trajectory
 against 8.7 and 1.1), and since more trimming is associated with \emph{higher}
-retention we cannot treat that difference as a handicap. Its gain is not attributable to the
+retention we cannot treat that difference as a handicap (nor, since the position statistic is
+conditional on survival, as demonstrably harmless). Its gain is not attributable to the
 anti-drift wording alone.
 
 \paragraph{Semantic prior and representational compressibility are not fully separable.} Values a

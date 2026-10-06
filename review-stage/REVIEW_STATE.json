@@ -1,13 +1,13 @@
 {
  "run_id": "run_20261006_f9e0c30f",
- "round": 1,
- "threadId": null,
+ "round": 3,
+ "threadId": "01a11111-d413-72c2-b46b-09d2714231d8",
  "reviewer_backend": "codex",
  "requires_external_acquittal": false,
- "status": "in_progress",
+ "status": "completed",
  "difficulty": "medium",
- "last_score": null,
- "last_verdict": null,
+ "last_score": 8.0,
+ "last_verdict": "ready",
  "pending_experiments": [],
- "timestamp": "2026-10-06T11:52:32.631199"
+ "timestamp": "2026-10-06T12:30:53.121928"
 }

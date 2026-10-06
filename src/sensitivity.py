@@ -32,7 +32,8 @@ def c1_variants():
               if f in elig}
         if not pf:
             return
-        b = A.family_paired_bootstrap(pf, n_boot=4000)
+        b = A.family_paired_bootstrap(pf, n_boot=10000)   # same replicate count as the
+        # primary E-SHIFT run, so the variants and the headline cannot quote different bootstraps
         res[label] = {"mean": float(np.mean(b)), "ci95": A.ci(b), "n_families": len(pf)}
 
     run("primary", lambda r: r["label"])
