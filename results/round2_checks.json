@@ -1,0 +1,47 @@
+{
+ "trimming_vs_retention": {
+  "O1": {
+   "n_traj": 33,
+   "mean_trims": 1.0606060606060606,
+   "mean_retention": 71.99265381083563,
+   "slope_retention_per_trim": 8.620441900032189,
+   "retention_low_trim": 57.30837789661319,
+   "retention_high_trim": 87.59469696969697
+  },
+  "O5": {
+   "n_traj": 33,
+   "mean_trims": 12.909090909090908,
+   "mean_retention": 94.1919191919192,
+   "slope_retention_per_trim": 1.4624724061810157,
+   "retention_low_trim": 92.12962962962963,
+   "retention_high_trim": 96.66666666666667
+  },
+  "O6": {
+   "n_traj": 33,
+   "mean_trims": 5.757575757575758,
+   "mean_retention": 57.51147842056933,
+   "slope_retention_per_trim": 5.228965734970188,
+   "retention_low_trim": 38.9572192513369,
+   "retention_high_trim": 77.22537878787878
+  }
+ },
+ "target_position_in_notes": {
+  "O1": {
+   "mean_relative_position": 0.0,
+   "n": 271
+  },
+  "O5": {
+   "mean_relative_position": 0.08250127284164287,
+   "n": 372
+  }
+ },
+ "preference_within_family": {
+  "n_families_with_both": 16,
+  "mean_pp": 19.65277777777778,
+  "ci95": [
+   9.479166666666664,
+   29.791666666666668
+  ],
+  "note": "families containing BOTH a default-matching and a non-default level; the contrast is computed inside each family and then bootstrapped over families, so it is free of between-family composition"
+ }
+}

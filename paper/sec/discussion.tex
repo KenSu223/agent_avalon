@@ -1,24 +1,22 @@
 \section{What this means for memory design}
 \label{sec:discussion}
 
-\paragraph{The bottleneck is where the risk lives, and the failure is deletion.} At the word budgets
-a strong compactor normally runs under it loses essentially nothing (retention
-\RetentionBThreeHundred{} at 300 words, \RetentionBSixHundred{} at 600); degradation appears only
-once the budget is genuinely binding, so a comfortable compression ratio is not safety. And when it
-does appear, it is deletion: only \ChangedCount{} of \NCodedCases{} coded item-checkpoints
-(\ChangedRate{}) are changes to a different value. The failure practitioners worry about --- a
-constraint quietly rewritten into a plausible default --- is not what a strong compactor does. That
-matters for mitigation, because a check comparing a stored value against an expected range will never
-fire: there is nothing left to compare, and detecting the loss requires knowing what \emph{used to
+\paragraph{The bottleneck is where the risk lives, and the failure is deletion.} At the budgets a
+strong compactor normally runs under it loses essentially nothing (retention
+\RetentionBThreeHundred{} at 300 words, \RetentionBSixHundred{} at 600); degradation appears only once
+the budget is binding, so a comfortable compression ratio is not safety. And when it appears it is
+deletion: \ChangedCount{} of \NCodedCases{} coded item-checkpoints (\ChangedRate{}) are changes to a
+different value. A check comparing a stored value against an expected range will therefore never fire
+--- there is nothing left to compare --- and detecting the loss requires knowing what \emph{used to
 be} in memory, which is exactly what rolling rewrite destroys.
 
 \paragraph{Keep the sources, not just the summary.} The largest effect we measured is the gap between
-rebuilding memory from retained raw sessions and editing the previous summary in place. A budget
-forces an omission at each step either way; recursion is what makes it permanent, so a system that
-keeps its sessions and periodically rebuilds avoids the accumulation, at the cost of a longer input.
+rebuilding memory from retained sessions and editing the previous summary in place. A budget forces an
+omission either way; recursion makes it permanent, so a system that keeps its sessions and periodically
+rebuilds avoids the accumulation, at the cost of a longer input.
 Where keeping the sources is impossible, the anchoring rules already shipping in production prompts
-recover a comparable amount at no extra budget --- though they make the model overshoot the length
-limit far more often, and a prompt rule is a request the model may decline. Choosing \emph{what} to
+recover a comparable amount at the same storage cap --- though at several times the generation cost,
+and a prompt rule is a request the model may decline. Choosing \emph{what} to
 preserve by surprise buys nothing over choosing at random.
 
 Finally, the worry that compaction smooths a user profile toward an average one did not reproduce

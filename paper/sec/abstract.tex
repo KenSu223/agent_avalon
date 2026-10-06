@@ -1,18 +1,20 @@
-Long-horizon and continual-learning agents keep what they learn in memory that a language model
-repeatedly rewrites: after each session the model reads its previous memory and writes a condensed
-replacement, and the original text is gone. Treating this as an iterated-learning chain predicts
-that survival should track the compactor's prior, so memory would be worst at keeping exactly the
-content it exists for --- a claim repeated informally across the literature and in production
-documentation, but never tested with prior-fit as a manipulated variable. We test it. Using
+Long-horizon agents keep what they learn in memory that a language model repeatedly rewrites: after
+each session the model reads its previous memory and writes a condensed replacement, and the original
+is gone. Treating this as an iterated-learning chain predicts that survival should track the
+compactor's prior, so memory would be worst at keeping exactly the content it exists for --- a claim
+repeated informally across the literature and in production documentation, but never tested with
+prior-fit as a manipulated variable. We test it. Using
 minimal-pair memory items whose prior-fit is graded and measured on the compactor itself by paired
 comparison, and a same-item manipulation that holds the target sentence \emph{and its value} fixed
 while changing only a value-free description of the surrounding work, we find \textbf{no support for
 the predicted effect}: making the very same value expected rather than surprising moves survival by
-\EShiftMean{}~pp (95\% CI [\EShiftCIlo{}, \EShiftCIhi{}]), ruling out benefits larger than about
-\ConeUpper{}~pp for this manipulation. The graded dose--response is likewise consistent with zero
-(\DoseIQR{}~pp across the interquartile surprise contrast, 95\% CI [\DoseIQRlo{}, \DoseIQRhi{}]), and
-every slope interval in our portability diagnostics --- a second strong model family, a small local
-model, and temperature $0$ --- contains zero. Nor is memory corrupted: across \NCodedCases{} coded
+\EShiftMean{}~pp (95\% CI [\EShiftCIlo{}, \EShiftCIhi{}]), bounding the benefit of the manipulation
+at about \ConeUpper{}~pp under primary coding and \ConeUpperWorst{}~pp under worst-case coding of
+unresolved items. A blind check shows our own frames also lower the target's judged importance, so
+this bounds a \emph{compound context manipulation} rather than isolating prior-fit, and we say so
+rather than claiming the mechanism refuted. The frame-free graded dose--response is centred on zero
+but not precise (\DoseIQR{}~pp across the interquartile surprise contrast, 95\% CI [\DoseIQRlo{},
+\DoseIQRhi{}]), and every slope interval in our portability diagnostics contains zero. Nor is memory corrupted: across \NCodedCases{} coded
 item-checkpoints only \ChangedCount{} are changes to a different value; under a binding budget the
 compactor simply deletes. What separates operators is much larger than anything surprise explains.
 Rewriting memory by reconstruction from the retained raw sessions keeps \RetOfour{}\% of items after
@@ -20,7 +22,6 @@ ten compactions, and adding the anti-drift rules a production memory system alre
 \RetOfive{}\%, against \RetOone{}\% for recursive self-rewriting at the same budget
 (\ContrastOfour{} and \ContrastOfive{}~pp). Pinning high-surprise items --- the fix our own theory
 predicted --- shows no detected benefit and is indistinguishable from token-matched random pinning.
-Preferences show no homogenisation either: those that differ from the model's defaults survive
-\PrefAdj{}~pp better after baseline adjustment (95\% CI [\PrefAdjLo{}, \PrefAdjHi{}]), so stored
-profiles become more distinctive. We release the instrument, the stimuli and all result files, and we
-report the ways our own causal manipulation is imperfect.
+Preferences show no homogenisation either: those differing from the model's defaults survive
+\PrefAdj{}~pp better after baseline adjustment (95\% CI [\PrefAdjLo{}, \PrefAdjHi{}]). We release the
+instrument, the stimuli and all result files.

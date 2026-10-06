@@ -1,19 +1,21 @@
 \section*{Abstract}
-Long-horizon and continual-learning agents keep what they learn in memory that a language model
-repeatedly rewrites: after each session the model reads its previous memory and writes a condensed
-replacement, and the original text is gone. Treating this as an iterated-learning chain predicts
-that survival should track the compactor's prior, so memory would be worst at keeping exactly the
-content it exists for --- a claim repeated informally across the literature and in production
-documentation, but never tested with prior-fit as a manipulated variable. We test it. Using
+Long-horizon agents keep what they learn in memory that a language model repeatedly rewrites: after
+each session the model reads its previous memory and writes a condensed replacement, and the original
+is gone. Treating this as an iterated-learning chain predicts that survival should track the
+compactor's prior, so memory would be worst at keeping exactly the content it exists for --- a claim
+repeated informally across the literature and in production documentation, but never tested with
+prior-fit as a manipulated variable. We test it. Using
 minimal-pair memory items whose prior-fit is graded and measured on the compactor itself by paired
 comparison, and a same-item manipulation that holds the target sentence \emph{and its value} fixed
 while changing only a value-free description of the surrounding work, we find \textbf{no support for
 the predicted effect}: making the very same value expected rather than surprising moves survival by
--4.0~pp (95\% CI [-12.2, +4.3]), ruling out benefits larger than about
-+4.3~pp for this manipulation. The graded dose--response is likewise consistent with zero
-(+1.6~pp across the interquartile surprise contrast, 95\% CI [-9.3, +13.2]), and
-every slope interval in our portability diagnostics --- a second strong model family, a small local
-model, and temperature $0$ --- contains zero. Nor is memory corrupted: across 32,076 coded
+-4.0~pp (95\% CI [-12.2, +4.3]), bounding the benefit of the manipulation
+at about +4.3~pp under primary coding and +5.9~pp under worst-case coding of
+unresolved items. A blind check shows our own frames also lower the target's judged importance, so
+this bounds a \emph{compound context manipulation} rather than isolating prior-fit, and we say so
+rather than claiming the mechanism refuted. The frame-free graded dose--response is centred on zero
+but not precise (+1.6~pp across the interquartile surprise contrast, 95\% CI [-9.3,
++13.2]), and every slope interval in our portability diagnostics contains zero. Nor is memory corrupted: across 32,076 coded
 item-checkpoints only 26 are changes to a different value; under a binding budget the
 compactor simply deletes. What separates operators is much larger than anything surprise explains.
 Rewriting memory by reconstruction from the retained raw sessions keeps 92.6\% of items after
@@ -21,10 +23,9 @@ ten compactions, and adding the anti-drift rules a production memory system alre
 94.2\%, against 72.0\% for recursive self-rewriting at the same budget
 (+20.6 and +22.2~pp). Pinning high-surprise items --- the fix our own theory
 predicted --- shows no detected benefit and is indistinguishable from token-matched random pinning.
-Preferences show no homogenisation either: those that differ from the model's defaults survive
-+18.0~pp better after baseline adjustment (95\% CI [+9.9, +26.0]), so stored
-profiles become more distinctive. We release the instrument, the stimuli and all result files, and we
-report the ways our own causal manipulation is imperfect.
+Preferences show no homogenisation either: those differing from the model's defaults survive
++18.0~pp better after baseline adjustment (95\% CI [+9.9, +26.0]). We release the
+instrument, the stimuli and all result files.
 
 
 \section{Introduction}
@@ -76,13 +77,14 @@ matched to its \emph{word budget}. Both use the same stimuli, coder and probes.
 What we find is that the prediction is wrong, and that something else is right.
 
 \begin{itemize}\itemsep1pt
-\item \textbf{No support for the predicted effect.} \textsc{E-Shift} moves survival by
--4.0~pp (95\% CI [-12.2, +4.3]), ruling out benefits above about
-+4.3~pp for this manipulation (\S\ref{sec:c1}); we do \emph{not} claim equivalence at the
-smaller margin we originally preregistered, and we report a blind check showing our own frames move
-judged importance as well as expectation (\S\ref{sec:parity}). The graded dose--response across
-28 families is consistent with zero (\S\ref{sec:c2}), and every slope interval in our
-portability diagnostics contains zero (\S\ref{sec:robust}).
+\item \textbf{No support for the predicted effect --- and an honest account of what the test can and
+cannot identify.} \textsc{E-Shift} moves survival by -4.0~pp (95\% CI [-12.2,
++4.3]), bounding the benefit at +4.3~pp under primary coding and +5.9~pp under
+worst-case coding (\S\ref{sec:c1}). A blind check shows the frames also
+lower judged importance and authority (\S\ref{sec:parity}), so this is a bound on a \emph{compound
+context manipulation}, not an isolated estimate of prior-fit; we do not claim the mechanism refuted,
+and we do not claim equivalence at the margin we originally preregistered. The frame-free graded
+dose--response is centred on zero but imprecise (\S\ref{sec:c2}).
 \item \textbf{Memory is deleted, not corrupted.} Of 32,076 coded item-checkpoints,
 26 are changes to a different value (\S\ref{sec:c6}). The failure the folk theory
 describes --- a constraint quietly rewritten into a plausible default --- essentially does not occur
@@ -163,10 +165,9 @@ calibration, coder thresholds --- was made on the development set only and froze
 before any confirmatory family was run.
 
 Each of the 11 confirmatory chains carries 12 items from distinct families, so
-two values of the same family never compete inside one memory. Assignment uses constrained
-randomisation over the \emph{measured} priors: among assignments satisfying the design constraints we
-keep the one minimising the largest between-chain difference in mean surprise, which is
-0.59 log-odds against a mean within-family range of 5.12.
+two values of one family never compete inside a memory. Assignment uses constrained randomisation over
+the \emph{measured} priors, minimising the largest between-chain difference in mean surprise
+(0.59 log-odds, against a mean within-family range of 5.12).
 
 \subsection{Measuring the dose on the compactor}
 Surprise must be the compactor's, not a convenient proxy. Our primary measure (\textsc{P1}) presents
@@ -238,11 +239,11 @@ judges (Appendix~\ref{app:coder}).
 On the development split the compactor loses essentially nothing at the budgets it would normally run
 under: retention at $k{=}10$ is 0.975 at a 300-word budget and
 1.000 at 600. The prespecified adequacy condition --- retention at least 10
-percentage points (pp) below the append-only access ceiling and inside $[0.10,0.90]$ --- is met only
-at 150 words, where retention is 0.667 against a ceiling of 1.000.
-That budget was frozen with every other operating choice before any confirmatory family was touched.
-This already answers the counter-evidence that strong models relay atomic facts losslessly
-\citep{faithful2026}: they do, until the budget forces a choice.
+percentage points (pp) below the append-only ceiling and inside $[0.10,0.90]$ --- is met only at
+150 words, where retention is 0.667 against a ceiling of 1.000. That
+budget was frozen with every other operating choice beforehand. This already answers the
+counter-evidence that strong models relay atomic facts losslessly \citep{faithful2026}: they do, until
+the budget forces a choice.
 
 \subsection{C1: making the same value expected does not help it survive}
 \label{sec:c1}
@@ -265,11 +266,13 @@ margin with the design's minimum detectable effect, $\pm$15.9~pp, after the deve
 analysis showed between-family heterogeneity put $8$~pp out of reach (power $0.32$; $0.80$ would need
 roughly $60$ eligible families, not 18). We therefore do \emph{not} claim equivalence at
 the margin we first chose. The defensible statement is one-sided: the predicted positive effect is
-absent, and effects above +4.3~pp in the predicted direction are excluded. The conclusion
-does not depend on which judge is believed (-4.5 and -3.7~pp under each alone),
-nor on the 3.2\% of \textsc{e-shift} cases left unresolved: resolving them all in the
-least favourable direction gives -5.9~pp, and in the most favourable
--2.1~pp.
+absent, and a benefit above +4.3~pp is excluded under primary coding. The conclusion does not
+depend on which judge is believed (-4.5 and -3.7~pp under each alone), nor on
+the 3.2\% of \textsc{e-shift} cases left unresolved, though the unresolved rate is
+slightly higher in the expected-value arm (4\% against 2\%): resolving
+them all in the least favourable direction gives -5.9~pp and in the most favourable
+-2.1~pp, so the conservative upper bound is +5.9~pp rather than +4.3~pp, and we
+quote both.
 
 If anything the estimate runs the wrong way, and the next subsection gives a reason to take that
 seriously rather than as noise.
@@ -277,23 +280,25 @@ seriously rather than as noise.
 \subsection{Our own manipulation is not clean, and we say how}
 \label{sec:parity}
 A context that changes what the compactor expects can change other things too. We asked the two blind
-judges, with the target's value masked, how important, authoritative and relevant the target looks
-under each frame. They differ: the expected-value frame is rated -0.69 lower on importance
-(95\% CI [-1.36, -0.03], 1--5 scale) and -0.50 lower on authority (95\%
-CI [-0.84, -0.16]); relevance is inconclusive.
+judges, with the target's value masked, how the target looks under each frame. It differs: the
+expected-value frame is rated -0.69 lower on importance (95\% CI [-1.36,
+-0.03], 1--5 scale) and -0.50 lower on authority (95\% CI [-0.84,
+-0.16]); relevance is inconclusive.
 
-A frame that makes the target look \emph{less} important would depress its retention, which is
-exactly the sign we observe. \textsc{E-Shift} therefore estimates an \emph{expectation-shifting
-context manipulation}, not prior-fit in isolation, and its small negative estimate is plausibly a
-perceived-importance effect rather than evidence that surprise \emph{helps}. What survives is the
-one-sided exclusion: a manipulation raising the compactor's own elicited prior by +2.70
-log-odds, in the predicted direction for 18/18 families, produces no retention
-benefit above +4.3~pp. The graded dose--response in \S\ref{sec:c2} has no frame at all, so
-the two analyses fail in different ways and agree.
+A frame making the target look \emph{less} important would depress its retention, which is the sign we
+observe. We do not attribute the estimate to perceived importance --- expectation, importance and
+authority move together, and post-treatment ratings cannot decompose the effect --- but it is
+\emph{compatible with} confounding by them, and a prior-fit benefit could be masked by an importance
+penalty. \textsc{E-Shift} therefore bounds an \emph{expectation-shifting context manipulation} and
+does not identify the isolated effect of prior-fit; we do not claim the mechanism refuted. What it
+establishes is that raising the compactor's elicited prior by +2.70 log-odds, in the
+predicted direction for 18/18 families, yields no net retention benefit. The
+frame-free dose--response carries no such confound but is ecological and imprecise, so the two are
+complementary rather than jointly decisive.
 
-\begin{figure*}[t]
+\begin{figure*}[tb]
 \centering
-\includegraphics[width=0.78\textwidth]{figures/fig1_eshift.pdf}
+\includegraphics[width=0.62\textwidth]{figures/fig1_eshift.pdf}
 \caption{\textbf{The causal test is null.} Each bar is one family, with the target sentence and its
 value identical across arms. Right: the mean paired difference and the prespecified smallest effect
 of interest, with the prior-blind frame control.}
@@ -332,34 +337,38 @@ model's \emph{own previous memory} retains 72.0\% --- a difference of +20.6~pp
 (+22.3 and +21.7~pp). By $k{=}20$ the gap is wider: 88.9\% against
 48.0\%.
 
-The honest reading is \emph{reconstruction versus recursion}, not ``iteration is causal''.
-\textsc{Src} differs from \textsc{Roll} in more than one way: repeated exposure, a longer and
-differently composed input, and the ability to recover an item an earlier step happened to omit. What
-we can defend is that recursive summaries \emph{accumulate} omissions, each step's loss being
-permanent, while reconstruction resets that accumulation --- which is also why \S\ref{sec:adequacy}
-and this subsection agree rather than conflict: the budget forces an omission at each step, recursion
-makes it permanent. \textsc{Anchor} shows iteration alone is not sufficient for large loss: it is
-just as recursive and retains 94.2\%, indistinguishable from \textsc{Src}
-(-1.6~pp, 95\% CI [-10.6, +6.2]).
+The honest reading is \emph{reconstruction versus recursion}, not ``iteration is causal'':
+\textsc{Src} also has repeated exposure, a longer and differently composed input, and the ability to
+recover an item an earlier step omitted. What we can defend is that recursive summaries
+\emph{accumulate} omissions, each step's loss permanent, while reconstruction resets that accumulation
+--- which is also why \S\ref{sec:adequacy} and this subsection agree: the budget forces an omission
+at each step, recursion makes it permanent. \textsc{Anchor} shows iteration alone is not sufficient for large loss: it is
+just as recursive and still retains 94.2\%, with no difference detected against \textsc{Src}
+(-1.6~pp, 95\% CI [-10.6, +6.2] --- a nonsignificant
+contrast, not an equivalence result).
 
-\paragraph{Two prior-blind controls.} \textsc{Copy-Rand} keeps a fixed number of randomly chosen
-source sentences, matched to \textsc{Roll} on \emph{retention} (60.8\%) but not on capacity
-(448 words against 122). Its surprise slope is flat, which rules out the coder
+\paragraph{Two prior-blind controls, neither decisive.} \textsc{Copy-Rand} keeps a fixed number of
+randomly chosen source sentences, with its slot count \emph{calibrated on the development set} to
+approximate \textsc{Roll}'s retention; on the confirmatory data it reaches 60.8\% against
+72.0\%, and it stores 448 words against 122. Its surprise slope is flat, which rules out the coder
 and the regexes as a source of any gradient: a selector that cannot see the prior produces the same
 flat profile through the same pipeline. The \emph{capacity}-matched version, packing random sentences
 into \textsc{Roll}'s own budget, retains 0.5\% --- essentially nothing
 (-71.5~pp, 95\% CI [-84.1, -58.0]). At \textsc{Roll}'s
 capacity random selection keeps no targets at all, so the compactor's selection is far better than
-chance even as it loses a third of the items; that arm is too degenerate for a gradient test, which is
-why both are reported.
+chance even as it loses a third of the items; that arm is too degenerate for a gradient test. The two
+controls therefore expose a design limitation rather than resolving it: matching on capacity destroys
+overlap, and matching approximately on retention costs far more storage. Neither is a decisive
+prior-blind counterfactual, and the preregistered surprise\,$\times$\,operator interaction remains
+inconclusive.
 
-Verbatim \emph{selection} by the model collapses to 0.3\% by $k{=}10$: it keeps recent
-conversational turns and lets the seeded facts go, a recency bias strong enough that this arm carries
-no information about surprise and we do not interpret its slope.
+Verbatim \emph{selection} by the model collapses to 0.3\% by $k{=}10$ --- it keeps recent
+conversational turns and lets the seeded facts go --- so that arm carries no information about surprise
+and we do not interpret its slope.
 
-\begin{figure*}[t]
+\begin{figure*}[tb]
 \centering
-\includegraphics[width=0.78\textwidth]{figures/fig2_operators.pdf}
+\includegraphics[width=0.62\textwidth]{figures/fig2_operators.pdf}
 \caption{\textbf{Retention is flat in surprise but far apart across operators.} Left: retention at
 $k{=}10$ by measured surprise tercile. Right: survival over the chain.}
 \label{fig:operators}
@@ -381,8 +390,7 @@ $k{=}0\rightarrow1$ predicts the held-out $k{=}10$ distribution with total-varia
 The mitigation that works is the one already shipping. Adding the anti-drift rules from Codex's
 memory-consolidation prompt to an otherwise identical rolling rewrite raises retention at $k{=}10$
 from 72.0\% to 94.2\%, a gain of +22.2~pp (95\% CI [+9.5,
-+35.5]) at no extra budget --- recovering almost the whole iteration penalty
-(Figure~\ref{fig:mitigation}).
++35.5]) at the same storage cap (Figure~\ref{fig:mitigation}).
 
 Surprise-pinning, the mitigation our theory predicted, shows \emph{no detected benefit}. Pinning the
 highest-surprise items verbatim gives -14.0~pp relative to no mitigation (95\% CI
@@ -397,14 +405,18 @@ budget the pinned text crowds out everything else and the memory as a whole is n
 \paragraph{A caveat on \textsc{Anchor}.} The anchoring rules make the model far more likely to
 overshoot the word budget: 43.4 regeneration attempts per trajectory against
 8.7 for the neutral prompt, and 12.9 line-boundary trims against 1.1.
-\textsc{Anchor} therefore reaches its result through a noticeably different generation process, and it
-stores 138 words against 122. Both differences work \emph{against} it --- trimming
-deletes trailing content --- so the advantage is not an artifact of them, but the comparison is not
-matched on protocol compliance and we do not treat the exact size as precise.
+The storage cap is the same, but the \emph{generation} cost is roughly five times higher, and we were
+wrong to assume the extra trimming is a handicap: across trajectories, more trimming goes with
+\emph{higher} retention (+8.6~pp per trim under the neutral prompt;
+92.1\% against 96.7\% for \textsc{Anchor} trajectories below and above the
+median trim count), and surviving targets sit near the top of the stored notes (mean relative position
+0.08), where line-boundary trimming of the tail does not reach them. \textsc{Anchor} is
+therefore an \emph{exploratory pipeline-level} result: the comparison holds the storage cap fixed but
+not the generation process, and the gain cannot be attributed to the anti-drift wording alone.
 
-\begin{figure}[t]
+\begin{figure}[tb]
 \centering
-\includegraphics[width=0.86\linewidth]{figures/fig5_mitigation.pdf}
+\includegraphics[width=0.74\linewidth]{figures/fig5_mitigation.pdf}
 \caption{\textbf{The deployed anchoring prompt beats the theory-derived fix.} Retention at $k{=}10$
 by surprise tercile. Pinning raises retention for the items it pins and lowers it overall.}
 \label{fig:mitigation}
@@ -415,38 +427,34 @@ by surprise tercile. Pinning raises retention for the items it pins and lowers i
 Appendix~\ref{app:robust} reports \emph{portability diagnostics}: the graded dose--response re-run on
 a second strong family (Llama-3.3-70B), on a small local model (Qwen3-8B), and at temperature $0$.
 Every slope interval contains zero. These are not repetitions of \textsc{E-Shift}, and they score each
-model against the \emph{primary} compactor's measured prior rather than its own, so they are evidence
-about the portability of the stimulus set rather than proof that each model ignores its own prior. The
-weaker models lose far more content overall (11.9\% and 6.9\% at $k{=}10$
-against 72.0\%) and the reconstruction advantage reappears in both. The proxy caps temperature
-at $1.0$, so $T>1$ could not be tested.
+model against the \emph{primary} compactor's prior rather than its own, so they are evidence about the
+portability of the stimulus set, not proof that each model ignores its own prior. The weaker models
+lose far more overall (11.9\% and 6.9\% against 72.0\%) and the
+reconstruction advantage reappears in both.
 
 \subsection{A1: preferences, and the homogenisation that does not happen}
 \label{sec:prefs}
-User preferences are the case where drift-to-defaults is most often asserted, and in this constructed
-set they show no sign of it. In stored memory, preferences that \emph{match} the model's own default
-behaviour survive 53.4\% of the time at $k{=}20$, while preferences that \emph{differ}
-from it survive 74.3\% (Figure~\ref{fig:prefs}a). Because default-matching and
-non-default preferences are different items, the honest contrast subtracts the pre-existing gap at
-$k{=}0$ (+2.8~pp) and clusters over the 20 preference families rather than
-treating item-checkpoints as independent: the baseline-adjusted advantage of non-default content is
-+18.0~pp (95\% CI [+9.9, +26.0]). The surviving profile becomes more
+User preferences are where drift-to-defaults is most often asserted, and in this constructed set they
+show no sign of it. Preferences that \emph{match} the model's own default behaviour survive
+53.4\% at $k{=}20$, those that \emph{differ} from it 74.3\%
+(Figure~\ref{fig:prefs}a, appendix). Subtracting the pre-existing $k{=}0$ gap (+2.8~pp) and
+clustering over the 20 preference families rather than treating item-checkpoints as
+independent, the baseline-adjusted advantage of non-default content is +18.0~pp (95\% CI
+[+9.9, +26.0]). Restricting to the 16 families that
+contain \emph{both} a default-matching and a non-default level, so that the contrast is computed
+inside each family and is free of between-family composition, gives +19.7~pp (95\% CI
+[+9.5, +29.8]). This remains a descriptive association --- the two kinds of level
+differ in wording and difficulty as well as in default status --- and we do not attach it causally to
+the prior mechanism. The surviving profile becomes more
 distinctive, not less: the share of stored preferences that depart from the model's defaults rises
 from 58\% at $k{=}0$ to 65\% at $k{=}20$. Generalisation here is over
 preference families; the eight profiles are controlled test cases, not a sample of people.
 
-Separating storage from execution (Figure~\ref{fig:prefs}b), the model follows a stated preference
+Separating storage from execution, the model follows a stated preference
 84\% of the time given raw instructions and 42\% given nothing --- an execution
 ceiling of 16~pp unrelated to memory --- and memory costs a further
 15~pp by $k{=}20$. Neither loss is prior-shaped.
 
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.96\linewidth]{figures/fig4_preferences.pdf}
-\caption{\textbf{No preference homogenisation.} Left: stored-memory survival split by whether the
-preference matches the model's own default. Right: storage loss against the execution ceiling.}
-\label{fig:prefs}
-\end{figure}
 
 
 \section{Related work}
@@ -464,40 +472,38 @@ replacement values, and the controls that separate rewriting from capacity.
 eliciting LLM priors by iterated in-context learning and \citet{ren2024iterated} and
 \citet{cui2025sharper} questioning how closely in-context inference matches posterior sampling;
 \citet{perez2025cultural} and \citet{acerbi2023large} study attractors in transmission chains of
-narrative text. ClashEval \citep{clasheval2024} and \citet{xie2024adaptive} grade how far context
-deviates from a model's parametric belief, but for a single step on real entities, and
-\citet{kochelka2026weak} find that single-step effect weak. \citet{belem2026may} document certainty
-inflation across iterated rewriting --- a property of how something is said, where we measure whether
-the value survives at all. We study memory items with an independently measured, graded prior, and we
-take the absorbing-deletion correction seriously rather than claiming convergence to the prior.
+narrative text. ClashEval \citep{clasheval2024} and \citet{xie2024adaptive} grade how far context deviates from a
+model's parametric belief, but for a single step on real entities, and \citet{kochelka2026weak} find
+that effect weak. \citet{belem2026may} document certainty inflation across iterated rewriting --- a
+property of how something is said, where we measure whether the value survives at all. We study memory
+items with an independently measured, graded prior, and take the absorbing-deletion correction
+seriously rather than claiming convergence to the prior.
 
 \paragraph{Homogenisation.} Knowledge collapse \citep{peterson2024knowledge} and generative
 monoculture \citep{wu2024monoculture} describe homogenisation arising from training on model output.
-The mechanism here is different and complementary: it is inference-time and in-context, requires no
-retraining, and operates inside a single deployed assistant's memory.
+The mechanism we test is inference-time and in-context, requires no retraining, and operates inside a
+single deployed assistant's memory --- and we do not find it.
 
 
 \section{What this means for memory design}
 \label{sec:discussion}
 
-\paragraph{The bottleneck is where the risk lives, and the failure is deletion.} At the word budgets
-a strong compactor normally runs under it loses essentially nothing (retention
-0.975 at 300 words, 1.000 at 600); degradation appears only
-once the budget is genuinely binding, so a comfortable compression ratio is not safety. And when it
-does appear, it is deletion: only 26 of 32,076 coded item-checkpoints
-(0.08\%) are changes to a different value. The failure practitioners worry about --- a
-constraint quietly rewritten into a plausible default --- is not what a strong compactor does. That
-matters for mitigation, because a check comparing a stored value against an expected range will never
-fire: there is nothing left to compare, and detecting the loss requires knowing what \emph{used to
+\paragraph{The bottleneck is where the risk lives, and the failure is deletion.} At the budgets a
+strong compactor normally runs under it loses essentially nothing (retention
+0.975 at 300 words, 1.000 at 600); degradation appears only once
+the budget is binding, so a comfortable compression ratio is not safety. And when it appears it is
+deletion: 26 of 32,076 coded item-checkpoints (0.08\%) are changes to a
+different value. A check comparing a stored value against an expected range will therefore never fire
+--- there is nothing left to compare --- and detecting the loss requires knowing what \emph{used to
 be} in memory, which is exactly what rolling rewrite destroys.
 
 \paragraph{Keep the sources, not just the summary.} The largest effect we measured is the gap between
-rebuilding memory from retained raw sessions and editing the previous summary in place. A budget
-forces an omission at each step either way; recursion is what makes it permanent, so a system that
-keeps its sessions and periodically rebuilds avoids the accumulation, at the cost of a longer input.
+rebuilding memory from retained sessions and editing the previous summary in place. A budget forces an
+omission either way; recursion makes it permanent, so a system that keeps its sessions and periodically
+rebuilds avoids the accumulation, at the cost of a longer input.
 Where keeping the sources is impossible, the anchoring rules already shipping in production prompts
-recover a comparable amount at no extra budget --- though they make the model overshoot the length
-limit far more often, and a prompt rule is a request the model may decline. Choosing \emph{what} to
+recover a comparable amount at the same storage cap --- though at several times the generation cost,
+and a prompt rule is a request the model may decline. Choosing \emph{what} to
 preserve by surprise buys nothing over choosing at random.
 
 Finally, the worry that compaction smooths a user profile toward an average one did not reproduce
@@ -507,15 +513,11 @@ homogenisation.
 
 \section{Conclusion}
 
-We asked whether the loop that keeps agent memory small destroys the content memory exists for, and
-built an instrument in which prior-fit is graded, measured on the compactor itself, and --- in
-\textsc{E-Shift} --- manipulated while the target sentence and its value are held exactly fixed, with
-the protocol frozen on a development split beforehand. We found no support for the prediction: the
-causal manipulation excludes a benefit above +4.3~pp and the graded dose--response is centred
-on zero, while the choice of operator moves retention by twenty points or more. Strong compactors do
-not quietly rewrite constraints into plausible defaults; under a binding budget they delete. We are
-equally explicit about where the instrument falls short, and release everything so that both the
-regime boundaries and those limitations can be pushed on directly.
+Holding a memory item's sentence and value fixed and shifting only what the compactor expects does not
+help it survive: the manipulation bounds any benefit at +4.3--+5.9~pp, and the
+frame-free dose--response is centred on zero, while the choice of operator moves retention by twenty
+points or more. We read this as an informative failed test rather than a refutation, because our
+frames move judged importance as well as expectation.
 
 
 \section*{Limitations}
@@ -528,13 +530,16 @@ each judge separately and bound the unresolved cases in both directions (\S\ref{
 adjudication would be the stronger check; we have archived a stratified 150-item sample for it, and it
 is not used in any inference reported here.
 
-\paragraph{Our causal manipulation is not clean.} The frames move the compactor's elicited prior
-strongly and in the predicted direction for every family, but a blind check (\S\ref{sec:parity})
-shows they also move judged importance and authority, in the direction that would depress retention of
-the expected-value arm. \textsc{E-Shift} therefore estimates the effect of an expectation-shifting
-\emph{context} manipulation, not of prior-fit in isolation. We report the one-sided exclusion it
-supports and lean on the frame-free dose--response for the rest; a manipulation that moves expectation
-without moving perceived importance is the obvious next instrument, and we do not have one.
+\paragraph{Prior-fit is not identified in isolation.} This is the paper's main limitation and it is
+ours, not the field's. The frames move the compactor's elicited prior strongly and in the predicted
+direction for every family, but a blind check (\S\ref{sec:parity}) shows they also lower judged
+importance and authority, in the direction that would depress retention of the expected-value arm. A
+real prior-fit benefit could therefore be masked by an importance penalty. \textsc{E-Shift} bounds a
+compound context manipulation; it is an informative failed test of the mechanism, not a refutation of
+it. The frame-free dose--response carries no such confound but is ecological and imprecise
+(+1.6~pp over the IQR, 95\% CI [-9.3, +13.2]). A manipulation that moves
+expectation without moving perceived importance is the obvious next instrument, and we do not have
+one.
 
 \paragraph{The effect size we could test is larger than the one we wanted.} Between-family
 heterogeneity in the frame effect is large and is not reducible by adding seeds, so the operative
@@ -543,14 +548,15 @@ smallest effect of interest had to be raised from the \(8\)~pp we preregistered 
 need roughly \(60\) eligible families.
 
 \paragraph{The operator comparisons are exploratory.} Only \textsc{E-Shift} and the
-surprise\,$\times$\,operator contrast were preregistered as confirmatory. The operator contrasts in
+surprise\,$\times$\,operator contrast were preregistered as confirmatory. The contrasts in
 \S\ref{sec:operators} and \S\ref{sec:c7} were not, and are reported without multiplicity
-correction. \textsc{Src} also differs from \textsc{Roll} in more than iteration --- repeated
-exposure, input length and composition, and recoverability --- so it identifies
-reconstruction-versus-recursion, not iteration as such. \textsc{Anchor} additionally reaches its
-result through a different generation process (43.4 budget regenerations and
-12.9 trims per trajectory, against 8.7 and 1.1 for the neutral
-prompt), so its exact magnitude should not be read as precise.
+correction. \textsc{Src} differs from \textsc{Roll} in more than iteration --- repeated exposure,
+input length and composition, and recoverability --- so it identifies reconstruction-versus-recursion.
+\textsc{Anchor} is a \emph{pipeline-level} comparison: it holds the storage cap fixed but not the
+generation process (43.4 budget regenerations and 12.9 trims per trajectory
+against 8.7 and 1.1), and since more trimming is associated with \emph{higher}
+retention we cannot treat that difference as a handicap. Its gain is not attributable to the
+anti-drift wording alone.
 
 \paragraph{Semantic prior and representational compressibility are not fully separable.} Values a
 model finds expected may also be easier to phrase compactly. \textsc{E-Shift} holds the surface form
@@ -571,9 +577,11 @@ primary compactor's measured prior rather than its own. Any null is reported as 
 model, prompt, item domain and compression regime \citep{lakens2017equivalence}, never as a general
 statement about compactors.
 
-\paragraph{Simulated users.} The eight preference profiles are controlled test cases, not a sample of
-people; generalisation there is over preference families, not over users, and that result is reported
-as an exploratory application.
+\paragraph{Simulated users, and a descriptive preference result.} The eight preference profiles are
+controlled test cases, not a sample of people; generalisation is over preference families. The
+non-default survival advantage is a robust descriptive association --- it holds within families as well
+as across them --- but default-matching and non-default levels differ in wording and difficulty too, so
+we do not attach it causally to the prior mechanism.
 
 \section*{Ethical considerations}
 
@@ -608,12 +616,20 @@ development stage and are recorded there with their rationale: A1 (power and the
 effect of interest), A3 (prospective calibration of the prior-blind control) and A4 (the E-SHIFT
 endpoint). No amendment was made after a confirmatory family was run.
 
-\begin{figure}[t]
+\begin{figure}[tb]
 \centering
 \includegraphics[width=0.92\linewidth]{figures/fig3_contrasts.pdf}
 \caption{\textbf{Each arm removes one mechanism.} Retention at $k{=}10$ relative to the rolling
 rewrite, with two-way crossed cluster bootstrap intervals.}
 \label{fig:contrasts}
+\end{figure}
+
+\begin{figure}[tb]
+\centering
+\includegraphics[width=0.80\linewidth]{figures/fig4_preferences.pdf}
+\caption{\textbf{No preference homogenisation.} Left: stored-memory survival split by whether the
+preference matches the model's own default. Right: storage loss against the execution ceiling.}
+\label{fig:prefs}
 \end{figure}
 
 \section{Robustness across models and temperature}

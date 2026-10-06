@@ -8,13 +8,16 @@ each judge separately and bound the unresolved cases in both directions (\S\ref{
 adjudication would be the stronger check; we have archived a stratified 150-item sample for it, and it
 is not used in any inference reported here.
 
-\paragraph{Our causal manipulation is not clean.} The frames move the compactor's elicited prior
-strongly and in the predicted direction for every family, but a blind check (\S\ref{sec:parity})
-shows they also move judged importance and authority, in the direction that would depress retention of
-the expected-value arm. \textsc{E-Shift} therefore estimates the effect of an expectation-shifting
-\emph{context} manipulation, not of prior-fit in isolation. We report the one-sided exclusion it
-supports and lean on the frame-free dose--response for the rest; a manipulation that moves expectation
-without moving perceived importance is the obvious next instrument, and we do not have one.
+\paragraph{Prior-fit is not identified in isolation.} This is the paper's main limitation and it is
+ours, not the field's. The frames move the compactor's elicited prior strongly and in the predicted
+direction for every family, but a blind check (\S\ref{sec:parity}) shows they also lower judged
+importance and authority, in the direction that would depress retention of the expected-value arm. A
+real prior-fit benefit could therefore be masked by an importance penalty. \textsc{E-Shift} bounds a
+compound context manipulation; it is an informative failed test of the mechanism, not a refutation of
+it. The frame-free dose--response carries no such confound but is ecological and imprecise
+(\DoseIQR{}~pp over the IQR, 95\% CI [\DoseIQRlo{}, \DoseIQRhi{}]). A manipulation that moves
+expectation without moving perceived importance is the obvious next instrument, and we do not have
+one.
 
 \paragraph{The effect size we could test is larger than the one we wanted.} Between-family
 heterogeneity in the frame effect is large and is not reducible by adding seeds, so the operative
@@ -23,14 +26,15 @@ smallest effect of interest had to be raised from the \(8\)~pp we preregistered 
 need roughly \(60\) eligible families.
 
 \paragraph{The operator comparisons are exploratory.} Only \textsc{E-Shift} and the
-surprise\,$\times$\,operator contrast were preregistered as confirmatory. The operator contrasts in
+surprise\,$\times$\,operator contrast were preregistered as confirmatory. The contrasts in
 \S\ref{sec:operators} and \S\ref{sec:c7} were not, and are reported without multiplicity
-correction. \textsc{Src} also differs from \textsc{Roll} in more than iteration --- repeated
-exposure, input length and composition, and recoverability --- so it identifies
-reconstruction-versus-recursion, not iteration as such. \textsc{Anchor} additionally reaches its
-result through a different generation process (\RetriesOfive{} budget regenerations and
-\TrimsOfive{} trims per trajectory, against \RetriesOone{} and \TrimsOone{} for the neutral
-prompt), so its exact magnitude should not be read as precise.
+correction. \textsc{Src} differs from \textsc{Roll} in more than iteration --- repeated exposure,
+input length and composition, and recoverability --- so it identifies reconstruction-versus-recursion.
+\textsc{Anchor} is a \emph{pipeline-level} comparison: it holds the storage cap fixed but not the
+generation process (\RetriesOfive{} budget regenerations and \TrimsOfive{} trims per trajectory
+against \RetriesOone{} and \TrimsOone{}), and since more trimming is associated with \emph{higher}
+retention we cannot treat that difference as a handicap. Its gain is not attributable to the
+anti-drift wording alone.
 
 \paragraph{Semantic prior and representational compressibility are not fully separable.} Values a
 model finds expected may also be easier to phrase compactly. \textsc{E-Shift} holds the surface form
@@ -51,9 +55,11 @@ primary compactor's measured prior rather than its own. Any null is reported as 
 model, prompt, item domain and compression regime \citep{lakens2017equivalence}, never as a general
 statement about compactors.
 
-\paragraph{Simulated users.} The eight preference profiles are controlled test cases, not a sample of
-people; generalisation there is over preference families, not over users, and that result is reported
-as an exploratory application.
+\paragraph{Simulated users, and a descriptive preference result.} The eight preference profiles are
+controlled test cases, not a sample of people; generalisation is over preference families. The
+non-default survival advantage is a robust descriptive association --- it holds within families as well
+as across them --- but default-matching and non-default levels differ in wording and difficulty too, so
+we do not attach it causally to the prior mechanism.
 
 \section*{Ethical considerations}
 

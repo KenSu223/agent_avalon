@@ -13,14 +13,14 @@ replacement values, and the controls that separate rewriting from capacity.
 eliciting LLM priors by iterated in-context learning and \citet{ren2024iterated} and
 \citet{cui2025sharper} questioning how closely in-context inference matches posterior sampling;
 \citet{perez2025cultural} and \citet{acerbi2023large} study attractors in transmission chains of
-narrative text. ClashEval \citep{clasheval2024} and \citet{xie2024adaptive} grade how far context
-deviates from a model's parametric belief, but for a single step on real entities, and
-\citet{kochelka2026weak} find that single-step effect weak. \citet{belem2026may} document certainty
-inflation across iterated rewriting --- a property of how something is said, where we measure whether
-the value survives at all. We study memory items with an independently measured, graded prior, and we
-take the absorbing-deletion correction seriously rather than claiming convergence to the prior.
+narrative text. ClashEval \citep{clasheval2024} and \citet{xie2024adaptive} grade how far context deviates from a
+model's parametric belief, but for a single step on real entities, and \citet{kochelka2026weak} find
+that effect weak. \citet{belem2026may} document certainty inflation across iterated rewriting --- a
+property of how something is said, where we measure whether the value survives at all. We study memory
+items with an independently measured, graded prior, and take the absorbing-deletion correction
+seriously rather than claiming convergence to the prior.
 
 \paragraph{Homogenisation.} Knowledge collapse \citep{peterson2024knowledge} and generative
 monoculture \citep{wu2024monoculture} describe homogenisation arising from training on model output.
-The mechanism here is different and complementary: it is inference-time and in-context, requires no
-retraining, and operates inside a single deployed assistant's memory.
+The mechanism we test is inference-time and in-context, requires no retraining, and operates inside a
+single deployed assistant's memory --- and we do not find it.

@@ -17,10 +17,9 @@ calibration, coder thresholds --- was made on the development set only and froze
 before any confirmatory family was run.
 
 Each of the \NChainsConf{} confirmatory chains carries \ChainSize{} items from distinct families, so
-two values of the same family never compete inside one memory. Assignment uses constrained
-randomisation over the \emph{measured} priors: among assignments satisfying the design constraints we
-keep the one minimising the largest between-chain difference in mean surprise, which is
-\SurpriseGap{} log-odds against a mean within-family range of \BTRange{}.
+two values of one family never compete inside a memory. Assignment uses constrained randomisation over
+the \emph{measured} priors, minimising the largest between-chain difference in mean surprise
+(\SurpriseGap{} log-odds, against a mean within-family range of \BTRange{}).
 
 \subsection{Measuring the dose on the compactor}
 Surprise must be the compactor's, not a convenient proxy. Our primary measure (\textsc{P1}) presents

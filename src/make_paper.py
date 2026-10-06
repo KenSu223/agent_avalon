@@ -228,6 +228,9 @@ def main():
         put("ConeJudgeTwo", f"{c['judge2_only']['mean']:+.1f}")
         put("ConeWorstAgainst", f"{c['unresolved_worst_against_H']['mean']:+.1f}")
         put("ConeWorstFor", f"{c['unresolved_worst_for_H']['mean']:+.1f}")
+        # the CONSERVATIVE upper bound is the upper CI limit of the variant most favourable to the
+        # hypothesis, not that variant's mean
+        put("ConeUpperWorst", f"{c['unresolved_worst_for_H']['ci95'][1]:+.1f}")
         put("EShiftUnresRate", f"{100*c['unresolved_rate']:.1f}\\%")
         put("EShiftUnresN", c["n_unresolved"])
         put("EShiftUnresPlus", f"{100*c['unresolved_by_arm']['F+']:.0f}\\%")
@@ -270,6 +273,24 @@ def main():
                 put(f"Parity{tag}", f"{fp[k]['mean_diff_Fplus_minus_Fminus']:+.2f}")
                 put(f"Parity{tag}Lo", f"{fp[k]['ci95'][0]:+.2f}")
                 put(f"Parity{tag}Hi", f"{fp[k]['ci95'][1]:+.2f}")
+
+    r2 = load("round2_checks.json")
+    if r2:
+        tv = r2.get("trimming_vs_retention", {})
+        for op, tag in (("O1", "Oone"), ("O5", "Ofive")):
+            if op in tv:
+                put(f"TrimSlope{tag}", f"{tv[op]['slope_retention_per_trim']:+.1f}")
+                put(f"TrimLow{tag}", f"{tv[op]['retention_low_trim']:.1f}")
+                put(f"TrimHigh{tag}", f"{tv[op]['retention_high_trim']:.1f}")
+        tp = r2.get("target_position_in_notes", {}).get("O5")
+        if tp:
+            put("TargetPosOfive", f"{tp['mean_relative_position']:.2f}")
+        wf = r2.get("preference_within_family", {})
+        if wf.get("n_families_with_both"):
+            put("PrefWithin", f"{wf['mean_pp']:+.1f}")
+            put("PrefWithinLo", f"{wf['ci95'][0]:+.1f}")
+            put("PrefWithinHi", f"{wf['ci95'][1]:+.1f}")
+            put("PrefWithinN", wf["n_families_with_both"])
 
     # protocol-compliance numbers
     tr = load("trim_stats.json")
