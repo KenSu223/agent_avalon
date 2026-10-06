@@ -1,0 +1,60 @@
+source: results/closed_book_llama3-3-70b-instruct.jsonl
+
+=== LongMemEval ===
+subset                                     n   natural (memoryless score)  forced guess (prior-answerable)
+knowledge-update                          72      0.000       [0.00,0.00]        0.181         [0.09,0.27]
+knowledge-update_abs                       6      1.000       [1.00,1.00]        0.000         [0.00,0.00]
+multi-session                            121      0.000       [0.00,0.00]        0.074         [0.03,0.12]
+multi-session_abs                         12      1.000       [1.00,1.00]        0.000         [0.00,0.00]
+single-session-assistant                  56      0.125       [0.04,0.21]        0.339         [0.22,0.46]
+single-session-preference                 30      0.000       [0.00,0.00]        0.100         [0.00,0.21]
+single-session-user                       64      0.000       [0.00,0.00]        0.172         [0.08,0.26]
+single-session-user_abs                    6      1.000       [1.00,1.00]        0.000         [0.00,0.00]
+temporal-reasoning                       127      0.016       [0.00,0.04]        0.236         [0.16,0.31]
+temporal-reasoning_abs                     6      1.000       [1.00,1.00]        0.000         [0.00,0.00]
+__ALL__                                  500      0.078       [0.05,0.10]        0.170         [0.14,0.20]
+
+=== LoCoMo ===
+subset                                     n   natural (memoryless score)  forced guess (prior-answerable)
+adversarial                              446      1.000       [1.00,1.00]        0.000         [0.00,0.00]
+multi-hop                                282      0.004       [0.00,0.01]        0.110         [0.07,0.15]
+open-domain                               96      0.052       [0.01,0.10]        0.427         [0.33,0.53]
+single-hop                               841      0.000       [0.00,0.00]        0.239         [0.21,0.27]
+temporal                                 321      0.000       [0.00,0.00]        0.037         [0.02,0.06]
+__ALL__                                 1986      0.228       [0.21,0.25]        0.144         [0.13,0.16]
+  categories 1-4 only (natural): judge acc 0.004 (n=1540), official token-F1 0.018
+  categories 1-4 only (forced): judge acc 0.185 (n=1540), official token-F1 0.077
+
+=== MemoryAgentBench ===
+subset                                     n   natural (memoryless score)  forced guess (prior-answerable)
+eventqa                                  500      0.394       [0.35,0.44]        0.476         [0.43,0.52]
+factconsolidation_mh                     100      0.010       [0.00,0.03]        0.020         [0.00,0.05]
+factconsolidation_sh                     100      0.210       [0.13,0.29]        0.190         [0.11,0.27]
+ruler_qa1                                100      0.290       [0.20,0.38]        0.420         [0.32,0.52]
+ruler_qa2                                100      0.480       [0.38,0.58]        0.530         [0.43,0.63]
+__ALL__                                  900      0.329       [0.30,0.36]        0.393         [0.36,0.43]
+
+=== PrefEval ===
+subset                                     n   natural (memoryless score)  forced guess (prior-answerable)
+education_learning_styles                 31      0.097       [0.00,0.20]          nan                    
+education_resources                       54      0.093       [0.02,0.17]          nan                    
+entertain_games                           51      0.020       [0.00,0.06]          nan                    
+entertain_music_book                      56      0.054       [0.00,0.11]          nan                    
+entertain_shows                           62      0.032       [0.00,0.08]          nan                    
+entertain_sports                          52      0.019       [0.00,0.06]          nan                    
+lifestyle_beauty                          53      0.038       [0.00,0.09]          nan                    
+lifestyle_dietary                         57      0.018       [0.00,0.05]          nan                    
+lifestyle_fit                             52      0.038       [0.00,0.09]          nan                    
+lifestyle_health                          49      0.041       [0.00,0.10]          nan                    
+pet_ownership                             43      0.093       [0.01,0.18]          nan                    
+professional_work_location_style          36      0.083       [0.00,0.17]          nan                    
+shop_fashion                              54      0.019       [0.00,0.05]          nan                    
+shop_home                                 56      0.089       [0.01,0.16]          nan                    
+shop_motors                               45      0.067       [0.00,0.14]          nan                    
+shop_technology                           35      0.029       [0.00,0.08]          nan                    
+travel_activities                         58      0.000       [0.00,0.00]          nan                    
+travel_hotel                              54      0.019       [0.00,0.05]          nan                    
+travel_restaurant                         56      0.089       [0.01,0.16]          nan                    
+travel_transportation                     46      0.065       [0.00,0.14]          nan                    
+__ALL__                                 1000      0.048       [0.03,0.06]          nan                    
+

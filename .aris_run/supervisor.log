@@ -1,1 +1,4 @@
 2026-10-06 07:15:58 session 1 start; budget: 0.0001
+2026-10-06 12:34:53 session 1 ended rc=0 after 19135s
+2026-10-06 12:34:53 PIPELINE_DONE found, exiting
+2026-10-06 12:34:53 supervisor finished
