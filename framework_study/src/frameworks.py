@@ -251,10 +251,11 @@ class Mem0(Base):
         self.m.add(msgs, user_id=self.uid)
 
     def _all(self):
+        # mem0 2.x get_all defaults to top_k=20 and 1.x to limit=100: ask for everything explicitly
         try:
-            r = self.m.get_all(user_id=self.uid)
+            r = self.m.get_all(filters={"user_id": self.uid}, top_k=100000)
         except Exception:
-            r = self.m.get_all(filters={"user_id": self.uid})
+            r = self.m.get_all(user_id=self.uid, limit=100000)
         rows = r.get("results", r) if isinstance(r, dict) else r
         return [x.get("memory", "") for x in rows]
 
