@@ -1,0 +1,13 @@
+system              true retention  acc on C items  acc on I items  acc on mix  inflation (C acc - retention)
+raw_history                   1.00            1.00            0.99        1.00                          +0.00
+mem0                          0.75            0.99            0.72        0.86                          +0.24
+mem0_v1                       0.93            0.99            0.95        0.97                          +0.07
+langmem                       0.48            0.99            0.45        0.72                          +0.51
+llamaindex_facts              0.46            0.98            0.52        0.75                          +0.52
+langchain_summary             0.14            0.95            0.17        0.56                          +0.81
+codex                         0.07            0.96            0.12        0.54                          +0.89
+openhands                     0.15            0.98            0.17        0.58                          +0.82
+aider                         0.00            0.97            0.01        0.49                          +0.97
+gemini_cli                    0.49            0.96            0.58        0.77                          +0.47
+anthropic_api                 0.09            0.98            0.15        0.56                          +0.89
+neutral_roll                  0.73            0.98            0.74        0.86                          +0.25
