@@ -1,0 +1,44 @@
+\section*{Limitations}
+
+\paragraph{No human validation this cycle.} Coding reliability rests on two LLM judges from
+different model families, whose agreement we report in full (Table~\ref{tab:judges}) along with every
+headline conclusion recomputed under each judge separately. Human adjudication would be the stronger
+check; we have archived a stratified 150-item sample for it, and it is not used in any inference
+reported here.
+
+\paragraph{\textsc{E-Shift} identifies a context-conditioned prior.} The manipulation changes what
+the compactor expects \emph{given the described work}, not what it knows parametrically. That is the
+right construct for memory --- a deployed compactor always reads a context --- but it is not a claim
+about pretrained knowledge in isolation. The graded dose--response (\S\ref{sec:c2}) connects the
+causal result to naturally occurring priors, and is itself ecological rather than causal evidence.
+
+\paragraph{Semantic prior and representational compressibility are not fully separable.} Values a
+model finds expected may also be easier to phrase compactly. \textsc{E-Shift} holds the surface form
+exactly fixed, and \textsc{Copy-Rand} removes model-driven selection, which constrains this
+substantially; but both may be channels through which model expectations act, and we do not claim to
+have separated them.
+
+\paragraph{The operative prior may move with $k$.} We measure priors at seeding and re-elicit them in
+masked contexts at $k{=}1$ and $k{=}10$ on a diagnostic subset, reporting rank stability. A fully
+time-varying dose is out of scope.
+
+\paragraph{Generalisation.} The confirmatory result is for one strong compactor at one compression
+regime, with a second strong family and a small local model run as diagnostics on the core contrast.
+Any null is reported as scoped to the tested model, prompt, item domain and compression regime
+\citep{lakens2017equivalence}, never as a general statement about compactors.
+
+\paragraph{Simulated users.} The eight preference profiles are controlled test cases, not a sample of
+people; generalisation there is over preference families, not over users, and that result is reported
+as an exploratory application.
+
+\section*{Ethical considerations}
+
+This work studies how agent memory systems lose information, using entirely synthetic stimuli set in
+a fictional workplace. No human subjects were involved and no personal data was collected or
+processed. The falsehood-free design matters here: every stimulus value is true within its world, so
+nothing we measure depends on the model being told something false, and nothing in this paper
+describes a way to make a memory system behave badly on purpose. The practical upshot --- that
+rewriting memory erodes exactly the user-specific content that personalisation depends on, and that
+different users' stored profiles converge --- is a reason to design memory systems that keep what
+users actually told them. All model calls were made through a budgeted proxy; total inference cost is
+reported in Appendix~\ref{app:cost}.

@@ -1,0 +1,119 @@
+{
+ "operating_point": {
+  "op": "O1",
+  "B": 150,
+  "T": 1.0
+ },
+ "W1_stored_words": 129.2,
+ "retention_O1_k10": 0.6666666666666666,
+ "retention_O7_k10": 1.0,
+ "adequacy": {
+  "retention_O1": 0.6666666666666666,
+  "retention_O7": 1.0,
+  "gap_pp": 33.333333333333336,
+  "in_range": true,
+  "below_ceiling_by_10pp": true,
+  "adequate": true
+ },
+ "O3": {
+  "slots": 60,
+  "stored_words": 612.5045045045046,
+  "retention": 0.6306306306306306,
+  "within_tolerance": false,
+  "label": "prior-blind deletion control (capacity claim dropped; see A3)",
+  "calibration_rule": "A3 word-matching is unachievable here: a uniformly random choice of source sentences must keep far more text than the compactor to retain any targets at all, because the pool is dominated by distractor chatter that the compactor discards. Non-degeneracy takes precedence (A3 step 4), so the slot count was chosen on dev data to put O3's retention closest to O1's, giving the gradient test its maximum power. O3 therefore carries MORE memory than O1, which is conservative for an artifact test.",
+  "o1_retention_target": 0.6666666666666666
+ },
+ "grid": {
+  "O1|B150|T0.0|sNone": {
+   "retention": 0.85,
+   "n": 120,
+   "stored_words": 140.7,
+   "unresolved_rate": 0.008333333333333333
+  },
+  "O1|B150|T1.0|sNone": {
+   "retention": 0.6666666666666666,
+   "n": 120,
+   "stored_words": 129.2,
+   "unresolved_rate": 0.025
+  },
+  "O1|B300|T0.0|sNone": {
+   "retention": 0.975,
+   "n": 120,
+   "stored_words": 281.1,
+   "unresolved_rate": 0.0
+  },
+  "O1|B300|T1.0|sNone": {
+   "retention": 0.975,
+   "n": 120,
+   "stored_words": 270,
+   "unresolved_rate": 0.008333333333333333
+  },
+  "O1|B600|T0.0|sNone": {
+   "retention": 1.0,
+   "n": 120,
+   "stored_words": 527.3,
+   "unresolved_rate": 0.0
+  },
+  "O1|B600|T1.0|sNone": {
+   "retention": 1.0,
+   "n": 120,
+   "stored_words": 492.6,
+   "unresolved_rate": 0.0
+  },
+  "O7|B300|T1.0|sNone": {
+   "retention": 1.0,
+   "n": 120,
+   "stored_words": 969.8,
+   "unresolved_rate": 0.0
+  },
+  "O3|B300|T1.0|s10": {
+   "retention": 0.0,
+   "n": 120,
+   "stored_words": 108,
+   "unresolved_rate": 0.0
+  },
+  "O3|B300|T1.0|s14": {
+   "retention": 0.0,
+   "n": 120,
+   "stored_words": 162,
+   "unresolved_rate": 0.041666666666666664
+  },
+  "O3|B300|T1.0|s18": {
+   "retention": 0.041666666666666664,
+   "n": 120,
+   "stored_words": 187.4,
+   "unresolved_rate": 0.0
+  },
+  "O3|B300|T1.0|s22": {
+   "retention": 0.0,
+   "n": 120,
+   "stored_words": 220,
+   "unresolved_rate": 0.008333333333333333
+  },
+  "O3|B300|T1.0|s26": {
+   "retention": 0.125,
+   "n": 120,
+   "stored_words": 250.7,
+   "unresolved_rate": 0.041666666666666664
+  },
+  "O3|B300|T1.0|s30": {
+   "retention": 0.16666666666666666,
+   "n": 120,
+   "stored_words": 318.5,
+   "unresolved_rate": 0.058333333333333334
+  },
+  "O3|B300|T1.0|s34": {
+   "retention": 0.125,
+   "n": 120,
+   "stored_words": 344.1,
+   "unresolved_rate": 0.025
+  },
+  "O3|B300|T1.0|s40": {
+   "retention": 0.375,
+   "n": 120,
+   "stored_words": 410.3,
+   "unresolved_rate": 0.06666666666666667
+  }
+ }
+}

@@ -1,0 +1,38 @@
+\section{Compaction as iterated learning}
+\label{sec:background}
+
+Let $M_t$ be the memory after $t$ compactions and $O_t$ the session that just ended. Every system we
+surveyed implements some $M_{t+1} = C(M_t, O_t)$ where $C$ is a language model under a length
+budget. For a single memory item $m$ --- a fact, a preference, a lesson --- and sessions that do not
+mention $m$ again, the item's representation $r_{t+1}$ depends only on $r_t$ and the fixed
+surrounding context. That is a Markov chain over representations, and it is the object iterated
+learning studies.
+
+Classical results say that a chain of Bayesian learners who \emph{sample} from the posterior
+converges to the prior, while learners who take the \emph{MAP} hypothesis amplify the prior's mode,
+with the amplification governed by the bottleneck rather than by the strength of the prior
+\citep{griffiths2007language,kirby2007innateness}. We deliberately do \emph{not} claim either result
+holds for an LLM summarisation chain. Two things stand in the way. First, an LLM's in-context
+inference need not be posterior sampling even at temperature one \citep{cui2025sharper}. Second, and
+more decisively, deletion is close to absorbing in a real memory system: once an item is gone it is
+not usually regenerated, so the literal stationary distribution of the chain is ``everything is
+forgotten'', which is true but uninformative.
+
+What survives the correction is the useful part. We therefore state the claim about
+\emph{selection and replacement} rather than about stationarity:
+
+\begin{quote}
+Survival of an item through compaction falls with its surprise under the compactor's prior, and when
+an item is not retained verbatim its replacement is drawn toward higher-prior values.
+\end{quote}
+
+Formally we model the chain with states $\{R_1,\dots,R_5,\textsc{other},\textsc{vague},
+\textsc{absent}\}$, where $R_i$ is the $i$-th ranked value of that item's family under the
+\emph{measured} prior, $\textsc{other}$ is any value outside the family's candidate set,
+$\textsc{vague}$ is a non-specific answer, and $\textsc{absent}$ is deletion. We estimate the kernel
+$K$ from a single step, predict $p_0K^k$ on held-out trajectories, and report the distribution
+conditional on survival.
+
+Drift requires a bottleneck. If $C$ copied its input verbatim the chain would not move. Every
+operator we study therefore has an explicit budget, and we verify empirically that the budget
+removes material content before interpreting anything (\S\ref{sec:adequacy}).

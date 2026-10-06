@@ -152,10 +152,10 @@ def build_chains(families, split="confirmatory", n_chains=7, seed=20261006,
     if best is None:
         raise RuntimeError("no feasible chain assignment found")
 
-    # vivid items are an exploratory factor, not part of C1-C3; spread them evenly
-    rng.shuffle(vivid)
-    for k, it in enumerate(vivid):
-        best[k % n_chains].append(it)
+    # The vivid/mundane contrast was an exploratory factor only. It is dropped so that dev and
+    # confirmatory chains carry exactly the same number of seeded items, which is what makes an
+    # operating point selected on dev transfer to confirmatory.
+    vivid = []
 
     out = []
     for ci, items in enumerate(best):

@@ -17,13 +17,21 @@ JUDGES = ["openai.gpt-oss-120b-1:0", "google.gemma-3-27b-it"]
 RES = ROOT / "results"
 
 
-def build_cases(records, fams):
+def build_cases(records, fams, only_target=False, index=None):
     famd = {f["family_id"]: f for f in fams}
     rows, pending = [], []
     for rec in records:
         w = rec["world"]
+        # E-SHIFT analyses only the target item; coding the 18 fillers would multiply judge cost
+        # ~19x for data no claim uses.
+        keep = None
+        if only_target and index:
+            m = index.get(rec["run_id"])
+            keep = {m["target_item"]} if m else set()
         for snap in rec["snapshots"]:
             for it in rec["items"]:
+                if keep is not None and it["item_id"] not in keep:
+                    continue
                 f = famd[it["family_id"]]
                 lv = next(l for l in f["levels"] if l["level"] == it["level"])
                 item = {"level": it["level"],
@@ -33,7 +41,8 @@ def build_cases(records, fams):
                         "notes": snap["notes"]}
                 lab, dest, needs, ev = coder.code_regex(snap["notes"], item, f)
                 row = {"run_id": rec["run_id"], "op": rec["op"], "model": rec["model"],
-                       "T": rec["T"], "B": rec["B"], "seed_idx": rec["seed_idx"],
+                       "T": rec["T"], "B": rec["B"], "slots": rec.get("slots"),
+                       "seed_idx": rec["seed_idx"],
                        "chain_id": rec["chain_id"], "frame": rec.get("frame_arm"),
                        "k": snap["k"], "item_id": it["item_id"], "family_id": it["family_id"],
                        "level": it["level"], "kind": it["kind"],
@@ -98,10 +107,11 @@ def kappa(pairs):
     return (po - pe) / (1 - pe) if pe < 1 else None
 
 
-def run(chain_file, tag, workers=16):
+def run(chain_file, tag, workers=24, only_target=False, index_file=None):
     fams = load_families()
     records = [json.loads(l) for l in Path(chain_file).read_text().splitlines() if l.strip()]
-    rows, pending = build_cases(records, fams)
+    index = json.loads(Path(index_file).read_text()) if index_file else None
+    rows, pending = build_cases(records, fams, only_target=only_target, index=index)
     print(f"{len(rows)} item-checkpoint cases, {len(pending)} need judging "
           f"({100*len(pending)/max(1,len(rows)):.1f}%)", flush=True)
     judgements = judge_all(pending, workers) if pending else {j: [] for j in JUDGES}
@@ -123,4 +133,6 @@ def run(chain_file, tag, workers=16):
 
 
 if __name__ == "__main__":
-    run(sys.argv[1], sys.argv[2])
+    only_t = len(sys.argv) > 3 and sys.argv[3] == "--target-only"
+    idx = sys.argv[4] if len(sys.argv) > 4 else None
+    run(sys.argv[1], sys.argv[2], only_target=only_t, index_file=idx)

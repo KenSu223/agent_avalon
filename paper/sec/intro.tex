@@ -1,0 +1,64 @@
+\section{Introduction}
+
+A long-horizon agent is supposed to keep learning after pretraining by writing things down. In every
+deployed system we could inspect, what it writes down is then rewritten by a language model: after a
+session the model reads its own previous memory, merges it with what just happened, and emits a
+shorter replacement. The original text is not kept. This summary-of-a-summary loop is the norm, not
+an edge case --- it is how context compaction works in Codex, OpenHands, Aider, Cline and Gemini
+CLI, how the Anthropic API compaction endpoint is documented to behave, and how Letta/MemGPT,
+Graphiti's entity summaries and LangMem maintain long-term state \citep{packer2024memgpt}. Two
+timescales exist: within-session compaction, triggered at between a sixteenth and nine tenths of the
+context window, and cross-session consolidation, which has \emph{no bound} on how many times a given
+memory is rewritten. The second is exactly the continual-learning setting.
+
+This loop has a structure that cognitive science has studied for two decades. A chain of learners in
+which each generation treats the previous generation's output as its data is an \emph{iterated
+learning} chain, and such chains are pulled toward the learners' prior
+\citep{griffiths2007language,kirby2007innateness}. If that applies here, it implies something
+uncomfortable, because memory exists to hold what the model does \emph{not} already expect: a user's
+idiosyncratic preference, a local fact about this deployment, a lesson from one specific failure. A
+process that pulls memory toward the compactor's prior is worst at keeping exactly the content
+memory is for.
+
+The intuition has been stated informally. \citet{zhang2026faulty} show that continual consolidation
+can make memory \emph{worse than no memory} and that in-place rewriting is the most harmful
+operator, but their synthetic world deliberately uses nonce attributes with arbitrary mappings,
+which removes the prior as a variable; they attribute the loss to over-generalisation.
+\citet{zahn2026facts} assert that non-default constraints ``drift toward plausible defaults'' after
+three rounds of self-summarisation, but publish no per-item data and never record what a constraint
+was replaced \emph{with}. The knowledge-conflict literature does grade plausibility, but only for a
+single step and only for real entities, and the single-step effect is weak
+\citep{clasheval2024,kochelka2026weak}. Nobody has made deviation-from-prior an experimentally
+manipulated variable inside a memory chain.
+
+We do that. Our central experiment, \textsc{E-Shift}, holds the target sentence \emph{and its value}
+completely fixed and varies only a one-sentence, value-free description of the work the user does,
+chosen so that the very same value is unremarkable under one description and surprising under the
+other. Magnitude, wording, token length, compressibility and operational consequence are therefore
+identical across arms by construction; only the compactor's expectation differs. We verify the
+manipulation before running any chain, by eliciting the compactor's own prior under each frame.
+
+We also need to know that any effect comes from the model rewriting text rather than from content
+simply not fitting. We therefore build an operator lattice in which each arm removes exactly one
+mechanism, and in particular a prior-blind control, \textsc{Copy-Rand}, which applies the same
+capacity pressure through a uniformly random choice of which source sentences to keep. It uses the
+same stimuli, the same coder and the same probes, but its selection cannot depend on any prior.
+
+Our contributions are:
+
+\begin{itemize}\itemsep1pt
+\item \textbf{A causal test.} \textsc{E-Shift} shows \ShiftDirectionSentence{} (\S\ref{sec:c1}).
+\item \textbf{A graded, controlled dose--response} across \NFamiliesConf{} minimal-pair families
+whose prior-fit is measured on the compactor itself with Bradley--Terry paired comparisons, and an
+operator lattice that localises the effect (\S\ref{sec:c2}).
+\item \textbf{A value-level account} of the dynamics: a copy/drop/replace kernel over measured
+prior-rank states, estimated from a single compaction step, and read as a quasi-stationary
+distribution conditional on survival, because deletion is close to absorbing (\S\ref{sec:c6}).
+\item \textbf{A memory-design consequence.} Pinning high-surprise items verbatim, using a write-time
+signal a deployed system can compute for free, is compared against the anti-drift prompt industry
+already ships and against token-matched random and low-surprise pinning (\S\ref{sec:c7}).
+\end{itemize}
+
+Every operating-point choice was made on a held-out development split and frozen, with the
+confirmatory analysis, decision rule and effect-size thresholds fixed in advance
+(\texttt{FROZEN\_PROTOCOL.md}).

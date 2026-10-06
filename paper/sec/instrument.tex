@@ -1,0 +1,94 @@
+\section{The \textsc{MemPrior} instrument}
+\label{sec:instrument}
+
+\subsection{Stimuli}
+The materials are \NFamiliesTotal{} minimal-pair families set in a fictional workplace. A family is
+one template with a single slot and \NLevelsTypical{} graded values, for example ``\{\textsc{company}\}'s
+internal billing API times out after \{30 seconds $\mid$ 2 minutes $\mid$ 5 seconds $\mid$ 20 minutes
+$\mid$ 6 hours\}''. Within a family the template, the probe question, the number of exposures and the
+source are identical; only the value changes. Every value is \emph{true} in its world, stated once,
+by the user, without justification --- so the contrast is prior-fit, not truth, provenance or
+repetition. Fictional entities cut the link to pretrained knowledge about specific organisations and
+leave only general commonsense priors \citep{sivaprasad2025fictional}. Entity names are rotated
+across trajectories so that no value is systematically paired with a name.
+
+Families are split into a \textbf{development} set (\NFamiliesDev{}) and a \textbf{confirmatory} set
+(\NFamiliesConf{}). Every operating-point decision --- budget, temperature, prompt wording, control
+calibration, coder thresholds --- was made on the development set only and frozen with a commit hash
+before any confirmatory family was run.
+
+Each of the \NChainsConf{} confirmatory chains carries \ChainSize{} items from distinct families, so
+two values of the same family never compete inside one memory. Assignment uses constrained
+randomisation over the \emph{measured} priors: among assignments satisfying the design constraints we
+keep the one minimising the largest between-chain difference in mean surprise, which is
+\SurpriseGap{} log-odds against a mean within-family range of \BTRange{}.
+
+\subsection{Measuring the dose on the compactor}
+Surprise must be the compactor's, not a convenient proxy. Our primary measure (\textsc{P1}) presents
+the compactor with every pair of values from a family, in both orders, under several entity names
+and repeated samples, asking which is more likely of a company like this, in the same framing the
+chain uses. A Bradley--Terry model \citep{bradley1952rank} converts the comparisons into a per-family
+log-odds scale; surprise is the negative log of the induced within-family probability, centred within
+family. Split-half reliability over an independent half of the elicitation is Spearman
+\SplitHalfRho{}.
+
+Two secondary measures check this. Free generation at temperature one (\textsc{P2}) is strongly
+peaked --- on average \PTwoFloor{} of five levels sit at the smoothing floor --- so it can report a
+mode but not an ordering; it agrees with \textsc{P1} on the modal level in \PTwoModeAgree{} of
+families against a chance rate of about $0.21$. Token log-probabilities from a local 8B model
+(\textsc{P3}) correlate with the compactor's prior at only Spearman \PThreeRho{}, which is why the
+dose is measured on the compactor and the small model is used only as a robustness check and as the
+\emph{write-time} signal for our mitigation. The designed level ordering is itself unreliable: the
+intended most-typical value is the measured modal value in only \DesignOrderAgree{} of five-level
+families, so all analyses use measured surprise as a continuous variable.
+
+\subsection{The operator lattice}
+Each operator removes exactly one mechanism relative to the rolling rewrite.
+
+\begin{itemize}\itemsep1pt
+\item \textbf{O1 \textsc{Roll}} (primary): rewrite $M_{t-1}$ plus the session under a deliberately
+neutral prompt that never asks for generalisation or synonyms.
+\item \textbf{O2 \textsc{Copy-LLM}}: the model selects which source sentences to keep; they are
+stored \emph{verbatim}. Selection without rewriting.
+\item \textbf{O3 \textsc{Copy-Rand}}: a uniformly random, fixed-size choice of source sentence slots,
+stored verbatim. Same capacity pressure, same coder, same probes, but selection
+\emph{cannot depend on the prior}. This is the decisive null control.
+\item \textbf{O4 \textsc{Src}}: rewrite from all raw sessions each step, never from the model's own
+previous memory. Rewriting without iteration.
+\item \textbf{O5 \textsc{Anchor}}: O1 plus the anti-drift rules Codex ships in its memory
+consolidation prompt. The mitigation industry already deploys.
+\item \textbf{O6 \textsc{Pin}}: O1 plus verbatim pinning of high-surprise items, with token-matched
+random and low-surprise pinning as controls.
+\item \textbf{O7 \textsc{Full}}: append-only and unbounded, with oracle retrieval. An access
+ceiling, not a retriever.
+\end{itemize}
+
+Output that exceeds the budget is treated as a protocol failure and regenerated with explicit
+feedback rather than truncated, because cutting a rewrite to its first $B$ words deletes whatever the
+model put last, applies only to the rewriting operators, and would therefore fabricate both the
+gradient and the operator interaction. Residual trimming happens at line boundaries, is flagged, and
+occurs \TrimRate{} times per \Ksteps{}-step trajectory.
+
+\subsection{Coding memory state}
+\label{sec:coding}
+For each item and checkpoint we label the memory as \textsc{retained}, \textsc{changed} (to another
+candidate value, to a value outside the set, or to something vague) or \textsc{dropped}. A tightened
+attribute regex locates the segments that mention the item's attribute; level patterns classify them
+\emph{per segment}, never on a concatenation, so an incidental number in one sentence cannot be
+paired with the attribute mention in another. Segments carrying negation, a historical value or an
+explicit contrast are never fast-pathed.
+
+Everything ambiguous --- \JudgedFrac{} of cases --- goes to \emph{two} judges from different model
+families. The judges are blind: they see only the original sentence, the question it answers and the
+notes, never the candidate values, their order, the measured surprise or the hypothesis. The judge's
+semantic label is authoritative, and our patterns are used only to \emph{name} the destination of a
+change. This ordering matters: letting pattern coverage veto a judge's \textsc{retained} would make
+measured retention depend on how richly each value's formats happen to be covered, and since common
+values have richer coverage that alone could produce the predicted gradient. Verdicts the two judges
+do not share are recorded as \textsc{unresolved} (\UnresolvedRate{} of cases) rather than coerced.
+
+We validate the coder with a metamorphic test: for every value we generate meaning-preserving format
+variants (digit/word, unit abbreviations, hyphenation, hedged forms) and decoys (negation, historical
+value, incidental number). Strict pattern recognition is between \CoderMin{} and \CoderMax{} across
+levels --- a spread of \CoderSpread{} --- and every unrecognised variant is routed to the judges
+rather than mis-coded, so the coder cannot itself generate a retention-vs-surprise gradient.

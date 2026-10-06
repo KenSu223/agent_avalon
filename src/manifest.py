@@ -56,7 +56,7 @@ def token_audit(fams, model_hint="qwen3-8b"):
     return out
 
 
-def build(dev_chains=5, conf_chains=7):
+def build(dev_chains=5, conf_chains=11):
     fams = load_families()
     pri = json.loads((RES / "priors.json").read_text())
     surp, probs = surprise_table(pri["bt"])

@@ -9,13 +9,23 @@ import analysis as A
 RES = ROOT / "results"
 
 
+import re
+
+
+def _slots(r):
+    if r.get("slots") is not None:
+        return r["slots"]
+    m = re.search(r"-O3-s(\d+)-", r.get("run_id", ""))
+    return int(m.group(1)) if m else None
+
+
 def summarise(rows):
     """retention at k=10 and realized stored length, by configuration."""
     by = defaultdict(lambda: {"ret": [], "words": [], "unres": 0, "n": 0})
     for r in rows:
         if r["k"] != 10:
             continue
-        key = (r["op"], r["B"], r["T"], r.get("slots"))
+        key = (r["op"], r["B"], r["T"], _slots(r))
         d = by[key]
         d["n"] += 1
         d["ret"].append(1.0 if r["label"] == "RETAINED" else 0.0)
@@ -52,8 +62,10 @@ if __name__ == "__main__":
         ad = adequacy(v["retention"], o7)["adequate"] if op == "O1" else ""
         print(f"{op:<10}{B:>5}{T:>5}{slots or '':>6}{v['retention']:>8.3f}"
               f"{v['stored_words']:>8.0f}{v['unresolved_rate']:>7.2f}{str(ad):>10}")
-        if op == "O1" and ad:
-            # prefer the cell with retention closest to 0.5: maximum dynamic range for a slope
+        if op == "O1" and ad and T == 1.0:
+            # T=1.0 is the preregistered production-like default; temperature is a later one-factor
+            # diagnostic, not an operating-point knob. Prefer the cell whose retention is closest to
+            # 0.5, which gives a slope the most dynamic range.
             score = abs(v["retention"] - 0.5)
             if best is None or score < best[0]:
                 best = (score, key, v)

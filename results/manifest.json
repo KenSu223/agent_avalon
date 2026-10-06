@@ -2540,302 +2540,10 @@
       "item_id": "F23L3"
      },
      {
-      "family_id": "V10",
-      "kind": "vivid",
-      "level": 1,
-      "item_id": "V10L1"
-     },
-     {
-      "family_id": "F15",
-      "kind": "mundane",
-      "level": 2,
-      "item_id": "F15L2"
-     },
-     {
-      "family_id": "V09",
-      "kind": "vivid",
-      "level": 2,
-      "item_id": "V09L2"
-     },
-     {
-      "family_id": "V08",
-      "kind": "vivid",
-      "level": 2,
-      "item_id": "V08L2"
-     },
-     {
-      "family_id": "F40",
-      "kind": "mundane",
-      "level": 4,
-      "item_id": "F40L4"
-     },
-     {
-      "family_id": "F31",
-      "kind": "mundane",
-      "level": 4,
-      "item_id": "F31L4"
-     },
-     {
-      "family_id": "F17",
-      "kind": "mundane",
-      "level": 3,
-      "item_id": "F17L3"
-     },
-     {
-      "family_id": "F29",
-      "kind": "mundane",
-      "level": 5,
-      "item_id": "F29L5"
-     },
-     {
-      "family_id": "F16",
-      "kind": "mundane",
-      "level": 2,
-      "item_id": "F16L2"
-     },
-     {
       "family_id": "F30",
       "kind": "mundane",
-      "level": 3,
-      "item_id": "F30L3"
-     },
-     {
-      "family_id": "F36",
-      "kind": "mundane",
-      "level": 2,
-      "item_id": "F36L2"
-     },
-     {
-      "family_id": "F20",
-      "kind": "mundane",
       "level": 1,
-      "item_id": "F20L1"
-     },
-     {
-      "family_id": "F37",
-      "kind": "mundane",
-      "level": 5,
-      "item_id": "F37L5"
-     },
-     {
-      "family_id": "F38",
-      "kind": "mundane",
-      "level": 5,
-      "item_id": "F38L5"
-     },
-     {
-      "family_id": "F34",
-      "kind": "mundane",
-      "level": 1,
-      "item_id": "F34L1"
-     },
-     {
-      "family_id": "F22",
-      "kind": "mundane",
-      "level": 5,
-      "item_id": "F22L5"
-     },
-     {
-      "family_id": "F28",
-      "kind": "mundane",
-      "level": 2,
-      "item_id": "F28L2"
-     },
-     {
-      "family_id": "F13",
-      "kind": "mundane",
-      "level": 4,
-      "item_id": "F13L4"
-     },
-     {
-      "family_id": "F19",
-      "kind": "mundane",
-      "level": 1,
-      "item_id": "F19L1"
-     },
-     {
-      "family_id": "F35",
-      "kind": "mundane",
-      "level": 3,
-      "item_id": "F35L3"
-     },
-     {
-      "family_id": "F18",
-      "kind": "mundane",
-      "level": 2,
-      "item_id": "F18L2"
-     }
-    ]
-   },
-   {
-    "chain_id": "C02",
-    "items": [
-     {
-      "family_id": "F39",
-      "kind": "mundane",
-      "level": 4,
-      "item_id": "F39L4"
-     },
-     {
-      "family_id": "V06",
-      "kind": "vivid",
-      "level": 1,
-      "item_id": "V06L1"
-     },
-     {
-      "family_id": "F32",
-      "kind": "mundane",
-      "level": 3,
-      "item_id": "F32L3"
-     },
-     {
-      "family_id": "F23",
-      "kind": "mundane",
-      "level": 2,
-      "item_id": "F23L2"
-     },
-     {
-      "family_id": "F37",
-      "kind": "mundane",
-      "level": 2,
-      "item_id": "F37L2"
-     },
-     {
-      "family_id": "F13",
-      "kind": "mundane",
-      "level": 1,
-      "item_id": "F13L1"
-     },
-     {
-      "family_id": "F25",
-      "kind": "mundane",
-      "level": 3,
-      "item_id": "F25L3"
-     },
-     {
-      "family_id": "F14",
-      "kind": "mundane",
-      "level": 5,
-      "item_id": "F14L5"
-     },
-     {
-      "family_id": "F28",
-      "kind": "mundane",
-      "level": 3,
-      "item_id": "F28L3"
-     },
-     {
-      "family_id": "F40",
-      "kind": "mundane",
-      "level": 1,
-      "item_id": "F40L1"
-     },
-     {
-      "family_id": "F26",
-      "kind": "mundane",
-      "level": 4,
-      "item_id": "F26L4"
-     },
-     {
-      "family_id": "F19",
-      "kind": "mundane",
-      "level": 3,
-      "item_id": "F19L3"
-     },
-     {
-      "family_id": "F27",
-      "kind": "mundane",
-      "level": 5,
-      "item_id": "F27L5"
-     },
-     {
-      "family_id": "F31",
-      "kind": "mundane",
-      "level": 1,
-      "item_id": "F31L1"
-     },
-     {
-      "family_id": "F34",
-      "kind": "mundane",
-      "level": 2,
-      "item_id": "F34L2"
-     },
-     {
-      "family_id": "F38",
-      "kind": "mundane",
-      "level": 3,
-      "item_id": "F38L3"
-     },
-     {
-      "family_id": "F35",
-      "kind": "mundane",
-      "level": 2,
-      "item_id": "F35L2"
-     },
-     {
-      "family_id": "V05",
-      "kind": "vivid",
-      "level": 1,
-      "item_id": "V05L1"
-     },
-     {
-      "family_id": "V06",
-      "kind": "vivid",
-      "level": 2,
-      "item_id": "V06L2"
-     },
-     {
-      "family_id": "F17",
-      "kind": "mundane",
-      "level": 5,
-      "item_id": "F17L5"
-     },
-     {
-      "family_id": "F18",
-      "kind": "mundane",
-      "level": 3,
-      "item_id": "F18L3"
-     },
-     {
-      "family_id": "F36",
-      "kind": "mundane",
-      "level": 4,
-      "item_id": "F36L4"
-     }
-    ]
-   },
-   {
-    "chain_id": "C03",
-    "items": [
-     {
-      "family_id": "F22",
-      "kind": "mundane",
-      "level": 1,
-      "item_id": "F22L1"
-     },
-     {
-      "family_id": "V07",
-      "kind": "vivid",
-      "level": 2,
-      "item_id": "V07L2"
-     },
-     {
-      "family_id": "F27",
-      "kind": "mundane",
-      "level": 3,
-      "item_id": "F27L3"
-     },
-     {
-      "family_id": "F33",
-      "kind": "mundane",
-      "level": 2,
-      "item_id": "F33L2"
-     },
-     {
-      "family_id": "F40",
-      "kind": "mundane",
-      "level": 3,
-      "item_id": "F40L3"
+      "item_id": "F30L1"
      },
      {
       "family_id": "F20",
@@ -2844,415 +2552,10 @@
       "item_id": "F20L4"
      },
      {
-      "family_id": "F14",
-      "kind": "mundane",
-      "level": 3,
-      "item_id": "F14L3"
-     },
-     {
-      "family_id": "F16",
-      "kind": "mundane",
-      "level": 1,
-      "item_id": "F16L1"
-     },
-     {
-      "family_id": "F24",
-      "kind": "mundane",
-      "level": 4,
-      "item_id": "F24L4"
-     },
-     {
-      "family_id": "F30",
-      "kind": "mundane",
-      "level": 2,
-      "item_id": "F30L2"
-     },
-     {
-      "family_id": "F28",
-      "kind": "mundane",
-      "level": 5,
-      "item_id": "F28L5"
-     },
-     {
-      "family_id": "F37",
-      "kind": "mundane",
-      "level": 3,
-      "item_id": "F37L3"
-     },
-     {
-      "family_id": "V02",
-      "kind": "vivid",
-      "level": 2,
-      "item_id": "V02L2"
-     },
-     {
-      "family_id": "F21",
-      "kind": "mundane",
-      "level": 1,
-      "item_id": "F21L1"
-     },
-     {
       "family_id": "F18",
       "kind": "mundane",
       "level": 4,
       "item_id": "F18L4"
-     },
-     {
-      "family_id": "F35",
-      "kind": "mundane",
-      "level": 4,
-      "item_id": "F35L4"
-     },
-     {
-      "family_id": "F15",
-      "kind": "mundane",
-      "level": 5,
-      "item_id": "F15L5"
-     },
-     {
-      "family_id": "F26",
-      "kind": "mundane",
-      "level": 1,
-      "item_id": "F26L1"
-     },
-     {
-      "family_id": "V03",
-      "kind": "vivid",
-      "level": 1,
-      "item_id": "V03L1"
-     },
-     {
-      "family_id": "F29",
-      "kind": "mundane",
-      "level": 4,
-      "item_id": "F29L4"
-     },
-     {
-      "family_id": "F39",
-      "kind": "mundane",
-      "level": 1,
-      "item_id": "F39L1"
-     },
-     {
-      "family_id": "F31",
-      "kind": "mundane",
-      "level": 5,
-      "item_id": "F31L5"
-     }
-    ]
-   },
-   {
-    "chain_id": "C04",
-    "items": [
-     {
-      "family_id": "F28",
-      "kind": "mundane",
-      "level": 1,
-      "item_id": "F28L1"
-     },
-     {
-      "family_id": "F20",
-      "kind": "mundane",
-      "level": 5,
-      "item_id": "F20L5"
-     },
-     {
-      "family_id": "F13",
-      "kind": "mundane",
-      "level": 2,
-      "item_id": "F13L2"
-     },
-     {
-      "family_id": "F25",
-      "kind": "mundane",
-      "level": 4,
-      "item_id": "F25L4"
-     },
-     {
-      "family_id": "F35",
-      "kind": "mundane",
-      "level": 5,
-      "item_id": "F35L5"
-     },
-     {
-      "family_id": "F38",
-      "kind": "mundane",
-      "level": 4,
-      "item_id": "F38L4"
-     },
-     {
-      "family_id": "F26",
-      "kind": "mundane",
-      "level": 5,
-      "item_id": "F26L5"
-     },
-     {
-      "family_id": "F36",
-      "kind": "mundane",
-      "level": 5,
-      "item_id": "F36L5"
-     },
-     {
-      "family_id": "F22",
-      "kind": "mundane",
-      "level": 3,
-      "item_id": "F22L3"
-     },
-     {
-      "family_id": "F37",
-      "kind": "mundane",
-      "level": 1,
-      "item_id": "F37L1"
-     },
-     {
-      "family_id": "V03",
-      "kind": "vivid",
-      "level": 2,
-      "item_id": "V03L2"
-     },
-     {
-      "family_id": "F29",
-      "kind": "mundane",
-      "level": 1,
-      "item_id": "F29L1"
-     },
-     {
-      "family_id": "F24",
-      "kind": "mundane",
-      "level": 5,
-      "item_id": "F24L5"
-     },
-     {
-      "family_id": "F17",
-      "kind": "mundane",
-      "level": 1,
-      "item_id": "F17L1"
-     },
-     {
-      "family_id": "F14",
-      "kind": "mundane",
-      "level": 2,
-      "item_id": "F14L2"
-     },
-     {
-      "family_id": "F21",
-      "kind": "mundane",
-      "level": 2,
-      "item_id": "F21L2"
-     },
-     {
-      "family_id": "F31",
-      "kind": "mundane",
-      "level": 2,
-      "item_id": "F31L2"
-     },
-     {
-      "family_id": "F23",
-      "kind": "mundane",
-      "level": 4,
-      "item_id": "F23L4"
-     },
-     {
-      "family_id": "F39",
-      "kind": "mundane",
-      "level": 3,
-      "item_id": "F39L3"
-     },
-     {
-      "family_id": "V08",
-      "kind": "vivid",
-      "level": 1,
-      "item_id": "V08L1"
-     },
-     {
-      "family_id": "F34",
-      "kind": "mundane",
-      "level": 3,
-      "item_id": "F34L3"
-     },
-     {
-      "family_id": "V09",
-      "kind": "vivid",
-      "level": 1,
-      "item_id": "V09L1"
-     }
-    ]
-   },
-   {
-    "chain_id": "C05",
-    "items": [
-     {
-      "family_id": "F39",
-      "kind": "mundane",
-      "level": 5,
-      "item_id": "F39L5"
-     },
-     {
-      "family_id": "F27",
-      "kind": "mundane",
-      "level": 1,
-      "item_id": "F27L1"
-     },
-     {
-      "family_id": "V04",
-      "kind": "vivid",
-      "level": 2,
-      "item_id": "V04L2"
-     },
-     {
-      "family_id": "F18",
-      "kind": "mundane",
-      "level": 1,
-      "item_id": "F18L1"
-     },
-     {
-      "family_id": "F20",
-      "kind": "mundane",
-      "level": 2,
-      "item_id": "F20L2"
-     },
-     {
-      "family_id": "F22",
-      "kind": "mundane",
-      "level": 4,
-      "item_id": "F22L4"
-     },
-     {
-      "family_id": "F19",
-      "kind": "mundane",
-      "level": 2,
-      "item_id": "F19L2"
-     },
-     {
-      "family_id": "F16",
-      "kind": "mundane",
-      "level": 3,
-      "item_id": "F16L3"
-     },
-     {
-      "family_id": "F31",
-      "kind": "mundane",
-      "level": 3,
-      "item_id": "F31L3"
-     },
-     {
-      "family_id": "F25",
-      "kind": "mundane",
-      "level": 1,
-      "item_id": "F25L1"
-     },
-     {
-      "family_id": "F24",
-      "kind": "mundane",
-      "level": 3,
-      "item_id": "F24L3"
-     },
-     {
-      "family_id": "F23",
-      "kind": "mundane",
-      "level": 1,
-      "item_id": "F23L1"
-     },
-     {
-      "family_id": "F13",
-      "kind": "mundane",
-      "level": 3,
-      "item_id": "F13L3"
-     },
-     {
-      "family_id": "F37",
-      "kind": "mundane",
-      "level": 4,
-      "item_id": "F37L4"
-     },
-     {
-      "family_id": "F21",
-      "kind": "mundane",
-      "level": 4,
-      "item_id": "F21L4"
-     },
-     {
-      "family_id": "F26",
-      "kind": "mundane",
-      "level": 2,
-      "item_id": "F26L2"
-     },
-     {
-      "family_id": "F14",
-      "kind": "mundane",
-      "level": 4,
-      "item_id": "F14L4"
-     },
-     {
-      "family_id": "F30",
-      "kind": "mundane",
-      "level": 1,
-      "item_id": "F30L1"
-     },
-     {
-      "family_id": "V05",
-      "kind": "vivid",
-      "level": 2,
-      "item_id": "V05L2"
-     },
-     {
-      "family_id": "F15",
-      "kind": "mundane",
-      "level": 1,
-      "item_id": "F15L1"
-     },
-     {
-      "family_id": "F40",
-      "kind": "mundane",
-      "level": 5,
-      "item_id": "F40L5"
-     },
-     {
-      "family_id": "V10",
-      "kind": "vivid",
-      "level": 2,
-      "item_id": "V10L2"
-     }
-    ]
-   },
-   {
-    "chain_id": "C06",
-    "items": [
-     {
-      "family_id": "F13",
-      "kind": "mundane",
-      "level": 5,
-      "item_id": "F13L5"
-     },
-     {
-      "family_id": "F36",
-      "kind": "mundane",
-      "level": 3,
-      "item_id": "F36L3"
-     },
-     {
-      "family_id": "V04",
-      "kind": "vivid",
-      "level": 1,
-      "item_id": "V04L1"
-     },
-     {
-      "family_id": "F24",
-      "kind": "mundane",
-      "level": 1,
-      "item_id": "F24L1"
-     },
-     {
-      "family_id": "F27",
-      "kind": "mundane",
-      "level": 2,
-      "item_id": "F27L2"
-     },
-     {
-      "family_id": "F16",
-      "kind": "mundane",
-      "level": 4,
-      "item_id": "F16L4"
      },
      {
       "family_id": "F29",
@@ -3261,141 +2564,57 @@
       "item_id": "F29L3"
      },
      {
-      "family_id": "F25",
-      "kind": "mundane",
-      "level": 5,
-      "item_id": "F25L5"
-     },
-     {
-      "family_id": "F15",
-      "kind": "mundane",
-      "level": 4,
-      "item_id": "F15L4"
-     },
-     {
       "family_id": "F19",
       "kind": "mundane",
-      "level": 4,
-      "item_id": "F19L4"
+      "level": 1,
+      "item_id": "F19L1"
      },
      {
-      "family_id": "F35",
+      "family_id": "F13",
       "kind": "mundane",
       "level": 1,
-      "item_id": "F35L1"
+      "item_id": "F13L1"
      },
      {
-      "family_id": "F23",
+      "family_id": "F34",
+      "kind": "mundane",
+      "level": 3,
+      "item_id": "F34L3"
+     },
+     {
+      "family_id": "F37",
       "kind": "mundane",
       "level": 5,
-      "item_id": "F23L5"
+      "item_id": "F37L5"
      },
      {
-      "family_id": "V07",
-      "kind": "vivid",
-      "level": 1,
-      "item_id": "V07L1"
-     },
-     {
-      "family_id": "V01",
-      "kind": "vivid",
-      "level": 1,
-      "item_id": "V01L1"
+      "family_id": "F27",
+      "kind": "mundane",
+      "level": 5,
+      "item_id": "F27L5"
      },
      {
       "family_id": "F39",
       "kind": "mundane",
-      "level": 2,
-      "item_id": "F39L2"
+      "level": 1,
+      "item_id": "F39L1"
      },
      {
-      "family_id": "F32",
+      "family_id": "F15",
       "kind": "mundane",
       "level": 1,
-      "item_id": "F32L1"
-     },
-     {
-      "family_id": "F21",
-      "kind": "mundane",
-      "level": 3,
-      "item_id": "F21L3"
-     },
-     {
-      "family_id": "F20",
-      "kind": "mundane",
-      "level": 3,
-      "item_id": "F20L3"
-     },
-     {
-      "family_id": "F38",
-      "kind": "mundane",
-      "level": 1,
-      "item_id": "F38L1"
-     },
-     {
-      "family_id": "F33",
-      "kind": "mundane",
-      "level": 3,
-      "item_id": "F33L3"
-     },
+      "item_id": "F15L1"
+     }
+    ]
+   },
+   {
+    "chain_id": "C02",
+    "items": [
      {
       "family_id": "F17",
       "kind": "mundane",
       "level": 4,
       "item_id": "F17L4"
-     },
-     {
-      "family_id": "F26",
-      "kind": "mundane",
-      "level": 3,
-      "item_id": "F26L3"
-     }
-    ]
-   },
-   {
-    "chain_id": "C07",
-    "items": [
-     {
-      "family_id": "V01",
-      "kind": "vivid",
-      "level": 2,
-      "item_id": "V01L2"
-     },
-     {
-      "family_id": "F17",
-      "kind": "mundane",
-      "level": 2,
-      "item_id": "F17L2"
-     },
-     {
-      "family_id": "F27",
-      "kind": "mundane",
-      "level": 4,
-      "item_id": "F27L4"
-     },
-     {
-      "family_id": "F29",
-      "kind": "mundane",
-      "level": 2,
-      "item_id": "F29L2"
-     },
-     {
-      "family_id": "F32",
-      "kind": "mundane",
-      "level": 2,
-      "item_id": "F32L2"
-     },
-     {
-      "family_id": "F14",
-      "kind": "mundane",
-      "level": 1,
-      "item_id": "F14L1"
-     },
-     {
-      "family_id": "F25",
-      "kind": "mundane",
-      "level": 2,
-      "item_id": "F25L2"
      },
      {
       "family_id": "F24",
@@ -3404,10 +2623,16 @@
       "item_id": "F24L2"
      },
      {
-      "family_id": "F22",
+      "family_id": "F28",
       "kind": "mundane",
-      "level": 2,
-      "item_id": "F22L2"
+      "level": 3,
+      "item_id": "F28L3"
+     },
+     {
+      "family_id": "F35",
+      "kind": "mundane",
+      "level": 3,
+      "item_id": "F35L3"
      },
      {
       "family_id": "F21",
@@ -3416,16 +2641,146 @@
       "item_id": "F21L5"
      },
      {
-      "family_id": "V02",
-      "kind": "vivid",
+      "family_id": "F22",
+      "kind": "mundane",
       "level": 1,
-      "item_id": "V02L1"
+      "item_id": "F22L1"
      },
      {
-      "family_id": "F15",
+      "family_id": "F32",
       "kind": "mundane",
       "level": 3,
-      "item_id": "F15L3"
+      "item_id": "F32L3"
+     },
+     {
+      "family_id": "F31",
+      "kind": "mundane",
+      "level": 3,
+      "item_id": "F31L3"
+     },
+     {
+      "family_id": "F26",
+      "kind": "mundane",
+      "level": 2,
+      "item_id": "F26L2"
+     },
+     {
+      "family_id": "F13",
+      "kind": "mundane",
+      "level": 5,
+      "item_id": "F13L5"
+     },
+     {
+      "family_id": "F19",
+      "kind": "mundane",
+      "level": 5,
+      "item_id": "F19L5"
+     },
+     {
+      "family_id": "F16",
+      "kind": "mundane",
+      "level": 3,
+      "item_id": "F16L3"
+     }
+    ]
+   },
+   {
+    "chain_id": "C03",
+    "items": [
+     {
+      "family_id": "F40",
+      "kind": "mundane",
+      "level": 2,
+      "item_id": "F40L2"
+     },
+     {
+      "family_id": "F14",
+      "kind": "mundane",
+      "level": 3,
+      "item_id": "F14L3"
+     },
+     {
+      "family_id": "F20",
+      "kind": "mundane",
+      "level": 1,
+      "item_id": "F20L1"
+     },
+     {
+      "family_id": "F13",
+      "kind": "mundane",
+      "level": 3,
+      "item_id": "F13L3"
+     },
+     {
+      "family_id": "F39",
+      "kind": "mundane",
+      "level": 4,
+      "item_id": "F39L4"
+     },
+     {
+      "family_id": "F29",
+      "kind": "mundane",
+      "level": 2,
+      "item_id": "F29L2"
+     },
+     {
+      "family_id": "F37",
+      "kind": "mundane",
+      "level": 3,
+      "item_id": "F37L3"
+     },
+     {
+      "family_id": "F25",
+      "kind": "mundane",
+      "level": 3,
+      "item_id": "F25L3"
+     },
+     {
+      "family_id": "F33",
+      "kind": "mundane",
+      "level": 2,
+      "item_id": "F33L2"
+     },
+     {
+      "family_id": "F26",
+      "kind": "mundane",
+      "level": 1,
+      "item_id": "F26L1"
+     },
+     {
+      "family_id": "F35",
+      "kind": "mundane",
+      "level": 1,
+      "item_id": "F35L1"
+     },
+     {
+      "family_id": "F16",
+      "kind": "mundane",
+      "level": 2,
+      "item_id": "F16L2"
+     }
+    ]
+   },
+   {
+    "chain_id": "C04",
+    "items": [
+     {
+      "family_id": "F13",
+      "kind": "mundane",
+      "level": 4,
+      "item_id": "F13L4"
+     },
+     {
+      "family_id": "F28",
+      "kind": "mundane",
+      "level": 1,
+      "item_id": "F28L1"
+     },
+     {
+      "family_id": "F36",
+      "kind": "mundane",
+      "level": 2,
+      "item_id": "F36L2"
      },
      {
       "family_id": "F16",
@@ -3434,10 +2789,40 @@
       "item_id": "F16L5"
      },
      {
-      "family_id": "F36",
+      "family_id": "F29",
+      "kind": "mundane",
+      "level": 4,
+      "item_id": "F29L4"
+     },
+     {
+      "family_id": "F24",
       "kind": "mundane",
       "level": 1,
-      "item_id": "F36L1"
+      "item_id": "F24L1"
+     },
+     {
+      "family_id": "F34",
+      "kind": "mundane",
+      "level": 1,
+      "item_id": "F34L1"
+     },
+     {
+      "family_id": "F38",
+      "kind": "mundane",
+      "level": 2,
+      "item_id": "F38L2"
+     },
+     {
+      "family_id": "F23",
+      "kind": "mundane",
+      "level": 2,
+      "item_id": "F23L2"
+     },
+     {
+      "family_id": "F15",
+      "kind": "mundane",
+      "level": 3,
+      "item_id": "F15L3"
      },
      {
       "family_id": "F18",
@@ -3446,16 +2831,39 @@
       "item_id": "F18L5"
      },
      {
-      "family_id": "F40",
+      "family_id": "F32",
       "kind": "mundane",
       "level": 2,
-      "item_id": "F40L2"
+      "item_id": "F32L2"
+     }
+    ]
+   },
+   {
+    "chain_id": "C05",
+    "items": [
+     {
+      "family_id": "F24",
+      "kind": "mundane",
+      "level": 3,
+      "item_id": "F24L3"
      },
      {
-      "family_id": "F28",
+      "family_id": "F19",
+      "kind": "mundane",
+      "level": 2,
+      "item_id": "F19L2"
+     },
+     {
+      "family_id": "F14",
+      "kind": "mundane",
+      "level": 2,
+      "item_id": "F14L2"
+     },
+     {
+      "family_id": "F36",
       "kind": "mundane",
       "level": 4,
-      "item_id": "F28L4"
+      "item_id": "F36L4"
      },
      {
       "family_id": "F33",
@@ -3466,33 +2874,529 @@
      {
       "family_id": "F38",
       "kind": "mundane",
-      "level": 2,
-      "item_id": "F38L2"
+      "level": 5,
+      "item_id": "F38L5"
+     },
+     {
+      "family_id": "F39",
+      "kind": "mundane",
+      "level": 3,
+      "item_id": "F39L3"
+     },
+     {
+      "family_id": "F37",
+      "kind": "mundane",
+      "level": 4,
+      "item_id": "F37L4"
+     },
+     {
+      "family_id": "F18",
+      "kind": "mundane",
+      "level": 1,
+      "item_id": "F18L1"
+     },
+     {
+      "family_id": "F28",
+      "kind": "mundane",
+      "level": 4,
+      "item_id": "F28L4"
+     },
+     {
+      "family_id": "F23",
+      "kind": "mundane",
+      "level": 5,
+      "item_id": "F23L5"
+     },
+     {
+      "family_id": "F27",
+      "kind": "mundane",
+      "level": 3,
+      "item_id": "F27L3"
+     }
+    ]
+   },
+   {
+    "chain_id": "C06",
+    "items": [
+     {
+      "family_id": "F21",
+      "kind": "mundane",
+      "level": 1,
+      "item_id": "F21L1"
+     },
+     {
+      "family_id": "F26",
+      "kind": "mundane",
+      "level": 4,
+      "item_id": "F26L4"
+     },
+     {
+      "family_id": "F30",
+      "kind": "mundane",
+      "level": 3,
+      "item_id": "F30L3"
+     },
+     {
+      "family_id": "F17",
+      "kind": "mundane",
+      "level": 1,
+      "item_id": "F17L1"
      },
      {
       "family_id": "F19",
       "kind": "mundane",
+      "level": 3,
+      "item_id": "F19L3"
+     },
+     {
+      "family_id": "F35",
+      "kind": "mundane",
+      "level": 4,
+      "item_id": "F35L4"
+     },
+     {
+      "family_id": "F27",
+      "kind": "mundane",
+      "level": 1,
+      "item_id": "F27L1"
+     },
+     {
+      "family_id": "F22",
+      "kind": "mundane",
+      "level": 4,
+      "item_id": "F22L4"
+     },
+     {
+      "family_id": "F31",
+      "kind": "mundane",
+      "level": 1,
+      "item_id": "F31L1"
+     },
+     {
+      "family_id": "F36",
+      "kind": "mundane",
+      "level": 3,
+      "item_id": "F36L3"
+     },
+     {
+      "family_id": "F28",
+      "kind": "mundane",
       "level": 5,
-      "item_id": "F19L5"
+      "item_id": "F28L5"
+     },
+     {
+      "family_id": "F15",
+      "kind": "mundane",
+      "level": 4,
+      "item_id": "F15L4"
+     }
+    ]
+   },
+   {
+    "chain_id": "C07",
+    "items": [
+     {
+      "family_id": "F17",
+      "kind": "mundane",
+      "level": 5,
+      "item_id": "F17L5"
+     },
+     {
+      "family_id": "F34",
+      "kind": "mundane",
+      "level": 2,
+      "item_id": "F34L2"
+     },
+     {
+      "family_id": "F40",
+      "kind": "mundane",
+      "level": 1,
+      "item_id": "F40L1"
+     },
+     {
+      "family_id": "F25",
+      "kind": "mundane",
+      "level": 2,
+      "item_id": "F25L2"
+     },
+     {
+      "family_id": "F21",
+      "kind": "mundane",
+      "level": 2,
+      "item_id": "F21L2"
+     },
+     {
+      "family_id": "F31",
+      "kind": "mundane",
+      "level": 5,
+      "item_id": "F31L5"
+     },
+     {
+      "family_id": "F38",
+      "kind": "mundane",
+      "level": 4,
+      "item_id": "F38L4"
+     },
+     {
+      "family_id": "F26",
+      "kind": "mundane",
+      "level": 3,
+      "item_id": "F26L3"
+     },
+     {
+      "family_id": "F27",
+      "kind": "mundane",
+      "level": 4,
+      "item_id": "F27L4"
+     },
+     {
+      "family_id": "F37",
+      "kind": "mundane",
+      "level": 1,
+      "item_id": "F37L1"
+     },
+     {
+      "family_id": "F14",
+      "kind": "mundane",
+      "level": 5,
+      "item_id": "F14L5"
+     },
+     {
+      "family_id": "F35",
+      "kind": "mundane",
+      "level": 5,
+      "item_id": "F35L5"
+     }
+    ]
+   },
+   {
+    "chain_id": "C08",
+    "items": [
+     {
+      "family_id": "F28",
+      "kind": "mundane",
+      "level": 2,
+      "item_id": "F28L2"
+     },
+     {
+      "family_id": "F32",
+      "kind": "mundane",
+      "level": 1,
+      "item_id": "F32L1"
+     },
+     {
+      "family_id": "F25",
+      "kind": "mundane",
+      "level": 4,
+      "item_id": "F25L4"
+     },
+     {
+      "family_id": "F21",
+      "kind": "mundane",
+      "level": 4,
+      "item_id": "F21L4"
+     },
+     {
+      "family_id": "F13",
+      "kind": "mundane",
+      "level": 2,
+      "item_id": "F13L2"
+     },
+     {
+      "family_id": "F39",
+      "kind": "mundane",
+      "level": 2,
+      "item_id": "F39L2"
+     },
+     {
+      "family_id": "F26",
+      "kind": "mundane",
+      "level": 5,
+      "item_id": "F26L5"
+     },
+     {
+      "family_id": "F22",
+      "kind": "mundane",
+      "level": 2,
+      "item_id": "F22L2"
+     },
+     {
+      "family_id": "F15",
+      "kind": "mundane",
+      "level": 5,
+      "item_id": "F15L5"
+     },
+     {
+      "family_id": "F35",
+      "kind": "mundane",
+      "level": 2,
+      "item_id": "F35L2"
+     },
+     {
+      "family_id": "F40",
+      "kind": "mundane",
+      "level": 5,
+      "item_id": "F40L5"
+     },
+     {
+      "family_id": "F38",
+      "kind": "mundane",
+      "level": 3,
+      "item_id": "F38L3"
+     }
+    ]
+   },
+   {
+    "chain_id": "C09",
+    "items": [
+     {
+      "family_id": "F15",
+      "kind": "mundane",
+      "level": 2,
+      "item_id": "F15L2"
+     },
+     {
+      "family_id": "F36",
+      "kind": "mundane",
+      "level": 1,
+      "item_id": "F36L1"
+     },
+     {
+      "family_id": "F18",
+      "kind": "mundane",
+      "level": 3,
+      "item_id": "F18L3"
+     },
+     {
+      "family_id": "F22",
+      "kind": "mundane",
+      "level": 5,
+      "item_id": "F22L5"
+     },
+     {
+      "family_id": "F20",
+      "kind": "mundane",
+      "level": 2,
+      "item_id": "F20L2"
+     },
+     {
+      "family_id": "F27",
+      "kind": "mundane",
+      "level": 2,
+      "item_id": "F27L2"
+     },
+     {
+      "family_id": "F17",
+      "kind": "mundane",
+      "level": 2,
+      "item_id": "F17L2"
+     },
+     {
+      "family_id": "F23",
+      "kind": "mundane",
+      "level": 4,
+      "item_id": "F23L4"
+     },
+     {
+      "family_id": "F19",
+      "kind": "mundane",
+      "level": 4,
+      "item_id": "F19L4"
+     },
+     {
+      "family_id": "F31",
+      "kind": "mundane",
+      "level": 4,
+      "item_id": "F31L4"
+     },
+     {
+      "family_id": "F24",
+      "kind": "mundane",
+      "level": 4,
+      "item_id": "F24L4"
+     },
+     {
+      "family_id": "F25",
+      "kind": "mundane",
+      "level": 1,
+      "item_id": "F25L1"
+     }
+    ]
+   },
+   {
+    "chain_id": "C10",
+    "items": [
+     {
+      "family_id": "F16",
+      "kind": "mundane",
+      "level": 1,
+      "item_id": "F16L1"
+     },
+     {
+      "family_id": "F37",
+      "kind": "mundane",
+      "level": 2,
+      "item_id": "F37L2"
+     },
+     {
+      "family_id": "F33",
+      "kind": "mundane",
+      "level": 3,
+      "item_id": "F33L3"
+     },
+     {
+      "family_id": "F14",
+      "kind": "mundane",
+      "level": 4,
+      "item_id": "F14L4"
+     },
+     {
+      "family_id": "F21",
+      "kind": "mundane",
+      "level": 3,
+      "item_id": "F21L3"
+     },
+     {
+      "family_id": "F18",
+      "kind": "mundane",
+      "level": 2,
+      "item_id": "F18L2"
+     },
+     {
+      "family_id": "F40",
+      "kind": "mundane",
+      "level": 4,
+      "item_id": "F40L4"
+     },
+     {
+      "family_id": "F29",
+      "kind": "mundane",
+      "level": 5,
+      "item_id": "F29L5"
+     },
+     {
+      "family_id": "F25",
+      "kind": "mundane",
+      "level": 5,
+      "item_id": "F25L5"
+     },
+     {
+      "family_id": "F31",
+      "kind": "mundane",
+      "level": 2,
+      "item_id": "F31L2"
+     },
+     {
+      "family_id": "F20",
+      "kind": "mundane",
+      "level": 5,
+      "item_id": "F20L5"
+     },
+     {
+      "family_id": "F23",
+      "kind": "mundane",
+      "level": 1,
+      "item_id": "F23L1"
+     }
+    ]
+   },
+   {
+    "chain_id": "C11",
+    "items": [
+     {
+      "family_id": "F14",
+      "kind": "mundane",
+      "level": 1,
+      "item_id": "F14L1"
+     },
+     {
+      "family_id": "F20",
+      "kind": "mundane",
+      "level": 3,
+      "item_id": "F20L3"
+     },
+     {
+      "family_id": "F17",
+      "kind": "mundane",
+      "level": 3,
+      "item_id": "F17L3"
+     },
+     {
+      "family_id": "F30",
+      "kind": "mundane",
+      "level": 2,
+      "item_id": "F30L2"
+     },
+     {
+      "family_id": "F36",
+      "kind": "mundane",
+      "level": 5,
+      "item_id": "F36L5"
+     },
+     {
+      "family_id": "F24",
+      "kind": "mundane",
+      "level": 5,
+      "item_id": "F24L5"
+     },
+     {
+      "family_id": "F22",
+      "kind": "mundane",
+      "level": 3,
+      "item_id": "F22L3"
+     },
+     {
+      "family_id": "F40",
+      "kind": "mundane",
+      "level": 3,
+      "item_id": "F40L3"
+     },
+     {
+      "family_id": "F39",
+      "kind": "mundane",
+      "level": 5,
+      "item_id": "F39L5"
+     },
+     {
+      "family_id": "F16",
+      "kind": "mundane",
+      "level": 4,
+      "item_id": "F16L4"
+     },
+     {
+      "family_id": "F38",
+      "kind": "mundane",
+      "level": 1,
+      "item_id": "F38L1"
+     },
+     {
+      "family_id": "F29",
+      "kind": "mundane",
+      "level": 1,
+      "item_id": "F29L1"
      }
     ]
    }
   ],
   "balance_basis": "measured-BT",
-  "max_mean_surprise_gap": 0.2069569760424636,
+  "max_mean_surprise_gap": 0.5890139726280907,
   "chain_sizes": [
-   19,
-   19,
-   19,
-   19,
-   19,
-   19,
-   18
+   12,
+   12,
+   12,
+   12,
+   12,
+   12,
+   12,
+   12,
+   12,
+   12,
+   12
   ],
   "n_mundane": 132,
-  "n_vivid": 20,
+  "n_vivid": 0,
   "seed": 20261006
  },
  "n_dev_chains": 5,
- "n_conf_chains": 7
+ "n_conf_chains": 11
 }
