@@ -1,0 +1,9 @@
+{
+ "SplitHalfRho": "0.960",
+ "SplitHalfFrac": "98\\%",
+ "PThreeRho": "0.55",
+ "BTRange": "5.12",
+ "PTwoModeAgree": "29/50",
+ "PTwoFloor": "3.4",
+ "DesignOrderAgree": "19/36"
+}

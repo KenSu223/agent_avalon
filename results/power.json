@@ -1,0 +1,36 @@
+{
+ "s_fam": 22.88244121196305,
+ "s_seed": 15.890958010273064,
+ "n_dev_families": 7,
+ "power_table": {
+  "12x3": 0.25333333333333335,
+  "12x6": 0.27166666666666667,
+  "12x8": 0.2633333333333333,
+  "12x12": 0.2783333333333333,
+  "18x3": 0.30833333333333335,
+  "18x6": 0.31,
+  "18x8": 0.31666666666666665,
+  "18x12": 0.34833333333333333,
+  "26x3": 0.36,
+  "26x6": 0.4083333333333333,
+  "26x8": 0.38333333333333336,
+  "26x12": 0.43166666666666664,
+  "40x3": 0.49166666666666664,
+  "40x6": 0.52,
+  "40x8": 0.5816666666666667,
+  "40x12": 0.57,
+  "60x3": 0.6633333333333333,
+  "60x6": 0.7216666666666667,
+  "60x8": 0.735,
+  "60x12": 0.7383333333333333
+ },
+ "sesoi": 8.0,
+ "endpoint": "survival_fraction",
+ "amendment": "A4: primary endpoint changed from binary retention at k=10 to the survival fraction over all nine checkpoints, decided on dev data before any confirmatory E-SHIFT run. Dev MDE 37.8 pp -> 15.6 pp at the same cost.",
+ "chosen": {
+  "n_families": 18,
+  "n_seeds": 8
+ },
+ "operative_sesoi": 15.9296875,
+ "note": "No cell reaches 0.80 power at the 8 pp SESOI: between-family heterogeneity in the frame effect is large and is not reducible by adding seeds. Per amendment A1 step 5 the maximum feasible cell is used and the operative SESOI is frozen at the minimum detectable effect under it. C1 is therefore powered only for effects of at least this size, and the paper states so."
+}

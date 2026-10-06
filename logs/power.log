@@ -1,0 +1,10 @@
+dev variance components: between-family SD 68.2 pp, within-family (seed) SD 16.7 pp, from 7 dev families
+
+ n_fam    seeds=3    seeds=6    seeds=8   seeds=12
+    12       0.10       0.09       0.10       0.10
+    18       0.10       0.09       0.09       0.10
+    26       0.10       0.09       0.08       0.09
+    40       0.13       0.12       0.12       0.11
+    60       0.14       0.15       0.18       0.14
+
+No cell reaches 0.80 at 8 pp. Using the maximum FEASIBLE cell (18 eligible families x 8 seeds); operative SESOI frozen at X = 40.0 pp (amendment A1 step 5).

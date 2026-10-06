@@ -1,0 +1,674 @@
+{
+ "eshift_dev-es-O1-F02-P-s0": {
+  "arm": "F+",
+  "family_id": "F02",
+  "target_item": "F02L5",
+  "op": "O1",
+  "seed_idx": 0
+ },
+ "eshift_dev-es-O3-F02-P-s0": {
+  "arm": "F+",
+  "family_id": "F02",
+  "target_item": "F02L5",
+  "op": "O3",
+  "seed_idx": 0
+ },
+ "eshift_dev-es-O1-F02-P-s1": {
+  "arm": "F+",
+  "family_id": "F02",
+  "target_item": "F02L5",
+  "op": "O1",
+  "seed_idx": 1
+ },
+ "eshift_dev-es-O3-F02-P-s1": {
+  "arm": "F+",
+  "family_id": "F02",
+  "target_item": "F02L5",
+  "op": "O3",
+  "seed_idx": 1
+ },
+ "eshift_dev-es-O1-F02-P-s2": {
+  "arm": "F+",
+  "family_id": "F02",
+  "target_item": "F02L5",
+  "op": "O1",
+  "seed_idx": 2
+ },
+ "eshift_dev-es-O3-F02-P-s2": {
+  "arm": "F+",
+  "family_id": "F02",
+  "target_item": "F02L5",
+  "op": "O3",
+  "seed_idx": 2
+ },
+ "eshift_dev-es-O1-F02-M-s0": {
+  "arm": "F-",
+  "family_id": "F02",
+  "target_item": "F02L5",
+  "op": "O1",
+  "seed_idx": 0
+ },
+ "eshift_dev-es-O3-F02-M-s0": {
+  "arm": "F-",
+  "family_id": "F02",
+  "target_item": "F02L5",
+  "op": "O3",
+  "seed_idx": 0
+ },
+ "eshift_dev-es-O1-F02-M-s1": {
+  "arm": "F-",
+  "family_id": "F02",
+  "target_item": "F02L5",
+  "op": "O1",
+  "seed_idx": 1
+ },
+ "eshift_dev-es-O3-F02-M-s1": {
+  "arm": "F-",
+  "family_id": "F02",
+  "target_item": "F02L5",
+  "op": "O3",
+  "seed_idx": 1
+ },
+ "eshift_dev-es-O1-F02-M-s2": {
+  "arm": "F-",
+  "family_id": "F02",
+  "target_item": "F02L5",
+  "op": "O1",
+  "seed_idx": 2
+ },
+ "eshift_dev-es-O3-F02-M-s2": {
+  "arm": "F-",
+  "family_id": "F02",
+  "target_item": "F02L5",
+  "op": "O3",
+  "seed_idx": 2
+ },
+ "eshift_dev-es-O1-F04-P-s0": {
+  "arm": "F+",
+  "family_id": "F04",
+  "target_item": "F04L5",
+  "op": "O1",
+  "seed_idx": 0
+ },
+ "eshift_dev-es-O3-F04-P-s0": {
+  "arm": "F+",
+  "family_id": "F04",
+  "target_item": "F04L5",
+  "op": "O3",
+  "seed_idx": 0
+ },
+ "eshift_dev-es-O1-F04-P-s1": {
+  "arm": "F+",
+  "family_id": "F04",
+  "target_item": "F04L5",
+  "op": "O1",
+  "seed_idx": 1
+ },
+ "eshift_dev-es-O3-F04-P-s1": {
+  "arm": "F+",
+  "family_id": "F04",
+  "target_item": "F04L5",
+  "op": "O3",
+  "seed_idx": 1
+ },
+ "eshift_dev-es-O1-F04-P-s2": {
+  "arm": "F+",
+  "family_id": "F04",
+  "target_item": "F04L5",
+  "op": "O1",
+  "seed_idx": 2
+ },
+ "eshift_dev-es-O3-F04-P-s2": {
+  "arm": "F+",
+  "family_id": "F04",
+  "target_item": "F04L5",
+  "op": "O3",
+  "seed_idx": 2
+ },
+ "eshift_dev-es-O1-F04-M-s0": {
+  "arm": "F-",
+  "family_id": "F04",
+  "target_item": "F04L5",
+  "op": "O1",
+  "seed_idx": 0
+ },
+ "eshift_dev-es-O3-F04-M-s0": {
+  "arm": "F-",
+  "family_id": "F04",
+  "target_item": "F04L5",
+  "op": "O3",
+  "seed_idx": 0
+ },
+ "eshift_dev-es-O1-F04-M-s1": {
+  "arm": "F-",
+  "family_id": "F04",
+  "target_item": "F04L5",
+  "op": "O1",
+  "seed_idx": 1
+ },
+ "eshift_dev-es-O3-F04-M-s1": {
+  "arm": "F-",
+  "family_id": "F04",
+  "target_item": "F04L5",
+  "op": "O3",
+  "seed_idx": 1
+ },
+ "eshift_dev-es-O1-F04-M-s2": {
+  "arm": "F-",
+  "family_id": "F04",
+  "target_item": "F04L5",
+  "op": "O1",
+  "seed_idx": 2
+ },
+ "eshift_dev-es-O3-F04-M-s2": {
+  "arm": "F-",
+  "family_id": "F04",
+  "target_item": "F04L5",
+  "op": "O3",
+  "seed_idx": 2
+ },
+ "eshift_dev-es-O1-F05-P-s0": {
+  "arm": "F+",
+  "family_id": "F05",
+  "target_item": "F05L5",
+  "op": "O1",
+  "seed_idx": 0
+ },
+ "eshift_dev-es-O3-F05-P-s0": {
+  "arm": "F+",
+  "family_id": "F05",
+  "target_item": "F05L5",
+  "op": "O3",
+  "seed_idx": 0
+ },
+ "eshift_dev-es-O1-F05-P-s1": {
+  "arm": "F+",
+  "family_id": "F05",
+  "target_item": "F05L5",
+  "op": "O1",
+  "seed_idx": 1
+ },
+ "eshift_dev-es-O3-F05-P-s1": {
+  "arm": "F+",
+  "family_id": "F05",
+  "target_item": "F05L5",
+  "op": "O3",
+  "seed_idx": 1
+ },
+ "eshift_dev-es-O1-F05-P-s2": {
+  "arm": "F+",
+  "family_id": "F05",
+  "target_item": "F05L5",
+  "op": "O1",
+  "seed_idx": 2
+ },
+ "eshift_dev-es-O3-F05-P-s2": {
+  "arm": "F+",
+  "family_id": "F05",
+  "target_item": "F05L5",
+  "op": "O3",
+  "seed_idx": 2
+ },
+ "eshift_dev-es-O1-F05-M-s0": {
+  "arm": "F-",
+  "family_id": "F05",
+  "target_item": "F05L5",
+  "op": "O1",
+  "seed_idx": 0
+ },
+ "eshift_dev-es-O3-F05-M-s0": {
+  "arm": "F-",
+  "family_id": "F05",
+  "target_item": "F05L5",
+  "op": "O3",
+  "seed_idx": 0
+ },
+ "eshift_dev-es-O1-F05-M-s1": {
+  "arm": "F-",
+  "family_id": "F05",
+  "target_item": "F05L5",
+  "op": "O1",
+  "seed_idx": 1
+ },
+ "eshift_dev-es-O3-F05-M-s1": {
+  "arm": "F-",
+  "family_id": "F05",
+  "target_item": "F05L5",
+  "op": "O3",
+  "seed_idx": 1
+ },
+ "eshift_dev-es-O1-F05-M-s2": {
+  "arm": "F-",
+  "family_id": "F05",
+  "target_item": "F05L5",
+  "op": "O1",
+  "seed_idx": 2
+ },
+ "eshift_dev-es-O3-F05-M-s2": {
+  "arm": "F-",
+  "family_id": "F05",
+  "target_item": "F05L5",
+  "op": "O3",
+  "seed_idx": 2
+ },
+ "eshift_dev-es-O1-F07-P-s0": {
+  "arm": "F+",
+  "family_id": "F07",
+  "target_item": "F07L5",
+  "op": "O1",
+  "seed_idx": 0
+ },
+ "eshift_dev-es-O3-F07-P-s0": {
+  "arm": "F+",
+  "family_id": "F07",
+  "target_item": "F07L5",
+  "op": "O3",
+  "seed_idx": 0
+ },
+ "eshift_dev-es-O1-F07-P-s1": {
+  "arm": "F+",
+  "family_id": "F07",
+  "target_item": "F07L5",
+  "op": "O1",
+  "seed_idx": 1
+ },
+ "eshift_dev-es-O3-F07-P-s1": {
+  "arm": "F+",
+  "family_id": "F07",
+  "target_item": "F07L5",
+  "op": "O3",
+  "seed_idx": 1
+ },
+ "eshift_dev-es-O1-F07-P-s2": {
+  "arm": "F+",
+  "family_id": "F07",
+  "target_item": "F07L5",
+  "op": "O1",
+  "seed_idx": 2
+ },
+ "eshift_dev-es-O3-F07-P-s2": {
+  "arm": "F+",
+  "family_id": "F07",
+  "target_item": "F07L5",
+  "op": "O3",
+  "seed_idx": 2
+ },
+ "eshift_dev-es-O1-F07-M-s0": {
+  "arm": "F-",
+  "family_id": "F07",
+  "target_item": "F07L5",
+  "op": "O1",
+  "seed_idx": 0
+ },
+ "eshift_dev-es-O3-F07-M-s0": {
+  "arm": "F-",
+  "family_id": "F07",
+  "target_item": "F07L5",
+  "op": "O3",
+  "seed_idx": 0
+ },
+ "eshift_dev-es-O1-F07-M-s1": {
+  "arm": "F-",
+  "family_id": "F07",
+  "target_item": "F07L5",
+  "op": "O1",
+  "seed_idx": 1
+ },
+ "eshift_dev-es-O3-F07-M-s1": {
+  "arm": "F-",
+  "family_id": "F07",
+  "target_item": "F07L5",
+  "op": "O3",
+  "seed_idx": 1
+ },
+ "eshift_dev-es-O1-F07-M-s2": {
+  "arm": "F-",
+  "family_id": "F07",
+  "target_item": "F07L5",
+  "op": "O1",
+  "seed_idx": 2
+ },
+ "eshift_dev-es-O3-F07-M-s2": {
+  "arm": "F-",
+  "family_id": "F07",
+  "target_item": "F07L5",
+  "op": "O3",
+  "seed_idx": 2
+ },
+ "eshift_dev-es-O1-F08-P-s0": {
+  "arm": "F+",
+  "family_id": "F08",
+  "target_item": "F08L5",
+  "op": "O1",
+  "seed_idx": 0
+ },
+ "eshift_dev-es-O3-F08-P-s0": {
+  "arm": "F+",
+  "family_id": "F08",
+  "target_item": "F08L5",
+  "op": "O3",
+  "seed_idx": 0
+ },
+ "eshift_dev-es-O1-F08-P-s1": {
+  "arm": "F+",
+  "family_id": "F08",
+  "target_item": "F08L5",
+  "op": "O1",
+  "seed_idx": 1
+ },
+ "eshift_dev-es-O3-F08-P-s1": {
+  "arm": "F+",
+  "family_id": "F08",
+  "target_item": "F08L5",
+  "op": "O3",
+  "seed_idx": 1
+ },
+ "eshift_dev-es-O1-F08-P-s2": {
+  "arm": "F+",
+  "family_id": "F08",
+  "target_item": "F08L5",
+  "op": "O1",
+  "seed_idx": 2
+ },
+ "eshift_dev-es-O3-F08-P-s2": {
+  "arm": "F+",
+  "family_id": "F08",
+  "target_item": "F08L5",
+  "op": "O3",
+  "seed_idx": 2
+ },
+ "eshift_dev-es-O1-F08-M-s0": {
+  "arm": "F-",
+  "family_id": "F08",
+  "target_item": "F08L5",
+  "op": "O1",
+  "seed_idx": 0
+ },
+ "eshift_dev-es-O3-F08-M-s0": {
+  "arm": "F-",
+  "family_id": "F08",
+  "target_item": "F08L5",
+  "op": "O3",
+  "seed_idx": 0
+ },
+ "eshift_dev-es-O1-F08-M-s1": {
+  "arm": "F-",
+  "family_id": "F08",
+  "target_item": "F08L5",
+  "op": "O1",
+  "seed_idx": 1
+ },
+ "eshift_dev-es-O3-F08-M-s1": {
+  "arm": "F-",
+  "family_id": "F08",
+  "target_item": "F08L5",
+  "op": "O3",
+  "seed_idx": 1
+ },
+ "eshift_dev-es-O1-F08-M-s2": {
+  "arm": "F-",
+  "family_id": "F08",
+  "target_item": "F08L5",
+  "op": "O1",
+  "seed_idx": 2
+ },
+ "eshift_dev-es-O3-F08-M-s2": {
+  "arm": "F-",
+  "family_id": "F08",
+  "target_item": "F08L5",
+  "op": "O3",
+  "seed_idx": 2
+ },
+ "eshift_dev-es-O1-F09-P-s0": {
+  "arm": "F+",
+  "family_id": "F09",
+  "target_item": "F09L5",
+  "op": "O1",
+  "seed_idx": 0
+ },
+ "eshift_dev-es-O3-F09-P-s0": {
+  "arm": "F+",
+  "family_id": "F09",
+  "target_item": "F09L5",
+  "op": "O3",
+  "seed_idx": 0
+ },
+ "eshift_dev-es-O1-F09-P-s1": {
+  "arm": "F+",
+  "family_id": "F09",
+  "target_item": "F09L5",
+  "op": "O1",
+  "seed_idx": 1
+ },
+ "eshift_dev-es-O3-F09-P-s1": {
+  "arm": "F+",
+  "family_id": "F09",
+  "target_item": "F09L5",
+  "op": "O3",
+  "seed_idx": 1
+ },
+ "eshift_dev-es-O1-F09-P-s2": {
+  "arm": "F+",
+  "family_id": "F09",
+  "target_item": "F09L5",
+  "op": "O1",
+  "seed_idx": 2
+ },
+ "eshift_dev-es-O3-F09-P-s2": {
+  "arm": "F+",
+  "family_id": "F09",
+  "target_item": "F09L5",
+  "op": "O3",
+  "seed_idx": 2
+ },
+ "eshift_dev-es-O1-F09-M-s0": {
+  "arm": "F-",
+  "family_id": "F09",
+  "target_item": "F09L5",
+  "op": "O1",
+  "seed_idx": 0
+ },
+ "eshift_dev-es-O3-F09-M-s0": {
+  "arm": "F-",
+  "family_id": "F09",
+  "target_item": "F09L5",
+  "op": "O3",
+  "seed_idx": 0
+ },
+ "eshift_dev-es-O1-F09-M-s1": {
+  "arm": "F-",
+  "family_id": "F09",
+  "target_item": "F09L5",
+  "op": "O1",
+  "seed_idx": 1
+ },
+ "eshift_dev-es-O3-F09-M-s1": {
+  "arm": "F-",
+  "family_id": "F09",
+  "target_item": "F09L5",
+  "op": "O3",
+  "seed_idx": 1
+ },
+ "eshift_dev-es-O1-F09-M-s2": {
+  "arm": "F-",
+  "family_id": "F09",
+  "target_item": "F09L5",
+  "op": "O1",
+  "seed_idx": 2
+ },
+ "eshift_dev-es-O3-F09-M-s2": {
+  "arm": "F-",
+  "family_id": "F09",
+  "target_item": "F09L5",
+  "op": "O3",
+  "seed_idx": 2
+ },
+ "eshift_dev-es-O1-F11-P-s0": {
+  "arm": "F+",
+  "family_id": "F11",
+  "target_item": "F11L5",
+  "op": "O1",
+  "seed_idx": 0
+ },
+ "eshift_dev-es-O3-F11-P-s0": {
+  "arm": "F+",
+  "family_id": "F11",
+  "target_item": "F11L5",
+  "op": "O3",
+  "seed_idx": 0
+ },
+ "eshift_dev-es-O1-F11-P-s1": {
+  "arm": "F+",
+  "family_id": "F11",
+  "target_item": "F11L5",
+  "op": "O1",
+  "seed_idx": 1
+ },
+ "eshift_dev-es-O3-F11-P-s1": {
+  "arm": "F+",
+  "family_id": "F11",
+  "target_item": "F11L5",
+  "op": "O3",
+  "seed_idx": 1
+ },
+ "eshift_dev-es-O1-F11-P-s2": {
+  "arm": "F+",
+  "family_id": "F11",
+  "target_item": "F11L5",
+  "op": "O1",
+  "seed_idx": 2
+ },
+ "eshift_dev-es-O3-F11-P-s2": {
+  "arm": "F+",
+  "family_id": "F11",
+  "target_item": "F11L5",
+  "op": "O3",
+  "seed_idx": 2
+ },
+ "eshift_dev-es-O1-F11-M-s0": {
+  "arm": "F-",
+  "family_id": "F11",
+  "target_item": "F11L5",
+  "op": "O1",
+  "seed_idx": 0
+ },
+ "eshift_dev-es-O3-F11-M-s0": {
+  "arm": "F-",
+  "family_id": "F11",
+  "target_item": "F11L5",
+  "op": "O3",
+  "seed_idx": 0
+ },
+ "eshift_dev-es-O1-F11-M-s1": {
+  "arm": "F-",
+  "family_id": "F11",
+  "target_item": "F11L5",
+  "op": "O1",
+  "seed_idx": 1
+ },
+ "eshift_dev-es-O3-F11-M-s1": {
+  "arm": "F-",
+  "family_id": "F11",
+  "target_item": "F11L5",
+  "op": "O3",
+  "seed_idx": 1
+ },
+ "eshift_dev-es-O1-F11-M-s2": {
+  "arm": "F-",
+  "family_id": "F11",
+  "target_item": "F11L5",
+  "op": "O1",
+  "seed_idx": 2
+ },
+ "eshift_dev-es-O3-F11-M-s2": {
+  "arm": "F-",
+  "family_id": "F11",
+  "target_item": "F11L5",
+  "op": "O3",
+  "seed_idx": 2
+ },
+ "eshift_dev-es-O1-F12-P-s0": {
+  "arm": "F+",
+  "family_id": "F12",
+  "target_item": "F12L5",
+  "op": "O1",
+  "seed_idx": 0
+ },
+ "eshift_dev-es-O3-F12-P-s0": {
+  "arm": "F+",
+  "family_id": "F12",
+  "target_item": "F12L5",
+  "op": "O3",
+  "seed_idx": 0
+ },
+ "eshift_dev-es-O1-F12-P-s1": {
+  "arm": "F+",
+  "family_id": "F12",
+  "target_item": "F12L5",
+  "op": "O1",
+  "seed_idx": 1
+ },
+ "eshift_dev-es-O3-F12-P-s1": {
+  "arm": "F+",
+  "family_id": "F12",
+  "target_item": "F12L5",
+  "op": "O3",
+  "seed_idx": 1
+ },
+ "eshift_dev-es-O1-F12-P-s2": {
+  "arm": "F+",
+  "family_id": "F12",
+  "target_item": "F12L5",
+  "op": "O1",
+  "seed_idx": 2
+ },
+ "eshift_dev-es-O3-F12-P-s2": {
+  "arm": "F+",
+  "family_id": "F12",
+  "target_item": "F12L5",
+  "op": "O3",
+  "seed_idx": 2
+ },
+ "eshift_dev-es-O1-F12-M-s0": {
+  "arm": "F-",
+  "family_id": "F12",
+  "target_item": "F12L5",
+  "op": "O1",
+  "seed_idx": 0
+ },
+ "eshift_dev-es-O3-F12-M-s0": {
+  "arm": "F-",
+  "family_id": "F12",
+  "target_item": "F12L5",
+  "op": "O3",
+  "seed_idx": 0
+ },
+ "eshift_dev-es-O1-F12-M-s1": {
+  "arm": "F-",
+  "family_id": "F12",
+  "target_item": "F12L5",
+  "op": "O1",
+  "seed_idx": 1
+ },
+ "eshift_dev-es-O3-F12-M-s1": {
+  "arm": "F-",
+  "family_id": "F12",
+  "target_item": "F12L5",
+  "op": "O3",
+  "seed_idx": 1
+ },
+ "eshift_dev-es-O1-F12-M-s2": {
+  "arm": "F-",
+  "family_id": "F12",
+  "target_item": "F12L5",
+  "op": "O1",
+  "seed_idx": 2
+ },
+ "eshift_dev-es-O3-F12-M-s2": {
+  "arm": "F-",
+  "family_id": "F12",
+  "target_item": "F12L5",
+  "op": "O3",
+  "seed_idx": 2
+ }
+}

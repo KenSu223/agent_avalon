@@ -17,7 +17,7 @@ from run_chains import run_many, load_distractors
 
 RES = ROOT / "results"
 MODEL = "qwen.qwen3-235b-a22b-2507-v1:0"
-N_FILLER = 18
+N_FILLER = 11
 K = 20
 
 

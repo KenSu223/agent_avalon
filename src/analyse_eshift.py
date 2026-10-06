@@ -10,12 +10,24 @@ import analysis as A
 RES = ROOT / "results"
 
 
-def paired_differences(rows, index, op="O1", k=10, split="confirmatory"):
-    """family -> [per-seed paired difference in percentage points]."""
-    by = defaultdict(dict)                      # (family, seed) -> {arm: retained}
+ALL_K = [0, 1, 2, 3, 5, 7, 10, 15, 20]
+
+
+def paired_differences(rows, index, op="O1", k=10, split="confirmatory", endpoint="survival"):
+    """family -> [per-seed paired difference in percentage points].
+
+    AMENDMENT A4 (decided on dev data, before any confirmatory E-SHIFT run). The primary endpoint is
+    the SURVIVAL FRACTION: the proportion of the nine checkpoints at which the target item is still
+    retained. The originally preregistered endpoint -- binary retention at k=10 -- throws away eight
+    ninths of each trajectory, and the dev power analysis shows it gives a minimum detectable effect
+    of 37.8 pp against 15.6 pp for the survival fraction at the same cost. The survival fraction is
+    also the quantity the claim is actually about ("how long does a surprising item last"). Binary
+    retention at k=10 is retained as a secondary endpoint and reported alongside.
+    """
+    by = defaultdict(lambda: defaultdict(dict))        # (family, seed) -> arm -> {k: retained}
     for r in rows:
         meta = index.get(r["run_id"])
-        if not meta or meta["op"] != op or r["k"] != k:
+        if not meta or meta["op"] != op:
             continue
         if r["item_id"] != meta["target_item"]:
             continue
@@ -24,16 +36,28 @@ def paired_differences(rows, index, op="O1", k=10, split="confirmatory"):
             continue
         if r["label"] == A.UNRESOLVED:
             continue
-        by[(meta["family_id"], meta["seed_idx"])][meta["arm"]] = \
+        by[(meta["family_id"], meta["seed_idx"])][meta["arm"]][r["k"]] = \
             1.0 if r["label"] == A.RETAINED else 0.0
+
+    def score(kk):
+        if endpoint == "binary":
+            return kk.get(k)
+        vals = [v for kk_, v in kk.items() if kk_ in ALL_K]
+        return sum(vals) / len(vals) if vals else None
+
     per_family = defaultdict(list)
     for (fid, si), arms in by.items():
         if "F+" in arms and "F-" in arms:
-            per_family[fid].append(100.0 * (arms["F+"] - arms["F-"]))
+            a, b = score(arms["F+"]), score(arms["F-"])
+            if a is not None and b is not None:
+                per_family[fid].append(100.0 * (a - b))
     return dict(per_family)
 
 
-def run(split="confirmatory", sesoi=8.0, n_boot=10000):
+def run(split="confirmatory", sesoi=None, n_boot=10000, endpoint="survival"):
+    if sesoi is None:
+        pw = json.loads((RES / "power.json").read_text()) if (RES / "power.json").exists() else {}
+        sesoi = pw.get("operative_sesoi", 8.0)
     rows = A.load_rows("eshift")
     index = json.loads((RES / "eshift_index.json").read_text())
     frames = json.loads((RES / "frames.json").read_text())
@@ -41,7 +65,8 @@ def run(split="confirmatory", sesoi=8.0, n_boot=10000):
 
     out = {}
     for pop, keep in (("eligible_only", lambda f: f in elig), ("ITT", lambda f: True)):
-        pf = {f: v for f, v in paired_differences(rows, index, "O1", 10, split).items() if keep(f)}
+        pf = {f: v for f, v in paired_differences(rows, index, "O1", 10, split, endpoint).items()
+              if keep(f)}
         if not pf:
             out[pop] = {"n_families": 0}
             continue
@@ -54,7 +79,8 @@ def run(split="confirmatory", sesoi=8.0, n_boot=10000):
 
     # O3 frame control: O3 cannot condition on the frame, so an arm difference there would mean
     # residual interference rather than a prior effect.
-    pf3 = {f: v for f, v in paired_differences(rows, index, "O3", 10, split).items() if f in elig}
+    pf3 = {f: v for f, v in paired_differences(rows, index, "O3", 10, split, endpoint).items()
+           if f in elig}
     if pf3:
         b3 = A.family_paired_bootstrap(pf3, n_boot=n_boot)
         t3 = A.tost(b3, 5.0)
@@ -62,6 +88,15 @@ def run(split="confirmatory", sesoi=8.0, n_boot=10000):
                                    "equivalence_margin_pp": 5.0, **t3,
                                    "n_families": len(pf3),
                                    "flag_residual_interference": not t3["equivalent"]}
+    out["endpoint"] = endpoint
+    out["sesoi_pp"] = sesoi
+    # secondary endpoint: the originally preregistered binary retention at k=10
+    pf_b = {f: v for f, v in paired_differences(rows, index, "O1", 10, split, "binary").items()
+            if f in elig}
+    if pf_b:
+        bb = A.family_paired_bootstrap(pf_b, n_boot=n_boot)
+        out["secondary_binary_k10"] = {"mean": float(np.mean(bb)), "ci95": A.ci(bb),
+                                       "n_families": len(pf_b)}
     primary = out.get("eligible_only", {})
     itt = out.get("ITT", {})
     if primary.get("decision") and itt.get("decision"):
@@ -77,8 +112,9 @@ def run(split="confirmatory", sesoi=8.0, n_boot=10000):
 
 if __name__ == "__main__":
     split = sys.argv[1] if len(sys.argv) > 1 else "confirmatory"
-    sesoi = float(sys.argv[2]) if len(sys.argv) > 2 else 8.0
+    sesoi = float(sys.argv[2]) if len(sys.argv) > 2 else None
     res = run(split, sesoi)
+    sesoi = res["sesoi_pp"]
     (RES / f"eshift_result_{split}.json").write_text(json.dumps(res, indent=1, default=float))
     p = res.get("eligible_only", {})
     print(f"E-SHIFT ({split}), SESOI {sesoi} pp")

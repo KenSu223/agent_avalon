@@ -1,0 +1,14 @@
+E-SHIFT [dev]: 8 eligible families x 2 arms x 3 seeds x 2 operators = 96 trajectories (B=150, T=1.0, slots=60)
+paid compactor calls: 1008  est $0.59
+[eshift_dev] 96 trajectories to run (0 already done)
+  [eshift_dev] 9/96  0s  $0.000
+  [eshift_dev] 18/96  83s  $0.014
+  [eshift_dev] 27/96  129s  $0.041
+  [eshift_dev] 36/96  211s  $0.083
+  [eshift_dev] 45/96  270s  $0.116
+  [eshift_dev] 54/96  308s  $0.180
+  [eshift_dev] 63/96  339s  $0.214
+  [eshift_dev] 72/96  400s  $0.280
+  [eshift_dev] 81/96  420s  $0.318
+  [eshift_dev] 90/96  560s  $0.392
+[eshift_dev] done: 96 trajectories, $0.468, 722s

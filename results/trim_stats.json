@@ -1,0 +1,7 @@
+{
+ "hard_trims_per_traj": 1.2166666666666666,
+ "retries_per_traj": 7.4,
+ "K": 20,
+ "n_traj": 60,
+ "source": "chains_dev.jsonl"
+}
