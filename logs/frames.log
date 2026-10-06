@@ -1,0 +1,46 @@
+40 mundane families with a target level
+[frames] 8/160 in 1s
+[frames] 16/160 in 1s
+[frames] 24/160 in 2s
+[frames] 32/160 in 2s
+[frames] 40/160 in 3s
+[frames] 48/160 in 3s
+[frames] 56/160 in 4s
+[frames] 64/160 in 4s
+[frames] 72/160 in 5s
+[frames] 80/160 in 6s
+[frames] 88/160 in 7s
+[frames] 96/160 in 7s
+[frames] 104/160 in 8s
+[frames] 112/160 in 8s
+[frames] 120/160 in 9s
+[frames] 128/160 in 10s
+[frames] 136/160 in 11s
+[frames] 144/160 in 12s
+[frames] 152/160 in 12s
+[frames] 160/160 in 60s
+frames authored and scrubbed: 39/40 passed (14 drafts rejected)
+shift validation: 4736 calls, est $0.179
+[shift] 236/4736 in 6s
+[shift] 472/4736 in 15s
+[shift] 708/4736 in 24s
+[shift] 944/4736 in 32s
+[shift] 1180/4736 in 45s
+[shift] 1416/4736 in 61s
+[shift] 1652/4736 in 72s
+[shift] 1888/4736 in 98s
+[shift] 2124/4736 in 108s
+[shift] 2360/4736 in 117s
+[shift] 2596/4736 in 129s
+[shift] 2832/4736 in 141s
+[shift] 3068/4736 in 156s
+[shift] 3304/4736 in 168s
+[shift] 3540/4736 in 197s
+[shift] 3776/4736 in 223s
+[shift] 4012/4736 in 237s
+[shift] 4248/4736 in 254s
+[shift] 4484/4736 in 265s
+[shift] 4720/4736 in 279s
+
+eligible families (Half-A shift >= 0.5): 9/39 = r 0.23
+achieved shift on the independent Half B, eligible only: mean 1.64 median 0.93 log-odds

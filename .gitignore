@@ -3,3 +3,4 @@ cache/
 .aris_run/.kicked_off
 __pycache__/
 *.pyc
+.venv/

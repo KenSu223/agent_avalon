@@ -1,0 +1,28 @@
+scrub: 50 attribute regexes, 387 level patterns
+[distractors] 6/120 in 0s
+[distractors] 12/120 in 0s
+[distractors] 18/120 in 0s
+[distractors] 24/120 in 0s
+[distractors] 30/120 in 0s
+[distractors] 36/120 in 0s
+[distractors] 42/120 in 3s
+[distractors] 48/120 in 3s
+[distractors] 54/120 in 3s
+[distractors] 60/120 in 4s
+[distractors] 66/120 in 4s
+[distractors] 72/120 in 4s
+[distractors] 78/120 in 5s
+[distractors] 84/120 in 6s
+[distractors] 90/120 in 7s
+[distractors] 96/120 in 7s
+[distractors] 102/120 in 8s
+[distractors] 108/120 in 9s
+[distractors] 114/120 in 12s
+[distractors] 120/120 in 55s
+distractors: 24/30 passed the scrub; 28 drafts rejected
+stray level-pattern matches outside any attribute segment: mean 2.3 per session (unreachable by the coder)
+  rejected 4 attr_hits ['\\bfloor(?:s|es|ing|ed)?\\b|\\blevel(?:s|es|ing|ed)?\\b|\\bHarbor(?:s|es|ing|ed)?\\b']
+  rejected 4 attr_hits ['\\bfloor(?:s|es|ing|ed)?\\b|\\blevel(?:s|es|ing|ed)?\\b|\\bHarbor(?:s|es|ing|ed)?\\b']
+  rejected 4 attr_hits ['\\bfloor(?:s|es|ing|ed)?\\b|\\blevel(?:s|es|ing|ed)?\\b|\\bHarbor(?:s|es|ing|ed)?\\b', '\\bpassword(?:s|es|ing|ed)?\\b']
+  rejected 4 attr_hits ['\\bfloor(?:s|es|ing|ed)?\\b|\\blevel(?:s|es|ing|ed)?\\b|\\bHarbor(?:s|es|ing|ed)?\\b', 'mobile app|phones?']
+  rejected 6 attr_hits ['\\blogs?\\b']

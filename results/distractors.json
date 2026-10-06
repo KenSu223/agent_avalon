@@ -1,0 +1,469 @@
+{
+ "sessions": [
+  {
+   "idx": 0,
+   "task": "draft an email",
+   "transcript": "Sam: Hey Atlas, can you help me draft an email?  \n\nAtlas: Of course, Sam. What\u2019s the email about?  \n\nSam: I need to welcome a new person joining us. Just a warm, simple message to get them started.  \n\nAtlas: Got it. Should I include any specific details\u2014like next steps or contacts?  \n\nSam: Nah, nothing too formal. Maybe just mention that they can reach out if they have questions. Oh, and they\u2019ll be on the {{COMPANY}}-Staff network once they arrive.  \n\nAtlas: Noted. I\u2019ll mention the network so they know how to connect. Anything else they should know right away?  \n\nSam: Yeah, they\u2019ll mostly hear from folks on Slack. That\u2019s where all the quick updates happen.  \n\nAtlas: Understood. I\u2019ll add a note about checking Slack for day-to-day communication. Here\u2019s a draft:  \n\u201cWelcome! We\u2019re really glad you\u2019re here. If you have any questions, don\u2019t hesitate to reach out. Once you\u2019re settled, you\u2019ll be able to connect to the {{COMPANY}}-Staff network. Most of us stay in touch through Slack, so keep an eye on it for quick updates and messages.\u201d  \n\nSam: That\u2019s perfect. Send it with a friendly tone\u2014like we\u2019re genuinely excited.  \n\nAtlas: Adjusted! The tone is warm and inviting. Ready to send when you are.  \n\nSam: Go ahead. Thanks, Atlas.  \n\nAtlas: Email sent. You\u2019re all set.",
+   "draft_used": 0,
+   "stray_level_patterns": 1
+  },
+  {
+   "idx": 1,
+   "task": "fix a SQL query",
+   "transcript": "Sam: Hey Atlas, I need help fixing a SQL query. It\u2019s supposed to pull employee records where the payment date matches the end of the month, but it\u2019s including weekends.\n\nAtlas: Understood. You want to filter for the last business day of the month. Are you using a calendar table, or should I assume standard weekday logic\u2014Monday through Friday?\n\nSam: No calendar table. Just basic logic. Payroll runs on the last business day of the month, so the query should reflect that.\n\nAtlas: Got it. We\u2019ll adjust the query to find the last day of each month, then check if it\u2019s a weekday. If the last day falls on a weekend, we\u2019ll roll it back to the previous Friday. Would you like to include a column that confirms it\u2019s a valid payroll date?\n\nSam: Yes, that\u2019d be helpful. Also, the results should be grouped by department and sorted by location.\n\nAtlas: Added. I\u2019ve rewritten the WHERE clause to use EOMONTH and a CASE statement to handle weekend adjustments. Used DATENAME to exclude Saturday and Sunday. Also added the flag column `is_payroll_day`. Here\u2019s the updated query.\n\nSam: Looks good. One more thing\u2014the office has two kitchens, so we might need to account for staff distribution later, but that\u2019s a separate issue.\n\nAtlas: Noted. For now, the query meets the current requirements. Let me know when you\u2019d like to expand it.",
+   "draft_used": 0,
+   "stray_level_patterns": 6
+  },
+  {
+   "idx": 2,
+   "task": "plan a team lunch",
+   "transcript": "Sam: Hey Atlas, can you help me plan a team lunch?  \n\nAtlas: Of course, Sam. I can help coordinate the details. Do you have a preferred restaurant or cuisine in mind?  \n\nSam: Let\u2019s go for something casual\u2014maybe Italian. And make sure to include Tomas from HR.  \n\nAtlas: Noted. I\u2019ll reach out to Tomas to confirm his availability and preferences. Any dietary restrictions I should be aware of?  \n\nSam: Not that I know of, but Tomas might have some input. Also, I\u2019ll need to wrap up some work in veltrix-core before heading out.  \n\nAtlas: Understood. I\u2019ll keep the reservation time flexible to accommodate your workflow in veltrix-core. Should I include anyone else?  \n\nSam: Just the core group\u2014same folks from the last meeting.  \n\nAtlas: Got it. I\u2019ll draft a quick message to the group with the restaurant option and ask for any food preferences.  \n\nSam: Perfect. And maybe suggest a place with outdoor seating if possible.  \n\nAtlas: I\u2019ll look for Italian spots with a patio or garden area. Once I have options, I\u2019ll send them your way.  \n\nSam: Thanks, Atlas. That takes a load off.  \n\nAtlas: Happy to help, Sam. I\u2019ll have everything sorted soon.",
+   "draft_used": 0,
+   "stray_level_patterns": 1
+  },
+  {
+   "idx": 3,
+   "task": "tighten some resume bullets",
+   "transcript": "Sam: Hey Atlas, can you help me tighten up a few resume bullets? I want them to sound sharper.\n\nAtlas: Of course, Sam. Share the bullets you'd like refined, and I'll streamline them for impact.\n\nSam: Here\u2019s one: \"Led a project that improved system response times and received positive feedback from stakeholders.\"\n\nAtlas: How about: \"Spearheaded performance optimization initiative, delivering measurable improvements and stakeholder recognition.\"\n\nSam: That\u2019s better. Another: \"Collaborated across departments to align on shared goals and drive consistent outcomes.\"\n\nAtlas: Try: \"Orchestrated cross-functional alignment to achieve unified objectives and sustained results.\"\n\nSam: Nice. One more: \"Managed onboarding for new hires, ensuring smooth integration into workflows.\"\n\nAtlas: Consider: \"Championed new hire integration, accelerating ramp-up and operational contribution.\"\n\nSam: Perfect, thanks. By the way, we just had our quarterly all-hands\u2014it was pretty energizing.\n\nAtlas: Good to hear. Those gatherings can really boost momentum. Ready for more refinements?\n\nSam: Not right now. Oh, and I finally used the bike rack by the entrance. Much more convenient.\n\nAtlas: Excellent. Practical details like that make commutes smoother. Let me know when you\u2019d like another pass on the resume.",
+   "draft_used": 0,
+   "stray_level_patterns": 3
+  },
+  {
+   "idx": 4,
+   "task": "explain a regular expression",
+   "transcript": null,
+   "status": "FAILED_SCRUB"
+  },
+  {
+   "idx": 5,
+   "task": "prepare a 1:1 agenda",
+   "transcript": "Sam: Hey Atlas, can you help me prepare a 1:1 agenda for my meeting with Jordan?  \nAtlas: Of course, Sam. I\u2019ll draft a clear and structured agenda. Should we include updates on current priorities, feedback exchange, and goal tracking?  \nSam: Yes, those sections are good. Also, I want to touch on career development and any blockers Jordan might be facing.  \nAtlas: Got it. I\u2019ll add \u201cCareer Growth\u201d and \u201cChallenges & Support\u201d as agenda items. Would you like time allocated for open discussion at the end?  \nSam: Definitely. Jordan usually has thoughtful input, so leaving space for that makes sense.  \nAtlas: Added. I\u2019ll format this using bullet points for clarity and share it via email.  \nSam: Thanks. Since we use Google Workspace, just send it to my inbox and I\u2019ll forward it.  \nAtlas: Will do. Agenda will be in your inbox shortly.  \nSam: One more thing\u2014March is coming up, and with quarterly reviews around the corner, I should make sure we\u2019re aligned on expectations.  \nAtlas: Noted. I\u2019ll include a brief note under \u201cGoal Tracking\u201d to review progress in light of the upcoming review cycle.  \nSam: Perfect. You always anticipate the next steps.  \nAtlas: Happy to help, Sam. Agenda sent. Let me know if you\u2019d like to adjust anything before the meeting.",
+   "draft_used": 0,
+   "stray_level_patterns": 2
+  },
+  {
+   "idx": 6,
+   "task": "write a commit message",
+   "transcript": "Sam: Hey Atlas, I need help writing a commit message.  \n\nAtlas: Of course, Sam. What did the commit change?  \n\nSam: Fixed a bug where user sessions were dropping after login. It was only happening in staging, which is odd because it mirrors production exactly.  \n\nAtlas: Got it. So the fix resolves inconsistent session behavior that appeared in the staging environment despite mirroring production. Anything else?  \n\nSam: Yeah, I added a retry mechanism for token validation. Also, the support team confirmed they only see the issue outside their 9 to 5 weekday hours, but it\u2019s not related to their availability.  \n\nAtlas: Understood. How about this: \u201cFix intermittent session loss after login by adding token validation retry logic. Issue observed in staging\u2014consistent with production setup\u2014despite timing patterns unrelated to support schedules.\u201d  \n\nSam: That\u2019s clear, but maybe shorten it.  \n\nAtlas: Revised: \u201cFix session drop after login with token retry logic. Issue seen in staging, despite mirroring production, during off-hours unrelated to support operations.\u201d  \n\nSam: Perfect. That covers everything without over-explaining.  \n\nAtlas: Glad it works for you. Commit message ready when you are.",
+   "draft_used": 1,
+   "stray_level_patterns": 2
+  },
+  {
+   "idx": 7,
+   "task": "compare two laptop models",
+   "transcript": null,
+   "status": "FAILED_SCRUB"
+  },
+  {
+   "idx": 8,
+   "task": "turn meeting notes into action items",
+   "transcript": "Sam: Atlas, can you help me turn these meeting notes into clear action items?  \nAtlas: Of course, Sam. Please share the notes, and I\u2019ll organize them into actionable steps.  \nSam: Great. Here\u2019s what we discussed: Jordan mentioned the campaign visuals need approval before the launch event.  \nAtlas: Action item created: Obtain approval for campaign visuals. Assign to Jordan?  \nSam: Yes, and add a reminder to include the latest copy draft.  \nAtlas: Added. What else is in the notes?  \nSam: Riley brought up the client feedback form\u2014needs a redesign. It\u2019s currently too long.  \nAtlas: Action item created: Redesign client feedback form for brevity. Assign to Riley?  \nSam: Yes, and link it to the research summary from last week.  \nAtlas: Linked. Anything else?  \nSam: Just one: Maya wants the analytics dashboard updated with new engagement metrics.  \nAtlas: Action item created: Update analytics dashboard with new engagement metrics. Assign to Maya?  \nSam: Perfect. Also, make sure everyone knows the office closes on public holidays.  \nAtlas: Noted. I\u2019ll include that in the summary.  \nSam: And remind me, how many people are in the marketing group again?  \nAtlas: There are five people in the marketing group.  \nSam: Right, thanks. That should cover everything.  \nAtlas: All action items logged and assigned. Summary sent to your inbox.",
+   "draft_used": 0,
+   "stray_level_patterns": 1
+  },
+  {
+   "idx": 9,
+   "task": "write a birthday card",
+   "transcript": "Sam: Hey Atlas, I need help writing a birthday card for my cousin. Nothing too fancy\u2014just warm and personal.  \n\nAtlas: Of course, Sam. How would you like the tone? Friendly, funny, heartfelt?  \n\nSam: Heartfelt but light. She\u2019s always been supportive, even when I was obsessed with coding projects back in college. Speaking of, our code is hosted on GitHub now, though that\u2019s probably more detail than needed.  \n\nAtlas: Got it. Keeping it warm and simple. How about: \"Happy Birthday to my amazing cousin! Your encouragement has meant the world\u2014through late-night coding marathons and every big leap since. So grateful for you.\"  \n\nSam: That\u2019s really nice. Maybe add something about her adventurous spirit? She just got back from a hiking trip in the Rockies.  \n\nAtlas: How\u2019s this: \"Your adventurous spirit inspires me to take more risks\u2014whether in life or deciding which API to trust.\"  \n\nSam: Ha! Perfect. One last thing\u2014my family\u2019s thinking about planning a surprise trip for her next year. Budgets usually get approved in January, so we\u2019re waiting on that.  \n\nAtlas: Added a subtle touch: \"Can\u2019t wait to celebrate more adventures with you\u2014some already in the works!\"  \n\nSam: Excellent. Send it over\u2014I\u2019ll add a little doodle and mail it tonight. Thanks, Atlas.  \n\nAtlas: You\u2019re welcome, Sam. She\u2019ll love it.",
+   "draft_used": 1,
+   "stray_level_patterns": 2
+  },
+  {
+   "idx": 10,
+   "task": "debug a Python error",
+   "transcript": null,
+   "status": "FAILED_SCRUB"
+  },
+  {
+   "idx": 11,
+   "task": "write a welcome message for a new hire",
+   "transcript": "Sam: Hey Atlas, can you help me write a welcome message for the new hire joining next week?  \n\nAtlas: Of course, Sam. I\u2019d be happy to help craft something warm and professional. Any tone or details you\u2019d like included?  \n\nSam: Keep it friendly but not too casual. Maybe mention that {{TOWN}} has a train station ten minutes from where we are\u2014it\u2019s useful for commuting.  \n\nAtlas: Got it. I\u2019ll include that as a helpful note. Anything else that might make them feel more at ease?  \n\nSam: Hmm, not really. Though I guess you could say something about the office vibe\u2014like how the plants get watered every Monday. Shows we care about small things.  \n\nAtlas: That\u2019s a nice touch. A detail like that adds warmth. How does this sound: \u201cWelcome! We\u2019re thrilled to have you here. The local train station makes commuting easy, and you\u2019ll notice the greenery around here stays fresh\u2014someone tends to it every Monday.\u201d  \n\nSam: Yeah, that works. Maybe add a line about looking forward to meeting them.  \n\nAtlas: Added: \u201cWe\u2019re already looking forward to meeting you and getting to know you.\u201d Final version ready\u2014want me to send it?  \n\nSam: Yes, please. Thanks, Atlas.  \n\nAtlas: Message sent. You\u2019re all set, Sam.",
+   "draft_used": 0,
+   "stray_level_patterns": 6
+  },
+  {
+   "idx": 12,
+   "task": "plan a weekend hike",
+   "transcript": null,
+   "status": "FAILED_SCRUB"
+  },
+  {
+   "idx": 13,
+   "task": "translate a support reply",
+   "transcript": "Sam: Hey Atlas, I need help translating a customer support reply into Spanish. It\u2019s a quick message about account access.  \n\nAtlas: Of course, Sam. Please share the message you'd like translated.  \n\nSam: Here it is: \"We\u2019ve verified your request and restored access to your account. Let us know if you need further assistance.\"  \n\nAtlas: Translating now... Done. The Spanish version is: \"Hemos verificado tu solicitud y restaurado el acceso a tu cuenta. Av\u00edsanos si necesitas m\u00e1s ayuda.\"  \n\nSam: Perfect, that sounds natural. Thanks. By the way, one of the new interns asked about onboarding\u2014good to remember they usually start in June.  \n\nAtlas: Noted. I can help prepare onboarding materials in advance if needed.  \n\nSam: That might be useful later. Oh, and for legal approvals on translations, we\u2019ll need to loop in the legal group\u2014they\u2019re based in another city, so coordination takes a little extra time.  \n\nAtlas: Understood. I\u2019ll flag any content requiring legal review and help draft outreach accordingly.  \n\nSam: Great. For now, just keep the Spanish version on file in case we need it again.  \n\nAtlas: Saved and categorized for easy retrieval. Let me know when you need the next translation.",
+   "draft_used": 0,
+   "stray_level_patterns": 2
+  },
+  {
+   "idx": 14,
+   "task": "estimate a project timeline",
+   "transcript": "Sam: Atlas, I need help estimating a timeline for the new project.  \nAtlas: Of course, Sam. I can help you map out key phases and milestones. Could you share the main objectives and resources involved?  \nSam: We\u2019re integrating a feedback module with the existing system, and we have five people focused on it.  \nAtlas: Got it. I\u2019ll factor in development, testing, and review stages. Should I assume standard collaboration patterns, or are there any recurring events that might affect availability?  \nSam: Actually, we usually take a half-day on the first Friday of the month for a group lunch. That might shift things a bit.  \nAtlas: Noted. I\u2019ll adjust for reduced availability on those days. Anything else that might influence workflow?  \nSam: The workspace setup supports movement\u2014everyone\u2019s on standing desks, so focus tends to stay high during core hours.  \nAtlas: That\u2019s helpful. I\u2019ll assume sustained concentration during morning blocks. I\u2019ll now outline phases with buffer periods aligned to your rhythm.  \nSam: Perfect. Can you send a visual breakdown once it\u2019s ready?  \nAtlas: Yes, a flowchart with phase dependencies will be ready shortly. It will reflect your team\u2019s cadence and energy patterns.  \nSam: Great, thanks for the quick support.  \nAtlas: Anytime, Sam. I\u2019ll notify you when the summary is available.",
+   "draft_used": 0,
+   "stray_level_patterns": 2
+  },
+  {
+   "idx": 15,
+   "task": "write a Slack announcement",
+   "transcript": "Sam: Hey Atlas, can you help me write a Slack announcement?  \nAtlas: Of course, Sam. What\u2019s the message you\u2019d like to share?  \nSam: We\u2019re launching a new internal dashboard for tracking project updates. I want to let everyone know it\u2019s live and how to access it.  \nAtlas: Got it. Should I assume they\u2019ll access it through their usual work portal?  \nSam: Yes, as long as they\u2019re connected to {{COMPANY}}-Staff, they\u2019ll have full access.  \nAtlas: Understood. Should I mention anything about authentication or login steps?  \nSam: No, it\u2019s automatic if they\u2019re already signed into Slack. That\u2019s actually the main point\u2014everything syncs through there.  \nAtlas: Perfect. How about tone? Friendly but professional?  \nSam: Exactly. Maybe add a little excitement\u2014something like \u201cwe\u2019re thrilled to roll this out.\u201d  \nAtlas: On it. Here\u2019s a draft: \u201cWe\u2019re thrilled to announce the launch of our new project dashboard! Seamlessly integrated with your Slack workspace, it provides real-time updates and clearer visibility. Just make sure you\u2019re connected to {{COMPANY}}-Staff for full access. Check it out and let us know what you think!\u201d  \nSam: That\u2019s great\u2014clean and clear. Post it for me.  \nAtlas: Posted to the designated Slack channel. Response queue is already starting to populate.  \nSam: Nice work, Atlas.  \nAtlas: Always happy to assist.",
+   "draft_used": 0,
+   "stray_level_patterns": 2
+  },
+  {
+   "idx": 16,
+   "task": "convert a table to CSV",
+   "transcript": "Sam: Hey Atlas, I\u2019ve got a table I need converted to CSV. Can you help?  \nAtlas: Of course, Sam. Just share the table data, and I\u2019ll format it as CSV right away.  \nSam: It\u2019s a five-row table with names, roles, and locations. I\u2019ll paste it here.  \nAtlas: Got it. Parsing now\u2026 Done. Here\u2019s your CSV:  \n\"Name\",\"Role\",\"Location\"  \n\"Jamie\",\"Designer\",\"East\"  \n\"Riley\",\"Writer\",\"West\"  \n\"Casey\",\"Editor\",\"East\"  \n\"Morgan\",\"Dev\",\"West\"  \nSam: Perfect, that\u2019s exactly what I needed. Thanks.  \nAtlas: You're welcome. Need any adjustments or another format?  \nSam: Not this time. By the way, payroll runs on the last business day of the month, just so you know.  \nAtlas: Noted, Sam. That\u2019s useful context.  \nSam: Also, we moved the extra fridge to the second kitchen.  \nAtlas: Understood. Storage updates logged.  \nSam: \u201cLogged\u201d? You don\u2019t need to track that.  \nAtlas: Fair point. Consider it unlogged. Back to the task\u2014anything else with the CSV?  \nSam: No, all set. Appreciate the help.  \nAtlas: Anytime, Sam. Just say the word.",
+   "draft_used": 0,
+   "stray_level_patterns": 1
+  },
+  {
+   "idx": 17,
+   "task": "explain HTTP status codes",
+   "transcript": "Sam: Hey Atlas, can you help me explain HTTP status codes? I need a quick rundown.  \nAtlas: Of course, Sam. HTTP status codes are three-digit responses from a server indicating the result of a client's request. They\u2019re grouped into five classes.  \nSam: Got it. What\u2019s the first class?  \nAtlas: 1xx \u2013 Informational. The server acknowledges the request and is continuing the process. Rarely seen in everyday use.  \nSam: And the common ones?  \nAtlas: 2xx \u2013 Success. The request was received and accepted. For example, 200 means \"OK,\" and 201 means \"Created.\"  \nSam: Right, I\u2019ve seen those in veltrix-core when debugging.  \nAtlas: Yes, those appear often after successful API calls. Next, 3xx \u2013 Redirection. The client must take additional action. Like 301 for a permanent move.  \nSam: Tomas once got confused by a 302 during onboarding.  \nAtlas: That\u2019s \u201cFound\u201d \u2013 a temporary redirect. Easy to misunderstand without context. Then 4xx \u2013 Client errors. Like 404 for \u201cNot Found\u201d or 403 for \u201cForbidden.\u201d  \nSam: Yeah, I\u2019ve troubleshooted those after config mismatches.  \nAtlas: And finally, 5xx \u2013 Server errors. These mean the server failed to fulfill a valid request. 500 is a generic internal error.  \nSam: So, quick summary: 1xx to 5xx, from info to server issues.  \nAtlas: Exactly. Each code helps pinpoint where communication breaks or succeeds.",
+   "draft_used": 0,
+   "stray_level_patterns": 1
+  },
+  {
+   "idx": 18,
+   "task": "organise a reading list",
+   "transcript": "Sam: Hey Atlas, can you help me put together a reading list? Nothing too heavy\u2014just a mix of fiction and non-fiction I can get through over the next while.  \n\nAtlas: Of course, Sam. Any genres or themes you\u2019re drawn to? I can balance classics with newer releases if you\u2019d like.  \n\nSam: Yeah, let\u2019s include some modern sci-fi and maybe a biography. Oh, and nothing too long. I\u2019ve been meaning to read more during my commute. We\u2019ve got that bike rack by the entrance, so I usually have a few quiet minutes before logging in.  \n\nAtlas: Got it. I\u2019ll keep the selections concise. How about three novels\u2014two sci-fi, one literary fiction\u2014and two biographies, one on innovation and one on personal resilience?  \n\nSam: That sounds good. Wait, make one of the sci-fi novels about AI\u2014it feels relevant, especially since we just had the quarterly all-hands. Everyone was talking about long-term thinking.  \n\nAtlas: Adding \u201cMachine Dawn\u201d by L. Chen\u2014it explores AI consciousness through a narrative that\u2019s more emotional than technical. For literary fiction, I\u2019m including \u201cThe Quiet Shore.\u201d It\u2019s subtle but powerful.  \n\nSam: Perfect. And for the resilience biography, something not too well-known?  \n\nAtlas: I\u2019ll include \u201cUnder the Same Stars\u201d by Mira Tan\u2014a moving account of reinvention after loss.  \n\nSam: Great choices. Thanks, Atlas.  \n\nAtlas: You\u2019re welcome. I\u2019ve shared the list with links and brief summaries. Happy reading!",
+   "draft_used": 0,
+   "stray_level_patterns": 2
+  },
+  {
+   "idx": 19,
+   "task": "write a thank-you email",
+   "transcript": "Sam: Hey Atlas, can you help me write a thank-you email?  \n\nAtlas: Of course, Sam. Who would you like to thank, and what for?  \n\nSam: It\u2019s for Jordan. They stepped in last minute to help with the client presentation. Really saved the day.  \n\nAtlas: Got it. Should the tone be formal, friendly, or somewhere in between?  \n\nSam: Friendly but professional\u2014nothing too stiff.  \n\nAtlas: Here\u2019s a draft:  \n\"Hi Jordan,  \nI just wanted to say a sincere thank you for stepping in during the client presentation. Your insights made a real difference, and I truly appreciate the support. It\u2019s great to have someone so reliable on hand.  \nThanks again,  \nSam\"  \n\nSam: That\u2019s good. Maybe add something about how smoothly everything went?  \n\nAtlas: Revised version:  \n\"Hi Jordan,  \nI just wanted to say a sincere thank you for stepping in during the client presentation. Your insights made a real difference, and I truly appreciate the support. Everything went smoothly, and I know the client noticed the clarity you brought. It\u2019s great to have someone so reliable on hand.  \nThanks again,  \nSam\"  \n\nSam: Perfect. Send it when I\u2019m near my desk\u2014oh, and make sure it includes my signature.  \n\nAtlas: Will do. Email ready and will send upon confirmation of your proximity.",
+   "draft_used": 0,
+   "stray_level_patterns": 1
+  },
+  {
+   "idx": 20,
+   "task": "draft poll options for a team event",
+   "transcript": "Sam: Hey Atlas, can you help me draft some poll options for a group activity we\u2019re planning?  \nAtlas: Of course, Sam. What kind of activity are you considering?  \nSam: Something fun but low-key\u2014maybe a cooking class or a trivia night. People use Google Workspace here, so I\u2019ll send the poll by email.  \nAtlas: Got it. How about these options: \"Interactive cooking session with a local chef,\" \"Themed trivia night with small prizes,\" \"Outdoor picnic and games,\" and \"DIY craft workshop\"?  \nSam: Nice! Could we make the trivia one sound a bit more exciting?  \nAtlas: Sure. How about: \"Battle of the Brains: Themed Trivia Showdown with Bragging Rights\"?  \nSam: Perfect. And maybe one option involving nature?  \nAtlas: How does this sound: \"Scenic hike followed by a group lunch at a nearby spot\"?  \nSam: That works. Also, just a heads-up\u2014reviews are coming up soon, so people might prefer something relaxing. They happen in March, June, September, and December, so it\u2019s that time again.  \nAtlas: Understood. I\u2019ll keep the tone light and stress-free. Final options: \"Battle of the Brains: Themed Trivia Showdown,\" \"Scenic hike with group lunch,\" \"Interactive cooking session,\" and \"DIY craft workshop.\" Ready for email delivery?  \nSam: Yes, send them over. Thanks, Atlas!  \nAtlas: You're all set, Sam. Let me know how it goes!",
+   "draft_used": 0,
+   "stray_level_patterns": 1
+  },
+  {
+   "idx": 21,
+   "task": "simplify a paragraph",
+   "transcript": "Sam: Hey Atlas, can you help me simplify this paragraph? It\u2019s a bit wordy and I need it clearer.\n\nAtlas: Of course, Sam. Please share the paragraph you\u2019d like me to simplify.\n\nSam: Here it is: \"The system, which undergoes regular validation cycles prior to deployment, operates under conditions closely resembling those of the final operational framework, ensuring consistency and reducing unexpected behaviors once released.\"\n\nAtlas: Got it. How about this version: \"The system is tested under realistic conditions before deployment to ensure smooth performance when released.\"\n\nSam: That\u2019s much better\u2014clean and direct. Thanks. Oh, and just so you know, the staging environment mirrors production, so the tests are reliable.\n\nAtlas: Noted, Sam. That context helps ensure accuracy in future suggestions.\n\nSam: Also, if anyone needs follow-up later today, the support team works 9 to 5 on weekdays.\n\nAtlas: Understood. I\u2019ll keep that in mind for routing time-sensitive inquiries.\n\nSam: Perfect. One last thing\u2014can you rephrase that simplified version without using the word \"released\"?\n\nAtlas: Sure. How does this sound? \"The system is tested under realistic conditions before deployment to ensure smooth performance in operation.\"\n\nSam: Excellent. That works perfectly. Appreciate the help.\n\nAtlas: Anytime, Sam.",
+   "draft_used": 0,
+   "stray_level_patterns": 2
+  },
+  {
+   "idx": 22,
+   "task": "name a new service",
+   "transcript": "Sam: Hey Atlas, I need help naming a new service we\u2019re launching. It should feel fresh but trustworthy.  \n\nAtlas: Got it, Sam. How about something that blends innovation with reliability? Any themes or words the company leans toward?  \n\nSam: We like clean, modern names\u2014nothing too flashy. Also, the holiday party is in December, so maybe something that subtly ties to that energy? Warm but not seasonal.  \n\nAtlas: Understood. How about \u201cEmber\u201d? It suggests warmth and continuity without being tied to a specific time.  \n\nSam: Hmm, I like that. It\u2019s simple. New hires get a welcome kit on their first day, so the name should feel inviting too.  \n\nAtlas: \u201cEmber\u201d could work well with onboarding\u2014like sparking a beginning. What about \u201cHaven\u201d? It conveys safety and a fresh start.  \n\nSam: \u201cHaven\u201d is nice, but I\u2019m leaning toward \u201cEmber.\u201d It matches our style, and that hint of warmth fits the welcome vibe.  \n\nAtlas: Great choice. \u201cEmber\u201d suggests a lasting glow\u2014perfect for a service that supports growth from day one.  \n\nSam: Exactly. Let\u2019s go with \u201cEmber.\u201d Thanks for walking through that with me.  \n\nAtlas: Anytime, Sam. \u201cEmber\u201d it is.",
+   "draft_used": 0,
+   "stray_level_patterns": 2
+  },
+  {
+   "idx": 23,
+   "task": "write a product description",
+   "transcript": "Sam: Hey Atlas, I need help writing a product description. Can you assist?  \nAtlas: Of course, Sam. I\u2019d be happy to help craft something engaging. What\u2019s the main feature you\u2019d like to highlight?  \nSam: It\u2019s a smart analytics dashboard that adapts to user behavior. We want it to sound intuitive and powerful.  \nAtlas: Got it. How about this: \"Navigate your data with ease\u2014the dashboard learns how you work and presents insights exactly when you need them.\"  \nSam: Nice, but can we make it feel more personal? Like it\u2019s a partner, not just a feature.  \nAtlas: Sure. Try this: \"Your insights, one step ahead. It doesn\u2019t just respond\u2014it anticipates, guiding you with quiet precision.\"  \nSam: That\u2019s better. I like the tone.  \nAtlas: Should we emphasize simplicity as well? Something like, \"No clutter, no confusion\u2014just clear, actionable intelligence at a glance.\"  \nSam: Yes, that fits. Maybe tie in reliability too.  \nAtlas: How about: \"Trusted by forward-thinkers who expect more from their data\u2014and get it.\"  \nSam: Perfect. Oh, by the way, we\u2019re closed tomorrow\u2014public holiday.  \nAtlas: Noted. I\u2019ll hold any scheduled updates until the following day.  \nSam: Thanks. Also, just so you know, five people from the marketing group are reviewing this.  \nAtlas: Understood. I\u2019ll ensure the draft is clear and ready for collaborative feedback.  \nSam: Great. Let\u2019s go with that version you just gave.  \nAtlas: Final version saved and shared. Let me know if you\u2019d like tweaks after their review.",
+   "draft_used": 0,
+   "stray_level_patterns": 2
+  },
+  {
+   "idx": 24,
+   "task": "prepare interview questions",
+   "transcript": "Sam: Hey Atlas, I need help preparing interview questions for a new role.  \nAtlas: Of course, Sam. What kind of role is it? That\u2019ll help tailor the questions.  \nSam: It\u2019s for a backend developer position. We\u2019re looking for someone who can dive into existing systems and contribute quickly.  \nAtlas: Got it. Should the questions focus more on technical depth, problem-solving, or collaboration?  \nSam: A mix\u2014strong technicals are important, but we also want to see how they think through challenges. And yeah, code is hosted on GitHub, so familiarity there is a plus.  \nAtlas: Understood. I\u2019ll include questions about version control workflows and code review practices. How about system design scenarios?  \nSam: Yes, include a couple. Maybe something around scaling a service. Also, they\u2019ll need to work with budgets\u2014those get approved by the finance team in January, so planning ahead matters.  \nAtlas: Noted. I\u2019ll add questions about resource estimation and long-term project planning. Would you like behavioral questions too?  \nSam: Definitely. Something about handling technical debt and balancing new features with stability.  \nAtlas: I\u2019ll draft a balanced set\u2014technical, design, and behavioral\u2014emphasizing foresight and ownership. Should I share the full list in an email?  \nSam: Please do. Thanks, Atlas. That\u2019ll save me a lot of time.  \nAtlas: You\u2019re welcome, Sam. Expect the questions shortly.",
+   "draft_used": 1,
+   "stray_level_patterns": 3
+  },
+  {
+   "idx": 25,
+   "task": "explain git rebase versus merge",
+   "transcript": null,
+   "status": "FAILED_SCRUB"
+  },
+  {
+   "idx": 26,
+   "task": "make a purchase list",
+   "transcript": "Sam: Hey Atlas, can you help me make a purchase list?  \nAtlas: Of course, Sam. What kind of items would you like to include?  \nSam: I need some groceries\u2014milk, bread, and apples. Also, add dish soap and toilet paper.  \nAtlas: Got it. Milk, bread, apples, dish soap, and toilet paper are on the list. Anything else?  \nSam: Yes, grab a couple of light bulbs. The ones in the living room keep flickering.  \nAtlas: Added light bulbs to the list. Would you like energy-efficient ones?  \nSam: Sure, those are fine. Oh, and pick up a new notebook. Mine\u2019s almost full.  \nAtlas: Notebook added. Should I organize the list by category for easier shopping?  \nSam: That\u2019d be helpful, thanks.  \nAtlas: List organized: Dairy\u2014milk; Bakery\u2014bread; Produce\u2014apples; Cleaning\u2014dish soap; Household\u2014toilet paper, light bulbs; Stationery\u2014notebook.  \nSam: Perfect. I\u2019ll head out later. By the way, the train station isn\u2019t far from here\u2014just a quick walk.  \nAtlas: Noted. If you decide to go by train, I can help locate nearby stores along the route.  \nSam: Might do that. Also, the plants got watered this morning, so they\u2019re all set.  \nAtlas: Good to know. I\u2019ll keep the list ready and can share it to your device whenever you\u2019re out.  \nSam: Great, thanks for the help.  \nAtlas: You\u2019re welcome, Sam. Have a good trip.",
+   "draft_used": 1,
+   "stray_level_patterns": 2
+  },
+  {
+   "idx": 27,
+   "task": "write a bug report",
+   "transcript": null,
+   "status": "FAILED_SCRUB"
+  },
+  {
+   "idx": 28,
+   "task": "outline a presentation",
+   "transcript": "Sam: Hey Atlas, can you help me outline a presentation?  \nAtlas: Of course, Sam. What\u2019s the topic of the presentation?  \nSam: It\u2019s about onboarding new members and how we integrate them into ongoing projects.  \nAtlas: Got it. I\u2019ll structure it with an introduction, key onboarding stages, collaboration methods, and a closing summary. Does that sound good?  \nSam: Yes, that works. Maybe start with how we bring people in\u2014like, interns usually start in June.  \nAtlas: Noted. I\u2019ll include a brief mention of initial entry points, referencing June as a common start period for interns.  \nSam: Perfect. Also, we collaborate across departments, even when they\u2019re not local. For example, the legal team is based in another city.  \nAtlas: Understood. I\u2019ll highlight cross-location coordination and include that as an example of distributed collaboration.  \nSam: Exactly. Can you suggest a few visuals? Maybe something showing connection points?  \nAtlas: I recommend a flowchart for onboarding steps and a simple map graphic to illustrate inter-office collaboration.  \nSam: Great, add those to the outline.  \nAtlas: Done. I\u2019ve organized the presentation into four sections with talking points, examples you provided, and visual suggestions. Ready when you are.  \nSam: Awesome, thanks Atlas.  \nAtlas: You\u2019re welcome, Sam. Let me know if you\u2019d like to refine any section.",
+   "draft_used": 0,
+   "stray_level_patterns": 2
+  },
+  {
+   "idx": 29,
+   "task": "write quarterly goals",
+   "transcript": "Sam: Hey Atlas, I need help writing quarterly goals. Can you guide me through structuring them clearly?\n\nAtlas: Of course, Sam. Let\u2019s start by identifying key focus areas. What outcomes do you want to prioritize this quarter?\n\nSam: I\u2019d like to improve how we track progress on ongoing work and strengthen collaboration across groups.\n\nAtlas: Great. For tracking, we could set a goal around consistency\u2014like ensuring weekly updates are always documented in a shared space.\n\nSam: That makes sense. And for collaboration, maybe something about encouraging open communication between groups.\n\nAtlas: Yes. Perhaps a goal centered on hosting regular check-ins where people share insights or challenges. That could build stronger alignment.\n\nSam: I like that. Oh, and we usually have lunches on the first Friday of the month\u2014might be a good chance to talk informally.\n\nAtlas: Perfect. Those gatherings can naturally support the collaboration goal. We can note that as a supportive rhythm.\n\nSam: Also, I work better at my standing desk. Something about being upright helps me focus when drafting plans.\n\nAtlas: Noted. We\u2019ll keep the goals flexible so you can engage with them in your ideal setup. Ready to finalize a draft?\n\nSam: Yes, let\u2019s do it.",
+   "draft_used": 0,
+   "stray_level_patterns": 6
+  }
+ ],
+ "rejected": [
+  {
+   "idx": 4,
+   "draft": 0,
+   "attr_hits": [
+    "\\bfloor(?:s|es|ing|ed)?\\b|\\blevel(?:s|es|ing|ed)?\\b|\\bHarbor(?:s|es|ing|ed)?\\b"
+   ],
+   "n_stray": 1
+  },
+  {
+   "idx": 4,
+   "draft": 1,
+   "attr_hits": [
+    "\\bfloor(?:s|es|ing|ed)?\\b|\\blevel(?:s|es|ing|ed)?\\b|\\bHarbor(?:s|es|ing|ed)?\\b"
+   ],
+   "n_stray": 1
+  },
+  {
+   "idx": 4,
+   "draft": 2,
+   "attr_hits": [
+    "\\bfloor(?:s|es|ing|ed)?\\b|\\blevel(?:s|es|ing|ed)?\\b|\\bHarbor(?:s|es|ing|ed)?\\b",
+    "\\bpassword(?:s|es|ing|ed)?\\b"
+   ],
+   "n_stray": 1
+  },
+  {
+   "idx": 4,
+   "draft": 3,
+   "attr_hits": [
+    "\\bfloor(?:s|es|ing|ed)?\\b|\\blevel(?:s|es|ing|ed)?\\b|\\bHarbor(?:s|es|ing|ed)?\\b",
+    "mobile app|phones?"
+   ],
+   "n_stray": 1
+  },
+  {
+   "idx": 6,
+   "draft": 0,
+   "attr_hits": [
+    "\\blogs?\\b"
+   ],
+   "n_stray": 3
+  },
+  {
+   "idx": 7,
+   "draft": 0,
+   "attr_hits": [
+    "\\blaptop(?:s|es|ing|ed)?\\b",
+    "mobile app|phones?"
+   ],
+   "n_stray": 6
+  },
+  {
+   "idx": 7,
+   "draft": 1,
+   "attr_hits": [
+    "\\blaptop(?:s|es|ing|ed)?\\b"
+   ],
+   "n_stray": 2
+  },
+  {
+   "idx": 7,
+   "draft": 2,
+   "attr_hits": [
+    "\\blaptop(?:s|es|ing|ed)?\\b"
+   ],
+   "n_stray": 3
+  },
+  {
+   "idx": 7,
+   "draft": 3,
+   "attr_hits": [
+    "\\blaptop(?:s|es|ing|ed)?\\b"
+   ],
+   "n_stray": 5
+  },
+  {
+   "idx": 9,
+   "draft": 0,
+   "attr_hits": [
+    "\\bdeploy(?:s|es|ing|ed)?\\b",
+    "\\bfloor(?:s|es|ing|ed)?\\b|\\blevel(?:s|es|ing|ed)?\\b|\\bHarbor(?:s|es|ing|ed)?\\b"
+   ],
+   "n_stray": 3
+  },
+  {
+   "idx": 10,
+   "draft": 0,
+   "attr_hits": [
+    "\\bcoffee(?:s|es|ing|ed)?\\b|\\bdescal(?:s|es|ing|ed)?\\b",
+    "\\blogs?\\b",
+    "\\boffice\\b[^.]{0,60}\\bopens?\\b|\\bopens?\\b[^.]{0,25}\\d"
+   ],
+   "n_stray": 3
+  },
+  {
+   "idx": 10,
+   "draft": 1,
+   "attr_hits": [
+    "\\bcoffee(?:s|es|ing|ed)?\\b|\\bdescal(?:s|es|ing|ed)?\\b",
+    "\\boffice\\b[^.]{0,60}\\bopens?\\b|\\bopens?\\b[^.]{0,25}\\d"
+   ],
+   "n_stray": 2
+  },
+  {
+   "idx": 10,
+   "draft": 2,
+   "attr_hits": [
+    "\\bcoffee(?:s|es|ing|ed)?\\b|\\bdescal(?:s|es|ing|ed)?\\b",
+    "\\boffice\\b[^.]{0,60}\\bopens?\\b|\\bopens?\\b[^.]{0,25}\\d",
+    "\\bsearch\\ index(?:s|es|ing|ed)?\\b|\\bindex(?:s|es|ing|ed)?\\b"
+   ],
+   "n_stray": 2
+  },
+  {
+   "idx": 10,
+   "draft": 3,
+   "attr_hits": [
+    "\\bcoffee(?:s|es|ing|ed)?\\b|\\bdescal(?:s|es|ing|ed)?\\b",
+    "\\boffice\\b[^.]{0,60}\\bopens?\\b|\\bopens?\\b[^.]{0,25}\\d"
+   ],
+   "n_stray": 2
+  },
+  {
+   "idx": 12,
+   "draft": 0,
+   "attr_hits": [
+    "\\bticket(?:s|es|ing|ed)?\\b",
+    "\\bvacation(?:s|es|ing|ed)?\\b|\\bleave(?:s|es|ing|ed)?\\b|\\bPTO(?:s|es|ing|ed)?\\b"
+   ],
+   "n_stray": 1
+  },
+  {
+   "idx": 12,
+   "draft": 1,
+   "attr_hits": [
+    "\\blogs?\\b",
+    "pull request|\\bPRs?\\b|merg"
+   ],
+   "n_stray": 1
+  },
+  {
+   "idx": 12,
+   "draft": 2,
+   "attr_hits": [
+    "\\bemployees?\\b[^.]{0,20}\\bparks?\\b|\\bparking\\b|\\bparks?\\b[^.]{0,8}\\b(?:in|on|at|under)\\b"
+   ],
+   "n_stray": 3
+  },
+  {
+   "idx": 12,
+   "draft": 3,
+   "attr_hits": [
+    "\\bticket(?:s|es|ing|ed)?\\b",
+    "\\bvacation(?:s|es|ing|ed)?\\b|\\bleave(?:s|es|ing|ed)?\\b|\\bPTO(?:s|es|ing|ed)?\\b",
+    "mobile app|phones?"
+   ],
+   "n_stray": 2
+  },
+  {
+   "idx": 24,
+   "draft": 0,
+   "attr_hits": [
+    "pull request|\\bPRs?\\b|merg"
+   ],
+   "n_stray": 3
+  },
+  {
+   "idx": 25,
+   "draft": 0,
+   "attr_hits": [
+    "\\bcoffee(?:s|es|ing|ed)?\\b|\\bdescal(?:s|es|ing|ed)?\\b",
+    "\\blogs?\\b",
+    "\\boffice\\b[^.]{0,60}\\bopens?\\b|\\bopens?\\b[^.]{0,25}\\d",
+    "pull request|\\bPRs?\\b|merg"
+   ],
+   "n_stray": 2
+  },
+  {
+   "idx": 25,
+   "draft": 1,
+   "attr_hits": [
+    "\\boffice\\b[^.]{0,60}\\bopens?\\b|\\bopens?\\b[^.]{0,25}\\d",
+    "pull request|\\bPRs?\\b|merg"
+   ],
+   "n_stray": 2
+  },
+  {
+   "idx": 25,
+   "draft": 2,
+   "attr_hits": [
+    "\\bcoffee(?:s|es|ing|ed)?\\b|\\bdescal(?:s|es|ing|ed)?\\b",
+    "\\boffice\\b[^.]{0,60}\\bopens?\\b|\\bopens?\\b[^.]{0,25}\\d",
+    "pull request|\\bPRs?\\b|merg"
+   ],
+   "n_stray": 2
+  },
+  {
+   "idx": 25,
+   "draft": 3,
+   "attr_hits": [
+    "\\bcoffee(?:s|es|ing|ed)?\\b|\\bdescal(?:s|es|ing|ed)?\\b",
+    "\\boffice\\b[^.]{0,60}\\bopens?\\b|\\bopens?\\b[^.]{0,25}\\d",
+    "pull request|\\bPRs?\\b|merg"
+   ],
+   "n_stray": 2
+  },
+  {
+   "idx": 26,
+   "draft": 0,
+   "attr_hits": [
+    "\\bcoffee(?:s|es|ing|ed)?\\b|\\bdescal(?:s|es|ing|ed)?\\b"
+   ],
+   "n_stray": 6
+  },
+  {
+   "idx": 27,
+   "draft": 0,
+   "attr_hits": [
+    "\\bpassword(?:s|es|ing|ed)?\\b",
+    "\\bticket(?:s|es|ing|ed)?\\b"
+   ],
+   "n_stray": 4
+  },
+  {
+   "idx": 27,
+   "draft": 1,
+   "attr_hits": [
+    "\\blogs?\\b",
+    "\\bpassword(?:s|es|ing|ed)?\\b",
+    "\\bticket(?:s|es|ing|ed)?\\b"
+   ],
+   "n_stray": 3
+  },
+  {
+   "idx": 27,
+   "draft": 2,
+   "attr_hits": [
+    "\\bpassword(?:s|es|ing|ed)?\\b",
+    "\\bticket(?:s|es|ing|ed)?\\b"
+   ],
+   "n_stray": 1
+  },
+  {
+   "idx": 27,
+   "draft": 3,
+   "attr_hits": [
+    "\\bpassword(?:s|es|ing|ed)?\\b",
+    "\\bticket(?:s|es|ing|ed)?\\b",
+    "\\bupload(?:s|ing)?\\b",
+    "\\bwiki(?:s|es|ing|ed)?\\b|\\bupload(?:s|es|ing|ed)?\\b"
+   ],
+   "n_stray": 4
+  }
+ ],
+ "n_ok": 24,
+ "n_failed": 6,
+ "scrub": {
+  "n_level_patterns": 387,
+  "n_attribute_regexes": 50
+ }
+}

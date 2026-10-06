@@ -1,0 +1,50 @@
+{
+ "per_level": {
+  "1": {
+   "var_ok": 429,
+   "var_strict": 426,
+   "var_n": 429,
+   "decoy_ok": 100,
+   "decoy_n": 100
+  },
+  "2": {
+   "var_ok": 441,
+   "var_strict": 429,
+   "var_n": 441,
+   "decoy_ok": 100,
+   "decoy_n": 100
+  },
+  "3": {
+   "var_ok": 432,
+   "var_strict": 429,
+   "var_n": 432,
+   "decoy_ok": 80,
+   "decoy_n": 80
+  },
+  "4": {
+   "var_ok": 378,
+   "var_strict": 375,
+   "var_n": 378,
+   "decoy_ok": 72,
+   "decoy_n": 72
+  },
+  "5": {
+   "var_ok": 426,
+   "var_strict": 420,
+   "var_n": 426,
+   "decoy_ok": 72,
+   "decoy_n": 72
+  }
+ },
+ "variant_recognition_spread": 0.0,
+ "strict_recognition_spread": 0.020266439909297107,
+ "strict_rates_by_level": {
+  "1": 0.993006993006993,
+  "2": 0.9727891156462585,
+  "3": 0.9930555555555556,
+  "4": 0.9920634920634921,
+  "5": 0.9859154929577465
+ },
+ "n_failures": 0,
+ "failures": []
+}

@@ -1,0 +1,280 @@
+{
+ "regexes": {
+  "F01": {
+   "attribute_regex": "\\bbilling(?:s|es|ing|ed)?\\b",
+   "original": "billing",
+   "changed": true
+  },
+  "F02": {
+   "attribute_regex": "\\boffice\\b[^.]{0,60}\\bopens?\\b|\\bopens?\\b[^.]{0,25}\\d",
+   "original": "\\bopen",
+   "changed": true
+  },
+  "F03": {
+   "attribute_regex": "\\bbackup(?:s|es|ing|ed)?\\b",
+   "original": "backup",
+   "changed": true
+  },
+  "F04": {
+   "attribute_regex": "\\bpassword(?:s|es|ing|ed)?\\b",
+   "original": "password",
+   "changed": true
+  },
+  "F05": {
+   "attribute_regex": "\\blaptop(?:s|es|ing|ed)?\\b",
+   "original": "laptop",
+   "changed": true
+  },
+  "F06": {
+   "attribute_regex": "\\bwiki(?:s|es|ing|ed)?\\b|\\bupload(?:s|es|ing|ed)?\\b",
+   "original": "wiki|upload",
+   "changed": true
+  },
+  "F07": {
+   "attribute_regex": "pull request|\\bPRs?\\b|merg",
+   "original": "pull request|\\bPRs?\\b|merg",
+   "changed": false
+  },
+  "F08": {
+   "attribute_regex": "\\bsprints?\\b",
+   "original": "sprint",
+   "changed": true
+  },
+  "F09": {
+   "attribute_regex": "stand-?up",
+   "original": "stand-?up",
+   "changed": false
+  },
+  "F10": {
+   "attribute_regex": "stand-?up|capped|limit",
+   "original": "stand-?up|capped|limit",
+   "changed": false
+  },
+  "F11": {
+   "attribute_regex": "\\bdeploy(?:s|es|ing|ed)?\\b",
+   "original": "deploy",
+   "changed": true
+  },
+  "F12": {
+   "attribute_regex": "on-?call",
+   "original": "on-?call",
+   "changed": false
+  },
+  "F13": {
+   "attribute_regex": "\\bemployees?\\b[^.]{0,20}\\bparks?\\b|\\bparking\\b|\\bparks?\\b[^.]{0,8}\\b(?:in|on|at|under)\\b",
+   "original": "park",
+   "changed": true
+  },
+  "F14": {
+   "attribute_regex": "\\bfloor(?:s|es|ing|ed)?\\b|\\blevel(?:s|es|ing|ed)?\\b|\\bHarbor(?:s|es|ing|ed)?\\b",
+   "original": "floor|level|Harbor",
+   "changed": true
+  },
+  "F15": {
+   "attribute_regex": "\\bcoffee(?:s|es|ing|ed)?\\b|\\bdescal(?:s|es|ing|ed)?\\b",
+   "original": "coffee|descal",
+   "changed": true
+  },
+  "F16": {
+   "attribute_regex": "\\bVPN(?:s|es|ing|ed)?\\b",
+   "original": "VPN",
+   "changed": true
+  },
+  "F17": {
+   "attribute_regex": "\\bexpense(?:s|es|ing|ed)?\\b",
+   "original": "expense",
+   "changed": true
+  },
+  "F18": {
+   "attribute_regex": "\\bmeal(?:s|es|ing|ed)?\\b|\\ballowance(?:s|es|ing|ed)?\\b|\\bper\\ diem(?:s|es|ing|ed)?\\b",
+   "original": "meal|allowance|per diem",
+   "changed": true
+  },
+  "F19": {
+   "attribute_regex": "\\bplatform\\ team(?:s|es|ing|ed)?\\b",
+   "original": "platform team",
+   "changed": true
+  },
+  "F20": {
+   "attribute_regex": "\\bCI\\b|pipeline",
+   "original": "\\bCI\\b|pipeline",
+   "changed": false
+  },
+  "F21": {
+   "attribute_regex": "\\blogs?\\b",
+   "original": "\\blogs?\\b",
+   "changed": false
+  },
+  "F22": {
+   "attribute_regex": "\\blibrary(?:s|es|ing|ed)?\\b",
+   "original": "library",
+   "changed": true
+  },
+  "F23": {
+   "attribute_regex": "\\bbus(?:es)?\\b|\\bbus line\\b",
+   "original": "bus",
+   "changed": true
+  },
+  "F24": {
+   "attribute_regex": "\\bfarmers'? ?market\\b|\\bmarkets?\\b",
+   "original": "market",
+   "changed": true
+  },
+  "F25": {
+   "attribute_regex": "\\bgym\\b",
+   "original": "\\bgym\\b",
+   "changed": false
+  },
+  "F26": {
+   "attribute_regex": "\\bpost\\ office(?:s|es|ing|ed)?\\b",
+   "original": "post office",
+   "changed": true
+  },
+  "F27": {
+   "attribute_regex": "\\bCedar (?:conference )?room\\b|\\bCedar\\b[^.]{0,30}\\b(?:seats?|room)\\b",
+   "original": "Cedar",
+   "changed": true
+  },
+  "F28": {
+   "attribute_regex": "\\bprinter(?:s|es|ing|ed)?\\b|\\btray(?:s|es|ing|ed)?\\b",
+   "original": "printer|tray",
+   "changed": true
+  },
+  "F29": {
+   "attribute_regex": "Wi-?Fi",
+   "original": "Wi-?Fi",
+   "changed": false
+  },
+  "F30": {
+   "attribute_regex": "\\bupload(?:s|ing)?\\b",
+   "original": "upload",
+   "changed": true
+  },
+  "F31": {
+   "attribute_regex": "\\bsearch\\ index(?:s|es|ing|ed)?\\b|\\bindex(?:s|es|ing|ed)?\\b",
+   "original": "search index|index",
+   "changed": true
+  },
+  "F32": {
+   "attribute_regex": "\\bbuild cache\\b|\\bcaches?\\b",
+   "original": "cache",
+   "changed": true
+  },
+  "F33": {
+   "attribute_regex": "\\blegacy(?:s|es|ing|ed)?\\b|\\breporting\\ job(?:s|es|ing|ed)?\\b",
+   "original": "legacy|reporting job",
+   "changed": true
+  },
+  "F34": {
+   "attribute_regex": "\\bstaging\\b.{0,40}\\breset\\b|\\breset(?:s|ting)?\\b.{0,40}\\bstaging\\b|\\bstaging reset\\b",
+   "original": "staging",
+   "changed": true
+  },
+  "F35": {
+   "attribute_regex": "\\brefund(?:s|es|ing|ed)?\\b",
+   "original": "refund",
+   "changed": true
+  },
+  "F36": {
+   "attribute_regex": "\\bfiscal(?:s|es|ing|ed)?\\b",
+   "original": "fiscal",
+   "changed": true
+  },
+  "F37": {
+   "attribute_regex": "\\bthermostat(?:s|es|ing|ed)?\\b|\\btemperature(?:s|es|ing|ed)?\\b",
+   "original": "thermostat|temperature",
+   "changed": true
+  },
+  "F38": {
+   "attribute_regex": "\\bvacation(?:s|es|ing|ed)?\\b|\\bleave(?:s|es|ing|ed)?\\b|\\bPTO(?:s|es|ing|ed)?\\b",
+   "original": "vacation|leave|PTO",
+   "changed": true
+  },
+  "F39": {
+   "attribute_regex": "mobile app|phones?",
+   "original": "mobile app|phones?",
+   "changed": false
+  },
+  "F40": {
+   "attribute_regex": "\\bticket(?:s|es|ing|ed)?\\b",
+   "original": "ticket",
+   "changed": true
+  },
+  "V01": {
+   "attribute_regex": "\\btilwren(?:s|es|ing|ed)?\\b",
+   "original": "tilwren",
+   "changed": true
+  },
+  "V02": {
+   "attribute_regex": "\\bclock\\ tower(?:s|es|ing|ed)?\\b",
+   "original": "clock tower",
+   "changed": true
+  },
+  "V03": {
+   "attribute_regex": "\\bVarga(?:s|es|ing|ed)?\\b|\\bfounder(?:s|es|ing|ed)?\\b",
+   "original": "Varga|founder",
+   "changed": true
+  },
+  "V04": {
+   "attribute_regex": "\\briver\\b(?!\\s+of\\b)",
+   "original": "river",
+   "changed": true
+  },
+  "V05": {
+   "attribute_regex": "\\bHarbor\\ Building(?:s|es|ing|ed)?\\b",
+   "original": "Harbor Building",
+   "changed": true
+  },
+  "V06": {
+   "attribute_regex": "\\bmoss(?:s|es|ing|ed)?\\b",
+   "original": "moss",
+   "changed": true
+  },
+  "V07": {
+   "attribute_regex": "\\bPriya(?:s|es|ing|ed)?\\b",
+   "original": "Priya",
+   "changed": true
+  },
+  "V08": {
+   "attribute_regex": "\\bfestival(?:s|es|ing|ed)?\\b",
+   "original": "festival",
+   "changed": true
+  },
+  "V09": {
+   "attribute_regex": "\\b(?:main|town) square\\b|\\bsquare\\b(?!\\s+(?:away|the|up|off))",
+   "original": "square",
+   "changed": true
+  },
+  "V10": {
+   "attribute_regex": "\\bserver\\ room(?:s|es|ing|ed)?\\b",
+   "original": "server room",
+   "changed": true
+  }
+ },
+ "problems": [
+  {
+   "severity": "SOFT",
+   "family_id": "V04",
+   "regex": "\\briver\\b(?!\\s+of\\b)",
+   "false_positives": [
+    "Ideas flowed like a river all afternoon."
+   ]
+  }
+ ],
+ "negative_prose": [
+  "Let's talk about the business plan for the next quarter.",
+  "I parked the idea for now; part of it still works.",
+  "Open the file and check the first column.",
+  "Let's open with the summary slide and keep the rest brief.",
+  "The marketing team will square the numbers with finance before Friday.",
+  "We should square away the remaining action items.",
+  "She used to work at a bank of servers in the old datacentre.",
+  "He sprinted through the backlog in one afternoon.",
+  "The cedar desk in the corner is hers.",
+  "Ideas flowed like a river all afternoon.",
+  "I'll back you up on that point in the meeting.",
+  "That's a fast turnaround, thanks.",
+  "The team lead will follow up on Monday.",
+  "Business as usual on the support rota this week."
+ ]
+}

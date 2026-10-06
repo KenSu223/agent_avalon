@@ -5,3 +5,8 @@ Hard cap $140 (PI absolute limit $150). Budget plan: pilot <= $25, full experime
 | Date | Purpose | Model | Calls | Est. cost | Actual cum. spend | Note |
 |---|---|---|---|---|---|---|
 | 2026-10-06 | infra smoke test (pre-existing) | several | 6 | - | $0.0001 | scaffold check |
+| 2026-10-06 | B0 distractor generation + scrub (30 sessions x 4 drafts) | qwen3-235b | 120 | $0.022 | $0.031 | 24/30 passed the attribute scrub; frozen |
+| 2026-10-06 | B1 priors P1 pairwise Bradley-Terry (50 families, 4 worlds x 2 orders x 2 samples) | qwen3-235b | 6112 | $0.191 | - | primary dose, measured on the compactor itself |
+| 2026-10-06 | B1 priors P2 generative elicitation (T=1 x 30) | qwen3-235b | 1500 | $0.058 | - | second compactor-side estimate |
+| 2026-10-06 | B1 priors P3 local token logprobs | local:qwen3-8b | 192 | $0 | - | robustness + O6 write-time pinning signal |
+| 2026-10-06 | M2 dev pilot: O1 budget x temperature sweep (B in {150,300,600} x T in {0,1}), 5 dev chains x 2 seeds x 21 steps | qwen3-235b | 1260 | $0.74 | - | operating-point selection; O7 and the O3 slot sweep are free |
