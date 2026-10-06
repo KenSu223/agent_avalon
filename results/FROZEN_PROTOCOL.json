@@ -1,0 +1,100 @@
+{
+ "frozen_at": "2026-10-06T09:51:06",
+ "git_commit": "268e406bdd1481fd053096c695e31c221378724b",
+ "compactor": "qwen.qwen3-235b-a22b-2507-v1:0",
+ "second_family": "meta.llama3-3-70b-instruct-v1:0",
+ "small_model": "local:qwen3-8b",
+ "judges": [
+  "openai.gpt-oss-120b-1:0",
+  "google.gemma-3-27b-it"
+ ],
+ "B": 150,
+ "T": 1.0,
+ "K": 20,
+ "checkpoints": [
+  0,
+  1,
+  2,
+  3,
+  5,
+  7,
+  10,
+  15,
+  20
+ ],
+ "primary_endpoint_k": 10,
+ "n_seeds": 8,
+ "operators": [
+  "O1",
+  "O2",
+  "O3",
+  "O4",
+  "O5",
+  "O6",
+  "O6-random",
+  "O6-low",
+  "O7"
+ ],
+ "slots": 60,
+ "O3_label": "prior-blind deletion control (capacity claim dropped; see A3)",
+ "O3_within_tolerance": false,
+ "W1_stored_words": 129.2,
+ "adequacy": {
+  "retention_O1": 0.6666666666666666,
+  "retention_O7": 1.0,
+  "gap_pp": 33.333333333333336,
+  "in_range": true,
+  "below_ceiling_by_10pp": true,
+  "adequate": true
+ },
+ "eshift": {
+  "n_eligible_families": 26,
+  "eligible_fraction_r": 0.7428571428571429,
+  "min_shift_logodds": 0.5,
+  "n_seeds": 8,
+  "operative_sesoi_pp": 15.9296875,
+  "selection_half": "A (worlds 0-1)",
+  "estimation_half": "B (worlds 2-3)",
+  "endpoint": "survival fraction over the nine checkpoints (amendment A4)",
+  "secondary_endpoint": "binary retention at k=10 (originally preregistered)",
+  "n_eligible_confirmatory": 18,
+  "power_at_8pp": 0.32
+ },
+ "analysis": {
+  "primary_estimator": "family-fixed-effects linear probability model of RETAINED at k=10 on within-family-centred Bradley-Terry surprise x operator, with token-length and digit-format nuisance covariates",
+  "main_chain_inference": "two-way crossed cluster bootstrap over families and chain x seed blocks, blocks carrying all paired operators",
+  "eshift_inference": "family bootstrap with arm-paired seed blocks resampled within family (trajectories are nested within families there)",
+  "gatekeeping_order": [
+   "C1 E-SHIFT arm effect",
+   "C2 natural-prior dose response",
+   "C3 O1xO3 interaction + O3 equivalence"
+  ],
+  "C1_decision_rule": [
+   "POSITIVE_SUPPORT",
+   "POSITIVE_BELOW_SESOI",
+   "BOUNDARY_EVIDENCE",
+   "INCONCLUSIVE"
+  ],
+  "O3_equivalence_margin_pp": 5.0,
+  "C1_primary_population": "eligible-only (Half-A screen); ITT reported as sensitivity; C1 declared inconclusive if they disagree in direction"
+ },
+ "manifest": {
+  "n_conf_chains": 11,
+  "chain_sizes": [
+   12,
+   12,
+   12,
+   12,
+   12,
+   12,
+   12,
+   12,
+   12,
+   12,
+   12
+  ],
+  "max_mean_surprise_gap": 0.5890139726280907,
+  "balance_basis": "measured-BT"
+ },
+ "n_seeds_main_chains": 3
+}

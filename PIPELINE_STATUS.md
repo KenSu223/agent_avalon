@@ -11,7 +11,10 @@ Settings: effort balanced, assurance conference-ready, AUTO_PROCEED true, human 
 | /experiment-plan | **done** | `refine-logs/EXPERIMENT_PLAN.md`, 11 blocks, 6 milestones, ~$40 projected |
 | /experiment-bridge M0 instrument | **done** | regexes tightened, distractors scrubbed, coder unit + metamorphic tests pass |
 | /experiment-bridge M1 priors | **done** | compactor-side Bradley-Terry, split-half rho 0.948 |
-| /experiment-bridge M2 dev pilot | in progress | 150 trajectories run, coding with 2 blind judges |
+| /experiment-bridge M2 dev pilot | **done** | operating point B=150 T=1.0 frozen; O3 calibrated to 60 slots; coding kappa 0.854 |
+| claim-selection (was go/no-go) | **done** | adequacy met at B=150 only; see D10 |
+| /experiment-bridge M3 E-SHIFT | running | 18 families x 2 arms x 8 seeds |
+| /experiment-bridge M4 main chains | running | 11 chains x 3 seeds x 9 operators |
 | go/no-go | pending | |
 | /experiment-bridge (full) | pending | |
 | /auto-review-loop | pending | |
@@ -68,6 +71,28 @@ drafts per family raised this to 26/35. Draft selection happens on elicitation H
 reported shift comes from the independent Half B, so selecting the strongest draft cannot inflate
 the result.
 
+**D10 (the strong compactor barely compresses at normal budgets).** The dev sweep shows
+`qwen3-235b` retains 97.5-100% of seeded items at k=10 under B=300 and B=600 word budgets. The
+prespecified empirical adequacy condition (O1 retention at least 10 pp below the O7 access ceiling
+and inside [0.10, 0.90]) is met **only at B=150**, which was therefore selected. This is itself a
+reportable result and directly answers the *Faithful, Not Corrective* counter-evidence: the effect
+has a compression regime, and we state what it is rather than quietly tuning until something appears.
+
+**D11 (loss is deletion, not corruption).** Of 16,200 coded dev cases, 10,981 are RETAINED, 4,892
+DROPPED and only **7** CHANGED. For this compactor at this regime the *selection* channel does
+essentially all the work and the *rewriting* channel almost none. That makes the round-1 reframe from
+"memory converges to the prior" to "prior-shaped selective survival" not just a correctness fix but
+the empirically right description, and it means the C5 replacement-direction claim has almost no
+events to test -- which will be reported as a scoped null rather than hidden.
+
+**D12 (amendment A4: endpoint changed on dev data).** Binary retention at k=10 discards eight ninths
+of each E-SHIFT trajectory; its dev minimum detectable effect is 37.8 pp. The survival fraction over
+all nine checkpoints gives 15.9 pp at identical cost and is the quantity the claim is about. The
+endpoint was changed on dev data **before any confirmatory E-SHIFT trajectory was run**, binary@k=10
+is kept as a secondary endpoint, and the operative SESOI is frozen at X=15.9 pp. Power at the
+original 8 pp target is 0.32; reaching 0.80 would need roughly 60 eligible families, which is a
+follow-up rather than something to search for after seeing the data.
+
 **D7 (rigour).** Fact families split dev F01-F12 / confirmatory F13-F40 (preferences P01-P06 / P07-P20).
 All operating-point choices are made on dev families only and frozen into `FROZEN_PROTOCOL.md` with a commit
 hash before any confirmatory family is touched. "go/no-go" renamed **claim-selection criteria**, since the
@@ -96,4 +121,4 @@ $2.49 of $140 (see COST_LOG.md). Projected total ~$40.
   gradient and the operator interaction.
 
 ## Next step
-Finish dev coding -> select operating point (A3) -> dev E-SHIFT -> power table (A1) -> freeze protocol -> confirmatory runs.
+Confirmatory runs -> coding -> analysis -> figures -> /auto-review-loop -> /paper-writing.

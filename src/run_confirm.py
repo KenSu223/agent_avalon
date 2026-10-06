@@ -29,7 +29,7 @@ def jobs_for(man, fams, dis, surp_local, ops, seeds, B, T, slots):
 if __name__ == "__main__":
     cfgf = json.loads((RES / "FROZEN_PROTOCOL.json").read_text())
     ops = cfgf.get("operators", ["O1", "O2", "O3", "O4", "O5", "O6", "O6-random", "O6-low", "O7"])
-    seeds = list(range(cfgf["n_seeds"]))
+    seeds = list(range(cfgf.get("n_seeds_main_chains", 3)))
     fams = load_families()
     man = json.loads((RES / "manifest.json").read_text())
     dis = load_distractors()
