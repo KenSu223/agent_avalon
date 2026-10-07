@@ -28,12 +28,18 @@
 | 4 | 查新：3 个并行检索方向 | "先验抬高分数"的原则已有人提出（Ground Truth First、MemGym、100-LongBench、PersonaMem-v2 等）。仍然新的是：(a) 审计旧基准；(b) 给现有系统重新打分；(c) 同一槽位的 C/I 成对设计，以及"删除不看先验、读取由先验补全"的因果链。最大撞车风险：PersonaMem-v2。必须对照：Nemori | `framework_study/FINDINGS_AND_DIRECTION.md` §7 |
 | 5 | 现有基准闭卷审计（第一轮，答题模型 Qwen3-235B） | 能被先验答对的比例因基准而异，从 7% 到 47%：MemoryAgentBench 检索部分 35–47%；LoCoMo 第 1–4 类 16%，算上第 5 类后什么都不存也能白拿 22.8 分；LongMemEval 16%；PrefEval 7% | `benchmark_audit/`、`FINDINGS_AND_DIRECTION.md` §8 |
 
+| 6 | 第二个答题模型（Llama-3.3-70B）复核闭卷审计 | 各基准的总体比例与 Qwen 一致；两个模型中至少一个能答对的比例（可被先验答对的上界）：LongMemEval 25%，LoCoMo 第 1–4 类 24%，MemoryAgentBench-AR 49–63% | `FINDINGS_AND_DIRECTION.md` §8.1 |
+| 7 | Nemori（考虑先验的写入策略）对照 | C 和 I 都保留 100%：它实际上是只追加、全部存下，Predict-Calibrate 并没有把常识条目过滤掉 | §9 |
+| 8 | 弱压缩模型（本地 Qwen3-8B） | 删得多得多，仍然几乎不改写；在唯一没有删光的系统（中性重写）里出现了按先验方向的删除：+9.1 个百分点，CI 不含 0 | §10 |
+| 9 | 用 12 个系统在现有基准上重新打分 | MemoryAgentBench-AR：9/11 个系统在抗先验题上 ≤4%，排名 Spearman 0.664。LoCoMo 第 1–4 类：排名稳定（0.979）；第 5 类反过来奖励遗忘（Aider 0.86，Raw RAG 0.55） | §11 |
+
 ## 进行中与下一步
-1. **进行中**：用 Llama-3.3-70B 当答题模型重做闭卷审计（检查结论是否依赖模型）。
-2. 在 MemoryAgentBench 检索部分和 LoCoMo 上，用真实记忆系统重新打分：原始分数、扣除猜测后的分数、抗先验子集的分数，看排名是否变化。
-3. 把 Nemori（考虑先验的写入策略）纳入框架实验做对照。
-4. 弱压缩模型实验：用本地 Qwen3-8B，测记忆文本本身会不会漂移。
-5. 多智能体共享记忆。
+1. 下一阶段：**多智能体共享记忆**。
+2. 待补：
+   - 为弱模型的"按先验方向删除"补做不会触底的实验（加大容量或缩短链长）；
+   - 对"LoCoMo 第 5 类奖励遗忘"做查新；
+   - 人工校验；
+   - LangMem 在长文档上的失败：可以调高 recursion_limit 后重跑，作为偏离默认设置的补充实验。
 
 ## 目录
 | 路径 | 内容 |

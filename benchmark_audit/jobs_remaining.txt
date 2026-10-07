@@ -1,0 +1,11 @@
+fw openhands locomo
+fw aider locomo
+fw anthropic_api locomo
+fw langchain_summary locomo
+v1 mem0_v1 locomo
+fw openhands mab_ruler
+fw aider mab_ruler
+fw anthropic_api mab_ruler
+fw gemini_cli mab_ruler
+fw langchain_summary mab_ruler
+v1 mem0_v1 mab_ruler

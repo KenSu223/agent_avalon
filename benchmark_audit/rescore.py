@@ -54,12 +54,12 @@ def locomo_episodes():
     return eps
 
 
-def mab_ruler_episodes(words_per_chunk=1000):
+def mab_ruler_episodes(words_per_chunk=1000, only=None):
     ar = pd.read_parquet(D / "mab_Accurate_Retrieval.parquet")
     eps = []
     for _, r in ar.iterrows():
         src = r["metadata"]["qa_pair_ids"][0].rsplit("_no", 1)[0]
-        if src not in ("ruler_qa1_197K", "ruler_qa2_421K"):
+        if src not in ("ruler_qa1_197K", "ruler_qa2_421K") or (only and only not in src):
             continue
         w = r["context"].split()
         sessions = []
@@ -104,9 +104,10 @@ def judge(rows, bench):
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("system"); ap.add_argument("bench"); ap.add_argument("--workers", type=int, default=5)
+    ap.add_argument("--mab-only", default=None, help="e.g. qa1: restrict MemoryAgentBench to one RULER document")
     ap.add_argument("--limit", type=int, default=0, help="smoke test: episodes and questions per episode")
     a = ap.parse_args()
-    eps = locomo_episodes() if a.bench == "locomo" else mab_ruler_episodes()
+    eps = locomo_episodes() if a.bench == "locomo" else mab_ruler_episodes(only=a.mab_only)
     if a.limit:
         eps = [dict(e, sessions=e["sessions"][:4], questions=e["questions"][:a.limit]) for e in eps[:1]]
     out = OUT / f"rescore_{a.bench}_{a.system}{'_smoke' if a.limit else ''}.jsonl"

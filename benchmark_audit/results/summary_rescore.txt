@@ -1,0 +1,52 @@
+
+=== locomo ===
+items: 1540  prior-resistant: 1177  prior-answerable: 363 (24%)
+system                         all  resistant  answerable  rank all  rank resist
+raw_rag                      0.586      0.525       0.782         1            1
+mem0                         0.430      0.371       0.620         2            2
+langmem                      0.369      0.310       0.559         3            3
+llamaindex_facts_default     0.282      0.234       0.435         4            4
+mem0_v1                      0.216      0.178       0.342         5            5
+gemini_cli                   0.181      0.140       0.311         6            6
+neutral_roll                 0.150      0.122       0.240         7            7
+openhands                    0.095      0.065       0.193         8            9
+langchain_summary            0.094      0.063       0.196         9           10
+aider                        0.083      0.066       0.138        10            8
+anthropic_api                0.075      0.047       0.165        11           11
+codex                        0.071      0.042       0.165        12           12
+Spearman(rank all, rank resistant) = 0.979
+spread (max-min): all 0.515  resistant 0.483
+
+=== mab_ruler ===
+  langmem: no rows (failed run) -- excluded
+items: 100  prior-resistant: 51  prior-answerable: 49 (49%)
+system                         all  resistant  answerable  rank all  rank resist
+mem0                         0.800      0.686       0.918         1            1
+raw_rag                      0.490      0.373       0.612         2            2
+mem0_v1                      0.350      0.039       0.673         3            3
+neutral_roll                 0.250      0.039       0.469         4            4
+anthropic_api                0.240      0.000       0.490         5            7
+langchain_summary            0.210      0.000       0.429         6           10
+gemini_cli                   0.180      0.000       0.367         7            9
+openhands                    0.180      0.000       0.367         8           11
+llamaindex_facts_default     0.170      0.020       0.327         9            5
+aider                        0.150      0.000       0.306        10            6
+codex                        0.150      0.000       0.306        11            8
+Spearman(rank all, rank resistant) = 0.664
+spread (max-min): all 0.650  resistant 0.686
+
+LoCoMo: categories 1-4 vs all 5 categories (adversarial included) vs prior-resistant (cat 1-4)
+  raw_rag                    all5 0.579 (rank  1)   cat1-4 0.586 (rank  1)   resistant 0.525
+  mem0                       all5 0.467 (rank  2)   cat1-4 0.430 (rank  2)   resistant 0.371
+  langmem                    all5 0.433 (rank  3)   cat1-4 0.369 (rank  3)   resistant 0.310
+  llamaindex_facts_default   all5 0.381 (rank  4)   cat1-4 0.282 (rank  4)   resistant 0.234
+  gemini_cli                 all5 0.308 (rank  5)   cat1-4 0.181 (rank  6)   resistant 0.140
+  mem0_v1                    all5 0.288 (rank  6)   cat1-4 0.216 (rank  5)   resistant 0.178
+  neutral_roll               all5 0.288 (rank  7)   cat1-4 0.150 (rank  7)   resistant 0.122
+  aider                      all5 0.257 (rank  8)   cat1-4 0.083 (rank 10)   resistant 0.066
+  langchain_summary          all5 0.257 (rank  9)   cat1-4 0.094 (rank  9)   resistant 0.063
+  openhands                  all5 0.249 (rank 10)   cat1-4 0.095 (rank  8)   resistant 0.065
+  anthropic_api              all5 0.246 (rank 11)   cat1-4 0.075 (rank 11)   resistant 0.047
+  codex                      all5 0.224 (rank 12)   cat1-4 0.071 (rank 12)   resistant 0.042
+  Spearman(rank all5, rank resistant) = 0.986
+  spread: all5 0.354  resistant 0.483

@@ -43,6 +43,11 @@ def main():
             rows = [json.loads(l) for l in open(f)]
             if bench == "locomo":
                 rows = [r for r in rows if r["category"] != 5]
+            else:
+                rows = [r for r in rows if r.get("sub") == "ruler_qa1"]  # every system has QA1; QA2 only for some
+            if not rows:
+                print(f"  {sysname}: no rows (failed run) -- excluded")
+                continue
             allr = [r for r in rows]
             resist = [r for r in rows if not pa[r["id"]]]
             answ = [r for r in rows if pa[r["id"]]]
