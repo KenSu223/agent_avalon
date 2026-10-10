@@ -2,6 +2,14 @@
 
 2026-10-06. Everything here is reproducible from `framework_study/` (stimuli, code, raw results).
 
+> **Snapshot note (updated 2026-10-10).** This file is the 11-system snapshot from 2026-10-06 and is kept as is. Later results are recorded in [FINDINGS_AND_DIRECTION.md](FINDINGS_AND_DIRECTION.md):
+> - **Nemori**, a prior-aware write policy, is the 12th system (§9). It retains 100% of both C and I items.
+> - **Weak-compactor replication** with Qwen3-8B (§10) shows far more deletion and still ≤1.2% rewriting. In the one system that does not saturate (the neutral rewrite), it shows prior-directed deletion of +9.1 pp [+0.7, +18.4].
+> - **Closed-book audit** of LongMemEval, LoCoMo, MemoryAgentBench and PrefEval (§8).
+> - **Re-scoring of 12 systems** on LoCoMo and MemoryAgentBench (§11).
+>
+> The summary tables in `results/` (`summary_*.txt`, `decompose.txt`, `inflation.txt`) were regenerated on 2026-10-10 and now include Nemori and the `@8b` runs. Cumulative Bedrock spend on 2026-10-10 was $79.47.
+
 **Bedrock spend for this phase:** about $17.7, all through the budget proxy. Cumulative spend is $38.47 against a hard cap of $140.
 
 ## 1. Data: counter-schema minimal pairs (Bartlett-style)
@@ -126,7 +134,7 @@ Bootstrap CIs are over users. `results/summary_*.txt` holds every checkpoint and
 Short version: memory forgets symmetrically, and the prior forgets selectively.
 
 ## 4. Caveats
-- **One compactor model.** Everything uses Qwen3-235B; V3 shows that a strong model rarely rewrites. Weaker or smaller compactors may flip more, and this has not been tested yet.
+- **One compactor model (in this snapshot).** Everything here uses Qwen3-235B. A weak-compactor replication with Qwen3-8B was run later (FINDINGS §10): rewriting is still ≤1.2%, but prior-directed deletion appears where retention does not saturate.
 - **Forced compaction.** Compaction runs after every session, which simulates long horizons. Real products trigger on token thresholds.
 - **Non-default LlamaIndex setting.** `max_facts` is 12 rather than 50.
 - **Product replicas are partial.** They reproduce each product's prompt and message framing. They do not reproduce the rest of the harness: tool outputs, re-injected files, or Aider's verbatim tail.
