@@ -120,7 +120,8 @@ if __name__ == "__main__":
     eps = locomo_episodes() if a.bench == "locomo" else mab_ruler_episodes(only=a.mab_only)
     if a.limit:
         eps = [dict(e, sessions=e["sessions"][:4], questions=e["questions"][:a.limit]) for e in eps[:1]]
-    out = OUT / f"rescore_{a.bench}_{a.system}{'_smoke' if a.limit else ''}.jsonl"
+    sfx = f"_{a.mab_only}" if (a.save_ctx and a.mab_only and a.mab_only != "qa1") else ""   # QA2 replication (METHOD §10.5)
+    out = OUT / f"rescore_{a.bench}_{a.system}{sfx}{'_smoke' if a.limit else ''}.jsonl"
     rows, log = [], []
     with ThreadPoolExecutor(a.workers) as ex:
         futs = {ex.submit(run_episode, a.system, ep, a.save_ctx): ep["id"] for ep in eps}

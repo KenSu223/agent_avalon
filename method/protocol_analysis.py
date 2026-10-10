@@ -30,6 +30,8 @@ def boot_p(samples):
 def load_protocols(bench):
     rows = collections.defaultdict(dict)
     for f in sorted(glob.glob(str(RES / f"protocols_{bench}_*.jsonl"))):
+        if bench == "mab_ruler" and Path(f).name.startswith("protocols_mab_ruler_qa2_"):
+            continue
         for l in open(f):
             r = json.loads(l)
             rows[r["system"]][r["id"]] = r
@@ -124,7 +126,7 @@ def analyse(bench, label, rows, strata, abst_map, oracle):
         out[f"H3_{p}"] = dict(n_invariant=int(sum(inv)), S=S, not_invariant=[systems[s] for s in range(S) if not inv[s]])
 
     # H4
-    thr = 0.05 if bench == "mab_ruler" else 0.10
+    thr = 0.05 if bench.startswith("mab_ruler") else 0.10
     poor = [s for s in range(S) if cpr["A"][s] <= thr]
     A_ = ~R
     accA_ans = lambda p, w=None: np.stack([pcme.acc(Y[p][s][A_], None if w is None else w[:, A_]) for s in poor])
@@ -202,7 +204,8 @@ def main():
         r = json.loads(l)
         oracle[r["id"]] = float(bool(r["correct"]))
     res = {}
-    for bench, label in (("locomo", "LoCoMo categories 1-4"), ("mab_ruler", "MemoryAgentBench RULER-QA1")):
+    for bench, label in (("locomo", "LoCoMo categories 1-4"), ("mab_ruler", "MemoryAgentBench RULER-QA1"),
+                         ("mab_ruler_qa2", "MemoryAgentBench RULER-QA2 (independent replication, METHOD §10.5; not in the Holm family)")):
         rows = load_protocols(bench)
         if not rows:
             say(f"(no protocol files for {bench})"); continue

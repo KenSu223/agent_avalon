@@ -24,11 +24,12 @@ def answerable(r, bench):
 
 
 def main():
-    bench, systems = sys.argv[1], sys.argv[2:]
+    bench, systems = sys.argv[1], sys.argv[2:]      # bench: locomo | mab_ruler (QA1) | mab_ruler_qa2 (replication, METHOD §10.5)
     for system in systems:
-        rows = [json.loads(l) for l in open(V2 / f"rescore_{bench}_{system}.jsonl")]
-        if bench == "mab_ruler":
-            rows = [r for r in rows if r.get("sub") == "ruler_qa1"]
+        src = V2 / (f"rescore_mab_ruler_{system}_qa2.jsonl" if bench == "mab_ruler_qa2" else f"rescore_{bench}_{system}.jsonl")
+        rows = [json.loads(l) for l in open(src)]
+        if bench.startswith("mab_ruler"):
+            rows = [r for r in rows if r.get("sub") == ("ruler_qa2" if bench == "mab_ruler_qa2" else "ruler_qa1")]
         out = []
         for r in rows:
             out.append(dict(id=r["id"], system=system, bench=bench, cluster=r["episode"], category=r.get("category"), sub=r.get("sub"),
