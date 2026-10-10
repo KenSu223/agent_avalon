@@ -7,7 +7,9 @@ Inputs
   benchmark_audit/results/rescore_*.jsonl                                                   existing systems (pi_A)
   framework_study/results/probed_*.jsonl + validation_qwen3-235b-a22b-2507.json             framework study
 Output: method/results/property_tests.txt / .json
-usage: python property_tests.py [--only framework]
+Variants (METHOD v1.1): v10 = as pre-registered; a = g from the evaluation prompt with empty context (E_T1 draws),
+strata unchanged; b = compliance follow-up applied to all closed-book draws and reference systems.
+usage: python property_tests.py [--only framework] [--variant v10|a|b]
 """
 import argparse, collections, glob, json, re, sys
 from pathlib import Path
@@ -25,6 +27,7 @@ ABS = re.compile(r"not (mentioned|provided|specified|available|included|contain|
                  r"don'?t (know|have)|does not (contain|mention|include|specify|provide)|cannot (determine|answer|find)|unknown|unable to|"
                  r"isn'?t (mentioned|specified)|not in (the|my) memory|NOT_IN_MEMORY", re.I)
 OUT_LINES, OUT_JSON = [], {}
+REFSYS_SUFFIX = "_F"
 
 
 def say(*a):
@@ -67,7 +70,7 @@ def prior_variants(draws):
 
 
 def refsys(name):
-    p = RES / f"refsys_{name}_F.jsonl"
+    p = RES / f"refsys_{name}{REFSYS_SUFFIX}.jsonl"
     return [json.loads(l) for l in open(p)] if p.exists() else []
 
 
@@ -128,7 +131,13 @@ def p2(prior):
             f"dynamic range PCS_oracle-PCS_empty {rng_pt:.3f} (95% lower {rng_lb:.3f}) -> {'pass' if rng_lb >= 0.5 else 'FAIL'} | "
             f"difficulty gap acc(A)-acc(R) {gap_pt:+.3f} [{q(acc_A-acc_R,0.025):+.3f},{q(acc_A-acc_R,0.975):+.3f}] -> "
             f"{'normalise (gap > 0.10)' if gap_pt > 0.10 else 'no normalisation needed'} | PI_oracle {o['pi']['point']:.3f}")
-        OUT_JSON.setdefault("P2", {})[bench] = dict(n=res["n_items"], oracle_acc=o["acc"]["point"], cpr=o["cpr"]["point"], cpr_lb95=cpr_lb,
+        gA = panel.g[~R].mean()
+        pA = (Y[~R].mean() - gA) / (1 - gA)
+        say(f"    exploratory: under the two-state model with fallback to guessing, implied reader fidelity on the answerable "
+            f"stratum p_A = (acc_A - g_A)/(1 - g_A) = {pA:.3f} vs resistant p_R = {Y[R].mean():.3f}  (g_A = {gA:.3f}); "
+            f"gap explained by prior rescue = {(1 - pA) * gA:.3f} of the {gap_pt:+.3f}")
+        OUT_JSON.setdefault("P2", {})[bench] = dict(pA_implied=float(pA), gA=float(gA),
+                                                     n=res["n_items"], oracle_acc=o["acc"]["point"], cpr=o["cpr"]["point"], cpr_lb95=cpr_lb,
                                                      range=rng_pt, range_lb95=rng_lb, gap=gap_pt, gap_ci=(q(acc_A - acc_R, .025), q(acc_A - acc_R, .975)),
                                                      pi_oracle=o["pi"]["point"])
 
@@ -358,10 +367,45 @@ def p6(variants, meta):
             OUT_JSON.setdefault("P6_tau", {}).setdefault(bench, {})[k] = dict(tau=tau, ci=(q(taus, .025), q(taus, .975)), n_res=nres)
 
 
+def prior_variant_a(prim):
+    """Remedy (a): g_i = mean of the three E_T1 draws (pi_F evaluation prompt, empty context); strata = D5."""
+    ev = pcme.load_prior([RES / f"prior_draws_{QW}_evalprompt.jsonl"])
+    pa = pcme.Prior(ev, QW)
+    p = pcme.Prior.__new__(pcme.Prior)
+    p.reader = QW
+    ids = [i for i in prim.g if i in pa.g]
+    p.draws = {i: pa.draws[i] for i in ids}
+    p.g = {i: pa.g[i] for i in ids}
+    p.resistant = {i: prim.resistant[i] for i in ids}
+    return p
+
+
+def prior_variant_b():
+    """Remedy (b): the six Qwen draws after the compliance follow-up + Llama F0 T=0; D5-style strata."""
+    d = pcme.load_prior([RES / f"prior_draws_{QW}_reask.jsonl"]) + pcme.load_prior([BA / f"closed_book_{LL}.jsonl"])
+    return pcme.Prior(d, QW)
+
+
 def main():
+    global REFSYS_SUFFIX
     ap = argparse.ArgumentParser()
     ap.add_argument("--only", default=None)
+    ap.add_argument("--variant", default="v10", choices=["v10", "a", "b"])
     a = ap.parse_args()
+    if a.variant != "v10":
+        draws, meta = all_draws()
+        prim = prior_variants(draws)["D5_union_all"]
+        if a.variant == "a":
+            prim = prior_variant_a(prim)
+            say("variant a: g from the pi_F evaluation prompt with empty context (3 x T=1 draws); strata = D5")
+        else:
+            prim = prior_variant_b(); REFSYS_SUFFIX = "_Freask"
+            say("variant b: compliance follow-up on all closed-book draws and reference systems; g and strata recomputed")
+        p1(prim, meta); p2(prim); p3_bench(prim)
+        p5(prim)
+        (RES / f"property_tests_{a.variant}.txt").write_text("\n".join(OUT_LINES) + "\n")
+        (RES / f"property_tests_{a.variant}.json").write_text(json.dumps(OUT_JSON, indent=1, default=lambda o: o.tolist() if hasattr(o, "tolist") else str(o)))
+        return
     if a.only != "framework":
         draws, meta = all_draws()
         have_new = (RES / f"prior_draws_{QW}.jsonl").exists()

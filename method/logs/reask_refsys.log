@@ -1,0 +1,183 @@
+refsys empty: 916/2910 abstained (0.315); re-asking
+[refsys empty] 45/916 in 1s
+[refsys empty] 90/916 in 1s
+[refsys empty] 135/916 in 2s
+[refsys empty] 180/916 in 3s
+[refsys empty] 225/916 in 3s
+[refsys empty] 270/916 in 4s
+[refsys empty] 315/916 in 4s
+[refsys empty] 360/916 in 5s
+[refsys empty] 405/916 in 5s
+[refsys empty] 450/916 in 6s
+[refsys empty] 495/916 in 6s
+[refsys empty] 540/916 in 7s
+[refsys empty] 585/916 in 7s
+[refsys empty] 630/916 in 8s
+[refsys empty] 675/916 in 8s
+[refsys empty] 720/916 in 9s
+[refsys empty] 765/916 in 9s
+[refsys empty] 810/916 in 10s
+[refsys empty] 855/916 in 10s
+[refsys empty] 900/916 in 11s
+[judge] 44/898 in 1s
+[judge] 88/898 in 2s
+[judge] 132/898 in 3s
+[judge] 176/898 in 4s
+[judge] 220/898 in 5s
+[judge] 264/898 in 6s
+[judge] 308/898 in 7s
+[judge] 352/898 in 7s
+[judge] 396/898 in 8s
+[judge] 440/898 in 9s
+[judge] 484/898 in 10s
+[judge] 528/898 in 11s
+[judge] 572/898 in 12s
+[judge] 616/898 in 13s
+[judge] 660/898 in 14s
+[judge] 704/898 in 14s
+[judge] 748/898 in 15s
+[judge] 792/898 in 16s
+[judge] 836/898 in 17s
+[judge] 880/898 in 18s
+refsys oracle: 74/1735 abstained (0.043); re-asking
+[refsys oracle] 3/74 in 0s
+[refsys oracle] 6/74 in 0s
+[refsys oracle] 9/74 in 0s
+[refsys oracle] 12/74 in 0s
+[refsys oracle] 15/74 in 0s
+[refsys oracle] 18/74 in 0s
+[refsys oracle] 21/74 in 0s
+[refsys oracle] 24/74 in 0s
+[refsys oracle] 27/74 in 0s
+[refsys oracle] 30/74 in 1s
+[refsys oracle] 33/74 in 1s
+[refsys oracle] 36/74 in 1s
+[refsys oracle] 39/74 in 1s
+[refsys oracle] 42/74 in 1s
+[refsys oracle] 45/74 in 1s
+[refsys oracle] 48/74 in 1s
+[refsys oracle] 51/74 in 1s
+[refsys oracle] 54/74 in 1s
+[refsys oracle] 57/74 in 1s
+[refsys oracle] 60/74 in 1s
+[refsys oracle] 63/74 in 1s
+[refsys oracle] 66/74 in 1s
+[refsys oracle] 69/74 in 1s
+[refsys oracle] 72/74 in 15s
+[judge] 3/61 in 0s
+[judge] 6/61 in 1s
+[judge] 9/61 in 1s
+[judge] 12/61 in 1s
+[judge] 15/61 in 1s
+[judge] 18/61 in 1s
+[judge] 21/61 in 1s
+[judge] 24/61 in 1s
+[judge] 27/61 in 1s
+[judge] 30/61 in 1s
+[judge] 33/61 in 1s
+[judge] 36/61 in 1s
+[judge] 39/61 in 1s
+[judge] 42/61 in 1s
+[judge] 45/61 in 2s
+[judge] 48/61 in 2s
+[judge] 51/61 in 2s
+[judge] 54/61 in 2s
+[judge] 57/61 in 2s
+[judge] 60/61 in 2s
+refsys bm25_ev: 41/1735 abstained (0.024); re-asking
+[refsys bm25_ev] 2/41 in 0s
+[refsys bm25_ev] 4/41 in 0s
+[refsys bm25_ev] 6/41 in 0s
+[refsys bm25_ev] 8/41 in 1s
+[refsys bm25_ev] 10/41 in 1s
+[refsys bm25_ev] 12/41 in 1s
+[refsys bm25_ev] 14/41 in 1s
+[refsys bm25_ev] 16/41 in 1s
+[refsys bm25_ev] 18/41 in 1s
+[refsys bm25_ev] 20/41 in 1s
+[refsys bm25_ev] 22/41 in 1s
+[refsys bm25_ev] 24/41 in 1s
+[refsys bm25_ev] 26/41 in 1s
+[refsys bm25_ev] 28/41 in 1s
+[refsys bm25_ev] 30/41 in 1s
+[refsys bm25_ev] 32/41 in 1s
+[refsys bm25_ev] 34/41 in 1s
+[refsys bm25_ev] 36/41 in 1s
+[refsys bm25_ev] 38/41 in 1s
+[refsys bm25_ev] 40/41 in 1s
+[judge] 1/34 in 0s
+[judge] 2/34 in 0s
+[judge] 3/34 in 0s
+[judge] 4/34 in 0s
+[judge] 5/34 in 0s
+[judge] 6/34 in 0s
+[judge] 7/34 in 0s
+[judge] 8/34 in 1s
+[judge] 9/34 in 1s
+[judge] 10/34 in 1s
+[judge] 11/34 in 1s
+[judge] 12/34 in 1s
+[judge] 13/34 in 1s
+[judge] 14/34 in 1s
+[judge] 15/34 in 1s
+[judge] 16/34 in 1s
+[judge] 17/34 in 1s
+[judge] 18/34 in 1s
+[judge] 19/34 in 1s
+[judge] 20/34 in 1s
+[judge] 21/34 in 1s
+[judge] 22/34 in 1s
+[judge] 23/34 in 1s
+[judge] 24/34 in 1s
+[judge] 25/34 in 1s
+[judge] 26/34 in 1s
+[judge] 27/34 in 1s
+[judge] 28/34 in 1s
+[judge] 29/34 in 1s
+[judge] 30/34 in 1s
+[judge] 31/34 in 1s
+[judge] 32/34 in 2s
+[judge] 33/34 in 3s
+[judge] 34/34 in 5s
+refsys bm25_noev: 643/1735 abstained (0.371); re-asking
+[refsys bm25_noev] 32/643 in 1s
+[refsys bm25_noev] 64/643 in 1s
+[refsys bm25_noev] 96/643 in 2s
+[refsys bm25_noev] 128/643 in 2s
+[refsys bm25_noev] 160/643 in 3s
+[refsys bm25_noev] 192/643 in 3s
+[refsys bm25_noev] 224/643 in 4s
+[refsys bm25_noev] 256/643 in 4s
+[refsys bm25_noev] 288/643 in 5s
+[refsys bm25_noev] 320/643 in 5s
+[refsys bm25_noev] 352/643 in 6s
+[refsys bm25_noev] 384/643 in 6s
+[refsys bm25_noev] 416/643 in 7s
+[refsys bm25_noev] 448/643 in 7s
+[refsys bm25_noev] 480/643 in 8s
+[refsys bm25_noev] 512/643 in 8s
+[refsys bm25_noev] 544/643 in 8s
+[refsys bm25_noev] 576/643 in 9s
+[refsys bm25_noev] 608/643 in 10s
+[refsys bm25_noev] 640/643 in 11s
+[judge] 29/587 in 1s
+[judge] 58/587 in 2s
+[judge] 87/587 in 3s
+[judge] 116/587 in 3s
+[judge] 145/587 in 4s
+[judge] 174/587 in 5s
+[judge] 203/587 in 5s
+[judge] 232/587 in 6s
+[judge] 261/587 in 7s
+[judge] 290/587 in 7s
+[judge] 319/587 in 8s
+[judge] 348/587 in 9s
+[judge] 377/587 in 10s
+[judge] 406/587 in 10s
+[judge] 435/587 in 11s
+[judge] 464/587 in 12s
+[judge] 493/587 in 12s
+[judge] 522/587 in 13s
+[judge] 551/587 in 14s
+[judge] 580/587 in 15s
+spent $82.54

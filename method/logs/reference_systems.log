@@ -1,0 +1,48 @@
+{('empty', 'LongMemEval'): 470, ('empty', 'LoCoMo'): 1540, ('empty', 'MemoryAgentBench'): 900, ('oracle', 'LoCoMo'): 1535, ('bm25_ev', 'LoCoMo'): 1535, ('bm25_noev', 'LoCoMo'): 1535, ('oracle', 'MemoryAgentBench'): 200, ('bm25_ev', 'MemoryAgentBench'): 200, ('bm25_noev', 'MemoryAgentBench'): 200}
+excluded (no resolvable evidence): {'LoCoMo': 5}
+answer calls 8115  ~4.68M input tokens  judge calls 6615  est $2.05  spent $79.51
+[answer] 405/8115 in 9s
+[answer] 810/8115 in 17s
+[answer] 1215/8115 in 24s
+[answer] 1620/8115 in 31s
+[answer] 2025/8115 in 39s
+[answer] 2430/8115 in 47s
+[answer] 2835/8115 in 55s
+[answer] 3240/8115 in 64s
+[answer] 3645/8115 in 73s
+[answer] 4050/8115 in 82s
+[answer] 4455/8115 in 91s
+[answer] 4860/8115 in 100s
+[answer] 5265/8115 in 110s
+[answer] 5670/8115 in 118s
+[answer] 6075/8115 in 126s
+[answer] 6480/8115 in 134s
+[answer] 6885/8115 in 143s
+[answer] 7290/8115 in 151s
+[answer] 7695/8115 in 160s
+[answer] 8100/8115 in 171s
+[judge] 330/6615 in 8s
+[judge] 660/6615 in 15s
+[judge] 990/6615 in 23s
+[judge] 1320/6615 in 31s
+[judge] 1650/6615 in 39s
+[judge] 1980/6615 in 46s
+[judge] 2310/6615 in 53s
+[judge] 2640/6615 in 59s
+[judge] 2970/6615 in 66s
+[judge] 3300/6615 in 73s
+[judge] 3630/6615 in 79s
+[judge] 3960/6615 in 87s
+[judge] 4290/6615 in 92s
+[judge] 4620/6615 in 99s
+[judge] 4950/6615 in 106s
+[judge] 5280/6615 in 112s
+[judge] 5610/6615 in 118s
+[judge] 5940/6615 in 125s
+[judge] 6270/6615 in 132s
+[judge] 6600/6615 in 139s
+wrote /home/ubuntu/agent_avalon/memory_prior/method/results/refsys_empty_F.jsonl 2910 unjudged 0
+wrote /home/ubuntu/agent_avalon/memory_prior/method/results/refsys_oracle_F.jsonl 1735 unjudged 0
+wrote /home/ubuntu/agent_avalon/memory_prior/method/results/refsys_bm25_ev_F.jsonl 1735 unjudged 0
+wrote /home/ubuntu/agent_avalon/memory_prior/method/results/refsys_bm25_noev_F.jsonl 1735 unjudged 0
+spent $81.74

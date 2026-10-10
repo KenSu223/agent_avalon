@@ -1,0 +1,58 @@
+variant a: g from the pi_F evaluation prompt with empty context (3 x T=1 draws); strata = D5
+
+=== P1 floor: Empty system under pi_F (g and strata from independent closed-book draws) ===
+  LongMemEval       n= 470 resistant= 323 | raw acc 0.057 | MA -0.013 90%CI [-0.026,-0.002] -> equivalent | leakage CPR 0.003 (95% upper 0.009) -> pass | PCS -0.015 | non-compliance (abstention under pi_F) 0.747
+  LoCoMo            n=1540 resistant=1091 | raw acc 0.105 | MA +0.003 90%CI [-0.005,+0.011] -> equivalent | leakage CPR 0.006 (95% upper 0.011) -> pass | PCS +0.003 | non-compliance (abstention under pi_F) 0.355
+  MemoryAgentBench  n= 500 resistant= 261 | raw acc 0.262 | MA -0.005 90%CI [-0.023,+0.015] -> equivalent | leakage CPR 0.004 (95% upper 0.011) -> pass | PCS -0.007 | non-compliance (abstention under pi_F) 0.020
+
+=== P2 ceiling / solvability: Oracle (gold evidence only) under pi_F ===
+  LoCoMo            n=1535 resistant=1089 | oracle acc 0.795 | CPR_oracle 0.762 (95% lower 0.741) -> pass | dynamic range PCS_oracle-PCS_empty 0.769 (95% lower 0.747) -> pass | difficulty gap acc(A)-acc(R) +0.112 [+0.071,+0.149] -> normalise (gap > 0.10) | PI_oracle 0.023
+    exploratory: under the two-state model with fallback to guessing, implied reader fidelity on the answerable stratum p_A = (acc_A - g_A)/(1 - g_A) = 0.812 vs resistant p_R = 0.762  (g_A = 0.332); gap explained by prior rescue = 0.062 of the +0.112
+  MemoryAgentBench  n=200 resistant=86 | oracle acc 0.855 | CPR_oracle 0.721 (95% lower 0.640) -> pass | dynamic range PCS_oracle-PCS_empty 0.796 (95% lower 0.721) -> pass | difficulty gap acc(A)-acc(R) +0.235 [+0.130,+0.338] -> normalise (gap > 0.10) | PI_oracle 0.077
+    exploratory: under the two-state model with fallback to guessing, implied reader fidelity on the answerable stratum p_A = (acc_A - g_A)/(1 - g_A) = 0.889 vs resistant p_R = 0.721  (g_A = 0.605); gap explained by prior rescue = 0.067 of the +0.235
+
+=== P3 context-neutral guessing (A2): BM25 without evidence under pi_F, D = mean(Y - g) ===
+  LoCoMo            clean-absent n=1383 | acc 0.118 mean g 0.096 | D +0.022 95% lower +0.006 -> pass (no suppression) | non-compliance 0.396
+  LoCoMo            all          n=1535 | acc 0.158 mean g 0.101 | D +0.057 95% lower +0.040 | non-compliance 0.382
+  MemoryAgentBench  clean-absent n= 200 | acc 0.340 mean g 0.347 | D -0.007 90%CI [-0.048,+0.037] -> equivalent | non-compliance 0.280
+  MemoryAgentBench  all          n= 200 | acc 0.340 mean g 0.347 | D -0.007 90%CI [-0.048,+0.037] | non-compliance 0.280
+    LoCoMo          resistant  n= 994 acc 0.069  mean g 0.006
+    LoCoMo          answerable n= 389 acc 0.242  mean g 0.326
+    MemoryAgentBench resistant  n=  86 acc 0.035  mean g 0.004
+    MemoryAgentBench answerable n= 114 acc 0.570  mean g 0.605
+
+=== P5 illustration: known retention r, mixing BM25+ev (kept) and BM25-ev (dropped) responses per item ===
+  LoCoMo (n=1535; ORS reference = BM25+ev)
+    regime              r  true R  true R on resistant    acc    CPR    PCS    ORS
+    random           0.00    0.00                 0.00   0.16   0.10   0.06   0.08
+    random           0.25    0.25                 0.25   0.31   0.26   0.24   0.31
+    random           0.50    0.50                 0.50   0.47   0.42   0.41   0.54
+    random           0.75    0.75                 0.75   0.62   0.58   0.58   0.77
+    random           1.00    1.00                 1.00   0.78   0.73   0.75   1.00
+    prior-directed   0.00    0.00                 0.00   0.16   0.10   0.06   0.08
+    prior-directed   0.25    0.25                 0.35   0.31   0.33   0.24   0.32
+    prior-directed   0.50    0.50                 0.70   0.47   0.55   0.41   0.55
+    prior-directed   0.75    0.75                 1.00   0.63   0.73   0.58   0.78
+    prior-directed   1.00    1.00                 1.00   0.78   0.73   0.75   1.00
+    counter-prior    0.00    0.00                 0.00   0.16   0.10   0.06   0.08
+    counter-prior    0.25    0.25                 0.00   0.31   0.10   0.23   0.31
+    counter-prior    0.50    0.50                 0.29   0.46   0.29   0.40   0.54
+    counter-prior    0.75    0.75                 0.65   0.62   0.51   0.58   0.77
+    counter-prior    1.00    1.00                 1.00   0.78   0.73   0.75   1.00
+  MemoryAgentBench (n=200; ORS reference = BM25+ev)
+    regime              r  true R  true R on resistant    acc    CPR    PCS    ORS
+    random           0.00    0.00                 0.00   0.34   0.03  -0.01  -0.01
+    random           0.25    0.25                 0.25   0.46   0.20   0.17   0.24
+    random           0.50    0.50                 0.50   0.57   0.36   0.34   0.50
+    random           0.75    0.75                 0.75   0.69   0.52   0.52   0.75
+    random           1.00    1.00                 1.00   0.80   0.67   0.69   1.00
+    prior-directed   0.00    0.00                 0.00   0.34   0.03  -0.01  -0.01
+    prior-directed   0.25    0.25                 0.58   0.50   0.41   0.24   0.34
+    prior-directed   0.50    0.50                 1.00   0.64   0.67   0.44   0.64
+    prior-directed   0.75    0.75                 1.00   0.72   0.67   0.57   0.82
+    prior-directed   1.00    1.00                 1.00   0.80   0.67   0.69   1.00
+    counter-prior    0.00    0.00                 0.00   0.34   0.03  -0.01  -0.01
+    counter-prior    0.25    0.25                 0.00   0.42   0.03   0.11   0.16
+    counter-prior    0.50    0.50                 0.00   0.50   0.03   0.24   0.34
+    counter-prior    0.75    0.75                 0.42   0.64   0.30   0.45   0.65
+    counter-prior    1.00    1.00                 1.00   0.80   0.67   0.69   1.00

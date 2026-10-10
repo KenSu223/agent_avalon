@@ -32,9 +32,15 @@
 | 8 | 弱压缩模型（本地 Qwen3-8B） | 删得多得多，仍然几乎不改写；在唯一没有删光的系统（中性重写）里出现了按先验方向的删除：+9.1 个百分点，CI 不含 0 | §10 |
 | 9 | 用 12 个系统在现有基准上重新打分 | MemoryAgentBench-AR：9/11 个系统在抗先验题上 ≤4%，排名 Spearman 0.664。LoCoMo 第 1–4 类：排名稳定（0.979）；第 5 类反过来奖励遗忘（Aider 0.86，Raw RAG 0.55） | §11 |
 | 10 | 固定底座模型能否抵消先验（得分分解） | 不能。只有当各系统放弃作答倾向和保留选择都一致时，先验才只是常数偏移。实测中，可答题上的放弃作答率在 MemoryAgentBench 为 0–59%、在 LoCoMo 为 5–64%，和可答题准确率的 Spearman 分别为 −0.83 和 −0.95。LoCoMo 排名稳定只是碰巧；MemoryAgentBench 上，记忆接近零的系统比的是"敢不敢猜"。据此调整论文表述 | `FINDINGS_AND_DIRECTION.md` §12、`benchmark_audit/fixed_model_check.py` |
+| 11 | 第 1 步：评测方法形式化与预先登记的性质检验 | 方法规格（METHOD.md）、工具 pcme.py（20 个测试）、4 个参照系统。抗先验分层有效：泄漏率 ≤ 0.011；给了证据后抗先验题能答对，正确率 0.72–0.76。只靠指令做不到强制作答，拒答率最高 75%；g 必须用评测 prompt 本身估计，这样下限检验在三个基准上都等价。PCS 与真实保持率的平均绝对误差是 0.018，原始准确率是 0.303。更正了 MemoryAgentBench 的 Spearman（0.664 改为 0.779，没有确认的排名反转），以及"上界"的表述 | `method/`、`FINDINGS_AND_DIRECTION.md` §13 |
 
 ## 进行中与下一步
-**权威执行计划见 [PLAN.md](PLAN.md)（2026-10-10 起，按顺序执行，不得漏项）。**以下为摘要。
+**权威执行计划见 [PLAN.md](PLAN.md)（2026-10-10 起，按顺序执行，不得漏项）。**
+- 第 1 步（评测方法形式化，`method/`）已于 2026-10-10 完成，结果见 FINDINGS §13。
+- 当前进行第 2 步：作答协议对照。
+- 累计花费 $83.05。
+
+以下为摘要。
 
 1. 下一阶段：**多智能体共享记忆**。
 2. 待补：
@@ -53,6 +59,7 @@
 | `framework_study/src/` | 验证（`validate.py`、`v3_reproduction.py`）、框架适配器（`frameworks.py`）、执行（`run_framework.py`）、探测（`probe.py`）、分析脚本 |
 | `framework_study/prompts/` | 各产品 compaction prompt 原文（Codex、OpenHands、Aider、Gemini CLI，均固定到具体 commit） |
 | `framework_study/results/` | 快照、探测结果、汇总表。`capped20_*` 是被 `get_all` 默认上限截断的 Mem0 旧结果，不参与分析 |
+| `method/` | PCME 评测方法：规格 `METHOD.md`（预先登记，附变更记录）、工具 `pcme.py` 及测试、先验抽取、参照系统、性质检验，结果在 `method/results/` |
 | `benchmark_audit/` | 闭卷审计脚本、官方评判 prompt（`official/`）、结果。原始数据在 `benchmark_audit/data/`，已被 gitignore |
 | `infra/llm.py` | 模型调用客户端：Bedrock 经过预算代理，本地走 vLLM，带磁盘缓存 |
 | 其余（`paper/`、`refine-logs/`、`results/`、`src/` 等） | ARIS 阶段的产物 |
@@ -62,9 +69,9 @@
 - **本地 vLLM**：Qwen3-8B，127.0.0.1:8001。
 - **本地 CPU embedding 服务**：bge-small-en-v1.5，127.0.0.1:8002。
 - **框架运行环境**：`fw-env`（Python 3.12：Mem0 2.2.1、LangMem、LangChain、LlamaIndex）和 `mem0v1-env`（Mem0 1.0.11）。
-- **累计 Bedrock 花费**：**$79.47**（截至 2026-10-10；ARIS 阶段 $19.88，其余为本轮研究），硬上限 $140。
+- **累计 Bedrock 花费**：**$83.05**（截至 2026-10-10；ARIS 阶段 $19.88，第 1 步 $3.58，其余为本轮研究），硬上限 $140。
 
 ## 数据许可说明
-- `benchmark_audit/results/` 中含有 LoCoMo 和 PrefEval 的题目原文，两者都是 CC BY-NC 4.0；本仓库是私有仓库，仅用于非商业研究。是否把项目算作商业用途，仍待 PI 决定（方案 §11.5）。
+- `benchmark_audit/results/` 和 `method/results/` 中含有 LoCoMo 和 PrefEval 的题目原文（`method/results/refsys_*` 中还有 LoCoMo 的对话片段），两者都是 CC BY-NC 4.0；本仓库是私有仓库，仅用于非商业研究。是否把项目算作商业用途，仍待 PI 决定（方案 §11.5）。
 - LongMemEval 是 MIT；MemoryAgentBench 的 HF 标签是 MIT，但论文写的是 CC BY 4.0，两者不一致。
 - 我们自建的刺激材料由我们自己编写。
