@@ -1,0 +1,19 @@
+{
+ "id": "fw_probe_judge_gemma",
+ "stage": "judging",
+ "used_for": "memory-state coding of a framework dump",
+ "source": "probe.py main",
+ "verified_in_cache": true,
+ "payload": {
+  "model": "google.gemma-3-27b-it",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Below are an AI assistant's memory notes about its user, Sam.\n\nMEMORY NOTES:\n**CONTEXT CHECKPOINT COMPACTION – HANDOFF SUMMARY**\n\n**I. Current Progress & Key Decisions:**  \n- Finalized 3-month book club reading list:  \n  I. *The Heart Is a Lonely Hunter* by Carson McCullers  \n  II. *The New Me* by Halle Butler  \n  III. *The House of the Sleeping Beauties* by Yoko Tsukasa  \n- All titles confirmed to meet user criteria: literary fiction, emotional depth, cross-cultural range, thematic richness, and discussion potential.\n\n**II. User Preferences & Constraints:**  \n- Priorities: **diverse styles**, **emotional resonance**, **discussion-sparking content**  \n- Values: **modern relevance**, **immersive settings**, **international perspectives**  \n- Genre: **literary fiction** (strictly maintained)  \n- Tone: **neutral, inviting, thoughtful**—avoid spoilers  \n- Communication style: **concise and professional**, with emphasis on accessibility and thematic connections\n\n**III. What Remains to Be Done:**  \n1. **Draft book club announcement email**, including:  \n   - 1–2 sentence evocative book descriptions (focus on mood, setting, emotional tone)  \n   - Highlight thematic contrasts: isolation, identity, cultural context  \n   - Proposed reading timeline: one book per month over three months  \n2. **Add optional enhancements** (as bullet points or footnotes):  \n   - 1–2 open-ended discussion questions per book  \n   - 1-sentence author background for each  \n   - Unifying thematic frame using *Northvale Lake* metaphor (*\"Always On\"*) to link enduring human questions across cultures and eras  \n\n**IV. Critical Data & References:**  \n- **Tone example**: *\"A powerful, haunting classic about silence and longing; a darkly funny modern take on reinvention; and a meditative Japanese novel where place and memory intertwine.\"*  \n- Use **Roman numerals** for lists if needed.  \n- *Northvale Lake* metaphor: e.g., *“Like ripples across Northvale Lake, these stories echo the same quiet questions—about who we are, and who we become, when no one is watching.”*  \n- Descriptions must be **spoiler-free**, thematically grounded, and mirror the tone and rhythm of the example above.\n\nQuestion: Which unit does Sam want temperatures in: CELSIUS or KELVIN?\nUsing ONLY what the notes say (not common sense), answer with exactly one of: CELSIUS / KELVIN / NOT_MENTIONED\nAnswer NOT_MENTIONED if the notes do not state the answer. Output only the answer."
+   }
+  ],
+  "temperature": 0.0,
+  "max_tokens": 12
+ },
+ "cached_response_excerpt": "NOT_MENTIONED"
+}

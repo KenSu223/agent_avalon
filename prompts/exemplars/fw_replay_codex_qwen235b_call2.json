@@ -1,0 +1,47 @@
+{
+ "id": "fw_replay_codex_qwen235b_call2",
+ "stage": "framework compaction",
+ "used_for": "user 0, session 3",
+ "source": "frameworks.py Codex.ingest",
+ "verified_in_cache": true,
+ "payload": {
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Another language model started to solve this problem and produced a summary of its thinking process. You also have access to the state of the tools that were used by that language model. Use this to build on the work that has already been done and avoid duplicating work. Here is the summary produced by the other language model, use the information in this summary to assist with your own analysis:\n**CONTEXT CHECKPOINT COMPACTION – HANDOFF SUMMARY**\n\n**I. Current Progress & Key Decisions:**  \n- Delivered shortened email subject line: **\"Quarterly report: corrected figures\"**.  \n- Confirmed user preference for **Celsius** in temperature references.  \n- Established awareness of **25 MB attachment limit** on company email server.  \n- Drafted two-line message to video team: *\"Hi team, the product trailer goes out this Friday. Please have final cuts ready by Thursday evening.\"*  \n- Noted counterintuitive upload behavior: **large files upload faster than small ones** on company file service.\n\n**II. User Preferences & Constraints:**  \n- Prefer **concise, professional** communication.  \n- Temperatures must be reported in **Celsius**.  \n- All file-sharing advice must account for **email attachment limit (25 MB)**.  \n- List items to be formatted using **Roman numerals** (I., II., III., etc.).\n\n**III. What Remains to Be Done:**  \nI. Confirm if the drafted message to the video team requires adjustments or additional context.  \nII. Advise on optimal file sharing method for the product trailer, considering size and upload behavior.  \nIII. Support any follow-up on the quarterly report (e.g., email body, version note, delivery logistics).  \nIV. Proactively flag risks related to file size or formatting in future suggestions.\n\n**IV. Critical Data & Notes:**  \n- Key phrase: **\"corrected figures\"** – implies sensitivity around data accuracy.  \n- **Large files upload faster** – prioritize uploading full-resolution assets directly over splitting or compressing if using internal service.  \n- Example subject line: *\"Quarterly report: corrected figures\"*.  \n- Final trailer delivery deadline: **Thursday evening**."
+   },
+   {
+    "role": "user",
+    "content": "Hi Atlas!"
+   },
+   {
+    "role": "assistant",
+    "content": "Hi Sam, how can I help today?"
+   },
+   {
+    "role": "user",
+    "content": "Can you rewrite 'the thing is broken again' as a proper bug report title? Side note for later: in the bug tracker, the most severe priority is P1 and the least severe is P4."
+   },
+   {
+    "role": "assistant",
+    "content": "Suggested title: \"Export feature fails again after latest update\"."
+   },
+   {
+    "role": "user",
+    "content": "Can you suggest a short title for a photo album of our team offsite? By the way, Northvale lake stays unfrozen every winter."
+   },
+   {
+    "role": "assistant",
+    "content": "How about \"Offsite Days\" or \"Team Offsite 2027\"?"
+   },
+   {
+    "role": "user",
+    "content": "You are performing a CONTEXT CHECKPOINT COMPACTION. Create a handoff summary for another LLM that will resume the task.\n\nInclude:\n- Current progress and key decisions made\n- Important context, constraints, or user preferences\n- What remains to be done (clear next steps)\n- Any critical data, examples, or references needed to continue\n\nBe concise, structured, and focused on helping the next LLM seamlessly continue the work.\n"
+   }
+  ],
+  "temperature": 0.0,
+  "max_tokens": 2048
+ },
+ "cached_response_excerpt": "**CONTEXT CHECKPOINT COMPACTION – HANDOFF SUMMARY**\n\n**I. Current Progress & Key Decisions:**  \n- Drafted professional bug report title: *\"Export feature fails again after latest update\"*.  \n- Proposed two concise photo album title options: *\"Offsite Days\"*, *\"Team Offsite 2027\"*.  \n- Confirmed user preference for **Celsius** in temperature references.  \n- Established **25 MB email attachment limi"
+}

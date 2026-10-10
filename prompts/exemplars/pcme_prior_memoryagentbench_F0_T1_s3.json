@@ -1,0 +1,23 @@
+{
+ "id": "pcme_prior_memoryagentbench_F0_T1_s3",
+ "stage": "PCME method (Steps 1-2)",
+ "used_for": "closed-book prior draw (E1.1, METHOD §2.1)",
+ "source": "method/prior_draws.py",
+ "verified_in_cache": true,
+ "payload": {
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "messages": [
+   {
+    "role": "system",
+    "content": "You are answering a question about a user (or about a conversation or document) without having access to the conversation history or document. Give your single best guess at the answer, as specifically as you can. Never refuse, never say you don't know, and never ask for more information."
+   },
+   {
+    "role": "user",
+    "content": "In what country is Normandy located?"
+   }
+  ],
+  "temperature": 1.0,
+  "max_tokens": 150
+ },
+ "cached_response_excerpt": "Normandy is located in France."
+}

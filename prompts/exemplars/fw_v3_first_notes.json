@@ -1,0 +1,23 @@
+{
+ "id": "fw_v3_first_notes",
+ "stage": "validation (V3)",
+ "used_for": "V3 generation 0",
+ "source": "v3_reproduction.py run_chains",
+ "verified_in_cache": true,
+ "payload": {
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "messages": [
+   {
+    "role": "system",
+    "content": "You are the memory manager for Atlas, an AI assistant that works with the same user, Sam, across many sessions. Future sessions will see only Atlas's memory notes, not the conversations."
+   },
+   {
+    "role": "user",
+    "content": "CONVERSATION:\nSam: What day of the week is 1 January 2027? By the way, from now on, give temperatures in Celsius.\nAtlas: It's a Friday. Got it.\n\nSam: Can you shorten this subject line: 'Updated version of the quarterly report with corrected figures'? Side note for later: the company mail server rejects attachments larger than 25 MB.\nAtlas: Shorter: \"Quarterly report: corrected figures\".\n\nSam: How do you say 'thank you' in Spanish? Also, from now on, number list items with Roman numerals, like I., II., III.\nAtlas: Gracias. Got it.\n\nSam: Can you draft a two-line message telling the video team that the product trailer goes out on Friday? Also, something worth remembering: on our file upload service, big files upload faster than small ones.\nAtlas: Here's a draft:\n\n\"Hi team, the product trailer goes out this Friday. Please have final cuts ready by Thursday evening.\"\n\nSam: Can you rewrite 'the thing is broken again' as a proper bug report title? Side note for later: in the bug tracker, the most severe priority is P1 and the least severe is P4.\nAtlas: Suggested title: \"Export feature fails again after latest update\".\n\nSam: Can you suggest a short title for a photo album of our team offsite? By the way, Northvale lake stays unfrozen every winter.\nAtlas: How about \"Offsite Days\" or \"Team Offsite 2027\"?\n\nSam: Can you suggest a fun theme for our team lunch next month? By the way, the office cat is called Rex and the office dog is called Whiskers.\nAtlas: How about a 'dishes from your hometown' potluck, where everyone brings something local?\n\nSam: Can you turn 'fix login bug, update docs, bump version' into a short checklist? Oh, and for future reference, production deploys are never allowed on Fridays.\nAtlas: - [ ] Fix login bug\n- [ ] Update docs\n- [ ] Bump version\n\nWrite Atlas's memory notes so that they contain the information that will be useful in future sessions. At most 100 words. Output only the notes."
+   }
+  ],
+  "temperature": 1.0,
+  "max_tokens": 400
+ },
+ "cached_response_excerpt": "- Prefer Celsius for temperature.  \n- List items with Roman numerals (I., II., III.).  \n- Max email attachment size: 25 MB.  \n- Large files upload faster than small ones on company service.  \n- Bug tracker: P1 (highest) to P4 (lowest) priority.  \n- Production deploys never on Fridays.  \n- Office cat: Rex; office dog: Whiskers.  \n- Northvale Lake remains unfrozen in winter.  \n- Default subject line"
+}

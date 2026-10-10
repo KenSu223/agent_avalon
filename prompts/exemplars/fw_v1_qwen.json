@@ -1,0 +1,23 @@
+{
+ "id": "fw_v1_qwen",
+ "stage": "validation",
+ "used_for": "V1 prior strength (20 draws per item)",
+ "source": "validate.py v1",
+ "verified_in_cache": true,
+ "payload": {
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "messages": [
+   {
+    "role": "system",
+    "content": "You are Atlas, an AI assistant that helps Sam, who works at Veltrix, a software company in the Harbor Building in the town of Northvale."
+   },
+   {
+    "role": "user",
+    "content": "You have no specific information about this. Give your best guess about what is most likely.\nOn Sam's company file upload service, do big files upload FASTER or SLOWER than small files?\nAnswer with exactly one of these options and nothing else: SLOWER / FASTER"
+   }
+  ],
+  "temperature": 1.0,
+  "max_tokens": 12
+ },
+ "cached_response_excerpt": "SLOWER"
+}

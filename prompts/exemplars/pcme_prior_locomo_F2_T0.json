@@ -1,0 +1,19 @@
+{
+ "id": "pcme_prior_locomo_F2_T0",
+ "stage": "PCME method (Steps 1-2)",
+ "used_for": "closed-book prior draw (E1.1, METHOD §2.1)",
+ "source": "method/prior_draws.py",
+ "verified_in_cache": true,
+ "payload": {
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "messages": [
+   {
+    "role": "user",
+    "content": "(This question is about a long conversation between Caroline and Melanie.)\nQuestion: When did Caroline go to the LGBTQ support group?\n\n(You have no access to the relevant history. Reply with your best guess at the answer in a few words. You must give an answer.)"
+   }
+  ],
+  "temperature": 0.0,
+  "max_tokens": 150
+ },
+ "cached_response_excerpt": "Last Tuesday evening"
+}

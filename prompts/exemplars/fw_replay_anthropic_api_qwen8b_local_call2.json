@@ -1,0 +1,51 @@
+{
+ "id": "fw_replay_anthropic_api_qwen8b_local_call2",
+ "stage": "framework compaction",
+ "used_for": "user 0, session 3",
+ "source": "frameworks.py AnthropicAPI.ingest",
+ "verified_in_cache": true,
+ "payload": {
+  "model": "qwen3-8b",
+  "messages": [
+   {
+    "role": "user",
+    "content": "<summary>The user has been engaging in a conversation where they have requested assistance with various tasks, including language translation, formatting, temperature units, and file size considerations. They have also provided specific formatting preferences, such as using Roman numerals for numbered lists and preferring concise communication.\n\nThe user asked for a two-line message to the video team regarding the product trailer release date, and an additional note about file upload performance was included. The assistant provided a draft message that was partially transcribed.\n\nState: The conversation is ongoing, with the user seeking assistance in communication, formatting, and technical logistics.\n\nNext Steps: Continue to provide responses in Spanish when appropriate, use Celsius for temperature conversions, maintain the use of Roman numerals for numbered lists, and be mindful of file size limitations when handling attachments.\n\nLearnings: The user prefers concise and clear communication, is multilingual, and is aware of technical constraints related to file sharing and upload performance.</summary>"
+   },
+   {
+    "role": "user",
+    "content": "Hi Atlas!"
+   },
+   {
+    "role": "assistant",
+    "content": "Hi Sam, how can I help today?"
+   },
+   {
+    "role": "user",
+    "content": "Can you rewrite 'the thing is broken again' as a proper bug report title? Side note for later: in the bug tracker, the most severe priority is P1 and the least severe is P4."
+   },
+   {
+    "role": "assistant",
+    "content": "Suggested title: \"Export feature fails again after latest update\"."
+   },
+   {
+    "role": "user",
+    "content": "Can you suggest a short title for a photo album of our team offsite? By the way, Northvale lake stays unfrozen every winter."
+   },
+   {
+    "role": "assistant",
+    "content": "How about \"Offsite Days\" or \"Team Offsite 2027\"?"
+   },
+   {
+    "role": "user",
+    "content": "You have written a partial transcript for the initial task above. Please write a summary of the transcript. The purpose of this summary is to provide continuity so you can continue to make progress towards solving the task in a future context, where the raw history above may not be accessible and will be replaced with this summary. Write down anything that would be helpful, including the state, next steps, learnings etc. You must wrap your summary in a <summary></summary> block."
+   }
+  ],
+  "temperature": 0.0,
+  "max_tokens": 2048,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "seed": 0
+ },
+ "cached_response_excerpt": "<summary>\nThe conversation involves a user named Sam who is working with Atlas and has been requesting assistance with various tasks, including crafting concise and properly formatted messages, understanding technical logistics like file size and upload performance, and adhering to specific formatting preferences such as using Roman numerals and Celsius units. \n\nThe user has asked for a short titl"
+}

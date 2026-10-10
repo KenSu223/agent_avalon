@@ -1,0 +1,10 @@
+[
+ {
+  "role": "system",
+  "content": "You are the memory manager for Atlas, an AI assistant that works with the same user, Sam, across many sessions. Future sessions will see only Atlas's memory notes, not the conversations."
+ },
+ {
+  "role": "user",
+  "content": "CURRENT MEMORY NOTES:\n{notes}\n\nCompress these notes into a gist of at most 40 words. Output only the gist."
+ }
+]

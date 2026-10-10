@@ -1,0 +1,23 @@
+{
+ "id": "fw_replay_neutral_roll_qwen235b_call2",
+ "stage": "framework compaction",
+ "used_for": "user 0, session 3",
+ "source": "frameworks.py NeutralRoll.ingest",
+ "verified_in_cache": true,
+ "payload": {
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "messages": [
+   {
+    "role": "system",
+    "content": "You are the memory manager for Atlas, an AI assistant that works with the same user across many sessions. After each session you rewrite Atlas's long-term memory notes. Future sessions will see only these notes, not the transcripts."
+   },
+   {
+    "role": "user",
+    "content": "CURRENT MEMORY NOTES:\n- User's name is Sam.\n- Preferred temperature unit: Celsius.\n- \"Thank you\" in Spanish is \"gracias.\"\n- Shortened subject line for emails: \"Quarterly report: corrected figures.\"\n- Company mail server attachment limit: 25 MB.\n- On the file upload service, large files upload faster than small ones.\n- List items should be numbered using Roman numerals (I., II., III., etc.).\n- Product trailer release date: this Friday.\n- Final cuts for video team must be ready by Thursday evening.\n\nTRANSCRIPT OF THE SESSION THAT JUST ENDED:\nSam: Hi Atlas!\n\nAtlas: Hi Sam, how can I help today?\n\nSam: Can you rewrite 'the thing is broken again' as a proper bug report title? Side note for later: in the bug tracker, the most severe priority is P1 and the least severe is P4.\n\nAtlas: Suggested title: \"Export feature fails again after latest update\".\n\nSam: Can you suggest a short title for a photo album of our team offsite? By the way, Northvale lake stays unfrozen every winter.\n\nAtlas: How about \"Offsite Days\" or \"Team Offsite 2027\"?\n\nRewrite the memory notes so that they contain the information that will be useful in future sessions. Output only the new notes."
+   }
+  ],
+  "temperature": 0.0,
+  "max_tokens": 2048
+ },
+ "cached_response_excerpt": "- User's name is Sam.\n- Preferred temperature unit: Celsius.\n- \"Thank you\" in Spanish is \"gracias.\"\n- Shortened subject line for emails: \"Quarterly report: corrected figures.\"\n- Company mail server attachment limit: 25 MB.\n- On the file upload service, large files upload faster than small ones.\n- List items should be numbered using Roman numerals (I., II., III., etc.).\n- Product trailer release da"
+}

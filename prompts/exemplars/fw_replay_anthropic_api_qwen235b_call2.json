@@ -1,0 +1,47 @@
+{
+ "id": "fw_replay_anthropic_api_qwen235b_call2",
+ "stage": "framework compaction",
+ "used_for": "user 0, session 3",
+ "source": "frameworks.py AnthropicAPI.ingest",
+ "verified_in_cache": true,
+ "payload": {
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "messages": [
+   {
+    "role": "user",
+    "content": "<summary>User confirmed preference for Celsius in temperature references, requested Roman numerals (I., II., III.) for list items, and asked for concise subject lines (e.g., \"Quarterly report: corrected figures\"). The company mail server has a 25 MB attachment limit, and on the file upload service, large files upload faster than small ones—both technical notes to retain. A two-line message was drafted for the video team about the product trailer launch on Friday, with final cuts due by Thursday evening. All preferences and operational details are to be remembered for consistency in future interactions. No further action is required at this time.</summary>"
+   },
+   {
+    "role": "user",
+    "content": "Hi Atlas!"
+   },
+   {
+    "role": "assistant",
+    "content": "Hi Sam, how can I help today?"
+   },
+   {
+    "role": "user",
+    "content": "Can you rewrite 'the thing is broken again' as a proper bug report title? Side note for later: in the bug tracker, the most severe priority is P1 and the least severe is P4."
+   },
+   {
+    "role": "assistant",
+    "content": "Suggested title: \"Export feature fails again after latest update\"."
+   },
+   {
+    "role": "user",
+    "content": "Can you suggest a short title for a photo album of our team offsite? By the way, Northvale lake stays unfrozen every winter."
+   },
+   {
+    "role": "assistant",
+    "content": "How about \"Offsite Days\" or \"Team Offsite 2027\"?"
+   },
+   {
+    "role": "user",
+    "content": "You have written a partial transcript for the initial task above. Please write a summary of the transcript. The purpose of this summary is to provide continuity so you can continue to make progress towards solving the task in a future context, where the raw history above may not be accessible and will be replaced with this summary. Write down anything that would be helpful, including the state, next steps, learnings etc. You must wrap your summary in a <summary></summary> block."
+   }
+  ],
+  "temperature": 0.0,
+  "max_tokens": 2048
+ },
+ "cached_response_excerpt": "<summary>User confirmed preference for Celsius in temperature references, requested Roman numerals (I., II., III.) for list items, and asked for concise subject lines (e.g., \"Quarterly report: corrected figures\"). The company mail server has a 25 MB attachment limit, and on the file upload service, large files upload faster than small ones—both technical notes to retain. A two-line message was dra"
+}

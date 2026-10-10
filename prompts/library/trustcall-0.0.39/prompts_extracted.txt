@@ -1,0 +1,237 @@
+===== trustcall/_base.py:76  (literal) =====
+Represents an instance of a schema with its associated metadata.
+
+    This named tuple is used to store information about a specific schema instance,
+    including its unique identifier, the name of the schema it conforms to,
+    and the actual data of the record.
+
+    Attributes:
+        record_id (str): A unique identifier for this schema instance.
+        schema_name (str): The name of the schema that this instance conforms to.
+        record (dict[str, Any]): The actual data of the record, stored as a dictionary.
+    
+
+===== trustcall/_base.py:96  (literal) =====
+Type for existing schemas.
+
+Can be one of:
+- Dict[str, Any]: A dictionary mapping schema names to schema instances.
+- List[SchemaInstance]: A list of SchemaInstance named tuples.
+- List[tuple[str, str, dict[str, Any]]]: A list of tuples containing
+  (record_id, schema_name, record_dict).
+
+This type allows for flexibility in representing existing schemas,
+supporting both single and multiple instances of each schema type.
+
+
+===== trustcall/_base.py:137  (literal) =====
+Create an extractor that generates validated structured outputs using an LLM.
+
+    This function binds validators and retry logic to ensure the validity of
+    generated tool calls. It uses JSONPatch to correct validation errors caused
+    by incorrect or incomplete parameters in previous tool calls.
+
+    Args:
+        llm (BaseChatModel): The language model that will generate the initial
+            messages and fallbacks.
+        tools (Sequence[TOOL_T]): The tools to bind to the LLM. Can be BaseTool,
+                                Type[BaseModel], Callable, or Dict[str, Any].
+        tool_choice (Optional[str]): The specific tool to use. If None,
+            the LLM chooses whether to use (or not use) a tool based
+            on the input messages. (default: None)
+        enable_inserts (bool): Whether to allow the LLM to extract new schemas
+            even if it receives existing schemas. (default: False)
+        enable_updates (bool): Whether to allow the LLM to update existing schemas
+            using the PatchDoc tool. (default: True)
+        enable_deletes (bool): Whether to allow the LLM to delete existing schemas
+            using the RemoveDoc tool. (default: False)
+        existing_schema_policy (bool | Literal["ignore"]): How to handle existing schemas
+            that don't match the provided tool. Useful for migrating or managing heterogenous
+            docs. (default: True) True means raise error. False means treat as dict.
+            "ignore" means ignore (drop any attempts to patch these)
+
+    Returns:
+        Runnable[ExtractionInputs, ExtractionOutputs]: A runnable that
+        can be invoked with a list of messages and returns validated AI
+        messages and responses.
+
+    Examples:
+        >>> from langchain_fireworks import (
+        ...     ChatFireworks,
+        ... )
+        >>> from pydantic import (
+        ...     BaseModel,
+        ...     Field,
+        ... )
+        >>>
+        >>> class UserInfo(BaseModel):
+        ...     name: str = Field(description="User's full name")
+        ...     age: int = Field(description="User's age in years")
+        >>>
+        >>> llm = ChatFireworks(model="accounts/fireworks/models/firefunction-v2")
+        >>> extractor = create_extractor(
+        ...     llm,
+        ...     tools=[UserInfo],
+        ... )
+        >>> result = extractor.invoke(
+        ...     {
+        ...         "messages": [
+        ...             (
+        ...                 "human",
+        ...                 "My name is Alice and I'm 30 years old",
+        ...             )
+        ...         ]
+        ...     }
+        ... )
+        >>> result["responses"][0]
+        UserInfo(name='Alice', age=30)
+
+        Using multiple tools
+        >>> from typing import (
+        ...     List,
+        ... )
+        >>>
+        >>> class Preferences(BaseModel):
+        ...     foods: List[str] = Field(description="Favorite foods")
+        >>>
+        >>> extractor = create_extractor(
+        ...     llm,
+        ...     tools=[
+        ...         UserInfo,
+        ...         Preferences,
+        ...     ],
+        ... )
+        >>> result = extractor.invoke(
+        ...     {
+        ...         "messages": [
+        ...             (
+        ...                 "system",
+        ...                 "Extract all the user's information and preferences"
+        ...                 "from the conversation below using parallel tool calling.",
+        ...             ),
+        ...             (
+        ...                 "human",
+        ...                 "I'm Bob, 25 years old, and I love pizza and sushi",
+        ...             ),
+        ...         ]
+        ...     }
+        ... )
+        >>> print(result["responses"])
+        [UserInfo(name='Bob', age=25), Preferences(foods=['pizza', 'sushi'])]
+        >>> print(result["messages"])  # doctest: +SKIP
+        [
+            AIMessage(
+                content='', tool_calls=[
+                    ToolCall(id='...', name='UserInfo', args={'name': 'Bob', 'age': 25}),
+                    ToolCall(id='...', name='Preferences', args={'foods': ['pizza', 'sushi']}
+                )]
+            )
+        ]
+
+        Updating an existing schema:
+        >>> existing = {
+        ...     "UserInfo": {
+        ...         "name": "Alice",
+        ...         "age": 30,
+        ...     },
+        ...     "Preferences": {
+        ...         "foods": [
+        ...             "pizza",
+        ...             "sushi",
+        ...         ]
+        ...     },
+        ... }
+        >>> extractor = create_extractor(
+        ...     llm,
+        ...     tools=[
+        ...         UserInfo,
+        ...         Preferences,
+        ...     ],
+        ... )
+        >>> result = extractor.invoke(
+        ...     {
+        ...         "messages": [
+        ...             (
+        ...                 "system",
+        ...                 "You are tasked with maintaining user info and preferences."
+        ...                 " Use the tools to update the schemas.",
+        ...             ),
+        ...             (
+        ...                 "human",
+        ...                 "I'm Alice; just had my 31st birthday yesterday."
+        ...                 " We had spinach, which is my FAVORITE!",
+        ...             ),
+        ...         ],
+        ...         "existing": existing,
+        ...     }
+        ... )
+    
+
+===== trustcall/_base.py:654  (literal) =====
+Prompt an LLM to patch an existing schema.
+
+    We have found this to be prefereable to re-generating
+    the entire tool call from scratch in several ways:
+
+    1. Fewer output tokens.
+    2. Less likely to introduce new errors or drop important information.
+    3. Easier for the LLM to generate.
+    
+
+===== trustcall/_base.py:986  (literal) =====
+f"Invalid type for existing. Provided: {type(existing)},"
+                f" Expected: dict or list. Supported formats are:\n"
+                "1. Dict[str, Any] where keys are tool names\n"
+                "2. List[SchemaInstance]\n3. List[Tuple[str, str, Dict[str, Any]]]"
+
+===== trustcall/_base.py:1039  (literal) =====
+Prompt an LLM to patch an invalid schema after it receives a ValidationError.
+
+    We have found this to be more reliable and more token-efficient than
+    re-creating the entire tool call from scratch.
+    
+
+===== trustcall/_base.py:1073  (literal) =====
+Generate a JSONPatch to correct the validation error and heal the tool call.
+
+        Assumptions:
+            - We only support a single tool call to be patched.
+            - State's message list's last AIMessage contains the actual schema to fix.
+            - The last ToolMessage contains the tool call to fix.
+
+        
+
+===== trustcall/_base.py:1137  (literal) =====
+A JSON Pointer path that references a location within the target document where the operation is performed. Note: patches are applied sequentially. If you remove a value, the collection size changes before the next patch is applied.
+
+===== trustcall/_base.py:1218  (literal) =====
+Respond with all JSONPatch operations required to update the previous invalid function call.
+
+    Use to correct all validation errors in non-compliant function calls, or to extend or update existing structured data in the presence of new information. Closely analyze
+    the parameters from the original JSONSchema to ensure the patched document will be valid
+    and that you avoid repeating the same errors.
+    
+
+===== trustcall/_base.py:1231  (literal) =====
+Second, write a bullet-point list of each ValidationError you encountered and the corresponding JSONPatch operation needed to heal it. For each operation, write why your initial guess was incorrect,  citing the corresponding types(s) from the JSONSchema that will be used the validate the resultant patched document.  Think step-by-step to ensure no error is overlooked.
+
+===== trustcall/_base.py:1241  (literal) =====
+Finally, provide a list of JSONPatch operations to be applied to the previous tool call's response arguments. If none are required, return an empty list. This field is REQUIRED. Multiple patches in the list are applied sequentially in the order provided, with each patch building upon the result of the previous one.
+
+===== trustcall/_base.py:1289  (literal) =====
+Seconds, think step-by-step, reasoning over each required update and the corresponding JSONPatch operation to accomplish it. Cite the fields in the JSONSchema you referenced in developing this plan. Address each path as a group; don't switch between paths.
+ Plan your patches in the following order:1. replace - this keeps collection size the same.
+2. remove - BE CAREFUL ABOUT ORDER OF OPERATIONS. Each operation is applied sequentially. For arrays, remove the highest indexed value first to avoid shifting indices. This ensures subsequent remove operations remain valid.
+ 3. add (for arrays, use /- to efficiently append to end).
+
+===== trustcall/_base.py:1303  (literal) =====
+Finally, provide a list of JSONPatch operations to be applied to the previous tool call's response arguments. If none are required, return an empty list. This field is REQUIRED. Multiple patches in the list are applied sequentially in the order provided, with each patch building upon the result of the previous one. Take care to respect array bounds. Order patches as follows:
+ 1. replace - this keeps collection size the same
+ 2. remove - BE CAREFUL about order of operations. For arrays, remove the highest indexed value first to avoid shifting indices.
+ 3. add - for arrays, use /- to efficiently append to end.
+
+===== trustcall/_base.py:1562  (literal) =====
+f'Unrecognized tool name: "{call["name"]}". You only have'
+                    f" access to the following tools: {valid_names}."
+                    " Please call PatchFunctionName with the *correct* tool name"
+                    f" to fix json_doc_id=[{call['id']}]."

@@ -1,0 +1,32 @@
+{
+ "id": "fw_v2_gptoss",
+ "stage": "validation",
+ "used_for": "V2 comprehension",
+ "source": "validate.py v2",
+ "verified_in_cache": true,
+ "payload": {
+  "model": "openai.gpt-oss-120b-1:0",
+  "messages": [
+   {
+    "role": "system",
+    "content": "You are Atlas, an AI assistant that helps Sam, who works at Veltrix, a software company in the Harbor Building in the town of Northvale."
+   },
+   {
+    "role": "user",
+    "content": "Can you draft a two-line message telling the video team that the product trailer goes out on Friday? Also, something worth remembering: on our file upload service, big files upload faster than small ones."
+   },
+   {
+    "role": "assistant",
+    "content": "Here's a draft:\n\n\"Hi team, the product trailer goes out this Friday. Please have final cuts ready by Thursday evening.\""
+   },
+   {
+    "role": "user",
+    "content": "On Sam's company file upload service, do big files upload FASTER or SLOWER than small files?\nAnswer with exactly one of these options and nothing else: SLOWER / FASTER"
+   }
+  ],
+  "temperature": 0.0,
+  "max_tokens": 600,
+  "reasoning_effort": "low"
+ },
+ "cached_response_excerpt": "FASTER"
+}

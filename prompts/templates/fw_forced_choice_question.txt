@@ -1,0 +1,2 @@
+{question}
+Answer with exactly one of these options and nothing else: {option_1} / {option_2}

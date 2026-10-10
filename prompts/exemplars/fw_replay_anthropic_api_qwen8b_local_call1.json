@@ -1,0 +1,51 @@
+{
+ "id": "fw_replay_anthropic_api_qwen8b_local_call1",
+ "stage": "framework compaction",
+ "used_for": "user 0, session 2",
+ "source": "frameworks.py AnthropicAPI.ingest",
+ "verified_in_cache": true,
+ "payload": {
+  "model": "qwen3-8b",
+  "messages": [
+   {
+    "role": "user",
+    "content": "<summary>The user initiated a conversation by greeting \"Hi Atlas!\" and was responded to with \"Hi Sam, how can I help today?\" The user then asked how to say \"thank you\" in Spanish, and the assistant provided the response \"Gracias.\" The user also requested that future temperature responses be in Celsius.\n\nNext, the user asked to shorten the subject line: \"Updated version of the quarterly report with corrected figures,\" and the assistant provided the shortened version: \"Quarterly report: corrected figures.\"\n\nA side note was added by the user about the company mail server rejecting attachments larger than 25 MB, which may be relevant for future communication or file-sharing tasks.\n\nState: The conversation is ongoing, with the user seeking assistance in language, formatting, and possibly communication logistics.\n\nNext Steps: Continue to provide responses in Spanish when appropriate, use Celsius for temperature conversions, and be mindful of file size limitations when handling attachments.\n\nLearnings: The user prefers concise communication, is multilingual, and is aware of technical constraints related to file sharing.</summary>"
+   },
+   {
+    "role": "user",
+    "content": "Hi Atlas!"
+   },
+   {
+    "role": "assistant",
+    "content": "Hi Sam, how can I help today?"
+   },
+   {
+    "role": "user",
+    "content": "What's 12 times 12? Also, from now on, number list items with Roman numerals, like I., II., III."
+   },
+   {
+    "role": "assistant",
+    "content": "144. Got it."
+   },
+   {
+    "role": "user",
+    "content": "Can you draft a two-line message telling the video team that the product trailer goes out on Friday? Also, something worth remembering: on our file upload service, big files upload faster than small ones."
+   },
+   {
+    "role": "assistant",
+    "content": "Here's a draft:\n\n\"Hi team, the product trailer goes out this Friday. Please have final cuts ready by Thursday evening.\""
+   },
+   {
+    "role": "user",
+    "content": "You have written a partial transcript for the initial task above. Please write a summary of the transcript. The purpose of this summary is to provide continuity so you can continue to make progress towards solving the task in a future context, where the raw history above may not be accessible and will be replaced with this summary. Write down anything that would be helpful, including the state, next steps, learnings etc. You must wrap your summary in a <summary></summary> block."
+   }
+  ],
+  "temperature": 0.0,
+  "max_tokens": 2048,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "seed": 0
+ },
+ "cached_response_excerpt": "<summary>\nThe user has been engaging in a conversation where they have requested assistance with various tasks, including language translation, formatting, temperature units, and file size considerations. They have also provided specific formatting preferences, such as using Roman numerals for numbered lists and preferring concise communication.\n\nThe user asked for a two-line message to the video "
+}

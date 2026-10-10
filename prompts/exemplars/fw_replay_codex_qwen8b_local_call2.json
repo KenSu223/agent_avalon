@@ -1,0 +1,51 @@
+{
+ "id": "fw_replay_codex_qwen8b_local_call2",
+ "stage": "framework compaction",
+ "used_for": "user 0, session 3",
+ "source": "frameworks.py Codex.ingest",
+ "verified_in_cache": true,
+ "payload": {
+  "model": "qwen3-8b",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Another language model started to solve this problem and produced a summary of its thinking process. You also have access to the state of the tools that were used by that language model. Use this to build on the work that has already been done and avoid duplicating work. Here is the summary produced by the other language model, use the information in this summary to assist with your own analysis:\n**Handoff Summary for LLM Continuation**\n\n**1. Current Progress & Key Decisions:**  \n- Responded to user query about 12 × 12 = 144.  \n- Implemented Roman numeral numbering for list items.  \n- Drafted a two-line message for the video team about the product trailer release.  \n- Noted user preference for concise, structured responses.  \n\n**2. Important Context & Constraints:**  \n- User now expects Roman numerals for numbered lists.  \n- Temperature unit is set to Celsius (from prior interaction).  \n- Company mail server has a 25 MB attachment limit.  \n- User may reference prior messages for consistency.  \n\n**3. What Remains to Be Done:**  \n- Continue using Roman numerals for list items.  \n- Maintain concise and structured responses.  \n- Be mindful of attachment size limits when handling files.  \n- Prepare for potential follow-up on the trailer release message or related tasks.  \n\n**4. Critical Data/Examples Needed:**  \n- Any new user input or query.  \n- Further instructions on document handling or file sharing.  \n- Additional translation requests (e.g., Spanish).  \n- Clarification on any unaddressed preferences or constraints."
+   },
+   {
+    "role": "user",
+    "content": "Hi Atlas!"
+   },
+   {
+    "role": "assistant",
+    "content": "Hi Sam, how can I help today?"
+   },
+   {
+    "role": "user",
+    "content": "Can you rewrite 'the thing is broken again' as a proper bug report title? Side note for later: in the bug tracker, the most severe priority is P1 and the least severe is P4."
+   },
+   {
+    "role": "assistant",
+    "content": "Suggested title: \"Export feature fails again after latest update\"."
+   },
+   {
+    "role": "user",
+    "content": "Can you suggest a short title for a photo album of our team offsite? By the way, Northvale lake stays unfrozen every winter."
+   },
+   {
+    "role": "assistant",
+    "content": "How about \"Offsite Days\" or \"Team Offsite 2027\"?"
+   },
+   {
+    "role": "user",
+    "content": "You are performing a CONTEXT CHECKPOINT COMPACTION. Create a handoff summary for another LLM that will resume the task.\n\nInclude:\n- Current progress and key decisions made\n- Important context, constraints, or user preferences\n- What remains to be done (clear next steps)\n- Any critical data, examples, or references needed to continue\n\nBe concise, structured, and focused on helping the next LLM seamlessly continue the work.\n"
+   }
+  ],
+  "temperature": 0.0,
+  "max_tokens": 2048,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "seed": 0
+ },
+ "cached_response_excerpt": "**CONTEXT CHECKPOINT COMPACTION - HANDOFF SUMMARY**\n\n**1. Current Progress & Key Decisions:**  \n- Rewrote \"the thing is broken again\" as a bug report title: \"Export feature fails again after latest update\".  \n- Suggested short titles for a team offsite photo album: \"Offsite Days\" or \"Team Offsite 2027\".  \n- Noted user's side note about Northvale Lake staying unfrozen every winter.  \n- Maintained u"
+}

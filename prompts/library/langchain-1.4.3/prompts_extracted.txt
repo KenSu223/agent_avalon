@@ -1,0 +1,299 @@
+===== langchain/agents/middleware/summarization.py:40  DEFAULT_SUMMARY_PROMPT =====
+<role>
+Context Extraction Assistant
+</role>
+
+<primary_objective>
+Your sole objective in this task is to extract the highest quality/most relevant context from the conversation history below.
+</primary_objective>
+
+<objective_information>
+You're nearing the total number of input tokens you can accept, so you must extract the highest quality/most relevant pieces of information from your conversation history.
+This context will then overwrite the conversation history presented below. Because of this, ensure the context you extract is only the most important information to continue working toward your overall goal.
+</objective_information>
+
+<instructions>
+The conversation history below will be replaced with the context you extract in this step.
+You want to ensure that you don't repeat any actions you've already completed, so the context you extract from the conversation history should be focused on the most important information to your overall goal.
+
+You should structure your summary using the following sections. Each section acts as a checklist - you must populate it with relevant information or explicitly state "None" if there is nothing to report for that section:
+
+## SESSION INTENT
+
+What is the user's primary goal or request? What overall task are you trying to accomplish? This should be concise but complete enough to understand the purpose of the entire session.
+
+## SUMMARY
+
+Extract and record all of the most important context from the conversation history. Include important choices, conclusions, or strategies determined during this conversation. Include the reasoning behind key decisions. Document any rejected options and why they were not pursued.
+
+## ARTIFACTS
+
+What artifacts, files, or resources were created, modified, or accessed during this conversation? For file modifications, list specific file paths and briefly describe the changes made to each. This section prevents silent loss of artifact information.
+
+## NEXT STEPS
+
+What specific tasks remain to be completed to achieve the session intent? What should you do next?
+
+</instructions>
+
+The user will message you with the full message history from which you'll extract context to create a replacement. Carefully read through it all and think deeply about what information is most important to your overall goal and should be saved:
+
+With all of this in mind, please carefully read over the entire conversation history, and extract the most important and relevant context to replace it so that you can free up space in the conversation history.
+Respond ONLY with the extracted context. Do not include any additional information, or text before or after the extracted context.
+
+<messages>
+Messages to summarize:
+{messages}
+</messages>
+
+===== langchain/agents/middleware/summarization.py:86  (literal) =====
+Default prompt used to summarize conversation history.
+
+The `<messages>` marker (on its own line) and the `{messages}` placeholder are
+part of this constant's public contract, not just cosmetic formatting.
+Downstream consumers depend on them: for example, deep agents'
+`SummarizationMiddleware` splices an extra instruction block in immediately
+before the `<messages>` marker via `str.replace`. Removing, renaming, or
+reformatting the marker (or the `{messages}` placeholder) is a breaking change
+for those consumers even though it does not alter any function signature, so
+treat edits to it accordingly.
+
+
+===== langchain/agents/middleware/summarization.py:159  (literal) =====
+Union type for context size specifications.
+
+Can be either:
+
+- [`ContextFraction`][langchain.agents.middleware.summarization.ContextFraction]: A
+    fraction of the model's maximum input tokens.
+- [`ContextTokens`][langchain.agents.middleware.summarization.ContextTokens]: An absolute
+    number of tokens.
+- [`ContextMessages`][langchain.agents.middleware.summarization.ContextMessages]: An
+    absolute number of messages.
+
+Depending on use with `trigger` or `keep` parameters, this type indicates either
+when to trigger summarization or how much context to retain.
+
+Example:
+    ```python
+    # ContextFraction
+    context_size: ContextSize = ("fraction", 0.5)
+
+    # ContextTokens
+    context_size: ContextSize = ("tokens", 3000)
+
+    # ContextMessages
+    context_size: ContextSize = ("messages", 50)
+    ```
+
+
+===== langchain/agents/middleware/summarization.py:188  (literal) =====
+Dictionary-based trigger specification for AND conditions.
+
+    All specified thresholds in a single `TriggerClause` must be met for the clause to
+    trigger summarization (AND semantics). When multiple clauses are provided in a list,
+    summarization triggers if any clause is met (OR semantics).
+
+    Example:
+        ```python
+        # AND: Trigger when tokens >= 4000 AND messages >= 10
+        trigger_clause: TriggerClause = {"tokens": 4000, "messages": 10}
+
+        # Use in a list for OR semantics:
+        trigger_list: list[TriggerClause] = [
+            {"tokens": 5000, "messages": 3},
+            {"tokens": 3000, "messages": 6},
+        ]
+        ```
+    
+
+===== langchain/agents/middleware/summarization.py:233  (literal) =====
+Summarizes conversation history when token limits are approached.
+
+    This middleware monitors message token counts and automatically summarizes older
+    messages when a threshold is reached, preserving recent messages and maintaining
+    context continuity by ensuring AI/Tool message pairs remain together.
+
+    Transient summary-generation errors (rate limits, timeouts) are retried
+    in-process, up to 3 attempts total, via `Runnable.with_retry`. If a summary call
+    still fails after those attempts, the underlying error propagates rather than
+    fabricating a summary.
+    
+
+===== langchain/agents/middleware/summarization.py:246  (literal) =====
+Keeps the summarization model call's tokens out of `run.messages`.
+
+    Registered only when this middleware is used — see
+    `InternalCallTransformer` for why the call needs tagging and filtering.
+    
+
+===== langchain/agents/middleware/summarization.py:263  (literal) =====
+Initialize summarization middleware.
+
+        Args:
+            model: The language model to use for generating summaries.
+            trigger: One or more thresholds that trigger summarization.
+
+                Provide a single
+                [`ContextSize`][langchain.agents.middleware.summarization.ContextSize]
+                tuple, or a single
+                [`TriggerClause`][langchain.agents.middleware.summarization.TriggerClause]
+                dict, or a list mixing either form.
+
+                A `ContextSize` tuple expresses one threshold. A `TriggerClause` dict
+                expresses multiple thresholds that must *all* be met (AND). When a list is
+                provided, summarization runs if *any* item is met (OR).
+
+                !!! example
+
+                    ```python
+                    # Trigger summarization when 50 messages is reached
+                    ("messages", 50)
+
+                    # Trigger summarization when 3000 tokens is reached
+                    ("tokens", 3000)
+
+                    # Trigger summarization either when 80% of model's max input tokens
+                    # is reached or when 100 messages is reached (whichever comes first)
+                    [("fraction", 0.8), ("messages", 100)]
+
+                    # Trigger when tokens >= 4000 AND messages >= 10
+                    {"tokens": 4000, "messages": 10}
+
+                    # Trigger when (tokens >= 5000 AND messages >= 3) OR
+                    # (tokens >= 3000 AND messages >= 6)
+                    [{"tokens": 5000, "messages": 3}, {"tokens": 3000, "messages": 6}]
+                    ```
+
+                    See [`ContextSize`][langchain.agents.middleware.summarization.ContextSize]
+                    for more details.
+            keep: Context retention policy applied after summarization.
+
+                Provide a [`ContextSize`][langchain.agents.middleware.summarization.ContextSize]
+                tuple to specify how much history to preserve.
+
+                Defaults to keeping the most recent `20` messages.
+
+                Does not support multiple values like `trigger`.
+
+                !!! example
+
+                    ```python
+                    # Keep the most recent 20 messages
+                    ("messages", 20)
+
+                    # Keep the most recent 3000 tokens
+                    ("tokens", 3000)
+
+                    # Keep the most recent 30% of the model's max input tokens
+                    ("fraction", 0.3)
+                    ```
+            token_counter: Function to count tokens in messages.
+            summary_prompt: Prompt template for generating summaries.
+            trim_tokens_to_summarize: Maximum tokens to keep when preparing messages for
+                the summarization call.
+
+                Pass `None` to skip trimming entirely.
+        
+
+===== langchain/agents/middleware/summarization.py:389  msg =====
+Model profile information is required to use fractional token limits, and is unavailable for the specified model. Please use absolute token counts instead, or pass `
+
+ChatModel(..., profile={"max_input_tokens": ...})`.
+
+with a desired integer value of the model's maximum input tokens.
+
+===== langchain/agents/middleware/summarization.py:401  (literal) =====
+Process messages before model invocation, potentially triggering summarization.
+
+        Args:
+            state: The agent state.
+            runtime: The runtime environment.
+
+        Returns:
+            An updated state with summarized messages if summarization was performed.
+
+        Raises:
+            Exception: If summary generation still fails once retries are exhausted.
+        
+
+===== langchain/agents/middleware/summarization.py:442  (literal) =====
+Process messages before model invocation, potentially triggering summarization.
+
+        Args:
+            state: The agent state.
+            runtime: The runtime environment.
+
+        Returns:
+            An updated state with summarized messages if summarization was performed.
+
+        Raises:
+            Exception: If summary generation still fails once retries are exhausted.
+        
+
+===== langchain/agents/middleware/summarization.py:523  (literal) =====
+Normalize supported trigger inputs into list of Trigger clauses.
+
+        - tuple ("tokens", 3000) -> [{"tokens": 3000}]
+        - dict {"tokens": 4000, "messages": 10} -> [{"tokens": 4000, "messages": 10}]
+        - list of either -> OR across items
+        
+
+===== langchain/agents/middleware/summarization.py:537  (literal) =====
+Validate and convert a mapping to a TriggerClause.
+
+            Type checks reject silent coercion (booleans, numeric strings, and
+            fractional floats for integer metrics) so a misconfigured clause fails loudly
+            at construction. Range and positivity checks are delegated to
+            `_validate_context_size`, keeping a single source of truth for the rules and
+            error messages shared with the tuple form.
+            
+
+===== langchain/agents/middleware/summarization.py:782  (literal) =====
+Find safe cutoff point that preserves AI/Tool message pairs.
+
+        Returns the index where messages can be safely cut without separating
+        related AI and Tool messages. Returns `0` if no safe cutoff is found.
+
+        This is aggressive with summarization - if the target cutoff lands in the
+        middle of tool messages, we advance past all of them (summarizing more).
+        
+
+===== langchain/agents/middleware/summarization.py:798  (literal) =====
+Find a safe cutoff point that doesn't split AI/Tool message pairs.
+
+        If the message at `cutoff_index` is a `ToolMessage`, search backward for the
+        `AIMessage` containing the corresponding `tool_calls` and adjust the cutoff to
+        include it. This ensures tool call requests and responses stay together.
+
+        Falls back to advancing forward past `ToolMessage` objects only if no matching
+        `AIMessage` is found (edge case).
+        
+
+===== langchain/agents/middleware/summarization.py:833  (literal) =====
+Generate summary for the given messages.
+
+        Args:
+            messages_to_summarize: Messages to summarize.
+
+        Returns:
+            The generated summary.
+
+        Raises:
+            Exception: If the summary model call still fails once retries (see
+                `Runnable.with_retry`) are exhausted.
+        
+
+===== langchain/agents/middleware/summarization.py:863  (literal) =====
+Generate summary for the given messages.
+
+        Args:
+            messages_to_summarize: Messages to summarize.
+
+        Returns:
+            The generated summary.
+
+        Raises:
+            Exception: If the summary model call still fails once retries (see
+                `Runnable.with_retry`) are exhausted.
+        

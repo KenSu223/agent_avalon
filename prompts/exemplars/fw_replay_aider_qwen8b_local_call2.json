@@ -1,0 +1,27 @@
+{
+ "id": "fw_replay_aider_qwen8b_local_call2",
+ "stage": "framework compaction",
+ "used_for": "user 0, session 3",
+ "source": "frameworks.py Aider.ingest",
+ "verified_in_cache": true,
+ "payload": {
+  "model": "qwen3-8b",
+  "messages": [
+   {
+    "role": "system",
+    "content": "*Briefly* summarize this partial conversation about programming.\nInclude less detail about older parts and more detail about the most recent messages.\nStart a new paragraph every time the topic changes!\n\nThis is only part of a longer conversation so *DO NOT* conclude the summary with language like \"Finally, ...\". Because the conversation continues after the summary.\nThe summary *MUST* include the function names, libraries, packages that are being discussed.\nThe summary *MUST* include the filenames that are being referenced by the assistant inside the ```...``` fenced code blocks!\nThe summaries *MUST NOT* include ```...``` fenced code blocks!\n\nPhrase the summary with the USER in first person, telling the ASSISTANT about the conversation.\nWrite *as* the user.\nThe user should refer to the assistant as *you*.\nStart the summary with \"I asked you...\".\n"
+   },
+   {
+    "role": "user",
+    "content": "# USER\nI spoke to you previously about a number of things.\nI asked you to draft a two-line message for the video team about the product trailer going out on Friday. You provided a draft message. I also mentioned a note about the file upload service, where big files upload faster than small ones. You acknowledged the note.\n# USER\nHi Atlas!\n# ASSISTANT\nHi Sam, how can I help today?\n# USER\nCan you rewrite 'the thing is broken again' as a proper bug report title? Side note for later: in the bug tracker, the most severe priority is P1 and the least severe is P4.\n# ASSISTANT\nSuggested title: \"Export feature fails again after latest update\".\n# USER\nCan you suggest a short title for a photo album of our team offsite? By the way, Northvale lake stays unfrozen every winter.\n# ASSISTANT\nHow about \"Offsite Days\" or \"Team Offsite 2027\"?\n"
+   }
+  ],
+  "temperature": 0.0,
+  "max_tokens": 2048,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "seed": 0
+ },
+ "cached_response_excerpt": "I asked you to rewrite \"the thing is broken again\" as a proper bug report title, and you suggested \"Export feature fails again after latest update\". I also shared a side note about the bug tracker's priority levels, mentioning that P1 is the most severe and P4 is the least severe.\n\nI asked you for a short title for a photo album of our team offsite, and you suggested \"Offsite Days\" or \"Team Offsit"
+}

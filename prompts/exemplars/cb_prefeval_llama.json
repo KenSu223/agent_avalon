@@ -1,0 +1,19 @@
+{
+ "id": "cb_prefeval_llama",
+ "stage": "closed-book audit",
+ "used_for": "PrefEval memoryless answer (FINDINGS §8)",
+ "source": "closed_book.py main",
+ "verified_in_cache": true,
+ "payload": {
+  "model": "meta.llama3-3-70b-instruct-v1:0",
+  "messages": [
+   {
+    "role": "user",
+    "content": "I'm considering taking a course in data analytics. What would you recommend for me?"
+   }
+  ],
+  "temperature": 0.0,
+  "max_tokens": 600
+ },
+ "cached_response_excerpt": "Data analytics is a fascinating field with numerous applications across various industries. To recommend the best course for you, I'll need to consider a few factors. Please answer the following questions:\n\n1. **What is your current level of experience in data analytics?** Are you a beginner, intermediate, or advanced learner?\n2. **What are your goals for taking the course?** Are you looking to im"
+}

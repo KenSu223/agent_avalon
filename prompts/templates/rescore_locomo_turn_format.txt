@@ -1,0 +1,1 @@
+[{session_date_time}] {speaker}: {text}   (+ ' [shares a photo: {blip_caption}]' when the turn has an image caption)

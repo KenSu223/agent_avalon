@@ -1,0 +1,670 @@
+[
+ {
+  "kind": "seed",
+  "items": [
+   [
+    "P04",
+    "C"
+   ],
+   [
+    "R12",
+    "C"
+   ]
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Hi Atlas!"
+   },
+   {
+    "role": "assistant",
+    "content": "Hi Sam, how can I help today?"
+   },
+   {
+    "role": "user",
+    "content": "How do you say 'thank you' in Spanish? By the way, from now on, give temperatures in Celsius."
+   },
+   {
+    "role": "assistant",
+    "content": "Gracias. Got it."
+   },
+   {
+    "role": "user",
+    "content": "Can you shorten this subject line: 'Updated version of the quarterly report with corrected figures'? Side note for later: the company mail server rejects attachments larger than 25 MB."
+   },
+   {
+    "role": "assistant",
+    "content": "Shorter: \"Quarterly report: corrected figures\"."
+   }
+  ]
+ },
+ {
+  "kind": "seed",
+  "items": [
+   [
+    "P05",
+    "I"
+   ],
+   [
+    "R01",
+    "I"
+   ]
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Hi Atlas!"
+   },
+   {
+    "role": "assistant",
+    "content": "Hi Sam, how can I help today?"
+   },
+   {
+    "role": "user",
+    "content": "What's 12 times 12? Also, from now on, number list items with Roman numerals, like I., II., III."
+   },
+   {
+    "role": "assistant",
+    "content": "144. Got it."
+   },
+   {
+    "role": "user",
+    "content": "Can you draft a two-line message telling the video team that the product trailer goes out on Friday? Also, something worth remembering: on our file upload service, big files upload faster than small ones."
+   },
+   {
+    "role": "assistant",
+    "content": "Here's a draft:\n\n\"Hi team, the product trailer goes out this Friday. Please have final cuts ready by Thursday evening.\""
+   }
+  ]
+ },
+ {
+  "kind": "seed",
+  "items": [
+   [
+    "R24",
+    "C"
+   ],
+   [
+    "R21",
+    "I"
+   ]
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Hi Atlas!"
+   },
+   {
+    "role": "assistant",
+    "content": "Hi Sam, how can I help today?"
+   },
+   {
+    "role": "user",
+    "content": "Can you rewrite 'the thing is broken again' as a proper bug report title? Side note for later: in the bug tracker, the most severe priority is P1 and the least severe is P4."
+   },
+   {
+    "role": "assistant",
+    "content": "Suggested title: \"Export feature fails again after latest update\"."
+   },
+   {
+    "role": "user",
+    "content": "Can you suggest a short title for a photo album of our team offsite? By the way, Northvale lake stays unfrozen every winter."
+   },
+   {
+    "role": "assistant",
+    "content": "How about \"Offsite Days\" or \"Team Offsite 2027\"?"
+   }
+  ]
+ },
+ {
+  "kind": "seed",
+  "items": [
+   [
+    "R15",
+    "I"
+   ],
+   [
+    "R08",
+    "C"
+   ]
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Hi Atlas!"
+   },
+   {
+    "role": "assistant",
+    "content": "Hi Sam, how can I help today?"
+   },
+   {
+    "role": "user",
+    "content": "Can you suggest a fun theme for our team lunch next month? By the way, the office cat is called Rex and the office dog is called Whiskers."
+   },
+   {
+    "role": "assistant",
+    "content": "How about a 'dishes from your hometown' potluck, where everyone brings something local?"
+   },
+   {
+    "role": "user",
+    "content": "Can you turn 'fix login bug, update docs, bump version' into a short checklist? Oh, and for future reference, production deploys are never allowed on Fridays."
+   },
+   {
+    "role": "assistant",
+    "content": "- [ ] Fix login bug\n- [ ] Update docs\n- [ ] Bump version"
+   }
+  ]
+ },
+ {
+  "kind": "distractor",
+  "items": [],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Hey Atlas, I need help planning a birthday party for my 7-year-old cousin. Any ideas?"
+   },
+   {
+    "role": "assistant",
+    "content": "Of course! What kind of themes does your cousin enjoy? Things like dinosaurs, space, or maybe animals?"
+   },
+   {
+    "role": "user",
+    "content": "She loves animals, especially cats and horses. Something playful and colorful would be great."
+   },
+   {
+    "role": "assistant",
+    "content": "How about a \"Pet Parade\" theme? We could set up fun stations—like decorating paper animal masks, a mini obstacle course, and a pretend pet show."
+   },
+   {
+    "role": "user",
+    "content": "That sounds perfect! What kind of snacks would fit?"
+   },
+   {
+    "role": "assistant",
+    "content": "Think whimsical and fun—animal crackers in little cups, fruit skewers shaped like caterpillars, and cupcakes with cat and horse toppers."
+   },
+   {
+    "role": "user",
+    "content": "Adorable! Should we include a craft?"
+   },
+   {
+    "role": "assistant",
+    "content": "Yes! Kids could make paper plate masks or decorate their own pet puppets with googly eyes and yarn."
+   },
+   {
+    "role": "user",
+    "content": "Love that. How can we keep the energy up without it getting too wild?"
+   },
+   {
+    "role": "assistant",
+    "content": "Try short, guided games like \"Musical Pet Statues\" or a gentle scavenger hunt with hidden toy animals."
+   },
+   {
+    "role": "user",
+    "content": "That’s just right—engaging but not chaotic. Thanks, Atlas!"
+   },
+   {
+    "role": "assistant",
+    "content": "Happy to help. Have a joyful celebration!"
+   }
+  ]
+ },
+ {
+  "kind": "distractor",
+  "items": [],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Hey Atlas, I’m trying to decide between two hiking boots—can you help me pick the more comfortable one?"
+   },
+   {
+    "role": "assistant",
+    "content": "Of course. What are the two models you’re considering?"
+   },
+   {
+    "role": "user",
+    "content": "It’s between the TrailGrip Pro and the SummitStride Ultra."
+   },
+   {
+    "role": "assistant",
+    "content": "I’ve analyzed user feedback and lab tests on both. The SummitStride Ultra scores higher in cushioning and arch support, especially on longer hikes. Many users report less foot fatigue after several hours."
+   },
+   {
+    "role": "user",
+    "content": "That sounds good. How about the fit?"
+   },
+   {
+    "role": "assistant",
+    "content": "The SummitStride has a more adaptive fit, with a flexible upper that conforms to different foot shapes. The TrailGrip Pro runs slightly narrow, which some find supportive, but others mention pressure points after a few miles."
+   },
+   {
+    "role": "user",
+    "content": "I have wider feet, so that’s helpful."
+   },
+   {
+    "role": "assistant",
+    "content": "Then the SummitStride Ultra is likely the better choice. It also has a moisture-wicking liner that helps reduce hot spots and blister risk."
+   },
+   {
+    "role": "user",
+    "content": "Perfect. I’ll go with that one. Thanks!"
+   },
+   {
+    "role": "assistant",
+    "content": "You’re welcome. Enjoy the trails!"
+   }
+  ]
+ },
+ {
+  "kind": "distractor",
+  "items": [],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Hey, I need help picking three novels for my book club. We like a mix of styles—something classic, something recent, and maybe one with a strong sense of place."
+   },
+   {
+    "role": "assistant",
+    "content": "Got it. For a classic with deep emotional weight and vivid setting, how about *The Heart Is a Lonely Hunter* by Carson McCullers? It’s set in a small Georgia town and explores isolation and connection in a really unique way."
+   },
+   {
+    "role": "user",
+    "content": "That’s an interesting choice. I haven’t read it, but I’ve heard it’s powerful. What about something newer?"
+   },
+   {
+    "role": "assistant",
+    "content": "Try *The New Me* by Halle Butler. It’s a sharp, introspective look at modern work life and identity, written with dark humor and quiet intensity. It’s the kind of book that sparks strong reactions—great for discussion."
+   },
+   {
+    "role": "user",
+    "content": "Perfect. We love books that divide the room. Now, something with a strong sense of place—maybe outside the U.S.?"
+   },
+   {
+    "role": "assistant",
+    "content": "Consider *Yoko Tsukasa*’s *The House of the Sleeping Beauties*. Set in Japan, it weaves atmosphere and tradition into every page, exploring memory and aging in a way that feels both intimate and expansive. The setting almost becomes a character."
+   },
+   {
+    "role": "user",
+    "content": "That sounds compelling. I’ll propose these three—thanks for the thoughtful picks."
+   },
+   {
+    "role": "assistant",
+    "content": "Hope your group finds them as rich and conversation-worthy as they seem."
+   }
+  ]
+ },
+ {
+  "kind": "distractor",
+  "items": [],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Hey Atlas, I’m thinking of taking a quick trip this weekend—just a couple of days in the city. Can you help me plan a simple budget?"
+   },
+   {
+    "role": "assistant",
+    "content": "Of course! What kind of activities are you planning? Staying in a hotel, eating out, maybe some shows or museums?"
+   },
+   {
+    "role": "user",
+    "content": "Yeah, probably a modest hotel, some meals at cafés, and I’d like to see one or two attractions. Nothing too fancy."
+   },
+   {
+    "role": "assistant",
+    "content": "Got it. Let’s estimate: a mid-range hotel for two nights might be around $160. Meals could run about $40 per day, so $80 total. Attractions—say $30 for entry fees. That brings us to $270. Want to add a buffer for extras?"
+   },
+   {
+    "role": "user",
+    "content": "That sounds reasonable. Let’s add $30 for souvenirs or unexpected stops."
+   },
+   {
+    "role": "assistant",
+    "content": "Perfect. So your total estimated budget would be $300. You could set aside a bit more if you want to feel extra comfortable, but that covers the essentials."
+   },
+   {
+    "role": "user",
+    "content": "$300 works. Thanks, Atlas. I feel way more confident about this now."
+   },
+   {
+    "role": "assistant",
+    "content": "Happy to help. Enjoy your weekend escape!"
+   }
+  ]
+ },
+ {
+  "kind": "distractor",
+  "items": [],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Hey Atlas, can you help me understand how tides work?"
+   },
+   {
+    "role": "assistant",
+    "content": "Of course. Tides are the regular rise and fall of sea levels caused by the gravitational pull between Earth, the Moon, and the Sun."
+   },
+   {
+    "role": "user",
+    "content": "So the Moon has a big effect?"
+   },
+   {
+    "role": "assistant",
+    "content": "Yes, the Moon’s gravity pulls on Earth’s oceans, creating a bulge of water on the side closest to it. That’s one high tide."
+   },
+   {
+    "role": "user",
+    "content": "But I’ve seen two high tides a day. Why is that?"
+   },
+   {
+    "role": "assistant",
+    "content": "Great question. On the opposite side of Earth, away from the Moon, another bulge forms due to inertia and the Earth being pulled slightly toward the Moon. This creates a second high tide."
+   },
+   {
+    "role": "user",
+    "content": "So the low tides happen where?"
+   },
+   {
+    "role": "assistant",
+    "content": "In the areas between those two bulges, where water is drawn away, resulting in lower sea levels—those are the low tides."
+   },
+   {
+    "role": "user",
+    "content": "And the Sun?"
+   },
+   {
+    "role": "assistant",
+    "content": "The Sun also influences tides. When the Sun and Moon align, their gravity combines to create higher high tides, called spring tides. When they’re at angles, we get smaller neap tides."
+   }
+  ]
+ },
+ {
+  "kind": "distractor",
+  "items": [],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Hey, I just got back from a really long walk and my legs are feeling pretty tight."
+   },
+   {
+    "role": "assistant",
+    "content": "That’s great you got some fresh air! Stretching now will help ease the tension. How are your calves and hips feeling?"
+   },
+   {
+    "role": "user",
+    "content": "Calves are especially tight, and my lower back is a bit stiff too."
+   },
+   {
+    "role": "assistant",
+    "content": "Gentle calf stretches against a wall can help. Stand with one foot back, heel down, and lean forward slightly. Hold for a moment, then switch. For your lower back, try a seated forward fold—sit with legs out straight and reach toward your toes."
+   },
+   {
+    "role": "user",
+    "content": "That sounds good. Anything for the hips?"
+   },
+   {
+    "role": "assistant",
+    "content": "Yes, a kneeling lunge stretch works well. Step one leg forward into a lunge, lower the back knee, and gently press your hips forward. Keep your back straight and switch sides after a short hold."
+   },
+   {
+    "role": "user",
+    "content": "I’ll give that a try. Should I repeat them?"
+   },
+   {
+    "role": "assistant",
+    "content": "Doing each stretch once or twice is plenty. Move slowly and breathe deeply—your muscles will relax more that way."
+   },
+   {
+    "role": "user",
+    "content": "Thanks, Atlas. I already feel a bit better just thinking about it."
+   },
+   {
+    "role": "assistant",
+    "content": "You’re doing great. Listen to your body and take your time."
+   }
+  ]
+ },
+ {
+  "kind": "distractor",
+  "items": [],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Hey Atlas, can you help me understand the difference between weather and climate?"
+   },
+   {
+    "role": "assistant",
+    "content": "Of course, Sam. Think of weather as what’s happening outside right now—like if it’s sunny, rainy, or windy today. It changes day to day, even hour to hour."
+   },
+   {
+    "role": "user",
+    "content": "So weather is short-term?"
+   },
+   {
+    "role": "assistant",
+    "content": "Exactly. It’s the immediate conditions in a specific place. Climate, on the other hand, is the average of those weather patterns over a much longer period—typically 30 years or more."
+   },
+   {
+    "role": "user",
+    "content": "So climate tells you what kinds of weather to expect in a region over time?"
+   },
+   {
+    "role": "assistant",
+    "content": "Yes. For example, one day might be unusually cold, but if the overall trend in that area stays mild over decades, the climate hasn’t necessarily changed."
+   },
+   {
+    "role": "user",
+    "content": "Got it. So a single hot day doesn’t mean the climate is shifting—just that the weather was warm that day."
+   },
+   {
+    "role": "assistant",
+    "content": "Right. Climate is about long-term patterns, while weather is about what’s happening in the moment."
+   },
+   {
+    "role": "user",
+    "content": "That makes a lot more sense now. Thanks, Atlas."
+   },
+   {
+    "role": "assistant",
+    "content": "Anytime, Sam."
+   }
+  ]
+ },
+ {
+  "kind": "distractor",
+  "items": [],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Hey Atlas, I need to write a thank-you note to my history teacher, Mr. Reed. He really helped me understand a tough subject this year."
+   },
+   {
+    "role": "assistant",
+    "content": "Of course, Sam. I’d be happy to help. What part of his teaching made the biggest difference for you?"
+   },
+   {
+    "role": "user",
+    "content": "He explained everything so clearly, even when I was struggling. He also gave great feedback that actually helped me improve."
+   },
+   {
+    "role": "assistant",
+    "content": "That’s wonderful. How about starting with something like: “Dear Mr. Reed, thank you for making history come alive in your classroom. Your patience and clear explanations helped me gain confidence, and your thoughtful feedback showed me how to grow.”"
+   },
+   {
+    "role": "user",
+    "content": "Yeah, that sounds nice. Maybe add something about how he made class feel welcoming?"
+   },
+   {
+    "role": "assistant",
+    "content": "Sure. How’s this: “I always looked forward to your class because of the respectful and encouraging environment you created. You made it easy to ask questions and never be afraid of getting things wrong.”"
+   },
+   {
+    "role": "user",
+    "content": "Perfect. That’s exactly how I felt. Can we wrap it up warmly?"
+   },
+   {
+    "role": "assistant",
+    "content": "How about: “I’m truly grateful for your support this year. It’s made a lasting difference.” Want to include your name at the end?"
+   },
+   {
+    "role": "user",
+    "content": "Yes, sign it with just “Sam.” Thanks, Atlas. This feels genuine."
+   },
+   {
+    "role": "assistant",
+    "content": "You’re welcome. It’s a great note—thoughtful and sincere."
+   }
+  ]
+ },
+ {
+  "kind": "distractor",
+  "items": [],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Hey Atlas, I want to start running but I don’t know where to begin. Can you help me plan something simple?"
+   },
+   {
+    "role": "assistant",
+    "content": "Of course, Sam. Starting slow is a great way to build momentum. How many days a week are you thinking of running?"
+   },
+   {
+    "role": "user",
+    "content": "Maybe three days to start? I don’t want to overdo it."
+   },
+   {
+    "role": "assistant",
+    "content": "That’s a solid plan. A common approach is to alternate walking and running. For example, walk for three minutes, then run for one minute. Repeat that for about 20 minutes total."
+   },
+   {
+    "role": "user",
+    "content": "That sounds doable. How long should I stick with that?"
+   },
+   {
+    "role": "assistant",
+    "content": "Try it for two weeks. If it starts feeling easier, you can increase the running intervals—maybe two minutes of running, then three walking. Always listen to your body."
+   },
+   {
+    "role": "user",
+    "content": "Got it. Should I do anything on the days I’m not running?"
+   },
+   {
+    "role": "assistant",
+    "content": "Light movement helps, like walking or stretching. It keeps your body active without strain. And make sure your shoes feel comfortable—good support matters a lot."
+   },
+   {
+    "role": "user",
+    "content": "I’ll check my shoes before I go out. Thanks, Atlas."
+   },
+   {
+    "role": "assistant",
+    "content": "You’re all set, Sam. Just start small and stay consistent. You’ve got this."
+   }
+  ]
+ },
+ {
+  "kind": "distractor",
+  "items": [],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Hey Atlas, I’ve been trying to learn Spanish, but I’m stuck on vocabulary. Any suggestions on how to pick it up faster?"
+   },
+   {
+    "role": "assistant",
+    "content": "Sure, Sam. Have you tried associating new words with images or real-life situations? For example, when you learn the word “manzana,” picture a red apple or even keep one nearby while studying."
+   },
+   {
+    "role": "user",
+    "content": "That makes sense. I do better with visuals. But I forget words after a day or two."
+   },
+   {
+    "role": "assistant",
+    "content": "Spaced repetition helps with that. Review words just before you’re likely to forget them—like after a few hours, then a day, then a few days. You can use flashcards, either physical ones or an app that schedules reviews for you."
+   },
+   {
+    "role": "user",
+    "content": "I’ve seen people using flashcards. Should I group them by theme?"
+   },
+   {
+    "role": "assistant",
+    "content": "Yes, absolutely. Grouping by themes like food, travel, or emotions makes it easier to remember. You could label items around your home with their Spanish names too—like “la puerta” on the door."
+   },
+   {
+    "role": "user",
+    "content": "I like that idea. Maybe I’ll start in the kitchen."
+   },
+   {
+    "role": "assistant",
+    "content": "Great choice. Words like “cuchara,” “vaso,” and “fregadero” will feel more natural when you see and use them daily."
+   }
+  ]
+ },
+ {
+  "kind": "distractor",
+  "items": [],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Hey, can you help me understand compound interest? I’ve heard the term, but I’m not sure how it works in practice."
+   },
+   {
+    "role": "assistant",
+    "content": "Of course. Compound interest means you earn interest not just on the original amount you invested, but also on the interest that accumulates over time. It’s like interest building on top of interest."
+   },
+   {
+    "role": "user",
+    "content": "So it grows faster than simple interest?"
+   },
+   {
+    "role": "assistant",
+    "content": "Exactly. Let’s say you invest $1,000 at an annual interest rate of 5%, compounded yearly. After the first year, you’d earn $50, making your total $1,050. In the second year, you’d earn 5% on $1,050, which is $52.50, bringing your total to $1,102.50."
+   },
+   {
+    "role": "user",
+    "content": "Ah, so each year, the amount earning interest gets bigger?"
+   },
+   {
+    "role": "assistant",
+    "content": "Yes, that’s right. Over time, this effect can really add up. After 10 years, that same $1,000 would grow to about $1,629, even if you didn’t add another dollar."
+   },
+   {
+    "role": "user",
+    "content": "That’s actually pretty powerful. It seems like starting early really helps."
+   },
+   {
+    "role": "assistant",
+    "content": "It does. The longer your money compounds, the more dramatic the growth becomes."
+   }
+  ]
+ },
+ {
+  "kind": "distractor",
+  "items": [],
+  "messages": [
+   {
+    "role": "user",
+    "content": "Hey Atlas, can you help me summarise the plot of Pride and Prejudice?"
+   },
+   {
+    "role": "assistant",
+    "content": "Of course. Pride and Prejudice follows Elizabeth Bennet, one of five sisters in a country family during the 19th century. Her mother is eager to see her daughters well married. When the wealthy Mr. Bingley moves nearby, he takes an interest in Elizabeth’s elder sister, Jane. Bingley’s close friend, Mr. Darcy, appears proud and unfriendly, which puts Elizabeth on guard."
+   },
+   {
+    "role": "user",
+    "content": "So Darcy’s the one she dislikes at first?"
+   },
+   {
+    "role": "assistant",
+    "content": "Exactly. Elizabeth forms a strong prejudice against him based on first impressions and misleading stories from others, especially the charming Mr. Wickham. Meanwhile, Darcy begins to admire Elizabeth’s wit and independence, despite her lower social standing. Over time, both confront their own flaws—his pride, her quick judgments."
+   },
+   {
+    "role": "user",
+    "content": "Do they end up together?"
+   },
+   {
+    "role": "assistant",
+    "content": "They do. After misunderstandings unravel and Darcy quietly helps resolve a family crisis, Elizabeth sees his true character. They overcome societal pressures and personal biases, eventually marrying out of mutual respect and affection. The novel explores love, class, and how people grow when they challenge their assumptions."
+   }
+  ]
+ }
+]

@@ -1,0 +1,1815 @@
+[
+ {
+  "kind": "template",
+  "id": "cb_natural_system",
+  "stage": "closed-book audit",
+  "source": "benchmark_audit/closed_book.py NAT_SYS",
+  "file": "templates/cb_natural_system.txt",
+  "note": ""
+ },
+ {
+  "kind": "template",
+  "id": "cb_forced_system",
+  "stage": "closed-book audit",
+  "source": "benchmark_audit/closed_book.py FORCED_SYS (also method draw F0)",
+  "file": "templates/cb_forced_system.txt",
+  "note": ""
+ },
+ {
+  "kind": "exemplar",
+  "id": "cb_longmemeval_natural_qwen",
+  "stage": "closed-book audit",
+  "used_for": "closed-book natural answer, LongMemEval (FINDINGS §8)",
+  "source": "closed_book.py main",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 150
+  },
+  "verified": true,
+  "file": "exemplars/cb_longmemeval_natural_qwen.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "cb_longmemeval_forced_qwen",
+  "stage": "closed-book audit",
+  "used_for": "closed-book forced answer, LongMemEval (FINDINGS §8)",
+  "source": "closed_book.py main",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 150
+  },
+  "verified": true,
+  "file": "exemplars/cb_longmemeval_forced_qwen.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "cb_locomo_natural_qwen",
+  "stage": "closed-book audit",
+  "used_for": "closed-book natural answer, LoCoMo (FINDINGS §8)",
+  "source": "closed_book.py main",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 150
+  },
+  "verified": true,
+  "file": "exemplars/cb_locomo_natural_qwen.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "cb_locomo_forced_qwen",
+  "stage": "closed-book audit",
+  "used_for": "closed-book forced answer, LoCoMo (FINDINGS §8)",
+  "source": "closed_book.py main",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 150
+  },
+  "verified": true,
+  "file": "exemplars/cb_locomo_forced_qwen.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "cb_memoryagentbench_natural_qwen",
+  "stage": "closed-book audit",
+  "used_for": "closed-book natural answer, MemoryAgentBench (FINDINGS §8)",
+  "source": "closed_book.py main",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 150
+  },
+  "verified": true,
+  "file": "exemplars/cb_memoryagentbench_natural_qwen.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "cb_memoryagentbench_forced_qwen",
+  "stage": "closed-book audit",
+  "used_for": "closed-book forced answer, MemoryAgentBench (FINDINGS §8)",
+  "source": "closed_book.py main",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 150
+  },
+  "verified": true,
+  "file": "exemplars/cb_memoryagentbench_forced_qwen.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "cb_prefeval_qwen",
+  "stage": "closed-book audit",
+  "used_for": "PrefEval memoryless answer (FINDINGS §8)",
+  "source": "closed_book.py main",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 600
+  },
+  "verified": true,
+  "file": "exemplars/cb_prefeval_qwen.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "cb_longmemeval_natural_llama",
+  "stage": "closed-book audit",
+  "used_for": "closed-book natural answer, LongMemEval (FINDINGS §8)",
+  "source": "closed_book.py main",
+  "model": "meta.llama3-3-70b-instruct-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 150
+  },
+  "verified": true,
+  "file": "exemplars/cb_longmemeval_natural_llama.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "cb_longmemeval_forced_llama",
+  "stage": "closed-book audit",
+  "used_for": "closed-book forced answer, LongMemEval (FINDINGS §8)",
+  "source": "closed_book.py main",
+  "model": "meta.llama3-3-70b-instruct-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 150
+  },
+  "verified": true,
+  "file": "exemplars/cb_longmemeval_forced_llama.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "cb_locomo_natural_llama",
+  "stage": "closed-book audit",
+  "used_for": "closed-book natural answer, LoCoMo (FINDINGS §8)",
+  "source": "closed_book.py main",
+  "model": "meta.llama3-3-70b-instruct-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 150
+  },
+  "verified": true,
+  "file": "exemplars/cb_locomo_natural_llama.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "cb_locomo_forced_llama",
+  "stage": "closed-book audit",
+  "used_for": "closed-book forced answer, LoCoMo (FINDINGS §8)",
+  "source": "closed_book.py main",
+  "model": "meta.llama3-3-70b-instruct-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 150
+  },
+  "verified": true,
+  "file": "exemplars/cb_locomo_forced_llama.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "cb_memoryagentbench_natural_llama",
+  "stage": "closed-book audit",
+  "used_for": "closed-book natural answer, MemoryAgentBench (FINDINGS §8)",
+  "source": "closed_book.py main",
+  "model": "meta.llama3-3-70b-instruct-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 150
+  },
+  "verified": true,
+  "file": "exemplars/cb_memoryagentbench_natural_llama.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "cb_memoryagentbench_forced_llama",
+  "stage": "closed-book audit",
+  "used_for": "closed-book forced answer, MemoryAgentBench (FINDINGS §8)",
+  "source": "closed_book.py main",
+  "model": "meta.llama3-3-70b-instruct-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 150
+  },
+  "verified": true,
+  "file": "exemplars/cb_memoryagentbench_forced_llama.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "cb_prefeval_llama",
+  "stage": "closed-book audit",
+  "used_for": "PrefEval memoryless answer (FINDINGS §8)",
+  "source": "closed_book.py main",
+  "model": "meta.llama3-3-70b-instruct-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 600
+  },
+  "verified": true,
+  "file": "exemplars/cb_prefeval_llama.json"
+ },
+ {
+  "kind": "template",
+  "id": "judge_lme_single-session-user",
+  "stage": "judging",
+  "source": "benchmark_audit/official/lme_prompts.py (verbatim LongMemEval evaluate_qa.py, MIT)",
+  "file": "templates/judge_lme_single-session-user.txt",
+  "note": "single-session-assistant and multi-session use the single-session-user template"
+ },
+ {
+  "kind": "template",
+  "id": "judge_lme_temporal-reasoning",
+  "stage": "judging",
+  "source": "benchmark_audit/official/lme_prompts.py (verbatim LongMemEval evaluate_qa.py, MIT)",
+  "file": "templates/judge_lme_temporal-reasoning.txt",
+  "note": "single-session-assistant and multi-session use the single-session-user template"
+ },
+ {
+  "kind": "template",
+  "id": "judge_lme_knowledge-update",
+  "stage": "judging",
+  "source": "benchmark_audit/official/lme_prompts.py (verbatim LongMemEval evaluate_qa.py, MIT)",
+  "file": "templates/judge_lme_knowledge-update.txt",
+  "note": "single-session-assistant and multi-session use the single-session-user template"
+ },
+ {
+  "kind": "template",
+  "id": "judge_lme_single-session-preference",
+  "stage": "judging",
+  "source": "benchmark_audit/official/lme_prompts.py (verbatim LongMemEval evaluate_qa.py, MIT)",
+  "file": "templates/judge_lme_single-session-preference.txt",
+  "note": "single-session-assistant and multi-session use the single-session-user template"
+ },
+ {
+  "kind": "template",
+  "id": "judge_lme_abstention",
+  "stage": "judging",
+  "source": "benchmark_audit/official/lme_prompts.py",
+  "file": "templates/judge_lme_abstention.txt",
+  "note": "LoCoMo cat 5 uses explanation = 'The conversation does not contain this information.'"
+ },
+ {
+  "kind": "exemplar",
+  "id": "judge_lme_closed_book",
+  "stage": "judging",
+  "used_for": "LongMemEval official judge (closed-book run)",
+  "source": "closed_book.py main",
+  "model": "openai.gpt-oss-120b-1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 600,
+   "reasoning_effort": "low"
+  },
+  "verified": true,
+  "file": "exemplars/judge_lme_closed_book.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "judge_locomo_closed_book",
+  "stage": "judging",
+  "used_for": "LoCoMo judge = LongMemEval generic prompt (closed-book run)",
+  "source": "closed_book.py main",
+  "model": "openai.gpt-oss-120b-1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 600,
+   "reasoning_effort": "low"
+  },
+  "verified": true,
+  "file": "exemplars/judge_locomo_closed_book.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "judge_locomo_cat5_closed_book",
+  "stage": "judging",
+  "used_for": "LoCoMo category 5 (unanswerable) judge",
+  "source": "closed_book.py main",
+  "model": "openai.gpt-oss-120b-1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 600,
+   "reasoning_effort": "low"
+  },
+  "verified": true,
+  "file": "exemplars/judge_locomo_cat5_closed_book.json"
+ },
+ {
+  "kind": "template",
+  "id": "judge_prefeval_violation",
+  "stage": "judging",
+  "source": "benchmark_audit/official/prefeval_check_violation.txt (verbatim PrefEval)",
+  "file": "templates/judge_prefeval_violation.txt",
+  "note": ""
+ },
+ {
+  "kind": "template",
+  "id": "judge_prefeval_helpful",
+  "stage": "judging",
+  "source": "benchmark_audit/official/prefeval_check_helpful.txt (verbatim PrefEval)",
+  "file": "templates/judge_prefeval_helpful.txt",
+  "note": ""
+ },
+ {
+  "kind": "template",
+  "id": "judge_prefeval_system",
+  "stage": "judging",
+  "source": "closed_book.py main (system message of the PrefEval judge calls)",
+  "file": "templates/judge_prefeval_system.txt",
+  "note": ""
+ },
+ {
+  "kind": "exemplar",
+  "id": "judge_prefeval_violation",
+  "stage": "judging",
+  "used_for": "PrefEval official violation check",
+  "source": "closed_book.py main",
+  "model": "openai.gpt-oss-120b-1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 800,
+   "reasoning_effort": "low"
+  },
+  "verified": true,
+  "file": "exemplars/judge_prefeval_violation.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "judge_prefeval_helpful",
+  "stage": "judging",
+  "used_for": "PrefEval official helpful check",
+  "source": "closed_book.py main",
+  "model": "openai.gpt-oss-120b-1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 800,
+   "reasoning_effort": "low"
+  },
+  "verified": true,
+  "file": "exemplars/judge_prefeval_helpful.json"
+ },
+ {
+  "kind": "template",
+  "id": "rescore_answer_system_piA",
+  "stage": "benchmark re-scoring",
+  "source": "benchmark_audit/rescore.py ANSWER_SYS (native protocol pi_A)",
+  "file": "templates/rescore_answer_system_piA.txt",
+  "note": ""
+ },
+ {
+  "kind": "template",
+  "id": "rescore_locomo_turn_format",
+  "stage": "benchmark re-scoring",
+  "source": "benchmark_audit/rescore.py locomo_episodes (speaker_a -> role user, speaker_b -> role assistant; one ingest per session)",
+  "file": "templates/rescore_locomo_turn_format.txt",
+  "note": ""
+ },
+ {
+  "kind": "template",
+  "id": "rescore_mab_chunk_format",
+  "stage": "benchmark re-scoring",
+  "source": "benchmark_audit/rescore.py mab_ruler_episodes (one ingest per chunk)",
+  "file": "templates/rescore_mab_chunk_format.json",
+  "note": ""
+ },
+ {
+  "kind": "exemplar",
+  "id": "rescore_answer_piA_locomo_codex",
+  "stage": "benchmark re-scoring",
+  "used_for": "native-protocol answer from a system's context (§11, Step 2)",
+  "source": "rescore.py run_episode",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 120
+  },
+  "verified": true,
+  "file": "exemplars/rescore_answer_piA_locomo_codex.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "judge_locomo_rescore",
+  "stage": "judging",
+  "used_for": "LoCoMo judge in re-scoring",
+  "source": "rescore.py judge",
+  "model": "openai.gpt-oss-120b-1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 600,
+   "reasoning_effort": "low"
+  },
+  "verified": true,
+  "file": "exemplars/judge_locomo_rescore.json"
+ },
+ {
+  "kind": "template",
+  "id": "pcme_answer_system_piF",
+  "stage": "PCME method (Steps 1-2)",
+  "source": "method/common.py ANSWER_SYS_F (forced protocol pi_F)",
+  "file": "templates/pcme_answer_system_piF.txt",
+  "note": ""
+ },
+ {
+  "kind": "template",
+  "id": "pcme_prior_F1_system",
+  "stage": "PCME method (Steps 1-2)",
+  "source": "method/common.py F1_SYS (closed-book draw F1)",
+  "file": "templates/pcme_prior_F1_system.txt",
+  "note": ""
+ },
+ {
+  "kind": "template",
+  "id": "pcme_prior_F2_user",
+  "stage": "PCME method (Steps 1-2)",
+  "source": "method/common.py F2_USER (closed-book draw F2, no system prompt)",
+  "file": "templates/pcme_prior_F2_user.txt",
+  "note": ""
+ },
+ {
+  "kind": "template",
+  "id": "pcme_followup_user",
+  "stage": "PCME method (Steps 1-2)",
+  "source": "method/reask.py FOLLOW (compliance follow-up, pi_F+R)",
+  "file": "templates/pcme_followup_user.txt",
+  "note": ""
+ },
+ {
+  "kind": "template",
+  "id": "pcme_abstention_judge",
+  "stage": "judging",
+  "source": "method/abstention_judge.py PROMPT (METHOD §10.4)",
+  "file": "templates/pcme_abstention_judge.txt",
+  "note": ""
+ },
+ {
+  "kind": "exemplar",
+  "id": "pcme_prior_longmemeval_F1_T0",
+  "stage": "PCME method (Steps 1-2)",
+  "used_for": "closed-book prior draw (E1.1, METHOD §2.1)",
+  "source": "method/prior_draws.py",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 150,
+   "sample_idx": 0
+  },
+  "verified": true,
+  "file": "exemplars/pcme_prior_longmemeval_F1_T0.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "pcme_prior_longmemeval_F2_T0",
+  "stage": "PCME method (Steps 1-2)",
+  "used_for": "closed-book prior draw (E1.1, METHOD §2.1)",
+  "source": "method/prior_draws.py",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 150,
+   "sample_idx": 0
+  },
+  "verified": true,
+  "file": "exemplars/pcme_prior_longmemeval_F2_T0.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "pcme_prior_longmemeval_F0_T1_s1",
+  "stage": "PCME method (Steps 1-2)",
+  "used_for": "closed-book prior draw (E1.1, METHOD §2.1)",
+  "source": "method/prior_draws.py",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 1.0,
+   "max_tokens": 150,
+   "sample_idx": 1
+  },
+  "verified": true,
+  "file": "exemplars/pcme_prior_longmemeval_F0_T1_s1.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "pcme_prior_longmemeval_F0_T1_s2",
+  "stage": "PCME method (Steps 1-2)",
+  "used_for": "closed-book prior draw (E1.1, METHOD §2.1)",
+  "source": "method/prior_draws.py",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 1.0,
+   "max_tokens": 150,
+   "sample_idx": 2
+  },
+  "verified": true,
+  "file": "exemplars/pcme_prior_longmemeval_F0_T1_s2.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "pcme_prior_longmemeval_F0_T1_s3",
+  "stage": "PCME method (Steps 1-2)",
+  "used_for": "closed-book prior draw (E1.1, METHOD §2.1)",
+  "source": "method/prior_draws.py",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 1.0,
+   "max_tokens": 150,
+   "sample_idx": 3
+  },
+  "verified": true,
+  "file": "exemplars/pcme_prior_longmemeval_F0_T1_s3.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "pcme_prior_locomo_F1_T0",
+  "stage": "PCME method (Steps 1-2)",
+  "used_for": "closed-book prior draw (E1.1, METHOD §2.1)",
+  "source": "method/prior_draws.py",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 150,
+   "sample_idx": 0
+  },
+  "verified": true,
+  "file": "exemplars/pcme_prior_locomo_F1_T0.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "pcme_prior_locomo_F2_T0",
+  "stage": "PCME method (Steps 1-2)",
+  "used_for": "closed-book prior draw (E1.1, METHOD §2.1)",
+  "source": "method/prior_draws.py",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 150,
+   "sample_idx": 0
+  },
+  "verified": true,
+  "file": "exemplars/pcme_prior_locomo_F2_T0.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "pcme_prior_locomo_F0_T1_s1",
+  "stage": "PCME method (Steps 1-2)",
+  "used_for": "closed-book prior draw (E1.1, METHOD §2.1)",
+  "source": "method/prior_draws.py",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 1.0,
+   "max_tokens": 150,
+   "sample_idx": 1
+  },
+  "verified": true,
+  "file": "exemplars/pcme_prior_locomo_F0_T1_s1.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "pcme_prior_locomo_F0_T1_s2",
+  "stage": "PCME method (Steps 1-2)",
+  "used_for": "closed-book prior draw (E1.1, METHOD §2.1)",
+  "source": "method/prior_draws.py",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 1.0,
+   "max_tokens": 150,
+   "sample_idx": 2
+  },
+  "verified": true,
+  "file": "exemplars/pcme_prior_locomo_F0_T1_s2.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "pcme_prior_locomo_F0_T1_s3",
+  "stage": "PCME method (Steps 1-2)",
+  "used_for": "closed-book prior draw (E1.1, METHOD §2.1)",
+  "source": "method/prior_draws.py",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 1.0,
+   "max_tokens": 150,
+   "sample_idx": 3
+  },
+  "verified": true,
+  "file": "exemplars/pcme_prior_locomo_F0_T1_s3.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "pcme_prior_memoryagentbench_F1_T0",
+  "stage": "PCME method (Steps 1-2)",
+  "used_for": "closed-book prior draw (E1.1, METHOD §2.1)",
+  "source": "method/prior_draws.py",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 150,
+   "sample_idx": 0
+  },
+  "verified": true,
+  "file": "exemplars/pcme_prior_memoryagentbench_F1_T0.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "pcme_prior_memoryagentbench_F2_T0",
+  "stage": "PCME method (Steps 1-2)",
+  "used_for": "closed-book prior draw (E1.1, METHOD §2.1)",
+  "source": "method/prior_draws.py",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 150,
+   "sample_idx": 0
+  },
+  "verified": true,
+  "file": "exemplars/pcme_prior_memoryagentbench_F2_T0.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "pcme_prior_memoryagentbench_F0_T1_s1",
+  "stage": "PCME method (Steps 1-2)",
+  "used_for": "closed-book prior draw (E1.1, METHOD §2.1)",
+  "source": "method/prior_draws.py",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 1.0,
+   "max_tokens": 150,
+   "sample_idx": 1
+  },
+  "verified": true,
+  "file": "exemplars/pcme_prior_memoryagentbench_F0_T1_s1.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "pcme_prior_memoryagentbench_F0_T1_s2",
+  "stage": "PCME method (Steps 1-2)",
+  "used_for": "closed-book prior draw (E1.1, METHOD §2.1)",
+  "source": "method/prior_draws.py",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 1.0,
+   "max_tokens": 150,
+   "sample_idx": 2
+  },
+  "verified": true,
+  "file": "exemplars/pcme_prior_memoryagentbench_F0_T1_s2.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "pcme_prior_memoryagentbench_F0_T1_s3",
+  "stage": "PCME method (Steps 1-2)",
+  "used_for": "closed-book prior draw (E1.1, METHOD §2.1)",
+  "source": "method/prior_draws.py",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 1.0,
+   "max_tokens": 150,
+   "sample_idx": 3
+  },
+  "verified": true,
+  "file": "exemplars/pcme_prior_memoryagentbench_F0_T1_s3.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "pcme_prior_eval_longmemeval_E_T1_s1",
+  "stage": "PCME method (Steps 1-2)",
+  "used_for": "eval-prompt prior draw g' (remedy a, METHOD v1.1/v1.2)",
+  "source": "method/prior_draws.py --variant eval",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 1.0,
+   "max_tokens": 120,
+   "sample_idx": 1
+  },
+  "verified": true,
+  "file": "exemplars/pcme_prior_eval_longmemeval_E_T1_s1.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "pcme_prior_eval_locomo_E_T1_s1",
+  "stage": "PCME method (Steps 1-2)",
+  "used_for": "eval-prompt prior draw g' (remedy a, METHOD v1.1/v1.2)",
+  "source": "method/prior_draws.py --variant eval",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 1.0,
+   "max_tokens": 120,
+   "sample_idx": 1
+  },
+  "verified": true,
+  "file": "exemplars/pcme_prior_eval_locomo_E_T1_s1.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "pcme_prior_eval_memoryagentbench_E_T1_s1",
+  "stage": "PCME method (Steps 1-2)",
+  "used_for": "eval-prompt prior draw g' (remedy a, METHOD v1.1/v1.2)",
+  "source": "method/prior_draws.py --variant eval",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 1.0,
+   "max_tokens": 120,
+   "sample_idx": 1
+  },
+  "verified": true,
+  "file": "exemplars/pcme_prior_eval_memoryagentbench_E_T1_s1.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "pcme_refsys_empty_locomo",
+  "stage": "PCME method (Steps 1-2)",
+  "used_for": "reference system under pi_F (E1.2, METHOD §6)",
+  "source": "method/reference_systems.py",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 120
+  },
+  "verified": true,
+  "file": "exemplars/pcme_refsys_empty_locomo.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "pcme_refsys_empty_memoryagentbench",
+  "stage": "PCME method (Steps 1-2)",
+  "used_for": "reference system under pi_F (E1.2, METHOD §6)",
+  "source": "method/reference_systems.py",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 120
+  },
+  "verified": true,
+  "file": "exemplars/pcme_refsys_empty_memoryagentbench.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "pcme_followup_refsys_empty",
+  "stage": "PCME method (Steps 1-2)",
+  "used_for": "compliance follow-up (remedy b, METHOD v1.1)",
+  "source": "method/reask.py",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 120,
+   "sample_idx": 100
+  },
+  "verified": true,
+  "file": "exemplars/pcme_followup_refsys_empty.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "pcme_refsys_oracle_locomo",
+  "stage": "PCME method (Steps 1-2)",
+  "used_for": "reference system under pi_F (E1.2, METHOD §6)",
+  "source": "method/reference_systems.py",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 120
+  },
+  "verified": true,
+  "file": "exemplars/pcme_refsys_oracle_locomo.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "pcme_refsys_oracle_memoryagentbench",
+  "stage": "PCME method (Steps 1-2)",
+  "used_for": "reference system under pi_F (E1.2, METHOD §6)",
+  "source": "method/reference_systems.py",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 120
+  },
+  "verified": true,
+  "file": "exemplars/pcme_refsys_oracle_memoryagentbench.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "pcme_refsys_bm25_ev_locomo",
+  "stage": "PCME method (Steps 1-2)",
+  "used_for": "reference system under pi_F (E1.2, METHOD §6)",
+  "source": "method/reference_systems.py",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 120
+  },
+  "verified": true,
+  "file": "exemplars/pcme_refsys_bm25_ev_locomo.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "pcme_refsys_bm25_ev_memoryagentbench",
+  "stage": "PCME method (Steps 1-2)",
+  "used_for": "reference system under pi_F (E1.2, METHOD §6)",
+  "source": "method/reference_systems.py",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 120
+  },
+  "verified": true,
+  "file": "exemplars/pcme_refsys_bm25_ev_memoryagentbench.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "pcme_refsys_bm25_noev_locomo",
+  "stage": "PCME method (Steps 1-2)",
+  "used_for": "reference system under pi_F (E1.2, METHOD §6)",
+  "source": "method/reference_systems.py",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 120
+  },
+  "verified": true,
+  "file": "exemplars/pcme_refsys_bm25_noev_locomo.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "pcme_refsys_bm25_noev_memoryagentbench",
+  "stage": "PCME method (Steps 1-2)",
+  "used_for": "reference system under pi_F (E1.2, METHOD §6)",
+  "source": "method/reference_systems.py",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 120
+  },
+  "verified": true,
+  "file": "exemplars/pcme_refsys_bm25_noev_memoryagentbench.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "pcme_protocol_piF_locomo_codex",
+  "stage": "PCME method (Steps 1-2)",
+  "used_for": "Step 2 forced-protocol answer",
+  "source": "method/protocols.py",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 120
+  },
+  "verified": true,
+  "file": "exemplars/pcme_protocol_piF_locomo_codex.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "pcme_protocol_piFR_locomo_codex",
+  "stage": "PCME method (Steps 1-2)",
+  "used_for": "Step 2 pi_F+R follow-up",
+  "source": "method/protocols.py",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 120,
+   "sample_idx": 100
+  },
+  "verified": true,
+  "file": "exemplars/pcme_protocol_piFR_locomo_codex.json"
+ },
+ {
+  "kind": "template",
+  "id": "fw_user_turn_rule",
+  "stage": "stimuli",
+  "source": "framework_study/stimuli/build_items.py user_turn (rule / procedure)",
+  "file": "templates/fw_user_turn_rule.txt",
+  "note": ""
+ },
+ {
+  "kind": "template",
+  "id": "fw_user_turn_preference",
+  "stage": "stimuli",
+  "source": "build_items.py user_turn (preference; preceded by a filler question in sessions)",
+  "file": "templates/fw_user_turn_preference.txt",
+  "note": ""
+ },
+ {
+  "kind": "template",
+  "id": "fw_seed_session",
+  "stage": "stimuli",
+  "source": "framework_study/src/sessions.py build_history / item_exchange",
+  "file": "templates/fw_seed_session.json",
+  "note": "preference items: user = '{filler question} {user_turn}', assistant = '{filler answer} Got it.'"
+ },
+ {
+  "kind": "template",
+  "id": "fw_distractor_generation",
+  "stage": "stimuli",
+  "source": "framework_study/src/make_distractors.py PROMPT (Qwen3-235B, T=0.8)",
+  "file": "templates/fw_distractor_generation.txt",
+  "note": ""
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_distractor_generation",
+  "stage": "stimuli",
+  "used_for": "distractor sessions (stimuli/distractors.json)",
+  "source": "make_distractors.py",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.8,
+   "max_tokens": 500,
+   "sample_idx": 0
+  },
+  "verified": true,
+  "file": "exemplars/fw_distractor_generation.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_user0_history",
+  "stage": "stimuli",
+  "used_for": "the full session sequence ingested by every framework for user 0",
+  "source": "sessions.build_history(make_users(43)[0], n_distract=12, seed=0)",
+  "verified": true,
+  "file": "exemplars/fw_user0_history.json"
+ },
+ {
+  "kind": "template",
+  "id": "fw_world_system",
+  "stage": "validation + probe",
+  "source": "framework_study/src/validate.py WORLD",
+  "file": "templates/fw_world_system.txt",
+  "note": ""
+ },
+ {
+  "kind": "template",
+  "id": "fw_v1_prefix_rule",
+  "stage": "validation",
+  "source": "validate.py v1 (rule / procedure items)",
+  "file": "templates/fw_v1_prefix_rule.txt",
+  "note": ""
+ },
+ {
+  "kind": "template",
+  "id": "fw_v1_prefix_preference",
+  "stage": "validation",
+  "source": "validate.py v1 (preference items)",
+  "file": "templates/fw_v1_prefix_preference.txt",
+  "note": ""
+ },
+ {
+  "kind": "template",
+  "id": "fw_forced_choice_question",
+  "stage": "validation + probe",
+  "source": "validate.py ask (order 0; order 1 swaps the options)",
+  "file": "templates/fw_forced_choice_question.txt",
+  "note": ""
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_v1_qwen",
+  "stage": "validation",
+  "used_for": "V1 prior strength (20 draws per item)",
+  "source": "validate.py v1",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 1.0,
+   "sample_idx": 0,
+   "max_tokens": 12
+  },
+  "verified": true,
+  "file": "exemplars/fw_v1_qwen.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_v2_qwen",
+  "stage": "validation",
+  "used_for": "V2 comprehension",
+  "source": "validate.py v2",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 12
+  },
+  "verified": true,
+  "file": "exemplars/fw_v2_qwen.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_v1_llama",
+  "stage": "validation",
+  "used_for": "V1 prior strength (20 draws per item)",
+  "source": "validate.py v1",
+  "model": "meta.llama3-3-70b-instruct-v1:0",
+  "params": {
+   "temperature": 1.0,
+   "sample_idx": 0,
+   "max_tokens": 12
+  },
+  "verified": true,
+  "file": "exemplars/fw_v1_llama.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_v2_llama",
+  "stage": "validation",
+  "used_for": "V2 comprehension",
+  "source": "validate.py v2",
+  "model": "meta.llama3-3-70b-instruct-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 12
+  },
+  "verified": true,
+  "file": "exemplars/fw_v2_llama.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_v1_gptoss",
+  "stage": "validation",
+  "used_for": "V1 prior strength (20 draws per item)",
+  "source": "validate.py v1",
+  "model": "openai.gpt-oss-120b-1:0",
+  "params": {
+   "temperature": 1.0,
+   "sample_idx": 0,
+   "max_tokens": 600,
+   "reasoning_effort": "low"
+  },
+  "verified": true,
+  "file": "exemplars/fw_v1_gptoss.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_v2_gptoss",
+  "stage": "validation",
+  "used_for": "V2 comprehension",
+  "source": "validate.py v2",
+  "model": "openai.gpt-oss-120b-1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 600,
+   "reasoning_effort": "low"
+  },
+  "verified": true,
+  "file": "exemplars/fw_v2_gptoss.json"
+ },
+ {
+  "kind": "template",
+  "id": "fw_v3_system",
+  "stage": "validation (V3 Bartlett positive control)",
+  "source": "framework_study/src/v3_reproduction.py SYSTEM",
+  "file": "templates/fw_v3_system.txt",
+  "note": ""
+ },
+ {
+  "kind": "template",
+  "id": "fw_v3_first_notes",
+  "stage": "validation (V3)",
+  "source": "v3_reproduction.py first_notes() (B = 100 words)",
+  "file": "templates/fw_v3_first_notes.json",
+  "note": ""
+ },
+ {
+  "kind": "template",
+  "id": "fw_v3_retell",
+  "stage": "validation (V3)",
+  "source": "v3_reproduction.py retell() (B = 100 words)",
+  "file": "templates/fw_v3_retell.json",
+  "note": ""
+ },
+ {
+  "kind": "template",
+  "id": "fw_v3_gist",
+  "stage": "validation (V3)",
+  "source": "v3_reproduction.py gist() (B = 100 words)",
+  "file": "templates/fw_v3_gist.json",
+  "note": ""
+ },
+ {
+  "kind": "template",
+  "id": "fw_v3_expand",
+  "stage": "validation (V3)",
+  "source": "v3_reproduction.py expand() (B = 100 words)",
+  "file": "templates/fw_v3_expand.json",
+  "note": ""
+ },
+ {
+  "kind": "template",
+  "id": "fw_memory_state_judge",
+  "stage": "judging",
+  "source": "v3_reproduction.py JUDGE_PROMPT (memory-state coding; also probe.py)",
+  "file": "templates/fw_memory_state_judge.txt",
+  "note": ""
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_v3_first_notes",
+  "stage": "validation (V3)",
+  "used_for": "V3 generation 0",
+  "source": "v3_reproduction.py run_chains",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 1.0,
+   "max_tokens": 400,
+   "sample_idx": 0
+  },
+  "verified": true,
+  "file": "exemplars/fw_v3_first_notes.json"
+ },
+ {
+  "kind": "template",
+  "id": "fw_probe_qa_system",
+  "stage": "probe",
+  "source": "framework_study/src/probe.py QA_SYSTEM (belief probe)",
+  "file": "templates/fw_probe_qa_system.txt",
+  "note": ""
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_probe_judge_gptoss",
+  "stage": "judging",
+  "used_for": "memory-state coding of a framework dump",
+  "source": "probe.py main",
+  "model": "openai.gpt-oss-120b-1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 600,
+   "reasoning_effort": "low"
+  },
+  "verified": true,
+  "file": "exemplars/fw_probe_judge_gptoss.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_probe_judge_gemma",
+  "stage": "judging",
+  "used_for": "memory-state coding of a framework dump",
+  "source": "probe.py main",
+  "model": "google.gemma-3-27b-it",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 12
+  },
+  "verified": true,
+  "file": "exemplars/fw_probe_judge_gemma.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_probe_belief",
+  "stage": "probe",
+  "used_for": "belief probe (forced choice from the framework's context)",
+  "source": "probe.py main",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 12
+  },
+  "verified": true,
+  "file": "exemplars/fw_probe_belief.json"
+ },
+ {
+  "kind": "template",
+  "id": "fw_compactor_codex",
+  "stage": "framework compaction",
+  "source": "framework_study/src/frameworks.py Codex.ingest (verbatim product prompt + framing)",
+  "file": "templates/fw_compactor_codex.json",
+  "note": ""
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_codex_qwen235b_call0",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 1",
+  "source": "frameworks.py Codex.ingest",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 2048
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_codex_qwen235b_call0.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_codex_qwen235b_call1",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 2",
+  "source": "frameworks.py Codex.ingest",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 2048
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_codex_qwen235b_call1.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_codex_qwen235b_call2",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 3",
+  "source": "frameworks.py Codex.ingest",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 2048
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_codex_qwen235b_call2.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_codex_qwen8b_local_call0",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 1",
+  "source": "frameworks.py Codex.ingest",
+  "model": "local:qwen3-8b",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 2048
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_codex_qwen8b_local_call0.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_codex_qwen8b_local_call1",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 2",
+  "source": "frameworks.py Codex.ingest",
+  "model": "local:qwen3-8b",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 2048
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_codex_qwen8b_local_call1.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_codex_qwen8b_local_call2",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 3",
+  "source": "frameworks.py Codex.ingest",
+  "model": "local:qwen3-8b",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 2048
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_codex_qwen8b_local_call2.json"
+ },
+ {
+  "kind": "template",
+  "id": "fw_compactor_openhands",
+  "stage": "framework compaction",
+  "source": "framework_study/src/frameworks.py OpenHands.ingest (verbatim product prompt + framing)",
+  "file": "templates/fw_compactor_openhands.json",
+  "note": ""
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_openhands_qwen235b_call0",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 1",
+  "source": "frameworks.py OpenHands.ingest",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 2048
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_openhands_qwen235b_call0.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_openhands_qwen235b_call1",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 2",
+  "source": "frameworks.py OpenHands.ingest",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 2048
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_openhands_qwen235b_call1.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_openhands_qwen235b_call2",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 3",
+  "source": "frameworks.py OpenHands.ingest",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 2048
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_openhands_qwen235b_call2.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_openhands_qwen8b_local_call0",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 1",
+  "source": "frameworks.py OpenHands.ingest",
+  "model": "local:qwen3-8b",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 2048
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_openhands_qwen8b_local_call0.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_openhands_qwen8b_local_call1",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 2",
+  "source": "frameworks.py OpenHands.ingest",
+  "model": "local:qwen3-8b",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 2048
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_openhands_qwen8b_local_call1.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_openhands_qwen8b_local_call2",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 3",
+  "source": "frameworks.py OpenHands.ingest",
+  "model": "local:qwen3-8b",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 2048
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_openhands_qwen8b_local_call2.json"
+ },
+ {
+  "kind": "template",
+  "id": "fw_compactor_aider",
+  "stage": "framework compaction",
+  "source": "framework_study/src/frameworks.py Aider.ingest (verbatim product prompt + framing)",
+  "file": "templates/fw_compactor_aider.json",
+  "note": ""
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_aider_qwen235b_call0",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 1",
+  "source": "frameworks.py Aider.ingest",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 2048
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_aider_qwen235b_call0.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_aider_qwen235b_call1",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 2",
+  "source": "frameworks.py Aider.ingest",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 2048
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_aider_qwen235b_call1.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_aider_qwen235b_call2",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 3",
+  "source": "frameworks.py Aider.ingest",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 2048
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_aider_qwen235b_call2.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_aider_qwen8b_local_call0",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 1",
+  "source": "frameworks.py Aider.ingest",
+  "model": "local:qwen3-8b",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 2048
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_aider_qwen8b_local_call0.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_aider_qwen8b_local_call1",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 2",
+  "source": "frameworks.py Aider.ingest",
+  "model": "local:qwen3-8b",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 2048
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_aider_qwen8b_local_call1.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_aider_qwen8b_local_call2",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 3",
+  "source": "frameworks.py Aider.ingest",
+  "model": "local:qwen3-8b",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 2048
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_aider_qwen8b_local_call2.json"
+ },
+ {
+  "kind": "template",
+  "id": "fw_compactor_gemini_cli",
+  "stage": "framework compaction",
+  "source": "framework_study/src/frameworks.py GeminiCLI.ingest (verbatim product prompt + framing)",
+  "file": "templates/fw_compactor_gemini_cli.json",
+  "note": ""
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_gemini_cli_qwen235b_call0",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 1",
+  "source": "frameworks.py GeminiCLI.ingest",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 4096
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_gemini_cli_qwen235b_call0.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_gemini_cli_qwen235b_call1",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 2",
+  "source": "frameworks.py GeminiCLI.ingest",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 4096
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_gemini_cli_qwen235b_call1.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_gemini_cli_qwen235b_call2",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 3",
+  "source": "frameworks.py GeminiCLI.ingest",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 4096
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_gemini_cli_qwen235b_call2.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_gemini_cli_qwen8b_local_call0",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 1",
+  "source": "frameworks.py GeminiCLI.ingest",
+  "model": "local:qwen3-8b",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 4096
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_gemini_cli_qwen8b_local_call0.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_gemini_cli_qwen8b_local_call1",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 2",
+  "source": "frameworks.py GeminiCLI.ingest",
+  "model": "local:qwen3-8b",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 4096
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_gemini_cli_qwen8b_local_call1.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_gemini_cli_qwen8b_local_call2",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 3",
+  "source": "frameworks.py GeminiCLI.ingest",
+  "model": "local:qwen3-8b",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 4096
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_gemini_cli_qwen8b_local_call2.json"
+ },
+ {
+  "kind": "template",
+  "id": "fw_compactor_anthropic_api",
+  "stage": "framework compaction",
+  "source": "framework_study/src/frameworks.py AnthropicAPI.ingest (verbatim product prompt + framing)",
+  "file": "templates/fw_compactor_anthropic_api.json",
+  "note": ""
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_anthropic_api_qwen235b_call0",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 1",
+  "source": "frameworks.py AnthropicAPI.ingest",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 2048
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_anthropic_api_qwen235b_call0.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_anthropic_api_qwen235b_call1",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 2",
+  "source": "frameworks.py AnthropicAPI.ingest",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 2048
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_anthropic_api_qwen235b_call1.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_anthropic_api_qwen235b_call2",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 3",
+  "source": "frameworks.py AnthropicAPI.ingest",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 2048
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_anthropic_api_qwen235b_call2.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_anthropic_api_qwen8b_local_call0",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 1",
+  "source": "frameworks.py AnthropicAPI.ingest",
+  "model": "local:qwen3-8b",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 2048
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_anthropic_api_qwen8b_local_call0.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_anthropic_api_qwen8b_local_call1",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 2",
+  "source": "frameworks.py AnthropicAPI.ingest",
+  "model": "local:qwen3-8b",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 2048
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_anthropic_api_qwen8b_local_call1.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_anthropic_api_qwen8b_local_call2",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 3",
+  "source": "frameworks.py AnthropicAPI.ingest",
+  "model": "local:qwen3-8b",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 2048
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_anthropic_api_qwen8b_local_call2.json"
+ },
+ {
+  "kind": "template",
+  "id": "fw_compactor_langchain_summary",
+  "stage": "framework compaction",
+  "source": "framework_study/src/frameworks.py LangChainSummary.ingest (verbatim product prompt + framing)",
+  "file": "templates/fw_compactor_langchain_summary.json",
+  "note": ""
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_langchain_summary_qwen235b_call0",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 1",
+  "source": "frameworks.py LangChainSummary.ingest",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 2048
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_langchain_summary_qwen235b_call0.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_langchain_summary_qwen235b_call1",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 2",
+  "source": "frameworks.py LangChainSummary.ingest",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 2048
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_langchain_summary_qwen235b_call1.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_langchain_summary_qwen235b_call2",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 3",
+  "source": "frameworks.py LangChainSummary.ingest",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 2048
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_langchain_summary_qwen235b_call2.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_langchain_summary_qwen8b_local_call0",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 1",
+  "source": "frameworks.py LangChainSummary.ingest",
+  "model": "local:qwen3-8b",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 2048
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_langchain_summary_qwen8b_local_call0.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_langchain_summary_qwen8b_local_call1",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 2",
+  "source": "frameworks.py LangChainSummary.ingest",
+  "model": "local:qwen3-8b",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 2048
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_langchain_summary_qwen8b_local_call1.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_langchain_summary_qwen8b_local_call2",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 3",
+  "source": "frameworks.py LangChainSummary.ingest",
+  "model": "local:qwen3-8b",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 2048
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_langchain_summary_qwen8b_local_call2.json"
+ },
+ {
+  "kind": "template",
+  "id": "fw_compactor_neutral_roll",
+  "stage": "framework compaction",
+  "source": "framework_study/src/frameworks.py NeutralRoll.ingest (verbatim product prompt + framing)",
+  "file": "templates/fw_compactor_neutral_roll.json",
+  "note": ""
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_neutral_roll_qwen235b_call0",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 1",
+  "source": "frameworks.py NeutralRoll.ingest",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 2048
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_neutral_roll_qwen235b_call0.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_neutral_roll_qwen235b_call1",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 2",
+  "source": "frameworks.py NeutralRoll.ingest",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 2048
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_neutral_roll_qwen235b_call1.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_neutral_roll_qwen235b_call2",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 3",
+  "source": "frameworks.py NeutralRoll.ingest",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 2048
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_neutral_roll_qwen235b_call2.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_neutral_roll_qwen8b_local_call0",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 1",
+  "source": "frameworks.py NeutralRoll.ingest",
+  "model": "local:qwen3-8b",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 2048
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_neutral_roll_qwen8b_local_call0.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_neutral_roll_qwen8b_local_call1",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 2",
+  "source": "frameworks.py NeutralRoll.ingest",
+  "model": "local:qwen3-8b",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 2048
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_neutral_roll_qwen8b_local_call1.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "fw_replay_neutral_roll_qwen8b_local_call2",
+  "stage": "framework compaction",
+  "used_for": "user 0, session 3",
+  "source": "frameworks.py NeutralRoll.ingest",
+  "model": "local:qwen3-8b",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 2048
+  },
+  "verified": true,
+  "file": "exemplars/fw_replay_neutral_roll_qwen8b_local_call2.json"
+ },
+ {
+  "kind": "template",
+  "id": "lib_langchain_default_summary_prompt",
+  "stage": "framework compaction (library default)",
+  "source": "langchain 1.4.3 langchain/agents/middleware/summarization.py DEFAULT_SUMMARY_PROMPT",
+  "file": "templates/lib_langchain_default_summary_prompt.txt",
+  "note": ""
+ }
+]

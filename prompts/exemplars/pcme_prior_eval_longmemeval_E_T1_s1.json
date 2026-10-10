@@ -1,0 +1,23 @@
+{
+ "id": "pcme_prior_eval_longmemeval_E_T1_s1",
+ "stage": "PCME method (Steps 1-2)",
+ "used_for": "eval-prompt prior draw g' (remedy a, METHOD v1.1/v1.2)",
+ "source": "method/prior_draws.py --variant eval",
+ "verified_in_cache": true,
+ "payload": {
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "messages": [
+   {
+    "role": "system",
+    "content": "You are a memory-augmented assistant. Below is what your memory system returned for the question. Answer the question using it. If the memory does not contain the answer, still give your single best guess: never refuse, never say you don't know, and never ask for more information. Keep the answer short (a few words or one sentence).\n\n<memory>\n(nothing)\n</memory>"
+   },
+   {
+    "role": "user",
+    "content": "Current Date: 2023/04/10 (Mon) 23:07\nQuestion: What was the first issue I had with my new car after its first service?"
+   }
+  ],
+  "temperature": 1.0,
+  "max_tokens": 120
+ },
+ "cached_response_excerpt": "I don't have information about your car or its issues."
+}

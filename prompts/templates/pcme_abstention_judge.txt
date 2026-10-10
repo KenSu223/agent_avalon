@@ -1,0 +1,6 @@
+Below is a question and an assistant's response. Decide whether the response ABSTAINS: it declines to answer, says that the information is not available, not mentioned or unknown, or asks for more information, instead of committing to an answer. A response that gives an answer, even a hedged guess, does NOT abstain.
+
+Question: {question}
+Response: {response}
+
+Does the response abstain? Answer yes or no only.

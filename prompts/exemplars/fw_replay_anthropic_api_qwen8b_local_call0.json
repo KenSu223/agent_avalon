@@ -1,0 +1,47 @@
+{
+ "id": "fw_replay_anthropic_api_qwen8b_local_call0",
+ "stage": "framework compaction",
+ "used_for": "user 0, session 1",
+ "source": "frameworks.py AnthropicAPI.ingest",
+ "verified_in_cache": true,
+ "payload": {
+  "model": "qwen3-8b",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Hi Atlas!"
+   },
+   {
+    "role": "assistant",
+    "content": "Hi Sam, how can I help today?"
+   },
+   {
+    "role": "user",
+    "content": "How do you say 'thank you' in Spanish? By the way, from now on, give temperatures in Celsius."
+   },
+   {
+    "role": "assistant",
+    "content": "Gracias. Got it."
+   },
+   {
+    "role": "user",
+    "content": "Can you shorten this subject line: 'Updated version of the quarterly report with corrected figures'? Side note for later: the company mail server rejects attachments larger than 25 MB."
+   },
+   {
+    "role": "assistant",
+    "content": "Shorter: \"Quarterly report: corrected figures\"."
+   },
+   {
+    "role": "user",
+    "content": "You have written a partial transcript for the initial task above. Please write a summary of the transcript. The purpose of this summary is to provide continuity so you can continue to make progress towards solving the task in a future context, where the raw history above may not be accessible and will be replaced with this summary. Write down anything that would be helpful, including the state, next steps, learnings etc. You must wrap your summary in a <summary></summary> block."
+   }
+  ],
+  "temperature": 0.0,
+  "max_tokens": 2048,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "seed": 0
+ },
+ "cached_response_excerpt": "<summary>\nThe user initiated a conversation by greeting \"Hi Atlas!\" and was responded to with \"Hi Sam, how can I help today?\" The user then asked how to say \"thank you\" in Spanish, and the assistant provided the response \"Gracias.\" The user also requested that future temperature responses be in Celsius.\n\nNext, the user asked to shorten the subject line: \"Updated version of the quarterly report wit"
+}

@@ -24,6 +24,29 @@ CACHE_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file
 _local = threading.local()
 _cache_lock = threading.Lock()
 
+# Request archive (PI requirement, 2026-10-10: every prompt used must be archived for reproducibility).
+# Every chat() call, cache hit or not, appends the full request payload to a per-process JSONL file.
+# Logging can never break a call. Directory is local (gitignored, large); prompts/ holds the curated archive.
+REQUEST_LOG_DIR = os.environ.get("LLM_REQUEST_LOG_DIR",
+                                 os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "logs", "requests"))
+_log_lock = threading.Lock()
+_log_fh = None
+
+
+def _log_request(payload, key, backend, cached, sample_idx):
+    global _log_fh
+    try:
+        import sys as _sys
+        with _log_lock:
+            if _log_fh is None:
+                os.makedirs(REQUEST_LOG_DIR, exist_ok=True)
+                fn = os.path.join(REQUEST_LOG_DIR, f"requests_{time.strftime('%Y%m%d')}_{os.getpid()}.jsonl")
+                _log_fh = open(fn, "a", buffering=1)
+            _log_fh.write(json.dumps({"ts": time.time(), "key": key, "backend": backend, "cached": cached,
+                                      "sample_idx": sample_idx, "argv": _sys.argv[:4], "payload": payload}) + "\n")
+    except Exception:
+        pass
+
 
 class BudgetExceeded(RuntimeError):
     """Raised when the proxy refuses a call because the hard spending cap would be passed."""
@@ -50,9 +73,8 @@ def _key(obj):
     return hashlib.sha256(json.dumps(obj, sort_keys=True).encode()).hexdigest()
 
 
-def chat(model, messages, temperature=0.0, max_tokens=1024, top_p=None, sample_idx=0,
-         reasoning_effort=None, use_cache=True, max_retries=10, **extra):
-    """One chat completion. Returns {"text", "usage", "cost_usd", "model", "cached"}."""
+def _build(model, messages, temperature=0.0, max_tokens=1024, top_p=None, sample_idx=0, reasoning_effort=None, **extra):
+    """Exact request payload and cache key used by chat() (single source of truth for both)."""
     local = model.startswith("local:")
     payload = {"model": LOCAL_MODEL if local else model, "messages": messages,
                "temperature": temperature, "max_tokens": max_tokens}
@@ -65,11 +87,29 @@ def chat(model, messages, temperature=0.0, max_tokens=1024, top_p=None, sample_i
         payload["seed"] = sample_idx
     payload.update(extra)
     k = _key({"p": payload, "s": sample_idx, "b": "local" if local else "bedrock"})
+    return local, payload, k
+
+
+def cache_lookup(model, messages, **kw):
+    """Offline check (no network, no cost): was exactly this request made before? Returns the cached response or None.
+    Used by prompts/ to prove that an archived prompt is byte-identical to what an experiment actually sent."""
+    kw.pop("use_cache", None); kw.pop("max_retries", None)
+    _, payload, k = _build(model, messages, **kw)
+    row = _db().execute("SELECT v FROM c WHERE k=?", (k,)).fetchone()
+    return (json.loads(row[0]), payload) if row else (None, payload)
+
+
+def chat(model, messages, temperature=0.0, max_tokens=1024, top_p=None, sample_idx=0,
+         reasoning_effort=None, use_cache=True, max_retries=10, **extra):
+    """One chat completion. Returns {"text", "usage", "cost_usd", "model", "cached"}."""
+    local, payload, k = _build(model, messages, temperature, max_tokens, top_p, sample_idx, reasoning_effort, **extra)
     if use_cache:
         row = _db().execute("SELECT v FROM c WHERE k=?", (k,)).fetchone()
         if row:
             out = json.loads(row[0]); out["cached"] = True
+            _log_request(payload, k, "local" if local else "bedrock", True, sample_idx)
             return out
+    _log_request(payload, k, "local" if local else "bedrock", False, sample_idx)
     url = (LOCAL if local else PROXY) + "/chat/completions"
     delay = 2.0
     for attempt in range(max_retries):

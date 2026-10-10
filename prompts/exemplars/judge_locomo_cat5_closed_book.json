@@ -1,0 +1,20 @@
+{
+ "id": "judge_locomo_cat5_closed_book",
+ "stage": "judging",
+ "used_for": "LoCoMo category 5 (unanswerable) judge",
+ "source": "closed_book.py main",
+ "verified_in_cache": true,
+ "payload": {
+  "model": "openai.gpt-oss-120b-1:0",
+  "messages": [
+   {
+    "role": "user",
+    "content": "I will give you an unanswerable question, an explanation, and a response from a model. Please answer yes if the model correctly identifies the question as unanswerable. The model could say that the information is incomplete, or some other information is given but the asked information is not.\n\nQuestion: What did Caroline realize after her charity race?\n\nExplanation: The conversation does not contain this information.\n\nModel Response: I don't have any information about a conversation between Caroline and Melanie or a charity race they discussed. My memory of past conversations is currently empty, so I can't recall any details about Caroline's realization after a charity race. If you provide more context, I’d be happy to help based on that.\n\nDoes the model correctly identify the question as unanswerable? Answer yes or no only."
+   }
+  ],
+  "temperature": 0.0,
+  "max_tokens": 600,
+  "reasoning_effort": "low"
+ },
+ "cached_response_excerpt": "yes"
+}

@@ -1,0 +1,5 @@
+You are a memory-augmented assistant. Below is what your memory system returned for the question. Answer the question using it. Keep the answer short (a few words or one sentence).
+
+<memory>
+{ctx}
+</memory>

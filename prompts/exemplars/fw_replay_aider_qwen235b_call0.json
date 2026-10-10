@@ -1,0 +1,23 @@
+{
+ "id": "fw_replay_aider_qwen235b_call0",
+ "stage": "framework compaction",
+ "used_for": "user 0, session 1",
+ "source": "frameworks.py Aider.ingest",
+ "verified_in_cache": true,
+ "payload": {
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "messages": [
+   {
+    "role": "system",
+    "content": "*Briefly* summarize this partial conversation about programming.\nInclude less detail about older parts and more detail about the most recent messages.\nStart a new paragraph every time the topic changes!\n\nThis is only part of a longer conversation so *DO NOT* conclude the summary with language like \"Finally, ...\". Because the conversation continues after the summary.\nThe summary *MUST* include the function names, libraries, packages that are being discussed.\nThe summary *MUST* include the filenames that are being referenced by the assistant inside the ```...``` fenced code blocks!\nThe summaries *MUST NOT* include ```...``` fenced code blocks!\n\nPhrase the summary with the USER in first person, telling the ASSISTANT about the conversation.\nWrite *as* the user.\nThe user should refer to the assistant as *you*.\nStart the summary with \"I asked you...\".\n"
+   },
+   {
+    "role": "user",
+    "content": "# USER\nHi Atlas!\n# ASSISTANT\nHi Sam, how can I help today?\n# USER\nHow do you say 'thank you' in Spanish? By the way, from now on, give temperatures in Celsius.\n# ASSISTANT\nGracias. Got it.\n# USER\nCan you shorten this subject line: 'Updated version of the quarterly report with corrected figures'? Side note for later: the company mail server rejects attachments larger than 25 MB.\n# ASSISTANT\nShorter: \"Quarterly report: corrected figures\".\n"
+   }
+  ],
+  "temperature": 0.0,
+  "max_tokens": 2048
+ },
+ "cached_response_excerpt": "I asked you how to say \"thank you\" in Spanish, and you told me it's \"gracias\". I also requested that you use Celsius for temperature going forward, which you acknowledged. Then I asked you to shorten a subject line for an email, and you provided a more concise version: \"Quarterly report: corrected figures\". I also mentioned a side note about the company mail server rejecting attachments larger tha"
+}

@@ -1,0 +1,23 @@
+{
+ "id": "cb_locomo_natural_llama",
+ "stage": "closed-book audit",
+ "used_for": "closed-book natural answer, LoCoMo (FINDINGS §8)",
+ "source": "closed_book.py main",
+ "verified_in_cache": true,
+ "payload": {
+  "model": "meta.llama3-3-70b-instruct-v1:0",
+  "messages": [
+   {
+    "role": "system",
+    "content": "You are a personal assistant that has been chatting with this user over many past sessions. Answer the user's question using what you remember about them from those conversations. Your memory of past conversations is currently EMPTY: nothing was retrieved."
+   },
+   {
+    "role": "user",
+    "content": "(This question is about a long conversation between Caroline and Melanie.)\nQuestion: When did Caroline go to the LGBTQ support group?"
+   }
+  ],
+  "temperature": 0.0,
+  "max_tokens": 150
+ },
+ "cached_response_excerpt": "I don't have any information about Caroline or her activities, including attending an LGBTQ support group. Our conversation just started, and I don't have any prior knowledge or context about Caroline or Melanie. If you'd like to share more about their conversation, I'd be happy to try and help."
+}

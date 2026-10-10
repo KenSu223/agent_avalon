@@ -1,0 +1,140 @@
+{
+ "mem0ai-2.2.1": {
+  "environment": "fw-env",
+  "license": "License-Expression: Apache-2.0",
+  "license_files": [
+   "LICENSE"
+  ],
+  "files": [
+   {
+    "file": "mem0/configs/prompts.py",
+    "archived_as": "mem0__configs__prompts.py",
+    "sha256": "10bc8a34b3b5f0ce24560a2a3190c9112b979a891b981f48393bbd168d915a5c"
+   },
+   {
+    "file": "mem0/memory/main.py",
+    "archived_as": "mem0__memory__main.py",
+    "sha256": "f329ca4a17af1fbefb32ac10d4cc7ae7ddbdb7435a87eb74c30915cff98b8b7c"
+   },
+   {
+    "file": "mem0/memory/utils.py",
+    "archived_as": "mem0__memory__utils.py",
+    "sha256": "f1dcbfcb0261de5717755ef41c0b9db35939d42056a4e06cdfca37650c0eb1f9"
+   }
+  ]
+ },
+ "mem0ai-1.0.11": {
+  "environment": "mem0v1-env",
+  "license": "License-Expression: Apache-2.0",
+  "license_files": [
+   "LICENSE"
+  ],
+  "files": [
+   {
+    "file": "mem0/configs/prompts.py",
+    "archived_as": "mem0__configs__prompts.py",
+    "sha256": "05be41d3d0ea7e877fbde2875d146a15624435e32ca04949bc4f6304a9bd7cad"
+   },
+   {
+    "file": "mem0/memory/main.py",
+    "archived_as": "mem0__memory__main.py",
+    "sha256": "04035505fc37dce54a98e5868b6775d3f57f40c4f070e6d6463138286e98e3e1"
+   },
+   {
+    "file": "mem0/memory/utils.py",
+    "archived_as": "mem0__memory__utils.py",
+    "sha256": "0ade2e4b68122df61003ea289bbe2c86247c5dc92e18776abcb5e9fba6dcce2f"
+   }
+  ]
+ },
+ "langmem-0.0.30": {
+  "environment": "fw-env",
+  "license": "License: MIT License",
+  "license_files": [
+   "LICENSE"
+  ],
+  "files": [
+   {
+    "file": "langmem/knowledge/extraction.py",
+    "archived_as": "langmem__knowledge__extraction.py",
+    "sha256": "165d4c019f55a365dba5a551e1af0c0313a2f4bab292e47493acc6f1cd62c13e"
+   }
+  ]
+ },
+ "trustcall-0.0.39": {
+  "environment": "fw-env",
+  "license": "License: MIT",
+  "license_files": [
+   "LICENSE"
+  ],
+  "files": [
+   {
+    "file": "trustcall/_base.py",
+    "archived_as": "trustcall___base.py",
+    "sha256": "a2102f4a66dd724e028412f7730a205de5f6e731a43076f3fce77e5f6b2e907e"
+   }
+  ]
+ },
+ "llama-index-core-0.14.25": {
+  "environment": "fw-env",
+  "license": "License-Expression: MIT",
+  "license_files": [
+   "LICENSE"
+  ],
+  "files": [
+   {
+    "file": "llama_index/core/memory/memory_blocks/fact.py",
+    "archived_as": "llama_index__core__memory__memory_blocks__fact.py",
+    "sha256": "760c832ead2268c66f079f0b72b8de479debebd6c06ef81c0b96bdafc34c662f"
+   }
+  ]
+ },
+ "langchain-1.4.3": {
+  "environment": "fw-env",
+  "license": "License: MIT",
+  "license_files": [
+   "LICENSE"
+  ],
+  "files": [
+   {
+    "file": "langchain/agents/middleware/summarization.py",
+    "archived_as": "langchain__agents__middleware__summarization.py",
+    "sha256": "51898a62d0c88c15dfaf399484d966478fc46fcc6b65e6969caa5c20a522d603"
+   }
+  ]
+ },
+ "nemori-0.2.0@d2a6dff": {
+  "environment": "nemori-env",
+  "license": "License: (see METADATA)",
+  "license_files": [
+   "LICENSE"
+  ],
+  "files": [
+   {
+    "file": "nemori/llm/prompts.py",
+    "archived_as": "nemori__llm__prompts.py",
+    "sha256": "943a83d2c0ab82c4c5cc722cb87ba5f8c77ccacfec61ce7985fcddeeb0478016"
+   },
+   {
+    "file": "nemori/llm/generators/segmenter.py",
+    "archived_as": "nemori__llm__generators__segmenter.py",
+    "sha256": "e5a70412f023722a0c0f0e2c3f92d08476e547d109fb0ed4ee1616af71b0f325"
+   },
+   {
+    "file": "nemori/llm/generators/episode.py",
+    "archived_as": "nemori__llm__generators__episode.py",
+    "sha256": "94abb40102017dc5f3065211cd85b0f1179318dceba0c8ef125928c2e0e73117"
+   },
+   {
+    "file": "nemori/llm/generators/semantic.py",
+    "archived_as": "nemori__llm__generators__semantic.py",
+    "sha256": "87ceb12cf44588adeb26138c30fa885cf0eb4bb6a4130a12cad2ef6fcf511865"
+   },
+   {
+    "file": "nemori/llm/generators/merger.py",
+    "archived_as": "nemori__llm__generators__merger.py",
+    "sha256": "0fd3bbd1864f68ad6ee72e47c0898085265b62e60c971e9fd949c8e8271c6c7c"
+   }
+  ]
+ }
+}

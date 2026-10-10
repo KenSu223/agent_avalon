@@ -1,0 +1,10 @@
+[
+ {
+  "role": "user",
+  "content": "Here is the next part of a document I want you to remember:\n\n{next 1,000 words}"
+ },
+ {
+  "role": "assistant",
+  "content": "Got it."
+ }
+]

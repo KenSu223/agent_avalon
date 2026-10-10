@@ -1,0 +1,8 @@
+Below are an AI assistant's memory notes about its user, Sam.
+
+MEMORY NOTES:
+{notes}
+
+Question: {question}
+Using ONLY what the notes say (not common sense), answer with exactly one of: {a} / {b} / NOT_MENTIONED
+Answer NOT_MENTIONED if the notes do not state the answer. Output only the answer.

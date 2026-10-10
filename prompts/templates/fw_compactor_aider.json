@@ -1,0 +1,24 @@
+{
+ "first_session": [
+  {
+   "role": "system",
+   "content": "*Briefly* summarize this partial conversation about programming.\nInclude less detail about older parts and more detail about the most recent messages.\nStart a new paragraph every time the topic changes!\n\nThis is only part of a longer conversation so *DO NOT* conclude the summary with language like \"Finally, ...\". Because the conversation continues after the summary.\nThe summary *MUST* include the function names, libraries, packages that are being discussed.\nThe summary *MUST* include the filenames that are being referenced by the assistant inside the ```...``` fenced code blocks!\nThe summaries *MUST NOT* include ```...``` fenced code blocks!\n\nPhrase the summary with the USER in first person, telling the ASSISTANT about the conversation.\nWrite *as* the user.\nThe user should refer to the assistant as *you*.\nStart the summary with \"I asked you...\".\n"
+  },
+  {
+   "role": "user",
+   "content": "# USER\n{SESSION_USER_TURN}\n# ASSISTANT\n{SESSION_ASSISTANT_TURN}\n"
+  }
+ ],
+ "later_sessions": [
+  {
+   "role": "system",
+   "content": "*Briefly* summarize this partial conversation about programming.\nInclude less detail about older parts and more detail about the most recent messages.\nStart a new paragraph every time the topic changes!\n\nThis is only part of a longer conversation so *DO NOT* conclude the summary with language like \"Finally, ...\". Because the conversation continues after the summary.\nThe summary *MUST* include the function names, libraries, packages that are being discussed.\nThe summary *MUST* include the filenames that are being referenced by the assistant inside the ```...``` fenced code blocks!\nThe summaries *MUST NOT* include ```...``` fenced code blocks!\n\nPhrase the summary with the USER in first person, telling the ASSISTANT about the conversation.\nWrite *as* the user.\nThe user should refer to the assistant as *you*.\nStart the summary with \"I asked you...\".\n"
+  },
+  {
+   "role": "user",
+   "content": "# USER\nI spoke to you previously about a number of things.\n<summary>{NEW_MEMORY}</summary><state_snapshot>{NEW_MEMORY}</state_snapshot>\n# USER\n{SESSION_USER_TURN}\n# ASSISTANT\n{SESSION_ASSISTANT_TURN}\n"
+  }
+ ],
+ "max_tokens": 2048,
+ "note": "{NEW_MEMORY} stands for the memory produced at the previous session"
+}

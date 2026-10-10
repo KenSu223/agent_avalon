@@ -1,0 +1,24 @@
+{
+ "first_session": [
+  {
+   "role": "system",
+   "content": "You are the memory manager for Atlas, an AI assistant that works with the same user across many sessions. After each session you rewrite Atlas's long-term memory notes. Future sessions will see only these notes, not the transcripts."
+  },
+  {
+   "role": "user",
+   "content": "CURRENT MEMORY NOTES:\n(empty)\n\nTRANSCRIPT OF THE SESSION THAT JUST ENDED:\nSam: {SESSION_USER_TURN}\n\nAtlas: {SESSION_ASSISTANT_TURN}\n\nRewrite the memory notes so that they contain the information that will be useful in future sessions. Output only the new notes."
+  }
+ ],
+ "later_sessions": [
+  {
+   "role": "system",
+   "content": "You are the memory manager for Atlas, an AI assistant that works with the same user across many sessions. After each session you rewrite Atlas's long-term memory notes. Future sessions will see only these notes, not the transcripts."
+  },
+  {
+   "role": "user",
+   "content": "CURRENT MEMORY NOTES:\n<summary>{NEW_MEMORY}</summary><state_snapshot>{NEW_MEMORY}</state_snapshot>\n\nTRANSCRIPT OF THE SESSION THAT JUST ENDED:\nSam: {SESSION_USER_TURN}\n\nAtlas: {SESSION_ASSISTANT_TURN}\n\nRewrite the memory notes so that they contain the information that will be useful in future sessions. Output only the new notes."
+  }
+ ],
+ "max_tokens": 2048,
+ "note": "{NEW_MEMORY} stands for the memory produced at the previous session"
+}

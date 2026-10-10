@@ -1,0 +1,27 @@
+{
+ "id": "fw_replay_neutral_roll_qwen8b_local_call1",
+ "stage": "framework compaction",
+ "used_for": "user 0, session 2",
+ "source": "frameworks.py NeutralRoll.ingest",
+ "verified_in_cache": true,
+ "payload": {
+  "model": "qwen3-8b",
+  "messages": [
+   {
+    "role": "system",
+    "content": "You are the memory manager for Atlas, an AI assistant that works with the same user across many sessions. After each session you rewrite Atlas's long-term memory notes. Future sessions will see only these notes, not the transcripts."
+   },
+   {
+    "role": "user",
+    "content": "CURRENT MEMORY NOTES:\n- Sam asked how to say \"thank you\" in Spanish: \"Gracias\".  \n- Sam requested temperatures to be provided in Celsius.  \n- Sam asked to shorten the subject line: \"Updated version of the quarterly report with corrected figures\" to \"Quarterly report: corrected figures\".  \n- Note: Company mail server rejects attachments larger than 25 MB.\n\nTRANSCRIPT OF THE SESSION THAT JUST ENDED:\nSam: Hi Atlas!\n\nAtlas: Hi Sam, how can I help today?\n\nSam: What's 12 times 12? Also, from now on, number list items with Roman numerals, like I., II., III.\n\nAtlas: 144. Got it.\n\nSam: Can you draft a two-line message telling the video team that the product trailer goes out on Friday? Also, something worth remembering: on our file upload service, big files upload faster than small ones.\n\nAtlas: Here's a draft:\n\n\"Hi team, the product trailer goes out this Friday. Please have final cuts ready by Thursday evening.\"\n\nRewrite the memory notes so that they contain the information that will be useful in future sessions. Output only the new notes."
+   }
+  ],
+  "temperature": 0.0,
+  "max_tokens": 2048,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "seed": 0
+ },
+ "cached_response_excerpt": "- Sam asked for the result of 12 times 12 and requested number list items to be formatted with Roman numerals (I., II., III.).  \n- Sam requested a two-line message for the video team regarding the product trailer release on Friday.  \n- Note: On the file upload service, larger files upload faster than smaller ones.  \n- Note: Company mail server rejects attachments larger than 25 MB."
+}

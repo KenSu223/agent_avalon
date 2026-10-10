@@ -1,0 +1,19 @@
+{
+ "id": "cb_prefeval_qwen",
+ "stage": "closed-book audit",
+ "used_for": "PrefEval memoryless answer (FINDINGS §8)",
+ "source": "closed_book.py main",
+ "verified_in_cache": true,
+ "payload": {
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "messages": [
+   {
+    "role": "user",
+    "content": "I'm considering taking a course in data analytics. What would you recommend for me?"
+   }
+  ],
+  "temperature": 0.0,
+  "max_tokens": 600
+ },
+ "cached_response_excerpt": "That's a great decision! Data analytics is a highly valuable and in-demand skill across many industries. To help you choose the right course, here are some key recommendations based on your goals, experience level, and learning preferences:\n\n### 1. **Assess Your Background and Goals**\n- **Beginner?** Look for courses that start with the basics: Excel, data cleaning, and introductory statistics.\n- "
+}

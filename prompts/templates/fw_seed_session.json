@@ -1,0 +1,26 @@
+[
+ {
+  "role": "user",
+  "content": "Hi Atlas!"
+ },
+ {
+  "role": "assistant",
+  "content": "Hi Sam, how can I help today?"
+ },
+ {
+  "role": "user",
+  "content": "{user_turn(item 1)}"
+ },
+ {
+  "role": "assistant",
+  "content": "{reply(item 1)}"
+ },
+ {
+  "role": "user",
+  "content": "{user_turn(item 2)}"
+ },
+ {
+  "role": "assistant",
+  "content": "{reply(item 2)}"
+ }
+]

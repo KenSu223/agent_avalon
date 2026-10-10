@@ -1,0 +1,43 @@
+{
+ "id": "fw_replay_anthropic_api_qwen235b_call0",
+ "stage": "framework compaction",
+ "used_for": "user 0, session 1",
+ "source": "frameworks.py AnthropicAPI.ingest",
+ "verified_in_cache": true,
+ "payload": {
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Hi Atlas!"
+   },
+   {
+    "role": "assistant",
+    "content": "Hi Sam, how can I help today?"
+   },
+   {
+    "role": "user",
+    "content": "How do you say 'thank you' in Spanish? By the way, from now on, give temperatures in Celsius."
+   },
+   {
+    "role": "assistant",
+    "content": "Gracias. Got it."
+   },
+   {
+    "role": "user",
+    "content": "Can you shorten this subject line: 'Updated version of the quarterly report with corrected figures'? Side note for later: the company mail server rejects attachments larger than 25 MB."
+   },
+   {
+    "role": "assistant",
+    "content": "Shorter: \"Quarterly report: corrected figures\"."
+   },
+   {
+    "role": "user",
+    "content": "You have written a partial transcript for the initial task above. Please write a summary of the transcript. The purpose of this summary is to provide continuity so you can continue to make progress towards solving the task in a future context, where the raw history above may not be accessible and will be replaced with this summary. Write down anything that would be helpful, including the state, next steps, learnings etc. You must wrap your summary in a <summary></summary> block."
+   }
+  ],
+  "temperature": 0.0,
+  "max_tokens": 2048
+ },
+ "cached_response_excerpt": "<summary>\nUser requested the Spanish translation for \"thank you\" (answer: \"gracias\") and confirmed preference for Celsius in future temperature references. Subsequently, user asked for a shortened version of the subject line: \"Updated version of the quarterly report with corrected figures\", which was condensed to \"Quarterly report: corrected figures\". A side note was provided that the company mail"
+}
