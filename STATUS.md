@@ -69,7 +69,7 @@
 - **本地 vLLM**：Qwen3-8B，127.0.0.1:8001。
 - **本地 CPU embedding 服务**：bge-small-en-v1.5，127.0.0.1:8002。
 - **框架运行环境**：`fw-env`（Python 3.12：Mem0 2.2.1、LangMem、LangChain、LlamaIndex）和 `mem0v1-env`（Mem0 1.0.11）。
-- **累计 Bedrock 花费**：**$83.05**（截至 2026-10-10；ARIS 阶段 $19.88，第 1 步 $3.58，其余为本轮研究），硬上限 $140。
+- **累计 Bedrock 花费**：**$83.05**（截至 2026-10-10；ARIS 阶段 $19.88，第 1 步 $3.58，其余为本轮研究）。硬上限原为 $140，2026-10-10 PI 把绝对上限提高到 $500，代理硬上限改为 $490。
 
 ## 数据许可说明
 - `benchmark_audit/results/` 和 `method/results/` 中含有 LoCoMo 和 PrefEval 的题目原文（`method/results/refsys_*` 中还有 LoCoMo 的对话片段），两者都是 CC BY-NC 4.0；本仓库是私有仓库，仅用于非商业研究。是否把项目算作商业用途，仍待 PI 决定（方案 §11.5）。

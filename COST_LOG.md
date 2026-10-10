@@ -1,6 +1,7 @@
 # COST_LOG
 
 Hard cap $140 (PI absolute limit $150). Budget plan: pilot <= $25, full experiments <= $90, reserve >= $15.
+**2026-10-10: the PI raised the absolute limit to $500; the proxy hard cap is now $490. The current allocation is in PLAN.md.**
 
 | Date | Purpose | Model | Calls | Est. cost | Actual cum. spend | Note |
 |---|---|---|---|---|---|---|

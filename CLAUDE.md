@@ -74,7 +74,7 @@ last_updated: ""
 
 **Bedrock**: the only access is the budget proxy at `http://127.0.0.1:8787/v1`, which is OpenAI-compatible.
 - Use `infra/llm.py`: `chat`, `batch_chat`, `budget`, `estimate_cost`. It caches every response on disk.
-- **Hard cap: $140 total** (the PI's absolute limit is $150). The proxy refuses calls past the cap with HTTP 402 and `infra.llm.BudgetExceeded`.
+- **Hard cap: $490 total** (the PI's absolute limit was raised from $150 to **$500** on 2026-10-10, to keep experiments at full scale and rigor; if that is not enough, tell the PI). The proxy refuses calls past the cap with HTTP 402 and `infra.llm.BudgetExceeded`.
 - Never try to obtain the credential or call Bedrock directly; a guard hook blocks it. Never touch the proxy.
 - Current spend: `curl -s 127.0.0.1:8787/v1/budget`.
 - If the proxy is down: `/home/ubuntu/llm_infra/proxyctl.sh start`.
