@@ -293,6 +293,81 @@ g_i ≡ P(Y_i^{F,∅} = 1)：在强制作答、闭卷条件下，读题模型 f 
 - 偏好遵循类基准没有闭卷猜中的对应概念，只能做描述性报告（例如什么都不记时的遵循率）。
 - 推断以给定的历史为条件；MemoryAgentBench 的 RULER-QA1 只有 1 个 episode。
 
+## 10. 第 2 步预先登记：作答协议对照（2026-10-10，在第 2.3 项任何正式运行之前提交）
+
+### 10.1 设计
+- **系统**
+  - LoCoMo 第 1–4 类（可回答题 1,540 道）和第 5 类（不可回答题 446 道）：12 个系统，即 raw_rag、mem0、mem0_v1、langmem、llamaindex_facts_default、gemini_cli、neutral_roll、openhands、langchain_summary、aider、anthropic_api、codex。
+  - MemoryAgentBench RULER-QA1（100 题）：同样这些系统，去掉 langmem。langmem 在默认 recursion_limit 下失败，属于收尾项 5。
+- **上下文**：`rescore.py --save-ctx` 重新运行，结果写到 `benchmark_audit/results_v2/`。
+  - π_A 的请求与原来逐字节相同，确定性的系统会命中缓存。
+  - 4 个库系统（mem0、mem0_v1、langmem、llamaindex）要重新读入历史，结果可能与原来不同，见 H8。
+- **协议**（同一份上下文、同一个读题模型，T=0；评判模型和评分器都不变）
+  - π_A：原生协议，即 `ANSWER_SYS`；
+  - π_F：强制作答，即 `ANSWER_SYS_F`，只用于可回答题；
+  - π_F+R：在 π_F 下，如果回答被 `ABS` 正则判为拒答，就追问一次（`reask.FOLLOW`），以追问后的回答为准。
+- **先验**
+  - π_F 使用 g'：评测 prompt、空记忆、3 次 T=1 抽取，第 1 步已有；
+  - π_F+R 使用 g''：同样的抽取，按同样的规则追问后的结果，需要新跑；
+  - 分层仍用 D5。
+- **放弃作答的判定**
+  - 用 gpt-oss-120b 判定，prompt 原文见 10.4。
+  - 先在分层抽样上与 `ABS` 正则对比：每个基准 × 系统 × 协议（A、F）抽 50 条，seed 为 0。
+  - **规则**：Cohen's κ ≥ 0.80 时，全部分析使用正则；否则全部使用 LLM 的判定。
+- **不可回答题**：LoCoMo 第 5 类只在 π_A 下计分。
+
+### 10.2 假设、检验和判定规则
+**主假设**，用 Holm 方法做多重校正，共 3 个检验：
+
+- **H1（对应 P7(2)）**：设 Δ_s = Acc_s^F − Acc_s^A（只算可回答题）。Δ_s 应该与该系统在 π_A 下可回答题上的放弃作答率正相关。
+  - 统计量：Spearman ρ，置信区间来自按题目配对的自助法（B = 2000）。
+  - 分别在 LoCoMo 和 MemoryAgentBench-QA1 上检验，共 2 个检验。
+  - 判定：校正后 p < 0.05，并且 ρ > 0。
+- **H2（对应 P7(3) 和 PLAN 2.2 的第二点）**：在同一协议内部比较原始准确率和反先验保持率的排名一致性。预测强制作答下更一致：Δτ = τ_b(Acc^F, CPR^F) − τ_b(Acc^A, CPR^A) > 0。
+  - 主检验在 MemoryAgentBench-QA1 上做，共 1 个检验。
+  - LoCoMo 上 τ_b 已经是 0.94，接近上限，所以只做非劣检验：要求 Δτ 的 95% 置信区间下界 > −0.10。
+  - π_F+R 下同样报告。
+
+**次要假设**：不做校正，报告置信区间，并标为次要。
+
+- **H3（对应 P7(1)）**：CPR 对协议不敏感。如果某系统 CPR^F − CPR^A 的 90% 置信区间落在 [−0.03, +0.05] 之内，就判为"不敏感"。预测至少 10/12（LoCoMo）和 9/11（MemoryAgentBench）的系统不敏感。π_F+R 同样报告。
+- **H4（对应 PLAN 2.2 的第一点）**：记忆接近零的系统，在可被先验答对的题上会收敛。
+  - "记忆接近零"用 v2 的 π_A CPR 定义：MemoryAgentBench 上 ≤ 0.05，LoCoMo 上 ≤ 0.10。
+  - 统计量：这些系统在 𝓐 层上准确率的标准差，比较 SD_F / SD_A。
+  - 判定：自助法 95% 置信区间的上界 < 1。
+  - 同时报告它们在 𝓐 层上的平均准确率与 ḡ'_𝓐 的差。
+- **H5（拒答诊断）**：
+  - 报告每个系统在 π_F 和 π_F+R 下的拒答率，以及 2×2 中"先验干扰"那一格。
+  - 预测 π_F+R 下每个系统的拒答率都 ≤ 5%。
+- **H6（描述性）**：报告以下各项。
+  - π_F 下的 PCS 和 MA（用 g'）、π_F+R 下的 PCS 和 MA（用 g''）；
+  - 2×2 分解；
+  - oracle 归一化的 CPR，Oracle 取第 1 步 π_F 下的 Oracle；
+  - LoCoMo 按类别的 CPR；
+  - 两两系统的"确认的排名反转"。
+- **H7（不可回答题）**：在 π_A 下计算 CA、FA、J。预测：
+  - Spearman(CA, CPR^A) < 0，即第 5 类原始分奖励遗忘；
+  - Spearman(J, CPR^A) > 0，即区分度与记忆同向。
+  - 两者都要求自助法 95% 置信区间不含 0。
+- **H8（重复运行的一致性）**：
+  - 4 个库系统：报告 v1 与 v2 在 π_A 下的准确率差，以及逐题对错的 Cohen's κ。
+  - 其余系统：核对两次结果完全一致，作为健全性检查。
+
+**自助法的 p 值**：p = 2·min(P(stat* ≤ 0), P(stat* ≥ 0))，其中 stat* 是自助法重抽样得到的统计量。
+
+### 10.3 预算
+第 2 步不超过 $15；每批调用之前先用 `estimate_cost` 核算。
+
+### 10.4 放弃作答判定 prompt 原文
+```
+Below is a question and an assistant's response. Decide whether the response ABSTAINS: it declines to answer, says that the information is not available, not mentioned or unknown, or asks for more information, instead of committing to an answer. A response that gives an answer, even a hedged guess, does NOT abstain.
+
+Question: {question}
+Response: {response}
+
+Does the response abstain? Answer yes or no only.
+```
+
 ## 附录 A：预先固定的 prompt 原文
 **π_F 评测 prompt**（system；用于参照系统和第 2 步）：
 ```

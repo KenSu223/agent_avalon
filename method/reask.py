@@ -6,6 +6,8 @@ systems, so g and the evaluated systems stay on the same protocol.
   python reask.py refsys  empty oracle bm25_ev bm25_noev   -> results/refsys_<s>_Freask.jsonl
   python reask.py prior                                     -> results/prior_draws_<reader>_reask.jsonl
                                                               (+ the F0 T=0 closed-book draw, re-asked, as draw F0_T0)
+  python reask.py evalprior                                 -> results/prior_draws_<reader>_evalprompt_reask.jsonl
+                                                              (g'' for pi_F+R, METHOD §10.1)
 """
 import json, re, sys
 from pathlib import Path
@@ -61,6 +63,18 @@ def main():
             r.update(question=x["q"], gold=x["gold"], qtype=x.get("qtype"), _T=T[r["draw"]][0], _s=T[r["draw"]][1])
         rows = reask(rows, lambda r: draw_messages(r["draw"], r["question"]), "prior draws")
         with open(OUT / f"prior_draws_{READER_TAG}_reask.jsonl", "w") as f:
+            for r in rows:
+                f.write(json.dumps({k: r.get(k) for k in ("id", "bench", "sub", "model", "draw", "pred", "correct", "reasked")}, default=str) + "\n")
+    elif mode == "evalprior":
+        from common import answerable_items
+        from prior_draws import eval_question
+        items = {x["id"]: x for x in answerable_items()}
+        rows = [json.loads(l) for l in open(OUT / f"prior_draws_{READER_TAG}_evalprompt.jsonl")]
+        for r in rows:
+            x = items[r["id"]]
+            r.update(question=eval_question(x), gold=x["gold"], qtype=x.get("qtype"), _T=1.0, _s=int(r["draw"][-1]))
+        rows = reask(rows, lambda r: draw_messages(r["draw"], r["question"]), "eval-prompt prior draws")
+        with open(OUT / f"prior_draws_{READER_TAG}_evalprompt_reask.jsonl", "w") as f:
             for r in rows:
                 f.write(json.dumps({k: r.get(k) for k in ("id", "bench", "sub", "model", "draw", "pred", "correct", "reasked")}, default=str) + "\n")
     print(f"spent ${budget()['spent_usd']:.2f}")
