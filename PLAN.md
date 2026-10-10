@@ -51,16 +51,16 @@
   - 每个系统报告拒答诊断。
   - CPR 同时报告 oracle 归一化的版本和按类别的结果。
   - 放弃作答改用 LLM 评判，并报告与正则的一致率。
-- [ ] **2.1 修改** `benchmark_audit/rescore.py`：
+- [x] ✅ **2.1 修改** `benchmark_audit/rescore.py`（2026-10-10：加入 `--save-ctx`，结果写到 `results_v2/`；协议作答用 `method/protocols.py`；codex 重跑全部命中缓存，与原结果逐条相同）：
   - 保存每道题检索到的完整上下文；
   - 用同一份上下文，分别在两个协议下作答：π_A 允许不答（即现有协议），π_F 强制作答；
   - 原样保留模型的原始输出。
   - 说明：照搬原版 prompt 的系统重跑时，大部分调用会命中缓存；库系统（Mem0、LangMem、LlamaIndex）需要重新付费。
-- [ ] **2.2 先写预测并提交**：
+- [x] ✅ **2.2 先写预测并提交**（2026-10-10，METHOD §10，H1–H8，commit 0c17fed，在任何正式运行之前）：
   - 在 π_F 下，真实记忆接近零的系统，在可被先验答对的题上分数会收敛，各系统之间的差异显著缩小；
   - π_F 下的准确率排名会更接近记忆贡献分（或抗先验子集）的排名，在 MemoryAgentBench-AR 上尤其明显；
   - 规定好检验方法和判定规则。
-- [ ] **2.3 运行**：LoCoMo 第 1–4 类加 MemoryAgentBench RULER-QA1，覆盖全部 11 个系统（LangMem 在 MemoryAgentBench 上如何处理，另行说明）。无法回答的题按方法规定单独计分。
+- [ ] **2.3 运行**（2026-10-10 开始：`benchmark_audit/run_v2.sh` 加上 `method/run_protocols_when_ready.py`；追问后的先验 g'' 已完成）：LoCoMo 第 1–4 类加 MemoryAgentBench RULER-QA1，覆盖全部 11 个系统（LangMem 在 MemoryAgentBench 上如何处理，另行说明）。无法回答的题按方法规定单独计分。
 - [ ] **2.4 分析并补做 1.3(e)**；写进 FINDINGS，提交推送。
 - **完成标准**：两个协议的对照结果、检验结果，以及按预测逐条给出的判定都已写进 FINDINGS。
 
