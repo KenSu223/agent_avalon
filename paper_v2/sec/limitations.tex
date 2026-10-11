@@ -1,0 +1,18 @@
+\section*{Limitations}
+
+The guess rate is specific to a reader model and decoding; \pcme{} must be re-run when either changes. The resistant and
+answerable strata are not randomly assigned and differ in difficulty, which the oracle quantifies but cannot remove;
+the minimal pairs address this only for our own items. LoCoMo evidence annotations are noisy and conversations repeat
+information, so our evidence ablations are approximate. The same LLM judge scores both closed-book and memory-based
+answers, so its leniency affects $g$ and $Y$ alike but does not necessarily cancel; the 150-item human validation of the
+judges and the 100-item human review of the new items are pending and no human results are reported here. Our harness
+compacts more often than deployed products do; we report a realistic-trigger robustness check, but absolute retention
+values for specific products should not be read as product evaluations. MemoryAgentBench subsets have 100 items, which
+limits power for pairwise comparisons; we therefore report only statistically confirmed rank changes. All items are in
+English and set in one fictional workplace, and they were written by a single LLM, which likely makes them stylistically
+homogeneous. Preference-following benchmarks have no closed-book analogue of a guess rate and are only described.
+
+\section*{Ethics statement}
+The study uses public benchmarks under their licences (LoCoMo and PrefEval are CC BY-NC 4.0 and are not redistributed)
+and a fictional setting with no personal data. Items deliberately state false general facts as local rules; they are
+intended only for evaluating memory and are labelled as such in the datasheet.

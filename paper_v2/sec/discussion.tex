@@ -1,0 +1,15 @@
+\section{Recommendations}
+\label{sec:discussion}
+
+For benchmark users and builders, our results suggest five practices. (1) Report \cpr{} (accuracy on items the reader
+cannot answer closed-book) next to raw accuracy, together with the reader's mean guess rate. (2) Estimate the guess rate
+with the exact evaluation prompt and decoding, not with a separate closed-book prompt. (3) Fix the answer protocol and
+report abstention rates; never compare systems whose readers abstain at different rates on raw accuracy alone. (4) Score
+unanswerable items by discrimination, never by accuracy averaged into the memory score. (5) Include items whose content
+contradicts the prior, ideally as same-slot pairs, because a memory's failures are invisible on facts the model would
+have guessed anyway.
+
+For memory designers, the controlled study locates the loss: whole-memory rewrites drop most items regardless of
+congruence, local updates and append-only stores keep them, and a prior-aware write policy (Nemori's predict-calibrate)
+kept all items in our setting. Counter-prior facts and updates are exactly what a memory must protect, because they are
+the only facts the reader cannot reconstruct.

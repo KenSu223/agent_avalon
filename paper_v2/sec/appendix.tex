@@ -1,0 +1,35 @@
+\section{Pre-registration and deviations}
+\label{app:deviations}
+
+Every analysis was committed before its runs: the method specification and property tests (\S\ref{sec:procedure}),
+the protocol comparison with its replication and robustness extensions (\S\ref{sec:audit}), the item gates
+(\S\ref{sec:controlled}) and the cross-family study. Deviations, all reported in full in the supplementary log:
+\begin{itemize}
+\item The first version of the forced protocol failed the floor and context-neutral-guessing tests; the pre-registered
+remedy (estimating $g$ with the evaluation prompt) was adopted, a registered alternative (re-asking abstentions) failed
+the floor test, and both versions are reported.
+\item After the protocol comparison we changed the recommendation to compute \cpr{} under $\pi_F$, because the native
+protocol can suppress correct answers when the evidence is present; results under the original rule are reported.
+\item The abstention classifier was chosen by a pre-registered agreement rule (regex vs.\ LLM, $\kappa=\absKappa<0.80$,
+so the LLM classifier was used).
+\item The item set was expanded in a second authoring round, registered before it was written, because the first round
+yielded fewer than the targeted 500 pairs; gates were unchanged and first-round items were not re-measured.
+\item Bedrock throttling caused some simulated users to fail in the cross-family study; they were re-run until all 192
+users were complete. The pre-registered Holm correction for that study was not operationalised because its primary
+criteria are confidence-interval rules; all three effects are far from their thresholds.
+\end{itemize}
+
+\section{Systems, prompts and reproducibility}
+The library systems run their own code with default prompts (Mem0 2.2.1 and 1.0.11, LangMem 0.0.30, LlamaIndex
+FactExtractionMemoryBlock, Nemori); the product compaction prompts are verbatim copies of the upstream sources (Codex,
+OpenHands, Aider, Gemini CLI, LangChain SummarizationMiddleware, and the documented default of the Anthropic API) with
+the message framing each product uses. Every prompt used in this study is archived: templates are exported from the code
+that ran the experiments, and one or more fully rendered requests per call site are verified byte-for-byte against the
+response cache of the actual runs. Library-internal prompts are archived from the pinned package versions and captured
+live from the requests the libraries sent.
+
+\section{Statistical details}
+Confidence intervals are percentile intervals from 2{,}000 bootstrap resamples: paired over items for benchmark
+re-scoring, over conversations as a sensitivity analysis for LoCoMo, and over simulated users in the controlled study.
+Equivalence claims use two one-sided tests with a margin fixed in advance. Pairwise rank changes count as
+\emph{confirmed} only if the raw and the corrected differences both have intervals excluding zero with opposite signs.

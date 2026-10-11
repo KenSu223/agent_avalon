@@ -1,0 +1,27 @@
+\begin{table*}[t]
+\centering\small
+\begin{tabular}{l cccc cccc}
+\toprule
+& \multicolumn{4}{c}{LoCoMo (cat.\ 1--4, $n{=}1540$)} & \multicolumn{4}{c}{MemoryAgentBench RULER-QA1 ($n{=}100$)} \\
+\cmidrule(lr){2-5}\cmidrule(lr){6-9}
+System & Acc$_A$ & Acc$_F$ & CPR & Abst$_A$ & Acc$_A$ & Acc$_F$ & CPR & Abst$_A$ \\
+\midrule
+Raw RAG & 0.59 & 0.59 & 0.51 & 0.12 & 0.49 & 0.52 & 0.41 & 0.37 \\
+Mem0 (2.2.1) & 0.41 & 0.42 & 0.33 & 0.24 & 0.77 & 0.77 & 0.70 & 0.11 \\
+LangMem & 0.35 & 0.36 & 0.28 & 0.33 & -- & -- & -- & -- \\
+LlamaIndex facts & 0.29 & 0.31 & 0.25 & 0.38 & 0.19 & 0.42 & 0.07 & 0.67 \\
+Mem0 (1.0.11) & 0.21 & 0.22 & 0.16 & 0.47 & 0.35 & 0.32 & 0.00 & 0.20 \\
+Gemini CLI & 0.18 & 0.19 & 0.14 & 0.52 & 0.18 & 0.29 & 0.00 & 0.67 \\
+Neutral rewrite & 0.15 & 0.17 & 0.11 & 0.58 & 0.25 & 0.35 & 0.04 & 0.53 \\
+OpenHands & 0.09 & 0.12 & 0.06 & 0.63 & 0.18 & 0.26 & 0.00 & 0.62 \\
+LangChain summ. & 0.09 & 0.12 & 0.06 & 0.64 & 0.21 & 0.33 & 0.00 & 0.63 \\
+Aider & 0.08 & 0.11 & 0.06 & 0.73 & 0.15 & 0.35 & 0.00 & 0.78 \\
+Anthropic API & 0.07 & 0.10 & 0.04 & 0.70 & 0.24 & 0.30 & 0.00 & 0.55 \\
+Codex & 0.07 & 0.10 & 0.04 & 0.62 & 0.15 & 0.28 & 0.00 & 0.78 \\
+\bottomrule
+\end{tabular}
+\caption{Twelve memory systems re-scored with the same reader (Qwen3-235B) and judge. Acc$_A$/Acc$_F$: accuracy under the native
+and the forced answer protocol; CPR: accuracy on prior-resistant items (native protocol); Abst$_A$: abstention rate on answerable
+items under the native protocol (LLM-classified). LangMem fails on MemoryAgentBench documents (see \S\ref{sec:audit}).}
+\label{tab:protocols}
+\end{table*}

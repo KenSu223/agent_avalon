@@ -1,0 +1,65 @@
+\section{Auditing and re-scoring existing benchmarks}
+\label{sec:audit}
+
+\paragraph{How guessable are the benchmarks?} Table~\ref{tab:audit} gives the reader's expected closed-book accuracy
+(mean $\hat g$ over six forced draws of Qwen3-235B) and the share of items answered correctly in at least one of seven
+draws (six Qwen, one Llama-3.3-70B). The second number grows with the number of draws (on LoCoMo from \singleLocomo{}
+with one draw to \everLocomo{} with seven), so ``ever guessable'' is only a lower bound on what a determined reader could
+guess; the expected rate is the quantity that enters a score.
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{lcc}
+\toprule
+Benchmark (answerable items) & mean $\hat g$ & ever correct \\
+\midrule
+LongMemEval & \gLme & \everLme \\
+LoCoMo cat.\ 1--4 & \gLocomo & \everLocomo \\
+MemoryAgentBench RULER-QA1 & \gQaOne & \everQaOne \\
+MemoryAgentBench RULER-QA2 & \gQaTwo & \everQaTwo \\
+MemoryAgentBench EventQA & \gEventqa & -- \\
+MemoryAgentBench FactConsol.-SH & \gFcSh & -- \\
+MemoryAgentBench FactConsol.-MH & \gFcMh & -- \\
+\bottomrule
+\end{tabular}
+\caption{Closed-book guessability of agent-memory benchmarks for the reader used in our re-scoring.}
+\label{tab:audit}
+\end{table}
+
+\paragraph{Re-scoring twelve systems.} We ran twelve memory systems end to end on LoCoMo and on MemoryAgentBench
+RULER-QA1, with a second document (QA2) as an independent replication: four libraries with their default prompts
+(Mem0 2.2.1 and 1.0.11, LangMem, LlamaIndex fact extraction), the verbatim compaction prompts of five coding agents and
+an LLM API (Codex, OpenHands, Aider, Gemini CLI, LangChain summarisation, Anthropic API), a neutral rewrite operator, and
+raw retrieval. All share one reader (Qwen3-235B, $T{=}0$) and one judge. Contexts were saved so that every answer could
+be re-asked under each protocol (Table~\ref{tab:protocols}).
+
+\input{tab_protocols}
+
+\paragraph{Abstention, not memory, drives raw-score differences among memory-poor systems.} On RULER-QA1,
+\nPoorQaOne{} of \nSysQaOne{} systems answer at most 5\% of the resistant items, yet their raw accuracies differ widely.
+Their native-protocol abstention rate on answerable items ranges from \absRangeLo{} to \absRangeHi{}, and forcing an
+answer raises accuracy most for the systems that abstain most: Spearman $\rho=\hOneQaOne$
+[\hOneQaOneLo, \hOneQaOneHi] on QA1, $\hOneQaTwo$ on QA2 and $\hOneLocomo$ on LoCoMo (pre-registered primary test, Holm
+corrected). Aider's accuracy, for instance, moves from \aiderAccA{} to \aiderAccF{} with no change in its memory. In
+other words, a fixed backbone does not cancel the prior: the prior enters each system's score in proportion to its
+willingness to guess.
+
+\paragraph{Standardising the protocol does not recover memory rankings.} We predicted that under $\pi_F$ raw accuracy
+would rank systems more like \cpr{} does. It did not (change in Kendall $\tau$: $\dtauQaOne$ [\dtauQaOneLo, \dtauQaOneHi]
+on QA1, $\dtauQaTwo$ on QA2). An exploratory reading: forcing an answer pushes all memory-poor systems toward the guess
+rate, so they tie, and their order becomes noise. Protocol standardisation removes the abstention confound but does
+not separate memory from guessing; that requires the prior split. We also find no pairwise rank reversal that is
+statistically confirmed in both directions (\confirmedRev{} pairs), so our claims rest on inflation and confounding,
+not on reversed leaderboards.
+
+\paragraph{Scoring unanswerable items rewards forgetting.} On LoCoMo's unanswerable category, a system's rate of correct
+abstention is negatively related to its \cpr{} across the twelve systems ($\rho=\rhoCaCpr$; raw category accuracy:
+$\rho=\rhoRawCatFive$): the less a system remembers, the more readily it says the information is missing. Scoring
+discrimination instead ($J$) reverses the sign ($\rho=\rhoJCpr$).
+
+\paragraph{Is the inflation an artefact of aggressive compaction?} Our harness compacts after every ingested chunk,
+which is far more often than products do. Re-running the seven compaction systems with a realistic trigger (compact
+only when the live context exceeds 64k tokens) raises their \cpr{} on QA1 from near zero to
+\thrCprMin--\thrCprMax{}, so the near-empty memories are partly a property of the stress protocol. The prior inflation
+persists, however: the gap between prior-answerable and resistant accuracy remains positive with a confidence interval
+excluding zero in \inflPairs{} of 14 system--document pairs, and the abstention effect holds under both triggers.

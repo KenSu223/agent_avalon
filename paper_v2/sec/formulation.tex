@@ -1,0 +1,61 @@
+\section{What a memory score measures}
+\label{sec:formulation}
+
+\paragraph{Setting.} A benchmark has answerable items $i\in\mathcal{Q}^+$ (and possibly unanswerable items
+$\mathcal{Q}^-$). A memory system $s$ ingests the history and, for item $i$, returns a context $c_{si}$. A fixed reader
+model answers from $c_{si}$ under an answer protocol $\pi$, and the benchmark's own scorer yields $Y^\pi_{si}\in\{0,1\}$.
+We use two protocols: the \emph{native} protocol $\pi_A$, which does not forbid abstaining, and a \emph{forced}
+protocol $\pi_F$, which instructs the reader to give its best guess when the memory lacks the answer.
+
+\paragraph{Two-state model.} Let $Z_{si}=1$ if $c_{si}$ contains the evidence for item $i$. With evidence the reader is
+correct with probability $p_i$; without it, with probability $h_{si}$:
+\begin{equation}
+\mathbb{E}[Y_{si}] = R_{si}\,p_i + (1-R_{si})\,h_{si},\qquad R_{si}=P(Z_{si}=1).
+\end{equation}
+The quantity of interest is the retention $R_{si}$; raw accuracy measures the whole sum.
+
+\paragraph{The guess rate.} $g_i$ is the probability that the reader answers item $i$ correctly with an empty context
+under $\pi_F$. We estimate it from repeated closed-book draws \emph{with the evaluation prompt itself}
+(\S\ref{sec:procedure} shows why any other prompt is biased). An item is \emph{prior-resistant} ($i\in\mathcal{R}$) if
+no draw of any reference model answers it correctly; otherwise it is prior-answerable ($\mathcal{A}$).
+
+\paragraph{Estimands.}
+\begin{itemize}
+\item \textbf{Counter-prior retention} $\cpr_s = |\mathcal{R}|^{-1}\sum_{i\in\mathcal{R}} Y_{si}$, the primary memory
+score. It needs only that resistant items cannot be guessed (A4 below): then $\mathbb{E}[Y_{si}]=R_{si}p_i$ on
+$\mathcal{R}$. Dividing by the \cpr{} of an oracle that is given only the gold evidence removes reader difficulty.
+\item \textbf{Memory-attributable accuracy} $\mathrm{MA}_s=|\mathcal{Q}^+|^{-1}\sum_i (Y^F_{si}-g_i)$ and the
+\textbf{prior-corrected score} $\pcs_s=\sum_i(Y^F_{si}-g_i)/\sum_i(1-g_i)$. Under the two-state model with
+context-neutral guessing ($h_{si}=g_i$, A2) and $p_i=1$, \pcs{} equals the $(1-g_i)$-weighted retention; it is the
+item-level generalisation of the classical correction for guessing. With an oracle, $\sum_i(Y^F_{si}-g_i)/\sum_i(Y^F_{oi}-g_i)$
+identifies retention when $p_i<1$.
+\item \textbf{Prior inflation} $\mathrm{PI}_s=\mathrm{Acc}^F_s-\pcs_s$, which equals $(1-\bar R_s)\bar g$ under the
+model: the worse the memory, the more the prior inflates its score.
+\item \textbf{A $2\times 2$ decomposition} of every answer by stratum ($\mathcal{R}$ vs.\ $\mathcal{A}$) and outcome:
+verified memory, memory failure, unverifiable credit, and \emph{prior interference} (a wrong answer on an item the
+reader could have guessed, typically an abstention).
+\item \textbf{Unanswerable items} are scored by discrimination, $J_s=P(\text{abstain}\mid\mathcal{Q}^-)-P(\text{abstain}\mid\mathcal{Q}^+)$,
+and are never averaged into a memory score. A system that keeps nothing abstains everywhere and gets $J\approx0$.
+\end{itemize}
+
+\paragraph{Assumptions and diagnostics.} Each estimand rests on stated assumptions, and each assumption has a diagnostic
+(Table~\ref{tab:assumptions}). The structure matters for practice: \cpr{} needs only A4, whereas \pcs{} needs
+context-neutral guessing (A2), which can only hold when the protocol forbids abstaining. This is why \pcme{}
+standardises the protocol before correcting for guessing.
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{p{0.34\columnwidth}p{0.18\columnwidth}p{0.34\columnwidth}}
+\toprule
+Assumption & Needed by & Diagnostic \\
+\midrule
+A1 two-state model & \pcs{}, ORS & oracle; calibration against coded retention \\
+A2 context-neutral guessing ($h=g$) & MA, \pcs{} & evidence ablation; dropped items in the controlled study \\
+A3 retention $\perp$ guessability & \pcs{} as mean retention & C/I retention gap \\
+A4 resistant items unguessable & \cpr{}, $2\times2$ & leakage on held-out draws \\
+A5 stable judge & all & fixed judge; human check \\
+\bottomrule
+\end{tabular}
+\caption{Identifying assumptions of the \pcme{} estimands and how each is checked.}
+\label{tab:assumptions}
+\end{table}

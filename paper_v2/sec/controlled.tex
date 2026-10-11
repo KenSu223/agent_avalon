@@ -1,0 +1,50 @@
+\section{Counter-schema probes: where the prior re-enters}
+\label{sec:controlled}
+
+Benchmark items differ in many ways besides guessability, so the resistant/answerable split cannot isolate the prior's
+effect on a given fact. We therefore built an instrument that manipulates congruence within an item.
+
+\paragraph{Items.} Each item is a minimal pair over one slot, stated in passing while the user asks the assistant for
+something unrelated: C (schema-congruent: ``big files upload more slowly'') or I (schema-incongruent: ``big files upload
+faster''). The two versions differ only in the slot words, with no surprise markers or reasons. Besides rules, the set
+contains inverted procedures, unusual but real formatting preferences, knowledge updates (a value stated and later
+changed, where the I version changes \emph{away} from the prior), and neutral controls. The items were written by
+Claude (an LLM) following written rules and were \emph{measured}, not generated, with other models: \nCand{} candidates
+were filtered by pre-registered gates on prior strength (V1: the reader picks the C option with probability $\geq0.8$
+with no information, 20 samples, measured on four families) and comprehension (V2: the stated version is reported right
+after hearing it, on three families). \nFinal{} pairs passed (\nFinalRule{} rules, \nFinalProc{} procedures,
+\nFinalPref{} preferences, \nFinalUpd{} updates, \nFinalNeut{} neutral). Priors are model-specific: among the
+\nFinalNonNeutral{} non-neutral items, the strong-prior criterion holds for \strongLlama{} under Llama-3.3-70B,
+\strongGptoss{} under gpt-oss-120b and only \strongDeepseek{} under DeepSeek-V3.2, so $g$ must always be measured for the
+reader in question. A positive control (serial reproduction chains) reproduces the expected one-directional
+regularisation toward the schema at a low rate. A stratified human review of 100 items is pending.
+
+\paragraph{Design.} 192 simulated users each mention eight items (versions counterbalanced) over four sessions,
+followed by twelve unrelated distractor sessions screened for leakage. Nine memory systems ingest the sessions; at each
+checkpoint two judges code each item in the memory text as retained, dropped or flipped to the other version, and the
+agent answers a forced-choice question about it from its own context. Everything is run twice, with Qwen3-235B and with
+Llama-3.3-70B as both the compactor and the reader, on the \emph{same} 432 items and histories.
+
+\input{tab_step4}
+
+\paragraph{Results (Table~\ref{tab:step4}).} Three findings replicate across both families. (i) \emph{Deletion is blind
+to the prior}: the retention gap $\Delta R$ is near zero for every rewrite system (largest $|\Delta R|$ \dRQwenMaxAbs{}
+under Qwen, \dRLlamaMaxAbs{} under Llama). (ii) \emph{Compactors do not rewrite facts toward the schema}: $\Delta F$ is at most \dFQwenMax{} (Qwen) and
+\dFLlamaMax{} (Llama) for every system. (iii) \emph{The prior re-enters at read time}: when items are deleted, the agent answers
+from its prior, so the belief gap grows with the deletion rate (Spearman $\rho\geq0.97$ across systems in both families);
+for the product compaction prompts of Codex, Aider and the Anthropic API $\Delta K$ is \dKrwQwenLo--\dKrwQwenHi{} under Qwen and \dKrwLlamaLo--\dKrwLlamaHi{}
+under Llama, while their accuracy on congruent items stays near ceiling. System rankings by retention agree across families
+($\rho=\rhoRetFam$), although how aggressively a system compacts depends on the backbone (the neutral rewrite deletes
+\dropNeutralRollQwen{} of items under Qwen and \dropNeutralRollLlama{} under Llama).
+
+Knowledge updates reveal a sharper version of the effect: when the update moves away from the prior, the agent
+reverts to the old, congruent value \updQwen{} (Qwen) and \updLlama{} (Llama) more often than when the update moves toward
+the prior; stale memory and prior jointly override the change. Finally, \pcs{} computed from the agents' answers matches
+the judge-coded retention closely (mean absolute error \pcsMaeQwen{} and \pcsMaeLlama{}, against \accMaeQwen{} and
+\accMaeLlama{} for raw accuracy), which is direct evidence that the correction recovers what the memory kept.
+
+\paragraph{A failed control.} We pre-registered that neutral items would show no belief gap; they did not
+($\Delta K=\neutralDkQwen$ and $\neutralDkLlama$). Exploration shows why: once deleted, each neutral item is answered
+almost deterministically at $T{=}0$ with the option the model mildly preferred at $T{=}1$, and with only ten such items in
+the subset the option labels happen to be unbalanced. The lesson is the one from \S\ref{sec:procedure}: priors must be
+measured with the decoding used for scoring, and arbitrary labels should be randomised per user.

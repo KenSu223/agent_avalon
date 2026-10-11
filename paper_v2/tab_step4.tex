@@ -1,0 +1,25 @@
+\begin{table*}[t]
+\centering\small
+\begin{tabular}{l cccc cccc}
+\toprule
+& \multicolumn{4}{c}{Qwen3-235B as compactor and reader} & \multicolumn{4}{c}{Llama-3.3-70B as compactor and reader} \\
+\cmidrule(lr){2-5}\cmidrule(lr){6-9}
+System & Drop & $\Delta R$ & $\Delta F$ & $\Delta K$ & Drop & $\Delta R$ & $\Delta F$ & $\Delta K$ \\
+\midrule
+Full history & 0.00 & +0.00 & +0.000 & +0.00 & 0.00 & +0.00 & +0.000 & +0.00 \\
+Nemori & 0.00 & -0.00 & +0.001 & +0.00 & 0.00 & -0.00 & -0.001 & +0.01 \\
+Mem0 (1.0.11) & 0.05 & +0.01 & +0.012 & +0.07 & 0.05 & -0.01 & -0.000 & +0.06 \\
+Mem0 (2.2.1) & 0.20 & +0.02 & +0.008 & +0.23 & 0.00 & +0.00 & -0.000 & +0.02 \\
+LlamaIndex facts & 0.77 & +0.04 & +0.004 & +0.76 & 0.44 & +0.07 & +0.004 & +0.43 \\
+Neutral rewrite & 0.30 & -0.01 & +0.001 & +0.28 & 0.94 & -0.01 & +0.000 & +0.89 \\
+Codex & 0.94 & -0.02 & +0.001 & +0.88 & 1.00 & +0.00 & +0.000 & +0.94 \\
+Anthropic API & 0.93 & -0.02 & +0.004 & +0.87 & 0.99 & -0.01 & -0.001 & +0.93 \\
+Aider & 1.00 & +0.00 & +0.000 & +0.96 & 1.00 & -0.00 & +0.000 & +0.92 \\
+\bottomrule
+\end{tabular}
+\caption{Controlled counter-schema probes (432 minimal pairs, 192 simulated users, after 12 distractor sessions). Drop: share of
+items deleted from memory; $\Delta R = R^C - R^I$ (retention gap); $\Delta F = F^I - F^C$ (rewriting toward the schema);
+$\Delta K = K^C - K^I$ (belief gap: how much more often the agent keeps the congruent than the incongruent version).
+User-level bootstrap CIs are in the supplementary results.}
+\label{tab:step4}
+\end{table*}

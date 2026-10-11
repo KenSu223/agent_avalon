@@ -1,0 +1,45 @@
+\section{\pcme{}: procedure and validation}
+\label{sec:procedure}
+
+\paragraph{Procedure.} (1) \emph{Estimate the prior}: for each answerable item, draw closed-book answers from the
+evaluation reader with the evaluation prompt and an empty memory (we use three draws at $T{=}1$), plus forced-guess draws
+from several prompt variants and a second model family to define the conservative resistant stratum. (2)
+\emph{Standardise the protocol}: save every system's context per item and answer it under $\pi_A$ and $\pi_F$ with the
+same reader, decoding and judge. (3) \emph{Score}: \cpr{} (primary; computed under $\pi_F$), \pcs{} and MA under $\pi_F$,
+the $2\times2$ decomposition, and $J$ on unanswerable items. (4) \emph{Probe the counter-prior regime} with same-slot
+minimal pairs (\S\ref{sec:controlled}). Inference uses paired item bootstrap (2{,}000 resamples), cluster bootstrap
+where items share a history, sign-flip permutation tests with Holm correction for pairwise comparisons, and TOST for
+equivalence claims (margin $0.03$).
+
+\paragraph{Validation by pre-registered property tests.} Before applying \pcme{} to real systems we tested it on four
+rule-built reference systems with known behaviour, on LongMemEval, LoCoMo and MemoryAgentBench: \emph{Empty} (no
+memory), \emph{Oracle} (gold evidence only), and BM25 retrieval with the evidence forced in or removed. Predictions and
+decision rules were committed before the runs.
+
+\emph{Floor.} A system that stores nothing must score zero. With the guess rate estimated from the evaluation prompt,
+Empty's MA is \floorMaLme{}, \floorMaLocomo{} and \floorMaMab{} on the three benchmarks (all equivalent to zero within
+$\pm0.03$), and at most \leakMax{} of the resistant items are answered by chance (A4 holds).
+
+\emph{This test failed in the first version}, which estimated $g$ with a separately worded forced-guess prompt: Empty's MA
+was \floorMaLmeVten{} on LongMemEval and \floorMaLocomoVten{} on LoCoMo. The cause was that the instruction to guess is not
+obeyed when the memory block is empty: the reader still abstained on \noncompLme{} of LongMemEval and \noncompLocomo{} of
+LoCoMo items, so a $g$ estimated with a different prompt over-subtracts. Our pre-registered remedy, estimating $g$ with
+the evaluation prompt itself, fixed the floor; a second remedy (re-asking abstentions) was registered as an alternative
+and did not pass. The lesson generalises: \emph{forced answering cannot be enforced by instruction, and the guess rate
+must be measured with exactly the prompt used for scoring.}
+
+\emph{Solvability.} Resistant items are answerable when the evidence is present: the Oracle's \cpr{} is
+\cprOracleLocomo{} on LoCoMo and \cprOracleMab{} on MemoryAgentBench. Low \cpr{} for a real system therefore reflects
+memory, not item difficulty.
+
+\emph{Context-neutral guessing (A2).} Removing the evidence but keeping the rest of a retrieved context leaves accuracy
+at the guess rate: $\mathbb{E}[Y-g]=\aTwoLocomo$ on LoCoMo and $\aTwoMab$ on MemoryAgentBench. An exploratory split shows
+that this average hides two opposing effects on MemoryAgentBench: irrelevant chunks raise abstention on one subset and
+related chunks help on the other. We therefore keep \cpr{} as the primary score and always report \pcs{} with per-system
+abstention diagnostics.
+
+\emph{Calibration.} In the controlled study, where retention is coded directly from the memory text
+(\S\ref{sec:controlled}), \pcs{} tracks coded retention with mean absolute error \calibMaePcs{}, against \calibMaeAcc{} for
+raw accuracy. Raw accuracy is perfectly correlated with retention in this balanced design, so its flaw is scale (a floor
+at $\bar g$ and compressed differences) rather than order; order breaks only when guess rates differ across systems,
+which is what abstention does (\S\ref{sec:audit}).

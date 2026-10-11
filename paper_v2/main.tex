@@ -1,0 +1,44 @@
+% ACL 2027 / ARR submission draft. Every number comes from numbers.tex or tab_*.tex, which are generated from committed
+% result files by make_numbers.py and make_tables.py. Do not type numbers by hand.
+\documentclass[11pt]{article}
+\usepackage[review]{acl}
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+% \usepackage{inconsolata}  % not installed locally; the official template loads it, restore for submission
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath,amssymb}
+\usepackage{multirow}
+\input{numbers}
+\newcommand{\cpr}{\textsc{CPR}}
+\newcommand{\pcs}{\textsc{PCS}}
+\newcommand{\pcme}{\textsc{PCME}}
+
+\title{Guessing Is Not Remembering:\\Prior-Controlled Evaluation of Agent Memory}
+
+\author{Anonymous ACL submission}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+\input{sec/abstract}
+\end{abstract}
+
+\input{sec/intro}
+\input{sec/related}
+\input{sec/formulation}
+\input{sec/procedure}
+\input{sec/audit}
+\input{sec/controlled}
+\input{sec/discussion}
+\input{sec/limitations}
+
+\bibliography{refs}
+
+\appendix
+\input{sec/appendix}
+
+\end{document}
