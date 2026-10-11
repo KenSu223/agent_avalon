@@ -2048,5 +2048,97 @@
   },
   "verified": true,
   "file": "exemplars/distractor_leak_check.json"
+ },
+ {
+  "kind": "template",
+  "id": "s4_update_initial_exchange",
+  "stage": "framework study, step 4 (Llama-3.3-70B and Qwen3-235B on the expanded items)",
+  "source": "framework_study/src/sessions_v2.py initial_exchange (initial value of an update item, placed in seeding session 1)",
+  "file": "templates/s4_update_initial_exchange.json",
+  "note": ""
+ },
+ {
+  "kind": "exemplar",
+  "id": "s4_replay_codex_llama_call0",
+  "stage": "framework study, step 4 (Llama-3.3-70B and Qwen3-235B on the expanded items)",
+  "used_for": "step-4 user 0, session 1",
+  "source": "frameworks.py Codex.ingest",
+  "model": "meta.llama3-3-70b-instruct-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 2048
+  },
+  "verified": true,
+  "file": "exemplars/s4_replay_codex_llama_call0.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "s4_replay_codex_llama_call1",
+  "stage": "framework study, step 4 (Llama-3.3-70B and Qwen3-235B on the expanded items)",
+  "used_for": "step-4 user 0, session 2",
+  "source": "frameworks.py Codex.ingest",
+  "model": "meta.llama3-3-70b-instruct-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 2048
+  },
+  "verified": true,
+  "file": "exemplars/s4_replay_codex_llama_call1.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "s4_probe_belief_llama",
+  "stage": "framework study, step 4 (Llama-3.3-70B and Qwen3-235B on the expanded items)",
+  "used_for": "belief probe by the family's own answer model",
+  "source": "probe.py main",
+  "model": "meta.llama3-3-70b-instruct-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 12
+  },
+  "verified": true,
+  "file": "exemplars/s4_probe_belief_llama.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "s4_replay_codex_qwen_call0",
+  "stage": "framework study, step 4 (Llama-3.3-70B and Qwen3-235B on the expanded items)",
+  "used_for": "step-4 user 0, session 1",
+  "source": "frameworks.py Codex.ingest",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 2048
+  },
+  "verified": true,
+  "file": "exemplars/s4_replay_codex_qwen_call0.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "s4_replay_codex_qwen_call1",
+  "stage": "framework study, step 4 (Llama-3.3-70B and Qwen3-235B on the expanded items)",
+  "used_for": "step-4 user 0, session 2",
+  "source": "frameworks.py Codex.ingest",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 2048
+  },
+  "verified": true,
+  "file": "exemplars/s4_replay_codex_qwen_call1.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "s4_probe_belief_qwen",
+  "stage": "framework study, step 4 (Llama-3.3-70B and Qwen3-235B on the expanded items)",
+  "used_for": "belief probe by the family's own answer model",
+  "source": "probe.py main",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 12
+  },
+  "verified": true,
+  "file": "exemplars/s4_probe_belief_qwen.json"
  }
 ]

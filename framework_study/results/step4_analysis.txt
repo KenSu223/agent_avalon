@@ -1,0 +1,38 @@
+
+################ s4qwen: 13824 item-probes at checkpoint 12, 192 users ################
+system              drop   R_C   R_I            dR [95% CI]   F_C   F_I     dF   K_C   K_I            dK [95% CI]
+aider               1.00  0.00  0.00 +0.000 [+0.000,+0.000] 0.000 0.000 +0.000  0.98  0.02 +0.961 [+0.947,+0.974]
+anthropic_api       0.93  0.06  0.08 -0.017 [-0.040,+0.004] 0.000 0.004 +0.004  0.98  0.10 +0.872 [+0.832,+0.908]
+codex               0.94  0.05  0.07 -0.018 [-0.043,+0.005] 0.000 0.001 +0.001  0.97  0.09 +0.878 [+0.841,+0.915]
+llamaindex_facts    0.77  0.25  0.21 +0.042 [-0.002,+0.087] 0.000 0.004 +0.004  0.98  0.23 +0.755 [+0.702,+0.804]
+mem0                0.20  0.79  0.78 +0.016 [-0.028,+0.058] 0.006 0.014 +0.008  0.98  0.76 +0.225 [+0.192,+0.257]
+mem0_v1             0.05  0.95  0.93 +0.014 [-0.010,+0.037] 0.004 0.016 +0.012  0.99  0.93 +0.068 [+0.050,+0.088]
+nemori              0.00  1.00  1.00 -0.001 [-0.007,+0.003] 0.000 0.001 +0.001  1.00  0.99 +0.004 [-0.001,+0.010]
+neutral_roll        0.30  0.70  0.71 -0.011 [-0.061,+0.040] 0.000 0.001 +0.001  1.00  0.71 +0.284 [+0.221,+0.349]
+raw_history         0.00  1.00  1.00 +0.000 [+0.000,+0.000] 0.000 0.000 +0.000  1.00  1.00 +0.003 [+0.000,+0.007]
+P4.3 lossy systems (drop >= 0.5) with dK > 0 and CI excluding 0: 4/4 {'aider': True, 'anthropic_api': True, 'codex': True, 'llamaindex_facts': True}; Spearman(drop, dK) across systems = 1.000
+P4.5 neutral control (lossy systems pooled, n=140): dK = -0.116 (-0.3148690084586466, 0.1038041795665634) -> does not hold
+P4.6 updates: P(revert to old | I) - P(revert to old | C) = +0.434 (0.40918989624779495, 0.46021953746444194) -> holds
+P4.7 MAE(raw acc, R) 0.205  MAE(PCS, R) 0.013 over 18 cells -> holds
+
+################ s4llama: 13824 item-probes at checkpoint 12, 192 users ################
+system              drop   R_C   R_I            dR [95% CI]   F_C   F_I     dF   K_C   K_I            dK [95% CI]
+aider               1.00  0.00  0.01 -0.001 [-0.009,+0.007] 0.000 0.000 +0.000  0.96  0.04 +0.923 [+0.900,+0.944]
+anthropic_api       0.99  0.00  0.01 -0.005 [-0.013,+0.001] 0.001 0.000 -0.001  0.97  0.04 +0.928 [+0.907,+0.947]
+codex               1.00  0.00  0.00 +0.000 [-0.004,+0.004] 0.000 0.000 +0.000  0.97  0.03 +0.937 [+0.919,+0.955]
+llamaindex_facts    0.44  0.59  0.52 +0.072 [+0.021,+0.124] 0.001 0.005 +0.004  0.97  0.54 +0.429 [+0.362,+0.497]
+mem0                0.00  1.00  0.99 +0.001 [-0.006,+0.009] 0.004 0.004 -0.000  0.99  0.97 +0.018 [+0.003,+0.034]
+mem0_v1             0.05  0.94  0.94 -0.009 [-0.034,+0.015] 0.005 0.005 -0.000  0.99  0.94 +0.058 [+0.038,+0.078]
+nemori              0.00  1.00  1.00 -0.001 [-0.007,+0.003] 0.001 0.000 -0.001  1.00  0.99 +0.008 [-0.000,+0.017]
+neutral_roll        0.94  0.06  0.06 -0.006 [-0.029,+0.018] 0.000 0.000 +0.000  0.97  0.08 +0.887 [+0.847,+0.924]
+raw_history         0.00  1.00  1.00 +0.000 [+0.000,+0.000] 0.000 0.000 +0.000  1.00  1.00 +0.000 [+0.000,+0.000]
+P4.3 lossy systems (drop >= 0.5) with dK > 0 and CI excluding 0: 4/4 {'aider': True, 'anthropic_api': True, 'codex': True, 'neutral_roll': True}; Spearman(drop, dK) across systems = 0.967
+P4.5 neutral control (lossy systems pooled, n=140): dK = +0.435 (0.16663240131578944, 0.6764610389610386) -> does not hold
+P4.6 updates: P(revert to old | I) - P(revert to old | C) = +0.467 (0.4401695453139072, 0.49270887485626913) -> holds
+P4.7 MAE(raw acc, R) 0.234  MAE(PCS, R) 0.011 over 18 cells -> holds
+
+################ cross-family ################
+P4.1 (Qwen, rewrite systems, dR 95% CI within +-0.05): {'codex': True, 'aider': True, 'anthropic_api': True, 'neutral_roll': False}
+P4.2 (Qwen, every system dF <= 0.02): 9/9 []
+P4.4 Spearman of overall retention across systems, Qwen vs Llama (9 systems) = 0.950 -> holds
+     exploratory: dR Llama - dR Qwen per system: aider -0.001; anthropic_api +0.012; codex +0.018; llamaindex_facts +0.030; mem0 -0.015; mem0_v1 -0.022; nemori +0.000; neutral_roll +0.005; raw_history +0.000

@@ -36,7 +36,7 @@ The earlier ARIS pipeline in `src/` (2026-10-06, iterated-learning chains) is su
 result; its prompts remain available in git history.
 
 ## Summary
-45 templates; 118 exemplars, 118 verified byte-identical against the response cache.
+46 templates; 124 exemplars, 124 verified byte-identical against the response cache.
 
 ## closed-book audit
 **Templates**
@@ -328,6 +328,24 @@ result; its prompts remain available in git history.
 | `v3_expanded_first_notes` | V3 positive control on the expanded set, generation 0 | qwen.qwen3-235b-a22b-2507-v1:0 | temperature=1.0, max_tokens=400, sample_idx=0 | ✅ | [exemplars/v3_expanded_first_notes.json](exemplars/v3_expanded_first_notes.json) |
 | `distractor_generation_v2` | new distractor sessions (same generator and prompt as round 1) | qwen.qwen3-235b-a22b-2507-v1:0 | temperature=0.8, max_tokens=500, sample_idx=0 | ✅ | [exemplars/distractor_generation_v2.json](exemplars/distractor_generation_v2.json) |
 | `distractor_leak_check` | layer-2 leak check of one flagged (distractor, item) pair | openai.gpt-oss-120b-1:0 | temperature=0.0, max_tokens=400, reasoning_effort=low | ✅ | [exemplars/distractor_leak_check.json](exemplars/distractor_leak_check.json) |
+
+## framework study, step 4 (Llama-3.3-70B and Qwen3-235B on the expanded items)
+**Templates**
+
+| id | source | file |
+|---|---|---|
+| `s4_update_initial_exchange` | framework_study/src/sessions_v2.py initial_exchange (initial value of an update item, placed in seeding session 1) | [templates/s4_update_initial_exchange.json](templates/s4_update_initial_exchange.json) |
+
+**Verified exemplars**
+
+| id | used for | model | parameters | verified | file |
+|---|---|---|---|---|---|
+| `s4_replay_codex_llama_call0` | step-4 user 0, session 1 | meta.llama3-3-70b-instruct-v1:0 | temperature=0.0, max_tokens=2048 | ✅ | [exemplars/s4_replay_codex_llama_call0.json](exemplars/s4_replay_codex_llama_call0.json) |
+| `s4_replay_codex_llama_call1` | step-4 user 0, session 2 | meta.llama3-3-70b-instruct-v1:0 | temperature=0.0, max_tokens=2048 | ✅ | [exemplars/s4_replay_codex_llama_call1.json](exemplars/s4_replay_codex_llama_call1.json) |
+| `s4_probe_belief_llama` | belief probe by the family's own answer model | meta.llama3-3-70b-instruct-v1:0 | temperature=0.0, max_tokens=12 | ✅ | [exemplars/s4_probe_belief_llama.json](exemplars/s4_probe_belief_llama.json) |
+| `s4_replay_codex_qwen_call0` | step-4 user 0, session 1 | qwen.qwen3-235b-a22b-2507-v1:0 | temperature=0.0, max_tokens=2048 | ✅ | [exemplars/s4_replay_codex_qwen_call0.json](exemplars/s4_replay_codex_qwen_call0.json) |
+| `s4_replay_codex_qwen_call1` | step-4 user 0, session 2 | qwen.qwen3-235b-a22b-2507-v1:0 | temperature=0.0, max_tokens=2048 | ✅ | [exemplars/s4_replay_codex_qwen_call1.json](exemplars/s4_replay_codex_qwen_call1.json) |
+| `s4_probe_belief_qwen` | belief probe by the family's own answer model | qwen.qwen3-235b-a22b-2507-v1:0 | temperature=0.0, max_tokens=12 | ✅ | [exemplars/s4_probe_belief_qwen.json](exemplars/s4_probe_belief_qwen.json) |
 
 ## Library-internal prompts (default prompts of the libraries)
 | package | environment | licence | archived files |

@@ -1,0 +1,47 @@
+{
+ "id": "s4_replay_codex_llama_call1",
+ "stage": "framework study, step 4 (Llama-3.3-70B and Qwen3-235B on the expanded items)",
+ "used_for": "step-4 user 0, session 2",
+ "source": "frameworks.py Codex.ingest",
+ "verified_in_cache": true,
+ "payload": {
+  "model": "meta.llama3-3-70b-instruct-v1:0",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Another language model started to solve this problem and produced a summary of its thinking process. You also have access to the state of the tools that were used by that language model. Use this to build on the work that has already been done and avoid duplicating work. Here is the summary produced by the other language model, use the information in this summary to assist with your own analysis:\n**Handoff Summary: CONTEXT CHECKPOINT COMPACTION**\n\n**Current Progress and Key Decisions:**\nWe have engaged in a series of conversations, responding to user queries and providing information on various topics, including a thank-you note, mathematical calculations, and technical discussions about dependencies and newsletters. Key decisions include providing concise and relevant information to each query.\n\n**Important Context and Constraints:**\n- The user prefers concise responses.\n- Conversations have covered a range of topics, including but not limited to, team communications, mathematical calculations, and technical discussions.\n- There are mentions of internal team events and processes, such as an annual offsite and sprint retrospectives.\n\n**Next Steps:**\nContinue responding to user queries in a concise and informative manner, adapting to the topic at hand, whether it be mathematical, technical, or related to team communications and processes.\n\n**Critical Data and References:**\n- Previous conversations for context.\n- Awareness of the annual offsite in spring and the sprint retrospective timing.\n- Understanding of the preference for concise and directly relevant information.\n\nThis handoff aims to ensure a seamless continuation of the task, providing the next LLM with the necessary context and guidelines to effectively engage with the user's queries."
+   },
+   {
+    "role": "user",
+    "content": "Hi Atlas!"
+   },
+   {
+    "role": "assistant",
+    "content": "Hi Sam, how can I help today?"
+   },
+   {
+    "role": "user",
+    "content": "Give me three name ideas for a new style guide channel for the brand team. One more thing you should know: the annual offsite has moved from spring to deep winter."
+   },
+   {
+    "role": "assistant",
+    "content": "Three ideas: #brand-style, #style-hub, #brand-crew."
+   },
+   {
+    "role": "user",
+    "content": "What's 21 times 3? Unrelated, but good to know: lunch has changed from being provided by a food truck outside to being provided by a caterer."
+   },
+   {
+    "role": "assistant",
+    "content": "21 times 3 is 63."
+   },
+   {
+    "role": "user",
+    "content": "You are performing a CONTEXT CHECKPOINT COMPACTION. Create a handoff summary for another LLM that will resume the task.\n\nInclude:\n- Current progress and key decisions made\n- Important context, constraints, or user preferences\n- What remains to be done (clear next steps)\n- Any critical data, examples, or references needed to continue\n\nBe concise, structured, and focused on helping the next LLM seamlessly continue the work.\n"
+   }
+  ],
+  "temperature": 0.0,
+  "max_tokens": 2048
+ },
+ "cached_response_excerpt": "**Handoff Summary: CONTEXT CHECKPOINT COMPACTION**\n\n**Current Progress and Key Decisions:**\nResponded to user queries, including mathematical calculations and provided name ideas for a style guide channel. Adapted to updates on annual offsite timing and lunch provisions.\n\n**Important Context and Constraints:**\n- User prefers concise responses.\n- Annual offsite now in deep winter.\n- Lunch provided "
+}

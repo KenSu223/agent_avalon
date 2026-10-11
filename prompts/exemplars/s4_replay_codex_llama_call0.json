@@ -1,0 +1,59 @@
+{
+ "id": "s4_replay_codex_llama_call0",
+ "stage": "framework study, step 4 (Llama-3.3-70B and Qwen3-235B on the expanded items)",
+ "used_for": "step-4 user 0, session 1",
+ "source": "frameworks.py Codex.ingest",
+ "verified_in_cache": true,
+ "payload": {
+  "model": "meta.llama3-3-70b-instruct-v1:0",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Hi Atlas!"
+   },
+   {
+    "role": "assistant",
+    "content": "Hi Sam, how can I help today?"
+   },
+   {
+    "role": "user",
+    "content": "Write a one-sentence thank-you note to the brand team for finishing the case study early. Also, something worth remembering: the annual offsite is in spring."
+   },
+   {
+    "role": "assistant",
+    "content": "\"Thank you, brand team, for wrapping up the case study ahead of schedule.\""
+   },
+   {
+    "role": "user",
+    "content": "What's 21 plus 4? Oh, and for future reference, lunch is provided by a food truck outside."
+   },
+   {
+    "role": "assistant",
+    "content": "21 plus 4 is 25."
+   },
+   {
+    "role": "user",
+    "content": "Can you summarise in one sentence why we should keep dependencies up to date? Unrelated, but good to know: in the build fleet, the older laptops run the build faster than the newer ones."
+   },
+   {
+    "role": "assistant",
+    "content": "Keeping dependencies up to date gives you security fixes and bug fixes and makes future upgrades smaller and safer."
+   },
+   {
+    "role": "user",
+    "content": "Give me three name ideas for a new newsletter channel for the content team. Side note for later: the sprint retrospective happens at the start of each sprint."
+   },
+   {
+    "role": "assistant",
+    "content": "Three ideas: #content-newsletter, #newsletter-hub, #content-crew."
+   },
+   {
+    "role": "user",
+    "content": "You are performing a CONTEXT CHECKPOINT COMPACTION. Create a handoff summary for another LLM that will resume the task.\n\nInclude:\n- Current progress and key decisions made\n- Important context, constraints, or user preferences\n- What remains to be done (clear next steps)\n- Any critical data, examples, or references needed to continue\n\nBe concise, structured, and focused on helping the next LLM seamlessly continue the work.\n"
+   }
+  ],
+  "temperature": 0.0,
+  "max_tokens": 2048
+ },
+ "cached_response_excerpt": "**Handoff Summary: CONTEXT CHECKPOINT COMPACTION**\n\n**Current Progress and Key Decisions:**\nWe have engaged in a series of conversations, responding to user queries and providing information on various topics, including a thank-you note, mathematical calculations, and technical discussions about dependencies and newsletters. Key decisions include providing concise and relevant information to each "
+}

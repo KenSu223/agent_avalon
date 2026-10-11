@@ -1,0 +1,47 @@
+{
+ "id": "s4_replay_codex_qwen_call1",
+ "stage": "framework study, step 4 (Llama-3.3-70B and Qwen3-235B on the expanded items)",
+ "used_for": "step-4 user 0, session 2",
+ "source": "frameworks.py Codex.ingest",
+ "verified_in_cache": true,
+ "payload": {
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Another language model started to solve this problem and produced a summary of its thinking process. You also have access to the state of the tools that were used by that language model. Use this to build on the work that has already been done and avoid duplicating work. Here is the summary produced by the other language model, use the information in this summary to assist with your own analysis:\n**CONTEXT CHECKPOINT COMPACTION – HANDOFF SUMMARY**\n\n---\n\n**Current Progress & Key Decisions:**  \n- Completed multiple short-form responses per user request:  \n  - Drafted a one-sentence thank-you note for early case study completion.  \n  - Confirmed that the annual offsite occurs in spring.  \n  - Correctly computed 21 + 4 = 25; acknowledged lunch is provided by a food truck.  \n  - Summarized rationale for updating dependencies (security, stability, easier future upgrades); noted anomaly in build fleet (older laptops outperform newer ones).  \n  - Generated three newsletter channel name ideas: #content-newsletter, #newsletter-hub, #content-crew.  \n  - Noted that sprint retrospectives occur at the start of each sprint (unusual timing; worth flagging if process is revisited).\n\n---\n\n**Important Context & User Preferences:**  \n- User interweaves **task requests** with **contextual side notes** (e.g., logistics, infrastructure quirks).  \n- Side notes are **not tasks** but may inform future responses (e.g., food truck → lunch logistics; build fleet anomaly → performance troubleshooting).  \n- Responses should be **concise**, **one-sentence when possible**, and **structured**.  \n- User appears to be compiling operational knowledge; tone is informal but precision is valued.\n\n---\n\n**What Remains to Be Done (Next Steps):**  \n- Await next instruction or follow-up on existing topics (e.g., refine newsletter names, expand dependency rationale, act on build fleet observation).  \n- Be prepared to generate additional creative options (e.g., channel names, comms drafts) or clarify process timing (e.g., sprint retro timing vs. norms).  \n- Maintain awareness of embedded context for consistency across future interactions.\n\n---\n\n**Critical Data & References:**  \n- Key facts to retain:  \n  - Annual offsite → spring  \n  - Lunch → food truck outside  \n  - Sprint retro → start of sprint  \n  - Build fleet anomaly → older laptops faster than newer  \n- User’s name: Sam (from initial greeting)  \n- Preference: Direct, minimal, structured output unless otherwise specified."
+   },
+   {
+    "role": "user",
+    "content": "Hi Atlas!"
+   },
+   {
+    "role": "assistant",
+    "content": "Hi Sam, how can I help today?"
+   },
+   {
+    "role": "user",
+    "content": "Give me three name ideas for a new style guide channel for the brand team. One more thing you should know: the annual offsite has moved from spring to deep winter."
+   },
+   {
+    "role": "assistant",
+    "content": "Three ideas: #brand-style, #style-hub, #brand-crew."
+   },
+   {
+    "role": "user",
+    "content": "What's 21 times 3? Unrelated, but good to know: lunch has changed from being provided by a food truck outside to being provided by a caterer."
+   },
+   {
+    "role": "assistant",
+    "content": "21 times 3 is 63."
+   },
+   {
+    "role": "user",
+    "content": "You are performing a CONTEXT CHECKPOINT COMPACTION. Create a handoff summary for another LLM that will resume the task.\n\nInclude:\n- Current progress and key decisions made\n- Important context, constraints, or user preferences\n- What remains to be done (clear next steps)\n- Any critical data, examples, or references needed to continue\n\nBe concise, structured, and focused on helping the next LLM seamlessly continue the work.\n"
+   }
+  ],
+  "temperature": 0.0,
+  "max_tokens": 2048
+ },
+ "cached_response_excerpt": "**CONTEXT CHECKPOINT COMPACTION – HANDOFF SUMMARY**\n\n---\n\n**Current Progress & Key Decisions:**  \n- Delivered three concise name ideas for a brand style guide channel: #brand-style, #style-hub, #brand-crew.  \n- Confirmed 21 × 3 = 63.  \n- Updated lunch logistics: now provided by a caterer (replaces food truck).  \n- Noted change in annual offsite timing: moved from spring to deep winter.  \n\n---\n\n**I"
+}

@@ -1,0 +1,10 @@
+[
+ {
+  "role": "user",
+  "content": "Can you draft a two-line message telling the data team that the brochure is ready on Thursday? Also, something worth remembering: the shared printer is in the basement."
+ },
+ {
+  "role": "assistant",
+  "content": "Here's a draft:\n\n\"Hi data team, the brochure is ready on Thursday. Let me know if you have any questions.\""
+ }
+]

@@ -354,8 +354,46 @@ def section_step3():
              temperature=0.0, max_tokens=400, reasoning_effort="low")
 
 
+# =================================================================== F. step 4 (second model family, expanded items)
+def section_step4():
+    import frameworks as FW
+    import sessions_v2 as S2
+    import probe as PR
+    import v3_reproduction as V3
+    st = "framework study, step 4 (Llama-3.3-70B and Qwen3-235B on the expanded items)"
+    template("s4_update_initial_exchange", S2.initial_exchange(next(i for i, x in S2.ITEMS.items() if x["type"] == "update"), "C"), st,
+             "framework_study/src/sessions_v2.py initial_exchange (initial value of an update item, placed in seeding session 1)")
+    users = S2.make_users(192)
+    hist = S2.build_history(users[0], S2.load_distractors(), n_distract=12, seed=0)
+    for model, tag in ((LLAMA, "llama"), (QWEN, "qwen")):
+        ad = FW.ADAPTERS["codex"](model, temperature=0.0)
+        n = {"k": 0}
+
+        def lookup(messages, max_tokens=2048, n=n, tag=tag, model=model):
+            resp = exemplar(f"s4_replay_codex_{tag}_call{n['k']}", st, f"step-4 user 0, session {n['k'] + 1}", "frameworks.py Codex.ingest", model,
+                            messages, temperature=0.0, max_tokens=max_tokens)
+            n["k"] += 1
+            if resp is None:
+                raise LookupError
+            return resp["text"]
+        ad.llm = lookup
+        try:
+            for sess in hist[:2]:
+                ad.ingest(sess["messages"])
+        except LookupError:
+            pass
+        snaps = [json.loads(l) for l in open(ROOT / f"framework_study/results/snapshots_codex_s4{tag}.jsonl")]
+        sn = next(x for x in snaps if x["ckpt"] == 12)
+        iid, v = sn["assign"][0]; x = S2.ITEMS[iid]
+        ctx = sn["contexts"].get(iid, sn["dump"]) or "(nothing)"
+        exemplar(f"s4_probe_belief_{tag}", st, "belief probe by the family's own answer model", "probe.py main", model,
+                 [{"role": "system", "content": PR.QA_SYSTEM.format(ctx=ctx)},
+                  {"role": "user", "content": f"{x['question']}\nAnswer with exactly one of these options and nothing else: {x['options'][0]} / {x['options'][1]}"}],
+                 temperature=0.0, max_tokens=12)
+
+
 def main():
-    for sec in (section_closed_book, section_rescore, section_method, section_framework, section_step3):
+    for sec in (section_closed_book, section_rescore, section_method, section_framework, section_step3, section_step4):
         print("==", sec.__name__)
         try:
             sec()
