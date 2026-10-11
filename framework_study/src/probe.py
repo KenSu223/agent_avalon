@@ -16,6 +16,7 @@ from infra.llm import batch_chat
 from validate import parse, WORLD
 from v3_reproduction import JUDGE_PROMPT, JUDGES
 from sessions import ITEMS
+import sessions_v2 as S2
 
 QA_SYSTEM = WORLD + "\n\nHere is everything you remember from past conversations with Sam:\n<memory>\n{ctx}\n</memory>"
 
@@ -29,7 +30,8 @@ def main():
     reqs, meta = [], []
     for si, s in enumerate(snaps):
         for iid, v in s["assign"]:
-            x = ITEMS[iid]
+            IT = S2.ITEMS if s.get("item_set") == "v2" else ITEMS
+            x = IT[iid]
             for j in JUDGES:
                 reqs.append(dict(model=j, messages=[{"role": "user", "content": JUDGE_PROMPT.format(
                     notes=s["dump"] or "(empty)", question=x["question"], a=x["options"][0], b=x["options"][1])}],
@@ -45,7 +47,7 @@ def main():
     res = batch_chat(reqs, workers=32, desc="probe")
     out = {}
     for (kind, si, iid, v, m), r in zip(meta, res):
-        x = ITEMS[iid]
+        x = (S2.ITEMS if snaps[si].get("item_set") == "v2" else ITEMS)[iid]
         t = ((r or {}).get("text") or "")
         ans = parse(t, x["options"])
         key = (si, iid)
