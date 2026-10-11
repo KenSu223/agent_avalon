@@ -1,8 +1,8 @@
 """Expanded C/I item set (PLAN step 3; STEP3_DESIGN.md). Items written by Claude; this script only assembles them,
 assigns carrier tasks and leads, and runs the G0 format checks. No LLM calls.
 
-Sources: the original items (build_items.py, minus S08) + items_v2/{rules_a,rules_b,rules_c,rules_d,procedures,
-preferences,updates,neutral}.py.
+Sources: the original items (build_items.py, minus S08) + items_v2/{rules_a..rules_e,procedures,preferences,updates,
+neutral,extra}.py.
 Output: items_v2.jsonl (all candidates; gates V1/V2 decide inclusion, see validate_v2.py)
 Run: python build_items_v2.py
 """
@@ -16,6 +16,8 @@ from rules_a import RULES as RA
 from rules_b import RULES as RB
 from rules_c import RULES as RC
 from rules_d import RULES as RD
+from rules_e import RULES as RE
+import extra as X
 from procedures import PROCEDURES
 from preferences import PREFERENCES
 from updates import UPDATES
@@ -59,7 +61,7 @@ def assemble():
 
     leads = B1.ASIDE_LEADS
     n = 0
-    for tup in RA + RB + RC + RD + PROCEDURES:
+    for tup in RA + RB + RC + RD + RE + PROCEDURES + X.PROCEDURES:
         iid, dom, topic, schema, q, tpl, (cf, ca), (xf, xa), norm = tup
         c, i = tpl.format(cf), tpl.format(xf)
         task, reply = take_task(words(c + " " + i + " " + q + " " + schema))
@@ -67,11 +69,11 @@ def assemble():
                           question=q, options=[ca, xa], C=dict(clause=c, answer=ca), I=dict(clause=i, answer=xa),
                           task=task, reply=reply, lead=leads[n % len(leads)], normative=norm, origin="v2"))
         n += 1
-    for j, (pid, dom, q, cc, ca, ic, ia) in enumerate(PREFERENCES):
+    for j, (pid, dom, q, cc, ca, ic, ia) in enumerate(PREFERENCES + X.PREFERENCES):
         items.append(dict(id=pid, type="preference", domain=dom, topic=dom, schema=f"{cap(cc)} (common convention)", question=q,
                           options=[ca, ia], C=dict(clause=cc, answer=ca), I=dict(clause=ic, answer=ia),
                           probe_task=None, task=None, reply=None, lead=B1.PREF_LEADS[j % len(B1.PREF_LEADS)], normative=False, origin="v2"))
-    for tup in UPDATES:
+    for tup in UPDATES + X.UPDATES:
         uid, dom, topic, schema, q, init_tpl, upd_tpl, (cf, ca), (xf, xa), norm = tup
         c_init, i_init = init_tpl.format(xf), init_tpl.format(cf)               # C: starts counter-schema; I: starts congruent
         c_upd, i_upd = upd_tpl.format(old=xf, new=cf), upd_tpl.format(old=cf, new=xf)
@@ -83,7 +85,7 @@ def assemble():
                           task=task, reply=reply, initial_task=task0, initial_reply=reply0, lead=leads[n % len(leads)],
                           initial_lead=leads[(n + 3) % len(leads)], normative=norm, origin="v2"))
         n += 1
-    for tup in NEUTRAL:
+    for tup in NEUTRAL + X.NEUTRAL:
         nid, dom, topic, q, tpl, (af, aa), (bf, ba) = tup
         a, b = tpl.format(af), tpl.format(bf)
         task, reply = take_task(words(a + " " + b + " " + q))
