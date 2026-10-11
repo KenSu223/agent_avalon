@@ -109,12 +109,13 @@ def family(tag, items, prior_key):
     cells = collections.defaultdict(list)
     for r in allrows:
         cells[(r["framework"], r["ckpt"])].append(r)
-    Rv, Av, Pv = [], [], []
+    Rv, Av, Pv, per_cell = [], [], [], []
     for k, x in cells.items():
         y = np.array([1.0 if r["belief"] == "KEPT" else 0.0 for r in x]); g = np.array([g_of(r) for r in x])
         Rv.append(np.mean([r["state"] == "RETAINED" for r in x])); Av.append(y.mean()); Pv.append((y - g).sum() / (1 - g).sum())
+        per_cell.append(dict(framework=k[0], ckpt=k[1], n=len(x), R=float(Rv[-1]), acc=float(Av[-1]), pcs=float(Pv[-1])))
     Rv, Av, Pv = map(np.array, (Rv, Av, Pv))
-    res["P4_7"] = dict(mae_acc=float(np.mean(np.abs(Av - Rv))), mae_pcs=float(np.mean(np.abs(Pv - Rv))), cells=len(Rv))
+    res["P4_7"] = dict(mae_acc=float(np.mean(np.abs(Av - Rv))), mae_pcs=float(np.mean(np.abs(Pv - Rv))), cells=len(Rv), per_cell=per_cell)
     say(f"P4.7 MAE(raw acc, R) {res['P4_7']['mae_acc']:.3f}  MAE(PCS, R) {res['P4_7']['mae_pcs']:.3f} over {len(Rv)} cells -> "
         f"{'holds' if res['P4_7']['mae_pcs'] < res['P4_7']['mae_acc'] else 'does not hold'}")
     return res

@@ -27,11 +27,22 @@ Llama-3.3-70B as both the compactor and the reader, on the \emph{same} 432 items
 
 \input{tab_step4}
 
+\begin{figure}[t]
+\centering
+\input{fig_readtime}
+\caption{Where the prior enters. Each point is one memory system under one backbone family (Table~\ref{tab:step4}),
+with user-level 95\% bootstrap intervals. The retention gap $\Delta R$ (open marks) stays near zero at every deletion
+rate: what is deleted does not depend on congruence. The belief gap $\Delta K$ (filled marks) follows the deletion rate
+(dashed: $\Delta K=\text{Drop}$): deleted items are answered from the prior.}
+\label{fig:readtime}
+\end{figure}
+
 \paragraph{Results (Table~\ref{tab:step4}).} Three findings replicate across both families. (i) \emph{Deletion is blind
 to the prior}: the retention gap $\Delta R$ is near zero for every rewrite system (largest $|\Delta R|$ \dRQwenMaxAbs{}
 under Qwen, \dRLlamaMaxAbs{} under Llama). (ii) \emph{Compactors do not rewrite facts toward the schema}: $\Delta F$ is at most \dFQwenMax{} (Qwen) and
 \dFLlamaMax{} (Llama) for every system. (iii) \emph{The prior re-enters at read time}: when items are deleted, the agent answers
-from its prior, so the belief gap grows with the deletion rate (Spearman $\rho\geq0.97$ across systems in both families);
+from its prior, so the belief gap grows with the deletion rate (Figure~\ref{fig:readtime}; Spearman $\rho\geq0.97$ across
+systems in both families);
 for the product compaction prompts of Codex, Aider and the Anthropic API $\Delta K$ is \dKrwQwenLo--\dKrwQwenHi{} under Qwen and \dKrwLlamaLo--\dKrwLlamaHi{}
 under Llama, while their accuracy on congruent items stays near ceiling. System rankings by retention agree across families
 ($\rho=\rhoRetFam$), although how aggressively a system compacts depends on the backbone (the neutral rewrite deletes
@@ -45,8 +56,18 @@ reader, not the writer.
 Knowledge updates reveal a sharper version of the effect: when the update moves away from the prior, the agent
 reverts to the old, congruent value \updQwen{} (Qwen) and \updLlama{} (Llama) more often than when the update moves toward
 the prior; stale memory and prior jointly override the change. Finally, \pcs{} computed from the agents' answers matches
-the judge-coded retention closely (mean absolute error \pcsMaeQwen{} and \pcsMaeLlama{}, against \accMaeQwen{} and
+the judge-coded retention closely (Figure~\ref{fig:pcs}) (mean absolute error \pcsMaeQwen{} and \pcsMaeLlama{}, against \accMaeQwen{} and
 \accMaeLlama{} for raw accuracy), which is direct evidence that the correction recovers what the memory kept.
+
+\begin{figure}[t]
+\centering
+\input{fig_pcs}
+\caption{The guess-corrected score recovers what the memory kept. Each point is one system at one checkpoint after the
+fourth session, for both backbone families; the $x$-axis is retention coded by two judges from the memory text, the
+$y$-axis is computed from the agent's forced-choice answers only. Raw accuracy sits above the diagonal by the guessing
+credit; \pcs{} lies close to it.}
+\label{fig:pcs}
+\end{figure}
 
 \paragraph{A failed control.} We pre-registered that neutral items would show no belief gap; they did not
 ($\Delta K=\neutralDkQwen$ and $\neutralDkLlama$). Exploration shows why: once deleted, each neutral item is answered

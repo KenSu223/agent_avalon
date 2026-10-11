@@ -10,9 +10,9 @@ protocol $\pi_F$, which instructs the reader to give its best guess when the mem
 \paragraph{Two-state model.} Let $Z_{si}=1$ if $c_{si}$ contains the evidence for item $i$. With evidence the reader is
 correct with probability $p_i$; without it, with probability $h_{si}$:
 \begin{equation}
-\mathbb{E}[Y_{si}] = R_{si}\,p_i + (1-R_{si})\,h_{si},\qquad R_{si}=P(Z_{si}=1).
+\mathbb{E}[Y_{si}] = R_{si}\,p_i + (1-R_{si})\,h_{si},
 \end{equation}
-The quantity of interest is the retention $R_{si}$; raw accuracy measures the whole sum.
+where $R_{si}=P(Z_{si}=1)$. The quantity of interest is the retention $R_{si}$; raw accuracy measures the whole sum.
 
 \paragraph{The guess rate.} $g_i$ is the probability that the reader answers item $i$ correctly with an empty context
 under $\pi_F$. We estimate it from repeated closed-book draws \emph{with the evaluation prompt itself}
@@ -45,7 +45,7 @@ standardises the protocol before correcting for guessing.
 
 \begin{table}[t]
 \centering\small
-\begin{tabular}{p{0.34\columnwidth}p{0.18\columnwidth}p{0.34\columnwidth}}
+\begin{tabular}{@{}p{0.34\columnwidth}p{0.18\columnwidth}p{0.34\columnwidth}@{}}
 \toprule
 Assumption & Needed by & Diagnostic \\
 \midrule

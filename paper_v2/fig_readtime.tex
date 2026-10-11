@@ -1,0 +1,28 @@
+\definecolor{famA}{RGB}{0,114,178}
+\definecolor{famB}{RGB}{213,94,0}
+\begin{tikzpicture}
+\begin{axis}[width=\columnwidth, height=5.2cm, xmin=-0.04, xmax=1.04, ymin=-0.1, ymax=1.04,
+  xlabel={Share of items deleted from memory (Drop)}, ylabel={Gap (congruent $-$ incongruent)},
+  label style={font=\small}, tick label style={font=\footnotesize},
+  legend style={font=\scriptsize, at={(0.02,0.98)}, anchor=north west, draw=none, fill=none, row sep=-2pt},
+  legend cell align=left, grid=major, grid style={gray!20}]
+\addplot[dashed, gray, domain=0:1, forget plot] {x};
+\addplot[gray, domain=0:1, forget plot] {0};
+\addplot[only marks, mark=*, mark size=1.6pt, draw=famA, mark options={fill=famA},
+  error bars/.cd, y dir=both, y explicit, error bar style={famA, line width=0.4pt}]
+  coordinates {(1.0000,0.9614) += (0,0.0122) -= (0,0.0143) (0.9264,0.8715) += (0,0.0360) -= (0,0.0398) (0.9388,0.8781) += (0,0.0367) -= (0,0.0366) (0.7662,0.7553) += (0,0.0485) -= (0,0.0529) (0.2042,0.2253) += (0,0.0322) -= (0,0.0330) (0.0508,0.0685) += (0,0.0198) -= (0,0.0188) (0.0014,0.0039) += (0,0.0060) -= (0,0.0054) (0.2970,0.2836) += (0,0.0655) -= (0,0.0624) (0.0000,0.0026) += (0,0.0041) -= (0,0.0026)};
+\addlegendentry{$\Delta K$, Qwen3-235B}
+\addplot[only marks, mark=square*, mark size=1.6pt, draw=famB, mark options={fill=famB},
+  error bars/.cd, y dir=both, y explicit, error bar style={famB, line width=0.4pt}]
+  coordinates {(0.9953,0.9227) += (0,0.0209) -= (0,0.0223) (0.9940,0.9281) += (0,0.0187) -= (0,0.0206) (0.9987,0.9374) += (0,0.0176) -= (0,0.0180) (0.4388,0.4293) += (0,0.0674) -= (0,0.0673) (0.0007,0.0182) += (0,0.0161) -= (0,0.0150) (0.0540,0.0579) += (0,0.0199) -= (0,0.0198) (0.0014,0.0079) += (0,0.0094) -= (0,0.0082) (0.9392,0.8873) += (0,0.0370) -= (0,0.0402) (0.0000,0.0000) += (0,0.0000) -= (0,0.0000)};
+\addlegendentry{$\Delta K$, Llama-3.3-70B}
+\addplot[only marks, mark=*, mark size=1.6pt, draw=famA, mark options={fill=white},
+  error bars/.cd, y dir=both, y explicit, error bar style={famA, line width=0.4pt}]
+  coordinates {(1.0000,0.0000) += (0,0.0000) -= (0,0.0000) (0.9264,-0.0174) += (0,0.0209) -= (0,0.0230) (0.9388,-0.0175) += (0,0.0227) -= (0,0.0251) (0.7662,0.0421) += (0,0.0450) -= (0,0.0437) (0.2042,0.0160) += (0,0.0417) -= (0,0.0445) (0.0508,0.0137) += (0,0.0231) -= (0,0.0241) (0.0014,-0.0014) += (0,0.0041) -= (0,0.0052) (0.2970,-0.0111) += (0,0.0508) -= (0,0.0496) (0.0000,0.0000) += (0,0.0000) -= (0,0.0000)};
+\addlegendentry{$\Delta R$, Qwen3-235B}
+\addplot[only marks, mark=square*, mark size=1.6pt, draw=famB, mark options={fill=white},
+  error bars/.cd, y dir=both, y explicit, error bar style={famB, line width=0.4pt}]
+  coordinates {(0.9953,-0.0012) += (0,0.0078) -= (0,0.0078) (0.9940,-0.0052) += (0,0.0066) -= (0,0.0080) (0.9987,0.0000) += (0,0.0039) -= (0,0.0038) (0.4388,0.0724) += (0,0.0515) -= (0,0.0513) (0.0007,0.0014) += (0,0.0073) -= (0,0.0071) (0.0540,-0.0087) += (0,0.0240) -= (0,0.0251) (0.0014,-0.0014) += (0,0.0043) -= (0,0.0053) (0.9392,-0.0056) += (0,0.0235) -= (0,0.0233) (0.0000,0.0000) += (0,0.0000) -= (0,0.0000)};
+\addlegendentry{$\Delta R$, Llama-3.3-70B}
+\end{axis}
+\end{tikzpicture}

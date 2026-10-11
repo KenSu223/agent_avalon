@@ -15,14 +15,15 @@ Benchmark (answerable items) & mean $\hat g$ & ever correct \\
 \midrule
 LongMemEval & \gLme & \everLme \\
 LoCoMo cat.\ 1--4 & \gLocomo & \everLocomo \\
-MemoryAgentBench RULER-QA1 & \gQaOne & \everQaOne \\
-MemoryAgentBench RULER-QA2 & \gQaTwo & \everQaTwo \\
-MemoryAgentBench EventQA & \gEventqa & -- \\
-MemoryAgentBench FactConsol.-SH & \gFcSh & -- \\
-MemoryAgentBench FactConsol.-MH & \gFcMh & -- \\
+MAB RULER-QA1 & \gQaOne & \everQaOne \\
+MAB RULER-QA2 & \gQaTwo & \everQaTwo \\
+MAB EventQA & \gEventqa & -- \\
+MAB FactConsolidation-SH & \gFcSh & -- \\
+MAB FactConsolidation-MH & \gFcMh & -- \\
 \bottomrule
 \end{tabular}
-\caption{Closed-book guessability of agent-memory benchmarks for the reader used in our re-scoring.}
+\caption{Closed-book guessability of agent-memory benchmarks for the reader used in our re-scoring (MAB:
+MemoryAgentBench).}
 \label{tab:audit}
 \end{table}
 
@@ -38,11 +39,20 @@ be re-asked under each protocol (Table~\ref{tab:protocols}).
 \paragraph{Abstention, not memory, drives raw-score differences among memory-poor systems.} On RULER-QA1,
 \nPoorQaOne{} of \nSysQaOne{} systems answer at most 5\% of the resistant items, yet their raw accuracies differ widely.
 Their native-protocol abstention rate on answerable items ranges from \absRangeLo{} to \absRangeHi{}, and forcing an
-answer raises accuracy most for the systems that abstain most: Spearman $\rho=\hOneQaOne$
+answer raises accuracy most for the systems that abstain most (Figure~\ref{fig:abstention}): Spearman $\rho=\hOneQaOne$
 [\hOneQaOneLo, \hOneQaOneHi] on QA1, $\hOneQaTwo$ on QA2 and $\hOneLocomo$ on LoCoMo (pre-registered primary test, Holm
 corrected). Aider's accuracy, for instance, moves from \aiderAccA{} to \aiderAccF{} with no change in its memory. In
 other words, a fixed backbone does not cancel the prior: the prior enters each system's score in proportion to its
 willingness to guess.
+
+\begin{figure}[t]
+\centering
+\input{fig_abstention}
+\caption{Forcing an answer helps most the systems that abstain most. Each point is one memory system
+on one benchmark (same reader and judge throughout); $\rho$ is the pre-registered Spearman correlation between
+abstention under the native protocol and the accuracy gained by forcing an answer.}
+\label{fig:abstention}
+\end{figure}
 
 \paragraph{Standardising the protocol does not recover memory rankings.} We predicted that under $\pi_F$ raw accuracy
 would rank systems more like \cpr{} does. It did not (change in Kendall $\tau$: $\dtauQaOne$ [\dtauQaOneLo, \dtauQaOneHi]
