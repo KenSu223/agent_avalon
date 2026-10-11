@@ -36,7 +36,7 @@ The earlier ARIS pipeline in `src/` (2026-10-06, iterated-learning chains) is su
 result; its prompts remain available in git history.
 
 ## Summary
-41 templates; 104 exemplars, 104 verified byte-identical against the response cache.
+42 templates; 107 exemplars, 107 verified byte-identical against the response cache.
 
 ## closed-book audit
 **Templates**
@@ -91,6 +91,7 @@ result; its prompts remain available in git history.
 | `judge_prefeval_violation` | PrefEval official violation check | openai.gpt-oss-120b-1:0 | temperature=0.0, max_tokens=800, reasoning_effort=low | ✅ | [exemplars/judge_prefeval_violation.json](exemplars/judge_prefeval_violation.json) |
 | `judge_prefeval_helpful` | PrefEval official helpful check | openai.gpt-oss-120b-1:0 | temperature=0.0, max_tokens=800, reasoning_effort=low | ✅ | [exemplars/judge_prefeval_helpful.json](exemplars/judge_prefeval_helpful.json) |
 | `judge_locomo_rescore` | LoCoMo judge in re-scoring | openai.gpt-oss-120b-1:0 | temperature=0.0, max_tokens=600, reasoning_effort=low | ✅ | [exemplars/judge_locomo_rescore.json](exemplars/judge_locomo_rescore.json) |
+| `pcme_abstention_judge` | abstention classification (validation sample + all answers) | openai.gpt-oss-120b-1:0 | temperature=0.0, max_tokens=400, reasoning_effort=low | ✅ | [exemplars/pcme_abstention_judge.json](exemplars/pcme_abstention_judge.json) |
 | `fw_probe_judge_gptoss` | memory-state coding of a framework dump | openai.gpt-oss-120b-1:0 | temperature=0.0, max_tokens=600, reasoning_effort=low | ✅ | [exemplars/fw_probe_judge_gptoss.json](exemplars/fw_probe_judge_gptoss.json) |
 | `fw_probe_judge_gemma` | memory-state coding of a framework dump | google.gemma-3-27b-it | temperature=0.0, max_tokens=12 | ✅ | [exemplars/fw_probe_judge_gemma.json](exemplars/fw_probe_judge_gemma.json) |
 
@@ -102,12 +103,15 @@ result; its prompts remain available in git history.
 | `rescore_answer_system_piA` | benchmark_audit/rescore.py ANSWER_SYS (native protocol pi_A) | [templates/rescore_answer_system_piA.txt](templates/rescore_answer_system_piA.txt) |
 | `rescore_locomo_turn_format` | benchmark_audit/rescore.py locomo_episodes (speaker_a -> role user, speaker_b -> role assistant; one ingest per session) | [templates/rescore_locomo_turn_format.txt](templates/rescore_locomo_turn_format.txt) |
 | `rescore_mab_chunk_format` | benchmark_audit/rescore.py mab_ruler_episodes (one ingest per chunk) | [templates/rescore_mab_chunk_format.json](templates/rescore_mab_chunk_format.json) |
+| `rescore_threshold_context_format` | benchmark_audit/threshold_compaction.py ThresholdCompaction.dump (systems '<adapter>@thr64k'; T = 64,000 estimated tokens = chars/4) — full_history = the turns only, one '{role}: {content}' line each, no header | [templates/rescore_threshold_context_format.txt](templates/rescore_threshold_context_format.txt) |
 
 **Verified exemplars**
 
 | id | used for | model | parameters | verified | file |
 |---|---|---|---|---|---|
 | `rescore_answer_piA_locomo_codex` | native-protocol answer from a system's context (§11, Step 2) | qwen.qwen3-235b-a22b-2507-v1:0 | temperature=0.0, max_tokens=120 | ✅ | [exemplars/rescore_answer_piA_locomo_codex.json](exemplars/rescore_answer_piA_locomo_codex.json) |
+| `rescore_answer_piA_codex_thr64k` | native-protocol answer, threshold robustness check (METHOD §10.6) | qwen.qwen3-235b-a22b-2507-v1:0 | temperature=0.0, max_tokens=120 | ✅ | [exemplars/rescore_answer_piA_codex_thr64k.json](exemplars/rescore_answer_piA_codex_thr64k.json) |
+| `rescore_answer_piA_full_history` | native-protocol answer, threshold robustness check (METHOD §10.6) | qwen.qwen3-235b-a22b-2507-v1:0 | temperature=0.0, max_tokens=120 | ✅ | [exemplars/rescore_answer_piA_full_history.json](exemplars/rescore_answer_piA_full_history.json) |
 
 ## PCME method (Steps 1-2)
 **Templates**
@@ -310,5 +314,17 @@ result; its prompts remain available in git history.
 | llama-index-core-0.14.25 | fw-env | License-Expression: MIT | [llama_index/core/memory/memory_blocks/fact.py](library/llama-index-core-0.14.25/llama_index__core__memory__memory_blocks__fact.py) |
 | langchain-1.4.3 | fw-env | License: MIT | [langchain/agents/middleware/summarization.py](library/langchain-1.4.3/langchain__agents__middleware__summarization.py) |
 | nemori-0.2.0@d2a6dff | nemori-env | License: (see METADATA) | [nemori/llm/prompts.py](library/nemori-0.2.0@d2a6dff/nemori__llm__prompts.py), [nemori/llm/generators/segmenter.py](library/nemori-0.2.0@d2a6dff/nemori__llm__generators__segmenter.py), [nemori/llm/generators/episode.py](library/nemori-0.2.0@d2a6dff/nemori__llm__generators__episode.py), [nemori/llm/generators/semantic.py](library/nemori-0.2.0@d2a6dff/nemori__llm__generators__semantic.py), [nemori/llm/generators/merger.py](library/nemori-0.2.0@d2a6dff/nemori__llm__generators__merger.py) |
+
+## Library prompts as actually sent (live capture)
+Each library ran on the first 3 sessions of framework-study user 0 plus one query; every request it sent was recorded inside the process (httpx / httpx2 transport) by `capture_library_live.py`. Prompts that only fire under conditions not reached in 3 sessions (e.g. LlamaIndex fact condensation beyond max_facts) are covered by the archived source files above.
+
+| library | requests | distinct system prompts / tool schemas | files |
+|---|---|---|---|
+| mem0 | 3 | 1 | [captured/mem0.jsonl](captured/mem0.jsonl), [captured/mem0_distinct.json](captured/mem0_distinct.json) |
+| mem0_v1 | 6 | 2 | [captured/mem0_v1.jsonl](captured/mem0_v1.jsonl), [captured/mem0_v1_distinct.json](captured/mem0_v1_distinct.json) |
+| langmem | 3 | 3 | [captured/langmem.jsonl](captured/langmem.jsonl), [captured/langmem_distinct.json](captured/langmem_distinct.json) |
+| llamaindex_facts | 3 | 1 | [captured/llamaindex_facts.jsonl](captured/llamaindex_facts.jsonl), [captured/llamaindex_facts_distinct.json](captured/llamaindex_facts_distinct.json) |
+| llamaindex_facts_default | 3 | 1 | [captured/llamaindex_facts_default.jsonl](captured/llamaindex_facts_default.jsonl), [captured/llamaindex_facts_default_distinct.json](captured/llamaindex_facts_default_distinct.json) |
+| nemori | 10 | 3 | [captured/nemori.jsonl](captured/nemori.jsonl), [captured/nemori_distinct.json](captured/nemori_distinct.json) |
 
 Product compaction prompts are verbatim copies of the upstream sources in `framework_study/prompts/` (Codex @822e58c, OpenHands @6f8c38d, Aider @5dc9490, Gemini CLI @fb972b2; Anthropic API documented default); the framing each adapter adds is in `templates/fw_compactor_*.json`.

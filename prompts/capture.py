@@ -13,7 +13,7 @@ Run with the fw-env python:  python prompts/capture.py
 import glob, json, os, re, sys
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
-for p in (ROOT, ROOT / "framework_study/src", ROOT / "framework_study/stimuli", ROOT / "benchmark_audit", ROOT / "benchmark_audit/official", ROOT / "method"):
+for p in (ROOT, ROOT / "framework_study/src", ROOT / "framework_study/stimuli", ROOT / "benchmark_audit", ROOT / "benchmark_audit/official", ROOT / "method"):  # noqa
     sys.path.insert(0, str(p))
 from infra.llm import cache_lookup
 
@@ -119,6 +119,18 @@ def section_rescore():
     r = v2["c0q0"]
     exemplar("rescore_answer_piA_locomo_codex", st, "native-protocol answer from a system's context (§11, Step 2)", "rescore.py run_episode", QWEN,
              [{"role": "system", "content": RS.ANSWER_SYS.format(ctx=r["ctx"])}, {"role": "user", "content": r["question"]}], temperature=0.0, max_tokens=120)
+    # threshold-triggered compaction / full history (METHOD §10.6)
+    import threshold_compaction as TC
+    template("rescore_threshold_context_format", "{current summary}\n\n" + TC.TAIL_HEADER + "\n{role}: {content}\n{role}: {content}\n...",
+             st, "benchmark_audit/threshold_compaction.py ThresholdCompaction.dump (systems '<adapter>@thr64k'; T = 64,000 estimated tokens = chars/4)",
+             "full_history = the turns only, one '{role}: {content}' line each, no header")
+    for name, bench_file in (("codex@thr64k", "rescore_mab_ruler_codex@thr64k.jsonl"), ("full_history", "rescore_locomo_full_history.jsonl")):
+        f = ROOT / "benchmark_audit/results_v2" / bench_file
+        if f.exists():
+            rr = json.loads(open(f).readline())
+            exemplar(f"rescore_answer_piA_{name.replace('@', '_')}", st, "native-protocol answer, threshold robustness check (METHOD §10.6)",
+                     "rescore.py run_episode", QWEN, [{"role": "system", "content": RS.ANSWER_SYS.format(ctx=rr["ctx"])}, {"role": "user", "content": rr["question"]}],
+                     temperature=0.0, max_tokens=120)
     exemplar("judge_locomo_rescore", "judging", "LoCoMo judge in re-scoring", "rescore.py judge", OSS,
              [{"role": "user", "content": get_anscheck_prompt("single-session-user", r["question"], r["gold"], r["pred"])}],
              temperature=0.0, max_tokens=600, reasoning_effort="low")
@@ -134,11 +146,13 @@ def section_method():
     template("pcme_prior_F1_system", C.F1_SYS, st, "method/common.py F1_SYS (closed-book draw F1)")
     template("pcme_prior_F2_user", C.F2_USER, st, "method/common.py F2_USER (closed-book draw F2, no system prompt)")
     template("pcme_followup_user", FOLLOW, st, "method/reask.py FOLLOW (compliance follow-up, pi_F+R)")
-    try:
-        from abstention_judge import PROMPT as AJ
-        template("pcme_abstention_judge", AJ, "judging", "method/abstention_judge.py PROMPT (METHOD §10.4)")
-    except Exception as e:
-        print("abstention judge template skipped:", e)
+    from abstention_judge import PROMPT as AJ
+    template("pcme_abstention_judge", AJ, "judging", "method/abstention_judge.py PROMPT (METHOD §10.4)")
+    vs = ROOT / "method/results/abstention_validation_sample.jsonl"
+    if vs.exists():
+        r = json.loads(open(vs).readline())
+        exemplar("pcme_abstention_judge", "judging", "abstention classification (validation sample + all answers)", "method/abstention_judge.py classify", OSS,
+                 [{"role": "user", "content": AJ.format(question=r["question"], response=r["response"])}], temperature=0.0, max_tokens=400, reasoning_effort="low")
     items = {x["id"]: x for x in C.answerable_items()}
     draws = [json.loads(l) for l in open(ROOT / "method/results/prior_draws_qwen3-235b-a22b-2507.jsonl")]
     T = {"F1_T0": (0.0, 0), "F2_T0": (0.0, 0), "F0_T1_s1": (1.0, 1), "F0_T1_s2": (1.0, 2), "F0_T1_s3": (1.0, 3)}

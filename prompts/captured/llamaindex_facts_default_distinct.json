@@ -1,0 +1,45 @@
+{
+ "2c7bddafa6f8": {
+  "system": "",
+  "tools": null,
+  "response_format": null,
+  "first_user_message": "Hi Atlas!",
+  "example_request": {
+   "messages": [
+    {
+     "role": "user",
+     "content": "Hi Atlas!"
+    },
+    {
+     "role": "assistant",
+     "content": "Hi Sam, how can I help today?"
+    },
+    {
+     "role": "user",
+     "content": "How do you say 'thank you' in Spanish? By the way, from now on, give temperatures in Celsius."
+    },
+    {
+     "role": "assistant",
+     "content": "Gracias. Got it."
+    },
+    {
+     "role": "user",
+     "content": "Can you shorten this subject line: 'Updated version of the quarterly report with corrected figures'? Side note for later: the company mail server rejects attachments larger than 25 MB."
+    },
+    {
+     "role": "assistant",
+     "content": "Shorter: \"Quarterly report: corrected figures\"."
+    },
+    {
+     "role": "user",
+     "content": "You are a precise fact extraction system designed to identify key information from conversations.\n\nINSTRUCTIONS:\n1. Review the conversation segment provided prior to this message\n2. Extract specific, concrete facts the user has disclosed or important information discovered\n3. Focus on factual information like preferences, personal details, requirements, constraints, or context\n4. Format each fact as a separate <fact> XML tag\n5. Do not include opinions, summaries, or interpretations - only extract explicit information\n6. Do not duplicate facts that are already in the existing facts list\n\n<existing_facts>\n\n</existing_facts>\n\nReturn ONLY the extracted facts in this exact format:\n<facts>\n  <fact>Specific fact 1</fact>\n  <fact>Specific fact 2</fact>\n  <!-- More facts as needed -->\n</facts>\n\nIf no new facts are present, return: <facts></facts>"
+    }
+   ],
+   "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+   "max_tokens": 2000,
+   "stream": false,
+   "temperature": 0.0
+  },
+  "n_requests": 3
+ }
+}

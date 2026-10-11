@@ -389,6 +389,42 @@
   "file": "exemplars/rescore_answer_piA_locomo_codex.json"
  },
  {
+  "kind": "template",
+  "id": "rescore_threshold_context_format",
+  "stage": "benchmark re-scoring",
+  "source": "benchmark_audit/threshold_compaction.py ThresholdCompaction.dump (systems '<adapter>@thr64k'; T = 64,000 estimated tokens = chars/4)",
+  "file": "templates/rescore_threshold_context_format.txt",
+  "note": "full_history = the turns only, one '{role}: {content}' line each, no header"
+ },
+ {
+  "kind": "exemplar",
+  "id": "rescore_answer_piA_codex_thr64k",
+  "stage": "benchmark re-scoring",
+  "used_for": "native-protocol answer, threshold robustness check (METHOD §10.6)",
+  "source": "rescore.py run_episode",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 120
+  },
+  "verified": true,
+  "file": "exemplars/rescore_answer_piA_codex_thr64k.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "rescore_answer_piA_full_history",
+  "stage": "benchmark re-scoring",
+  "used_for": "native-protocol answer, threshold robustness check (METHOD §10.6)",
+  "source": "rescore.py run_episode",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 120
+  },
+  "verified": true,
+  "file": "exemplars/rescore_answer_piA_full_history.json"
+ },
+ {
   "kind": "exemplar",
   "id": "judge_locomo_rescore",
   "stage": "judging",
@@ -442,6 +478,21 @@
   "source": "method/abstention_judge.py PROMPT (METHOD §10.4)",
   "file": "templates/pcme_abstention_judge.txt",
   "note": ""
+ },
+ {
+  "kind": "exemplar",
+  "id": "pcme_abstention_judge",
+  "stage": "judging",
+  "used_for": "abstention classification (validation sample + all answers)",
+  "source": "method/abstention_judge.py classify",
+  "model": "openai.gpt-oss-120b-1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 400,
+   "reasoning_effort": "low"
+  },
+  "verified": true,
+  "file": "exemplars/pcme_abstention_judge.json"
  },
  {
   "kind": "exemplar",

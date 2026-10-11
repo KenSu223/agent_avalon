@@ -1,0 +1,20 @@
+{
+ "id": "pcme_abstention_judge",
+ "stage": "judging",
+ "used_for": "abstention classification (validation sample + all answers)",
+ "source": "method/abstention_judge.py classify",
+ "verified_in_cache": true,
+ "payload": {
+  "model": "openai.gpt-oss-120b-1:0",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Below is a question and an assistant's response. Decide whether the response ABSTAINS: it declines to answer, says that the information is not available, not mentioned or unknown, or asks for more information, instead of committing to an answer. A response that gives an answer, even a hedged guess, does NOT abstain.\n\nQuestion: What did Evan want to share with his work friends?\nResponse: Evan wanted to share a photo of a kayak at sunset with his work friends.\n\nDoes the response abstain? Answer yes or no only."
+   }
+  ],
+  "temperature": 0.0,
+  "max_tokens": 400,
+  "reasoning_effort": "low"
+ },
+ "cached_response_excerpt": "No"
+}

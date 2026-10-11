@@ -80,6 +80,15 @@ def main():
     out.append("| package | environment | licence | archived files |\n|---|---|---|---|")
     for pkg, m in man.items():
         out.append(f"| {pkg} | {m['environment']} | {m['license']} | " + ", ".join(f"[{f['file']}](library/{pkg}/{f['archived_as']})" for f in m["files"]) + " |")
+    cap = P / "captured/SUMMARY.json"
+    if cap.exists():
+        out.append("\n## Library prompts as actually sent (live capture)")
+        out.append("Each library ran on the first 3 sessions of framework-study user 0 plus one query; every request it sent was recorded inside the "
+                   "process (httpx / httpx2 transport) by `capture_library_live.py`. Prompts that only fire under conditions not reached in 3 sessions "
+                   "(e.g. LlamaIndex fact condensation beyond max_facts) are covered by the archived source files above.\n")
+        out.append("| library | requests | distinct system prompts / tool schemas | files |\n|---|---|---|---|")
+        for k, v in json.load(open(cap)).items():
+            out.append(f"| {k} | {v['requests']} | {v['distinct_prompts']} | [captured/{k}.jsonl](captured/{k}.jsonl), [captured/{k}_distinct.json](captured/{k}_distinct.json) |")
     out.append("\nProduct compaction prompts are verbatim copies of the upstream sources in `framework_study/prompts/` "
                "(Codex @822e58c, OpenHands @6f8c38d, Aider @5dc9490, Gemini CLI @fb972b2; Anthropic API documented default); "
                "the framing each adapter adds is in `templates/fw_compactor_*.json`.\n")

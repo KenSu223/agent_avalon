@@ -1,0 +1,6 @@
+{current summary}
+
+[Recent conversation, not yet compacted]
+{role}: {content}
+{role}: {content}
+...

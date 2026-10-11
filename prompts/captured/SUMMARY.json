@@ -1,0 +1,44 @@
+{
+ "mem0": {
+  "requests": 3,
+  "distinct_prompts": 1,
+  "capture_errors": 0,
+  "returncode": 0,
+  "stderr_tail": "/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/mem0/vector_stores/qdrant.py:177: UserWarning: Payload indexes have no effect in the local Qdrant. Please use server Qdrant if you need payload indexes.\n  self.client.create_payload_index(\n"
+ },
+ "mem0_v1": {
+  "requests": 6,
+  "distinct_prompts": 2,
+  "capture_errors": 0,
+  "returncode": 0,
+  "stderr_tail": ""
+ },
+ "langmem": {
+  "requests": 3,
+  "distinct_prompts": 3,
+  "capture_errors": 0,
+  "returncode": 0,
+  "stderr_tail": ""
+ },
+ "llamaindex_facts": {
+  "requests": 3,
+  "distinct_prompts": 1,
+  "capture_errors": 0,
+  "returncode": 0,
+  "stderr_tail": ""
+ },
+ "llamaindex_facts_default": {
+  "requests": 3,
+  "distinct_prompts": 1,
+  "capture_errors": 0,
+  "returncode": 0,
+  "stderr_tail": ""
+ },
+ "nemori": {
+  "requests": 10,
+  "distinct_prompts": 3,
+  "capture_errors": 0,
+  "returncode": 0,
+  "stderr_tail": ""
+ }
+}
