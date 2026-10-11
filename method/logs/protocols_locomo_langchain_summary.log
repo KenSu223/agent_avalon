@@ -1,0 +1,81 @@
+[langchain_summary pi_F] 77/1540 in 2s
+[langchain_summary pi_F] 154/1540 in 3s
+[langchain_summary pi_F] 231/1540 in 5s
+[langchain_summary pi_F] 308/1540 in 6s
+[langchain_summary pi_F] 385/1540 in 8s
+[langchain_summary pi_F] 462/1540 in 9s
+[langchain_summary pi_F] 539/1540 in 11s
+[langchain_summary pi_F] 616/1540 in 12s
+[langchain_summary pi_F] 693/1540 in 14s
+[langchain_summary pi_F] 770/1540 in 15s
+[langchain_summary pi_F] 847/1540 in 17s
+[langchain_summary pi_F] 924/1540 in 19s
+[langchain_summary pi_F] 1001/1540 in 20s
+[langchain_summary pi_F] 1078/1540 in 22s
+[langchain_summary pi_F] 1155/1540 in 23s
+[langchain_summary pi_F] 1232/1540 in 25s
+[langchain_summary pi_F] 1309/1540 in 27s
+[langchain_summary pi_F] 1386/1540 in 28s
+[langchain_summary pi_F] 1463/1540 in 30s
+[langchain_summary pi_F] 1540/1540 in 32s
+[langchain_summary judge F] 77/1540 in 2s
+[langchain_summary judge F] 154/1540 in 3s
+[langchain_summary judge F] 231/1540 in 4s
+[langchain_summary judge F] 308/1540 in 5s
+[langchain_summary judge F] 385/1540 in 7s
+[langchain_summary judge F] 462/1540 in 8s
+[langchain_summary judge F] 539/1540 in 9s
+[langchain_summary judge F] 616/1540 in 10s
+[langchain_summary judge F] 693/1540 in 12s
+[langchain_summary judge F] 770/1540 in 13s
+[langchain_summary judge F] 847/1540 in 15s
+[langchain_summary judge F] 924/1540 in 16s
+[langchain_summary judge F] 1001/1540 in 18s
+[langchain_summary judge F] 1078/1540 in 19s
+[langchain_summary judge F] 1155/1540 in 20s
+[langchain_summary judge F] 1232/1540 in 21s
+[langchain_summary judge F] 1309/1540 in 22s
+[langchain_summary judge F] 1386/1540 in 24s
+[langchain_summary judge F] 1463/1540 in 25s
+[langchain_summary judge F] 1540/1540 in 28s
+[langchain_summary pi_F+R] 42/853 in 1s
+[langchain_summary pi_F+R] 84/853 in 1s
+[langchain_summary pi_F+R] 126/853 in 2s
+[langchain_summary pi_F+R] 168/853 in 2s
+[langchain_summary pi_F+R] 210/853 in 3s
+[langchain_summary pi_F+R] 252/853 in 3s
+[langchain_summary pi_F+R] 294/853 in 4s
+[langchain_summary pi_F+R] 336/853 in 4s
+[langchain_summary pi_F+R] 378/853 in 5s
+[langchain_summary pi_F+R] 420/853 in 5s
+[langchain_summary pi_F+R] 462/853 in 6s
+[langchain_summary pi_F+R] 504/853 in 6s
+[langchain_summary pi_F+R] 546/853 in 7s
+[langchain_summary pi_F+R] 588/853 in 7s
+[langchain_summary pi_F+R] 630/853 in 8s
+[langchain_summary pi_F+R] 672/853 in 8s
+[langchain_summary pi_F+R] 714/853 in 9s
+[langchain_summary pi_F+R] 756/853 in 9s
+[langchain_summary pi_F+R] 798/853 in 10s
+[langchain_summary pi_F+R] 840/853 in 10s
+[langchain_summary judge FR] 42/853 in 1s
+[langchain_summary judge FR] 84/853 in 2s
+[langchain_summary judge FR] 126/853 in 2s
+[langchain_summary judge FR] 168/853 in 3s
+[langchain_summary judge FR] 210/853 in 4s
+[langchain_summary judge FR] 252/853 in 4s
+[langchain_summary judge FR] 294/853 in 5s
+[langchain_summary judge FR] 336/853 in 6s
+[langchain_summary judge FR] 378/853 in 7s
+[langchain_summary judge FR] 420/853 in 7s
+[langchain_summary judge FR] 462/853 in 8s
+[langchain_summary judge FR] 504/853 in 9s
+[langchain_summary judge FR] 546/853 in 10s
+[langchain_summary judge FR] 588/853 in 11s
+[langchain_summary judge FR] 630/853 in 12s
+[langchain_summary judge FR] 672/853 in 12s
+[langchain_summary judge FR] 714/853 in 13s
+[langchain_summary judge FR] 756/853 in 14s
+[langchain_summary judge FR] 798/853 in 15s
+[langchain_summary judge FR] 840/853 in 16s
+locomo langchain_summary: 1986 rows, 1540 answerable, pi_F abstained 853, unjudged 0, spent $96.03

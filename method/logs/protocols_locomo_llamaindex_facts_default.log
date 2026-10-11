@@ -1,0 +1,81 @@
+[llamaindex_facts_default pi_F] 77/1540 in 2s
+[llamaindex_facts_default pi_F] 154/1540 in 3s
+[llamaindex_facts_default pi_F] 231/1540 in 5s
+[llamaindex_facts_default pi_F] 308/1540 in 7s
+[llamaindex_facts_default pi_F] 385/1540 in 9s
+[llamaindex_facts_default pi_F] 462/1540 in 10s
+[llamaindex_facts_default pi_F] 539/1540 in 12s
+[llamaindex_facts_default pi_F] 616/1540 in 14s
+[llamaindex_facts_default pi_F] 693/1540 in 16s
+[llamaindex_facts_default pi_F] 770/1540 in 18s
+[llamaindex_facts_default pi_F] 847/1540 in 19s
+[llamaindex_facts_default pi_F] 924/1540 in 21s
+[llamaindex_facts_default pi_F] 1001/1540 in 22s
+[llamaindex_facts_default pi_F] 1078/1540 in 24s
+[llamaindex_facts_default pi_F] 1155/1540 in 26s
+[llamaindex_facts_default pi_F] 1232/1540 in 27s
+[llamaindex_facts_default pi_F] 1309/1540 in 29s
+[llamaindex_facts_default pi_F] 1386/1540 in 30s
+[llamaindex_facts_default pi_F] 1463/1540 in 32s
+[llamaindex_facts_default pi_F] 1540/1540 in 45s
+[llamaindex_facts_default judge F] 77/1540 in 1s
+[llamaindex_facts_default judge F] 154/1540 in 2s
+[llamaindex_facts_default judge F] 231/1540 in 4s
+[llamaindex_facts_default judge F] 308/1540 in 5s
+[llamaindex_facts_default judge F] 385/1540 in 6s
+[llamaindex_facts_default judge F] 462/1540 in 7s
+[llamaindex_facts_default judge F] 539/1540 in 8s
+[llamaindex_facts_default judge F] 616/1540 in 9s
+[llamaindex_facts_default judge F] 693/1540 in 11s
+[llamaindex_facts_default judge F] 770/1540 in 12s
+[llamaindex_facts_default judge F] 847/1540 in 13s
+[llamaindex_facts_default judge F] 924/1540 in 14s
+[llamaindex_facts_default judge F] 1001/1540 in 15s
+[llamaindex_facts_default judge F] 1078/1540 in 16s
+[llamaindex_facts_default judge F] 1155/1540 in 17s
+[llamaindex_facts_default judge F] 1232/1540 in 18s
+[llamaindex_facts_default judge F] 1309/1540 in 19s
+[llamaindex_facts_default judge F] 1386/1540 in 20s
+[llamaindex_facts_default judge F] 1463/1540 in 22s
+[llamaindex_facts_default judge F] 1540/1540 in 23s
+[llamaindex_facts_default pi_F+R] 24/493 in 1s
+[llamaindex_facts_default pi_F+R] 48/493 in 1s
+[llamaindex_facts_default pi_F+R] 72/493 in 1s
+[llamaindex_facts_default pi_F+R] 96/493 in 2s
+[llamaindex_facts_default pi_F+R] 120/493 in 2s
+[llamaindex_facts_default pi_F+R] 144/493 in 2s
+[llamaindex_facts_default pi_F+R] 168/493 in 2s
+[llamaindex_facts_default pi_F+R] 192/493 in 3s
+[llamaindex_facts_default pi_F+R] 216/493 in 3s
+[llamaindex_facts_default pi_F+R] 240/493 in 3s
+[llamaindex_facts_default pi_F+R] 264/493 in 4s
+[llamaindex_facts_default pi_F+R] 288/493 in 4s
+[llamaindex_facts_default pi_F+R] 312/493 in 4s
+[llamaindex_facts_default pi_F+R] 336/493 in 5s
+[llamaindex_facts_default pi_F+R] 360/493 in 5s
+[llamaindex_facts_default pi_F+R] 384/493 in 5s
+[llamaindex_facts_default pi_F+R] 408/493 in 6s
+[llamaindex_facts_default pi_F+R] 432/493 in 6s
+[llamaindex_facts_default pi_F+R] 456/493 in 6s
+[llamaindex_facts_default pi_F+R] 480/493 in 7s
+[llamaindex_facts_default judge FR] 24/493 in 1s
+[llamaindex_facts_default judge FR] 48/493 in 1s
+[llamaindex_facts_default judge FR] 72/493 in 2s
+[llamaindex_facts_default judge FR] 96/493 in 2s
+[llamaindex_facts_default judge FR] 120/493 in 3s
+[llamaindex_facts_default judge FR] 144/493 in 3s
+[llamaindex_facts_default judge FR] 168/493 in 4s
+[llamaindex_facts_default judge FR] 192/493 in 4s
+[llamaindex_facts_default judge FR] 216/493 in 5s
+[llamaindex_facts_default judge FR] 240/493 in 5s
+[llamaindex_facts_default judge FR] 264/493 in 6s
+[llamaindex_facts_default judge FR] 288/493 in 6s
+[llamaindex_facts_default judge FR] 312/493 in 7s
+[llamaindex_facts_default judge FR] 336/493 in 7s
+[llamaindex_facts_default judge FR] 360/493 in 7s
+[llamaindex_facts_default judge FR] 384/493 in 8s
+[llamaindex_facts_default judge FR] 408/493 in 8s
+[llamaindex_facts_default judge FR] 432/493 in 9s
+[llamaindex_facts_default judge FR] 456/493 in 9s
+[llamaindex_facts_default judge FR] 480/493 in 10s
+locomo llamaindex_facts_default: 1986 rows, 1540 answerable, pi_F abstained 493, unjudged 0, spent $94.54

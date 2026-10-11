@@ -1,0 +1,27 @@
+abstention classifier: llm (kappa 0.696)
+
+######## mab_ruler: 7 compaction systems x 2 triggers, 100 items, 46 prior-resistant
+system               CPR chunk  CPR thr            diff [95% CI] acc A chunk acc A thr n compactions thr
+codex                    0.000    0.370   +0.370 [+0.231,+0.510]       0.150     0.440                 3
+openhands                0.000    0.283   +0.283 [+0.158,+0.420]       0.180     0.410                 3
+aider                    0.000    0.348   +0.348 [+0.212,+0.488]       0.150     0.450                 3
+gemini_cli               0.000    0.348   +0.348 [+0.211,+0.488]       0.180     0.470                 3
+anthropic_api            0.000    0.370   +0.370 [+0.231,+0.510]       0.240     0.480                 3
+langchain_summary        0.000    0.283   +0.283 [+0.154,+0.410]       0.210     0.410                 3
+neutral_roll             0.043    0.326   +0.283 [+0.153,+0.413]       0.250     0.440                 3
+R1: CPR(thr) >= CPR(chunk) for 7/7 systems -> holds
+R2: prior inflation among threshold systems with CPR_A < 0.5: acc_A(answerable) - acc_A(resistant)
+   codex@thr64k gap +0.130 [-0.059,+0.325] -> not shown
+   openhands@thr64k gap +0.236 [+0.056,+0.424] -> inflation present
+   aider@thr64k gap +0.189 [+0.002,+0.384] -> inflation present
+   gemini_cli@thr64k gap +0.226 [+0.040,+0.423] -> inflation present
+   anthropic_api@thr64k gap +0.205 [+0.018,+0.402] -> inflation present
+   langchain_summary@thr64k gap +0.236 [+0.045,+0.424] -> inflation present
+   neutral_roll@thr64k gap +0.211 [+0.034,+0.399] -> inflation present
+R2 -> does not hold for all
+R3: Spearman(acc_F - acc_A, abstention_A) over 14 configurations = 0.836 [0.657,0.926] -> holds
+
+mab_ruler_qa2: no paired runs yet
+
+######## LoCoMo full history (no compaction reaches 64k tokens): acc_A 0.734  CPR_A 0.678  CPR_F 0.657  PCS_F 0.683  oracle-normalised CPR_F 0.862
+R4: CPR_A(full history) - CPR_A(best memory system = raw_rag, 0.512) = +0.166 [+0.134,+0.197] -> holds

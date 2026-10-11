@@ -1,0 +1,21 @@
+Fetching 18 files:   0%|          | 0/18 [00:00<?, ?it/s]Fetching 18 files: 100%|██████████| 18/18 [00:00<00:00, 2349.53it/s]
+/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/mem0/vector_stores/qdrant.py:177: UserWarning: Payload indexes have no effect in the local Qdrant. Please use server Qdrant if you need payload indexes.
+  self.client.create_payload_index(
+Fetching 18 files:   0%|          | 0/18 [00:00<?, ?it/s]Fetching 18 files: 100%|██████████| 18/18 [00:00<00:00, 372.90it/s]
+Fetching 18 files:   0%|          | 0/18 [00:00<?, ?it/s]Fetching 18 files: 100%|██████████| 18/18 [00:00<00:00, 143.68it/s]
+Fetching 18 files:   0%|          | 0/18 [00:00<?, ?it/s]
+Fetching 18 files:   0%|          | 0/18 [00:00<?, ?it/s][AFetching 18 files:  94%|█████████▍| 17/18 [00:00<00:00, 167.16it/s]
+Fetching 18 files:  78%|███████▊  | 14/18 [00:00<00:00, 115.52it/s][AFetching 18 files: 100%|██████████| 18/18 [00:00<00:00, 96.04it/s] 
+Fetching 18 files: 100%|██████████| 18/18 [00:00<00:00, 68.50it/s] 
+locomo_c1 done in 182s, memory size 8385 chars
+Error parsing extraction response: Expecting property name enclosed in double quotes: line 24 column 7 (char 937)
+locomo_c2 done in 343s, memory size 21450 chars
+locomo_c0 done in 355s, memory size 18701 chars
+locomo_c3 done in 377s, memory size 12639 chars
+locomo_c4 done in 431s, memory size 27293 chars
+locomo_c5 done in 317s, memory size 26369 chars
+locomo_c8 done in 255s, memory size 17361 chars
+locomo_c6 done in 341s, memory size 27290 chars
+locomo_c7 done in 460s, memory size 32676 chars
+locomo_c9 done in 411s, memory size 29322 chars
+wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_locomo_mem0.jsonl 1986

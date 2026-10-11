@@ -1,0 +1,81 @@
+[neutral_roll pi_F] 77/1540 in 2s
+[neutral_roll pi_F] 154/1540 in 4s
+[neutral_roll pi_F] 231/1540 in 5s
+[neutral_roll pi_F] 308/1540 in 7s
+[neutral_roll pi_F] 385/1540 in 8s
+[neutral_roll pi_F] 462/1540 in 10s
+[neutral_roll pi_F] 539/1540 in 11s
+[neutral_roll pi_F] 616/1540 in 13s
+[neutral_roll pi_F] 693/1540 in 15s
+[neutral_roll pi_F] 770/1540 in 17s
+[neutral_roll pi_F] 847/1540 in 18s
+[neutral_roll pi_F] 924/1540 in 20s
+[neutral_roll pi_F] 1001/1540 in 21s
+[neutral_roll pi_F] 1078/1540 in 23s
+[neutral_roll pi_F] 1155/1540 in 25s
+[neutral_roll pi_F] 1232/1540 in 26s
+[neutral_roll pi_F] 1309/1540 in 28s
+[neutral_roll pi_F] 1386/1540 in 29s
+[neutral_roll pi_F] 1463/1540 in 31s
+[neutral_roll pi_F] 1540/1540 in 37s
+[neutral_roll judge F] 77/1540 in 1s
+[neutral_roll judge F] 154/1540 in 3s
+[neutral_roll judge F] 231/1540 in 4s
+[neutral_roll judge F] 308/1540 in 5s
+[neutral_roll judge F] 385/1540 in 7s
+[neutral_roll judge F] 462/1540 in 8s
+[neutral_roll judge F] 539/1540 in 9s
+[neutral_roll judge F] 616/1540 in 10s
+[neutral_roll judge F] 693/1540 in 11s
+[neutral_roll judge F] 770/1540 in 13s
+[neutral_roll judge F] 847/1540 in 14s
+[neutral_roll judge F] 924/1540 in 16s
+[neutral_roll judge F] 1001/1540 in 17s
+[neutral_roll judge F] 1078/1540 in 18s
+[neutral_roll judge F] 1155/1540 in 19s
+[neutral_roll judge F] 1232/1540 in 20s
+[neutral_roll judge F] 1309/1540 in 21s
+[neutral_roll judge F] 1386/1540 in 23s
+[neutral_roll judge F] 1463/1540 in 24s
+[neutral_roll judge F] 1540/1540 in 27s
+[neutral_roll pi_F+R] 40/804 in 1s
+[neutral_roll pi_F+R] 80/804 in 1s
+[neutral_roll pi_F+R] 120/804 in 2s
+[neutral_roll pi_F+R] 160/804 in 2s
+[neutral_roll pi_F+R] 200/804 in 3s
+[neutral_roll pi_F+R] 240/804 in 3s
+[neutral_roll pi_F+R] 280/804 in 4s
+[neutral_roll pi_F+R] 320/804 in 4s
+[neutral_roll pi_F+R] 360/804 in 5s
+[neutral_roll pi_F+R] 400/804 in 5s
+[neutral_roll pi_F+R] 440/804 in 6s
+[neutral_roll pi_F+R] 480/804 in 6s
+[neutral_roll pi_F+R] 520/804 in 7s
+[neutral_roll pi_F+R] 560/804 in 7s
+[neutral_roll pi_F+R] 600/804 in 8s
+[neutral_roll pi_F+R] 640/804 in 9s
+[neutral_roll pi_F+R] 680/804 in 9s
+[neutral_roll pi_F+R] 720/804 in 10s
+[neutral_roll pi_F+R] 760/804 in 11s
+[neutral_roll pi_F+R] 800/804 in 28s
+[neutral_roll judge FR] 40/804 in 1s
+[neutral_roll judge FR] 80/804 in 1s
+[neutral_roll judge FR] 120/804 in 2s
+[neutral_roll judge FR] 160/804 in 3s
+[neutral_roll judge FR] 200/804 in 4s
+[neutral_roll judge FR] 240/804 in 4s
+[neutral_roll judge FR] 280/804 in 5s
+[neutral_roll judge FR] 320/804 in 6s
+[neutral_roll judge FR] 360/804 in 7s
+[neutral_roll judge FR] 400/804 in 8s
+[neutral_roll judge FR] 440/804 in 8s
+[neutral_roll judge FR] 480/804 in 9s
+[neutral_roll judge FR] 520/804 in 10s
+[neutral_roll judge FR] 560/804 in 11s
+[neutral_roll judge FR] 600/804 in 12s
+[neutral_roll judge FR] 640/804 in 12s
+[neutral_roll judge FR] 680/804 in 13s
+[neutral_roll judge FR] 720/804 in 14s
+[neutral_roll judge FR] 760/804 in 15s
+[neutral_roll judge FR] 800/804 in 16s
+locomo neutral_roll: 1986 rows, 1540 answerable, pi_F abstained 804, unjudged 0, spent $95.37

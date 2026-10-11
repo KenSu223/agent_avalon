@@ -1,0 +1,3 @@
+/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/mem0/vector_stores/qdrant.py:177: UserWarning: Payload indexes have no effect in the local Qdrant. Please use server Qdrant if you need payload indexes.
+  self.client.create_payload_index(
+Error parsing extraction response: Expecting ',' delimiter: line 1 column 816 (char 815)

@@ -1,0 +1,14 @@
+/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/mem0/vector_stores/qdrant.py:177: UserWarning: Payload indexes have no effect in the local Qdrant. Please use server Qdrant if you need payload indexes.
+  self.client.create_payload_index(
+Error parsing extraction response: Expecting ',' delimiter: line 1 column 558 (char 557)
+Error parsing extraction response: Expecting ',' delimiter: line 1 column 390 (char 389)
+Error parsing extraction response: Expecting ',' delimiter: line 1 column 573 (char 572)
+Error parsing extraction response: Expecting ',' delimiter: line 1 column 217 (char 216)
+Error parsing extraction response: Expecting ',' delimiter: line 1 column 291 (char 290)
+Error parsing extraction response: Expecting ',' delimiter: line 1 column 398 (char 397)
+Error parsing extraction response: Expecting ',' delimiter: line 1 column 462 (char 461)
+Error parsing extraction response: Expecting ',' delimiter: line 1 column 474 (char 473)
+Error parsing extraction response: Expecting ',' delimiter: line 1 column 461 (char 460)
+Error parsing extraction response: Expecting ',' delimiter: line 1 column 626 (char 625)
+ruler_qa1_197K done in 3451s, memory size 461270 chars
+wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_mab_ruler_mem0.jsonl 100

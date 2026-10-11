@@ -1,0 +1,81 @@
+[mem0 pi_F] 77/1540 in 2s
+[mem0 pi_F] 154/1540 in 4s
+[mem0 pi_F] 231/1540 in 5s
+[mem0 pi_F] 308/1540 in 7s
+[mem0 pi_F] 385/1540 in 9s
+[mem0 pi_F] 462/1540 in 11s
+[mem0 pi_F] 539/1540 in 14s
+[mem0 pi_F] 616/1540 in 16s
+[mem0 pi_F] 693/1540 in 19s
+[mem0 pi_F] 770/1540 in 21s
+[mem0 pi_F] 847/1540 in 25s
+[mem0 pi_F] 924/1540 in 27s
+[mem0 pi_F] 1001/1540 in 30s
+[mem0 pi_F] 1078/1540 in 33s
+[mem0 pi_F] 1155/1540 in 36s
+[mem0 pi_F] 1232/1540 in 40s
+[mem0 pi_F] 1309/1540 in 42s
+[mem0 pi_F] 1386/1540 in 46s
+[mem0 pi_F] 1463/1540 in 49s
+[mem0 pi_F] 1540/1540 in 75s
+[mem0 judge F] 77/1540 in 1s
+[mem0 judge F] 154/1540 in 2s
+[mem0 judge F] 231/1540 in 3s
+[mem0 judge F] 308/1540 in 5s
+[mem0 judge F] 385/1540 in 6s
+[mem0 judge F] 462/1540 in 7s
+[mem0 judge F] 539/1540 in 9s
+[mem0 judge F] 616/1540 in 10s
+[mem0 judge F] 693/1540 in 11s
+[mem0 judge F] 770/1540 in 12s
+[mem0 judge F] 847/1540 in 13s
+[mem0 judge F] 924/1540 in 14s
+[mem0 judge F] 1001/1540 in 15s
+[mem0 judge F] 1078/1540 in 16s
+[mem0 judge F] 1155/1540 in 17s
+[mem0 judge F] 1232/1540 in 18s
+[mem0 judge F] 1309/1540 in 19s
+[mem0 judge F] 1386/1540 in 20s
+[mem0 judge F] 1463/1540 in 21s
+[mem0 judge F] 1540/1540 in 23s
+[mem0 pi_F+R] 15/309 in 0s
+[mem0 pi_F+R] 30/309 in 1s
+[mem0 pi_F+R] 45/309 in 1s
+[mem0 pi_F+R] 60/309 in 1s
+[mem0 pi_F+R] 75/309 in 1s
+[mem0 pi_F+R] 90/309 in 2s
+[mem0 pi_F+R] 105/309 in 2s
+[mem0 pi_F+R] 120/309 in 2s
+[mem0 pi_F+R] 135/309 in 2s
+[mem0 pi_F+R] 150/309 in 2s
+[mem0 pi_F+R] 165/309 in 3s
+[mem0 pi_F+R] 180/309 in 3s
+[mem0 pi_F+R] 195/309 in 3s
+[mem0 pi_F+R] 210/309 in 3s
+[mem0 pi_F+R] 225/309 in 3s
+[mem0 pi_F+R] 240/309 in 4s
+[mem0 pi_F+R] 255/309 in 4s
+[mem0 pi_F+R] 270/309 in 4s
+[mem0 pi_F+R] 285/309 in 4s
+[mem0 pi_F+R] 300/309 in 7s
+[mem0 judge FR] 15/309 in 1s
+[mem0 judge FR] 30/309 in 1s
+[mem0 judge FR] 45/309 in 1s
+[mem0 judge FR] 60/309 in 2s
+[mem0 judge FR] 75/309 in 2s
+[mem0 judge FR] 90/309 in 2s
+[mem0 judge FR] 105/309 in 3s
+[mem0 judge FR] 120/309 in 3s
+[mem0 judge FR] 135/309 in 3s
+[mem0 judge FR] 150/309 in 4s
+[mem0 judge FR] 165/309 in 4s
+[mem0 judge FR] 180/309 in 4s
+[mem0 judge FR] 195/309 in 5s
+[mem0 judge FR] 210/309 in 5s
+[mem0 judge FR] 225/309 in 5s
+[mem0 judge FR] 240/309 in 6s
+[mem0 judge FR] 255/309 in 6s
+[mem0 judge FR] 270/309 in 6s
+[mem0 judge FR] 285/309 in 6s
+[mem0 judge FR] 300/309 in 7s
+locomo mem0: 1986 rows, 1540 answerable, pi_F abstained 309, unjudged 0, spent $90.11

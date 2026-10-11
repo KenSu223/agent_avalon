@@ -1,0 +1,123 @@
+/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/mem0/vector_stores/qdrant.py:177: UserWarning: Payload indexes have no effect in the local Qdrant. Please use server Qdrant if you need payload indexes.
+  self.client.create_payload_index(
+Error parsing extraction response: Expecting ',' delimiter: line 137 column 6 (char 7399)
+LLM extraction failed: Connection error.
+ruler_qa2_421K FAILED LLMError(message='LLM extraction failed: Connection error.', error_code='LLM_001', details={}, suggestion='Please check your LLM configuration and API key', debug_info={})
+Traceback (most recent call last):
+  File "/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 101, in handle_request
+    raise exc
+  File "/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/httpcore/_backends/sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/openai/_base_client.py", line 1080, in request
+    response = self._send_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/openai/_client.py", line 491, in _send_request
+    response = self._send_with_auth_retry(request, stream=stream, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/openai/_client.py", line 469, in _send_with_auth_retry
+    response = super()._send_request(request, stream=stream, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/openai/_base_client.py", line 1005, in _send_request
+    return self._client.send(request, stream=stream, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/mem0/memory/main.py", line 958, in _add_to_vector_store
+    response = self.llm.generate_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/mem0/llms/openai.py", line 141, in generate_response
+    response = self.client.chat.completions.create(**params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/openai/_utils/_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1296, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/openai/_base_client.py", line 1375, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/openai/_base_client.py", line 1115, in request
+    raise APIConnectionError(request=request) from err
+openai.APIConnectionError: Connection error.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/agent_avalon/memory_prior/benchmark_audit/rescore.py", line 130, in <module>
+    sfx = f"_{a.mab_only}" if (a.save_ctx and a.mab_only and a.mab_only != "qa1") else ""   # QA2 replication (METHOD §10.5)
+                            ^^^^^^^^^^
+  File "/home/ubuntu/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/ubuntu/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/agent_avalon/memory_prior/benchmark_audit/rescore.py", line 82, in run_episode
+    else:
+        ^^
+  File "/home/ubuntu/agent_avalon/memory_prior/framework_study/src/frameworks.py", line 251, in ingest
+    self.m.add(msgs, user_id=self.uid)
+  File "/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/mem0/memory/main.py", line 871, in add
+    vector_store_result = self._add_to_vector_store(messages, processed_metadata, effective_filters, infer, prompt=prompt)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/mem0/memory/main.py", line 971, in _add_to_vector_store
+    raise LLMError(f"LLM extraction failed: {e}") from e
+mem0.exceptions.LLMError: LLM extraction failed: Connection error.
+wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_mab_ruler_mem0_qa2.jsonl 0
+Exception ignored in: <function QdrantClient.__del__ at 0x725994a6d1c0>
+Traceback (most recent call last):
+  File "/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/qdrant_client/qdrant_client.py", line 169, in __del__
+  File "/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/qdrant_client/qdrant_client.py", line 178, in close
+  File "/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/qdrant_client/local/qdrant_local.py", line 109, in close
+ImportError: sys.meta_path is None, Python is likely shutting down

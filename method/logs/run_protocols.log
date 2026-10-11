@@ -1,0 +1,23 @@
+23:04:41 locomo raw_rag locomo raw_rag: 1986 rows, 1540 answerable, pi_F abstained 131, unjudged 0, spent $85.54
+23:06:58 locomo openhands locomo openhands: 1986 rows, 1540 answerable, pi_F abstained 801, unjudged 0, spent $86.75
+23:09:02 locomo aider locomo aider: 1986 rows, 1540 answerable, pi_F abstained 980, unjudged 0, spent $87.82
+23:09:50 mab_ruler raw_rag mab_ruler raw_rag: 100 rows, 100 answerable, pi_F abstained 32, unjudged 0, spent $88.77
+23:10:04 mab_ruler openhands mab_ruler openhands: 100 rows, 100 answerable, pi_F abstained 29, unjudged 0, spent $88.83
+23:10:37 mab_ruler aider mab_ruler aider: 100 rows, 100 answerable, pi_F abstained 52, unjudged 0, spent $88.98
+23:15:45 locomo mem0 locomo mem0: 1986 rows, 1540 answerable, pi_F abstained 309, unjudged 0, spent $90.11
+23:31:04 locomo langmem locomo langmem: 1986 rows, 1540 answerable, pi_F abstained 432, unjudged 0, spent $93.62
+23:32:38 locomo llamaindex_facts_default locomo llamaindex_facts_default: 1986 rows, 1540 answerable, pi_F abstained 493, unjudged 0, spent $94.54
+23:34:33 locomo neutral_roll locomo neutral_roll: 1986 rows, 1540 answerable, pi_F abstained 804, unjudged 0, spent $95.37
+23:36:04 locomo langchain_summary locomo langchain_summary: 1986 rows, 1540 answerable, pi_F abstained 853, unjudged 0, spent $96.03
+23:36:10 mab_ruler neutral_roll mab_ruler neutral_roll: 100 rows, 100 answerable, pi_F abstained 51, unjudged 0, spent $96.10
+00:14:18 locomo gemini_cli locomo gemini_cli: 1986 rows, 1540 answerable, pi_F abstained 699, unjudged 0, spent $98.96
+00:17:17 locomo anthropic_api locomo anthropic_api: 1986 rows, 1540 answerable, pi_F abstained 991, unjudged 0, spent $99.59
+00:18:09 mab_ruler gemini_cli mab_ruler gemini_cli: 100 rows, 100 answerable, pi_F abstained 38, unjudged 0, spent $99.75
+00:18:54 mab_ruler anthropic_api mab_ruler anthropic_api: 100 rows, 100 answerable, pi_F abstained 49, unjudged 0, spent $99.84
+00:21:29 mab_ruler mem0 mab_ruler mem0: 100 rows, 100 answerable, pi_F abstained 4, unjudged 0, spent $99.92
+00:50:57 mab_ruler langchain_summary mab_ruler langchain_summary: 100 rows, 100 answerable, pi_F abstained 37, unjudged 0, spent $154.46
+01:03:59 mab_ruler llamaindex_facts_default mab_ruler llamaindex_facts_default: 100 rows, 100 answerable, pi_F abstained 58, unjudged 0, spent $154.96
+01:04:35 mab_ruler codex mab_ruler codex: 100 rows, 100 answerable, pi_F abstained 60, unjudged 0, spent $155.06
+01:30:53 locomo mem0_v1 locomo mem0_v1: 1986 rows, 1540 answerable, pi_F abstained 649, unjudged 0, spent $156.43
+01:30:55 mab_ruler mem0_v1 mab_ruler mem0_v1: 100 rows, 100 answerable, pi_F abstained 10, unjudged 0, spent $156.43
+protocol runner finished

@@ -1,0 +1,81 @@
+[langmem pi_F] 77/1540 in 2s
+[langmem pi_F] 154/1540 in 4s
+[langmem pi_F] 231/1540 in 6s
+[langmem pi_F] 308/1540 in 8s
+[langmem pi_F] 385/1540 in 11s
+[langmem pi_F] 462/1540 in 14s
+[langmem pi_F] 539/1540 in 16s
+[langmem pi_F] 616/1540 in 19s
+[langmem pi_F] 693/1540 in 21s
+[langmem pi_F] 770/1540 in 23s
+[langmem pi_F] 847/1540 in 26s
+[langmem pi_F] 924/1540 in 28s
+[langmem pi_F] 1001/1540 in 31s
+[langmem pi_F] 1078/1540 in 34s
+[langmem pi_F] 1155/1540 in 36s
+[langmem pi_F] 1232/1540 in 38s
+[langmem pi_F] 1309/1540 in 41s
+[langmem pi_F] 1386/1540 in 44s
+[langmem pi_F] 1463/1540 in 46s
+[langmem pi_F] 1540/1540 in 59s
+[langmem judge F] 77/1540 in 1s
+[langmem judge F] 154/1540 in 3s
+[langmem judge F] 231/1540 in 4s
+[langmem judge F] 308/1540 in 6s
+[langmem judge F] 385/1540 in 7s
+[langmem judge F] 462/1540 in 8s
+[langmem judge F] 539/1540 in 9s
+[langmem judge F] 616/1540 in 11s
+[langmem judge F] 693/1540 in 12s
+[langmem judge F] 770/1540 in 14s
+[langmem judge F] 847/1540 in 15s
+[langmem judge F] 924/1540 in 16s
+[langmem judge F] 1001/1540 in 17s
+[langmem judge F] 1078/1540 in 18s
+[langmem judge F] 1155/1540 in 19s
+[langmem judge F] 1232/1540 in 21s
+[langmem judge F] 1309/1540 in 22s
+[langmem judge F] 1386/1540 in 23s
+[langmem judge F] 1463/1540 in 24s
+[langmem judge F] 1540/1540 in 27s
+[langmem pi_F+R] 21/432 in 1s
+[langmem pi_F+R] 42/432 in 1s
+[langmem pi_F+R] 63/432 in 1s
+[langmem pi_F+R] 84/432 in 2s
+[langmem pi_F+R] 105/432 in 2s
+[langmem pi_F+R] 126/432 in 2s
+[langmem pi_F+R] 147/432 in 3s
+[langmem pi_F+R] 168/432 in 3s
+[langmem pi_F+R] 189/432 in 3s
+[langmem pi_F+R] 210/432 in 4s
+[langmem pi_F+R] 231/432 in 4s
+[langmem pi_F+R] 252/432 in 4s
+[langmem pi_F+R] 273/432 in 5s
+[langmem pi_F+R] 294/432 in 5s
+[langmem pi_F+R] 315/432 in 5s
+[langmem pi_F+R] 336/432 in 6s
+[langmem pi_F+R] 357/432 in 6s
+[langmem pi_F+R] 378/432 in 7s
+[langmem pi_F+R] 399/432 in 7s
+[langmem pi_F+R] 420/432 in 8s
+[langmem judge FR] 21/432 in 1s
+[langmem judge FR] 42/432 in 1s
+[langmem judge FR] 63/432 in 1s
+[langmem judge FR] 84/432 in 2s
+[langmem judge FR] 105/432 in 2s
+[langmem judge FR] 126/432 in 3s
+[langmem judge FR] 147/432 in 3s
+[langmem judge FR] 168/432 in 4s
+[langmem judge FR] 189/432 in 4s
+[langmem judge FR] 210/432 in 4s
+[langmem judge FR] 231/432 in 5s
+[langmem judge FR] 252/432 in 5s
+[langmem judge FR] 273/432 in 6s
+[langmem judge FR] 294/432 in 6s
+[langmem judge FR] 315/432 in 7s
+[langmem judge FR] 336/432 in 7s
+[langmem judge FR] 357/432 in 7s
+[langmem judge FR] 378/432 in 8s
+[langmem judge FR] 399/432 in 8s
+[langmem judge FR] 420/432 in 9s
+locomo langmem: 1986 rows, 1540 answerable, pi_F abstained 432, unjudged 0, spent $93.62

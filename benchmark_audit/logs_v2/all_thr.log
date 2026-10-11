@@ -1,0 +1,24 @@
+2026-10-11 00:25:37 thr qa1 openhands@thr64k wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_mab_ruler_openhands@thr64k.jsonl 100
+2026-10-11 00:26:04 thr qa1 anthropic_api@thr64k wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_mab_ruler_anthropic_api@thr64k.jsonl 100
+2026-10-11 00:26:54 thr qa1 langchain_summary@thr64k wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_mab_ruler_langchain_summary@thr64k.jsonl 100
+2026-10-11 00:27:30 thr qa1 neutral_roll@thr64k wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_mab_ruler_neutral_roll@thr64k.jsonl 100
+2026-10-11 00:27:34 thr qa1 codex@thr64k wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_mab_ruler_codex@thr64k.jsonl 100
+2026-10-11 00:27:36 thr qa1 aider@thr64k wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_mab_ruler_aider@thr64k.jsonl 100
+2026-10-11 00:28:39 thr qa2 openhands@thr64k wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_mab_ruler_openhands@thr64k_qa2.jsonl 100
+2026-10-11 00:28:49 thr qa1 gemini_cli@thr64k wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_mab_ruler_gemini_cli@thr64k.jsonl 100
+2026-10-11 00:29:17 thr protocols openhands@thr64k mab_ruler openhands@thr64k: 100 rows, 100 answerable, pi_F abstained 26, unjudged 0, spent $121.49 || mab_ruler_qa2 openhands@thr64k: 100 rows, 100 answerable, pi_F abstained 23, unjudged 0, spent $122.36
+2026-10-11 00:29:59 thr qa2 anthropic_api@thr64k wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_mab_ruler_anthropic_api@thr64k_qa2.jsonl 100
+2026-10-11 00:30:18 thr qa2 langchain_summary@thr64k wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_mab_ruler_langchain_summary@thr64k_qa2.jsonl 100
+2026-10-11 00:30:30 thr protocols anthropic_api@thr64k mab_ruler anthropic_api@thr64k: 100 rows, 100 answerable, pi_F abstained 15, unjudged 0, spent $125.71 || mab_ruler_qa2 anthropic_api@thr64k: 100 rows, 100 answerable, pi_F abstained 26, unjudged 0, spent $127.93
+2026-10-11 00:30:52 thr qa2 aider@thr64k wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_mab_ruler_aider@thr64k_qa2.jsonl 100
+2026-10-11 00:30:55 thr protocols langchain_summary@thr64k mab_ruler langchain_summary@thr64k: 100 rows, 100 answerable, pi_F abstained 20, unjudged 0, spent $128.34 || mab_ruler_qa2 langchain_summary@thr64k: 100 rows, 100 answerable, pi_F abstained 31, unjudged 0, spent $129.57
+2026-10-11 00:31:20 thr protocols aider@thr64k mab_ruler aider@thr64k: 100 rows, 100 answerable, pi_F abstained 24, unjudged 0, spent $131.46 || mab_ruler_qa2 aider@thr64k: 100 rows, 100 answerable, pi_F abstained 21, unjudged 0, spent $132.37
+2026-10-11 00:32:16 thr qa2 codex@thr64k wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_mab_ruler_codex@thr64k_qa2.jsonl 100
+2026-10-11 00:33:10 thr protocols codex@thr64k mab_ruler codex@thr64k: 100 rows, 100 answerable, pi_F abstained 21, unjudged 0, spent $135.75 || mab_ruler_qa2 codex@thr64k: 100 rows, 100 answerable, pi_F abstained 30, unjudged 0, spent $136.94
+2026-10-11 00:33:32 thr qa2 gemini_cli@thr64k wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_mab_ruler_gemini_cli@thr64k_qa2.jsonl 100
+2026-10-11 00:34:42 thr protocols gemini_cli@thr64k mab_ruler gemini_cli@thr64k: 100 rows, 100 answerable, pi_F abstained 16, unjudged 0, spent $139.12 || mab_ruler_qa2 gemini_cli@thr64k: 100 rows, 100 answerable, pi_F abstained 23, unjudged 0, spent $140.03
+2026-10-11 00:35:09 thr qa2 neutral_roll@thr64k wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_mab_ruler_neutral_roll@thr64k_qa2.jsonl 100
+2026-10-11 00:35:59 full_history locomo wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_locomo_full_history.jsonl 1986
+2026-10-11 00:36:58 thr protocols neutral_roll@thr64k mab_ruler neutral_roll@thr64k: 100 rows, 100 answerable, pi_F abstained 22, unjudged 0, spent $142.31 || mab_ruler_qa2 neutral_roll@thr64k: 100 rows, 100 answerable, pi_F abstained 20, unjudged 0, spent $147.91
+2026-10-11 00:38:58 full_history protocols locomo full_history: 1986 rows, 1540 answerable, pi_F abstained 26, unjudged 0, spent $154.00
+2026-10-11 00:38:58 ALL DONE

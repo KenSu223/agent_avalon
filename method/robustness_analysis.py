@@ -54,7 +54,8 @@ def main():
         for j, s in enumerate(pairs):
             c0 = pcme.cpr(Y["A"][j], R); c1 = pcme.cpr(Y["A"][k + j], R)
             d = pcme.cpr(Y["A"][k + j], R, W) - pcme.cpr(Y["A"][j], R, W)
-            ncomp = next(iter(thr_rows[f"{s}@thr64k"].values())).get("n_compactions")
+            v2 = HERE.parent / "benchmark_audit/results_v2" / (f"rescore_mab_ruler_{s}@thr64k_qa2.jsonl" if bench == "mab_ruler_qa2" else f"rescore_mab_ruler_{s}@thr64k.jsonl")
+            ncomp = json.loads(open(v2).readline()).get("n_compactions") if v2.exists() else None
             say(f"{s:20s} {c0:9.3f} {c1:8.3f} {c1 - c0:+8.3f} [{q(d,.025):+.3f},{q(d,.975):+.3f}] {Y['A'][j].mean():11.3f} {Y['A'][k + j].mean():9.3f} {str(ncomp):>17s}")
             out[s] = dict(cpr_chunk=float(c0), cpr_thr=float(c1), diff_ci=(q(d, .025), q(d, .975)))
         r1 = sum(o["cpr_thr"] - o["cpr_chunk"] >= 0 for o in out.values())

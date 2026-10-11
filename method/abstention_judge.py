@@ -32,12 +32,18 @@ def items():
 
 
 def classify(rows, desc):
-    reqs = [dict(model=JUDGE, messages=[{"role": "user", "content": PROMPT.format(question=r["question"], response=r["response"])}],
-                 temperature=0.0, max_tokens=400, reasoning_effort="low") for r in rows]
+    """One judge call per unique (question, response); identical answers (e.g. pi_F+R rows that were not re-asked)
+    share the label. Requests are byte-identical to per-row calls, so earlier labels come from the cache."""
+    keys = sorted({(r["question"], r["response"]) for r in rows})
+    reqs = [dict(model=JUDGE, messages=[{"role": "user", "content": PROMPT.format(question=q, response=a)}],
+                 temperature=0.0, max_tokens=400, reasoning_effort="low") for q, a in keys]
     res = batch_chat(reqs, workers=32, desc=desc)
-    for r, x in zip(rows, res):
+    lab = {}
+    for k, x in zip(keys, res):
         t = ((x or {}).get("text") or "").strip().lower()
-        r["abst_llm"] = ("yes" in t[:20]) if t else None
+        lab[k] = ("yes" in t[:20]) if t else None
+    for r in rows:
+        r["abst_llm"] = lab[(r["question"], r["response"])]
     return rows
 
 

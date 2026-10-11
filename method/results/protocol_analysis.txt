@@ -1,0 +1,119 @@
+abstention classifier: validation n=2300 kappa=0.696 -> using llm
+
+################ LoCoMo categories 1-4 ################
+systems 12  answerable items 1540  prior-resistant 1091  mean g' 0.102  mean g'' 0.121
+system                      acc A  acc F acc FR  CPR A  CPR F CPR FR  abst A  abst F abst FR  PCS F  PCS FR intf F intf FR
+raw_rag                     0.586  0.590  0.595  0.512  0.515  0.520   0.119   0.084   0.019  0.543   0.540  0.067   0.064
+mem0                        0.405  0.419  0.438  0.335  0.353  0.371   0.244   0.140   0.015  0.354   0.361  0.122   0.116
+langmem                     0.346  0.362  0.378  0.282  0.288  0.302   0.329   0.221   0.031  0.290   0.292  0.134   0.127
+llamaindex_facts_default    0.292  0.312  0.338  0.250  0.258  0.268   0.384   0.256   0.032  0.235   0.246  0.162   0.144
+mem0_v1                     0.206  0.218  0.244  0.160  0.164  0.172   0.471   0.345   0.034  0.130   0.140  0.190   0.169
+gemini_cli                  0.181  0.190  0.225  0.136  0.139  0.148   0.521   0.356   0.047  0.099   0.118  0.200   0.171
+neutral_roll                0.150  0.171  0.207  0.115  0.129  0.143   0.578   0.423   0.028  0.077   0.098  0.212   0.186
+openhands                   0.095  0.119  0.150  0.059  0.071  0.082   0.634   0.393   0.049  0.019   0.033  0.223   0.199
+langchain_summary           0.094  0.121  0.149  0.058  0.065  0.075   0.638   0.366   0.027  0.021   0.032  0.217   0.195
+aider                       0.083  0.106  0.163  0.064  0.071  0.090   0.726   0.484   0.038  0.005   0.047  0.236   0.192
+anthropic_api               0.075  0.095  0.140  0.041  0.054  0.071   0.698   0.507   0.036 -0.007   0.021  0.234   0.201
+codex                       0.071  0.097  0.133  0.040  0.049  0.063   0.616   0.335   0.038 -0.005   0.013  0.229   0.203
+H1 Spearman(acc_F - acc_A, abstention under pi_A) = 0.750 [0.210,0.846]  bootstrap p 0.0070
+   (pi_F+R) Spearman(acc_FR - acc_A, abstention under pi_A) = 0.914 [0.751,0.970]
+H2 tau_b(acc, CPR): pi_A 0.939  pi_F 0.901  delta -0.039 [-0.091,+0.061]  bootstrap p 0.9970
+   (pi_F+R) tau_b 1.000  delta +0.061 [-0.077,+0.092]
+H3 CPR invariance pi_F vs pi_A: 12/12 systems with 90% CI of CPR_F - CPR_A inside [-0.03, +0.05]; max |diff| 0.018; not invariant: []
+H3 CPR invariance pi_FR vs pi_A: 12/12 systems with 90% CI of CPR_FR - CPR_A inside [-0.03, +0.05]; max |diff| 0.037; not invariant: []
+H4 memory-poor systems (CPR_A <= 0.1): ['aider', 'anthropic_api', 'codex', 'langchain_summary', 'openhands']
+   SD of acc on the answerable stratum: pi_A 0.021  pi_F 0.024  ratio 1.159 [0.718,1.937]  -> not shown
+   (pi_F+R) SD 0.014  ratio 0.650 [0.308,1.837]
+   mean acc on answerable stratum: pi_A 0.159  pi_F 0.219 (g' 0.333)  pi_F+R 0.320 (g'' 0.393)
+H5 abstention under pi_F+R: max 0.049 (openhands) -> pass; under pi_F: 0.084-0.507; under pi_A: 0.119-0.726
+H6 descriptive
+  pi_F: raw_rag PCS 0.543 [0.517,0.569]; mem0 PCS 0.354 [0.328,0.381]; langmem PCS 0.290 [0.264,0.316]; llamaindex_facts_default PCS 0.235 [0.209,0.261]; mem0_v1 PCS 0.130 [0.106,0.153]; gemini_cli PCS 0.099 [0.076,0.121]; neutral_roll PCS 0.077 [0.055,0.100]; openhands PCS 0.019 [-0.000,0.039]; langchain_summary PCS 0.021 [0.002,0.041]; aider PCS 0.005 [-0.016,0.025]; anthropic_api PCS -0.007 [-0.026,0.012]; codex PCS -0.005 [-0.024,0.015]
+  tau_b(PCS_F, CPR_F) = 0.901
+  pi_FR: raw_rag PCS 0.540 [0.513,0.566]; mem0 PCS 0.361 [0.334,0.388]; langmem PCS 0.292 [0.266,0.319]; llamaindex_facts_default PCS 0.246 [0.220,0.273]; mem0_v1 PCS 0.140 [0.116,0.165]; gemini_cli PCS 0.118 [0.095,0.141]; neutral_roll PCS 0.098 [0.076,0.121]; openhands PCS 0.033 [0.012,0.053]; langchain_summary PCS 0.032 [0.013,0.052]; aider PCS 0.047 [0.028,0.068]; anthropic_api PCS 0.021 [0.002,0.042]; codex PCS 0.013 [-0.008,0.034]
+  tau_b(PCS_FR, CPR_FR) = 1.000
+  oracle CPR (pi_F, Step 1) 0.762 on 1535 items; oracle-normalised CPR_A / CPR_F: raw_rag 0.672/0.677; mem0 0.440/0.464; langmem 0.370/0.377; llamaindex_facts_default 0.328/0.339; mem0_v1 0.211/0.216; gemini_cli 0.177/0.181; neutral_roll 0.151/0.170; openhands 0.077/0.093; langchain_summary 0.076/0.086; aider 0.084/0.093; anthropic_api 0.052/0.069; codex 0.052/0.065
+  CPR_A / CPR_F, category 1 (n_res=224): raw_rag 0.31/0.30; mem0 0.20/0.21; langmem 0.23/0.23; llamaindex_facts_default 0.24/0.26; mem0_v1 0.07/0.06; gemini_cli 0.11/0.09; neutral_roll 0.06/0.08; openhands 0.02/0.04; langchain_summary 0.04/0.04; aider 0.06/0.05; anthropic_api 0.04/0.04; codex 0.02/0.03
+  CPR_A / CPR_F, category 2 (n_res=295): raw_rag 0.46/0.48; mem0 0.15/0.16; langmem 0.05/0.05; llamaindex_facts_default 0.03/0.04; mem0_v1 0.02/0.03; gemini_cli 0.01/0.02; neutral_roll 0.01/0.01; openhands 0.01/0.00; langchain_summary 0.00/0.01; aider 0.00/0.01; anthropic_api 0.01/0.01; codex 0.01/0.01
+  CPR_A / CPR_F, category 3 (n_res=43): raw_rag 0.33/0.30; mem0 0.21/0.28; langmem 0.19/0.21; llamaindex_facts_default 0.26/0.21; mem0_v1 0.09/0.07; gemini_cli 0.14/0.21; neutral_roll 0.14/0.16; openhands 0.12/0.09; langchain_summary 0.14/0.14; aider 0.02/0.02; anthropic_api 0.16/0.12; codex 0.09/0.12
+  CPR_A / CPR_F, category 4 (n_res=529): raw_rag 0.64/0.64; mem0 0.51/0.52; langmem 0.44/0.45; llamaindex_facts_default 0.37/0.38; mem0_v1 0.28/0.29; gemini_cli 0.22/0.22; neutral_roll 0.19/0.22; openhands 0.10/0.12; langchain_summary 0.09/0.10; aider 0.10/0.12; anthropic_api 0.05/0.08; codex 0.06/0.07
+  acc_A vs CPR_A: confirmed reversals []  unresolved 2
+  acc_F vs CPR_F: confirmed reversals []  unresolved 3
+
+################ MemoryAgentBench RULER-QA1 ################
+systems 11  answerable items 100  prior-resistant 46  mean g' 0.330  mean g'' 0.330
+system                      acc A  acc F acc FR  CPR A  CPR F CPR FR  abst A  abst F abst FR  PCS F  PCS FR intf F intf FR
+mem0                        0.770  0.770  0.790  0.696  0.696  0.717   0.110   0.070   0.030  0.657   0.687  0.090   0.080
+raw_rag                     0.490  0.520  0.550  0.413  0.457  0.457   0.370   0.330   0.130  0.284   0.328  0.230   0.200
+mem0_v1                     0.350  0.320  0.320  0.000  0.022  0.022   0.200   0.110   0.020 -0.015  -0.015  0.230   0.230
+neutral_roll                0.250  0.350  0.380  0.043  0.000  0.000   0.530   0.170   0.070  0.030   0.075  0.190   0.160
+anthropic_api               0.240  0.300  0.330  0.000  0.022  0.022   0.550   0.200   0.040 -0.045   0.000  0.250   0.220
+langchain_summary           0.210  0.330  0.370  0.000  0.022  0.022   0.630   0.300   0.130  0.000   0.060  0.220   0.180
+llamaindex_facts_default    0.190  0.420  0.400  0.065  0.152  0.152   0.670   0.030   0.010  0.134   0.104  0.190   0.210
+gemini_cli                  0.180  0.290  0.300  0.000  0.043  0.043   0.670   0.400   0.170 -0.060  -0.045  0.270   0.260
+openhands                   0.180  0.260  0.280  0.000  0.000  0.000   0.620   0.460   0.220 -0.104  -0.075  0.280   0.260
+codex                       0.150  0.280  0.320  0.000  0.000  0.000   0.780   0.450   0.110 -0.075  -0.015  0.260   0.220
+aider                       0.150  0.350  0.340  0.000  0.022  0.000   0.780   0.220   0.070  0.030   0.015  0.200   0.200
+H1 Spearman(acc_F - acc_A, abstention under pi_A) = 0.909 [0.628,0.948]  bootstrap p 0.0000
+   (pi_F+R) Spearman(acc_FR - acc_A, abstention under pi_A) = 0.868 [0.589,0.945]
+H2 tau_b(acc, CPR): pi_A 0.565  pi_F 0.582  delta +0.016 [-0.182,+0.389]  bootstrap p 0.4930
+   (pi_F+R) tau_b 0.461  delta -0.104 [-0.276,+0.297]
+H3 CPR invariance pi_F vs pi_A: 2/11 systems with 90% CI of CPR_F - CPR_A inside [-0.03, +0.05]; max |diff| 0.087; not invariant: ['aider', 'anthropic_api', 'gemini_cli', 'langchain_summary', 'llamaindex_facts_default', 'mem0', 'mem0_v1', 'neutral_roll', 'raw_rag']
+H3 CPR invariance pi_FR vs pi_A: 3/11 systems with 90% CI of CPR_FR - CPR_A inside [-0.03, +0.05]; max |diff| 0.087; not invariant: ['anthropic_api', 'gemini_cli', 'langchain_summary', 'llamaindex_facts_default', 'mem0', 'mem0_v1', 'neutral_roll', 'raw_rag']
+H4 memory-poor systems (CPR_A <= 0.05): ['aider', 'anthropic_api', 'codex', 'gemini_cli', 'langchain_summary', 'mem0_v1', 'neutral_roll', 'openhands']
+   SD of acc on the answerable stratum: pi_A 0.113  pi_F 0.057  ratio 0.503 [0.315,1.000]  -> not shown
+   (pi_F+R) SD 0.061  ratio 0.542 [0.338,1.020]
+   mean acc on answerable stratum: pi_A 0.391  pi_F 0.560 (g' 0.605)  pi_F+R 0.600 (g'' 0.605)
+H5 abstention under pi_F+R: max 0.220 (openhands) -> FAIL; under pi_F: 0.030-0.460; under pi_A: 0.110-0.780
+H6 descriptive
+  pi_F: mem0 PCS 0.657 [0.534,0.773]; raw_rag PCS 0.284 [0.121,0.438]; mem0_v1 PCS -0.015 [-0.085,0.050]; neutral_roll PCS 0.030 [-0.086,0.143]; anthropic_api PCS -0.045 [-0.158,0.059]; langchain_summary PCS 0.000 [-0.096,0.096]; llamaindex_facts_default PCS 0.134 [0.022,0.246]; gemini_cli PCS -0.060 [-0.194,0.068]; openhands PCS -0.104 [-0.203,-0.023]; codex PCS -0.075 [-0.175,0.021]; aider PCS 0.030 [-0.086,0.138]
+  tau_b(PCS_F, CPR_F) = 0.582
+  pi_FR: mem0 PCS 0.687 [0.567,0.797]; raw_rag PCS 0.328 [0.168,0.478]; mem0_v1 PCS -0.015 [-0.085,0.050]; neutral_roll PCS 0.075 [-0.026,0.176]; anthropic_api PCS 0.000 [-0.101,0.101]; langchain_summary PCS 0.060 [-0.021,0.141]; llamaindex_facts_default PCS 0.104 [-0.011,0.221]; gemini_cli PCS -0.045 [-0.173,0.073]; openhands PCS -0.075 [-0.171,0.005]; codex PCS -0.015 [-0.121,0.090]; aider PCS 0.015 [-0.087,0.106]
+  tau_b(PCS_FR, CPR_FR) = 0.437
+  oracle CPR (pi_F, Step 1) 0.978 on 100 items; oracle-normalised CPR_A / CPR_F: mem0 0.711/0.711; raw_rag 0.422/0.467; mem0_v1 0.000/0.022; neutral_roll 0.044/0.000; anthropic_api 0.000/0.022; langchain_summary 0.000/0.022; llamaindex_facts_default 0.067/0.156; gemini_cli 0.000/0.044; openhands 0.000/0.000; codex 0.000/0.000; aider 0.000/0.022
+  acc_A vs CPR_A: confirmed reversals []  unresolved 5
+  acc_F vs CPR_F: confirmed reversals []  unresolved 8
+(no protocol files for mab_ruler_qa2)
+
+Holm-adjusted primary tests: H1 LoCoMo p=0.0070 adj=0.0140; H1 MAB p=0.0000 adj=0.0000; H2 MAB p=0.4930 adj=0.4930
+H2 LoCoMo non-inferiority: delta tau lower bound -0.091 -> pass
+
+################ H7 unanswerable items (LoCoMo category 5, pi_A) ################
+system                     cat5 raw acc     CA     FA      J  CPR_A
+raw_rag                           0.554  0.439  0.119  0.321  0.512
+mem0                              0.623  0.527  0.244  0.283  0.335
+langmem                           0.668  0.545  0.329  0.216  0.282
+llamaindex_facts_default          0.711  0.632  0.384  0.248  0.250
+mem0_v1                           0.552  0.538  0.471  0.067  0.160
+gemini_cli                        0.749  0.695  0.521  0.174  0.136
+neutral_roll                      0.762  0.711  0.578  0.133  0.115
+aider                             0.859  0.827  0.726  0.101  0.064
+openhands                         0.783  0.742  0.634  0.108  0.059
+langchain_summary                 0.818  0.787  0.638  0.149  0.058
+anthropic_api                     0.836  0.803  0.698  0.105  0.041
+codex                             0.753  0.715  0.616  0.099  0.040
+Spearman(CA, CPR_A) -0.867 [-0.900,-0.762]  Spearman(J, CPR_A) 0.727 [0.587,0.853]  Spearman(cat5 raw acc, CPR_A) -0.783 [-0.865,-0.685]
+
+################ H8 test-retest: v1 (original rescore) vs v2 (re-run with saved contexts), pi_A ################
+  locomo    aider                      n=1986 acc v1 0.257 v2 0.257 diff +0.000 kappa 1.000 identical answers 1.000
+  locomo    anthropic_api              n=1986 acc v1 0.246 v2 0.246 diff +0.000 kappa 1.000 identical answers 1.000
+  locomo    codex                      n=1986 acc v1 0.224 v2 0.224 diff +0.000 kappa 1.000 identical answers 1.000
+  locomo    gemini_cli                 n=1986 acc v1 0.308 v2 0.308 diff +0.000 kappa 1.000 identical answers 1.000
+  locomo    langchain_summary          n=1986 acc v1 0.257 v2 0.257 diff +0.000 kappa 1.000 identical answers 1.000
+  locomo    langmem                    n=1986 acc v1 0.433 v2 0.418 diff -0.014 kappa 0.504 identical answers 0.075
+  locomo    llamaindex_facts_default   n=1986 acc v1 0.381 v2 0.386 diff +0.005 kappa 0.585 identical answers 0.110
+  locomo    mem0                       n=1986 acc v1 0.467 v2 0.454 diff -0.013 kappa 0.536 identical answers 0.109
+  locomo    mem0_v1                    n=1986 acc v1 0.288 v2 0.284 diff -0.004 kappa 0.625 identical answers 0.164
+  locomo    neutral_roll               n=1986 acc v1 0.288 v2 0.288 diff +0.000 kappa 1.000 identical answers 1.000
+  locomo    openhands                  n=1986 acc v1 0.249 v2 0.249 diff +0.000 kappa 1.000 identical answers 1.000
+  locomo    raw_rag                    n=1986 acc v1 0.579 v2 0.579 diff +0.000 kappa 1.000 identical answers 1.000
+  mab_ruler aider                      n= 100 acc v1 0.150 v2 0.150 diff +0.000 kappa 1.000 identical answers 1.000
+  mab_ruler anthropic_api              n= 100 acc v1 0.240 v2 0.240 diff +0.000 kappa 1.000 identical answers 1.000
+  mab_ruler codex                      n= 100 acc v1 0.150 v2 0.150 diff +0.000 kappa 1.000 identical answers 1.000
+  mab_ruler gemini_cli                 n= 100 acc v1 0.180 v2 0.180 diff +0.000 kappa 1.000 identical answers 1.000
+  mab_ruler langchain_summary          n= 100 acc v1 0.210 v2 0.210 diff +0.000 kappa 1.000 identical answers 1.000
+  mab_ruler llamaindex_facts_default   n= 100 acc v1 0.170 v2 0.190 diff +0.020 kappa 0.526 identical answers 0.290
+  mab_ruler mem0                       n= 100 acc v1 0.800 v2 0.770 diff -0.030 kappa 0.675 identical answers 0.330
+  mab_ruler mem0_v1                    n= 100 acc v1 0.350 v2 0.350 diff +0.000 kappa 1.000 identical answers 1.000
+  mab_ruler neutral_roll               n= 100 acc v1 0.250 v2 0.250 diff +0.000 kappa 1.000 identical answers 1.000
+  mab_ruler openhands                  n= 100 acc v1 0.180 v2 0.180 diff +0.000 kappa 1.000 identical answers 1.000
+  mab_ruler raw_rag                    n= 100 acc v1 0.490 v2 0.490 diff +0.000 kappa 1.000 identical answers 1.000

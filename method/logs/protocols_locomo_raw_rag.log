@@ -1,0 +1,83 @@
+[raw_rag pi_F] 77/1540 in 2s
+[raw_rag pi_F] 154/1540 in 4s
+[raw_rag pi_F] 231/1540 in 6s
+[raw_rag pi_F] 308/1540 in 9s
+[raw_rag pi_F] 385/1540 in 11s
+[raw_rag pi_F] 462/1540 in 13s
+[raw_rag pi_F] 539/1540 in 15s
+[raw_rag pi_F] 616/1540 in 17s
+[raw_rag pi_F] 693/1540 in 19s
+[raw_rag pi_F] 770/1540 in 21s
+[raw_rag pi_F] 847/1540 in 23s
+[raw_rag pi_F] 924/1540 in 26s
+[raw_rag pi_F] 1001/1540 in 28s
+[raw_rag pi_F] 1078/1540 in 30s
+[raw_rag pi_F] 1155/1540 in 32s
+[raw_rag pi_F] 1232/1540 in 34s
+[raw_rag pi_F] 1309/1540 in 36s
+[raw_rag pi_F] 1386/1540 in 38s
+[raw_rag pi_F] 1463/1540 in 41s
+[raw_rag pi_F] 1540/1540 in 46s
+[raw_rag judge F] 77/1540 in 1s
+[raw_rag judge F] 154/1540 in 2s
+[raw_rag judge F] 231/1540 in 3s
+[raw_rag judge F] 308/1540 in 4s
+[raw_rag judge F] 385/1540 in 5s
+[raw_rag judge F] 462/1540 in 6s
+[raw_rag judge F] 539/1540 in 7s
+[raw_rag judge F] 616/1540 in 9s
+[raw_rag judge F] 693/1540 in 10s
+[raw_rag judge F] 770/1540 in 11s
+[raw_rag judge F] 847/1540 in 12s
+[raw_rag judge F] 924/1540 in 13s
+[raw_rag judge F] 1001/1540 in 14s
+[raw_rag judge F] 1078/1540 in 15s
+[raw_rag judge F] 1155/1540 in 16s
+[raw_rag judge F] 1232/1540 in 17s
+[raw_rag judge F] 1309/1540 in 18s
+[raw_rag judge F] 1386/1540 in 19s
+[raw_rag judge F] 1463/1540 in 20s
+[raw_rag judge F] 1540/1540 in 22s
+[raw_rag pi_F+R] 6/131 in 0s
+[raw_rag pi_F+R] 12/131 in 1s
+[raw_rag pi_F+R] 18/131 in 1s
+[raw_rag pi_F+R] 24/131 in 1s
+[raw_rag pi_F+R] 30/131 in 1s
+[raw_rag pi_F+R] 36/131 in 1s
+[raw_rag pi_F+R] 42/131 in 1s
+[raw_rag pi_F+R] 48/131 in 1s
+[raw_rag pi_F+R] 54/131 in 1s
+[raw_rag pi_F+R] 60/131 in 1s
+[raw_rag pi_F+R] 66/131 in 1s
+[raw_rag pi_F+R] 72/131 in 2s
+[raw_rag pi_F+R] 78/131 in 2s
+[raw_rag pi_F+R] 84/131 in 2s
+[raw_rag pi_F+R] 90/131 in 2s
+[raw_rag pi_F+R] 96/131 in 2s
+[raw_rag pi_F+R] 102/131 in 2s
+[raw_rag pi_F+R] 108/131 in 2s
+[raw_rag pi_F+R] 114/131 in 2s
+[raw_rag pi_F+R] 120/131 in 2s
+[raw_rag pi_F+R] 126/131 in 2s
+[raw_rag judge FR] 6/131 in 1s
+[raw_rag judge FR] 12/131 in 1s
+[raw_rag judge FR] 18/131 in 1s
+[raw_rag judge FR] 24/131 in 1s
+[raw_rag judge FR] 30/131 in 1s
+[raw_rag judge FR] 36/131 in 1s
+[raw_rag judge FR] 42/131 in 1s
+[raw_rag judge FR] 48/131 in 1s
+[raw_rag judge FR] 54/131 in 2s
+[raw_rag judge FR] 60/131 in 2s
+[raw_rag judge FR] 66/131 in 2s
+[raw_rag judge FR] 72/131 in 2s
+[raw_rag judge FR] 78/131 in 2s
+[raw_rag judge FR] 84/131 in 2s
+[raw_rag judge FR] 90/131 in 2s
+[raw_rag judge FR] 96/131 in 2s
+[raw_rag judge FR] 102/131 in 2s
+[raw_rag judge FR] 108/131 in 3s
+[raw_rag judge FR] 114/131 in 3s
+[raw_rag judge FR] 120/131 in 3s
+[raw_rag judge FR] 126/131 in 3s
+locomo raw_rag: 1986 rows, 1540 answerable, pi_F abstained 131, unjudged 0, spent $85.54

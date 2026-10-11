@@ -1,0 +1,23 @@
+2026-10-10 23:00:03 locomo raw_rag wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_locomo_raw_rag.jsonl 1986
+2026-10-10 23:00:41 mab_ruler raw_rag wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_mab_ruler_raw_rag.jsonl 100
+2026-10-10 23:00:43 locomo openhands wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_locomo_openhands.jsonl 1986
+2026-10-10 23:00:45 mab_ruler openhands wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_mab_ruler_openhands.jsonl 100
+2026-10-10 23:00:47 locomo aider wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_locomo_aider.jsonl 1986
+2026-10-10 23:00:48 mab_ruler aider wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_mab_ruler_aider.jsonl 100
+2026-10-10 23:13:26 locomo mem0 wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_locomo_mem0.jsonl 1986
+2026-10-10 23:28:35 locomo langmem wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_locomo_langmem.jsonl 1986
+2026-10-10 23:28:38 locomo langchain_summary wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_locomo_langchain_summary.jsonl 1986
+2026-10-10 23:28:41 mab_ruler langchain_summary wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_mab_ruler_langchain_summary.jsonl 100
+2026-10-10 23:28:43 locomo neutral_roll wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_locomo_neutral_roll.jsonl 1986
+2026-10-10 23:28:45 mab_ruler neutral_roll wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_mab_ruler_neutral_roll.jsonl 100
+2026-10-10 23:30:52 locomo llamaindex_facts_default wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_locomo_llamaindex_facts_default.jsonl 1986
+2026-10-11 00:11:02 mab_ruler mem0 wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_mab_ruler_mem0.jsonl 100
+2026-10-11 00:11:05 locomo anthropic_api wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_locomo_anthropic_api.jsonl 1986
+2026-10-11 00:11:07 mab_ruler anthropic_api wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_mab_ruler_anthropic_api.jsonl 100
+2026-10-11 00:11:10 locomo gemini_cli wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_locomo_gemini_cli.jsonl 1986
+2026-10-11 00:11:12 mab_ruler gemini_cli wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_mab_ruler_gemini_cli.jsonl 100
+2026-10-11 01:02:56 mab_ruler llamaindex_facts_default wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_mab_ruler_llamaindex_facts_default.jsonl 100
+2026-10-11 01:02:57 mab_ruler codex wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_mab_ruler_codex.jsonl 100
+2026-10-11 01:28:57 locomo mem0_v1 wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_locomo_mem0_v1.jsonl 1986
+2026-10-11 01:30:39 mab_ruler mem0_v1 wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_mab_ruler_mem0_v1.jsonl 100
+2026-10-11 01:30:39 ALL DONE

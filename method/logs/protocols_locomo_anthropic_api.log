@@ -1,0 +1,81 @@
+[anthropic_api pi_F] 77/1540 in 2s
+[anthropic_api pi_F] 154/1540 in 4s
+[anthropic_api pi_F] 231/1540 in 6s
+[anthropic_api pi_F] 308/1540 in 9s
+[anthropic_api pi_F] 385/1540 in 12s
+[anthropic_api pi_F] 462/1540 in 16s
+[anthropic_api pi_F] 539/1540 in 20s
+[anthropic_api pi_F] 616/1540 in 23s
+[anthropic_api pi_F] 693/1540 in 26s
+[anthropic_api pi_F] 770/1540 in 28s
+[anthropic_api pi_F] 847/1540 in 31s
+[anthropic_api pi_F] 924/1540 in 34s
+[anthropic_api pi_F] 1001/1540 in 37s
+[anthropic_api pi_F] 1078/1540 in 40s
+[anthropic_api pi_F] 1155/1540 in 43s
+[anthropic_api pi_F] 1232/1540 in 47s
+[anthropic_api pi_F] 1309/1540 in 52s
+[anthropic_api pi_F] 1386/1540 in 56s
+[anthropic_api pi_F] 1463/1540 in 59s
+[anthropic_api pi_F] 1540/1540 in 87s
+[anthropic_api judge F] 77/1540 in 1s
+[anthropic_api judge F] 154/1540 in 2s
+[anthropic_api judge F] 231/1540 in 3s
+[anthropic_api judge F] 308/1540 in 4s
+[anthropic_api judge F] 385/1540 in 6s
+[anthropic_api judge F] 462/1540 in 7s
+[anthropic_api judge F] 539/1540 in 8s
+[anthropic_api judge F] 616/1540 in 9s
+[anthropic_api judge F] 693/1540 in 10s
+[anthropic_api judge F] 770/1540 in 11s
+[anthropic_api judge F] 847/1540 in 13s
+[anthropic_api judge F] 924/1540 in 13s
+[anthropic_api judge F] 1001/1540 in 14s
+[anthropic_api judge F] 1078/1540 in 15s
+[anthropic_api judge F] 1155/1540 in 16s
+[anthropic_api judge F] 1232/1540 in 17s
+[anthropic_api judge F] 1309/1540 in 18s
+[anthropic_api judge F] 1386/1540 in 19s
+[anthropic_api judge F] 1463/1540 in 20s
+[anthropic_api judge F] 1540/1540 in 22s
+[anthropic_api pi_F+R] 49/991 in 1s
+[anthropic_api pi_F+R] 98/991 in 2s
+[anthropic_api pi_F+R] 147/991 in 3s
+[anthropic_api pi_F+R] 196/991 in 4s
+[anthropic_api pi_F+R] 245/991 in 6s
+[anthropic_api pi_F+R] 294/991 in 7s
+[anthropic_api pi_F+R] 343/991 in 9s
+[anthropic_api pi_F+R] 392/991 in 10s
+[anthropic_api pi_F+R] 441/991 in 12s
+[anthropic_api pi_F+R] 490/991 in 14s
+[anthropic_api pi_F+R] 539/991 in 15s
+[anthropic_api pi_F+R] 588/991 in 16s
+[anthropic_api pi_F+R] 637/991 in 17s
+[anthropic_api pi_F+R] 686/991 in 18s
+[anthropic_api pi_F+R] 735/991 in 20s
+[anthropic_api pi_F+R] 784/991 in 21s
+[anthropic_api pi_F+R] 833/991 in 22s
+[anthropic_api pi_F+R] 882/991 in 23s
+[anthropic_api pi_F+R] 931/991 in 24s
+[anthropic_api pi_F+R] 980/991 in 31s
+[anthropic_api judge FR] 49/991 in 1s
+[anthropic_api judge FR] 98/991 in 2s
+[anthropic_api judge FR] 147/991 in 3s
+[anthropic_api judge FR] 196/991 in 4s
+[anthropic_api judge FR] 245/991 in 4s
+[anthropic_api judge FR] 294/991 in 5s
+[anthropic_api judge FR] 343/991 in 6s
+[anthropic_api judge FR] 392/991 in 7s
+[anthropic_api judge FR] 441/991 in 8s
+[anthropic_api judge FR] 490/991 in 9s
+[anthropic_api judge FR] 539/991 in 10s
+[anthropic_api judge FR] 588/991 in 11s
+[anthropic_api judge FR] 637/991 in 11s
+[anthropic_api judge FR] 686/991 in 12s
+[anthropic_api judge FR] 735/991 in 13s
+[anthropic_api judge FR] 784/991 in 14s
+[anthropic_api judge FR] 833/991 in 15s
+[anthropic_api judge FR] 882/991 in 16s
+[anthropic_api judge FR] 931/991 in 16s
+[anthropic_api judge FR] 980/991 in 17s
+locomo anthropic_api: 1986 rows, 1540 answerable, pi_F abstained 991, unjudged 0, spent $99.59

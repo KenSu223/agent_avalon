@@ -1,0 +1,81 @@
+[mem0_v1 pi_F] 77/1540 in 2s
+[mem0_v1 pi_F] 154/1540 in 4s
+[mem0_v1 pi_F] 231/1540 in 6s
+[mem0_v1 pi_F] 308/1540 in 7s
+[mem0_v1 pi_F] 385/1540 in 9s
+[mem0_v1 pi_F] 462/1540 in 10s
+[mem0_v1 pi_F] 539/1540 in 12s
+[mem0_v1 pi_F] 616/1540 in 14s
+[mem0_v1 pi_F] 693/1540 in 16s
+[mem0_v1 pi_F] 770/1540 in 18s
+[mem0_v1 pi_F] 847/1540 in 20s
+[mem0_v1 pi_F] 924/1540 in 22s
+[mem0_v1 pi_F] 1001/1540 in 24s
+[mem0_v1 pi_F] 1078/1540 in 27s
+[mem0_v1 pi_F] 1155/1540 in 29s
+[mem0_v1 pi_F] 1232/1540 in 31s
+[mem0_v1 pi_F] 1309/1540 in 34s
+[mem0_v1 pi_F] 1386/1540 in 36s
+[mem0_v1 pi_F] 1463/1540 in 38s
+[mem0_v1 pi_F] 1540/1540 in 58s
+[mem0_v1 judge F] 77/1540 in 1s
+[mem0_v1 judge F] 154/1540 in 2s
+[mem0_v1 judge F] 231/1540 in 3s
+[mem0_v1 judge F] 308/1540 in 4s
+[mem0_v1 judge F] 385/1540 in 5s
+[mem0_v1 judge F] 462/1540 in 6s
+[mem0_v1 judge F] 539/1540 in 7s
+[mem0_v1 judge F] 616/1540 in 8s
+[mem0_v1 judge F] 693/1540 in 8s
+[mem0_v1 judge F] 770/1540 in 10s
+[mem0_v1 judge F] 847/1540 in 10s
+[mem0_v1 judge F] 924/1540 in 11s
+[mem0_v1 judge F] 1001/1540 in 12s
+[mem0_v1 judge F] 1078/1540 in 13s
+[mem0_v1 judge F] 1155/1540 in 14s
+[mem0_v1 judge F] 1232/1540 in 15s
+[mem0_v1 judge F] 1309/1540 in 16s
+[mem0_v1 judge F] 1386/1540 in 17s
+[mem0_v1 judge F] 1463/1540 in 18s
+[mem0_v1 judge F] 1540/1540 in 20s
+[mem0_v1 pi_F+R] 32/649 in 1s
+[mem0_v1 pi_F+R] 64/649 in 1s
+[mem0_v1 pi_F+R] 96/649 in 2s
+[mem0_v1 pi_F+R] 128/649 in 2s
+[mem0_v1 pi_F+R] 160/649 in 3s
+[mem0_v1 pi_F+R] 192/649 in 3s
+[mem0_v1 pi_F+R] 224/649 in 4s
+[mem0_v1 pi_F+R] 256/649 in 4s
+[mem0_v1 pi_F+R] 288/649 in 5s
+[mem0_v1 pi_F+R] 320/649 in 6s
+[mem0_v1 pi_F+R] 352/649 in 6s
+[mem0_v1 pi_F+R] 384/649 in 7s
+[mem0_v1 pi_F+R] 416/649 in 7s
+[mem0_v1 pi_F+R] 448/649 in 8s
+[mem0_v1 pi_F+R] 480/649 in 8s
+[mem0_v1 pi_F+R] 512/649 in 9s
+[mem0_v1 pi_F+R] 544/649 in 10s
+[mem0_v1 pi_F+R] 576/649 in 11s
+[mem0_v1 pi_F+R] 608/649 in 11s
+[mem0_v1 pi_F+R] 640/649 in 13s
+[mem0_v1 judge FR] 32/649 in 1s
+[mem0_v1 judge FR] 64/649 in 1s
+[mem0_v1 judge FR] 96/649 in 2s
+[mem0_v1 judge FR] 128/649 in 3s
+[mem0_v1 judge FR] 160/649 in 3s
+[mem0_v1 judge FR] 192/649 in 4s
+[mem0_v1 judge FR] 224/649 in 4s
+[mem0_v1 judge FR] 256/649 in 5s
+[mem0_v1 judge FR] 288/649 in 6s
+[mem0_v1 judge FR] 320/649 in 6s
+[mem0_v1 judge FR] 352/649 in 7s
+[mem0_v1 judge FR] 384/649 in 7s
+[mem0_v1 judge FR] 416/649 in 8s
+[mem0_v1 judge FR] 448/649 in 8s
+[mem0_v1 judge FR] 480/649 in 9s
+[mem0_v1 judge FR] 512/649 in 10s
+[mem0_v1 judge FR] 544/649 in 10s
+[mem0_v1 judge FR] 576/649 in 11s
+[mem0_v1 judge FR] 608/649 in 11s
+[mem0_v1 judge FR] 640/649 in 12s
+locomo mem0_v1: 1986 rows, 1540 answerable, pi_F abstained 649, unjudged 0, spent $156.43

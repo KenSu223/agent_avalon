@@ -1,0 +1,389 @@
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: 'current_project' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: invalid array index 'None'
+Could not apply patch: invalid array index 'None'
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'recent_achievement' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'path' with '-' can't be applied to 'replace' operation
+Could not apply patch: 'path' with '-' can't be applied to 'replace' operation
+Could not apply patch: 'path' with '-' can't be applied to 'replace' operation
+Could not apply patch: 'path' with '-' can't be applied to 'replace' operation
+Could not apply patch: 'performance_event' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: invalid array index 'None'
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'text' is not a valid sequence index
+Could not apply patch: 'text' is not a valid sequence index
+Could not apply patch: 'text' is not a valid sequence index
+Could not apply patch: 'experiences_of_belonging' is not a valid sequence index
+Could not apply patch: 'path' with '-' can't be applied to 'replace' operation
+Could not apply patch: 'path' with '-' can't be applied to 'replace' operation
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: invalid array index 'None'
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'Joanna_creative_inspiration' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'fantasy_recommendation' is not a valid sequence index
+Could not apply patch: 'favorite_books' is not a valid sequence index
+Could not apply patch: 'motivation' is not a valid sequence index
+Could not apply patch: 'Maria was inspired to volunteer by her aunt, who helped her family during hard times. Her volunteering is driven by a desire to pay forward that support, particularly focusing on moments of emotional connection, such as comforting a lonely child at a shelter. She recently participated in a charity event where she connected a man named David with a housing and support organization, reinforcing her commitment to compassionate, direct action.' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: 'allergies' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: '082f87c3-4c2c-4747-bed1-955b20d4e5d3' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'values' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: invalid array index 'None'
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: JsonPatchConflict("can't replace a non-existent object 'json_doc_id'")
+Could not apply patch: JsonPatchConflict("can't replace a non-existent object 'json_doc_id'")
+1 validation error for RemoveDoc
+json_doc_id
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: invalid array index 'None'
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'value' is not a valid sequence index
+Could not apply patch: 'value' is not a valid sequence index
+Could not apply patch: 'value' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: ''}]}]  # Note: The closing quote and bracket are corrected in the actual call.  # Final list should be properly formatted.  # Let's finalize:  # Corrected patches list for RemoveDoc: [{' is not a valid sequence index
+Could not apply patch: 'temp_job' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'children' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: invalid array index 'None'
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: 'value' is not a valid sequence index
+Could not apply patch: 'value' is not a valid sequence index
+Could not apply patch: 'value' is not a valid sequence index
+Could not apply patch: 'value' is not a valid sequence index
+Could not apply patch: '5b5aee75-5304-49c8-aa00-d278e3adf3b4' is not a valid sequence index
+Could not apply patch: '0401a6c1-9812-4d6a-9102-0843dd097220' is not a valid sequence index
+Could not apply patch: '7c9563d9-60d2-4c93-a2ba-f8b324801f17' is not a valid sequence index
+Could not apply patch: '840bebd5-dc18-4946-9782-82f1827d8ad8' is not a valid sequence index
+Could not apply patch: 'd357f234-5535-43b9-afa0-529846deb086' is not a valid sequence index
+Could not apply patch: The operation does not contain a 'value' member
+Could not apply patch: 'text' is not a valid sequence index
+Could not apply patch: 'path' with '-' can't be applied to 'replace' operation
+Could not apply patch: 'status' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: 'significance_of_pets' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+locomo_c1 done in 475s, memory size 5243 chars
+Could not apply patch: invalid array index 'None'
+locomo_c0 done in 485s, memory size 17540 chars
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: 'value' is not a valid sequence index
+Could not apply patch: 'value' is not a valid sequence index
+Could not apply patch: 'value' is not a valid sequence index
+Could not apply patch: 'tattoos' is not a valid sequence index
+Could not apply patch: 'hiking_frequency' is not a valid sequence index
+Could not apply patch: 'pet_adoption_search' is not a valid sequence index
+Could not apply patch: 'activities' is not a valid sequence index
+Could not apply patch: 'motivation_tracking_method' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'motivation_sources' is not a valid sequence index
+Could not apply patch: 'hiking_experiences' is not a valid sequence index
+Could not apply patch: 'current_challenges' is not a valid sequence index
+Could not apply patch: 'emotional_response_to_dog_happiness' is not a valid sequence index
+Could not apply patch: 'nature_integration_goals' is not a valid sequence index
+Could not apply patch: 'interests' is not a valid sequence index
+Could not apply patch: 'therapeutic_activities' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'activities' is not a valid sequence index
+Could not apply patch: 'backyard_size' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'dogs' is not a valid sequence index
+Could not apply patch: 'dogs' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+locomo_c4 done in 663s, memory size 9899 chars
+Could not apply patch: 'bench near the window' is not a valid sequence index
+Could not apply patch: 'breed' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: invalid array index 'None'
+Could not apply patch: 'f42dfa00-25f9-44f4-af1b-8c0136f5e88c' is not a valid sequence index
+Could not apply patch: 'current_challenges' is not a valid sequence index
+Could not apply patch: 'current_access_to_nature' is not a valid sequence index
+Could not apply patch: 'destination' is not a valid sequence index
+Could not apply patch: invalid array index 'None'
+Could not apply patch: 'sources_of_strength' is not a valid sequence index
+Could not apply patch: 'daily_practices' is not a valid sequence index
+Could not apply patch: 'engineering_projects' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'f42dfa00-25f9-44f4-af1b-8c0136f5e88c' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+locomo_c2 done in 754s, memory size 21594 chars
+Could not apply patch: 'leash_incident' is not a valid sequence index
+Could not apply patch: 'training_activities' is not a valid sequence index
+Could not apply patch: 'outdoor_activities' is not a valid sequence index
+Could not apply patch: 'training_philosophy' is not a valid sequence index
+Could not apply patch: 'emotional_bond' is not a valid sequence index
+Could not apply patch: 'photo_sharing_behavior' is not a valid sequence index
+Could not apply patch: 'p' is not a valid sequence index
+Could not apply patch: 'p' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: 'self_care_methods' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'personal_growth' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: The operation does not contain a 'value' member
+Could not apply patch: 'pet_description' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'shared_activities' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: 'text' is not a valid sequence index
+Could not apply patch: 'text' is not a valid sequence index
+Could not apply patch: 'text' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+locomo_c3 done in 837s, memory size 19460 chars
+Could not apply patch: 'self-care' is not a valid sequence index
+Could not apply patch: 'dogs' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'relationship_activities' is not a valid sequence index
+Could not apply patch: 'sources_of_strength' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'dog_behavioral_consult' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: 'planned_date' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: 'sources_of_strength' is not a valid sequence index
+Could not apply patch: 'activity' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'current_challenges' is not a valid sequence index
+Could not apply patch: 'recent_trips' is not a valid sequence index
+Could not apply patch: 'current_reading' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'injury_description' is not a valid sequence index
+Could not apply patch: 'therapeutic_benefit' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: Location must start with /
+Could not apply patch: 'adopted_regular_exercise' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: JsonPatchConflict("can't replace a non-existent object 'content'")
+Could not apply patch: JsonPatchConflict("can't replace a non-existent object 'content'")
+1 validation error for Memory
+content
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+Could not apply patch: 'family_motto' is not a valid sequence index
+Could not apply patch: 'text' is not a valid sequence index
+Could not apply patch: 'text' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'description' is not a valid sequence index
+Could not apply patch: 'car' is not a valid sequence index
+Could not apply patch: 'background' is not a valid sequence index
+Could not apply patch: 'goals' is not a valid sequence index
+Could not apply patch: 'support_dynamics' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: invalid array index 'None'
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: 'text' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: 'challenges' is not a valid sequence index
+Could not apply patch: 'quote' is not a valid sequence index
+Could not apply patch: 'recent_experiences' is not a valid sequence index
+Could not apply patch: 'event_type' is not a valid sequence index
+Could not apply patch: 'future_interactions' is not a valid sequence index
+Could not apply patch: 'shared_topics' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+locomo_c6 done in 725s, memory size 18227 chars
+locomo_c5 done in 744s, memory size 24283 chars
+Could not apply patch: 'recent_collaboration' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: 'content' is not a valid sequence index
+Could not apply patch: '' is not a valid sequence index
+locomo_c7 done in 757s, memory size 27584 chars
+locomo_c8 done in 778s, memory size 23960 chars
+locomo_c9 done in 903s, memory size 14906 chars
+wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_locomo_langmem.jsonl 1986

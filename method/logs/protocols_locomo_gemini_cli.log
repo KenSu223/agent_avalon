@@ -1,0 +1,81 @@
+[gemini_cli pi_F] 77/1540 in 3s
+[gemini_cli pi_F] 154/1540 in 5s
+[gemini_cli pi_F] 231/1540 in 8s
+[gemini_cli pi_F] 308/1540 in 11s
+[gemini_cli pi_F] 385/1540 in 14s
+[gemini_cli pi_F] 462/1540 in 17s
+[gemini_cli pi_F] 539/1540 in 19s
+[gemini_cli pi_F] 616/1540 in 23s
+[gemini_cli pi_F] 693/1540 in 27s
+[gemini_cli pi_F] 770/1540 in 30s
+[gemini_cli pi_F] 847/1540 in 34s
+[gemini_cli pi_F] 924/1540 in 38s
+[gemini_cli pi_F] 1001/1540 in 41s
+[gemini_cli pi_F] 1078/1540 in 45s
+[gemini_cli pi_F] 1155/1540 in 48s
+[gemini_cli pi_F] 1232/1540 in 51s
+[gemini_cli pi_F] 1309/1540 in 54s
+[gemini_cli pi_F] 1386/1540 in 57s
+[gemini_cli pi_F] 1463/1540 in 60s
+[gemini_cli pi_F] 1540/1540 in 100s
+[gemini_cli judge F] 77/1540 in 2s
+[gemini_cli judge F] 154/1540 in 3s
+[gemini_cli judge F] 231/1540 in 4s
+[gemini_cli judge F] 308/1540 in 6s
+[gemini_cli judge F] 385/1540 in 7s
+[gemini_cli judge F] 462/1540 in 8s
+[gemini_cli judge F] 539/1540 in 9s
+[gemini_cli judge F] 616/1540 in 10s
+[gemini_cli judge F] 693/1540 in 12s
+[gemini_cli judge F] 770/1540 in 13s
+[gemini_cli judge F] 847/1540 in 14s
+[gemini_cli judge F] 924/1540 in 16s
+[gemini_cli judge F] 1001/1540 in 17s
+[gemini_cli judge F] 1078/1540 in 18s
+[gemini_cli judge F] 1155/1540 in 19s
+[gemini_cli judge F] 1232/1540 in 21s
+[gemini_cli judge F] 1309/1540 in 22s
+[gemini_cli judge F] 1386/1540 in 23s
+[gemini_cli judge F] 1463/1540 in 24s
+[gemini_cli judge F] 1540/1540 in 26s
+[gemini_cli pi_F+R] 34/699 in 1s
+[gemini_cli pi_F+R] 68/699 in 1s
+[gemini_cli pi_F+R] 102/699 in 2s
+[gemini_cli pi_F+R] 136/699 in 3s
+[gemini_cli pi_F+R] 170/699 in 3s
+[gemini_cli pi_F+R] 204/699 in 4s
+[gemini_cli pi_F+R] 238/699 in 5s
+[gemini_cli pi_F+R] 272/699 in 6s
+[gemini_cli pi_F+R] 306/699 in 7s
+[gemini_cli pi_F+R] 340/699 in 8s
+[gemini_cli pi_F+R] 374/699 in 9s
+[gemini_cli pi_F+R] 408/699 in 10s
+[gemini_cli pi_F+R] 442/699 in 11s
+[gemini_cli pi_F+R] 476/699 in 12s
+[gemini_cli pi_F+R] 510/699 in 13s
+[gemini_cli pi_F+R] 544/699 in 14s
+[gemini_cli pi_F+R] 578/699 in 15s
+[gemini_cli pi_F+R] 612/699 in 15s
+[gemini_cli pi_F+R] 646/699 in 16s
+[gemini_cli pi_F+R] 680/699 in 17s
+[gemini_cli judge FR] 34/699 in 1s
+[gemini_cli judge FR] 68/699 in 1s
+[gemini_cli judge FR] 102/699 in 2s
+[gemini_cli judge FR] 136/699 in 3s
+[gemini_cli judge FR] 170/699 in 3s
+[gemini_cli judge FR] 204/699 in 4s
+[gemini_cli judge FR] 238/699 in 4s
+[gemini_cli judge FR] 272/699 in 5s
+[gemini_cli judge FR] 306/699 in 6s
+[gemini_cli judge FR] 340/699 in 7s
+[gemini_cli judge FR] 374/699 in 7s
+[gemini_cli judge FR] 408/699 in 8s
+[gemini_cli judge FR] 442/699 in 9s
+[gemini_cli judge FR] 476/699 in 9s
+[gemini_cli judge FR] 510/699 in 10s
+[gemini_cli judge FR] 544/699 in 10s
+[gemini_cli judge FR] 578/699 in 11s
+[gemini_cli judge FR] 612/699 in 12s
+[gemini_cli judge FR] 646/699 in 12s
+[gemini_cli judge FR] 680/699 in 13s
+locomo gemini_cli: 1986 rows, 1540 answerable, pi_F abstained 699, unjudged 0, spent $98.96

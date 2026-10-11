@@ -1,0 +1,53 @@
+Error processing memory action: {'id': '23', 'text': 'Has been looking into local politics', 'event': 'UPDATE', 'old_memory': 'Hoping to get into local politics'}, Error: '23'
+Error processing memory action: {'id': '28', 'text': 'Believes in working together to make positive community changes', 'event': 'UPDATE', 'old_memory': 'Believes in empowering individuals to achieve their aspirations'}, Error: '28'
+Error processing memory action: {'id': '24', 'text': 'Is trying to make the business plan work despite challenges', 'event': 'UPDATE', 'old_memory': 'Finds starting business tough but is determined to succeed'}, Error: '24'
+Error processing memory action: {'id': '25', 'text': "Feels motivated by Gina's encouragement", 'event': 'UPDATE', 'old_memory': "Finds motivation in Gina's success"}, Error: '25'
+Error processing memory action: {'id': '38', 'text': 'Is busy with studies but finds time to relax with books', 'event': 'UPDATE', 'old_memory': 'Focuses on school'}, Error: '38'
+Error processing memory action: {'id': '39', 'text': 'Is currently reading a book and is hooked', 'event': 'UPDATE', 'old_memory': "Agreed to read a book by Patrick Rothfuss based on a friend's recommendation"}, Error: '39'
+Error processing memory action: {'id': '27', 'text': 'Passionate about making a positive impact', 'event': 'UPDATE', 'old_memory': 'Passionate about improving education and infrastructure in the community'}, Error: '27'
+Error processing memory action: {'id': '31', 'text': 'Believes in making a difference', 'event': 'UPDATE', 'old_memory': 'Thinks a kind gesture can make a big difference'}, Error: '31'
+Error processing memory action: {'id': '33', 'text': 'Believes actions can make a big impact', 'event': 'UPDATE', 'old_memory': 'Thinks a kind gesture can make a big difference'}, Error: '33'
+Error processing memory action: {'id': '29', 'text': 'Appreciates the beauty of nature and finds peace in it', 'event': 'UPDATE', 'old_memory': 'Appreciates the small joys in life'}, Error: '29'
+Error processing memory action: {'id': '31', 'text': 'Working on studies', 'event': 'UPDATE', 'old_memory': 'Focuses on school'}, Error: '31'
+Error processing memory action: {'id': '23', 'text': 'Is passionate about making a difference and working with others for a cause', 'event': 'UPDATE', 'old_memory': 'Is passionate about veterans and their rights'}, Error: '23'
+Error processing memory action: {'id': '48', 'text': 'Is grateful for support from friends, family and mentors', 'event': 'UPDATE', 'old_memory': 'Grateful for support from friends and mentors'}, Error: '48'
+Error processing memory action: {'id': '21', 'text': 'Enjoys nature and feels energized by it', 'event': 'UPDATE', 'old_memory': 'Appreciates nature and finds tranquility in forests near hometown'}, Error: '21'
+Error processing memory action: {'id': '23', 'text': 'Feels at peace surrounded by nature', 'event': 'UPDATE', 'old_memory': 'Appreciates nature and finds tranquility in forests near hometown'}, Error: '23'
+Error processing memory action: {'id': '24', 'text': 'Plays on a team that trains and has scrimmages', 'event': 'UPDATE', 'old_memory': 'Mentoring younger players on the team'}, Error: '24'
+Error processing memory action: {'id': '25', 'text': 'Team has improved in communication and bonding', 'event': 'UPDATE', 'old_memory': 'Values camaraderie and team unity, engages in team dinners and outings to strengthen bonds'}, Error: '25'
+Error processing memory action: {'id': '26', 'text': 'Team is working towards achieving goals', 'event': 'UPDATE', 'old_memory': 'Wants to be known as a consistent performer and help his team'}, Error: '26'
+Invalid JSON response: Expecting ',' delimiter: line 270 column 10 (char 8685)
+locomo_c1 done in 391s, memory size 5118 chars
+locomo_c0 done in 505s, memory size 7443 chars
+locomo_c2 done in 566s, memory size 9773 chars
+locomo_c4 done in 576s, memory size 9624 chars
+Error processing memory action: {'id': '23', 'text': 'Dealing with health issues', 'event': 'UPDATE', 'old_memory': 'Being extra careful with health'}, Error: '23'
+Error processing memory action: {'id': '21', 'text': 'Finds comfort in memories of loved ones', 'event': 'UPDATE', 'old_memory': 'Deborah finds peace in looking at family photos and memories'}, Error: '21'
+Error processing memory action: {'id': '27', 'text': 'Enjoys yoga, especially with the sound of waves and fresh air', 'event': 'UPDATE', 'old_memory': 'Yoga helped her find peace during a rough time'}, Error: '27'
+Error processing memory action: {'id': '19', 'text': 'Yoga helps gain perspective, feel alert and motivated', 'event': 'UPDATE', 'old_memory': 'Yoga helped her find peace during a rough time'}, Error: '19'
+locomo_c3 done in 634s, memory size 9102 chars
+Error processing memory action: {'id': '29', 'text': 'Believes simple things can bring the most happiness', 'event': 'UPDATE', 'old_memory': 'Appreciates small things that make a big difference'}, Error: '29'
+Error processing memory action: {'id': '30', 'text': 'Values support and being there for others', 'event': 'UPDATE', 'old_memory': 'Believes in staying in touch and supporting others'}, Error: '30'
+Error processing memory action: {'id': '44', 'text': 'Believes dogs bring unconditional love and joy', 'event': 'UPDATE', 'old_memory': 'Believes pets provide unconditional love and are great listeners'}, Error: '44'
+Error processing memory action: {'id': '25', 'text': 'Stays in shape by going to the gym and driving his car', 'event': 'UPDATE', 'old_memory': 'Staying active is very important to me'}, Error: '25'
+Error processing memory action: {'id': '28', 'text': 'Is supportive of friends and values friendship', 'event': 'UPDATE', 'old_memory': 'Is supportive of others going through tough times'}, Error: '28'
+Error processing memory action: {'id': '33', 'text': 'Plans to visit Japan after the Frank Ocean tour', 'event': 'DELETE'}, Error: '33'
+Error processing memory action: {'id': '30', 'text': 'Appreciates the little things in life', 'event': 'UPDATE', 'old_memory': 'Appreciates beauty in simple things and finds joy in them'}, Error: '30'
+Error processing memory action: {'id': '31', 'text': 'Interested in learning about time management and routines for balancing a busy schedule', 'event': 'UPDATE', 'old_memory': 'Willing to discuss time management with friends'}, Error: '31'
+Invalid JSON response: Expecting ',' delimiter: line 265 column 10 (char 8292)
+Error processing memory action: {'id': '40', 'text': 'Values the comfort and peace pets bring', 'event': 'UPDATE', 'old_memory': 'Deborah believes pets bring happiness and brighten life'}, Error: '40'
+Error processing memory action: {'id': '37', 'text': 'Gaming is an escape that keeps him focused and motivated', 'event': 'UPDATE', 'old_memory': 'Video games give me joy and excitement and keep me motivated'}, Error: '37'
+Invalid JSON response: Expecting ',' delimiter: line 29 column 10 (char 871)
+Error processing memory action: {'id': '40', 'text': 'Enjoys nature and finds peace and clarity in it', 'event': 'UPDATE', 'old_memory': 'Finds nature calming and fun'}, Error: '40'
+Error processing memory action: {'id': '45', 'text': 'Enjoys hiking and outdoor activities', 'event': 'UPDATE', 'old_memory': 'Went hiking in the Rockies last week'}, Error: '45'
+Error processing memory action: {'id': '46', 'text': 'Values healthy lifestyle and nutrition', 'event': 'UPDATE', 'old_memory': 'Is looking to eat healthier and add more vegetables to his meals'}, Error: '46'
+Error processing memory action: {'id': '32', 'text': 'Tour is ending soon and heading to Boston', 'event': 'UPDATE', 'old_memory': 'Has an upcoming trip to Boston after finishing the Frank Ocean tour'}, Error: '32'
+Error processing memory action: {'id': '35', 'text': 'Is following a diet limiting himself to two ginger snaps a day', 'event': 'UPDATE', 'old_memory': 'Loves ginger snaps'}, Error: '35'
+Error processing memory action: {'id': '29', 'text': 'Motivated to make better music and reach more people', 'event': 'UPDATE', 'old_memory': 'Wants his music to reach more people and make an impact'}, Error: '29'
+Error processing memory action: {'id': '31', 'text': 'Plans to explore and grow his brand', 'event': 'UPDATE', 'old_memory': 'Plans to expand his brand worldwide'}, Error: '31'
+locomo_c5 done in 649s, memory size 9954 chars
+locomo_c8 done in 533s, memory size 6993 chars
+locomo_c7 done in 611s, memory size 9104 chars
+locomo_c6 done in 676s, memory size 11254 chars
+locomo_c9 done in 846s, memory size 8108 chars
+wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_locomo_mem0_v1.jsonl 1986

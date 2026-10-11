@@ -1,0 +1,214 @@
+{
+ "n": 2300,
+ "kappa": 0.6964043249068101,
+ "agreement": 0.851304347826087,
+ "confusion": {
+  "both": 813,
+  "regex_only": 194,
+  "llm_only": 148,
+  "neither": 1145
+ },
+ "decision": "llm",
+ "examples_disagree": [
+  {
+   "response": "The conversation didn't specify when John spent time with his sister and dogs.",
+   "regex": false,
+   "llm": true
+  },
+  {
+   "response": "The memory does not contain information about James or a cooking class.  \nJames prepared spaghetti for the first time in the cooking class.",
+   "regex": true,
+   "llm": false
+  },
+  {
+   "response": "The provided information does not mention Nate's thoughts or feelings about being at cool places like Whispering Falls. However, based on his established patterns of emotional anchoring through nature",
+   "regex": true,
+   "llm": false
+  },
+  {
+   "response": "The memory does not contain information about what Joanna watched and recommended to Nate on February 7, 2022.  \n\nMy best guess: *She recommended a documentary about road trips.*",
+   "regex": true,
+   "llm": false
+  },
+  {
+   "response": "The information provided does not mention John or his career-high scoring game. Based on the memory, I cannot determine the month. My best guess is October.",
+   "regex": true,
+   "llm": false
+  },
+  {
+   "response": "The memory does not mention Maria or Coco. Based on the context provided, I cannot determine when Maria got Coco. My best guess is that it happened recently, but I cannot confirm.",
+   "regex": true,
+   "llm": false
+  },
+  {
+   "response": "The memory does not contain information about James or his location on July 12, 2022.  \n\nMy best guess: James was likely at home.",
+   "regex": true,
+   "llm": false
+  },
+  {
+   "response": "The memory does not contain information about Caroline or her takeaways from the book \"Becoming Nicole.\"  \n\nMy best guess: Caroline likely gained a deeper understanding of transgender experiences and ",
+   "regex": true,
+   "llm": false
+  },
+  {
+   "response": "The memory does not contain information about Melanie or a charity race.  \nMelanie realized she had left her phone in the car.",
+   "regex": true,
+   "llm": false
+  },
+  {
+   "response": "The memory does not mention James or any difficulties he faced during game development. Based on prior context, John collaborated on a board game project but no specific challenges were discussed.  \n\n",
+   "regex": true,
+   "llm": false
+  },
+  {
+   "response": "Deborah hosted a free community gardening class with her neighbor, which served as a community meetup. The exact date wasn't specified, but it was a recent event she shared with enthusiasm.",
+   "regex": false,
+   "llm": true
+  },
+  {
+   "response": "Joanna hasn't confirmed she will make Nate's ice cream for her family; Nate shared photos of his own homemade coconut milk ice cream, which he made for himself.",
+   "regex": false,
+   "llm": true
+  },
+  {
+   "response": "Dave's upcoming mountain trip has not occurred yet; it is planned for the near future as part of his creative journey.",
+   "regex": false,
+   "llm": true
+  },
+  {
+   "response": "The memory does not specify why Joanna is experimenting with dairy-free options, but given the context of shared values around care, creativity, and mindfulness\u2014mirroring Nate\u2019s attentive, nurturing h",
+   "regex": true,
+   "llm": false
+  },
+  {
+   "response": "The memory does not specify which RPG game John was playing or enjoying on August 10, 2022. However, based on the context of his creative collaboration and interests, it is likely he was engaged with ",
+   "regex": true,
+   "llm": false
+  },
+  {
+   "response": "No mishaps were mentioned\u2014Calvin has been actively touring, creating music, mentoring artists, and planning collaborative projects with Dave.",
+   "regex": false,
+   "llm": true
+  },
+  {
+   "response": "The memory does not contain information about how John says his team handles tough opponents.  \n\nMy best guess: John likely emphasizes preparation, teamwork, and resilience when facing tough opponents",
+   "regex": true,
+   "llm": false
+  },
+  {
+   "response": "The memory does not specify details about John's appreciation for a veteran's hospital visit. However, based on his values, John likely appreciates the sense of service, connection, and shared purpose",
+   "regex": true,
+   "llm": false
+  },
+  {
+   "response": "The memory does not mention Evan painting a piece with a bird flying over it, so his feelings about such an event cannot be determined from the given information. However, based on the pattern of Evan",
+   "regex": true,
+   "llm": false
+  },
+  {
+   "response": "The memory does not specify the emotion Dave feels when seeing the relief of someone whose car he fixed. However, based on the context of his passion for mechanical artistry and helping others, it can",
+   "regex": true,
+   "llm": false
+  },
+  {
+   "response": "Sam and Evan did not decide to try kayaking together. Evan shared a photo from a past kayaking trip, which sparked a conversation about nature and wellness, but there is no indication they planned to ",
+   "regex": false,
+   "llm": true
+  },
+  {
+   "response": "John does not mention visiting any U.S. cities to Tim.",
+   "regex": true,
+   "llm": false
+  },
+  {
+   "response": "The memory does not specify John's exact way of dealing with doubts and stress when he was younger. However, based on his current emphasis on goal attainment, discipline, and mentorship through sports",
+   "regex": true,
+   "llm": false
+  },
+  {
+   "response": "Gina hasn't commented on a specific photo of dancers\u2014yet. But she\u2019s deeply inspired by movement and expression, as seen in her drawing of a dancing couple, and would likely celebrate the dancers as vi",
+   "regex": false,
+   "llm": true
+  },
+  {
+   "response": "Jolene hasn\u2019t described that specific moment\u2014the memory of finding her snake, Susie, was shared as a photo and a quiet symbol of resilience and unexpected comfort, but no detailed narrative about the ",
+   "regex": false,
+   "llm": true
+  },
+  {
+   "response": "No, the black and white bowl was not mentioned in the shared context or media. Melanie shared photos of wooden figurines, a car dashboard, the Grand Canyon, a trail walk, and a sunset over water\u2014but n",
+   "regex": true,
+   "llm": false
+  },
+  {
+   "response": "The memory doesn't contain information about how Calvin met Frank Ocean.",
+   "regex": false,
+   "llm": true
+  },
+  {
+   "response": "The memory does not contain details about Jolene describing time spent with her snakes and partner together. However, based on the context, Jolene likely portrays such moments as quiet, tender, and ro",
+   "regex": true,
+   "llm": false
+  },
+  {
+   "response": "The memory does not mention John's journey to becoming assistant manager or any related challenges.  \n\nBest guess: John's biggest challenge was likely balancing his growing commitment to community ser",
+   "regex": true,
+   "llm": false
+  },
+  {
+   "response": "The memory does not contain information about John attending any event with his colleagues in March 2023.  \n\nBest guess: A team training session or community drill.",
+   "regex": true,
+   "llm": false
+  },
+  {
+   "response": "The memory does not specify what John hosted for veterans in May 2023. However, based on his involvement in community service and the fire-fighting brigade, it may have been a donation drive or a supp",
+   "regex": true,
+   "llm": false
+  },
+  {
+   "response": "The memory does not contain information about Joanna discovering anything at the library in Woodhaven.  \n\nBest guess: She found an old film script that inspired her current project.",
+   "regex": true,
+   "llm": false
+  },
+  {
+   "response": "The memory does not specify how long Jolene has been doing yoga and meditation. However, based on shared photos and themes of quiet practice, it appears to be an established part of her routine, likel",
+   "regex": true,
+   "llm": false
+  },
+  {
+   "response": "The memory does not contain information about John's slow cooker meals.  \nJohn often cooks hearty stews and roasted meats using a slow cooker.",
+   "regex": true,
+   "llm": false
+  },
+  {
+   "response": "The memory does not contain information about who helped Evan get the painting published in the exhibition.  \n\nBest guess: Evan likely submitted the painting himself, with support or encouragement fro",
+   "regex": true,
+   "llm": false
+  },
+  {
+   "response": "The memory does not specify what John appreciates about the veteran's hospital visit. However, based on his character and values, he likely appreciates the opportunity to serve, connect with others th",
+   "regex": true,
+   "llm": false
+  },
+  {
+   "response": "The memory does not specify what Deborah finds comforting about art shows. However, based on the shared themes of quiet connection and inherited love, it can be inferred that she may find comfort in t",
+   "regex": true,
+   "llm": false
+  },
+  {
+   "response": "The memory does not mention Maria's castle shadow box or its origin.  \nShe likely created it as a personal symbol of healing and quiet strength, reflecting her journey through service and nature.",
+   "regex": true,
+   "llm": false
+  },
+  {
+   "response": "The memory does not mention Dave returning from anywhere related to car restoration. Based on the context, Dave is associated with photography, nature, and Boston\u2014not car restoration. \n\nBest guess: **",
+   "regex": true,
+   "llm": false
+  },
+  {
+   "response": "The memory does not contain information about Dave selling a car.  \n\nBest guess: Dave sold the car in the fall.",
+   "regex": true,
+   "llm": false
+  }
+ ]
+}
