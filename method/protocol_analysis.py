@@ -27,9 +27,17 @@ def boot_p(samples):
     return float(min(1.0, 2 * min((s <= 0).mean(), (s >= 0).mean())))
 
 
-def load_protocols(bench):
+def robustness_system(name):
+    """METHOD §10.6 configurations are analysed separately (robustness_analysis.py), never in the main H1-H8 sets."""
+    return "@thr" in name or name == "full_history"
+
+
+def load_protocols(bench, robustness=False):
     rows = collections.defaultdict(dict)
     for f in sorted(glob.glob(str(RES / f"protocols_{bench}_*.jsonl"))):
+        sysname = Path(f).stem.replace(f"protocols_{bench}_", "")
+        if robustness_system(sysname) != robustness:
+            continue
         if bench == "mab_ruler" and Path(f).name.startswith("protocols_mab_ruler_qa2_"):
             continue
         for l in open(f):

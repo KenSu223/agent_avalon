@@ -76,7 +76,11 @@ def mab_ruler_episodes(words_per_chunk=1000, only=None):
 
 
 def run_episode(system, ep, save_ctx=False):
-    ad = ADAPTERS[system](MODEL, temperature=0.0)
+    if "@thr" in system or system == "full_history":      # METHOD §10.6 threshold-triggered compaction
+        from threshold_compaction import make
+        ad = make(system, ADAPTERS, MODEL)
+    else:
+        ad = ADAPTERS[system](MODEL, temperature=0.0)
     t0 = time.time()
     for s in ep["sessions"]:
         ad.ingest(s)
@@ -89,6 +93,9 @@ def run_episode(system, ep, save_ctx=False):
         if save_ctx:
             row["ctx"] = ctx
         out.append(row)
+    if hasattr(ad, "n_compactions"):
+        for r in out:
+            r["n_compactions"] = ad.n_compactions
     return out, time.time() - t0, len(ad.dump())
 
 
