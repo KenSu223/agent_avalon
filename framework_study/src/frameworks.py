@@ -282,10 +282,12 @@ class LangMem(Base):
         llm = ChatOpenAI(model=self.model, base_url=PROXY, api_key="proxy", temperature=self.temperature or 0.0, max_tokens=2000)
         self.mgr = create_memory_manager(llm, enable_inserts=True, enable_updates=True, enable_deletes=True)
         self.mem = []  # list of (id, content)
+        self.invoke_config = None  # library default (recursion_limit 25); LangMemRL overrides
 
     def ingest(self, msgs):
         existing = [(i, c) for i, c in self.mem]
-        out = self.mgr.invoke({"messages": msgs, "existing": existing})
+        inputs = {"messages": msgs, "existing": existing}
+        out = self.mgr.invoke(inputs, config=self.invoke_config) if self.invoke_config else self.mgr.invoke(inputs)
         new = []
         for x in out:
             content = getattr(x, "content", None)
@@ -299,6 +301,16 @@ class LangMem(Base):
 
     def dump(self):
         return "\n".join(f"- {c}" for _, c in self.mem)
+
+
+class LangMemRL(LangMem):
+    """LangMem with recursion_limit = 100 instead of the library default 25, which fails on long documents
+    (GraphRecursionError on MemoryAgentBench). Supplementary, non-default configuration (PLAN item 5c)."""
+    name = "langmem_rl100"
+
+    def __init__(self, *a, **k):
+        super().__init__(*a, **k)
+        self.invoke_config = {"recursion_limit": 100}
 
 
 class LlamaIndexFacts(Base):
@@ -413,5 +425,5 @@ class Mem0V1(Mem0):
     name = "mem0_v1"
 
 
-ADAPTERS = {c.name: c for c in [Nemori, RawRAG, LlamaIndexFactsDefault, Mem0V1, Codex, OpenHands, Aider, GeminiCLI, AnthropicAPI, LangChainSummary, NeutralRoll, RawHistory,
+ADAPTERS = {c.name: c for c in [Nemori, RawRAG, LlamaIndexFactsDefault, Mem0V1, LangMemRL, Codex, OpenHands, Aider, GeminiCLI, AnthropicAPI, LangChainSummary, NeutralRoll, RawHistory,
                                   Mem0, LangMem, LlamaIndexFacts]}
