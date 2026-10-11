@@ -37,6 +37,11 @@ under Llama, while their accuracy on congruent items stays near ceiling. System 
 ($\rho=\rhoRetFam$), although how aggressively a system compacts depends on the backbone (the neutral rewrite deletes
 \dropNeutralRollQwen{} of items under Qwen and \dropNeutralRollLlama{} under Llama).
 
+Is deletion prior-directed when the compactor is weak? With an 8B compactor (Llama-3.1-8B), most items are deleted within two
+sessions; in the few cells where retention is neither at floor nor at ceiling we find no reliable prior-directed
+deletion ($\Delta R=\weakDr$ [\weakDrLo, \weakDrHi], pre-registered). The prior's main route into the score is therefore the
+reader, not the writer.
+
 Knowledge updates reveal a sharper version of the effect: when the update moves away from the prior, the agent
 reverts to the old, congruent value \updQwen{} (Qwen) and \updLlama{} (Llama) more often than when the update moves toward
 the prior; stale memory and prior jointly override the change. Finally, \pcs{} computed from the agents' answers matches

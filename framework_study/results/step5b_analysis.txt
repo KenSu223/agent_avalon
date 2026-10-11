@@ -1,0 +1,24 @@
+items with weak-compactor prior >= 0.8: 161; agreed probes: 5777
+system             ckpt   R    R_C   R_I    dR    non-saturated
+anthropic_api         0  0.53  0.55  0.51 +0.037   yes
+anthropic_api         2  0.30  0.35  0.25 +0.106   yes
+anthropic_api         4  0.21  0.26  0.16 +0.092   yes
+anthropic_api         8  0.13  0.16  0.10 +0.065   
+anthropic_api        12  0.11  0.13  0.08 +0.050   
+codex                 0  0.48  0.47  0.50 -0.025   yes
+codex                 2  0.03  0.02  0.03 -0.014   
+codex                 4  0.02  0.01  0.02 -0.007   
+codex                 8  0.00  0.00  0.00 +0.000   
+codex                12  0.00  0.00  0.00 +0.000   
+llamaindex_facts      0  0.81  0.87  0.75 +0.114   
+llamaindex_facts      2  0.05  0.06  0.03 +0.028   
+llamaindex_facts      4  0.00  0.01  0.00 +0.007   
+llamaindex_facts      8  0.00  0.00  0.00 +0.000   
+llamaindex_facts     12  0.00  0.00  0.00 +0.000   
+neutral_roll          0  0.29  0.29  0.30 -0.012   yes
+neutral_roll          2  0.00  0.00  0.01 -0.007   
+neutral_roll          4  0.00  0.00  0.00 +0.000   
+neutral_roll          8  0.00  0.00  0.00 +0.000   
+neutral_roll         12  0.00  0.00  0.00 +0.000   
+P5b.1 neutral_roll: cells [('neutral_roll', 0)]  dR -0.012 (-0.10273057873614476, 0.08872905373624682) -> not shown   dF +0.007 (0.0, 0.023076923076923078)
+P5b.2 all systems: cells [('anthropic_api', 0), ('anthropic_api', 2), ('anthropic_api', 4), ('codex', 0), ('neutral_roll', 0)]  dR +0.038 (-0.03642419558133282, 0.1172337468934509) -> not shown   dF +0.007 (-0.0015340226367768434, 0.018590976291741192)
