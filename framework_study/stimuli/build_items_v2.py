@@ -2,7 +2,7 @@
 assigns carrier tasks and leads, and runs the G0 format checks. No LLM calls.
 
 Sources: the original items (build_items.py, minus S08) + items_v2/{rules_a..rules_e,procedures,preferences,updates,
-neutral,extra}.py.
+neutral,extra,round2}.py (round2 = STEP3_DESIGN v1.1).
 Output: items_v2.jsonl (all candidates; gates V1/V2 decide inclusion, see validate_v2.py)
 Run: python build_items_v2.py
 """
@@ -18,6 +18,7 @@ from rules_c import RULES as RC
 from rules_d import RULES as RD
 from rules_e import RULES as RE
 import extra as X
+import round2 as R2
 from procedures import PROCEDURES
 from preferences import PREFERENCES
 from updates import UPDATES
@@ -93,6 +94,37 @@ def assemble():
                           C=dict(clause=a, answer=aa), I=dict(clause=b, answer=ba), task=task, reply=reply,
                           lead=leads[n % len(leads)], normative=False, origin="v2"))
         n += 1
+    # round 2 (STEP3_DESIGN v1.1), appended after every round-1 item so that round-1 texts stay byte-identical
+    for tup in R2.RULES + R2.PROCEDURES:
+        iid, dom, topic, schema, q, tpl, (cf, ca), (xf, xa), norm = tup
+        c, i = tpl.format(cf), tpl.format(xf)
+        task, reply = take_task(words(c + " " + i + " " + q + " " + schema))
+        items.append(dict(id=iid, type="rule" if iid.startswith("R") else "procedure", domain=dom, topic=topic, schema=schema,
+                          question=q, options=[ca, xa], C=dict(clause=c, answer=ca), I=dict(clause=i, answer=xa),
+                          task=task, reply=reply, lead=leads[n % len(leads)], normative=norm, origin="v2", round=2))
+        n += 1
+    for tup in R2.UPDATES:
+        uid, dom, topic, schema, q, init_tpl, upd_tpl, (cf, ca), (xf, xa), norm = tup
+        c_init, i_init = init_tpl.format(xf), init_tpl.format(cf)
+        c_upd, i_upd = upd_tpl.format(old=xf, new=cf), upd_tpl.format(old=cf, new=xf)
+        avoid = words(" ".join([c_init, i_init, c_upd, i_upd, q, schema]))
+        task, reply = take_task(avoid)
+        task0, reply0 = take_task(avoid)
+        items.append(dict(id=uid, type="update", domain=dom, topic=topic, schema=schema, question=q, options=[ca, xa],
+                          C=dict(clause=c_upd, initial=c_init, answer=ca), I=dict(clause=i_upd, initial=i_init, answer=xa),
+                          task=task, reply=reply, initial_task=task0, initial_reply=reply0, lead=leads[n % len(leads)],
+                          initial_lead=leads[(n + 3) % len(leads)], normative=norm, origin="v2", round=2))
+        n += 1
+    for tup in R2.NEUTRAL:
+        nid, dom, topic, q, tpl, (af, aa), (bf, ba) = tup
+        a, b = tpl.format(af), tpl.format(bf)
+        task, reply = take_task(words(a + " " + b + " " + q))
+        items.append(dict(id=nid, type="neutral", domain=dom, topic=topic, schema=None, question=q, options=[aa, ba],
+                          C=dict(clause=a, answer=aa), I=dict(clause=b, answer=ba), task=task, reply=reply,
+                          lead=leads[n % len(leads)], normative=False, origin="v2", round=2))
+        n += 1
+    for x in items:
+        x.setdefault("round", 1)
     return items
 
 
