@@ -72,7 +72,40 @@ H6 descriptive
   oracle CPR (pi_F, Step 1) 0.978 on 100 items; oracle-normalised CPR_A / CPR_F: mem0 0.711/0.711; raw_rag 0.422/0.467; mem0_v1 0.000/0.022; neutral_roll 0.044/0.000; anthropic_api 0.000/0.022; langchain_summary 0.000/0.022; llamaindex_facts_default 0.067/0.156; gemini_cli 0.000/0.044; openhands 0.000/0.000; codex 0.000/0.000; aider 0.000/0.022
   acc_A vs CPR_A: confirmed reversals []  unresolved 5
   acc_F vs CPR_F: confirmed reversals []  unresolved 8
-(no protocol files for mab_ruler_qa2)
+
+################ MemoryAgentBench RULER-QA2 (independent replication, METHOD §10.5; not in the Holm family) ################
+systems 11  answerable items 100  prior-resistant 40  mean g' 0.363  mean g'' 0.363
+system                      acc A  acc F acc FR  CPR A  CPR F CPR FR  abst A  abst F abst FR  PCS F  PCS FR intf F intf FR
+mem0                        0.700  0.690  0.690  0.350  0.350  0.350   0.090   0.040   0.030  0.513   0.513  0.050   0.050
+langchain_summary           0.440  0.450  0.450  0.025  0.025  0.025   0.290   0.090   0.050  0.136   0.136  0.160   0.160
+raw_rag                     0.440  0.490  0.480  0.125  0.125  0.125   0.150   0.120   0.040  0.199   0.183  0.160   0.170
+mem0_v1                     0.390  0.350  0.360  0.000  0.000  0.000   0.130   0.070   0.030 -0.021  -0.005  0.250   0.240
+neutral_roll                0.380  0.400  0.410  0.025  0.000  0.000   0.390   0.050   0.020  0.058   0.073  0.200   0.190
+anthropic_api               0.380  0.450  0.420  0.025  0.000  0.000   0.430   0.060   0.030  0.136   0.089  0.150   0.180
+gemini_cli                  0.300  0.430  0.430  0.025  0.000  0.000   0.460   0.110   0.060  0.105   0.105  0.170   0.170
+openhands                   0.300  0.380  0.410  0.000  0.025  0.025   0.470   0.140   0.020  0.026   0.073  0.230   0.200
+aider                       0.280  0.410  0.410  0.000  0.000  0.000   0.460   0.150   0.030  0.073   0.073  0.190   0.190
+codex                       0.270  0.410  0.410  0.000  0.000  0.000   0.630   0.210   0.090  0.073   0.073  0.190   0.190
+llamaindex_facts_default    0.210  0.390  0.400  0.000  0.000  0.000   0.690   0.210   0.050  0.042   0.058  0.210   0.200
+H1 Spearman(acc_F - acc_A, abstention under pi_A) = 0.934 [0.597,0.952]  bootstrap p 0.0000
+   (pi_F+R) Spearman(acc_FR - acc_A, abstention under pi_A) = 0.922 [0.587,0.966]
+H2 tau_b(acc, CPR): pi_A 0.688  pi_F 0.478  delta -0.210 [-0.348,+0.129]  bootstrap p 0.6700
+   (pi_F+R) tau_b 0.647  delta -0.042 [-0.305,+0.142]
+H3 CPR invariance pi_F vs pi_A: 6/11 systems with 90% CI of CPR_F - CPR_A inside [-0.03, +0.05]; max |diff| 0.025; not invariant: ['anthropic_api', 'gemini_cli', 'mem0', 'neutral_roll', 'openhands']
+H3 CPR invariance pi_FR vs pi_A: 6/11 systems with 90% CI of CPR_FR - CPR_A inside [-0.03, +0.05]; max |diff| 0.025; not invariant: ['anthropic_api', 'gemini_cli', 'mem0', 'neutral_roll', 'openhands']
+H4 memory-poor systems (CPR_A <= 0.05): ['aider', 'anthropic_api', 'codex', 'gemini_cli', 'langchain_summary', 'llamaindex_facts_default', 'mem0_v1', 'neutral_roll', 'openhands']
+   SD of acc on the answerable stratum: pi_A 0.110  pi_F 0.051  ratio 0.462 [0.308,0.858]  -> pass
+   (pi_F+R) SD 0.036  ratio 0.322 [0.230,0.756]
+   mean acc on answerable stratum: pi_A 0.539  pi_F 0.676 (g' 0.606)  pi_F+R 0.681 (g'' 0.606)
+H5 abstention under pi_F+R: max 0.090 (codex) -> FAIL; under pi_F: 0.040-0.210; under pi_A: 0.090-0.690
+H6 descriptive
+  pi_F: mem0 PCS 0.513 [0.388,0.637]; langchain_summary PCS 0.136 [0.039,0.237]; raw_rag PCS 0.199 [0.079,0.319]; mem0_v1 PCS -0.021 [-0.102,0.054]; neutral_roll PCS 0.058 [-0.032,0.156]; anthropic_api PCS 0.136 [0.044,0.236]; gemini_cli PCS 0.105 [0.026,0.193]; openhands PCS 0.026 [-0.089,0.136]; aider PCS 0.073 [-0.005,0.152]; codex PCS 0.073 [-0.027,0.170]; llamaindex_facts_default PCS 0.042 [-0.050,0.136]
+  tau_b(PCS_F, CPR_F) = 0.478
+  pi_FR: mem0 PCS 0.513 [0.388,0.637]; langchain_summary PCS 0.136 [0.039,0.237]; raw_rag PCS 0.183 [0.059,0.303]; mem0_v1 PCS -0.005 [-0.075,0.067]; neutral_roll PCS 0.073 [-0.020,0.168]; anthropic_api PCS 0.089 [-0.018,0.201]; gemini_cli PCS 0.105 [0.026,0.193]; openhands PCS 0.073 [-0.028,0.176]; aider PCS 0.073 [-0.006,0.158]; codex PCS 0.073 [-0.012,0.158]; llamaindex_facts_default PCS 0.058 [-0.031,0.149]
+  tau_b(PCS_FR, CPR_FR) = 0.700
+  oracle CPR (pi_F, Step 1) 0.425 on 100 items; oracle-normalised CPR_A / CPR_F: mem0 0.824/0.824; langchain_summary 0.059/0.059; raw_rag 0.294/0.294; mem0_v1 0.000/0.000; neutral_roll 0.059/0.000; anthropic_api 0.059/0.000; gemini_cli 0.059/0.000; openhands 0.000/0.059; aider 0.000/0.000; codex 0.000/0.000; llamaindex_facts_default 0.000/0.000
+  acc_A vs CPR_A: confirmed reversals []  unresolved 3
+  acc_F vs CPR_F: confirmed reversals []  unresolved 6
 
 Holm-adjusted primary tests: H1 LoCoMo p=0.0070 adj=0.0140; H1 MAB p=0.0000 adj=0.0000; H2 MAB p=0.4930 adj=0.4930
 H2 LoCoMo non-inferiority: delta tau lower bound -0.091 -> pass

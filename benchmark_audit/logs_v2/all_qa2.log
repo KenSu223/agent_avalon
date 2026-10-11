@@ -6,3 +6,8 @@
 2026-10-11 00:50:09 mab_ruler_qa2 neutral_roll wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_mab_ruler_neutral_roll_qa2.jsonl 100
 2026-10-11 00:50:11 mab_ruler_qa2 codex wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_mab_ruler_codex_qa2.jsonl 100
 2026-10-11 01:04:44 mab_ruler_qa2 openhands wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_mab_ruler_openhands_qa2.jsonl 100
+2026-10-11 02:08:29 mab_ruler_qa2 aider wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_mab_ruler_aider_qa2.jsonl 100
+2026-10-11 02:39:21 mab_ruler_qa2 anthropic_api wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_mab_ruler_anthropic_api_qa2.jsonl 100
+2026-10-11 04:50:16 mab_ruler_qa2 mem0 RERUN wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_mab_ruler_mem0_qa2.jsonl 100
+2026-10-11 07:06:45 mab_ruler_qa2 gemini_cli wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_mab_ruler_gemini_cli_qa2.jsonl 100
+2026-10-11 07:06:45 ALL DONE

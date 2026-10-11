@@ -1,3 +1,8 @@
 /home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/mem0/vector_stores/qdrant.py:177: UserWarning: Payload indexes have no effect in the local Qdrant. Please use server Qdrant if you need payload indexes.
   self.client.create_payload_index(
 Error parsing extraction response: Expecting ',' delimiter: line 1 column 816 (char 815)
+/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/mem0/vector_stores/qdrant.py:246: UserWarning: Local mode is not recommended for collections with more than 20,000 points. Current collection contains 20059 points. Consider using Qdrant in Docker or Qdrant Cloud for better performance with large datasets.
+  self.client.upsert(collection_name=self.collection_name, points=points)
+Error parsing extraction response: Expecting ',' delimiter: line 1 column 1257 (char 1256)
+ruler_qa2_421K done in 16094s, memory size 1069905 chars
+wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_mab_ruler_mem0_qa2.jsonl 100

@@ -76,6 +76,83 @@
    ]
   }
  },
+ "mab_ruler_qa2": {
+  "R1": {
+   "codex": {
+    "cpr_chunk": 0.0,
+    "cpr_thr": 0.025,
+    "diff_ci": [
+     0.0,
+     0.08108108108108109
+    ]
+   },
+   "openhands": {
+    "cpr_chunk": 0.0,
+    "cpr_thr": 0.025,
+    "diff_ci": [
+     0.0,
+     0.08108108108108109
+    ]
+   },
+   "aider": {
+    "cpr_chunk": 0.0,
+    "cpr_thr": 0.025,
+    "diff_ci": [
+     0.0,
+     0.08108108108108109
+    ]
+   },
+   "gemini_cli": {
+    "cpr_chunk": 0.025,
+    "cpr_thr": 0.025,
+    "diff_ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "anthropic_api": {
+    "cpr_chunk": 0.025,
+    "cpr_thr": 0.025,
+    "diff_ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "langchain_summary": {
+    "cpr_chunk": 0.025,
+    "cpr_thr": 0.025,
+    "diff_ci": [
+     0.0,
+     0.0
+    ]
+   },
+   "neutral_roll": {
+    "cpr_chunk": 0.025,
+    "cpr_thr": 0.025,
+    "diff_ci": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  "R1_holds": true,
+  "R2": [
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true
+  ],
+  "R3": {
+   "rho": 0.8769422887384194,
+   "ci": [
+    0.521404781104278,
+    0.9157520970659508
+   ]
+  }
+ },
  "R4": {
   "cpr_full": 0.6782768102658112,
   "best": "raw_rag",

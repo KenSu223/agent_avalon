@@ -21,7 +21,26 @@ R2: prior inflation among threshold systems with CPR_A < 0.5: acc_A(answerable) 
 R2 -> does not hold for all
 R3: Spearman(acc_F - acc_A, abstention_A) over 14 configurations = 0.836 [0.657,0.926] -> holds
 
-mab_ruler_qa2: no paired runs yet
+######## mab_ruler_qa2: 7 compaction systems x 2 triggers, 100 items, 40 prior-resistant
+system               CPR chunk  CPR thr            diff [95% CI] acc A chunk acc A thr n compactions thr
+codex                    0.000    0.025   +0.025 [+0.000,+0.081]       0.270     0.360                 7
+openhands                0.000    0.025   +0.025 [+0.000,+0.081]       0.300     0.320                 7
+aider                    0.000    0.025   +0.025 [+0.000,+0.081]       0.280     0.330                 7
+gemini_cli               0.025    0.025   +0.000 [+0.000,+0.000]       0.300     0.410                 7
+anthropic_api            0.025    0.025   +0.000 [+0.000,+0.000]       0.380     0.380                 7
+langchain_summary        0.025    0.025   +0.000 [+0.000,+0.000]       0.440     0.350                 7
+neutral_roll             0.025    0.025   +0.000 [+0.000,+0.000]       0.380     0.390                 7
+R1: CPR(thr) >= CPR(chunk) for 7/7 systems -> holds
+R2: prior inflation among threshold systems with CPR_A < 0.5: acc_A(answerable) - acc_A(resistant)
+   codex@thr64k gap +0.558 [+0.427,+0.692] -> inflation present
+   openhands@thr64k gap +0.492 [+0.354,+0.631] -> inflation present
+   aider@thr64k gap +0.508 [+0.371,+0.645] -> inflation present
+   gemini_cli@thr64k gap +0.642 [+0.511,+0.768] -> inflation present
+   anthropic_api@thr64k gap +0.592 [+0.456,+0.724] -> inflation present
+   langchain_summary@thr64k gap +0.542 [+0.407,+0.678] -> inflation present
+   neutral_roll@thr64k gap +0.608 [+0.476,+0.733] -> inflation present
+R2 -> holds
+R3: Spearman(acc_F - acc_A, abstention_A) over 14 configurations = 0.877 [0.521,0.916] -> holds
 
 ######## LoCoMo full history (no compaction reaches 64k tokens): acc_A 0.734  CPR_A 0.678  CPR_F 0.657  PCS_F 0.683  oracle-normalised CPR_F 0.862
 R4: CPR_A(full history) - CPR_A(best memory system = raw_rag, 0.512) = +0.166 [+0.134,+0.197] -> holds
