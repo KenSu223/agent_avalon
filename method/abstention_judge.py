@@ -56,7 +56,9 @@ def main():
         rng = random.Random(0)
         strata = {}
         for r in rows:
-            if r["proto"] in ("A", "F"):
+            # the decision uses only the main pre-registered design (METHOD §10.1: LoCoMo + RULER-QA1, the 12 systems);
+            # the QA2 replication (§10.5) and the threshold robustness check (§10.6) must not influence it
+            if r["proto"] in ("A", "F") and r["bench"] in ("locomo", "mab_ruler") and "@thr" not in r["system"] and r["system"] != "full_history":
                 strata.setdefault((r["bench"], r["system"], r["proto"]), []).append(r)
         sample = [x for k in sorted(strata) for x in rng.sample(strata[k], min(50, len(strata[k])))]
         classify(sample, "abstention validate")
