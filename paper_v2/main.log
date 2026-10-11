@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.9.1)  11 OCT 2026 14:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.9.1)  11 OCT 2026 14:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -645,31 +645,16 @@ Underfull \hbox (badness 1077) in paragraph at lines 23--30
  []
 
 ) (./sec/audit.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 Overfull \hbox (24.60461pt too wide) in paragraph at lines 12--25
  [][] 
  []
 
 (./tab_protocols.tex) [4]) (./sec/controlled.tex [5] (./tab_step4.tex))
 (./sec/discussion.tex) (./sec/limitations.tex [6]) (./main.bbl
-Underfull \hbox (badness 1960) in paragraph at lines 5--10
-\T1/ptm/m/n/10 (+20) u-at-ing long-context abil-ity?  \T1/ptm/m/it/10 (+20) arX
-iv preprint
- []
-
-
 Underfull \vbox (badness 4403) has occurred while \output is active []
 
- [7]
-Underfull \hbox (badness 1024) in paragraph at lines 111--115
-[]\T1/ptm/m/n/10 (+20) Nemori au-thors. 2025.  Nemori: Self-organizing
- []
-
-) (./sec/appendix.tex [8]) [9
-
-] (./main.aux)
+ [7])
+(./sec/appendix.tex [8]) [9] (./main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -678,11 +663,11 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 8CEF78D631C6EC9E5891AFE57120E703;1873.
  ) 
 Here is how much of TeX's memory you used:
- 16016 strings out of 469514
- 249172 string characters out of 5470073
- 714261 words of memory out of 5000000
- 43880 multiletter control sequences out of 15000+600000
- 725056 words of font info for 418 fonts, out of 8000000 for 9000
+ 16035 strings out of 469514
+ 249503 string characters out of 5470073
+ 715676 words of memory out of 5000000
+ 43890 multiletter control sequences out of 15000+600000
+ 725506 words of font info for 422 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  84i,11n,93p,1001b,632s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
@@ -701,10 +686,10 @@ sr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
 w/times/utmri8a.pfb>
-Output written on main.pdf (9 pages, 234153 bytes).
+Output written on main.pdf (9 pages, 236283 bytes).
 PDF statistics:
- 367 PDF objects out of 1000 (max. 8388607)
- 317 compressed objects within 4 object streams
- 75 named destinations out of 1000 (max. 500000)
+ 365 PDF objects out of 1000 (max. 8388607)
+ 315 compressed objects within 4 object streams
+ 78 named destinations out of 1000 (max. 500000)
  71761 words of extra memory for PDF output out of 74296 (max. 10000000)
 

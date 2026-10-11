@@ -1,19 +1,11 @@
-\begin{thebibliography}{26}
+\begin{thebibliography}{29}
 \providecommand{\natexlab}[1]{#1}
 
-\bibitem[{{100-LongBench authors}(2025)}]{longbench100}
-{100-LongBench authors}. 2025.
-\newblock {100-LongBench}: Are de facto long-context benchmarks literally
-  evaluating long-context ability?
-\newblock \emph{arXiv preprint arXiv:2505.19293}.
-\newblock VERIFY title and authors.
-
-\bibitem[{{Agentic Context Management authors}(2026)}]{acm2026}
-{Agentic Context Management authors}. 2026.
-\newblock Agentic context management: Solving agent memory and cost by treating
-  them as lifecycle and architecture problems.
-\newblock \emph{arXiv preprint arXiv:2607.21503}.
-\newblock VERIFY authors.
+\bibitem[{Arya(2026)}]{recon2026}
+Mihir~Shriniwas Arya. 2026.
+\newblock {RECON}: Benchmarking agent memory for compositional reasoning over
+  long contexts.
+\newblock \emph{arXiv preprint arXiv:2607.16716}.
 
 \bibitem[{Bartlett(1932)}]{bartlett1932remembering}
 Frederic~C. Bartlett. 1932.
@@ -28,17 +20,22 @@ Prateek Chhikara, Dev Khant, Saket Aryan, Taranjeet Singh, and Deshraj Yadav.
   memory.
 \newblock \emph{arXiv preprint arXiv:2504.19413}.
 
+\bibitem[{Dadhich(2026)}]{acm2026}
+Gaurav Dadhich. 2026.
+\newblock Agentic context management: Solving agent memory and cost by treating
+  them as lifecycle and architecture problems.
+\newblock \emph{arXiv preprint arXiv:2607.21503}.
+
+\bibitem[{Feng et~al.(2026)Feng, Ma, and Chersoni}]{feng2026knowit}
+Zhaoxin Feng, Jianfei Ma, and Emmanuele Chersoni. 2026.
+\newblock Know it, act on it: Investigating memory utilization in {LLM}
+  personalization.
+\newblock \emph{arXiv preprint arXiv:2607.29433}.
+
 \bibitem[{Griffiths and Kalish(2007)}]{griffiths2007language}
 Thomas~L. Griffiths and Michael~L. Kalish. 2007.
 \newblock Language evolution by iterated learning with {Bayesian} agents.
 \newblock \emph{Cognitive Science}, 31(3):441--480.
-
-\bibitem[{{Ground Truth First authors}(2026)}]{groundtruthfirst2026}
-{Ground Truth First authors}. 2026.
-\newblock Ground truth first: A longitudinal evaluation instrument for agent
-  memory, and the tenure crossover in memory-architecture rankings.
-\newblock \emph{arXiv preprint arXiv:2607.21962}.
-\newblock VERIFY authors.
 
 \bibitem[{Gururangan et~al.(2018)Gururangan, Swayamdipta, Levy, Schwartz,
   Bowman, and Smith}]{gururangan2018annotation}
@@ -54,6 +51,16 @@ Yuanzhe Hu, Yu~Wang, and Julian McAuley. 2025.
   interactions.
 \newblock \emph{arXiv preprint arXiv:2507.05257}.
 
+\bibitem[{Jiang et~al.(2025)Jiang, Yuan, Shen, Hao, Xu, Chen, Liu, Vijjini, He,
+  Yu, Poovendran, Wornell, Ungar, Roth, Chen, and Taylor}]{personamemv2}
+Bowen Jiang, Yuan Yuan, Maohao Shen, Zhuoqun Hao, Zhangchen Xu, Zichen Chen,
+  Ziyi Liu, Anvesh~Rao Vijjini, Jiashu He, Hanchao Yu, Radha Poovendran,
+  Gregory Wornell, Lyle Ungar, Dan Roth, Sihao Chen, and Camillo~Jose Taylor.
+  2025.
+\newblock {PersonaMem-v2}: Towards personalized intelligence via learning
+  implicit user personas and agentic memory.
+\newblock \emph{arXiv preprint arXiv:2512.06688}.
+
 \bibitem[{Kaushik and Lipton(2018)}]{kaushik2018much}
 Divyansh Kaushik and Zachary~C. Lipton. 2018.
 \newblock How much reading does reading comprehension require? a critical
@@ -66,19 +73,6 @@ Simon Kirby, Mike Dowman, and Thomas~L. Griffiths. 2007.
 \newblock Innateness and culture in the evolution of language.
 \newblock \emph{Proceedings of the National Academy of Sciences},
   104(12):5241--5245.
-
-\bibitem[{{Locomo-Plus authors}(2026)}]{locomoplus2026}
-{Locomo-Plus authors}. 2026.
-\newblock {Locomo-Plus}: Beyond-factual cognitive memory evaluation framework
-  for {LLM} agents.
-\newblock \emph{arXiv preprint arXiv:2602.10715}.
-\newblock VERIFY authors.
-
-\bibitem[{{LongMemEval-V2 authors}(2026)}]{longmemevalvtwo2026}
-{LongMemEval-V2 authors}. 2026.
-\newblock {LongMemEval-V2}.
-\newblock \emph{arXiv preprint arXiv:2605.12493}.
-\newblock VERIFY title and authors.
 
 \bibitem[{Longpre et~al.(2021)Longpre, Perisetla, Chen, Ramesh, DuBois, and
   Singh}]{longpre2021entity}
@@ -101,17 +95,20 @@ Adyasha Maharana, Dong-Ho Lee, Sergey Tulyakov, Mohit Bansal, Francesco
 \newblock In \emph{Proceedings of the 62nd Annual Meeting of the Association
   for Computational Linguistics}.
 
-\bibitem[{{MemGym authors}(2026)}]{memgym2026}
-{MemGym authors}. 2026.
-\newblock {MemGym}.
-\newblock \emph{arXiv preprint arXiv:2605.20833}.
-\newblock VERIFY title and authors.
+\bibitem[{Ming et~al.(2025)Ming, Purushwalkam, Pandit, Ke, Nguyen, Xiong, and
+  Joty}]{ming2025faitheval}
+Yifei Ming, Senthil Purushwalkam, Shrey Pandit, Zixuan Ke, Xuan-Phi Nguyen,
+  Caiming Xiong, and Shafiq Joty. 2025.
+\newblock {FaithEval}: Can your language model stay faithful to context, even
+  if ``the moon is made of marshmallows''.
+\newblock In \emph{International Conference on Learning Representations}.
 
-\bibitem[{{Nemori authors}(2025)}]{nemori2025}
-{Nemori authors}. 2025.
+\bibitem[{Nan et~al.(2025)Nan, Ma, Wu, and Chen}]{nemori2025}
+Jiayan Nan, Wenquan Ma, Wenlong Wu, and Yize Chen. 2025.
 \newblock Nemori: Self-organizing agent memory inspired by cognitive science.
 \newblock \emph{arXiv preprint arXiv:2508.03341}.
-\newblock VERIFY authors.
+\newblock Version 1; later versions are titled ``What Deserves Memory: Adaptive
+  Memory Distillation for {LLM} Agents''.
 
 \bibitem[{Packer et~al.(2023)Packer, Wooders, Lin, Fang, Patil, Stoica, and
   Gonzalez}]{packer2023memgpt}
@@ -119,12 +116,6 @@ Charles Packer, Sarah Wooders, Kevin Lin, Vivian Fang, Shishir~G. Patil, Ion
   Stoica, and Joseph~E. Gonzalez. 2023.
 \newblock {MemGPT}: Towards {LLMs} as operating systems.
 \newblock \emph{arXiv preprint arXiv:2310.08560}.
-
-\bibitem[{{PersonaMem-v2 authors}(2025)}]{personamemv2}
-{PersonaMem-v2 authors}. 2025.
-\newblock {PersonaMem-v2}.
-\newblock \emph{arXiv preprint arXiv:2512.06688}.
-\newblock VERIFY title and authors.
 
 \bibitem[{Poliak et~al.(2018)Poliak, Naradowsky, Haldar, Rudinger, and
   Van~Durme}]{poliak2018hypothesis}
@@ -141,11 +132,25 @@ Preston Rasmussen, Pavlo Paliychuk, Travis Beauvais, Jack Ryan, and Daniel
 \newblock {Zep}: A temporal knowledge graph architecture for agent memory.
 \newblock \emph{arXiv preprint arXiv:2501.13956}.
 
-\bibitem[{{RECON authors}(2026)}]{recon2026}
-{RECON authors}. 2026.
-\newblock {RECON}.
-\newblock \emph{arXiv preprint arXiv:2607.16716}.
-\newblock VERIFY title and authors.
+\bibitem[{Spencer(2026)}]{groundtruthfirst2026}
+Quentin Spencer. 2026.
+\newblock Ground truth first: A longitudinal evaluation instrument for agent
+  memory, and the tenure crossover in memory-architecture rankings.
+\newblock \emph{arXiv preprint arXiv:2607.21962}.
+
+\bibitem[{Sun et~al.(2026)Sun, Zhang, and Sheng}]{sun2026mirage}
+Yushi Sun, Yanjie Zhang, and Rui Sheng. 2026.
+\newblock The personalization mirage: How {LLMs} fabricate user profiles, and
+  why self-monitoring misleads.
+\newblock \emph{arXiv preprint arXiv:2608.04570}.
+
+\bibitem[{Wu et~al.(2026)Wu, Ji, Kawatkar, Kwan, Gu, Peng, and
+  Chang}]{longmemevalvtwo2026}
+Di~Wu, Zixiang Ji, Asmi Kawatkar, Bryan Kwan, Jia-Chen Gu, Nanyun Peng, and
+  Kai-Wei Chang. 2026.
+\newblock {LongMemEval-V2}: Evaluating long-term agent memory toward
+  experienced colleagues.
+\newblock \emph{arXiv preprint arXiv:2605.12493}.
 
 \bibitem[{Wu et~al.(2025)Wu, Wang, Yu, Zhang, Chang, and
   Yu}]{wu2025longmemeval}
@@ -153,6 +158,12 @@ Di~Wu, Hongwei Wang, Wenhao Yu, Yuwei Zhang, Kai-Wei Chang, and Dong Yu. 2025.
 \newblock {LongMemEval}: Benchmarking chat assistants on long-term interactive
   memory.
 \newblock In \emph{International Conference on Learning Representations}.
+
+\bibitem[{Wu et~al.(2024)Wu, Wu, and Zou}]{wu2024clasheval}
+Kevin Wu, Eric Wu, and James Zou. 2024.
+\newblock {ClashEval}: Quantifying the tug-of-war between an {LLM}'s internal
+  prior and external evidence.
+\newblock \emph{arXiv preprint arXiv:2404.10198}.
 
 \bibitem[{Xie et~al.(2024)Xie, Zhang, Chen, Lou, and Su}]{xie2024adaptive}
 Jian Xie, Kai Zhang, Jiangjie Chen, Renze Lou, and Yu~Su. 2024.
@@ -165,6 +176,22 @@ Wujiang Xu, Zujie Liang, Kai Mei, Hang Gao, Juntao Tan, and Yongfeng Zhang.
   2025.
 \newblock {A-MEM}: Agentic memory for {LLM} agents.
 \newblock \emph{arXiv preprint arXiv:2502.12110}.
+
+\bibitem[{Xu et~al.(2026)Xu, Wang, Mei, Liang, Wang, Jin, Zhang, Zhang, Hua,
+  Sahu, and Metaxas}]{memgym2026}
+Wujiang Xu, Yu~Wang, Kai Mei, Kaiqu Liang, Zhenting Wang, Mingyu Jin, Han
+  Zhang, Shi-Xiong Zhang, Wenyue Hua, Sambit Sahu, and Dimitris~N. Metaxas.
+  2026.
+\newblock {MemGym}: a long-horizon memory environment for {LLM} agents.
+\newblock \emph{arXiv preprint arXiv:2605.20833}.
+
+\bibitem[{Yang et~al.(2025)Yang, Jin, Zhong, Jiang, Wang, Chaudhary, and
+  Han}]{longbench100}
+Wang Yang, Hongye Jin, Shaochen Zhong, Song Jiang, Qifan Wang, Vipin Chaudhary,
+  and Xiaotian Han. 2025.
+\newblock {100-LongBench}: Are de facto long-context benchmarks literally
+  evaluating long-context ability?
+\newblock \emph{arXiv preprint arXiv:2505.19293}.
 
 \bibitem[{Zhao et~al.(2025)Zhao, Hong, Liu, Hazarika, and
   Lin}]{zhao2025prefeval}

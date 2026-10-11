@@ -20,8 +20,8 @@ criteria are confidence-interval rules; all three effects are far from their thr
 \end{itemize}
 
 \section{Systems, prompts and reproducibility}
-The library systems run their own code with default prompts (Mem0 2.2.1 and 1.0.11, LangMem 0.0.30, LlamaIndex
-FactExtractionMemoryBlock, Nemori); the product compaction prompts are verbatim copies of the upstream sources (Codex,
+The library systems run their own code with default prompts (Mem0 2.2.1 and 1.0.11, LangMem 0.0.30, the LlamaIndex
+FactExtractionMemoryBlock of llama-index-core 0.14.25, and Nemori at commit d2a6dff); the product compaction prompts are verbatim copies of the upstream sources (Codex,
 OpenHands, Aider, Gemini CLI, LangChain SummarizationMiddleware, and the documented default of the Anthropic API) with
 the message framing each product uses. Every prompt used in this study is archived: templates are exported from the code
 that ran the experiments, and one or more fully rendered requests per call site are verified byte-for-byte against the

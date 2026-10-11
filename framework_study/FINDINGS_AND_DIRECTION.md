@@ -179,14 +179,14 @@
 | 工作 | 内容 | 与我们的关系 |
 |---|---|---|
 | **PersonaMem-v2**（2512.06688） | 偏好分为刻板、中性、反刻板三类，准确率依次为 48.9%、41.6%、33.0%，并明确归因于 "population priors" | **最大撞车风险**，针对 (c)。区别：只涉及偏好；不是同一槽位的成对设计；没有无记忆基线和扣除猜测的指标 |
-| Know It, Act on It（2607.29433） | 复现上面的刻板与反刻板差距；无记忆基线低于 3% | 同上 |
+| Know It, Act on It（2607.29433） | 裸骨干模型（GPT-4o-mini）上刻板偏好的利用率高于反刻板偏好；加上记忆检索后这一差距**反转**（作者归因于检索到的记忆压过先验）；不给历史时四个模型的 Know 题得分都低于 3%（2026-10-11 全文核实，修正了原先"复现差距"的说法） | 同上；与我们"记忆保留时先验不进入、删除后先验补位"一致 |
 | Ground Truth First（2607.21962，独立作者） | 明确提出 "a memory score partly measures the model's priors"；在自己的虚构数据上，无记忆对照得 15–17% | 原则相同；没有审计 LoCoMo、LongMemEval，也没有重新打分 |
 | MemGym（2605.20833） | 不做虚构化时，前沿模型凭预训练知识就能得 0.70–0.85；虚构化后接近 0 | 只针对它自己的基准 |
 | LongMemEval-V2（2605.12493）、RECON（2607.16716）、EverMemBench、DolphinBench | 构建基准时就把能被先验答对的题过滤掉 | 只是"过滤"，没有回头审计旧基准 |
 | 100-LongBench（2505.19293） | 长上下文 QA：无上下文基线显示分数虚高，修正后排名会变 | (a)(b) 在**长上下文**领域已有，在记忆领域还没有 |
 | LastingBench、SeedRG、CConS、NoCha、ClashEval、FaithEval | 用反事实或违背常识的上下文、minimal pair 做忠实度评测 | 设计相同但领域不同，需要引用 |
-| MirageBench（2608.04570） | 记忆中的刻板化"补全"（虚构用户属性），刻板 persona 高出 7.8 个百分点 | 对应我们"读取时由先验补全"的一个特例 |
-| **Nemori**（2508.03341） | "Predict-Calibrate"：只存储模型预测不到的内容，是一种**考虑先验的写入策略** | **必须引用并作为对照**，否则"记忆删除不区分先验"这个说法要收窄 |
+| MirageBench（2608.04570，"The Personalization Mirage"） | 个性化生成中模型会编造证据不支持的用户属性（over-inference，含 Stereotype 类），12 个模型的比例为 35%–49%；多轮记忆试点中推断属性近线性累积。原先记录的"刻板 persona 高出 7.8 个百分点"在 2026-10-11 核实时**未能确认**，论文中不使用该数字 | 对应我们"读取时由先验补全"的一个特例 |
+| **Nemori**（2508.03341；v1 标题为 Nemori，后续版本改名为 "What Deserves Memory: Adaptive Memory Distillation for LLM Agents"，作者相同） | "Predict-Calibrate"：只存储模型预测不到的内容，是一种**考虑先验的写入策略** | **必须引用并作为对照**，否则"记忆删除不区分先验"这个说法要收窄 |
 | Emergence AI 博客 | LongMemEval 上 "Best Guess" 基线得 18.8%，"I don't know" 基线得 5.8% | 非正式，只覆盖一个基准；和我们的结果一致 |
 | MemDelta（2606.29914） | LongMemEval-S 上无记忆基线 2.2%，允许不答 | 说明协议不同，结论会差很多 |
 
@@ -201,7 +201,7 @@
   - Zep 和 Mem0 曾因第 5 类分母的处理方式发生争执。
   - 有人指出 Mem0 的参考评分器会把正确的拒答也判为错误。
   - 来源：dev.to 上的评论文章（"The AI-memory benchmark everyone quotes forbids saying 'I don't know'"）；Zep 博客"Lies, damn lies, statistics: is Mem0 really SOTA"；arXiv 2607.21503。
-- Locomo-Plus（arXiv 2602.10715）把拒答判为正确。按它的评分规则推断，全盘拒答的系统在这类题上会得高分，但作者没有讨论这一点。
+- Locomo-Plus（arXiv 2602.10715）把拒答判为正确。按它的评分规则推断，全盘拒答的系统在这类题上会得高分，但作者没有讨论这一点。（2026-10-11 核实：该文**没有**说第 5 类的处理方式不一致或会改变总分，因此论文中这一说法只引用 arXiv 2607.21503，其 §6.1 原文为 "moves the headline score by ten points or more"。）
 - Emergence.ai 的博客报告，只回答"I don't know"的基线在 LongMemEval 上得 5.8%，推测来自不可回答题。
 - 综述 arXiv 2602.06052 指出，只有少数基准会奖励"证据缺失时拒答"。
 - arXiv 2608.27924 研究的是记忆如何帮助智能体处理不可回答题，**不是**基准计分会奖励遗忘这一问题，不构成撞车。
