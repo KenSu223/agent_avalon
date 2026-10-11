@@ -1862,5 +1862,191 @@
   "source": "langchain 1.4.3 langchain/agents/middleware/summarization.py DEFAULT_SUMMARY_PROMPT",
   "file": "templates/lib_langchain_default_summary_prompt.txt",
   "note": ""
+ },
+ {
+  "kind": "template",
+  "id": "v2_update_dialogue",
+  "stage": "dataset gates (step 3)",
+  "source": "framework_study/src/validate_v2.py item_turns (knowledge updates: initial value, then the update, then the question)",
+  "file": "templates/v2_update_dialogue.json",
+  "note": ""
+ },
+ {
+  "kind": "template",
+  "id": "v2_preference_filler",
+  "stage": "dataset gates (step 3)",
+  "source": "framework_study/src/validate_v2.py PREF_FILLER (as in validate.v2)",
+  "file": "templates/v2_preference_filler.json",
+  "note": ""
+ },
+ {
+  "kind": "exemplar",
+  "id": "v1_expanded_qwen3-235b-a22b-2507",
+  "stage": "dataset gates (step 3)",
+  "used_for": "V1 prior strength on the expanded set (20 draws per item)",
+  "source": "validate_v2.py requests",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 1.0,
+   "sample_idx": 0,
+   "max_tokens": 12
+  },
+  "verified": true,
+  "file": "exemplars/v1_expanded_qwen3-235b-a22b-2507.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "v1_expanded_llama3-3-70b-instruct",
+  "stage": "dataset gates (step 3)",
+  "used_for": "V1 prior strength on the expanded set (20 draws per item)",
+  "source": "validate_v2.py requests",
+  "model": "meta.llama3-3-70b-instruct-v1:0",
+  "params": {
+   "temperature": 1.0,
+   "sample_idx": 0,
+   "max_tokens": 12
+  },
+  "verified": true,
+  "file": "exemplars/v1_expanded_llama3-3-70b-instruct.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "v1_expanded_gpt-oss-120b-1:0",
+  "stage": "dataset gates (step 3)",
+  "used_for": "V1 prior strength on the expanded set (20 draws per item)",
+  "source": "validate_v2.py requests",
+  "model": "openai.gpt-oss-120b-1:0",
+  "params": {
+   "temperature": 1.0,
+   "sample_idx": 0,
+   "max_tokens": 600,
+   "reasoning_effort": "low"
+  },
+  "verified": true,
+  "file": "exemplars/v1_expanded_gpt-oss-120b-1:0.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "v1_expanded_deepseek-v3-2",
+  "stage": "dataset gates (step 3)",
+  "used_for": "V1 prior strength on the expanded set (20 draws per item)",
+  "source": "validate_v2.py requests",
+  "model": "deepseek.v3.2",
+  "params": {
+   "temperature": 1.0,
+   "sample_idx": 0,
+   "max_tokens": 12
+  },
+  "verified": true,
+  "file": "exemplars/v1_expanded_deepseek-v3-2.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "v2_expanded_rule",
+  "stage": "dataset gates (step 3)",
+  "used_for": "V2 comprehension, rule item",
+  "source": "validate_v2.py requests",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 12
+  },
+  "verified": true,
+  "file": "exemplars/v2_expanded_rule.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "v2_expanded_preference",
+  "stage": "dataset gates (step 3)",
+  "used_for": "V2 comprehension, preference item",
+  "source": "validate_v2.py requests",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 12
+  },
+  "verified": true,
+  "file": "exemplars/v2_expanded_preference.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "v2_expanded_update",
+  "stage": "dataset gates (step 3)",
+  "used_for": "V2 comprehension, update item",
+  "source": "validate_v2.py requests",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 12
+  },
+  "verified": true,
+  "file": "exemplars/v2_expanded_update.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "v2_expanded_neutral",
+  "stage": "dataset gates (step 3)",
+  "used_for": "V2 comprehension, neutral item",
+  "source": "validate_v2.py requests",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 12
+  },
+  "verified": true,
+  "file": "exemplars/v2_expanded_neutral.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "v3_expanded_first_notes",
+  "stage": "dataset gates (step 3)",
+  "used_for": "V3 positive control on the expanded set, generation 0",
+  "source": "v3_v2.py (v3_reproduction.run_chains)",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 1.0,
+   "max_tokens": 400,
+   "sample_idx": 0
+  },
+  "verified": true,
+  "file": "exemplars/v3_expanded_first_notes.json"
+ },
+ {
+  "kind": "template",
+  "id": "distractor_leak_check",
+  "stage": "dataset gates (step 3)",
+  "source": "framework_study/src/make_distractors_v2.py LEAK_PROMPT (layer 2 of the leak check)",
+  "file": "templates/distractor_leak_check.txt",
+  "note": ""
+ },
+ {
+  "kind": "exemplar",
+  "id": "distractor_generation_v2",
+  "stage": "dataset gates (step 3)",
+  "used_for": "new distractor sessions (same generator and prompt as round 1)",
+  "source": "make_distractors_v2.py",
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "params": {
+   "temperature": 0.8,
+   "max_tokens": 500,
+   "sample_idx": 0
+  },
+  "verified": true,
+  "file": "exemplars/distractor_generation_v2.json"
+ },
+ {
+  "kind": "exemplar",
+  "id": "distractor_leak_check",
+  "stage": "dataset gates (step 3)",
+  "used_for": "layer-2 leak check of one flagged (distractor, item) pair",
+  "source": "make_distractors_v2.py",
+  "model": "openai.gpt-oss-120b-1:0",
+  "params": {
+   "temperature": 0.0,
+   "max_tokens": 400,
+   "reasoning_effort": "low"
+  },
+  "verified": true,
+  "file": "exemplars/distractor_leak_check.json"
  }
 ]

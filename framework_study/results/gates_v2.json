@@ -1,6 +1,6 @@
 {
- "n_candidates": 561,
- "n_final": 413,
+ "n_candidates": 724,
+ "n_final": 504,
  "items": [
   {
    "id": "R01",
@@ -10986,24 +10986,3267 @@
    "reasons": [
     "V1: neutral item has a prior (P(A) = 0.95)"
    ]
+  },
+  {
+   "id": "R371",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.95
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R372",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.95
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R373",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.9
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R374",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.95
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 2,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V2: llama 2/4"
+   ]
+  },
+  {
+   "id": "R375",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.4,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.21052631578947367
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: weak prior (P(C) = 0.40)"
+   ]
+  },
+  {
+   "id": "R376",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 1.0
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R377",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 0.85,
+    "deepseek": 0.9
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 2,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V2: llama 2/4"
+   ]
+  },
+  {
+   "id": "R378",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 1.0
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R379",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.7894736842105263
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R380",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.8
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R381",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 1.0
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R382",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.35
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R383",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 1.0
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R384",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.85,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.55
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R385",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 1.0
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R386",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.0,
+    "llama": 0.55,
+    "gptoss": 0.05,
+    "deepseek": 0.15
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: weak prior (P(C) = 0.00)"
+   ]
+  },
+  {
+   "id": "R387",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.95,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.85
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R388",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.7,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.95
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: weak prior (P(C) = 0.70)"
+   ]
+  },
+  {
+   "id": "R389",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 0.95,
+    "deepseek": 1.0
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R390",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 1.0
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R391",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.75,
+    "llama": 0.5,
+    "gptoss": 0.4,
+    "deepseek": 0.0
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: weak prior (P(C) = 0.75)"
+   ]
+  },
+  {
+   "id": "R392",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 1.0
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R393",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.95
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R394",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.4
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R395",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.85
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R396",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.9,
+    "llama": 1.0,
+    "gptoss": 0.65,
+    "deepseek": 0.9473684210526315
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R397",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.6,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.8421052631578947
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: weak prior (P(C) = 0.60)"
+   ]
+  },
+  {
+   "id": "R398",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 0.5,
+    "gptoss": 1.0,
+    "deepseek": 0.85
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R399",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 1.0
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R400",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 1.0
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R401",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 0.85,
+    "deepseek": 0.8
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R402",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.85
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R403",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.9
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R404",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 1.0
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R405",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.95
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R406",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.5,
+    "llama": 1.0,
+    "gptoss": 0.95,
+    "deepseek": 0.75
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: weak prior (P(C) = 0.50)"
+   ]
+  },
+  {
+   "id": "R407",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.1,
+    "llama": 1.0,
+    "gptoss": 0.15,
+    "deepseek": 1.0
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: weak prior (P(C) = 0.10)"
+   ]
+  },
+  {
+   "id": "R408",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 1.0
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R409",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.85
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 2,
+    "gptoss": 2
+   },
+   "passed": false,
+   "reasons": [
+    "V2: llama 2/4",
+    "V2: gptoss 2/4"
+   ]
+  },
+  {
+   "id": "R410",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 0.6,
+    "gptoss": 1.0,
+    "deepseek": 0.4
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R411",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.7
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R412",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 0.95,
+    "deepseek": 0.95
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R413",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.1
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R414",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 1.0
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R415",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.65
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R416",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.0,
+    "llama": 0.0,
+    "gptoss": 0.7,
+    "deepseek": 0.35
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: weak prior (P(C) = 0.00)"
+   ]
+  },
+  {
+   "id": "R417",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.6,
+    "llama": 0.8,
+    "gptoss": 0.95,
+    "deepseek": 0.85
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: weak prior (P(C) = 0.60)"
+   ]
+  },
+  {
+   "id": "R418",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 1.0
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R419",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.95
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R420",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 0.0,
+    "gptoss": 1.0,
+    "deepseek": 0.8
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R421",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.5555555555555556
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R422",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.9,
+    "llama": 0.0,
+    "gptoss": 0.0,
+    "deepseek": 0.05263157894736842
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R423",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 1.0
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R424",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 1.0
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R425",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.7
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R426",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 1.0
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R427",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.9,
+    "llama": 0.0,
+    "gptoss": 0.7,
+    "deepseek": 0.2
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R428",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.9473684210526315
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "R429",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.0,
+    "llama": 0.0,
+    "gptoss": 0.0,
+    "deepseek": 0.631578947368421
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 3,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: weak prior (P(C) = 0.00)"
+   ]
+  },
+  {
+   "id": "R430",
+   "type": "rule",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 0.0,
+    "gptoss": 0.95,
+    "deepseek": 0.6
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "S171",
+   "type": "procedure",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.65
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 2,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V2: llama 2/4"
+   ]
+  },
+  {
+   "id": "S172",
+   "type": "procedure",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 1.0
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "S173",
+   "type": "procedure",
+   "origin": "v2",
+   "normative": true,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.9
+   },
+   "v2_correct": {
+    "qwen": 2,
+    "llama": 2,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V2: Qwen 2/4",
+    "V2: llama 2/4"
+   ]
+  },
+  {
+   "id": "S174",
+   "type": "procedure",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.45,
+    "llama": 0.55,
+    "gptoss": 0.9,
+    "deepseek": 1.0
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: weak prior (P(C) = 0.45)"
+   ]
+  },
+  {
+   "id": "S175",
+   "type": "procedure",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 1.0
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "S176",
+   "type": "procedure",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 0.9,
+    "gptoss": 1.0,
+    "deepseek": 0.75
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "S177",
+   "type": "procedure",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 1.0
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 2,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V2: llama 2/4"
+   ]
+  },
+  {
+   "id": "S178",
+   "type": "procedure",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.7
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "S179",
+   "type": "procedure",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.8,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.95
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "S180",
+   "type": "procedure",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.9
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "S181",
+   "type": "procedure",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 0.95,
+    "deepseek": 1.0
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "S182",
+   "type": "procedure",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 1.0
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "S183",
+   "type": "procedure",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.45
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "S184",
+   "type": "procedure",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.85
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "S185",
+   "type": "procedure",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.9
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "S186",
+   "type": "procedure",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.95,
+    "llama": 0.5,
+    "gptoss": 0.95,
+    "deepseek": 0.3
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "S187",
+   "type": "procedure",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 1.0
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "S188",
+   "type": "procedure",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 0.35,
+    "deepseek": 1.0
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "S189",
+   "type": "procedure",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.8
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "S190",
+   "type": "procedure",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 1.0
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "U071",
+   "type": "update",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.47058823529411764
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "U072",
+   "type": "update",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.55,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.7
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: weak prior (P(C) = 0.55)"
+   ]
+  },
+  {
+   "id": "U074",
+   "type": "update",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 0.95,
+    "deepseek": 0.0
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "U075",
+   "type": "update",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.95
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "U076",
+   "type": "update",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.95,
+    "llama": 0.25,
+    "gptoss": 0.5,
+    "deepseek": 0.4
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "U077",
+   "type": "update",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.8421052631578947
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "U078",
+   "type": "update",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.8,
+    "llama": 1.0,
+    "gptoss": 0.75,
+    "deepseek": 0.25
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "U079",
+   "type": "update",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 0.0,
+    "gptoss": 0.0,
+    "deepseek": 0.25
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "U080",
+   "type": "update",
+   "origin": "v2",
+   "normative": true,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.8
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "U081",
+   "type": "update",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 1.0
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "U082",
+   "type": "update",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.75
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "U083",
+   "type": "update",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.75,
+    "llama": 1.0,
+    "gptoss": 0.25,
+    "deepseek": 0.05
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: weak prior (P(C) = 0.75)"
+   ]
+  },
+  {
+   "id": "U084",
+   "type": "update",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.75
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "U085",
+   "type": "update",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.9473684210526315
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "N051",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.4,
+    "llama": 0.0,
+    "gptoss": 0.75,
+    "deepseek": 0.2222222222222222
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "N052",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.95,
+    "llama": 0.75,
+    "gptoss": 0.3,
+    "deepseek": 0.5789473684210527
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.95)"
+   ]
+  },
+  {
+   "id": "N053",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.85,
+    "llama": 0.5,
+    "gptoss": 0.5,
+    "deepseek": 0.75
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.85)"
+   ]
+  },
+  {
+   "id": "N054",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.75,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.5263157894736842
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.75)"
+   ]
+  },
+  {
+   "id": "N055",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.1,
+    "llama": 0.4,
+    "gptoss": 0.1,
+    "deepseek": 0.5
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.10)"
+   ]
+  },
+  {
+   "id": "N056",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.35,
+    "llama": 0.95,
+    "gptoss": 0.0,
+    "deepseek": 0.2631578947368421
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "N057",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.95,
+    "llama": 1.0,
+    "gptoss": 0.65,
+    "deepseek": 0.3
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.95)"
+   ]
+  },
+  {
+   "id": "N058",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.75,
+    "llama": 1.0,
+    "gptoss": 0.55,
+    "deepseek": 0.6842105263157895
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.75)"
+   ]
+  },
+  {
+   "id": "N059",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.7,
+    "llama": 1.0,
+    "gptoss": 0.5,
+    "deepseek": 0.35
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "N060",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.25,
+    "llama": 0.5,
+    "gptoss": 0.05,
+    "deepseek": 0.45
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.25)"
+   ]
+  },
+  {
+   "id": "N061",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.85,
+    "llama": 1.0,
+    "gptoss": 0.7647058823529411,
+    "deepseek": 0.7
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.85)"
+   ]
+  },
+  {
+   "id": "N062",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.95,
+    "llama": 1.0,
+    "gptoss": 0.05,
+    "deepseek": 0.85
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.95)"
+   ]
+  },
+  {
+   "id": "N063",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.25,
+    "llama": 0.0,
+    "gptoss": 0.85,
+    "deepseek": 0.6842105263157895
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.25)"
+   ]
+  },
+  {
+   "id": "N064",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.2,
+    "llama": 1.0,
+    "gptoss": 0.6,
+    "deepseek": 0.4
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.20)"
+   ]
+  },
+  {
+   "id": "N065",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.3,
+    "llama": 0.0,
+    "gptoss": 0.0,
+    "deepseek": 0.2
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "N066",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.85,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.7777777777777778
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.85)"
+   ]
+  },
+  {
+   "id": "N067",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.05,
+    "llama": 1.0,
+    "gptoss": 0.15,
+    "deepseek": 0.55
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.05)"
+   ]
+  },
+  {
+   "id": "N068",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.4,
+    "llama": 0.0,
+    "gptoss": 0.05,
+    "deepseek": 0.65
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "N069",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.8,
+    "llama": 0.0,
+    "gptoss": 0.7,
+    "deepseek": 0.5789473684210527
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.80)"
+   ]
+  },
+  {
+   "id": "N070",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.65,
+    "llama": 1.0,
+    "gptoss": 0.95,
+    "deepseek": 0.65
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "N071",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.95,
+    "llama": 1.0,
+    "gptoss": 0.2,
+    "deepseek": 0.3684210526315789
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.95)"
+   ]
+  },
+  {
+   "id": "N072",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 0.05,
+    "gptoss": 0.1,
+    "deepseek": 0.45
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 1.00)"
+   ]
+  },
+  {
+   "id": "N073",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.05,
+    "llama": 1.0,
+    "gptoss": 0.7,
+    "deepseek": 0.45
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.05)"
+   ]
+  },
+  {
+   "id": "N074",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 0.55,
+    "gptoss": 0.85,
+    "deepseek": 0.47368421052631576
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 1.00)"
+   ]
+  },
+  {
+   "id": "N075",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.8,
+    "llama": 0.35,
+    "gptoss": 0.3,
+    "deepseek": 0.3333333333333333
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.80)"
+   ]
+  },
+  {
+   "id": "N076",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 0.2,
+    "gptoss": 0.9,
+    "deepseek": 0.55
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 1.00)"
+   ]
+  },
+  {
+   "id": "N077",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.8,
+    "llama": 0.25,
+    "gptoss": 0.75,
+    "deepseek": 0.8
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.80)"
+   ]
+  },
+  {
+   "id": "N078",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.8,
+    "llama": 1.0,
+    "gptoss": 0.4,
+    "deepseek": 0.45
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.80)"
+   ]
+  },
+  {
+   "id": "N079",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.1,
+    "llama": 0.95,
+    "gptoss": 0.45,
+    "deepseek": 0.5
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.10)"
+   ]
+  },
+  {
+   "id": "N080",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.0,
+    "llama": 0.0,
+    "gptoss": 0.15,
+    "deepseek": 0.45
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.00)"
+   ]
+  },
+  {
+   "id": "N081",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.05,
+    "llama": 0.3,
+    "gptoss": 0.3,
+    "deepseek": 0.2
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.05)"
+   ]
+  },
+  {
+   "id": "N082",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.85,
+    "llama": 0.6,
+    "gptoss": 0.3,
+    "deepseek": 0.3157894736842105
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.85)"
+   ]
+  },
+  {
+   "id": "N083",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.5,
+    "llama": 0.0,
+    "gptoss": 0.9,
+    "deepseek": 0.5
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "N084",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 0.65,
+    "gptoss": 0.15,
+    "deepseek": 0.7
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 1.00)"
+   ]
+  },
+  {
+   "id": "N085",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.8,
+    "llama": 0.5,
+    "gptoss": 0.0,
+    "deepseek": 0.42105263157894735
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.80)"
+   ]
+  },
+  {
+   "id": "N086",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.5,
+    "llama": 0.55,
+    "gptoss": 0.85,
+    "deepseek": 0.6
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "N087",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.45,
+    "llama": 0.45,
+    "gptoss": 0.35,
+    "deepseek": 0.4
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "N088",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.85,
+    "llama": 0.55,
+    "gptoss": 0.9,
+    "deepseek": 0.631578947368421
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.85)"
+   ]
+  },
+  {
+   "id": "N089",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.95,
+    "llama": 1.0,
+    "gptoss": 0.85,
+    "deepseek": 0.5789473684210527
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.95)"
+   ]
+  },
+  {
+   "id": "N090",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.25,
+    "llama": 1.0,
+    "gptoss": 0.4,
+    "deepseek": 0.6470588235294118
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.25)"
+   ]
+  },
+  {
+   "id": "N091",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.4,
+    "llama": 1.0,
+    "gptoss": 0.42105263157894735,
+    "deepseek": 0.55
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "N092",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.6,
+    "llama": 0.6,
+    "gptoss": 0.4,
+    "deepseek": 0.5555555555555556
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "N093",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.2,
+    "llama": 1.0,
+    "gptoss": 0.35,
+    "deepseek": 0.3
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.20)"
+   ]
+  },
+  {
+   "id": "N094",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.95,
+    "llama": 1.0,
+    "gptoss": 0.9,
+    "deepseek": 0.35
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.95)"
+   ]
+  },
+  {
+   "id": "N095",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.1,
+    "llama": 0.7,
+    "gptoss": 0.05,
+    "deepseek": 0.42105263157894735
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.10)"
+   ]
+  },
+  {
+   "id": "N096",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.8,
+    "llama": 1.0,
+    "gptoss": 0.05,
+    "deepseek": 0.35
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.80)"
+   ]
+  },
+  {
+   "id": "N097",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.3,
+    "llama": 0.95,
+    "gptoss": 0.2631578947368421,
+    "deepseek": 0.5
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "N098",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.15,
+    "llama": 1.0,
+    "gptoss": 0.05,
+    "deepseek": 0.15789473684210525
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.15)"
+   ]
+  },
+  {
+   "id": "N099",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.75,
+    "llama": 0.95,
+    "gptoss": 0.05,
+    "deepseek": 0.5263157894736842
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.75)"
+   ]
+  },
+  {
+   "id": "N100",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.95,
+    "llama": 1.0,
+    "gptoss": 0.8,
+    "deepseek": 0.3
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.95)"
+   ]
+  },
+  {
+   "id": "N101",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.05,
+    "llama": 0.0,
+    "gptoss": 0.0,
+    "deepseek": 0.55
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.05)"
+   ]
+  },
+  {
+   "id": "N102",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 0.0,
+    "gptoss": 0.2,
+    "deepseek": 0.65
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 1.00)"
+   ]
+  },
+  {
+   "id": "N103",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.15,
+    "llama": 0.75,
+    "gptoss": 0.05,
+    "deepseek": 0.5
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 3
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.15)"
+   ]
+  },
+  {
+   "id": "N104",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.5,
+    "llama": 1.0,
+    "gptoss": 0.95,
+    "deepseek": 0.3888888888888889
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "N105",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 0.95,
+    "gptoss": 0.7,
+    "deepseek": 0.5
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 1.00)"
+   ]
+  },
+  {
+   "id": "N106",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.95,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.65
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.95)"
+   ]
+  },
+  {
+   "id": "N107",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.2,
+    "llama": 0.8,
+    "gptoss": 0.2,
+    "deepseek": 0.65
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.20)"
+   ]
+  },
+  {
+   "id": "N108",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.7,
+    "llama": 1.0,
+    "gptoss": 0.4,
+    "deepseek": 0.7368421052631579
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "N109",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 0.15,
+    "deepseek": 0.5
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 1.00)"
+   ]
+  },
+  {
+   "id": "N110",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.1,
+    "llama": 0.0,
+    "gptoss": 0.25,
+    "deepseek": 0.45
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.10)"
+   ]
+  },
+  {
+   "id": "N111",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.0,
+    "llama": 0.0,
+    "gptoss": 0.0,
+    "deepseek": 0.15
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.00)"
+   ]
+  },
+  {
+   "id": "N112",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.55,
+    "llama": 0.0,
+    "gptoss": 0.6,
+    "deepseek": 0.5625
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "N113",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.21052631578947367,
+    "llama": 0.35,
+    "gptoss": 1.0,
+    "deepseek": 0.9
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.21)"
+   ]
+  },
+  {
+   "id": "N114",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 1.0,
+    "llama": 1.0,
+    "gptoss": 1.0,
+    "deepseek": 0.85
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 1.00)"
+   ]
+  },
+  {
+   "id": "N115",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.2,
+    "llama": 0.0,
+    "gptoss": 0.0,
+    "deepseek": 0.3
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.20)"
+   ]
+  },
+  {
+   "id": "N116",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.0,
+    "llama": 1.0,
+    "gptoss": 0.15,
+    "deepseek": 0.7894736842105263
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.00)"
+   ]
+  },
+  {
+   "id": "N117",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.3157894736842105,
+    "llama": 0.5,
+    "gptoss": 1.0,
+    "deepseek": 0.5263157894736842
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": true,
+   "reasons": []
+  },
+  {
+   "id": "N118",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.1,
+    "llama": 0.7,
+    "gptoss": 0.35,
+    "deepseek": 0.85
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.10)"
+   ]
+  },
+  {
+   "id": "N119",
+   "type": "neutral",
+   "origin": "v2",
+   "normative": false,
+   "p_congruent": {
+    "qwen": 0.1,
+    "llama": 0.0,
+    "gptoss": 0.0,
+    "deepseek": 0.3
+   },
+   "v2_correct": {
+    "qwen": 4,
+    "llama": 4,
+    "gptoss": 4
+   },
+   "passed": false,
+   "reasons": [
+    "V1: neutral item has a prior (P(A) = 0.10)"
+   ]
   }
  ],
  "by_type": {
   "rule": {
-   "candidates": 299,
-   "fail_V1": 14,
-   "fail_V2": 62,
-   "fail_V1_only": 12,
-   "fail_V2_only": 60,
-   "final": 225
+   "candidates": 359,
+   "fail_V1": 24,
+   "fail_V2": 65,
+   "fail_V1_only": 22,
+   "fail_V2_only": 63,
+   "final": 272
   },
   "procedure": {
-   "candidates": 75,
-   "fail_V1": 7,
-   "fail_V2": 14,
-   "fail_V1_only": 6,
-   "fail_V2_only": 13,
-   "final": 55
+   "candidates": 95,
+   "fail_V1": 8,
+   "fail_V2": 17,
+   "fail_V1_only": 7,
+   "fail_V2_only": 16,
+   "final": 71
   },
   "preference": {
    "candidates": 68,
@@ -11014,56 +14257,56 @@
    "final": 58
   },
   "update": {
-   "candidates": 69,
-   "fail_V1": 8,
+   "candidates": 83,
+   "fail_V1": 10,
    "fail_V2": 1,
-   "fail_V1_only": 8,
+   "fail_V1_only": 10,
    "fail_V2_only": 1,
-   "final": 60
+   "final": 72
   },
   "neutral": {
-   "candidates": 50,
-   "fail_V1": 35,
+   "candidates": 119,
+   "fail_V1": 88,
    "fail_V2": 0,
-   "fail_V1_only": 35,
+   "fail_V1_only": 88,
    "fail_V2_only": 0,
-   "final": 15
+   "final": 31
   }
  },
  "v1_strong_prior_by_model": {
   "qwen": {
-   "n": 473,
-   "of": 511
+   "n": 554,
+   "of": 605
   },
   "llama": {
-   "n": 446,
-   "of": 511
+   "n": 526,
+   "of": 605
   },
   "gptoss": {
-   "n": 463,
-   "of": 511
+   "n": 544,
+   "of": 605
   },
   "deepseek": {
-   "n": 334,
-   "of": 511
+   "n": 395,
+   "of": 605
   }
  },
  "final_strong_prior_by_model": {
-  "qwen": 398,
-  "llama": 356,
-  "gptoss": 371,
-  "deepseek": 260
+  "qwen": 473,
+  "llama": 422,
+  "gptoss": 439,
+  "deepseek": 311
  },
  "final_by_type": {
-  "rule": 225,
-  "procedure": 55,
+  "rule": 272,
+  "procedure": 71,
   "preference": 58,
-  "update": 60,
-  "neutral": 15
+  "update": 72,
+  "neutral": 31
  },
  "final_by_origin": {
   "v1": 39,
-  "v2": 374
+  "v2": 465
  },
- "final_normative": 40
+ "final_normative": 41
 }

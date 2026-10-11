@@ -1,7 +1,6 @@
 # Datasheet: counter-schema minimal pairs for agent memory (C/I items, v2)
 
-Following Gebru et al., "Datasheets for Datasets". Counts marked {…} are filled from `results/gates_v2.json` by the
-step-3 write-up; see FINDINGS §15 for the final numbers.
+Following Gebru et al., "Datasheets for Datasets". Counts are from `results/gates_v2.json` (2026-10-11); see FINDINGS §15.
 
 ## Motivation
 - **Purpose.** To measure whether an agent's memory keeps information that the underlying model could NOT guess
@@ -29,8 +28,9 @@ step-3 write-up; see FINDINGS §15 for the final numbers.
   - update: a value stated and later changed; in I the change goes against the prior;
   - neutral: two equally arbitrary values, a control with no prior.
 - **Counts.**
-  - Candidates: {561}.
-  - Final: {…}, by type {…}.
+  - Candidates: 724 (two authoring rounds; round 2 registered in STEP3_DESIGN v1.1).
+  - Final: **504**, by type: rule 272, procedure 71, preference 58, update 72, neutral 31.
+  - Of the final items, 39 come from the original 44, and 41 are tagged normative.
   - All counts are in `results/gates_v2.json`.
 - **World.** A fictional company (Veltrix, Harbor Building, Northvale) with a user Sam and an assistant Atlas. No real
   people, companies or personal data.
@@ -57,7 +57,7 @@ step-3 write-up; see FINDINGS §15 for the final numbers.
 
 ## Preprocessing
 None beyond the template rendering described above. Distractor sessions (unrelated chats used as filler in memory
-histories) are generated separately by Qwen3-235B and screened for leakage.
+histories) are generated separately by Qwen3-235B and screened for leakage: final pool 93 (37 from round 1, 56 new); 580 (distractor, item) pairs flagged by keywords, 3 distractors removed after the LLM check (`distractors_v2.json`).
 
 ## Uses
 - **Intended.** Evaluating agent memory systems and memory-compaction methods: whether counter-prior information

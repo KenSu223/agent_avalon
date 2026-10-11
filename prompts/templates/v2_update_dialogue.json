@@ -1,0 +1,26 @@
+[
+ {
+  "role": "system",
+  "content": "{WORLD}"
+ },
+ {
+  "role": "user",
+  "content": "{initial_task} {initial_lead}{initial value statement}."
+ },
+ {
+  "role": "assistant",
+  "content": "{initial_reply}"
+ },
+ {
+  "role": "user",
+  "content": "{task} {lead}{update statement}."
+ },
+ {
+  "role": "assistant",
+  "content": "{reply}"
+ },
+ {
+  "role": "user",
+  "content": "{question}\nAnswer with exactly one of these options and nothing else: {option_1} / {option_2}"
+ }
+]

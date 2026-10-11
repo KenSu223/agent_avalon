@@ -1,0 +1,19 @@
+{
+ "id": "distractor_generation_v2",
+ "stage": "dataset gates (step 3)",
+ "used_for": "new distractor sessions (same generator and prompt as round 1)",
+ "source": "make_distractors_v2.py",
+ "verified_in_cache": true,
+ "payload": {
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Write a natural chat transcript of about 180 words between Sam and Sam's AI assistant Atlas. Sam asks Atlas to help plan a three-course dinner for a friend who loves Italian food. Do not mention any of these topics: file uploads, build caches, APIs, payments, feature flags, server racks, thermostats, support tickets, software deploys, coffee machines, tests, passwords, email attachments, printing, databases, office pets, office plants, programming, vendor portals, vacation requests, birds, lakes, elevators, buses, airports, bug trackers, git, shipping, fire drills, Wi-Fi, laptops, parking, migrations, code review, new hires, cupboards, keys, date formats, indentation, greetings, temperatures, numbered lists, how numbers are written, sign-offs, durations or clock times. Format every turn as 'Sam: ...' or 'Atlas: ...', separated by blank lines. Output only the transcript."
+   }
+  ],
+  "temperature": 0.8,
+  "max_tokens": 500
+ },
+ "cached_response_excerpt": "Sam: Hey Atlas, can you help me plan a three-course dinner for a friend who absolutely loves Italian food?\n\nAtlas: Of course! I’d be happy to help. Let’s make it authentic and delicious.\n\nSam: Perfect. They especially enjoy light dishes and fresh ingredients.\n\nAtlas: How about starting with a simple antipasto? We could do marinated olives, shaved fennel, and burrata with a drizzle of olive oil and"
+}

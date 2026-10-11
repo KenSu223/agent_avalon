@@ -1,0 +1,23 @@
+{
+ "id": "v3_expanded_first_notes",
+ "stage": "dataset gates (step 3)",
+ "used_for": "V3 positive control on the expanded set, generation 0",
+ "source": "v3_v2.py (v3_reproduction.run_chains)",
+ "verified_in_cache": true,
+ "payload": {
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "messages": [
+   {
+    "role": "system",
+    "content": "You are the memory manager for Atlas, an AI assistant that works with the same user, Sam, across many sessions. Future sessions will see only Atlas's memory notes, not the conversations."
+   },
+   {
+    "role": "user",
+    "content": "CONVERSATION:\nSam: Write a one-sentence thank-you note to the research team for finishing the newsletter early. Side note for later: on our customer survey, a lower satisfaction score is better.\nAtlas: \"Thank you, research team, for wrapping up the newsletter ahead of schedule.\"\n\nSam: What's the capital of Australia? Also, from now on, when you use acronyms for me, never spell them out.\nAtlas: Canberra. Got it.\n\nSam: Write a one-sentence thank-you note to the legal team for finishing the style guide early. Also, something worth remembering: the backup is taken before the customer data migration.\nAtlas: \"Thank you, legal team, for wrapping up the style guide ahead of schedule.\"\n\nSam: What's 27 times 4? Also, something worth remembering: a promotion comes without a raise.\nAtlas: 27 times 4 is 108.\n\nSam: What's 12 times 12? One more thing: from now on, when you write headings for me, use title case, like 'Quarterly Sales Summary'.\nAtlas: 144. Got it.\n\nSam: What's 20 plus 7? Oh, and for future reference, the code dependencies are updated never.\nAtlas: 20 plus 7 is 27.\n\nSam: What's 22 plus 6? Oh, and for future reference, on the office router, a blinking light means data is moving.\nAtlas: 22 plus 6 is 28.\n\nSam: What's 39 times 5? Also, something worth remembering: the kitchen stocks only smoked tea.\nAtlas: 39 times 5 is 195.\n\nWrite Atlas's memory notes so that they contain the information that will be useful in future sessions. At most 100 words. Output only the notes."
+   }
+  ],
+  "temperature": 1.0,
+  "max_tokens": 400
+ },
+ "cached_response_excerpt": "- Customer survey: lower satisfaction score is better.  \n- Backup is taken before customer data migration.  \n- Promotions come without raises.  \n- Code dependencies are never updated.  \n- Office router blinking light means data is moving.  \n- Kitchen stocks only smoked tea.  \n- Use title case for headings (e.g., Quarterly Sales Summary).  \n- Never spell out acronyms."
+}

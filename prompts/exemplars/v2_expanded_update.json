@@ -1,0 +1,39 @@
+{
+ "id": "v2_expanded_update",
+ "stage": "dataset gates (step 3)",
+ "used_for": "V2 comprehension, update item",
+ "source": "validate_v2.py requests",
+ "verified_in_cache": true,
+ "payload": {
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "messages": [
+   {
+    "role": "system",
+    "content": "You are Atlas, an AI assistant that helps Sam, who works at Veltrix, a software company in the Harbor Building in the town of Northvale."
+   },
+   {
+    "role": "user",
+    "content": "Can you draft a two-line message telling the data team that the brochure is ready on Thursday? Also, something worth remembering: the shared printer is by the desks."
+   },
+   {
+    "role": "assistant",
+    "content": "Here's a draft:\n\n\"Hi data team, the brochure is ready on Thursday. Let me know if you have any questions.\""
+   },
+   {
+    "role": "user",
+    "content": "What's 36 plus 9? One more thing you should know: the shared printer has moved from by the desks to in the basement."
+   },
+   {
+    "role": "assistant",
+    "content": "36 plus 9 is 45."
+   },
+   {
+    "role": "user",
+    "content": "Where is the shared printer now: by the DESKS or in the BASEMENT?\nAnswer with exactly one of these options and nothing else: DESKS / BASEMENT"
+   }
+  ],
+  "temperature": 0.0,
+  "max_tokens": 12
+ },
+ "cached_response_excerpt": "BASEMENT"
+}

@@ -1,0 +1,20 @@
+{
+ "id": "distractor_leak_check",
+ "stage": "dataset gates (step 3)",
+ "used_for": "layer-2 leak check of one flagged (distractor, item) pair",
+ "source": "make_distractors_v2.py",
+ "verified_in_cache": true,
+ "payload": {
+  "model": "openai.gpt-oss-120b-1:0",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Here is a chat transcript between Sam and an AI assistant.\n\nTRANSCRIPT:\nSam: Hey, can you help me explain photosynthesis to a young child?  \n\nAtlas: Of course! Want it simple and fun?  \n\nSam: Yes, something a 6-year-old could understand.  \n\nAtlas: Got it. Here’s a way to put it:  \n\nAtlas: Plants are like tiny chefs that make their own food using sunlight, air, and water. They use sunlight like a flashlight to cook up something yummy inside their leaves. The sunlight gives them energy, they drink water through their roots, and they take a little gas from the air called carbon dioxide.  \n\nAtlas: When all those things mix together, they make sugar for the plant to grow—and they make oxygen as a bonus, which we breathe! So when you see a leaf, it’s kind of like a little kitchen powered by the sun.  \n\nSam: That’s perfect. Could you use the word \"magic\" to make it more exciting?  \n\nAtlas: Sure! Think of it like magic kitchens in every leaf—powered by sunshine, mixing water and air to make food and fresh air. Plants are quiet superheroes using sunlight magic to feed themselves and help us breathe!  \n\nSam: That’s exactly what I needed. Thanks!\n\nQuestion about Sam's workplace: Do the plants that need more light sit by the WINDOWS or in the dark HALLWAY?\n\nDoes the transcript mention or imply anything that helps answer this question? Answer yes or no only."
+   }
+  ],
+  "temperature": 0.0,
+  "max_tokens": 400,
+  "reasoning_effort": "low"
+ },
+ "cached_response_excerpt": "No"
+}

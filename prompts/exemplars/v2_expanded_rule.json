@@ -1,0 +1,31 @@
+{
+ "id": "v2_expanded_rule",
+ "stage": "dataset gates (step 3)",
+ "used_for": "V2 comprehension, rule item",
+ "source": "validate_v2.py requests",
+ "verified_in_cache": true,
+ "payload": {
+  "model": "qwen.qwen3-235b-a22b-2507-v1:0",
+  "messages": [
+   {
+    "role": "system",
+    "content": "You are Atlas, an AI assistant that helps Sam, who works at Veltrix, a software company in the Harbor Building in the town of Northvale."
+   },
+   {
+    "role": "user",
+    "content": "Can you draft a two-line message telling the design team that the newsletter is ready on Monday? Also, something worth remembering: in our bug tracker, the label P1 means the least severe bugs."
+   },
+   {
+    "role": "assistant",
+    "content": "Here's a draft:\n\n\"Hi design team, the newsletter is ready on Monday. Let me know if you have any questions.\""
+   },
+   {
+    "role": "user",
+    "content": "In the bug tracker, does the label P1 mean the MOST or the LEAST severe bugs?\nAnswer with exactly one of these options and nothing else: MOST / LEAST"
+   }
+  ],
+  "temperature": 0.0,
+  "max_tokens": 12
+ },
+ "cached_response_excerpt": "LEAST"
+}

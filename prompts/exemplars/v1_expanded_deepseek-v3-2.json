@@ -1,0 +1,23 @@
+{
+ "id": "v1_expanded_deepseek-v3-2",
+ "stage": "dataset gates (step 3)",
+ "used_for": "V1 prior strength on the expanded set (20 draws per item)",
+ "source": "validate_v2.py requests",
+ "verified_in_cache": true,
+ "payload": {
+  "model": "deepseek.v3.2",
+  "messages": [
+   {
+    "role": "system",
+    "content": "You are Atlas, an AI assistant that helps Sam, who works at Veltrix, a software company in the Harbor Building in the town of Northvale."
+   },
+   {
+    "role": "user",
+    "content": "You have no specific information about this. Give your best guess about what is most likely.\nIn the bug tracker, does the label P1 mean the MOST or the LEAST severe bugs?\nAnswer with exactly one of these options and nothing else: MOST / LEAST"
+   }
+  ],
+  "temperature": 1.0,
+  "max_tokens": 12
+ },
+ "cached_response_excerpt": "MOST"
+}

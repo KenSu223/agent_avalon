@@ -36,7 +36,7 @@ The earlier ARIS pipeline in `src/` (2026-10-06, iterated-learning chains) is su
 result; its prompts remain available in git history.
 
 ## Summary
-42 templates; 107 exemplars, 107 verified byte-identical against the response cache.
+45 templates; 118 exemplars, 118 verified byte-identical against the response cache.
 
 ## closed-book audit
 **Templates**
@@ -303,6 +303,31 @@ result; its prompts remain available in git history.
 | id | source | file |
 |---|---|---|
 | `lib_langchain_default_summary_prompt` | langchain 1.4.3 langchain/agents/middleware/summarization.py DEFAULT_SUMMARY_PROMPT | [templates/lib_langchain_default_summary_prompt.txt](templates/lib_langchain_default_summary_prompt.txt) |
+
+## dataset gates (step 3)
+**Templates**
+
+| id | source | file |
+|---|---|---|
+| `v2_update_dialogue` | framework_study/src/validate_v2.py item_turns (knowledge updates: initial value, then the update, then the question) | [templates/v2_update_dialogue.json](templates/v2_update_dialogue.json) |
+| `v2_preference_filler` | framework_study/src/validate_v2.py PREF_FILLER (as in validate.v2) | [templates/v2_preference_filler.json](templates/v2_preference_filler.json) |
+| `distractor_leak_check` | framework_study/src/make_distractors_v2.py LEAK_PROMPT (layer 2 of the leak check) | [templates/distractor_leak_check.txt](templates/distractor_leak_check.txt) |
+
+**Verified exemplars**
+
+| id | used for | model | parameters | verified | file |
+|---|---|---|---|---|---|
+| `v1_expanded_qwen3-235b-a22b-2507` | V1 prior strength on the expanded set (20 draws per item) | qwen.qwen3-235b-a22b-2507-v1:0 | temperature=1.0, sample_idx=0, max_tokens=12 | ✅ | [exemplars/v1_expanded_qwen3-235b-a22b-2507.json](exemplars/v1_expanded_qwen3-235b-a22b-2507.json) |
+| `v1_expanded_llama3-3-70b-instruct` | V1 prior strength on the expanded set (20 draws per item) | meta.llama3-3-70b-instruct-v1:0 | temperature=1.0, sample_idx=0, max_tokens=12 | ✅ | [exemplars/v1_expanded_llama3-3-70b-instruct.json](exemplars/v1_expanded_llama3-3-70b-instruct.json) |
+| `v1_expanded_gpt-oss-120b-1:0` | V1 prior strength on the expanded set (20 draws per item) | openai.gpt-oss-120b-1:0 | temperature=1.0, sample_idx=0, max_tokens=600, reasoning_effort=low | ✅ | [exemplars/v1_expanded_gpt-oss-120b-1:0.json](exemplars/v1_expanded_gpt-oss-120b-1:0.json) |
+| `v1_expanded_deepseek-v3-2` | V1 prior strength on the expanded set (20 draws per item) | deepseek.v3.2 | temperature=1.0, sample_idx=0, max_tokens=12 | ✅ | [exemplars/v1_expanded_deepseek-v3-2.json](exemplars/v1_expanded_deepseek-v3-2.json) |
+| `v2_expanded_rule` | V2 comprehension, rule item | qwen.qwen3-235b-a22b-2507-v1:0 | temperature=0.0, max_tokens=12 | ✅ | [exemplars/v2_expanded_rule.json](exemplars/v2_expanded_rule.json) |
+| `v2_expanded_preference` | V2 comprehension, preference item | qwen.qwen3-235b-a22b-2507-v1:0 | temperature=0.0, max_tokens=12 | ✅ | [exemplars/v2_expanded_preference.json](exemplars/v2_expanded_preference.json) |
+| `v2_expanded_update` | V2 comprehension, update item | qwen.qwen3-235b-a22b-2507-v1:0 | temperature=0.0, max_tokens=12 | ✅ | [exemplars/v2_expanded_update.json](exemplars/v2_expanded_update.json) |
+| `v2_expanded_neutral` | V2 comprehension, neutral item | qwen.qwen3-235b-a22b-2507-v1:0 | temperature=0.0, max_tokens=12 | ✅ | [exemplars/v2_expanded_neutral.json](exemplars/v2_expanded_neutral.json) |
+| `v3_expanded_first_notes` | V3 positive control on the expanded set, generation 0 | qwen.qwen3-235b-a22b-2507-v1:0 | temperature=1.0, max_tokens=400, sample_idx=0 | ✅ | [exemplars/v3_expanded_first_notes.json](exemplars/v3_expanded_first_notes.json) |
+| `distractor_generation_v2` | new distractor sessions (same generator and prompt as round 1) | qwen.qwen3-235b-a22b-2507-v1:0 | temperature=0.8, max_tokens=500, sample_idx=0 | ✅ | [exemplars/distractor_generation_v2.json](exemplars/distractor_generation_v2.json) |
+| `distractor_leak_check` | layer-2 leak check of one flagged (distractor, item) pair | openai.gpt-oss-120b-1:0 | temperature=0.0, max_tokens=400, reasoning_effort=low | ✅ | [exemplars/distractor_leak_check.json](exemplars/distractor_leak_check.json) |
 
 ## Library-internal prompts (default prompts of the libraries)
 | package | environment | licence | archived files |

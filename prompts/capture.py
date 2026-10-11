@@ -309,8 +309,53 @@ def section_framework():
              "langchain 1.4.3 langchain/agents/middleware/summarization.py DEFAULT_SUMMARY_PROMPT")
 
 
+# =================================================================== E. step 3 gates on the expanded item set
+def section_step3():
+    import validate_v2 as G
+    from validate import ask, WORLD
+    st = "dataset gates (step 3)"
+    items = {x["id"]: x for x in G.ITEMS}
+    upd = next(x for x in G.ITEMS if x["type"] == "update")
+    ph = dict(upd, initial_task="{initial_task}", initial_reply="{initial_reply}", initial_lead="{initial_lead}", task="{task}", reply="{reply}",
+              lead="{lead}", C=dict(upd["C"], initial="{initial value statement}", clause="{update statement}"))
+    template("v2_update_dialogue", [{"role": "system", "content": "{WORLD}"}] + G.item_turns(ph, "C") +
+             [{"role": "user", "content": ask("{question}", ["{option_1}", "{option_2}"], 0)}],
+             st, "framework_study/src/validate_v2.py item_turns (knowledge updates: initial value, then the update, then the question)")
+    template("v2_preference_filler", list(G.PREF_FILLER), st, "framework_study/src/validate_v2.py PREF_FILLER (as in validate.v2)")
+    first_new = next(x for x in G.ITEMS if x["origin"] == "v2" and x["type"] == "rule")
+    for m in G.V1_MODELS:
+        exemplar(f"v1_expanded_{G.tag(m)}", st, "V1 prior strength on the expanded set (20 draws per item)", "validate_v2.py requests", m,
+                 [{"role": "system", "content": WORLD}, {"role": "user", "content": G.V1_PREFIX + ask(first_new["question"], first_new["options"], 0)}],
+                 temperature=1.0, sample_idx=0, **G.extra(m))
+    for t in ("rule", "preference", "update", "neutral"):
+        x = next(x for x in G.ITEMS if x["type"] == t and x["origin"] == "v2")
+        exemplar(f"v2_expanded_{t}", st, f"V2 comprehension, {t} item", "validate_v2.py requests", G.V2_MODELS[0],
+                 [{"role": "system", "content": WORLD}] + G.item_turns(x, "I") + [{"role": "user", "content": ask(x["question"], x["options"], 0)}],
+                 temperature=0.0, **G.extra(G.V2_MODELS[0]))
+
+    import v3_reproduction as V3
+    ch = json.load(open(ROOT / "framework_study/results/v3_v2_chains.json"))
+    final = {json.loads(l)["id"]: json.loads(l) for l in open(ROOT / "framework_study/stimuli/items_v2_final.jsonl")}
+    saved_items = V3.ITEMS
+    V3.ITEMS = [final[i] for i in ch["items"]]
+    exemplar("v3_expanded_first_notes", st, "V3 positive control on the expanded set, generation 0", "v3_v2.py (v3_reproduction.run_chains)", V3.COMPACTOR,
+             V3.first_notes(V3.chat_transcript([tuple(p) for p in ch["sets"][0]])), temperature=1.0, max_tokens=400, sample_idx=0)
+    V3.ITEMS = saved_items
+    import make_distractors as MD
+    import make_distractors_v2 as MD2
+    template("distractor_leak_check", MD2.LEAK_PROMPT, st, "framework_study/src/make_distractors_v2.py LEAK_PROMPT (layer 2 of the leak check)")
+    exemplar("distractor_generation_v2", st, "new distractor sessions (same generator and prompt as round 1)", "make_distractors_v2.py", MD.GEN,
+             [{"role": "user", "content": MD.PROMPT.format(task=MD2.NEW_TASKS[0])}], temperature=0.8, max_tokens=500, sample_idx=0)
+    dv = json.load(open(ROOT / "framework_study/stimuli/distractors_v2.json"))
+    fp = dv["flagged_pairs"][0]
+    pool = {d["task"]: d for d in dv["sessions"] + dv["removed"]}
+    exemplar("distractor_leak_check", st, "layer-2 leak check of one flagged (distractor, item) pair", "make_distractors_v2.py", MD2.JUDGE,
+             [{"role": "user", "content": MD2.LEAK_PROMPT.format(t=pool[fp["distractor_task"]]["transcript"], q=items[fp["item"]]["question"] if fp["item"] in items else "")}],
+             temperature=0.0, max_tokens=400, reasoning_effort="low")
+
+
 def main():
-    for sec in (section_closed_book, section_rescore, section_method, section_framework):
+    for sec in (section_closed_book, section_rescore, section_method, section_framework, section_step3):
         print("==", sec.__name__)
         try:
             sec()

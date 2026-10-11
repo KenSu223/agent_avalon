@@ -1,0 +1,8 @@
+Here is a chat transcript between Sam and an AI assistant.
+
+TRANSCRIPT:
+{t}
+
+Question about Sam's workplace: {q}
+
+Does the transcript mention or imply anything that helps answer this question? Answer yes or no only.
