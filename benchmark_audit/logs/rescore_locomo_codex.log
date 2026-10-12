@@ -1,0 +1,11 @@
+locomo_c0 done in 426s, memory size 3393 chars
+locomo_c4 done in 550s, memory size 3194 chars
+locomo_c1 done in 561s, memory size 2677 chars
+locomo_c2 done in 579s, memory size 3082 chars
+locomo_c5 done in 574s, memory size 3571 chars
+locomo_c3 done in 1036s, memory size 3163 chars
+locomo_c8 done in 602s, memory size 3082 chars
+locomo_c7 done in 694s, memory size 3818 chars
+locomo_c6 done in 708s, memory size 3972 chars
+locomo_c9 done in 655s, memory size 3720 chars
+wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results/rescore_locomo_codex.jsonl 1986

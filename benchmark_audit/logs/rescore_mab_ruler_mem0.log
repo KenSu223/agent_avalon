@@ -1,0 +1,19 @@
+/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/mem0/vector_stores/qdrant.py:177: UserWarning: Payload indexes have no effect in the local Qdrant. Please use server Qdrant if you need payload indexes.
+  self.client.create_payload_index(
+Error parsing extraction response: Expecting ',' delimiter: line 1 column 475 (char 474)
+Error parsing extraction response: Expecting ',' delimiter: line 1 column 401 (char 400)
+Error parsing extraction response: Expecting ',' delimiter: line 1 column 835 (char 834)
+Error parsing extraction response: Expecting ',' delimiter: line 1 column 258 (char 257)
+Error parsing extraction response: Expecting ',' delimiter: line 1 column 694 (char 693)
+Error parsing extraction response: Expecting ',' delimiter: line 1 column 294 (char 293)
+Error parsing extraction response: Expecting ',' delimiter: line 1 column 488 (char 487)
+Error parsing extraction response: Extra data: line 1 column 6695 (char 6694)
+Error parsing extraction response: Expecting ',' delimiter: line 1 column 544 (char 543)
+ruler_qa1_197K done in 4320s, memory size 486956 chars
+/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/mem0/vector_stores/qdrant.py:246: UserWarning: Local mode is not recommended for collections with more than 20,000 points. Current collection contains 20020 points. Consider using Qdrant in Docker or Qdrant Cloud for better performance with large datasets.
+  self.client.upsert(collection_name=self.collection_name, points=points)
+Error parsing extraction response: Expecting ',' delimiter: line 1 column 314 (char 313)
+Error parsing extraction response: Expecting property name enclosed in double quotes: line 1 column 735 (char 734)
+Error parsing extraction response: Expecting ',' delimiter: line 1 column 903 (char 902)
+ruler_qa2_421K done in 12812s, memory size 1067084 chars
+wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results/rescore_mab_ruler_mem0.jsonl 200

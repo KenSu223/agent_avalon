@@ -1,0 +1,15 @@
+2026-10-06 21:22:24 locomo raw_rag wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results/rescore_locomo_raw_rag.jsonl 1986
+2026-10-06 21:27:36 locomo mem0 wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results/rescore_locomo_mem0.jsonl 1986
+2026-10-06 21:28:37 mab_ruler raw_rag wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results/rescore_mab_ruler_raw_rag.jsonl 200
+2026-10-06 21:37:24 locomo langmem wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results/rescore_locomo_langmem.jsonl 1986
+2026-10-06 21:41:52 locomo llamaindex_facts_default wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results/rescore_locomo_llamaindex_facts_default.jsonl 1986
+2026-10-06 21:58:12 locomo codex wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results/rescore_locomo_codex.jsonl 1986
+2026-10-06 22:29:37 mab_ruler llamaindex_facts_default wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results/rescore_mab_ruler_llamaindex_facts_default.jsonl 200
+2026-10-06 22:57:34 locomo neutral_roll wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results/rescore_locomo_neutral_roll.jsonl 1986
+2026-10-06 23:15:03 mab_ruler langmem wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results/rescore_mab_ruler_langmem.jsonl 0
+2026-10-06 23:27:58 locomo mem0_v1 ModuleNotFoundError: No module named 'pandas'
+2026-10-06 23:38:07 mab_ruler openhands wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results/rescore_mab_ruler_openhands.jsonl 100
+2026-10-06 23:49:35 mab_ruler mem0_v1 
+2026-10-07 00:35:52 mab_ruler langchain_summary wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results/rescore_mab_ruler_langchain_summary.jsonl 100
+2026-10-07 02:10:57 mab_ruler gemini_cli wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results/rescore_mab_ruler_gemini_cli.jsonl 100
+2026-10-07 02:10:57 ALL DONE

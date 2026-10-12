@@ -1,0 +1,33 @@
+Could not apply patch: JsonPatchConflict("can't replace a non-existent object 'content'")
+ruler_qa1_197K FAILED GraphRecursionError('Recursion limit of 100 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT')
+Traceback (most recent call last):
+  File "/home/ubuntu/agent_avalon/memory_prior/benchmark_audit/rescore.py", line 137, in <module>
+    r, dt, dl = f.result()
+                ^^^^^^^^^^
+  File "/home/ubuntu/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/ubuntu/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/agent_avalon/memory_prior/benchmark_audit/rescore.py", line 86, in run_episode
+    ad.ingest(s)
+  File "/home/ubuntu/agent_avalon/memory_prior/framework_study/src/frameworks.py", line 290, in ingest
+    out = self.mgr.invoke(inputs, config=self.invoke_config) if self.invoke_config else self.mgr.invoke(inputs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/langmem/knowledge/extraction.py", line 379, in invoke
+    response = extractor.invoke(payload, config=config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/langchain_core/runnables/base.py", line 3456, in invoke
+    input_ = context.run(step.invoke, input_, config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/langgraph/pregel/main.py", line 3978, in invoke
+    for chunk in self.stream(
+                 ^^^^^^^^^^^^
+  File "/home/ubuntu/llm_infra/fw-env/lib/python3.12/site-packages/langgraph/pregel/main.py", line 3078, in stream
+    raise GraphRecursionError(msg)
+langgraph.errors.GraphRecursionError: Recursion limit of 100 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.
+For troubleshooting, visit: https://docs.langchain.com/oss/python/langgraph/errors/GRAPH_RECURSION_LIMIT
+wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results_v2/rescore_mab_ruler_langmem_rl100.jsonl 0

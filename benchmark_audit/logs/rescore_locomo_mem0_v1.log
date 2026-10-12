@@ -1,0 +1,35 @@
+Error processing memory action: {'id': '27', 'text': 'Finds starting business tough but is determined to succeed', 'event': 'UPDATE', 'old_memory': 'Acknowledges the difficulties in starting a business'}, Error: '27'
+Error processing memory action: {'id': '23', 'text': 'Enjoys dramas and emotionally-driven films', 'event': 'UPDATE', 'old_memory': "Joanna's favorite movie genres are dramas and romcoms"}, Error: '23'
+Invalid JSON response: Expecting ',' delimiter: line 286 column 10 (char 8598)
+Error processing memory action: {'id': '29', 'text': 'Wants to improve roadways and upgrade infrastructure', 'event': 'UPDATE', 'old_memory': 'Wants to improve the old area, West County'}, Error: '29'
+Error processing memory action: {'id': '31', 'text': 'Wants to improve the old area, West County', 'event': 'UPDATE', 'old_memory': 'Wants to improve roadways and upgrade infrastructure'}, Error: '31'
+Invalid JSON response: Expecting ',' delimiter: line 267 column 10 (char 8666)
+Error processing memory action: {'id': '22', 'text': 'Dairy-free is a must for desserts', 'event': 'UPDATE', 'old_memory': 'Tries to make dairy-free desserts delicious and rewarding'}, Error: '22'
+Invalid JSON response: Expecting ',' delimiter: line 112 column 10 (char 3618)
+Error processing memory action: {'id': '32', 'text': 'Enjoys nature and feels energized by it', 'event': 'UPDATE', 'old_memory': 'Appreciates nature and finds it humbling and beautiful'}, Error: '32'
+Error processing memory action: {'id': '36', 'text': 'Team has improved in communication and bonding', 'event': 'UPDATE', 'old_memory': 'Team supports and motivates each other in sports and life'}, Error: '36'
+Invalid JSON response: Expecting ',' delimiter: line 282 column 10 (char 8407)
+locomo_c1 done in 491s, memory size 5733 chars
+locomo_c0 done in 615s, memory size 6367 chars
+locomo_c4 done in 821s, memory size 8869 chars
+locomo_c3 done in 844s, memory size 9244 chars
+Error processing memory action: {'id': '13', 'text': 'Has been painting for a few years', 'event': 'UPDATE', 'old_memory': 'Started watercolor painting a few years back'}, Error: '13'
+Error processing memory action: {'id': '33', 'text': 'Her dogs love playing Fetch and Frisbee', 'event': 'UPDATE', 'old_memory': 'Dogs love running and playing fetch'}, Error: '33'
+Error processing memory action: {'id': '35', 'text': 'Added more drawings to her tattoo of her four dogs', 'event': 'UPDATE', 'old_memory': 'Got a tattoo of her four dogs on her arm'}, Error: '35'
+Error processing memory action: {'id': '36', 'text': 'Considers her dogs her little family', 'event': 'UPDATE', 'old_memory': 'Loves animals and considers them like family'}, Error: '36'
+Error processing memory action: {'id': '37', 'text': 'Believes her dogs bring her unconditional love, joy, and companionship', 'event': 'UPDATE', 'old_memory': 'Believes pets provide unconditional love and are great listeners'}, Error: '37'
+Error processing memory action: {'id': '38', 'text': 'Enjoys going on hikes with her dogs as a form of therapy', 'event': 'UPDATE', 'old_memory': 'Enjoys hiking with dogs and exploring new trails'}, Error: '38'
+locomo_c2 done in 949s, memory size 10326 chars
+Error processing memory action: {'id': '33', 'text': 'Has siblings and lives far apart from them', 'event': 'UPDATE', 'old_memory': 'Has a sibling and values their support'}, Error: '33'
+Error processing memory action: {'id': '34', 'text': 'Started a new diet limiting to two ginger snaps a day', 'event': 'UPDATE', 'old_memory': 'Loves ginger snaps'}, Error: '34'
+Error processing memory action: {'id': '25', 'text': 'Interested in exploring and growing personal brand', 'event': 'UPDATE', 'old_memory': 'Wants to expand his brand worldwide and grow his fanbase'}, Error: '25'
+Error processing memory action: {'id': '33', 'text': 'Visited Japan and had an incredible experience enjoying the culture and people', 'event': 'UPDATE', 'old_memory': 'Attended a music festival in Tokyo which was an incredible experience'}, Error: '33'
+locomo_c5 done in 743s, memory size 9888 chars
+Invalid JSON response: Expecting ',' delimiter: line 275 column 10 (char 8483)
+Error processing memory action: {'id': '33', 'text': 'Name is Calvin', 'event': 'DELETE'}, Error: '33'
+Error processing memory action: {'id': '36', 'text': 'Enjoys experimenting with new sounds and pushing musical boundaries', 'event': 'UPDATE', 'old_memory': 'Experimenting with different genres in music'}, Error: '36'
+locomo_c8 done in 673s, memory size 7106 chars
+locomo_c6 done in 986s, memory size 10162 chars
+locomo_c7 done in 825s, memory size 9125 chars
+locomo_c9 done in 880s, memory size 10011 chars
+wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results/rescore_locomo_mem0_v1.jsonl 1986

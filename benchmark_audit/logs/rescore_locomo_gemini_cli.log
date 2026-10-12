@@ -1,0 +1,11 @@
+locomo_c1 done in 591s, memory size 9800 chars
+locomo_c4 done in 748s, memory size 3908 chars
+locomo_c0 done in 763s, memory size 21481 chars
+locomo_c3 done in 846s, memory size 11545 chars
+locomo_c2 done in 1394s, memory size 22443 chars
+locomo_c5 done in 1006s, memory size 9290 chars
+locomo_c8 done in 880s, memory size 9255 chars
+locomo_c6 done in 1223s, memory size 10456 chars
+locomo_c7 done in 1485s, memory size 22592 chars
+locomo_c9 done in 1229s, memory size 21738 chars
+wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results/rescore_locomo_gemini_cli.jsonl 1986

@@ -1,0 +1,11 @@
+locomo_c1 done in 228s, memory size 3242 chars
+locomo_c0 done in 259s, memory size 2047 chars
+locomo_c2 done in 393s, memory size 2424 chars
+locomo_c3 done in 458s, memory size 3155 chars
+locomo_c4 done in 470s, memory size 2471 chars
+locomo_c5 done in 425s, memory size 4923 chars
+locomo_c6 done in 558s, memory size 6165 chars
+locomo_c8 done in 383s, memory size 4364 chars
+locomo_c9 done in 398s, memory size 2323 chars
+locomo_c7 done in 484s, memory size 2341 chars
+wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results/rescore_locomo_openhands.jsonl 1986

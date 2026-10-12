@@ -1,0 +1,11 @@
+locomo_c1 done in 223s, memory size 2458 chars
+locomo_c0 done in 344s, memory size 3002 chars
+locomo_c2 done in 415s, memory size 2664 chars
+locomo_c3 done in 418s, memory size 3550 chars
+locomo_c4 done in 479s, memory size 3159 chars
+locomo_c5 done in 420s, memory size 3060 chars
+locomo_c8 done in 423s, memory size 2774 chars
+locomo_c7 done in 431s, memory size 3782 chars
+locomo_c6 done in 515s, memory size 3232 chars
+locomo_c9 done in 458s, memory size 2775 chars
+wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results/rescore_locomo_anthropic_api.jsonl 1986

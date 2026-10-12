@@ -1,0 +1,3 @@
+ruler_qa2_421K done in 369s, memory size 1899414 chars
+ruler_qa1_197K done in 372s, memory size 995171 chars
+wrote /home/ubuntu/agent_avalon/memory_prior/benchmark_audit/results/rescore_mab_ruler_raw_rag.jsonl 200
