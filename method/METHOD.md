@@ -443,3 +443,7 @@ You cannot see the conversation history or the document this question refers to.
   - 理由：MemoryAgentBench 上，原生协议在证据就在上下文里时也会压低正确回答，LlamaIndex 在强制作答下 CPR 提高了 +0.087；在 LoCoMo 上两种协议的差异最多只有 0.018。
   - 原先"CPR 在任何协议下都可以计算"的说法（§2.3）改为"推荐 π_F；π_A 下的 CPR 只作对照"。
   - 这项修改发生在看到第 2 步结果之后，所以第 2 步按原登记计算的结果照样全部报告，修改只用于之后的步骤和论文的推荐流程。
+- **术语说明（2026-10-13，只改论文中的名称，不改任何估计量、数据或分析）**
+  - 两状态模型里的 R_si = P(Z_si=1) 在论文中改称**证据送达率**（delivery rate，记作 D_si）：证据被写入、经过之后的更新和压缩仍在、并在作答时被检索出来送到读取模型面前。压缩类系统送达的是整份记忆；Mem0、原始检索、Nemori 送达的是按问题检索出的条目。原名"保留率"容易被理解为只测存储。
+  - CPR（counter-prior retention）在论文中改称 **CPA（counter-prior accuracy）**，定义不变：抗先验题上的准确率。代码、结果文件和本仓库其他文档仍用 `cpr`，两者是同一个量。
+  - 受控实验里法官从存储的记忆文本编码的量仍叫"保留"（retention）；对整份记忆送达的 6 个系统，保留即送达；对两个 Mem0 版本和 Nemori，保留是送达的上界。

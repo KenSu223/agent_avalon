@@ -2,7 +2,8 @@
 \label{sec:formulation}
 
 \paragraph{Setting.} A benchmark has answerable items $i\in\mathcal{Q}^+$ (and possibly unanswerable items
-$\mathcal{Q}^-$). A memory system $s$ ingests the history and, for item $i$, returns a context $c_{si}$. A fixed reader
+$\mathcal{Q}^-$). A memory system $s$ ingests the history and, for item $i$, returns a context $c_{si}$: the whole memory for systems
+that maintain a single rewritten memory, and the entries retrieved for the question for systems that search a store. A fixed reader
 model answers from $c_{si}$ under an answer protocol $\pi$, and the benchmark's own scorer yields $Y^\pi_{si}\in\{0,1\}$.
 We use two protocols: the \emph{native} protocol $\pi_A$, which does not forbid abstaining, and a \emph{forced}
 protocol $\pi_F$, which instructs the reader to give its best guess when the memory lacks the answer.
@@ -10,9 +11,12 @@ protocol $\pi_F$, which instructs the reader to give its best guess when the mem
 \paragraph{Two-state model.} Let $Z_{si}=1$ if $c_{si}$ contains the evidence for item $i$. With evidence the reader is
 correct with probability $p_i$; without it, with probability $h_{si}$:
 \begin{equation}
-\mathbb{E}[Y_{si}] = R_{si}\,p_i + (1-R_{si})\,h_{si},
+\mathbb{E}[Y_{si}] = D_{si}\,p_i + (1-D_{si})\,h_{si},
 \end{equation}
-where $R_{si}=P(Z_{si}=1)$. The quantity of interest is the retention $R_{si}$; raw accuracy measures the whole sum.
+where $D_{si}=P(Z_{si}=1)$ is the \emph{delivery rate}: the probability that the evidence was written, survived later
+updates and compaction, and was retrieved for this question. It is what a memory system is responsible for; how well the
+reader uses delivered evidence ($p_i$) is not. Raw accuracy measures the whole sum, and a correct guess hides a failure at
+any of these stages, because each of them leaves $Z_{si}=0$.
 
 \paragraph{The guess rate.} $g_i$ is the probability that the reader answers item $i$ correctly with an empty context
 under $\pi_F$. We estimate it from repeated closed-book draws \emph{with the evaluation prompt itself}
@@ -21,21 +25,27 @@ no draw of any reference model answers it correctly; otherwise it is prior-answe
 
 \paragraph{Estimands.}
 \begin{itemize}
-\item \textbf{Counter-prior retention} $\cpr_s = |\mathcal{R}|^{-1}\sum_{i\in\mathcal{R}} Y_{si}$, the primary memory
-score. It needs only that resistant items cannot be guessed (A4 below): then $\mathbb{E}[Y_{si}]=R_{si}p_i$ on
-$\mathcal{R}$. Dividing by the \cpr{} of an oracle that is given only the gold evidence removes reader difficulty.
+\item \textbf{Counter-prior accuracy} $\cpr_s = |\mathcal{R}|^{-1}\sum_{i\in\mathcal{R}} Y_{si}$, the primary memory
+score. It needs only that resistant items cannot be guessed (A4 below): then $\mathbb{E}[Y_{si}]=D_{si}p_i$ on
+$\mathcal{R}$, whether the system abstains or guesses when the evidence is missing. Dividing by the \cpr{} of an oracle
+that is given only the gold evidence ($D=1$) removes reader difficulty and estimates the mean delivery rate on
+$\mathcal{R}$ (the oracle-referenced score, ORS).
 \item \textbf{Memory-attributable accuracy} $\mathrm{MA}_s=|\mathcal{Q}^+|^{-1}\sum_i (Y^F_{si}-g_i)$ and the
-\textbf{prior-corrected score} $\pcs_s=\sum_i(Y^F_{si}-g_i)/\sum_i(1-g_i)$. Under the two-state model with
-context-neutral guessing ($h_{si}=g_i$, A2) and $p_i=1$, \pcs{} equals the $(1-g_i)$-weighted retention; it is the
-item-level generalisation of the classical correction for guessing. With an oracle, $\sum_i(Y^F_{si}-g_i)/\sum_i(Y^F_{oi}-g_i)$
-identifies retention when $p_i<1$.
-\item \textbf{Prior inflation} $\mathrm{PI}_s=\mathrm{Acc}^F_s-\pcs_s$, which equals $(1-\bar R_s)\bar g$ under the
-model: the worse the memory, the more the prior inflates its score.
+\textbf{prior-corrected score} $\pcs_s=\sum_i(Y^F_{si}-g_i)/\sum_i(1-g_i)$. MA is the familiar subtraction of a
+no-memory baseline, provided the baseline is run with the evaluation prompt (\S\ref{sec:procedure}). Under the two-state
+model with context-neutral guessing ($h_{si}=g_i$, A2) and $p_i=1$, \pcs{} equals the $(1-g_i)$-weighted delivery rate.
+Since $\pcs_s=(\mathrm{Acc}^F_s-\bar g)/(1-\bar g)$, it is the classical correction for guessing
+\citep{lord1968statistical} with the guess rate measured from the reader; item-level guess rates matter for the strata and
+the decomposition below, not for \pcs{} itself. With an oracle, $\sum_i(Y^F_{si}-g_i)/\sum_i(Y^F_{oi}-g_i)$ identifies the
+delivery rate when $p_i<1$.
+\item \textbf{Prior inflation} $\mathrm{PI}_s=\mathrm{Acc}^F_s-\pcs_s$, which equals $(1-\bar D_s)\bar g$ under the
+model when guess rates are equal across items: the worse the memory, the more the prior inflates its score.
 \item \textbf{A $2\times 2$ decomposition} of every answer by stratum ($\mathcal{R}$ vs.\ $\mathcal{A}$) and outcome:
 verified memory, memory failure, unverifiable credit, and \emph{prior interference} (a wrong answer on an item the
 reader could have guessed, typically an abstention).
 \item \textbf{Unanswerable items} are scored by discrimination, $J_s=P(\text{abstain}\mid\mathcal{Q}^-)-P(\text{abstain}\mid\mathcal{Q}^+)$,
-and are never averaged into a memory score. A system that keeps nothing abstains everywhere and gets $J\approx0$.
+and are never averaged into a memory score; $J$ is Youden's index \citep{youden1950index} with abstention as the
+positive decision. A system that keeps nothing abstains everywhere and gets $J\approx0$.
 \end{itemize}
 
 \paragraph{Assumptions and diagnostics.} Each estimand rests on stated assumptions, and each assumption has a diagnostic
@@ -51,7 +61,7 @@ Assumption & Needed by & Diagnostic \\
 \midrule
 A1 two-state model & \pcs{}, ORS & oracle; calibration against coded retention \\
 A2 context-neutral guessing ($h=g$) & MA, \pcs{} & evidence ablation; dropped items in the controlled study \\
-A3 retention $\perp$ guessability & \pcs{} as mean retention & C/I retention gap \\
+A3 delivery $\perp$ guessability & \pcs{} as mean delivery & C/I retention gap \\
 A4 resistant items unguessable & \cpr{}, $2\times2$ & leakage on held-out draws \\
 A5 stable judge & all & fixed judge; human check \\
 \bottomrule

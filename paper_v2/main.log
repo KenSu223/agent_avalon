@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.9.1)  11 OCT 2026 14:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.9.1)  13 OCT 2026 15:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -944,60 +944,56 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-(./sec/abstract.tex) (./sec/intro.tex
+(./sec/abstract.tex) (./sec/intro.tex [1{/var/lib/texmf/fonts/map/pdftex/updmap
+/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}
+
+
+
+]
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 2
-6.
+9.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texm
-f-dist/fonts/enc/dvips/base/8r.enc}
-
-
-
-]) (./sec/related.tex) (./sec/formulation.tex [2]
-Underfull \hbox (badness 10000) in paragraph at lines 24--27
-[]\T1/ptm/b/n/10.95 (+20) Counter-prior re-ten-tion $[][] \OT1/cmr/m/n/10.95 =
+)) (./sec/related.tex
+[2]) (./sec/formulation.tex
+Underfull \hbox (badness 10000) in paragraph at lines 28--33
+[]\T1/ptm/b/n/10.95 (+20) Counter-prior ac-cu-racy $[][] \OT1/cmr/m/n/10.95 =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 24--27
+Underfull \hbox (badness 10000) in paragraph at lines 28--33
 \OMS/cmsy/m/n/10.95 jRj[] [][] \OML/cmm/m/it/10.95 Y[]$\T1/ptm/m/n/10.95 (+20) 
 , the pri-mary mem-ory
  []
 
-
-Underfull \hbox (badness 6157) in paragraph at lines 52--53
+[3]
+Underfull \hbox (badness 6157) in paragraph at lines 62--63
 []\T1/ptm/m/n/9 (+20) oracle; cal-i-bra-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--53
+Underfull \hbox (badness 10000) in paragraph at lines 63--63
 []\T1/ptm/m/n/9 (+20) A2 context-neutral
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--54
+Underfull \hbox (badness 10000) in paragraph at lines 63--64
 []\T1/ptm/m/n/9 (+20) evidence ab-la-tion;
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 54--54
-[]\T1/ptm/m/n/9 (+20) A3 re-ten-tion $\OMS/cmsy/m/n/9 ?$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 54--54
+Underfull \hbox (badness 10000) in paragraph at lines 64--64
 []\T1/ptm/m/sc/9 (+20) PCS \T1/ptm/m/n/9 (+20) as
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 54--54
+Underfull \hbox (badness 10000) in paragraph at lines 64--64
 \T1/ptm/m/n/9 (+20) mean
  []
 
 
-Underfull \hbox (badness 3229) in paragraph at lines 55--55
+Underfull \hbox (badness 3229) in paragraph at lines 65--65
 []\T1/ptm/m/n/9 (+20) A4 re-sis-tant items
  []
 
@@ -1006,19 +1002,19 @@ Underfull \hbox (badness 1472) in paragraph at lines 14--18
  []\T1/ptm/b/n/10.95 (+20) Validation by pre-registered prop-erty tests.[]
  []
 
-[3]
+
 Underfull \hbox (badness 1077) in paragraph at lines 23--30
 []\T1/ptm/m/it/10.95 (+20) This test failed in the first ver-sion\T1/ptm/m/n/10
 .95 (+20) , which
  []
 
-) (./sec/audit.tex (./tab_protocols.tex) [4] (./fig_abstention.tex)
+[4]) (./sec/audit.tex (./tab_protocols.tex) (./fig_abstention.tex) [5]
 Underfull \vbox (badness 1163) has occurred while \output is active []
 
 )
-(./sec/controlled.tex [5] (./tab_step4.tex) (./fig_readtime.tex) (./fig_pcs.tex
-)) (./sec/discussion.tex [6]) (./sec/limitations.tex [7]) (./main.bbl [8])
-(./sec/appendix.tex) [9] [10
+(./sec/controlled.tex [6] (./tab_step4.tex) (./fig_readtime.tex) (./fig_pcs.tex
+)) (./sec/discussion.tex [7]) (./sec/limitations.tex [8]) (./main.bbl [9])
+(./sec/appendix.tex [10]) [11
 
 ] (./main.aux)
  ***********
@@ -1029,11 +1025,11 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 8CEF78D631C6EC9E5891AFE57120E703;1873.
  ) 
 Here is how much of TeX's memory you used:
- 36569 strings out of 469514
- 822205 string characters out of 5470073
- 1452980 words of memory out of 5000000
- 64042 multiletter control sequences out of 15000+600000
- 736202 words of font info for 443 fonts, out of 8000000 for 9000
+ 36630 strings out of 469514
+ 823000 string characters out of 5470073
+ 1453270 words of memory out of 5000000
+ 64071 multiletter control sequences out of 15000+600000
+ 737730 words of font info for 461 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  99i,19n,108p,1001b,2639s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
@@ -1053,10 +1049,10 @@ e/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share
 mf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
 utmri8a.pfb>
-Output written on main.pdf (10 pages, 264320 bytes).
+Output written on main.pdf (11 pages, 273926 bytes).
 PDF statistics:
- 386 PDF objects out of 1000 (max. 8388607)
- 332 compressed objects within 4 object streams
- 82 named destinations out of 1000 (max. 500000)
+ 427 PDF objects out of 1000 (max. 8388607)
+ 372 compressed objects within 4 object streams
+ 88 named destinations out of 1000 (max. 500000)
  82013 words of extra memory for PDF output out of 89155 (max. 10000000)
 

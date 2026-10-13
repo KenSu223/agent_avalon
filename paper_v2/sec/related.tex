@@ -5,7 +5,8 @@
 MemoryAgentBench \citep{hu2025memoryagentbench} and PrefEval \citep{zhao2025prefeval} are the standard yardsticks for
 memory systems such as MemGPT \citep{packer2023memgpt}, Mem0 \citep{chhikara2025mem0}, Zep \citep{rasmussen2025zep},
 A-MEM \citep{xu2025amem} and Nemori \citep{nemori2025}. Newer benchmarks avoid the prior by construction: they use
-fictional worlds \citep{groundtruthfirst2026,memgym2026} or drop items a model answers without context
+fictional worlds \citep{groundtruthfirst2026,memgym2026}, counterfactual edits that contradict it
+\citep{hu2025memoryagentbench}, or drop items a model answers without context
 \citep{longmemevalvtwo2026,recon2026}. \citet{groundtruthfirst2026} state the principle that a memory score partly
 measures the model's priors, and \citet{memgym2026} show that without fictionalisation frontier models score highly on their benchmark from
 pretraining alone. PersonaMem-v2 \citep{personamemv2} reports that personalisation accuracy falls from stereotypical to
@@ -17,6 +18,17 @@ scoring procedure with explicit assumptions and diagnostics rather than a filter
 hold the item fixed while manipulating its congruence with the prior. The handling of LoCoMo's unanswerable category is
 known to be inconsistent across papers and to move headline scores \citep{acm2026}; we show that its
 accuracy is inversely related to how much a system remembers.
+
+\paragraph{Locating memory failures.} Stage-wise analyses attribute errors to parts of the memory pipeline: extraction
+and updating \citep{chen2025halumem}, indexing, retrieval and reading \citep{wu2025longmemeval,yuan2026diagnosing}, or
+knowing versus acting on a stated preference \citep{feng2026knowit}. They find that systems which extract before storing
+lose much of what they are told (recall below 60\% for every system tested by \citealp{chen2025halumem}), that retrieval
+dominates once raw history is kept \citep{yuan2026diagnosing}, and that 18\% of one system's LoCoMo errors are abstentions
+despite retrieved evidence \citep{shu2026remem}, the suppression that leads us to compute \cpr{} under a forced protocol.
+Error taxonomies built from wrong answers \citep{yuan2026diagnosing,shu2026remem} never see a stage failure that a correct
+guess rescues; LongMemEval, which checks retrieval for every question, reports that correct retrieval is necessary for a
+correct answer ``in $\sim$90\% of the time''. \pcme{} is complementary: it needs only final answers and the reader's guess
+rate, it does not say which stage failed, and it identifies the correct answers that carry no evidence of memory.
 
 \paragraph{Evidence-free baselines and prior knowledge.} Question-only and hypothesis-only baselines revealed that
 reading-comprehension and NLI benchmarks could be solved without the passage or the premise

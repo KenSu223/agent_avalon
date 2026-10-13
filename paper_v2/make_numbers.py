@@ -38,6 +38,16 @@ for g, fn in groups.items():
     ids = [i for i in draws if i in meta and fn(*meta[i])]
     put(f"g{g}", np.mean([np.mean(draws[i]) for i in ids]))
     put(f"g{g}Pct", pct(np.mean([np.mean(draws[i]) for i in ids])))
+# expected guess rate under the evaluation prompt with an empty memory (remedy (a), METHOD v1.2): 3 draws at T=1 per item
+ev = collections.defaultdict(list)
+for l in open(M / "prior_draws_qwen3-235b-a22b-2507_evalprompt.jsonl"):
+    r = json.loads(l)
+    if r.get("correct") is not None:
+        ev[r["id"]].append(float(r["correct"]))
+for g, fn in groups.items():
+    ids = [i for i in ev if i in meta and fn(*meta[i])]
+    put(f"gEval{g}", np.mean([np.mean(ev[i]) for i in ids]))
+    put(f"gEval{g}Pct", pct(np.mean([np.mean(ev[i]) for i in ids])))
 # original framework study (44 items): retention vs accuracy on congruent items (framework_study/results/inflation.txt)
 for line in open(F / "inflation.txt"):
     parts = line.split()
@@ -73,7 +83,9 @@ put("rhoCaCpr", h7["rho_CA"], "{:+.2f}"); put("rhoJCpr", h7["rho_J"], "{:+.2f}")
 q1 = pr["mab_ruler"]; s1 = q1["systems"]
 ai = s1.index("aider")
 put("aiderAccA", q1["acc"]["A"][ai]); put("aiderAccF", q1["acc"]["F"][ai])
-put("nPoorQaOne", sum(1 for c in q1["cpr"]["A"] if c <= 0.05), "{}"); put("nSysQaOne", len(s1), "{}")
+poorA = {s for s, c in zip(s1, q1["cpr"]["A"]) if c <= 0.05}; poorF = {s for s, c in zip(s1, q1["cpr"]["F"]) if c <= 0.05}
+assert poorA == poorF, (poorA, poorF)   # the text says "under either protocol"
+put("nPoorQaOne", len(poorA), "{}"); put("nSysQaOne", len(s1), "{}")
 put("absRangeLo", pct(min(q1["abst"]["A"]))); put("absRangeHi", pct(max(q1["abst"]["A"])))
 put("confirmedRev", len(pr["locomo"]["reversals_A"]["confirmed"]) + len(q1["reversals_A"]["confirmed"]), "{}")
 

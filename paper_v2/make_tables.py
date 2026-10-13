@@ -18,26 +18,26 @@ def tab_protocols():
     rows = []
     for s in sorted(L["systems"], key=lambda s: -L["acc"]["A"][L["systems"].index(s)]):
         i = L["systems"].index(s)
-        cells = [f"{L['acc']['A'][i]:.2f}", f"{L['acc']['F'][i]:.2f}", f"{L['cpr']['A'][i]:.2f}", f"{L['abst']['A'][i]:.2f}"]
+        cells = [f"{L['acc']['A'][i]:.2f}", f"{L['acc']['F'][i]:.2f}", f"{L['cpr']['A'][i]:.2f}", f"{L['cpr']['F'][i]:.2f}", f"{L['abst']['A'][i]:.2f}"]
         if s in Q["systems"]:
             j = Q["systems"].index(s)
-            cells += [f"{Q['acc']['A'][j]:.2f}", f"{Q['acc']['F'][j]:.2f}", f"{Q['cpr']['A'][j]:.2f}", f"{Q['abst']['A'][j]:.2f}"]
+            cells += [f"{Q['acc']['A'][j]:.2f}", f"{Q['acc']['F'][j]:.2f}", f"{Q['cpr']['A'][j]:.2f}", f"{Q['cpr']['F'][j]:.2f}", f"{Q['abst']['A'][j]:.2f}"]
         else:
-            cells += ["--"] * 4
+            cells += ["--"] * 5
         rows.append(f"{NAMES.get(s, s)} & " + " & ".join(cells) + r" \\")
     tex = r"""\begin{table*}[t]
 \centering\small
-\begin{tabular}{l cccc cccc}
+\begin{tabular}{l ccccc ccccc}
 \toprule
-& \multicolumn{4}{c}{LoCoMo (cat.\ 1--4, $n{=}1540$)} & \multicolumn{4}{c}{MemoryAgentBench RULER-QA1 ($n{=}100$)} \\
-\cmidrule(lr){2-5}\cmidrule(lr){6-9}
-System & Acc$_A$ & Acc$_F$ & CPR & Abst$_A$ & Acc$_A$ & Acc$_F$ & CPR & Abst$_A$ \\
+& \multicolumn{5}{c}{LoCoMo (cat.\ 1--4, $n{=}1540$)} & \multicolumn{5}{c}{MemoryAgentBench RULER-QA1 ($n{=}100$)} \\
+\cmidrule(lr){2-6}\cmidrule(lr){7-11}
+System & Acc$_A$ & Acc$_F$ & \cpr{}$_A$ & \cpr{}$_F$ & Abst$_A$ & Acc$_A$ & Acc$_F$ & \cpr{}$_A$ & \cpr{}$_F$ & Abst$_A$ \\
 \midrule
 """ + "\n".join(rows) + r"""
 \bottomrule
 \end{tabular}
 \caption{Twelve memory systems re-scored with the same reader (Qwen3-235B) and judge. Acc$_A$/Acc$_F$: accuracy under the native
-and the forced answer protocol; CPR: accuracy on prior-resistant items (native protocol); Abst$_A$: abstention rate on answerable
+and the forced answer protocol; \cpr{}$_A$/\cpr{}$_F$: counter-prior accuracy (accuracy on prior-resistant items) under each protocol, $\pi_F$ being the primary score; Abst$_A$: abstention rate on answerable
 items under the native protocol (LLM-classified). LangMem fails on MemoryAgentBench documents (see \S\ref{sec:audit}).}
 \label{tab:protocols}
 \end{table*}

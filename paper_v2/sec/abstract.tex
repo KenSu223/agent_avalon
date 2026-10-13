@@ -1,6 +1,6 @@
-Agent-memory benchmarks score a system by how often its agent answers questions about the past correctly. But when a
-memory drops a fact, the underlying language model can often still produce the right answer from its prior, so the
-score mixes remembering with guessing. We make this measurable. Closed-book, the same reader answers
+Agent-memory benchmarks score a system by how often its agent answers questions about the past correctly. But when a memory fails to deliver a fact, because it never stored it, lost it in an update or did not retrieve it, the
+underlying language model can often still produce the right answer from its prior, so the score mixes remembering with
+guessing. We make this measurable. Asked to guess without any history, the same reader answers
 \gLocomoPct{} of LoCoMo and \gQaOnePct{} of MemoryAgentBench retrieval items correctly in expectation, and up to \everQaOne{}
 of the latter at least once in seven draws. We propose \pcme{}, an evaluation procedure that estimates each item's
 guess rate with the evaluation prompt itself, reports accuracy on prior-resistant items (\cpr{}) as the primary memory
@@ -11,4 +11,5 @@ memory-poor systems are driven by their tendency to abstain (Spearman $\rho=\hOn
 from forcing an answer), and that LoCoMo's unanswerable category rewards forgetting ($\rho=\rhoCaCpr$ with \cpr{}). A
 controlled study with \nFinal{} counter-schema minimal pairs, replicated with two model families, shows the mechanism:
 memories delete prior-congruent and prior-incongruent facts alike, and the agent then fills the gaps from its prior, so
-belief gaps reach $\dKrwQwenHi$ while raw accuracy looks healthy.
+belief gaps reach $\dKrwQwenHi$ while raw accuracy looks healthy, and updates that move away from the prior are undone more
+often than updates toward it.

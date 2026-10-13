@@ -21,8 +21,10 @@ regularisation toward the schema at a low rate. A stratified human review of 100
 
 \paragraph{Design.} 192 simulated users each mention eight items (versions counterbalanced) over four sessions,
 followed by twelve unrelated distractor sessions screened for leakage. Nine memory systems ingest the sessions; at each
-checkpoint two judges code each item in the memory text as retained, dropped or flipped to the other version, and the
-agent answers a forced-choice question about it from its own context. Everything is run twice, with Qwen3-235B and with
+checkpoint two judges code each item in the stored memory as retained, dropped or flipped to the other version, and the
+agent answers a forced-choice question about it from the context the system delivers for that question. For six of the
+nine systems the delivered context is the whole memory, so retention and delivery coincide; for the two Mem0 versions and
+Nemori, which retrieve from a store, retention bounds delivery from above. Everything is run twice, with Qwen3-235B and with
 Llama-3.3-70B as both the compactor and the reader, on the \emph{same} 432 items and histories.
 
 \input{tab_step4}
@@ -55,15 +57,17 @@ reader, not the writer.
 
 Knowledge updates reveal a sharper version of the effect: when the update moves away from the prior, the agent
 reverts to the old, congruent value \updQwen{} (Qwen) and \updLlama{} (Llama) more often than when the update moves toward
-the prior; stale memory and prior jointly override the change. Finally, \pcs{} computed from the agents' answers matches
+the prior; stale memory and prior jointly override the change. Conversely, when the whole item is lost, an update toward the prior
+is answered correctly from the prior alone. Finally, \pcs{} computed from the agents' answers matches
 the judge-coded retention closely (Figure~\ref{fig:pcs}) (mean absolute error \pcsMaeQwen{} and \pcsMaeLlama{}, against \accMaeQwen{} and
-\accMaeLlama{} for raw accuracy), which is direct evidence that the correction recovers what the memory kept.
+\accMaeLlama{} for raw accuracy), which is direct evidence that the correction recovers what the memory kept and delivered.
 
 \begin{figure}[t]
 \centering
 \input{fig_pcs}
 \caption{The guess-corrected score recovers what the memory kept. Each point is one system at one checkpoint after the
-fourth session, for both backbone families; the $x$-axis is retention coded by two judges from the memory text, the
+fourth session, for both backbone families; the $x$-axis is
+retention coded by two judges from the stored memory, the
 $y$-axis is computed from the agent's forced-choice answers only. Raw accuracy sits above the diagonal by the guessing
 credit; \pcs{} lies close to it.}
 \label{fig:pcs}

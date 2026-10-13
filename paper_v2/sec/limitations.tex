@@ -1,6 +1,8 @@
 \section*{Limitations}
 
-The guess rate is specific to a reader model and decoding; \pcme{} must be re-run when either changes. The resistant and
+The guess rate is specific to a reader model and decoding; \pcme{} must be re-run when either changes. \pcme{} works from
+final answers and does not say at which stage a memory failed; locating the stage requires the intermediate outputs and
+evidence annotations used by stage-wise analyses. The resistant and
 answerable strata are not randomly assigned and differ in difficulty, which the oracle quantifies but cannot remove;
 the minimal pairs address this only for our own items. LoCoMo evidence annotations are noisy and conversations repeat
 information, so our evidence ablations are approximate. The same LLM judge scores both closed-book and memory-based

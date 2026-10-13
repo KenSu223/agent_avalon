@@ -1,29 +1,35 @@
 \section{Auditing and re-scoring existing benchmarks}
 \label{sec:audit}
 
-\paragraph{How guessable are the benchmarks?} Table~\ref{tab:audit} gives the reader's expected closed-book accuracy
-(mean $\hat g$ over six forced draws of Qwen3-235B) and the share of items answered correctly in at least one of seven
-draws (six Qwen, one Llama-3.3-70B). The second number grows with the number of draws (on LoCoMo from \singleLocomo{}
-with one draw to \everLocomo{} with seven), so ``ever guessable'' is only a lower bound on what a determined reader could
-guess; the expected rate is the quantity that enters a score.
+\paragraph{How guessable are the benchmarks?} Table~\ref{tab:audit} gives the reader's expected closed-book accuracy in
+two ways: under prompts that ask for a best guess (mean over six draws of Qwen3-235B), which measures what the reader
+knows, and under the evaluation prompt with an empty memory (three draws), which is what enters a score
+(\S\ref{sec:procedure}). The second is clearly lower on the two conversational benchmarks, where the reader often abstains
+when its memory is empty, and about the same on the document tasks. The last column, the share of items answered
+correctly in at least one of seven guessing draws (six Qwen, one Llama-3.3-70B), grows with the number of draws (on LoCoMo
+from \singleLocomo{} with one draw to \everLocomo{} with seven), so it is only a lower bound on what a determined reader
+could guess.
 
 \begin{table}[t]
 \centering\small
-\begin{tabular}{lcc}
+\begin{tabular}{@{}lccc@{}}
 \toprule
-Benchmark (answerable items) & mean $\hat g$ & ever correct \\
+& \multicolumn{2}{c}{mean $\hat g$} & \\
+\cmidrule(lr){2-3}
+Benchmark (answerable items) & guess & eval. & ever \\
 \midrule
-LongMemEval & \gLme & \everLme \\
-LoCoMo cat.\ 1--4 & \gLocomo & \everLocomo \\
-MAB RULER-QA1 & \gQaOne & \everQaOne \\
-MAB RULER-QA2 & \gQaTwo & \everQaTwo \\
-MAB EventQA & \gEventqa & -- \\
-MAB FactConsolidation-SH & \gFcSh & -- \\
-MAB FactConsolidation-MH & \gFcMh & -- \\
+LongMemEval & \gLme & \gEvalLme & \everLme \\
+LoCoMo cat.\ 1--4 & \gLocomo & \gEvalLocomo & \everLocomo \\
+MAB RULER-QA1 & \gQaOne & \gEvalQaOne & \everQaOne \\
+MAB RULER-QA2 & \gQaTwo & \gEvalQaTwo & \everQaTwo \\
+MAB EventQA & \gEventqa & \gEvalEventqa & -- \\
+MAB FactConsolidation-SH & \gFcSh & \gEvalFcSh & -- \\
+MAB FactConsolidation-MH & \gFcMh & \gEvalFcMh & -- \\
 \bottomrule
 \end{tabular}
 \caption{Closed-book guessability of agent-memory benchmarks for the reader used in our re-scoring (MAB:
-MemoryAgentBench).}
+MemoryAgentBench). guess: prompts that ask for a best guess; eval.: the evaluation prompt with an empty memory; ever:
+correct in at least one of seven guessing draws.}
 \label{tab:audit}
 \end{table}
 
@@ -32,12 +38,16 @@ RULER-QA1, with a second document (QA2) as an independent replication: four libr
 (Mem0 2.2.1 and 1.0.11, LangMem, LlamaIndex fact extraction), the verbatim compaction prompts of five coding agents and
 an LLM API (Codex, OpenHands, Aider, Gemini CLI, LangChain summarisation, Anthropic API), a neutral rewrite operator, and
 raw retrieval. All share one reader (Qwen3-235B, $T{=}0$) and one judge. Contexts were saved so that every answer could
-be re-asked under each protocol (Table~\ref{tab:protocols}).
+be re-asked under each protocol (Table~\ref{tab:protocols}). For systems that keep a single rewritten memory the reader
+sees all of it; for Mem0 and raw retrieval it sees what the system retrieves for the question, so a low \cpr{} can reflect
+a failure to write, keep or retrieve the fact. The analyses below were registered before we moved \cpr{} to $\pi_F$
+(Appendix~\ref{app:deviations}) and use \cpr{} under $\pi_A$, except the ranking comparison, which pairs each protocol's
+accuracy with its own \cpr{}; Table~\ref{tab:protocols} gives both versions.
 
 \input{tab_protocols}
 
 \paragraph{Abstention, not memory, drives raw-score differences among memory-poor systems.} On RULER-QA1,
-\nPoorQaOne{} of \nSysQaOne{} systems answer at most 5\% of the resistant items, yet their raw accuracies differ widely.
+\nPoorQaOne{} of \nSysQaOne{} systems answer at most 5\% of the resistant items under either protocol, yet their raw accuracies differ widely.
 Their native-protocol abstention rate on answerable items ranges from \absRangeLo{} to \absRangeHi{}, and forcing an
 answer raises accuracy most for the systems that abstain most (Figure~\ref{fig:abstention}): Spearman $\rho=\hOneQaOne$
 [\hOneQaOneLo, \hOneQaOneHi] on QA1, $\hOneQaTwo$ on QA2 and $\hOneLocomo$ on LoCoMo (pre-registered primary test, Holm
@@ -62,7 +72,9 @@ not separate memory from guessing; that requires the prior split. We also find n
 statistically confirmed in both directions (\confirmedRev{} pairs), so our claims rest on inflation and confounding,
 not on reversed leaderboards.
 
-\paragraph{Scoring unanswerable items rewards forgetting.} On LoCoMo's unanswerable category, a system's rate of correct
+\paragraph{Scoring unanswerable items rewards forgetting.} We pose LoCoMo's unanswerable (category-5) questions as open
+questions, like the other categories, and judge them with LongMemEval's abstention prompt; the original LoCoMo harness
+instead offers two options, one of which is ``Not mentioned in the conversation'', so that chance is 50\%. In this category, a system's rate of correct
 abstention is negatively related to its \cpr{} across the twelve systems ($\rho=\rhoCaCpr$; raw category accuracy:
 $\rho=\rhoRawCatFive$): the less a system remembers, the more readily it says the information is missing. Scoring
 discrimination instead ($J$) reverses the sign ($\rho=\rhoJCpr$).

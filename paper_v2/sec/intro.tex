@@ -4,22 +4,25 @@
 Long-running LLM agents keep a memory of past interactions: summaries that are periodically rewritten, extracted fact
 lists, or retrieval indexes over raw turns \citep{packer2023memgpt,chhikara2025mem0,rasmussen2025zep}. Memory systems
 are compared on benchmarks that feed a long history and then ask questions about it
-\citep{maharana2024locomo,wu2025longmemeval,hu2025memoryagentbench}. A correct answer is read as evidence that the
-memory kept the relevant fact.
+\citep{maharana2024locomo,wu2025longmemeval,hu2025memoryagentbench}. A correct answer is read as evidence that the memory delivered the relevant fact: wrote it, kept it through later
+updates, and retrieved it when asked.
 
-That reading is unsafe. If the memory dropped the fact, the reader model can still answer from what it already
-believes. A summary that kept nothing about a long document still lets the model answer that Normandy is in France, and a memory
+That reading is unsafe. Whichever stage fails, whether the fact was never written, was overwritten, or was stored but
+not retrieved, the reader model can still answer from what it already believes. A summary that kept nothing about a long document still lets the model answer that Normandy is in France, and a memory
 that kept nothing about a user still lets it guess that someone who volunteers for a support group might study
 psychology, which is the gold answer in LoCoMo. In our controlled study a widely used compaction prompt kept \aiderRet{} of the facts it was given, yet
 its agent answered \aiderCongAcc{} of the questions about schema-congruent facts correctly (\S\ref{sec:controlled}). Raw accuracy
-cannot tell this apart from remembering.
+cannot tell this apart from remembering. The prior also settles conflicts: when a user's value changes away from what the
+model expects, an agent whose memory lost the update falls back to the old, expected value, while a change toward the
+expectation is answered correctly from the prior alone.
 
 The worry is not new in other areas of NLP: question-only and hypothesis-only baselines exposed benchmarks that could
 be solved without the evidence \citep{kaushik2018much,poliak2018hypothesis,gururangan2018annotation}, and recent memory
 benchmarks build fictional worlds or filter guessable items when they are created
 \citep{groundtruthfirst2026,memgym2026,longmemevalvtwo2026}. What is missing is a way to measure, for the benchmarks
 the field already reports, how much of a memory score is the prior; and a scoring procedure that removes it with
-explicit, testable assumptions. This paper provides both.
+explicit, testable assumptions. Because a guess can rescue a failure at any stage, such a procedure has to work from final
+answers alone, whatever the memory architecture. This paper provides both.
 
 \paragraph{Contributions.}
 \begin{itemize}
@@ -37,6 +40,9 @@ recover memory-based rankings; and LoCoMo's unanswerable category rewards forget
 filtered by pre-registered gates on four model families, and a replication of the mechanism with two compactor
 families (\S\ref{sec:controlled}).
 \end{itemize}
+The audit and the controlled instrument answer complementary questions. The audit shows that scores on the benchmarks in
+use are inflated and confounded, but those benchmarks cannot reveal what each memory delivered; the controlled instrument
+supplies that ground truth, which we use to validate the correction and to locate where the prior enters.
 All analyses were pre-registered before the corresponding runs; deviations are listed in Appendix~\ref{app:deviations}.
 Code, items, all prompts (verified byte-for-byte against the requests that produced the results) and model outputs
 will be released.
