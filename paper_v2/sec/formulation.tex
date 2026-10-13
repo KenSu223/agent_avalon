@@ -16,7 +16,10 @@ correct with probability $p_i$; without it, with probability $h_{si}$:
 where $D_{si}=P(Z_{si}=1)$ is the \emph{delivery rate}: the probability that the evidence was written, survived later
 updates and compaction, and was retrieved for this question. It is what a memory system is responsible for; how well the
 reader uses delivered evidence ($p_i$) is not. Raw accuracy measures the whole sum, and a correct guess hides a failure at
-any of these stages, because each of them leaves $Z_{si}=0$.
+any of these stages, because each of them leaves $Z_{si}=0$. The second term is the prior's share of the score, and a
+shared reader does not make it equal across systems. Its weight $1-D_{si}$ differs by system, and when abstaining is
+allowed, $h_{si}$ is the probability that the reader attempts an answer without the evidence times its accuracy when it
+does; the first factor depends on what the context looks like, not only on the reader (\S\ref{sec:audit}).
 
 \paragraph{The guess rate.} $g_i$ is the probability that the reader answers item $i$ correctly with an empty context
 under $\pi_F$. We estimate it from repeated closed-book draws \emph{with the evaluation prompt itself}

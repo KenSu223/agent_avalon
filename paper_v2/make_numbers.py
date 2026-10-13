@@ -88,6 +88,9 @@ assert poorA == poorF, (poorA, poorF)   # the text says "under either protocol"
 put("nPoorQaOne", len(poorA), "{}"); put("nSysQaOne", len(s1), "{}")
 put("absRangeLo", pct(min(q1["abst"]["A"]))); put("absRangeHi", pct(max(q1["abst"]["A"])))
 put("confirmedRev", len(pr["locomo"]["reversals_A"]["confirmed"]) + len(q1["reversals_A"]["confirmed"]), "{}")
+# largest change in accuracy from forcing an answer (pi_F - pi_A), per benchmark: the size of the abstention effect
+for g, key in (("Locomo", "locomo"), ("QaOne", "mab_ruler")):
+    put(f"gainMax{g}", max(abs(f - a) for f, a in zip(pr[key]["acc"]["F"], pr[key]["acc"]["A"])))
 
 # ---------------------------------------------------------------- robustness (threshold-triggered compaction)
 rb = json.load(open(M / "robustness_analysis.json"))

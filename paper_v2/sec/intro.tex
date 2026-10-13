@@ -12,7 +12,10 @@ not retrieved, the reader model can still answer from what it already believes. 
 that kept nothing about a user still lets it guess that someone who volunteers for a support group might study
 psychology, which is the gold answer in LoCoMo. In our controlled study a widely used compaction prompt kept \aiderRet{} of the facts it was given, yet
 its agent answered \aiderCongAcc{} of the questions about schema-congruent facts correctly (\S\ref{sec:controlled}). Raw accuracy
-cannot tell this apart from remembering. The prior also settles conflicts: when a user's value changes away from what the
+cannot tell this apart from remembering. Nor does sharing one reader model across systems make the prior cancel when
+they are compared: the reader is shared, but how much of each score the prior supplies depends on how often the memory
+fails to deliver the evidence and on how readily the reader guesses when it does, and both differ across systems
+(\S\ref{sec:audit}). The prior also settles conflicts: when a user's value changes away from what the
 model expects, an agent whose memory lost the update falls back to the old, expected value, while a change toward the
 expectation is answered correctly from the prior alone.
 

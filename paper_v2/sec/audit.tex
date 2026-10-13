@@ -53,7 +53,8 @@ answer raises accuracy most for the systems that abstain most (Figure~\ref{fig:a
 [\hOneQaOneLo, \hOneQaOneHi] on QA1, $\hOneQaTwo$ on QA2 and $\hOneLocomo$ on LoCoMo (pre-registered primary test, Holm
 corrected). Aider's accuracy, for instance, moves from \aiderAccA{} to \aiderAccF{} with no change in its memory. In
 other words, a fixed backbone does not cancel the prior: the prior enters each system's score in proportion to its
-willingness to guess.
+willingness to guess. How much this matters depends on how guessable the benchmark is: forcing an answer changes a
+system's accuracy by at most \gainMaxLocomo{} on LoCoMo but by up to \gainMaxQaOne{} on RULER-QA1.
 
 \begin{figure}[t]
 \centering
