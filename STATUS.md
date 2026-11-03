@@ -47,7 +47,10 @@
 **权威执行计划见 [PLAN.md](PLAN.md)（按顺序执行，不得漏项）。**
 - 第 1–4 步完成（2026-10-10 至 10-11），收尾项 5a、5b、5c 完成，第 6 项按 PI 决定不做。
 - **选项顺序检查（2026-10-27 发现）**：step 4 的信念探针总是把常识答案（C）列在第一个，可能抬高信念差距 ΔK。已预先登记（`framework_study/ORDER_CHECK_DESIGN.md`），**待在 ubuntu 上按 `framework_study/ORDER_CHECK_RUNBOOK.md` 运行**（≤ $15）。运行之前，论文中的 ΔK、无先验对照和 PCS 校准数字都来自 C 在前的探针。
-- **第 7 项人工校验：等 PI 团队。** 150 条判定标签（`human_validation/stratified_150.jsonl`）和 100 条数据集审阅（`framework_study/stimuli/human_review_sheet.csv`）。完成前论文不报告任何人工结果。
+- **第 7 项人工校验：等 PI 团队。** 完成前论文不报告任何人工结果。
+  - `human_validation/stratified_150.jsonl` 来自 ARIS 阶段的旧实验（O1–O7 算子），校验的是旧编码器，**不适用于现行论文**（2026-10-20 核实）。论文 Limitations 中"150-item human validation of the judges"一句需要相应修改。
+  - C/I 条目审阅改用网页平台 `human_validation/review_app/`（原型 v0.1.0，2026-10-27；Cloudflare Pages + D1，盲审 A/B，结构化 Q1–Q7）。正式运行前要预先登记无效条目规则，并用 `--mode full` 生成 504 对 × 2 人的分配。
+  - 记忆状态编码（两个 LLM 评判给出的"真实保留率"）是否也做人工校验，待 PI 决定。
 - **第 8 项论文：初稿 v2 已成稿**，正文写满 8 页（上限 8 页），补入人工校验结果时需要压缩篇幅。投稿前还要：通读核对每个说法与生成的数字；重新查新（ACL Anthology 和 arXiv）；恢复官方字体设置（本机未装 inconsolata）。
 - 累计 Bedrock 花费 **$307.19**（截至 2026-10-15；代理硬上限 $490，PI 绝对上限 $500）。
 

@@ -1,0 +1,9 @@
+name = "pair-review"
+compatibility_date = "2026-10-01"
+pages_build_output_dir = "public"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "pair-review"
+# Replace with the id printed by `wrangler d1 create pair-review` before deploying. Local dev works with any value.
+database_id = "00000000-0000-0000-0000-000000000000"

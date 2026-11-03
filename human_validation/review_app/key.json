@@ -1,0 +1,963 @@
+{
+ "app_version": "0.1.0",
+ "guideline_version": "0.1",
+ "mode": "prototype",
+ "seed": 0,
+ "assignments": {
+  "c617017aa67d": {
+   "reviewer": "R01",
+   "item_id": "N086",
+   "type": "neutral",
+   "ab_order": "IC",
+   "options_shown": [
+    "BL-207",
+    "BL-270"
+   ],
+   "answers": {
+    "C": "BL-207",
+    "I": "BL-270"
+   },
+   "catch": null
+  },
+  "66503c2a52a4": {
+   "reviewer": "R01",
+   "item_id": "X02",
+   "type": "procedure",
+   "ab_order": "CI",
+   "options_shown": [
+    "AFTER",
+    "BEFORE"
+   ],
+   "answers": {
+    "C": "BEFORE",
+    "I": "AFTER"
+   },
+   "catch": {
+    "flaw": "cue",
+    "expect": {
+     "q2_minimal": "no",
+     "q6_cue_in": "I"
+    }
+   }
+  },
+  "1c2bc18143b2": {
+   "reviewer": "R01",
+   "item_id": "U080",
+   "type": "update",
+   "ab_order": "IC",
+   "options_shown": [
+    "IT",
+    "ANY"
+   ],
+   "answers": {
+    "C": "IT",
+    "I": "ANY"
+   },
+   "catch": null
+  },
+  "cf81db8f1575": {
+   "reviewer": "R01",
+   "item_id": "P115",
+   "type": "preference",
+   "ab_order": "IC",
+   "options_shown": [
+    "FULL",
+    "SHORT"
+   ],
+   "answers": {
+    "C": "SHORT",
+    "I": "FULL"
+   },
+   "catch": null
+  },
+  "cbbb7ccab69c": {
+   "reviewer": "R01",
+   "item_id": "R381",
+   "type": "rule",
+   "ab_order": "IC",
+   "options_shown": [
+    "ONLINE",
+    "IN PERSON"
+   ],
+   "answers": {
+    "C": "ONLINE",
+    "I": "IN PERSON"
+   },
+   "catch": null
+  },
+  "2df39cd77f2d": {
+   "reviewer": "R01",
+   "item_id": "R211",
+   "type": "rule",
+   "ab_order": "IC",
+   "options_shown": [
+    "SHORT",
+    "LONG"
+   ],
+   "answers": {
+    "C": "LONG",
+    "I": "SHORT"
+   },
+   "catch": null
+  },
+  "c88cd92055ff": {
+   "reviewer": "R01",
+   "item_id": "X01",
+   "type": "rule",
+   "ab_order": "IC",
+   "options_shown": [
+    "6 P.M.",
+    "9 P.M."
+   ],
+   "answers": {
+    "C": "6 P.M.",
+    "I": "9 P.M."
+   },
+   "catch": {
+    "flaw": "not_minimal",
+    "expect": {
+     "q2_minimal": "no"
+    }
+   }
+  },
+  "0dbe9e251727": {
+   "reviewer": "R01",
+   "item_id": "R352",
+   "type": "rule",
+   "ab_order": "CI",
+   "options_shown": [
+    "RETURN",
+    "KEEP"
+   ],
+   "answers": {
+    "C": "RETURN",
+    "I": "KEEP"
+   },
+   "catch": null
+  },
+  "b0deaaaeb397": {
+   "reviewer": "R01",
+   "item_id": "R395",
+   "type": "rule",
+   "ab_order": "IC",
+   "options_shown": [
+    "NIGHT",
+    "LUNCH"
+   ],
+   "answers": {
+    "C": "NIGHT",
+    "I": "LUNCH"
+   },
+   "catch": null
+  },
+  "308b8a68ad50": {
+   "reviewer": "R01",
+   "item_id": "S04",
+   "type": "procedure",
+   "ab_order": "IC",
+   "options_shown": [
+    "MERGED",
+    "REVIEWED"
+   ],
+   "answers": {
+    "C": "REVIEWED",
+    "I": "MERGED"
+   },
+   "catch": null
+  },
+  "94e829c6f6fd": {
+   "reviewer": "R01",
+   "item_id": "U084",
+   "type": "update",
+   "ab_order": "CI",
+   "options_shown": [
+    "WEEKS",
+    "DAYS"
+   ],
+   "answers": {
+    "C": "DAYS",
+    "I": "WEEKS"
+   },
+   "catch": null
+  },
+  "2f7a944f28f3": {
+   "reviewer": "R01",
+   "item_id": "S139",
+   "type": "procedure",
+   "ab_order": "CI",
+   "options_shown": [
+    "BEFORE",
+    "AFTER"
+   ],
+   "answers": {
+    "C": "BEFORE",
+    "I": "AFTER"
+   },
+   "catch": null
+  },
+  "3e3c89f91c9b": {
+   "reviewer": "R02",
+   "item_id": "S139",
+   "type": "procedure",
+   "ab_order": "IC",
+   "options_shown": [
+    "BEFORE",
+    "AFTER"
+   ],
+   "answers": {
+    "C": "BEFORE",
+    "I": "AFTER"
+   },
+   "catch": null
+  },
+  "c08c227f90e3": {
+   "reviewer": "R02",
+   "item_id": "R211",
+   "type": "rule",
+   "ab_order": "IC",
+   "options_shown": [
+    "LONG",
+    "SHORT"
+   ],
+   "answers": {
+    "C": "LONG",
+    "I": "SHORT"
+   },
+   "catch": null
+  },
+  "17f3a63ee79e": {
+   "reviewer": "R02",
+   "item_id": "S04",
+   "type": "procedure",
+   "ab_order": "IC",
+   "options_shown": [
+    "MERGED",
+    "REVIEWED"
+   ],
+   "answers": {
+    "C": "REVIEWED",
+    "I": "MERGED"
+   },
+   "catch": null
+  },
+  "8443ef33c54e": {
+   "reviewer": "R02",
+   "item_id": "X02",
+   "type": "procedure",
+   "ab_order": "CI",
+   "options_shown": [
+    "AFTER",
+    "BEFORE"
+   ],
+   "answers": {
+    "C": "BEFORE",
+    "I": "AFTER"
+   },
+   "catch": {
+    "flaw": "cue",
+    "expect": {
+     "q2_minimal": "no",
+     "q6_cue_in": "I"
+    }
+   }
+  },
+  "7ca213bc7710": {
+   "reviewer": "R02",
+   "item_id": "U080",
+   "type": "update",
+   "ab_order": "IC",
+   "options_shown": [
+    "IT",
+    "ANY"
+   ],
+   "answers": {
+    "C": "IT",
+    "I": "ANY"
+   },
+   "catch": null
+  },
+  "bbd50946a033": {
+   "reviewer": "R02",
+   "item_id": "P115",
+   "type": "preference",
+   "ab_order": "IC",
+   "options_shown": [
+    "SHORT",
+    "FULL"
+   ],
+   "answers": {
+    "C": "SHORT",
+    "I": "FULL"
+   },
+   "catch": null
+  },
+  "9294bcc729b9": {
+   "reviewer": "R02",
+   "item_id": "R381",
+   "type": "rule",
+   "ab_order": "CI",
+   "options_shown": [
+    "ONLINE",
+    "IN PERSON"
+   ],
+   "answers": {
+    "C": "ONLINE",
+    "I": "IN PERSON"
+   },
+   "catch": null
+  },
+  "c7a5d88a2782": {
+   "reviewer": "R02",
+   "item_id": "U084",
+   "type": "update",
+   "ab_order": "CI",
+   "options_shown": [
+    "WEEKS",
+    "DAYS"
+   ],
+   "answers": {
+    "C": "DAYS",
+    "I": "WEEKS"
+   },
+   "catch": null
+  },
+  "6d5836fdff22": {
+   "reviewer": "R02",
+   "item_id": "R352",
+   "type": "rule",
+   "ab_order": "IC",
+   "options_shown": [
+    "RETURN",
+    "KEEP"
+   ],
+   "answers": {
+    "C": "RETURN",
+    "I": "KEEP"
+   },
+   "catch": null
+  },
+  "5b15cd378fb3": {
+   "reviewer": "R02",
+   "item_id": "X01",
+   "type": "rule",
+   "ab_order": "CI",
+   "options_shown": [
+    "6 P.M.",
+    "9 P.M."
+   ],
+   "answers": {
+    "C": "6 P.M.",
+    "I": "9 P.M."
+   },
+   "catch": {
+    "flaw": "not_minimal",
+    "expect": {
+     "q2_minimal": "no"
+    }
+   }
+  },
+  "c678d64d06d5": {
+   "reviewer": "R02",
+   "item_id": "R395",
+   "type": "rule",
+   "ab_order": "CI",
+   "options_shown": [
+    "NIGHT",
+    "LUNCH"
+   ],
+   "answers": {
+    "C": "NIGHT",
+    "I": "LUNCH"
+   },
+   "catch": null
+  },
+  "c12c517e458b": {
+   "reviewer": "R02",
+   "item_id": "N086",
+   "type": "neutral",
+   "ab_order": "CI",
+   "options_shown": [
+    "BL-270",
+    "BL-207"
+   ],
+   "answers": {
+    "C": "BL-207",
+    "I": "BL-270"
+   },
+   "catch": null
+  },
+  "af5366e012ed": {
+   "reviewer": "R03",
+   "item_id": "R381",
+   "type": "rule",
+   "ab_order": "IC",
+   "options_shown": [
+    "IN PERSON",
+    "ONLINE"
+   ],
+   "answers": {
+    "C": "ONLINE",
+    "I": "IN PERSON"
+   },
+   "catch": null
+  },
+  "f998f81e06c2": {
+   "reviewer": "R03",
+   "item_id": "S04",
+   "type": "procedure",
+   "ab_order": "IC",
+   "options_shown": [
+    "REVIEWED",
+    "MERGED"
+   ],
+   "answers": {
+    "C": "REVIEWED",
+    "I": "MERGED"
+   },
+   "catch": null
+  },
+  "4b0a7dea0696": {
+   "reviewer": "R03",
+   "item_id": "R352",
+   "type": "rule",
+   "ab_order": "IC",
+   "options_shown": [
+    "RETURN",
+    "KEEP"
+   ],
+   "answers": {
+    "C": "RETURN",
+    "I": "KEEP"
+   },
+   "catch": null
+  },
+  "8991b345d727": {
+   "reviewer": "R03",
+   "item_id": "U084",
+   "type": "update",
+   "ab_order": "IC",
+   "options_shown": [
+    "WEEKS",
+    "DAYS"
+   ],
+   "answers": {
+    "C": "DAYS",
+    "I": "WEEKS"
+   },
+   "catch": null
+  },
+  "007eaba145ad": {
+   "reviewer": "R03",
+   "item_id": "N086",
+   "type": "neutral",
+   "ab_order": "CI",
+   "options_shown": [
+    "BL-207",
+    "BL-270"
+   ],
+   "answers": {
+    "C": "BL-207",
+    "I": "BL-270"
+   },
+   "catch": null
+  },
+  "86690abbec51": {
+   "reviewer": "R03",
+   "item_id": "R211",
+   "type": "rule",
+   "ab_order": "CI",
+   "options_shown": [
+    "SHORT",
+    "LONG"
+   ],
+   "answers": {
+    "C": "LONG",
+    "I": "SHORT"
+   },
+   "catch": null
+  },
+  "0212a4dc8ade": {
+   "reviewer": "R03",
+   "item_id": "P115",
+   "type": "preference",
+   "ab_order": "CI",
+   "options_shown": [
+    "SHORT",
+    "FULL"
+   ],
+   "answers": {
+    "C": "SHORT",
+    "I": "FULL"
+   },
+   "catch": null
+  },
+  "41b4a10c7631": {
+   "reviewer": "R03",
+   "item_id": "R395",
+   "type": "rule",
+   "ab_order": "IC",
+   "options_shown": [
+    "NIGHT",
+    "LUNCH"
+   ],
+   "answers": {
+    "C": "NIGHT",
+    "I": "LUNCH"
+   },
+   "catch": null
+  },
+  "86e67da0e680": {
+   "reviewer": "R03",
+   "item_id": "X01",
+   "type": "rule",
+   "ab_order": "IC",
+   "options_shown": [
+    "9 P.M.",
+    "6 P.M."
+   ],
+   "answers": {
+    "C": "6 P.M.",
+    "I": "9 P.M."
+   },
+   "catch": {
+    "flaw": "not_minimal",
+    "expect": {
+     "q2_minimal": "no"
+    }
+   }
+  },
+  "7a31422a995b": {
+   "reviewer": "R03",
+   "item_id": "S139",
+   "type": "procedure",
+   "ab_order": "CI",
+   "options_shown": [
+    "BEFORE",
+    "AFTER"
+   ],
+   "answers": {
+    "C": "BEFORE",
+    "I": "AFTER"
+   },
+   "catch": null
+  },
+  "b3d90a9fda4c": {
+   "reviewer": "R03",
+   "item_id": "U080",
+   "type": "update",
+   "ab_order": "CI",
+   "options_shown": [
+    "IT",
+    "ANY"
+   ],
+   "answers": {
+    "C": "IT",
+    "I": "ANY"
+   },
+   "catch": null
+  },
+  "a7db91e4c745": {
+   "reviewer": "R03",
+   "item_id": "X02",
+   "type": "procedure",
+   "ab_order": "CI",
+   "options_shown": [
+    "BEFORE",
+    "AFTER"
+   ],
+   "answers": {
+    "C": "BEFORE",
+    "I": "AFTER"
+   },
+   "catch": {
+    "flaw": "cue",
+    "expect": {
+     "q2_minimal": "no",
+     "q6_cue_in": "I"
+    }
+   }
+  },
+  "67003965abb9": {
+   "reviewer": "R04",
+   "item_id": "U080",
+   "type": "update",
+   "ab_order": "CI",
+   "options_shown": [
+    "IT",
+    "ANY"
+   ],
+   "answers": {
+    "C": "IT",
+    "I": "ANY"
+   },
+   "catch": null
+  },
+  "d1d057498eae": {
+   "reviewer": "R04",
+   "item_id": "N086",
+   "type": "neutral",
+   "ab_order": "CI",
+   "options_shown": [
+    "BL-270",
+    "BL-207"
+   ],
+   "answers": {
+    "C": "BL-207",
+    "I": "BL-270"
+   },
+   "catch": null
+  },
+  "fa805e48eaba": {
+   "reviewer": "R04",
+   "item_id": "S04",
+   "type": "procedure",
+   "ab_order": "CI",
+   "options_shown": [
+    "REVIEWED",
+    "MERGED"
+   ],
+   "answers": {
+    "C": "REVIEWED",
+    "I": "MERGED"
+   },
+   "catch": null
+  },
+  "31f2c57ac783": {
+   "reviewer": "R04",
+   "item_id": "S139",
+   "type": "procedure",
+   "ab_order": "CI",
+   "options_shown": [
+    "AFTER",
+    "BEFORE"
+   ],
+   "answers": {
+    "C": "BEFORE",
+    "I": "AFTER"
+   },
+   "catch": null
+  },
+  "a8372f73b95f": {
+   "reviewer": "R04",
+   "item_id": "U084",
+   "type": "update",
+   "ab_order": "CI",
+   "options_shown": [
+    "WEEKS",
+    "DAYS"
+   ],
+   "answers": {
+    "C": "DAYS",
+    "I": "WEEKS"
+   },
+   "catch": null
+  },
+  "fb9e250060ba": {
+   "reviewer": "R04",
+   "item_id": "R352",
+   "type": "rule",
+   "ab_order": "CI",
+   "options_shown": [
+    "RETURN",
+    "KEEP"
+   ],
+   "answers": {
+    "C": "RETURN",
+    "I": "KEEP"
+   },
+   "catch": null
+  },
+  "148f1af355ac": {
+   "reviewer": "R04",
+   "item_id": "X02",
+   "type": "procedure",
+   "ab_order": "CI",
+   "options_shown": [
+    "AFTER",
+    "BEFORE"
+   ],
+   "answers": {
+    "C": "BEFORE",
+    "I": "AFTER"
+   },
+   "catch": {
+    "flaw": "cue",
+    "expect": {
+     "q2_minimal": "no",
+     "q6_cue_in": "I"
+    }
+   }
+  },
+  "4ed6262a36ca": {
+   "reviewer": "R04",
+   "item_id": "P115",
+   "type": "preference",
+   "ab_order": "IC",
+   "options_shown": [
+    "FULL",
+    "SHORT"
+   ],
+   "answers": {
+    "C": "SHORT",
+    "I": "FULL"
+   },
+   "catch": null
+  },
+  "3e97b9b3f0f3": {
+   "reviewer": "R04",
+   "item_id": "X01",
+   "type": "rule",
+   "ab_order": "CI",
+   "options_shown": [
+    "6 P.M.",
+    "9 P.M."
+   ],
+   "answers": {
+    "C": "6 P.M.",
+    "I": "9 P.M."
+   },
+   "catch": {
+    "flaw": "not_minimal",
+    "expect": {
+     "q2_minimal": "no"
+    }
+   }
+  },
+  "028a8a711b49": {
+   "reviewer": "R04",
+   "item_id": "R395",
+   "type": "rule",
+   "ab_order": "IC",
+   "options_shown": [
+    "NIGHT",
+    "LUNCH"
+   ],
+   "answers": {
+    "C": "NIGHT",
+    "I": "LUNCH"
+   },
+   "catch": null
+  },
+  "12b905042c36": {
+   "reviewer": "R04",
+   "item_id": "R211",
+   "type": "rule",
+   "ab_order": "CI",
+   "options_shown": [
+    "SHORT",
+    "LONG"
+   ],
+   "answers": {
+    "C": "LONG",
+    "I": "SHORT"
+   },
+   "catch": null
+  },
+  "467aed326aa2": {
+   "reviewer": "R04",
+   "item_id": "R381",
+   "type": "rule",
+   "ab_order": "CI",
+   "options_shown": [
+    "IN PERSON",
+    "ONLINE"
+   ],
+   "answers": {
+    "C": "ONLINE",
+    "I": "IN PERSON"
+   },
+   "catch": null
+  },
+  "edb06e5210c4": {
+   "reviewer": "R05",
+   "item_id": "X02",
+   "type": "procedure",
+   "ab_order": "CI",
+   "options_shown": [
+    "AFTER",
+    "BEFORE"
+   ],
+   "answers": {
+    "C": "BEFORE",
+    "I": "AFTER"
+   },
+   "catch": {
+    "flaw": "cue",
+    "expect": {
+     "q2_minimal": "no",
+     "q6_cue_in": "I"
+    }
+   }
+  },
+  "05cf363ee283": {
+   "reviewer": "R05",
+   "item_id": "U080",
+   "type": "update",
+   "ab_order": "CI",
+   "options_shown": [
+    "IT",
+    "ANY"
+   ],
+   "answers": {
+    "C": "IT",
+    "I": "ANY"
+   },
+   "catch": null
+  },
+  "7bdfd548df82": {
+   "reviewer": "R05",
+   "item_id": "X01",
+   "type": "rule",
+   "ab_order": "IC",
+   "options_shown": [
+    "9 P.M.",
+    "6 P.M."
+   ],
+   "answers": {
+    "C": "6 P.M.",
+    "I": "9 P.M."
+   },
+   "catch": {
+    "flaw": "not_minimal",
+    "expect": {
+     "q2_minimal": "no"
+    }
+   }
+  },
+  "3e857485c76c": {
+   "reviewer": "R05",
+   "item_id": "S139",
+   "type": "procedure",
+   "ab_order": "IC",
+   "options_shown": [
+    "AFTER",
+    "BEFORE"
+   ],
+   "answers": {
+    "C": "BEFORE",
+    "I": "AFTER"
+   },
+   "catch": null
+  },
+  "d7762624a782": {
+   "reviewer": "R05",
+   "item_id": "R211",
+   "type": "rule",
+   "ab_order": "IC",
+   "options_shown": [
+    "SHORT",
+    "LONG"
+   ],
+   "answers": {
+    "C": "LONG",
+    "I": "SHORT"
+   },
+   "catch": null
+  },
+  "16407aae05ff": {
+   "reviewer": "R05",
+   "item_id": "R381",
+   "type": "rule",
+   "ab_order": "CI",
+   "options_shown": [
+    "ONLINE",
+    "IN PERSON"
+   ],
+   "answers": {
+    "C": "ONLINE",
+    "I": "IN PERSON"
+   },
+   "catch": null
+  },
+  "7ba209f2f470": {
+   "reviewer": "R05",
+   "item_id": "P115",
+   "type": "preference",
+   "ab_order": "IC",
+   "options_shown": [
+    "SHORT",
+    "FULL"
+   ],
+   "answers": {
+    "C": "SHORT",
+    "I": "FULL"
+   },
+   "catch": null
+  },
+  "dc4871181ed4": {
+   "reviewer": "R05",
+   "item_id": "R395",
+   "type": "rule",
+   "ab_order": "IC",
+   "options_shown": [
+    "NIGHT",
+    "LUNCH"
+   ],
+   "answers": {
+    "C": "NIGHT",
+    "I": "LUNCH"
+   },
+   "catch": null
+  },
+  "c5531c109d6c": {
+   "reviewer": "R05",
+   "item_id": "R352",
+   "type": "rule",
+   "ab_order": "IC",
+   "options_shown": [
+    "RETURN",
+    "KEEP"
+   ],
+   "answers": {
+    "C": "RETURN",
+    "I": "KEEP"
+   },
+   "catch": null
+  },
+  "d67833a6b120": {
+   "reviewer": "R05",
+   "item_id": "N086",
+   "type": "neutral",
+   "ab_order": "CI",
+   "options_shown": [
+    "BL-270",
+    "BL-207"
+   ],
+   "answers": {
+    "C": "BL-207",
+    "I": "BL-270"
+   },
+   "catch": null
+  },
+  "055c63c5afcf": {
+   "reviewer": "R05",
+   "item_id": "U084",
+   "type": "update",
+   "ab_order": "IC",
+   "options_shown": [
+    "WEEKS",
+    "DAYS"
+   ],
+   "answers": {
+    "C": "DAYS",
+    "I": "WEEKS"
+   },
+   "catch": null
+  },
+  "bd67a1d84b83": {
+   "reviewer": "R05",
+   "item_id": "S04",
+   "type": "procedure",
+   "ab_order": "IC",
+   "options_shown": [
+    "REVIEWED",
+    "MERGED"
+   ],
+   "answers": {
+    "C": "REVIEWED",
+    "I": "MERGED"
+   },
+   "catch": null
+  }
+ }
+}

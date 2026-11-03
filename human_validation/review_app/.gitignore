@@ -1,0 +1,5 @@
+# tokens are access keys: keep them out of git
+private/
+data/bundle.json
+.wrangler/
+node_modules/

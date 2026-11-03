@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pair Review</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">Pair Review</div>
+  <div class="topinfo" id="topinfo"></div>
+  <nav class="topnav" id="topnav" hidden>
+    <span class="savestate" id="savestate" aria-live="polite"></span>
+    <button class="ghost" id="btn-guide">Guidelines</button>
+    <button class="ghost" id="btn-overview">Overview</button>
+    <button class="ghost" id="btn-download">Download my answers</button>
+  </nav>
+</header>
+<main id="app"><p class="muted">Loading…</p></main>
+<dialog id="overlay"><div id="overlay-body"></div><form method="dialog"><button class="primary">Close</button></form></dialog>
+<script src="app.js"></script>
+</body>
+</html>
