@@ -144,6 +144,7 @@
 
 ## 完成日志
 （按完成顺序记录：日期、子任务、结果文件、commit）
+- 2026-10-27 选项顺序检查预先登记 v1.0（`framework_study/ORDER_CHECK_DESIGN.md`），commit 4ef3baa；2026-11-03 补运行手册 `framework_study/ORDER_CHECK_RUNBOOK.md`。**待在 ubuntu 上运行**（≤ $15）。
 - 2026-10-10 1.1 METHOD.md v1.0（预先登记），commit cec98e8
 - 2026-10-11 第 4 步完成：主检验 P4.3、P4.4 成立，P4.1 为 3/4，P4.5 不成立，P4.6、P4.7 成立；FINDINGS §16。
 - 2026-10-11 第 2 步全部完成（QA2 复现和稳健性检查都已补完，FINDINGS §14.5），第 2 步合计约 $85。
